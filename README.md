@@ -1,0 +1,225 @@
+# Claude1page
+
+Claude Code を使って、シンプルで、モダンで、美しい、ワンページで完結するWebページを作るためのスターターキットです。Cloudflare Pagesで簡単に公開できるように設計されています。
+
+## 免責事項（Disclaimer）
+
+本プロジェクトは非公式のコミュニティプロジェクトであり、Anthropic PBCとは一切関係がありません。Claude®はAnthropic PBCの登録商標です。
+
+This is an unofficial, community-created project and is not affiliated with, endorsed by, or sponsored by Anthropic PBC. Claude® is a registered trademark of Anthropic PBC.
+
+## 更新履歴
+
+- 2026年 4月13日:
+  - `one-page-site-builder` スキルの `references/` 配下4ファイル（tech-stack・navigation-spec・content-structure・image-optimization）を `SKILL.md` に統合・集約
+  - スキルファイルの構成をシンプル化し、参照ファイルなしで完結するように刷新
+  - アップデートスクリプト（`update.sh` / `update.ps1`）で古い `references/` を削除するよう対応
+
+- 2026年 4月10日:
+  - `unsplash-image-finder` の画像検索スクリプトを Node.js (`unsplash-search.js`) からシェルスクリプト (`unsplash-search.sh` / `unsplash-health-check.sh` / `unsplash-track.sh`) に完全移行
+  - Node.js・npm・undici が不要になり、セットアップがシンプル化
+  - プロキシ対応をシェルスクリプト内の `curl` オプションで実装。Claude Code クラウド環境でも `npm install` なしで動作
+  - `references/setup.md` を追加（Unsplash API キーの設定方法をスキル内に集約）
+  - アップデートスクリプト（`update.sh` / `update.ps1`）を新しいスクリプト構成に対応
+
+- 2026年 4月 9日:
+  - `SessionStart` フックを追加。クラウド環境（`$CLAUDE_CODE_REMOTE = "true"`）でのみ `npm install` を自動実行するよう設定
+  - `node install` 不要にしていたが、Claude Codeクラウド環境では、プロキシを使う必要があるため、 `undici` を使い対応するように変更
+  - ただし `unsplash-search.js` の `undici` を動的インポートに変更し、`npm install` 不要でも動作するよう改善
+  - `package.json` に `"type": "module"` を追加し、Node.js の警告を解消
+  - アップデートスクリプト（`update.sh` / `update.ps1`）で `package.json` / `package-lock.json` を削除せず、最新版をダウンロードするよう変更
+- 2026年 4月 7日:
+  - `one-page-site-builder` スキルを追加（ワンページサイトの技術スタック・HTML 構造・ナビ仕様・画像最適化方針を集約）
+  - CLAUDE.md を整理し、詳細仕様はスキル側に委譲するシンプルな構成に刷新
+- 2026年 3月10日:
+  - 外部依存（Node.js パッケージ）を完全撤廃。`package.json`, `scripts/install_pkgs.sh` を削除
+  - `unsplash-search.js` を `.claude/skills/unsplash-image-finder/` に統合（外部依存ゼロで動作）
+  - アップデート方式をワンライナーに刷新（`scripts/update.sh` / `update.ps1`）
+- 2026年 2月24日:
+  - Claude Code Desktop のプレビュー機能で利用できるように、 launch.json を追加
+- 2026年 2月6日:
+  - 講座のURLを、cwm.toiee.jp にドメインを変更したこと伴う修正（ダミー画像のリンク先）
+  - CLAUDE.md の冗長性の修正
+- 2026年 1月19日:
+  - Unsplash画像検索を Sub Agent ではなく、Skillに移行（これにより、コンテキストの消費を抑え、動作も軽快になる）
+- 2025年 12月26日:
+  - .gitignore に、`.playwright-mcp` 一時フォルダを追加し、リポジトリから除外されるようにした
+- 2025年 12月23日:
+  - TailwindCSS v4.1 の設定をより確実に行われるように、CLAUDE.md を修正
+  - ナビゲーションがより確実に実装されやすいように技術仕様、デザインについての方針を明確に記述(CLAUDE.md)
+- 2025年 11月26日:
+  - Claude Code on the Web (Sandbox)では、Unsplashの画像検索ができない問題を解決（Proxyを使うように修正）
+  - 画像検索のフォールバックが、フォールバックになっていない（エラーする画像URL）ので、独自で用意したダミー画像URLを指定するようにした（ https://cwm.toiee.jp/images/dummy.jpg )
+- 2025年 11月 5日:
+  - scripts/install_pkg.sh をローカルでは実行しない（Claude Code on the Webでは実行）ように設定
+  - scripts/install_pkg.sh に実行権限を与えるように初期設定のガイドを修正
+- 2025年 10月 27日:
+  - `.rgignore` を使って、prompt.md などを検索対象除外から除外（これで、Claude Code で @ で指定できるようになった）
+  - README.md を Cloudflareの説明などに変更（Unsplashの設定も推奨に設定、環境変数対応についても記載など）
+
+**アップデート方法は、末尾をご覧ください**
+
+## 必要なサービスと準備
+
+- **Claude Code の事前インストール** （Claude Code on the Web でも動作します）
+- **Visual Studio Code**
+  - **おすすめの拡張機能**
+  	- Claude Code
+    - Live Server
+    - Prettier - Code formatter
+- [Github.com](https://github.com/)
+- Gitのインストールと設定
+- [Cloudflare](https://www.cloudflare.com/ja-jp/)
+- [Unsplash開発者登録](https://unsplash.com/oauth/applications)
+
+### Unsplash API キーの設定（環境変数に設定）
+
+**APIキーの取得方法：**
+1. [Unsplash Developers](https://unsplash.com/developers) にアクセス
+2. "Register as a developer" でアカウント登録
+3. "New Application" で新しいアプリケーションを作成
+4. Access Key を取得
+
+環境変数に設定する場合は、以下のようなコマンド（here-is-your-keyを書き換えた上で）を実行します。
+
+macOSの場合
+```zsh
+echo 'export UNSPLASH_ACCESS_KEY=here-is-your-key' >> ~/.zshrc && source ~/.zshrc
+```
+
+Windowsの場合（PowerShellで実行）
+```powershell
+if (!(Test-Path $PROFILE)) { New-Item -Path $PROFILE -ItemType File -Force }; Add-Content -Path $PROFILE -Value '$env:UNSPLASH_ACCESS_KEY="here-is-your-key"'; . $PROFILE
+```
+
+あるいは、APIキー設定用のファイルを作成し、中身を編集してください。見ればわかります。
+cp .env.local.example .env.local
+
+## 準備
+
+1. **リポジトリからクローン**
+      
+   フォルダを作る
+   ```bash
+   mkdir project-name
+   ```
+   フォルダに移動
+   ```bash
+   cd project-name
+   ```
+   
+   フォルダ内でリポジトリをクローン（展開する）
+   ```bash
+   git clone https://github.com/toiee-lab/claude1page.git .
+   ```
+
+2. **リポジトリの初期化**
+   ```bash
+   rm -rf .git
+   git init
+   ```
+
+3. **Unsplashで画像が検索できるかテストする**
+   以下のコマンドでテストしてください。
+
+   ```bash
+   bash .claude/skills/unsplash-image-finder/unsplash-health-check.sh
+   ```
+
+以上で完了です。
+
+> **Claude Code on the Web（クラウドサンドボックス環境）でも動作します。**
+> Node.js・npm は不要です。シェルスクリプトがプロキシ環境を自動検出し、`curl` 経由で Unsplash API にアクセスします。
+
+## ポイント
+
+- **プロンプトファイルの活用**
+  - `prompt.md` や `prompt2.md` などのファイルを作って、プロンプトを書いてコピペすると便利です（gitに保存されません）
+  - あるいは、 prompt.md にプロンプトを書き込み、保存し、 `@prompt.md` で呼び出しても良いです
+
+- **コンテンツの管理**
+  - `project-docs` ディレクトリに、コンテキストコンテンツなどを保管して、呼び出すと便利です
+
+- **画像の自動取得**
+  - Unsplash APIを設定すると、Claude Codeが自動で高品質な画像を検索・取得します
+  - 手動で画像を探す手間が省けて、作業効率が大幅に向上します
+  - 取得される画像は最適化済み（WebP形式、適切なサイズ）で、ページの読み込み速度も向上します
+
+## プロンプト例
+
+```
+Webページを作成してください。
+
+- ここにありったけ、情報を書いてください
+- どんなデザインが良いのか？
+- もし、カラーが決まっているなら指定する
+- 誰向けのものなのか？
+- あなたが伝えたいこと、あなたの強み、特徴など
+- お店の名前や、プロダクトについての説明など
+- 難しく考えず、たくさん書いて、あとはClaudeに任せましょう
+```
+
+## ファイル構成
+
+```
+claude1page/
+├── public/              # Cloudflare Pages 公開用ディレクトリ
+│   ├── index.html      # メインページ
+│   └── assets/         # CSS、JS、画像などの静的ファイル
+├── project-docs/       # プロジェクト関連ドキュメント
+├── scripts/            # アップデートスクリプト
+│   ├── update.sh      # macOS/Linux用
+│   └── update.ps1     # Windows用
+├── .claude/
+│   ├── settings.json  # Claude Code設定
+│   ├── launch.json    # ローカル開発サーバー設定
+│   └── skills/        # スキル定義
+│       ├── unsplash-image-finder/
+│       │   ├── unsplash-search.sh        # 画像検索スクリプト
+│       │   ├── unsplash-health-check.sh  # 動作確認スクリプト
+│       │   ├── unsplash-track.sh         # ダウンロード記録スクリプト
+│       │   └── references/setup.md       # APIキー設定ガイド
+│       └── one-page-site-builder/
+│           └── SKILL.md                  # ワンページサイト生成スキル（技術仕様・ナビ仕様など統合）
+├── CLAUDE.md          # Claude Code用の指示書
+├── .env.local.example # API設定テンプレート
+└── README.md          # このファイル
+```
+
+## Cloudflare Pagesでの公開
+
+1. Cloudflareにログイン
+2. コンピューティングとAI > Workers & Pages を選択
+3. アプリケーションを作成 > Pagesタブ をクリック
+4. 既存のGitリポジトリをインポートするを選び、リポジトリを選ぶ
+5. 公開フォルダに、 `public` を設定する
+6. Deploy
+7. その後、必要に応じて、カスタムドメインなどを設定する
+
+※ Cloudflare でドメインを管理すれば、すごく簡単にできるようになります
+
+## アップデート方法
+
+このテンプレートリポジトリから作成した新しいリポジトリには、自動でアップデートはされません（通知も）。
+
+時々、Claude Code の新しい機能に対応させるために、アップデートを行うことがあります。手順は、以下の通りです。
+
+### (1) アップデートスクリプトを実行
+
+プロジェクトのルートディレクトリで、以下のワンライナーを実行してください。
+
+**macOS / Linux:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/toiee-lab/claude1page/main/scripts/update.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/toiee-lab/claude1page/main/scripts/update.ps1 | iex
+```
+
+### (2) 変更点をチェック
+
+ソースコード管理などで、変更されたファイルをチェックしてください。もし、あなたが意図的に変更したものを上書きしているなら、以前のものと今のものを比較しながら、調整してください。
+
+特に、 **CLAUDE.md ファイルをカスタマイズしている場合は、ご自身の変更を再反映** してください。
