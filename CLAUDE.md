@@ -5,6 +5,23 @@
 - **運営**: TPJ編集部
 - **目的**: 日本全国の「第三の居場所」（ホテル・レストラン・カフェ・サウナ・ウェルネス施設・コワーキングなど）を独自の7軸基準で評価・認証し、AI時代の「場所選び」における業界標準データ基盤となる。
 
+## 制作方針の参照先（必読）
+
+本プロジェクトの制作判断は、以下の6ファイルに基づく。コンテンツ制作・サイト編集の前に必ず参照すること。
+
+| ファイル | 場所 | 役割 |
+|---|---|---|
+| CLAUDE-v2.md | `project-docs/CLAUDE-v2.md` | TPJ統合制作方針・確定コピー・トーン＆マナー |
+| DEFINITION.md | `project-docs/DEFINITION.md` | サードプレイスの定義（全コンテンツの根幹） |
+| EDITORIAL-COMMERCE.md | `project-docs/EDITORIAL-COMMERCE.md` | 有償コンテンツの編集的見せ方・価格設計 |
+| INFORMATION-ARCHITECTURE.md | `project-docs/INFORMATION-ARCHITECTURE.md` | サイトマップ・URL構造・回遊導線 |
+| AEO-PLAYBOOK.md | `project-docs/AEO-PLAYBOOK.md` | AI引用獲得の実装アクション・タグ設計 |
+| BUSINESS-MODEL.md | `project-docs/BUSINESS-MODEL.md` | 事業モデル（⚠️ サイト非掲載） |
+
+**メインサイトのコピーは `project-docs/CLAUDE-v2.md` セクション6「確定コピー」を正とする。**
+
+---
+
 ## ⚠️ BUSINESS-MODEL.mdの内容はサイトに出さない（絶対厳守）
 
 **BUSINESS-MODEL.md は内部設計書である。以下の内容はサイト・HTML・記事のいずれにも一切記述しない。**
