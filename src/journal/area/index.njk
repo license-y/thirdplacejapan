@@ -1,0 +1,32 @@
+---
+title: "場所をめぐる"
+description: "都道府県・エリアから日本のサードプレイスを探す。Third Place Japan 認証店舗の地域別一覧。"
+canonical: "/journal/area/"
+---
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">場所をめぐる</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">エリアから探す</h1>
+    <div class="gold-rule"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+    {% for pref in areas %}
+    <a href="/journal/area/{{ pref.slug }}/"
+       class="border border-border p-6 hover:border-gold group transition-colors">
+      <h2 class="font-serif text-xl font-light text-dark group-hover:text-gold transition-colors mb-2">{{ pref.name }}</h2>
+      {% set prefVenues = venues | venuesByArea(pref.slug) %}
+      {% if prefVenues.length %}
+      <p class="text-xs text-muted">{{ prefVenues.length }}件の認証店舗</p>
+      {% endif %}
+      <div class="mt-4 flex flex-wrap gap-2">
+        {% for city in pref.cities | head(3) %}
+        <span class="text-xs text-muted border border-border px-2 py-0.5">{{ city.name }}</span>
+        {% endfor %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>

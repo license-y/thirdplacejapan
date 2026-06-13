@@ -1,0 +1,84 @@
+---
+pagination:
+  data: areaL3Cat
+  size: 1
+  alias: item
+permalink: "/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/"
+layout: area.njk
+---
+{# L3×業種ハブ: AEOの核心 — エリア×業種クエリへの回答ページ #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}でおすすめの{{ item.category.name_ja }}はどこですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japanが{{ item.area.name }}で認証した{{ item.category.name_ja }}として、{% for v in item.venues %}{{ v.name }}（{{ v.grade }}認証・{{ v.axes_primary }}に優れる）{% if not loop.last %}、{% endif %}{% endfor %}があります。"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Journal", "item": "{{ site.url }}/journal/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ item.prefecture.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ item.city.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ item.area.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/" },
+    { "@type": "ListItem", "position": 5, "name": "{{ item.category.name_ja }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/" }
+  ]
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
+    <a href="/journal/" class="hover:text-gold transition-colors">Journal</a>
+    <span>/</span>
+    <a href="/journal/area/{{ item.prefecture.slug }}/" class="hover:text-gold transition-colors">{{ item.prefecture.name }}</a>
+    <span>/</span>
+    <a href="/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="hover:text-gold transition-colors">{{ item.city.name }}</a>
+    <span>/</span>
+    <a href="/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/" class="hover:text-gold transition-colors">{{ item.area.name }}</a>
+    <span>/</span>
+    <span>{{ item.category.name_ja }}</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">{{ item.area.name }} × {{ item.category.name_ja }}</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4 leading-snug">
+      {{ item.area.name }}の<br>{{ item.category.name_ja }}
+    </h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-xl">
+      Third Place Japanが{{ item.area.name }}エリアで認証した、{{ item.category.name_ja }}の一覧です。
+    </p>
+  </div>
+
+  {# 認証店舗一覧 #}
+  {% if item.venues.length %}
+  <section data-aos="fade-up">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for v in item.venues | sortByGrade %}
+      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {# 空き枠（デジタル不動産）— EDITORIAL-COMMERCE.md準拠: 煽らず"余白"として表現 #}
+  <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
+    <p class="font-serif text-sm text-muted italic">
+      「この場所は、まだ見つかっていません。」
+    </p>
+  </div>
+
+</div>

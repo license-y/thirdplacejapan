@@ -1,0 +1,56 @@
+---
+layout: journal.njk
+og_type: "article"
+---
+<article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+
+  {# パンくず #}
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
+    <a href="/journal/" class="hover:text-gold transition-colors">Journal</a>
+    {% if articleType == "feature" %}
+    <span class="text-border">／</span>
+    <a href="/journal/feature/" class="hover:text-gold transition-colors">読み物</a>
+    {% elif articleType == "story" %}
+    <span class="text-border">／</span>
+    <a href="/journal/story/" class="hover:text-gold transition-colors">店舗ストーリー</a>
+    {% endif %}
+    <span class="text-border">／</span>
+    <span>{{ title }}</span>
+  </nav>
+
+  {# カテゴリラベル #}
+  {% if tags %}
+  <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+    {% for tag in tags %}
+    {% if tag != "articles" and tag != "feature" and tag != "story" %}
+    <span class="label">{{ tag }}</span>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {# タイトル #}
+  <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+    {{ title }}
+  </h1>
+
+  {# 日付 #}
+  {% if date %}
+  <p class="text-xs text-muted mb-12" data-aos="fade-up">
+    <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
+  </p>
+  {% endif %}
+
+  {# サムネイル #}
+  {% if thumbnail %}
+  <div class="mb-12 -mx-6 md:mx-0" data-aos="fade-up">
+    <img src="{{ thumbnail }}" alt="{{ title }}" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+  </div>
+  {% endif %}
+
+  {# 本文 #}
+  <div class="prose" data-aos="fade-up">
+    {{ content | safe }}
+  </div>
+
+</article>

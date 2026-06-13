@@ -1,0 +1,58 @@
+[
+  {
+    "num": "01",
+    "slug": "comfort",
+    "name_ja": "居心地・空間品質",
+    "name_en": "Comfort & Space Quality",
+    "description_ja": "光、音、温度、素材——五感で感じる、空間そのものの質。",
+    "description_en": "Light, sound, temperature, texture — the quality of space felt through all five senses."
+  },
+  {
+    "num": "02",
+    "slug": "silence",
+    "name_ja": "静寂性・プライバシー",
+    "name_en": "Silence & Privacy",
+    "description_ja": "誰にも邪魔されない時間が守られているか。",
+    "description_en": "Whether your time is protected from interruption."
+  },
+  {
+    "num": "03",
+    "slug": "special",
+    "name_ja": "特別感・非日常性",
+    "name_en": "Special & Non-ordinary",
+    "description_ja": "日常から少し離れた、ここにしかない体験があるか。",
+    "description_en": "Whether it offers an experience that exists nowhere else."
+  },
+  {
+    "num": "04",
+    "slug": "revisit",
+    "name_ja": "再訪・継続価値",
+    "name_en": "Revisit Value",
+    "description_ja": "また訪れたいと思わせる力。",
+    "description_en": "The pull that makes you want to return."
+  },
+  {
+    "num": "05",
+    "slug": "inbound",
+    "name_ja": "インバウンド・多言語対応",
+    "name_en": "Inbound & Multilingual",
+    "description_ja": "海外からの訪問者も安心して過ごせるか。",
+    "description_en": "Whether international visitors can feel at ease."
+  },
+  {
+    "num": "06",
+    "slug": "record",
+    "name_ja": "記録・シェア体験",
+    "name_en": "Record & Share Experience",
+    "description_ja": "誰かに伝えたくなる、心が動いた瞬間があるか。",
+    "description_en": "Whether there's a moment you want to capture and share."
+  },
+  {
+    "num": "07",
+    "slug": "story",
+    "name_ja": "ストーリー・背景への共感",
+    "name_en": "Story & Background",
+    "description_ja": "その場所が積み重ねてきた歴史や哲学、こだわり。",
+    "description_en": "The history, philosophy, and conviction the place has built over time."
+  }
+]

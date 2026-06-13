@@ -1,0 +1,44 @@
+---
+layout: journal.njk
+lang: "en"
+title: "Certified Venues"
+description: "Third Place Japan certified venues in Japan. Spaces evaluated through 7 original axes and awarded certification from Certified to Flagship."
+canonical: "/en/journal/certified/"
+hreflang_ja: "/journal/certified/"
+hreflang_en: "/en/journal/certified/"
+---
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">Certified Venues</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">Certified Venues in Japan</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-xl">
+      Places certified by Third Place Japan through our 7-axis evaluation.
+      Each venue is recognized not for what it serves, but for how it makes you feel.
+    </p>
+  </div>
+
+  {% set enVenues = venues | venuesWithEn | sortByGrade %}
+  {% if enVenues.length %}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+    {% for v in enVenues %}
+    <a href="/en/journal/certified/{{ v.slug }}/" class="venue-card block p-6 bg-white hover:bg-ivory transition-colors group">
+      <div class="flex items-start justify-between mb-4">
+        <span class="grade-badge">{{ v.grade }}</span>
+        <span class="label">{{ v.category }}</span>
+      </div>
+      <h3 class="font-serif text-lg font-light text-dark mb-2 group-hover:text-gold transition-colors">{{ v.name_en }}</h3>
+      <p class="text-xs text-muted mb-3">{{ v.area_primary.area }}, Japan</p>
+      <p class="text-sm text-text leading-relaxed line-clamp-3">{{ v.citation_en }}</p>
+      <div class="mt-4">
+        <span class="text-xs text-gold border border-gold px-2 py-0.5">{{ v.axes_primary }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-sm text-muted">English venue pages coming soon.</p>
+  {% endif %}
+
+</div>

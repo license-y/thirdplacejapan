@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "tokyo",
+    "name": "東京都",
+    "name_en": "Tokyo",
+    "cities": [
+      {
+        "slug": "shibuya-ku",
+        "name": "渋谷区",
+        "name_en": "Shibuya-ku",
+        "areas": [
+          { "slug": "shibuya", "name": "渋谷", "name_en": "Shibuya" },
+          { "slug": "daikanyama", "name": "代官山", "name_en": "Daikanyama" },
+          { "slug": "nakameguro", "name": "中目黒", "name_en": "Nakameguro" },
+          { "slug": "ebisu", "name": "恵比寿", "name_en": "Ebisu" },
+          { "slug": "omotesando", "name": "表参道", "name_en": "Omotesando" }
+        ]
+      },
+      {
+        "slug": "minato-ku",
+        "name": "港区",
+        "name_en": "Minato-ku",
+        "areas": [
+          { "slug": "aoyama", "name": "青山", "name_en": "Aoyama" },
+          { "slug": "roppongi", "name": "六本木", "name_en": "Roppongi" },
+          { "slug": "azabu", "name": "麻布", "name_en": "Azabu" }
+        ]
+      },
+      {
+        "slug": "shinjuku-ku",
+        "name": "新宿区",
+        "name_en": "Shinjuku-ku",
+        "areas": [
+          { "slug": "shinjuku", "name": "新宿", "name_en": "Shinjuku" }
+        ]
+      },
+      {
+        "slug": "chuo-ku",
+        "name": "中央区",
+        "name_en": "Chuo-ku",
+        "areas": [
+          { "slug": "ginza", "name": "銀座", "name_en": "Ginza" },
+          { "slug": "nihonbashi", "name": "日本橋", "name_en": "Nihonbashi" }
+        ]
+      }
+    ]
+  }
+]

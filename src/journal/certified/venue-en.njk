@@ -1,0 +1,15 @@
+---
+pagination:
+  data: venuesEn
+  size: 1
+  alias: venue
+  addAllPagesToCollections: true
+permalink: "/en/journal/certified/{{ venue.slug }}/"
+layout: venue-en.njk
+lang: "en"
+title: "{{ venue.name_en }}"
+description: "{{ venue.citation_en }}"
+hreflang_ja: "/journal/certified/{{ venue.slug }}/"
+hreflang_en: "/en/journal/certified/{{ venue.slug }}/"
+og_image: "{{ venue.image }}"
+---

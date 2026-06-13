@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "green-beans-coffee-shibuya",
+    "name": "Green Beans Coffee",
+    "name_en": "Green Beans Coffee",
+    "citation": "Green Beans Coffeeは、東京・渋谷のスペシャルティコーヒー専門店として Third Place Japan Flagship 認証を取得。居心地と静寂性の両軸に優れ、一人時間・仕事・読書に最適な都市型サードプレイスとして認証されています。",
+    "citation_en": "Green Beans Coffee, a specialty coffee shop in Shibuya, Tokyo, holds Third Place Japan Flagship certification — recognized for exceptional comfort and silence, making it the city's premier destination for solo time, focused work, and quiet reading.",
+    "grade": "Flagship",
+    "grade_slug": "flagship",
+    "category": "カフェ・スペシャルティコーヒー",
+    "category_slug": "cafe-specialty-coffee",
+    "area_primary": {
+      "prefecture_slug": "tokyo",
+      "prefecture": "東京都",
+      "city_slug": "shibuya-ku",
+      "city": "渋谷区",
+      "area_slug": "shibuya",
+      "area": "渋谷"
+    },
+    "area_secondary": [],
+    "nearest_stations": ["渋谷駅", "表参道駅"],
+    "axes_primary": "居心地・空間品質",
+    "axes_primary_slug": "comfort",
+    "axes_secondary": ["静寂性・プライバシー", "ストーリー・背景への共感"],
+    "axes_secondary_slugs": ["silence", "story"],
+    "scores": {
+      "comfort": 9,
+      "silence": 9,
+      "special": 8,
+      "revisit": 9,
+      "inbound": 8,
+      "record": 7,
+      "story": 9
+    },
+    "address": "東京都渋谷区",
+    "address_en": "Shibuya, Tokyo, Japan",
+    "lat": 35.659,
+    "lng": 139.701,
+    "url": "",
+    "image": "/assets/images/venues/green-beans-coffee-shibuya.jpg",
+    "certified_date": "2026-01-01",
+    "has_en": true,
+    "published": true
+  }
+]

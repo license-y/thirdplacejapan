@@ -1,0 +1,20 @@
+{# venue-card.njk — Usage: {% set cardVenue = venue %}{% include "venue-card.njk" %} #}
+<a href="/journal/certified/{{ cardVenue.slug }}/" class="venue-card block p-6 bg-white hover:bg-ivory transition-colors group">
+  <div class="flex items-start justify-between mb-4">
+    <span class="grade-badge text-xs">{{ cardVenue.grade }}</span>
+    <span class="label text-xs">{{ cardVenue.category }}</span>
+  </div>
+  <h3 class="font-serif text-lg font-light text-dark mb-2 group-hover:text-gold transition-colors">
+    {{ cardVenue.name }}
+  </h3>
+  <p class="text-xs text-muted mb-4">
+    {{ cardVenue.area_primary.prefecture }} {{ cardVenue.area_primary.area }}
+  </p>
+  <p class="text-sm text-text leading-relaxed line-clamp-3">{{ cardVenue.citation }}</p>
+  <div class="mt-4 flex flex-wrap gap-2">
+    <span class="text-xs text-gold border border-gold px-2 py-0.5">{{ cardVenue.axes_primary }}</span>
+    {% for ax in cardVenue.axes_secondary %}
+    <span class="text-xs text-muted border border-border px-2 py-0.5">{{ ax }}</span>
+    {% endfor %}
+  </div>
+</a>

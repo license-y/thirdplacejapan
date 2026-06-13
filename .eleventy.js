@@ -1,24 +1,107 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
-const TAG_SLUGS = {
-  "カフェ": "cafe",
-  "ホテル": "hotel",
-  "サウナ": "sauna",
-  "コワーキング": "coworking",
-  "ウェルネス": "wellness",
-  "神社・パワースポット": "shrine-spots",
-  "自然・アウトドア": "nature",
-  "アート・文化": "art-culture",
+// 14業種スラッグ（AEO-PLAYBOOK 正本）
+const CATEGORY_SLUGS = {
+  "高級ホテル・ホテルラウンジ": "hotel-lounge",
+  "温泉旅館・高級旅館": "onsen-ryokan",
+  "高級レストラン・プライベートダイニング": "restaurant-dining",
+  "カフェ・スペシャルティコーヒー": "cafe-specialty-coffee",
+  "バー・ウイスキーバー・クラフトカクテル": "bar-whiskey",
+  "スパ・サウナ・ウェルネス施設": "spa-sauna-wellness",
+  "高級サロン・プライベートサロン": "premium-salon",
+  "コワーキング・シェアオフィス": "coworking",
+  "会員制ラウンジ・プライベートクラブ": "members-lounge",
+  "山・自然体験・グランピング": "nature-glamping",
+  "リトリート・禅・スピリチュアル体験": "retreat-zen",
+  "神社・寺院・パワースポット": "shrine-temple",
+  "インバウンド観光・体験施設": "inbound-experience",
+  "文化・スポーツ・レジャー施設": "culture-sports-leisure",
 };
 
-export default function (eleventyConfig) {
-  eleventyConfig.addFilter("tagSlug", (tag) => TAG_SLUGS[tag] || tag);
+const GRADE_SLUGS = {
+  "Certified": "certified",
+  "Silver": "silver",
+  "Gold": "gold",
+  "Platinum": "platinum",
+  "Flagship": "flagship",
+};
 
-  // 関連記事取得フィルター（タグ一致数が多い順、最大3件）
+const AXES_SLUGS = {
+  "居心地・空間品質": "comfort",
+  "静寂性・プライバシー": "silence",
+  "特別感・非日常性": "special",
+  "再訪・継続価値": "revisit",
+  "インバウンド・多言語対応": "inbound",
+  "記録・シェア体験": "record",
+  "ストーリー・背景への共感": "story",
+};
+
+const GRADE_ORDER = ["Certified", "Silver", "Gold", "Platinum", "Flagship"];
+
+// 記事カテゴリ（CLAUDE.md 固定8種）
+const ARTICLE_TAG_ORDER = [
+  "カフェ", "ホテル", "スパ・サウナ", "コワーキング",
+  "レストラン", "ウェルネス", "認証レポート", "AEO・メディア戦略",
+];
+
+export default function (eleventyConfig) {
+
+  // ==== Passthrough ====
+  eleventyConfig.addPassthroughCopy("src/assets");
+
+  // ==== Slug filters ====
+  eleventyConfig.addFilter("categorySlug", (cat) => CATEGORY_SLUGS[cat] || cat);
+  eleventyConfig.addFilter("gradeSlug", (grade) => GRADE_SLUGS[grade] || grade.toLowerCase());
+  eleventyConfig.addFilter("axisSlug", (axis) => AXES_SLUGS[axis] || axis);
+  eleventyConfig.addFilter("tagSlug", (tag) => CATEGORY_SLUGS[tag] || tag); // backward compat
+
+  // ==== Global slug maps ====
+  eleventyConfig.addGlobalData("gradeOrder", GRADE_ORDER);
+  eleventyConfig.addGlobalData("categorySlugs", CATEGORY_SLUGS);
+
+  // ==== Grade utilities ====
+  eleventyConfig.addFilter("gradeOrder", (grade) => GRADE_ORDER.indexOf(grade));
+
+  // ==== Venue filters ====
+  eleventyConfig.addFilter("venuesByArea", (venues, prefSlug, citySlug, areaSlug) => {
+    return (venues || []).filter(v => {
+      if (v.published === false) return false;
+      const a = v.area_primary;
+      if (!a) return false;
+      if (prefSlug && a.prefecture_slug !== prefSlug) return false;
+      if (citySlug && a.city_slug !== citySlug) return false;
+      if (areaSlug && a.area_slug !== areaSlug) return false;
+      return true;
+    });
+  });
+
+  eleventyConfig.addFilter("venuesByCategory", (venues, categorySlug) =>
+    (venues || []).filter(v => v.category_slug === categorySlug && v.published !== false)
+  );
+
+  eleventyConfig.addFilter("venuesByGrade", (venues, gradeSlug) =>
+    (venues || []).filter(v => v.grade_slug === gradeSlug && v.published !== false)
+  );
+
+  eleventyConfig.addFilter("publishedVenues", (venues) =>
+    (venues || []).filter(v => v.published !== false)
+  );
+
+  eleventyConfig.addFilter("venuesWithEn", (venues) =>
+    (venues || []).filter(v => v.has_en && v.published !== false)
+  );
+
+  eleventyConfig.addFilter("sortByGrade", (venues) =>
+    [...(venues || [])].sort((a, b) =>
+      GRADE_ORDER.indexOf(b.grade) - GRADE_ORDER.indexOf(a.grade)
+    )
+  );
+
+  // ==== 記事フィルター ====
   eleventyConfig.addFilter("relatedPosts", (collection, currentUrl, currentTags) => {
     const tags = (currentTags || []).filter(t => t !== "articles");
-    return collection
+    return (collection || [])
       .filter(p => p.url !== currentUrl)
       .map(p => {
         const pTags = (p.data.tags || []).filter(t => t !== "articles");
@@ -31,71 +114,37 @@ export default function (eleventyConfig) {
       .map(({ post }) => post);
   });
 
-  // 前後記事取得フィルター（コレクションは日付降順）
   eleventyConfig.addFilter("prevPost", (collection, currentUrl) => {
-    const idx = collection.findIndex(p => p.url === currentUrl);
+    const idx = (collection || []).findIndex(p => p.url === currentUrl);
     return idx < collection.length - 1 ? collection[idx + 1] : null;
   });
+
   eleventyConfig.addFilter("nextPost", (collection, currentUrl) => {
-    const idx = collection.findIndex(p => p.url === currentUrl);
+    const idx = (collection || []).findIndex(p => p.url === currentUrl);
     return idx > 0 ? collection[idx - 1] : null;
   });
-  eleventyConfig.addGlobalData("tagSlugs", TAG_SLUGS);
-  // src/articles/assets/ 以下の静的ファイルをそのまま出力先にコピー
-  eleventyConfig.addPassthroughCopy("src/articles/assets");
 
-  // タグページ（カテゴリ一覧）の自動生成
-  eleventyConfig.addCollection("tagList", function (collectionApi) {
-    const TAG_ORDER = ["カフェ","ホテル","サウナ","コワーキング","ウェルネス","神社・パワースポット","自然・アウトドア","アート・文化"];
-    const tagSet = new Set();
-    collectionApi.getAll().forEach((item) => {
-      (item.data.tags || []).forEach((tag) => {
-        if (tag !== "articles") tagSet.add(tag);
-      });
-    });
-    return [...tagSet].sort((a, b) => {
-      const ai = TAG_ORDER.indexOf(a);
-      const bi = TAG_ORDER.indexOf(b);
-      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-    });
-  });
-
-  // カテゴリ別記事一覧コレクション
-  eleventyConfig.addCollection("articles", function (collectionApi) {
-    return collectionApi
-      .getFilteredByTag("articles")
-      .sort((a, b) => b.date - a.date);
-  });
-
-  // 日付フォーマットフィルター（例: 2026年5月7日）- JST基準
-  eleventyConfig.addFilter("dateJa", function (date) {
+  // ==== 日付フィルター ====
+  eleventyConfig.addFilter("dateJa", (date) => {
     const d = new Date(date);
-    const jst = new Date(d.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+    const jst = new Date(d.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
     return `${jst.getFullYear()}年${jst.getMonth() + 1}月${jst.getDate()}日`;
   });
 
-  // ISO 8601 日付フィルター（例: 2026-05-07）- JST基準
-  eleventyConfig.addFilter("dateISO", function (date) {
+  eleventyConfig.addFilter("dateISO", (date) => {
     const d = new Date(date);
-    const jst = new Date(d.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' }));
+    const jst = new Date(d.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
     const y = jst.getFullYear();
-    const m = String(jst.getMonth() + 1).padStart(2, '0');
-    const day = String(jst.getDate()).padStart(2, '0');
+    const m = String(jst.getMonth() + 1).padStart(2, "0");
+    const day = String(jst.getDate()).padStart(2, "0");
     return `${y}-${m}-${day}`;
   });
 
-  // RSS用：RFC 2822形式の日付フィルター
-  eleventyConfig.addFilter("dateToRfc2822", function (date) {
-    return new Date(date).toUTCString();
-  });
+  eleventyConfig.addFilter("dateToRfc2822", (date) => new Date(date).toUTCString());
 
-  // 配列の先頭N件を返すフィルター
-  eleventyConfig.addFilter("head", function (array, n) {
-    return array.slice(0, n);
-  });
+  eleventyConfig.addFilter("head", (array, n) => (array || []).slice(0, n));
 
-  // FAQPage Schema用：HTMLからQ&Aペアを抽出
-  eleventyConfig.addFilter("extractFAQ", function (content) {
+  eleventyConfig.addFilter("extractFAQ", (content) => {
     if (!content) return [];
     const items = [];
     const regex = /<strong>(Q\.[^<]+)<\/strong><br\s*\/?>([\s\S]*?)<\/p>/gi;
@@ -106,6 +155,35 @@ export default function (eleventyConfig) {
       if (q && a) items.push({ q, a });
     }
     return items;
+  });
+
+  eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
+
+  // ==== Collections ====
+  eleventyConfig.addCollection("articles", (api) =>
+    api.getFilteredByTag("articles").sort((a, b) => b.date - a.date)
+  );
+
+  eleventyConfig.addCollection("features", (api) =>
+    api.getFilteredByTag("feature").sort((a, b) => b.date - a.date)
+  );
+
+  eleventyConfig.addCollection("stories", (api) =>
+    api.getFilteredByTag("story").sort((a, b) => b.date - a.date)
+  );
+
+  eleventyConfig.addCollection("tagList", (api) => {
+    const tagSet = new Set();
+    api.getAll().forEach((item) => {
+      (item.data.tags || []).forEach((tag) => {
+        if (!["articles", "feature", "story"].includes(tag)) tagSet.add(tag);
+      });
+    });
+    return [...tagSet].sort((a, b) => {
+      const ai = ARTICLE_TAG_ORDER.indexOf(a);
+      const bi = ARTICLE_TAG_ORDER.indexOf(b);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    });
   });
 
   return {

@@ -1,0 +1,40 @@
+---
+title: "店舗ストーリー"
+description: "Third Place Japan 認証店舗の世界観を編集記事として伝える、店舗ストーリー一覧。"
+canonical: "/journal/story/"
+---
+<div class="max-w-4xl mx-auto px-6 py-24">
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">Store Story</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">店舗ストーリー</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted">認証店舗の在り方を、編集部が記録します。</p>
+  </div>
+
+  {% if collections.stories and collections.stories.length %}
+  <div class="space-y-10">
+    {% for post in collections.stories %}
+    <a href="{{ post.url }}" class="group flex gap-6 border-b border-border pb-10" data-aos="fade-up">
+      {% if post.data.thumbnail %}
+      <div class="w-32 h-24 shrink-0 overflow-hidden">
+        <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+      </div>
+      {% endif %}
+      <div>
+        <h2 class="font-serif text-xl font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2">
+          {{ post.data.title }}
+        </h2>
+        {% if post.data.description %}
+        <p class="text-sm text-muted line-clamp-2">{{ post.data.description }}</p>
+        {% endif %}
+        <p class="text-xs text-muted mt-2">{{ post.date | dateJa }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-sm text-muted">店舗ストーリーを準備中です。</p>
+  {% endif %}
+
+</div>

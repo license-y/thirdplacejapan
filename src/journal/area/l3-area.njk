@@ -1,0 +1,96 @@
+---
+pagination:
+  data: areaL3
+  size: 1
+  alias: item
+permalink: "/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/"
+layout: area.njk
+---
+{# FAQPage JSON-LD（このエリアの認証店舗クエリに対応）#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}でサードプレイスとして認証された場所はどこですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japanが{{ item.area.name }}で認証した場所として、{% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}{% for v in av %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Journal", "item": "{{ site.url }}/journal/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ item.prefecture.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ item.city.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ item.area.name }}", "item": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/" }
+  ]
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
+    <a href="/journal/" class="hover:text-gold transition-colors">Journal</a>
+    <span>/</span>
+    <a href="/journal/area/{{ item.prefecture.slug }}/" class="hover:text-gold transition-colors">{{ item.prefecture.name }}</a>
+    <span>/</span>
+    <a href="/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="hover:text-gold transition-colors">{{ item.city.name }}</a>
+    <span>/</span>
+    <span>{{ item.area.name }}</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">{{ item.prefecture.name }} {{ item.city.name }}</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">
+      {{ item.area.name }}のサードプレイス
+    </h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted">
+      {{ item.area.name }}エリアで Third Place Japan が認証した場所。
+    </p>
+  </div>
+
+  {# 業種ハブリンク（存在する業種のみ）#}
+  {% set areaCats = areaL3Cat | selectattr("area.slug", "==", item.area.slug) %}
+  {% if areaCats.length %}
+  <section class="mb-12" data-aos="fade-up">
+    <p class="label mb-4">業種から探す</p>
+    <div class="flex flex-wrap gap-3">
+      {% for cat in areaL3Cat %}
+      {% if cat.area.slug == item.area.slug and cat.prefecture.slug == item.prefecture.slug %}
+      <a href="/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ cat.category.slug }}/"
+         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors">
+        {{ cat.category.name_ja }}
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {# 認証店舗一覧 #}
+  {% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+  {% if areaVenues.length %}
+  <section data-aos="fade-up">
+    <p class="label mb-6">認証店舗</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for v in areaVenues | sortByGrade %}
+      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% endfor %}
+    </div>
+  </section>
+  {% else %}
+  <p class="text-sm text-muted" data-aos="fade-up">このエリアの認証店舗は準備中です。</p>
+  {% endif %}
+
+</div>

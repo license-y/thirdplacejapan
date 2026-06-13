@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "certified",
+    "name": "Certified",
+    "label_ja": "認証",
+    "description_ja": "サードプレイスとしての基準を満たした場所",
+    "description_en": "Meets the foundational standards as a third place"
+  },
+  {
+    "slug": "silver",
+    "name": "Silver",
+    "label_ja": "シルバー",
+    "description_ja": "複数の軸で際立った価値を持つ場所",
+    "description_en": "Stands out across multiple evaluation axes"
+  },
+  {
+    "slug": "gold",
+    "name": "Gold",
+    "label_ja": "ゴールド",
+    "description_ja": "高い水準で一貫した体験価値を提供する場所",
+    "description_en": "Delivers consistent, high-level experiential value"
+  },
+  {
+    "slug": "platinum",
+    "name": "Platinum",
+    "label_ja": "プラチナ",
+    "description_ja": "極めて優れたサードプレイス体験を実現する場所",
+    "description_en": "Achieves an exceptionally refined third-place experience"
+  },
+  {
+    "slug": "flagship",
+    "name": "Flagship",
+    "label_ja": "フラッグシップ",
+    "description_ja": "TPJが見つめる価値観を体現する最高位の認証",
+    "description_en": "The highest certification — embodies everything TPJ stands for"
+  }
+]
