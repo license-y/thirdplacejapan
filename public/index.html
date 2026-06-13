@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Third Place Japan | 日本初のサードプレイス認証機関</title>
-  <meta name="description" content="Third Place Japan（サードプレイスジャパン）は、ホテル・旅館・スパ・カフェ・コワーキングなど業種を横断し、「いる体験の価値」を7軸評価基準で認証する日本唯一の認証メディアです。">
-  <meta name="keywords" content="サードプレイス,第三の居場所,TPJ認証,ホテル,旅館,スパ,カフェ,コワーキング,サードプレイスジャパン,Third Place Japan">
-  <meta property="og:title" content="Third Place Japan | 日本初のサードプレイス認証機関">
-  <meta property="og:description" content="「どこにいるか」を、定義する。日本初のサードプレイス認証機関。7軸評価基準で、いる体験の価値を認証します。">
+  <title>Third Place Japan | 日本初のサードプレイス認証</title>
+  <meta name="description" content="Third Place Japan（サードプレイスジャパン）は、日本全国の「第三の居場所」を独自の7軸基準で評価・認証する、日本初のサードプレイス認証です。">
+  <meta name="keywords" content="サードプレイス,第三の居場所,TPJ認証,サードプレイスジャパン,Third Place Japan,いる体験">
+  <meta property="og:title" content="Third Place Japan | 日本初のサードプレイス認証">
+  <meta property="og:description" content="どこにいるか、を定義する。丁寧に場をつくる人たちのための、日本初のサードプレイス認証。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thirdplacejapan.com">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛</text></svg>">
+  <link rel="canonical" href="https://thirdplacejapan.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23B8960C'>✦</text></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS v4 -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
@@ -32,556 +30,325 @@
 
   <style type="text/tailwindcss">
     @theme {
-      --color-primary: #1A1008;
-      --color-secondary: #3D2B1F;
-      --color-accent: #B8960C;
-      --color-accent-light: #D4AF37;
-      --color-bg: #FAF8F5;
-      --color-surface: #FFFFFF;
-      --color-text: #2D2A26;
-      --color-muted: #6B5C52;
+      --color-primary:   #1C1C1C;
+      --color-secondary: #4A4A4A;
+      --color-accent:    #B8960C;
+      --color-bg:        #F8F6F1;
+      --color-surface:   #FFFFFF;
+      --color-text:      #2D2A26;
+      --color-muted:     #6B5C52;
       --font-serif: 'Noto Serif JP', serif;
-      --font-sans: 'Noto Sans JP', sans-serif;
+      --font-sans:  'Noto Sans JP', sans-serif;
     }
   </style>
 
   <style>
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #FAF8F5;
+      background-color: #F8F6F1;
       color: #2D2A26;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3, h4 {
-      font-family: 'Noto Serif JP', serif;
-    }
+    h1, h2, h3, h4, h5 { font-family: 'Noto Serif JP', serif; }
 
-    /* ========== NAVIGATION ========== */
+    /* ── NAV ── */
     #navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
-      transition: all 0.4s ease;
-      padding: 1.25rem 0;
+      padding: 1.75rem 0;
+      transition: padding .5s ease, background .5s ease, border-color .5s ease;
     }
     #navbar.scrolled {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 0.75rem 0;
-      box-shadow: 0 1px 20px rgba(26, 16, 8, 0.08);
+      background: rgba(248,246,241,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 1.1rem 0;
+      border-bottom: 1px solid rgba(184,150,12,0.12);
     }
-    #navbar .nav-logo {
-      color: #B8960C;
-      transition: color 0.4s;
+    .nav-link {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color .35s;
     }
-    #navbar .nav-link {
-      color: rgba(255, 255, 255, 0.85);
-      transition: color 0.4s;
-    }
-    #navbar.scrolled .nav-link {
-      color: #2D2A26;
-    }
-    #navbar.scrolled .nav-link:hover {
-      color: #B8960C;
-    }
-    #navbar .nav-btn {
-      border-color: rgba(184, 150, 12, 0.7);
-      color: #B8960C;
-    }
-    #navbar.scrolled .nav-btn {
-      border-color: #B8960C;
+    #navbar.scrolled .nav-link { color: #4A4A4A; }
+    .nav-link:hover                    { color: #B8960C !important; }
+    #navbar.scrolled .nav-link:hover   { color: #B8960C !important; }
+
+    /* ── HERO ── */
+    .hero-bg {
+      background: linear-gradient(160deg, #141210 0%, #1C1C1C 55%, #141210 100%);
     }
 
-    /* ========== HERO ========== */
-    .hero-bg {
-      background:
-        radial-gradient(ellipse at 20% 50%, rgba(61, 43, 31, 0.6) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(184, 150, 12, 0.06) 0%, transparent 50%),
-        linear-gradient(160deg, #1A1008 0%, #2C1A0E 40%, #1A1008 100%);
-    }
-    .hero-noise {
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    .gold-line {
-      width: 48px;
+    /* ── GOLD RULE ── */
+    .gold-rule {
+      display: block;
+      width: 38px;
       height: 1px;
       background: linear-gradient(90deg, transparent, #B8960C, transparent);
+      margin: 0 auto;
     }
 
-    /* ========== MARKET NUMBERS ========== */
-    .market-card {
-      border: 1px solid rgba(184, 150, 12, 0.2);
-      background: rgba(255, 255, 255, 0.04);
-      transition: all 0.3s ease;
-    }
-    .market-card:hover {
-      border-color: rgba(184, 150, 12, 0.5);
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    /* ========== HIERARCHY ========== */
-    .hierarchy-item {
-      position: relative;
-    }
-    .hierarchy-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -1.5rem;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 1.5rem;
-      background: linear-gradient(to bottom, #B8960C, rgba(184, 150, 12, 0.2));
-    }
-
-    /* ========== CATEGORY CARD ========== */
-    .category-card {
-      border: 1px solid rgba(61, 43, 31, 0.12);
-      transition: all 0.3s ease;
-      background: #FFFFFF;
-    }
-    .category-card:hover {
-      border-color: #B8960C;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(26, 16, 8, 0.08);
-    }
-    .category-card:hover .category-icon {
+    /* ── SECTION LABEL ── */
+    .label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
       color: #B8960C;
+      text-transform: uppercase;
     }
 
-    /* ========== AXIS CARD ========== */
-    .axis-item {
-      border-left: 2px solid rgba(184, 150, 12, 0.3);
-      transition: border-color 0.3s;
+    /* ── GAZE CARDS ── */
+    .gaze-card {
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(184,150,12,0.22);
+      transition: border-color .3s;
     }
-    .axis-item:hover {
-      border-left-color: #B8960C;
-    }
+    .gaze-card:hover { border-top-color: #B8960C; }
 
-    /* ========== QUOTE ========== */
-    .quote-text {
+    /* ── AXIS ROWS ── */
+    .axis-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.75rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(44,42,38,0.09);
+    }
+    .axis-row:first-child { border-top: 1px solid rgba(44,42,38,0.09); }
+    .axis-num {
       font-family: 'Noto Serif JP', serif;
-      line-height: 2;
+      font-size: 0.68rem;
+      color: rgba(184,150,12,0.45);
+      letter-spacing: 0.08em;
+      min-width: 1.8rem;
+      padding-top: 0.2rem;
     }
 
-    /* ========== CTA SECTION ========== */
-    .cta-bg {
-      background: linear-gradient(135deg, #9A7A08 0%, #B8960C 40%, #D4AF37 70%, #B8960C 100%);
+    /* ── GRADE CARDS ── */
+    .grade-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(184,150,12,0.18);
+      padding: 1.75rem 1rem;
+      text-align: center;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .grade-card:hover {
+      border-color: #B8960C;
+      box-shadow: 0 4px 28px rgba(184,150,12,0.08);
+    }
+    .grade-card.featured {
+      border-color: #B8960C;
     }
 
-    /* ========== MOBILE MENU ========== */
+    /* ── MOBILE MENU ── */
     #mobile-menu {
       display: none;
-      background: rgba(26, 16, 8, 0.97);
-      backdrop-filter: blur(12px);
+      background: rgba(20,18,16,0.97);
+      backdrop-filter: blur(14px);
     }
-    #mobile-menu.open {
-      display: block;
-    }
+    #mobile-menu.open { display: block; }
 
-    /* ========== SCROLLBAR ========== */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #FAF8F5; }
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: #F8F6F1; }
     ::-webkit-scrollbar-thumb { background: #B8960C; border-radius: 2px; }
 
-    /* ========== MISSION CARD ========== */
-    .mission-card {
-      border-top: 2px solid #B8960C;
-      transition: transform 0.3s;
+    /* ── BOUNCE ANIMATION ── */
+    @keyframes softBounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
     }
-    .mission-card:hover {
-      transform: translateY(-4px);
-    }
+    .soft-bounce { animation: softBounce 2.4s ease-in-out infinite; }
   </style>
 </head>
 <body>
 
-<!-- ============================================================
+<!-- ═══════════════════════════════════════════
      NAVIGATION
-============================================================ -->
+═══════════════════════════════════════════ -->
 <nav id="navbar" aria-label="メインナビゲーション">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-8 flex items-center justify-between">
+
     <!-- Logo -->
-    <a href="#" class="nav-logo font-serif text-2xl font-semibold tracking-[0.2em]" style="font-family:'Noto Serif JP',serif;">
+    <a href="#" style="font-family:'Noto Serif JP',serif; color:#B8960C; font-size:1.05rem; letter-spacing:0.3em; font-weight:300; text-decoration:none;">
       TPJ
     </a>
 
-    <!-- Desktop Nav -->
-    <ul class="hidden lg:flex items-center gap-8 text-sm tracking-wider" style="font-family:'Noto Sans JP',sans-serif;">
-      <li><a href="#mission" class="nav-link hover:opacity-80 transition-opacity">認証とは</a></li>
-      <li><a href="#axes" class="nav-link hover:opacity-80 transition-opacity">評価軸</a></li>
-      <li><a href="#market" class="nav-link hover:opacity-80 transition-opacity">市場</a></li>
-      <li><a href="#categories" class="nav-link hover:opacity-80 transition-opacity">カテゴリ</a></li>
-      <li><a href="#contact" class="nav-link hover:opacity-80 transition-opacity">お問い合わせ</a></li>
+    <!-- Desktop nav -->
+    <ul class="hidden lg:flex items-center gap-10" style="list-style:none; margin:0; padding:0;">
+      <li><a href="#about"         class="nav-link">TPJについて</a></li>
+      <li><a href="#standard"      class="nav-link">評価の基準</a></li>
+      <li><a href="#certification" class="nav-link">認証について</a></li>
+      <li><a href="/journal"       class="nav-link">Journal</a></li>
+      <li><a href="#contact"       class="nav-link">お問い合わせ</a></li>
     </ul>
 
-    <!-- CTA Button -->
-    <div class="hidden lg:flex items-center gap-4">
-      <a href="#cta" class="nav-btn border text-sm px-5 py-2 tracking-widest font-light transition-all hover:bg-accent hover:text-primary" style="font-family:'Noto Sans JP',sans-serif;">
-        認証申請
-      </a>
-    </div>
-
-    <!-- Mobile Hamburger -->
-    <button id="mobile-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"
-      class="lg:hidden text-white p-2">
-      <i data-lucide="menu" class="w-6 h-6"></i>
+    <!-- Mobile toggle -->
+    <button id="mobile-toggle"
+      aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu"
+      class="lg:hidden p-2" style="background:none; border:none; cursor:pointer; color:rgba(255,255,255,0.65);">
+      <i data-lucide="menu" style="width:1.2rem; height:1.2rem;"></i>
     </button>
   </div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile menu -->
   <div id="mobile-menu" role="menu">
-    <ul class="flex flex-col px-6 py-6 gap-5 text-sm tracking-wider" style="font-family:'Noto Sans JP',sans-serif;">
-      <li><a href="#mission" class="text-white/80 hover:text-accent block" onclick="closeMobileMenu()">認証とは</a></li>
-      <li><a href="#axes" class="text-white/80 hover:text-accent block" onclick="closeMobileMenu()">評価軸</a></li>
-      <li><a href="#market" class="text-white/80 hover:text-accent block" onclick="closeMobileMenu()">市場</a></li>
-      <li><a href="#categories" class="text-white/80 hover:text-accent block" onclick="closeMobileMenu()">カテゴリ</a></li>
-      <li><a href="#contact" class="text-white/80 hover:text-accent block" onclick="closeMobileMenu()">お問い合わせ</a></li>
-      <li>
-        <a href="#cta" class="inline-block border border-accent text-accent px-5 py-2 tracking-widest text-sm mt-2" onclick="closeMobileMenu()">
-          認証申請
-        </a>
-      </li>
+    <ul class="flex flex-col px-8 py-8 gap-6" style="list-style:none; margin:0; padding:2rem 2rem;">
+      <li><a href="#about"         onclick="closeMobileMenu()" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(255,255,255,0.6); text-decoration:none;">TPJについて</a></li>
+      <li><a href="#standard"      onclick="closeMobileMenu()" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(255,255,255,0.6); text-decoration:none;">評価の基準</a></li>
+      <li><a href="#certification" onclick="closeMobileMenu()" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(255,255,255,0.6); text-decoration:none;">認証について</a></li>
+      <li><a href="/journal"       onclick="closeMobileMenu()" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(255,255,255,0.6); text-decoration:none;">Journal</a></li>
+      <li><a href="#contact"       onclick="closeMobileMenu()" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.18em; color:rgba(255,255,255,0.6); text-decoration:none;">お問い合わせ</a></li>
     </ul>
   </div>
 </nav>
 
 
-<!-- ============================================================
-     HERO SECTION
-============================================================ -->
+<!-- ═══════════════════════════════════════════
+     1. HERO
+═══════════════════════════════════════════ -->
 <section id="hero" class="hero-bg relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div class="hero-noise"></div>
+  <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(184,150,12,0.35),transparent);"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(184,150,12,0.15),transparent);"></div>
 
-  <!-- Gold accent lines -->
-  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(184,150,12,0.4), transparent);"></div>
-  <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(184,150,12,0.2), transparent);"></div>
+  <div class="text-center px-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="1400">
 
-  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-24 lg:pt-0">
-    <!-- Label -->
-    <p class="hidden sm:block animate__animated animate__fadeIn text-xs tracking-[0.4em] text-accent/70 mb-8 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-      Japan's First Third Place Certification Authority
+    <p class="label mb-14" style="color:rgba(184,150,12,0.55);">
+      Japan's First Third Place Certification
     </p>
 
-    <!-- Gold divider -->
-    <div class="gold-line mx-auto mb-10 animate__animated animate__fadeIn animate__delay-1s"></div>
+    <span class="gold-rule mb-14"></span>
 
-    <!-- Main headline -->
-    <h1 class="animate__animated animate__fadeInUp text-white font-light leading-tight mb-6"
-      style="font-family:'Noto Serif JP',serif; font-size: clamp(1.2rem, 5.5vw, 5rem); letter-spacing: 0.02em; white-space: nowrap;">
-      「どこにいるか」を、定義する。
+    <h1 style="
+      font-family:'Noto Serif JP',serif;
+      color:#FFFFFF;
+      font-weight:300;
+      font-size: clamp(1.7rem, 5vw, 3.2rem);
+      letter-spacing:0.06em;
+      line-height:1.7;
+      margin-top:0;
+      margin-bottom:2rem;
+      white-space:nowrap;
+    ">
+      どこにいるか、を定義する。
     </h1>
 
-    <!-- Sub headline -->
-    <p class="animate__animated animate__fadeInUp animate__delay-1s text-accent font-light mb-8 tracking-wide"
-      style="font-family:'Noto Serif JP',serif; font-size: clamp(1rem, 3vw, 1.4rem);">
-      癒しを、正確に評価する。<br>日本初のサードプレイス認証機関。
+    <p style="
+      font-family:'Noto Serif JP',serif;
+      color:rgba(255,255,255,0.45);
+      font-weight:300;
+      font-size:clamp(0.82rem,1.8vw,0.95rem);
+      letter-spacing:0.1em;
+      line-height:2.4;
+    ">
+      丁寧に場をつくる人たちのための、<br>
+      日本初のサードプレイス認証。
     </p>
 
-    <!-- Body text -->
-    <p class="animate__animated animate__fadeIn animate__delay-2s text-white/60 font-light leading-relaxed mb-12 max-w-2xl mx-auto text-sm md:text-base"
-      style="font-family:'Noto Sans JP',sans-serif;">
-      人々が求める癒し・リラックス・非日常体験を、独自の7軸評価基準で認証する。<br class="hidden md:block">
-      Third Place Japanは、ホテル・旅館・スパ・カフェ・コワーキングなど業種を横断し、<br class="hidden md:block">
-      "いる体験の価値"を定義する日本唯一の認証メディアです。
-    </p>
+  </div>
 
-    <!-- CTA Buttons -->
-    <div class="animate__animated animate__fadeIn animate__delay-2s flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="#mission"
-        class="border border-accent/60 text-white/90 px-8 py-3 text-sm tracking-[0.2em] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-300"
-        style="font-family:'Noto Sans JP',sans-serif;">
-        認証について知る
-      </a>
-      <a href="#cta"
-        class="bg-accent text-primary px-8 py-3 text-sm tracking-[0.2em] hover:bg-accent-light transition-all duration-300 font-medium"
-        style="font-family:'Noto Sans JP',sans-serif;">
-        認証を申請する
-      </a>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-      <i data-lucide="chevron-down" class="w-5 h-5 text-accent/50"></i>
-    </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 soft-bounce">
+    <i data-lucide="chevron-down" style="width:1rem; height:1rem; color:rgba(184,150,12,0.38);"></i>
   </div>
 </section>
 
 
-<!-- ============================================================
-     MISSION SECTION
-============================================================ -->
-<section id="mission" class="bg-white py-24 md:py-32">
-  <div class="max-w-6xl mx-auto px-6">
+<!-- ═══════════════════════════════════════════
+     2. 思想 — 効率の先にあるもの
+═══════════════════════════════════════════ -->
+<section id="about" style="background-color:#F8F6F1;" class="py-32 md:py-44">
+  <div class="max-w-xl mx-auto px-8">
 
-    <!-- Section label -->
-    <p class="text-center text-xs tracking-[0.4em] text-accent uppercase mb-4" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      About TPJ
+    <p class="label mb-10 text-left md:text-center" data-aos="fade-up">
+      思想 — 効率の先にあるもの
     </p>
 
-    <h2 class="text-center text-3xl md:text-4xl font-light mb-6 text-primary" style="font-family:'Noto Serif JP',serif; letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      Third Place Japanとは
-    </h2>
+    <span class="gold-rule mb-14 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
 
-    <div class="gold-line mx-auto mb-10" data-aos="fade-up" data-aos-delay="150"></div>
+    <div style="font-family:'Noto Serif JP',serif; font-weight:300; line-height:2.3; color:#2D2A26; font-size:clamp(0.88rem,1.8vw,1rem);">
 
-    <!-- Lead quote -->
-    <p class="text-left md:text-center text-muted text-sm md:text-base leading-loose max-w-3xl mx-auto mb-20" style="font-family:'Noto Serif JP',serif;" data-aos="fade-up" data-aos-delay="200">
-      食べログが「おいしさ」を、ミシュランが「シェフの技術」を評価するように——<br class="hidden md:block">
-      TPJは「そこにいたいか」を評価する。
-    </p>
-
-    <!-- 4 Mission Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <div class="mission-card bg-bg p-8" data-aos="fade-up" data-aos-delay="100">
-        <div class="mb-5">
-          <i data-lucide="search" class="w-7 h-7 text-accent"></i>
-        </div>
-        <p class="text-xs tracking-[0.3em] text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">Discover</p>
-        <h3 class="text-lg font-medium text-primary mb-3" style="font-family:'Noto Serif JP',serif;">発掘</h3>
-        <p class="text-sm text-muted leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">
-          日本全国の「第三の居場所」を独自の視点で発掘する。隠れた名店も、正しく評価し世界へ。
-        </p>
-      </div>
-
-      <div class="mission-card bg-bg p-8" data-aos="fade-up" data-aos-delay="200">
-        <div class="mb-5">
-          <i data-lucide="bar-chart-2" class="w-7 h-7 text-accent"></i>
-        </div>
-        <p class="text-xs tracking-[0.3em] text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">Evaluate</p>
-        <h3 class="text-lg font-medium text-primary mb-3" style="font-family:'Noto Serif JP',serif;">評価</h3>
-        <p class="text-sm text-muted leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">
-          7軸の空間価値基準で厳密に評価する。感覚ではなく、構造化された基準によって。
-        </p>
-      </div>
-
-      <div class="mission-card bg-bg p-8" data-aos="fade-up" data-aos-delay="300">
-        <div class="mb-5">
-          <i data-lucide="badge-check" class="w-7 h-7 text-accent"></i>
-        </div>
-        <p class="text-xs tracking-[0.3em] text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">Certify</p>
-        <h3 class="text-lg font-medium text-primary mb-3" style="font-family:'Noto Serif JP',serif;">認証</h3>
-        <p class="text-sm text-muted leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">
-          認証されること自体がステータスになる仕組みを構築する。希少性が価値を生む。
-        </p>
-      </div>
-
-      <div class="mission-card bg-bg p-8" data-aos="fade-up" data-aos-delay="400">
-        <div class="mb-5">
-          <i data-lucide="globe" class="w-7 h-7 text-accent"></i>
-        </div>
-        <p class="text-xs tracking-[0.3em] text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">Publish</p>
-        <h3 class="text-lg font-medium text-primary mb-3" style="font-family:'Noto Serif JP',serif;">発信</h3>
-        <p class="text-sm text-muted leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">
-          人とAI、世界に向けてその価値を発信する。日英両言語で「日本の居場所」を世界へ。
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     MARKET SIZE SECTION
-============================================================ -->
-<section id="market" style="background-color:#1A1008;" class="py-24 md:py-36">
-  <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Section label -->
-    <p class="text-center text-xs tracking-[0.4em] text-accent/60 uppercase mb-4" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Market Scale
-    </p>
-
-    <h2 class="text-center font-light text-white mb-6" style="font-family:'Noto Serif JP',serif; font-size: clamp(1.6rem, 4vw, 2.5rem); letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      サードプレイス市場：約<span class="text-accent">60〜70兆円</span>
-    </h2>
-
-    <div class="gold-line mx-auto mb-8" data-aos="fade-up" data-aos-delay="150"></div>
-
-    <!-- Big number -->
-    <p class="text-center text-white/20 font-light mb-6" style="font-family:'Noto Serif JP',serif; font-size: clamp(3rem, 12vw, 8rem); letter-spacing:0.02em; line-height:1;" data-aos="fade-up" data-aos-delay="200">
-      ¥60〜70<span style="font-size:0.4em;">兆円</span>
-    </p>
-
-    <p class="text-left md:text-center text-white/50 text-sm leading-loose max-w-2xl mx-auto mb-16" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="250">
-      飲食・観光・ウェルネス・コミュニティを横断する巨大産業の<br class="hidden md:block">
-      高付加価値な交差点に、TPJは位置する。
-    </p>
-
-    <!-- Market breakdown grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-20">
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="100">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約15兆円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">レストラン市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="150">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約8兆円超</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">インバウンド市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="200">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約5〜6兆円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">ホテル・旅館市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="250">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約4兆円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">温泉・スパ市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="300">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約2兆円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">カフェ市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="350">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">約2兆円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">ウェルネス市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm" data-aos="fade-up" data-aos-delay="400">
-        <p class="text-accent text-lg font-light mb-1" style="font-family:'Noto Serif JP',serif;">数千億円</p>
-        <p class="text-white/50 text-xs tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">コワーキング市場</p>
-      </div>
-      <div class="market-card p-5 rounded-sm flex items-center justify-center" data-aos="fade-up" data-aos-delay="450">
-        <p class="text-white/25 text-xs text-center tracking-wide" style="font-family:'Noto Sans JP',sans-serif;">その他多数の<br>関連市場</p>
-      </div>
-    </div>
-
-    <!-- 5-Layer Hierarchy Model -->
-    <div data-aos="fade-up" data-aos-delay="100">
-      <p class="text-center text-xs tracking-[0.4em] text-accent/60 uppercase mb-8" style="font-family:'Noto Sans JP',sans-serif;">
-        Value Hierarchy Model
+      <p data-aos="fade-up" data-aos-delay="100" style="margin-bottom:1.8rem;">
+        かつて、場所を選ぶ基準は「効率」だった。近くて、安くて、便利であること。
       </p>
-      <div class="flex flex-col items-center gap-6">
-        <div class="hierarchy-item text-center">
-          <div class="border border-accent/40 px-10 py-3 text-white/80 text-sm tracking-widest inline-block" style="font-family:'Noto Serif JP',serif; min-width:220px;">
-            空間 <span class="text-accent/60 text-xs ml-2">Place</span>
-          </div>
-        </div>
-        <div class="hierarchy-item text-center mt-5">
-          <div class="border border-accent/40 px-10 py-3 text-white/80 text-sm tracking-widest inline-block" style="font-family:'Noto Serif JP',serif; min-width:220px;">
-            体験 <span class="text-accent/60 text-xs ml-2">Experience</span>
-          </div>
-        </div>
-        <div class="hierarchy-item text-center mt-5">
-          <div class="border border-accent/60 px-10 py-3 text-accent text-sm tracking-widest inline-block" style="font-family:'Noto Serif JP',serif; min-width:220px; background:rgba(184,150,12,0.07);">
-            価値 <span class="text-accent/60 text-xs ml-2">Value</span>
-          </div>
-        </div>
-        <div class="hierarchy-item text-center mt-5">
-          <div class="border border-accent/40 px-10 py-3 text-white/80 text-sm tracking-widest inline-block" style="font-family:'Noto Serif JP',serif; min-width:220px;">
-            コミュニティ <span class="text-accent/60 text-xs ml-2">Community</span>
-          </div>
-        </div>
-        <div class="text-center mt-5">
-          <div class="border border-accent/40 px-10 py-3 text-white/80 text-sm tracking-widest inline-block" style="font-family:'Noto Serif JP',serif; min-width:220px;">
-            ライフスタイル <span class="text-accent/60 text-xs ml-2">Lifestyle</span>
-          </div>
-        </div>
-      </div>
+
+      <p data-aos="fade-up" data-aos-delay="160" style="margin-bottom:1.8rem;">
+        けれど、時代は静かに変わり始めている。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="220" style="margin-bottom:1.8rem;">
+        人々が本当に求めているのは、「早く済ませられる場所」ではなく、「そこにいたいと思える場所」だ。居心地。静けさ。自分の時間。日常から少し離れた、特別な体験。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="280" style="margin-bottom:1.8rem;">
+        そうした価値は、これまで正しく言葉にされてこなかった。口コミの星の数や、検索順位では測れない。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="340" style="color:#6B5C52;">
+        Third Place Japanは、この「いる体験の価値」を見つめ直すための小さな視点として生まれた。
+      </p>
+
     </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     CATEGORY SECTION
-============================================================ -->
-<section id="categories" class="bg-bg py-24 md:py-32">
-  <div class="max-w-6xl mx-auto px-6">
+<!-- ═══════════════════════════════════════════
+     3. TPJのまなざし
+═══════════════════════════════════════════ -->
+<section id="gaze" style="background-color:#FFFFFF;" class="py-32 md:py-44">
+  <div class="max-w-4xl mx-auto px-8">
 
-    <p class="text-center text-xs tracking-[0.4em] text-accent uppercase mb-4" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Certification Categories
+    <p class="label mb-10 text-left md:text-center" data-aos="fade-up">
+      TPJのまなざし
     </p>
+    <span class="gold-rule mb-20 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
 
-    <h2 class="text-center text-3xl md:text-4xl font-light text-primary mb-6" style="font-family:'Noto Serif JP',serif; letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      認証対象カテゴリ
-    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-14">
 
-    <div class="gold-line mx-auto mb-6" data-aos="fade-up" data-aos-delay="150"></div>
-
-    <p class="text-left md:text-center text-muted text-sm leading-relaxed max-w-xl mx-auto mb-16" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="200">
-      業種の壁を越えて、「いる体験」の質で評価する。<br class="hidden md:block">
-      ホテルからカフェ、神社からコワーキングまで、横断的に認証します。
-    </p>
-
-    <!-- 14 Categories Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="50">
-        <i data-lucide="building-2" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">高級ホテル・<br>ホテルラウンジ</p>
+      <div class="gaze-card" data-aos="fade-up" data-aos-delay="100">
+        <p class="label mb-4" style="color:#B8960C;">Discover</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1rem; font-weight:400; color:#1C1C1C; letter-spacing:0.06em; margin-bottom:0.9rem;">
+          見つける
+        </h3>
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.8rem; line-height:2.1; color:#6B5C52;">
+          派手な広告の裏側にある、丁寧に育てられた場所を見つける。規模ではなく、在り方を見る。
+        </p>
       </div>
 
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-        <i data-lucide="home" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">温泉旅館・<br>高級旅館</p>
+      <div class="gaze-card" data-aos="fade-up" data-aos-delay="180">
+        <p class="label mb-4" style="color:#B8960C;">Evaluate</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1rem; font-weight:400; color:#1C1C1C; letter-spacing:0.06em; margin-bottom:0.9rem;">
+          見つめる
+        </h3>
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.8rem; line-height:2.1; color:#6B5C52;">
+          好き嫌いではなく、構造化された視点で、その空間がもたらす体験を見つめる。
+        </p>
       </div>
 
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="150">
-        <i data-lucide="utensils" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">高級レストラン・<br>プライベートダイニング</p>
+      <div class="gaze-card" data-aos="fade-up" data-aos-delay="260">
+        <p class="label mb-4" style="color:#B8960C;">Certify</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1rem; font-weight:400; color:#1C1C1C; letter-spacing:0.06em; margin-bottom:0.9rem;">
+          認める
+        </h3>
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.8rem; line-height:2.1; color:#6B5C52;">
+          数値化しづらかった価値を、ひとつの形として認める。競争のためでなく、大切にしてきたものを言葉にして残すために。
+        </p>
       </div>
 
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-        <i data-lucide="sparkles" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">スパ・サウナ・<br>ウェルネス施設</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="50">
-        <i data-lucide="plane" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">インバウンド観光・<br>体験施設</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-        <i data-lucide="sun" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">神社・寺院・<br>パワースポット</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="150">
-        <i data-lucide="coffee" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">カフェ・<br>スペシャルティコーヒー</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-        <i data-lucide="scissors" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">高級サロン・<br>プライベートサロン</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="50">
-        <i data-lucide="mountain" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">山・自然体験・<br>グランピング</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-        <i data-lucide="lock" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">会員制ラウンジ・<br>プライベートクラブ</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="150">
-        <i data-lucide="book-open" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">ブックカフェ・<br>美術館カフェ・文化施設</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-        <i data-lucide="leaf" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">リトリート・禅・<br>スピリチュアル体験</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="250">
-        <i data-lucide="briefcase" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">コワーキング・<br>シェアオフィス</p>
-      </div>
-
-      <div class="category-card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
-        <i data-lucide="glass-water" class="category-icon w-7 h-7 text-secondary mx-auto mb-3 transition-colors duration-300"></i>
-        <p class="text-xs text-text leading-snug" style="font-family:'Noto Sans JP',sans-serif;">バー・ウイスキーバー・<br>クラフトカクテル</p>
+      <div class="gaze-card" data-aos="fade-up" data-aos-delay="340">
+        <p class="label mb-4" style="color:#B8960C;">Publish</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:1rem; font-weight:400; color:#1C1C1C; letter-spacing:0.06em; margin-bottom:0.9rem;">
+          伝える
+        </h3>
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.8rem; line-height:2.1; color:#6B5C52;">
+          その価値を、日本語と英語で、人にもAIにも届く形で発信する。静かに、しかし確かに。
+        </p>
       </div>
 
     </div>
@@ -589,96 +356,79 @@
 </section>
 
 
-<!-- ============================================================
-     7-AXIS EVALUATION SECTION
-============================================================ -->
-<section id="axes" class="bg-white py-24 md:py-32">
-  <div class="max-w-5xl mx-auto px-6">
+<!-- ═══════════════════════════════════════════
+     4. 7軸の基準
+═══════════════════════════════════════════ -->
+<section id="standard" style="background-color:#F8F6F1;" class="py-32 md:py-44">
+  <div class="max-w-2xl mx-auto px-8">
 
-    <p class="text-center text-xs tracking-[0.4em] text-accent uppercase mb-4" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Evaluation Criteria
+    <p class="label mb-10 text-left md:text-center" data-aos="fade-up">
+      7軸の基準 — いる体験を、7つの視点で見つめる
+    </p>
+    <span class="gold-rule mb-10 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
+
+    <p style="font-family:'Noto Serif JP',serif; font-size:0.86rem; line-height:2.3; color:#6B5C52; margin-bottom:3rem;"
+       class="text-left md:text-center"
+       data-aos="fade-up" data-aos-delay="120">
+      居心地のよさは、星の数では測れない。静けさは、口コミでは伝わらない。<br class="hidden md:block">
+      その場所が持つ物語は、検索結果には現れない。
     </p>
 
-    <h2 class="text-center text-3xl md:text-4xl font-light text-primary mb-4" style="font-family:'Noto Serif JP',serif; letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      TPJ独自の7軸評価基準
-    </h2>
+    <div data-aos="fade-up" data-aos-delay="160">
 
-    <p class="text-left md:text-center text-muted text-sm mb-6" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="150">
-      空間の体験価値を、7つの軸で定義・数値化する
-    </p>
-
-    <div class="gold-line mx-auto mb-16" data-aos="fade-up" data-aos-delay="200"></div>
-
-    <!-- 7 Axes -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <div class="axis-item pl-6 py-2" data-aos="fade-right" data-aos-delay="100">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">01</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">居心地・空間品質</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">空間の設計・素材・光・音・温度など、五感で感じる総合的な居心地を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">01</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">居心地・空間品質</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">光、音、温度、素材——五感で感じる、空間そのものの質。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2" data-aos="fade-left" data-aos-delay="150">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">02</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">静寂性・プライバシー</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">騒音からの遮断度、個人の空間が守られるかどうかのプライバシー確保を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">02</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">静寂性・プライバシー</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">誰にも邪魔されない時間が守られているか。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2" data-aos="fade-right" data-aos-delay="200">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">03</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">特別感・非日常性</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">日常を超えた特別な体験を提供できるか。希少性・唯一性・驚きの要素を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">03</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">特別感・非日常性</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">日常から少し離れた、ここにしかない体験があるか。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2" data-aos="fade-left" data-aos-delay="250">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">04</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">再訪・継続価値</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">一度の体験にとどまらず、繰り返し訪れたいと思わせる継続的な価値を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">04</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">再訪・継続価値</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">また訪れたいと思わせる力。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2" data-aos="fade-right" data-aos-delay="300">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">05</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">インバウンド・多言語対応</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">海外からの訪問者が安心して体験できる環境・言語対応・案内の充実度を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">05</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">インバウンド・多言語対応</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">海外からの訪問者も安心して過ごせるか。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2" data-aos="fade-left" data-aos-delay="350">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">06</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">記録・シェア体験</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">体験を残したい、誰かに伝えたいと思わせる記録・共有欲求を高める価値を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">06</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">記録・シェア体験</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">誰かに伝えたくなる、心が動いた瞬間があるか。</p>
         </div>
       </div>
 
-      <div class="axis-item pl-6 py-2 md:col-span-2 md:max-w-sm md:mx-auto w-full" data-aos="fade-up" data-aos-delay="400">
-        <div class="flex items-start gap-4">
-          <span class="text-accent/40 text-2xl font-light mt-1" style="font-family:'Noto Serif JP',serif; min-width:2rem;">07</span>
-          <div>
-            <h3 class="text-primary font-medium mb-1 text-base" style="font-family:'Noto Serif JP',serif;">ストーリー・背景への共感</h3>
-            <p class="text-muted text-xs leading-relaxed" style="font-family:'Noto Sans JP',sans-serif;">場の歴史・哲学・人・こだわりへの共感度。AIが引用するコンテンツ力の核心を評価する</p>
-          </div>
+      <div class="axis-row">
+        <span class="axis-num">07</span>
+        <div>
+          <h3 style="font-family:'Noto Serif JP',serif; font-size:0.92rem; font-weight:400; color:#1C1C1C; margin-bottom:0.35rem;">ストーリー・背景への共感</h3>
+          <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.76rem; color:#6B5C52; line-height:1.95;">その場所が積み重ねてきた歴史や哲学、こだわり。</p>
         </div>
       </div>
 
@@ -687,215 +437,218 @@
 </section>
 
 
-<!-- ============================================================
-     POSITIONING SECTION
-============================================================ -->
-<section id="positioning" style="background-color:#1A1008;" class="py-24 md:py-36 relative overflow-hidden">
-  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(184,150,12,0.3), transparent);"></div>
-  <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(184,150,12,0.15), transparent);"></div>
-  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(184,150,12,0.05) 0%, transparent 70%); pointer-events:none;"></div>
-  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full" style="background: radial-gradient(circle, rgba(184,150,12,0.05) 0%, transparent 70%); pointer-events:none;"></div>
+<!-- ═══════════════════════════════════════════
+     5. 認証という形（グレード）
+═══════════════════════════════════════════ -->
+<section id="certification" style="background-color:#FFFFFF;" class="py-32 md:py-44">
+  <div class="max-w-4xl mx-auto px-8">
 
-  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-
-    <p class="text-xs tracking-[0.4em] text-accent/60 uppercase mb-8" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Our Position
+    <p class="label mb-10 text-left md:text-center" data-aos="fade-up">
+      認証という形 — 在り方を、確かめるための指標
     </p>
+    <span class="gold-rule mb-10 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
 
-    <p class="text-accent/15 font-serif leading-none mb-4 select-none" style="font-size: 8rem; font-family: Georgia, serif; line-height: 0.8;" data-aos="fade-up" data-aos-delay="50">
-      "
-    </p>
+    <div style="font-family:'Noto Serif JP',serif; font-size:0.87rem; line-height:2.3; color:#6B5C52; max-width:34rem; margin:0 auto 3.5rem;"
+         class="text-left md:text-center"
+         data-aos="fade-up" data-aos-delay="120">
+      <p style="margin-bottom:1.4rem;">
+        TPJの認証は、5つの段階で構成されている。これは順位をつけるためのものではない。<br class="hidden md:block">
+        それぞれの場所がどのような体験を大切にしてきたのかを確かめ、静かに形にするためのものだ。
+      </p>
+      <p>
+        認証されるということは、その場所の在り方が、ひとつの基準として認められるということ。<br class="hidden md:block">
+        希少性は、結果として生まれるものであり、目的ではない。
+      </p>
+    </div>
 
-    <blockquote class="quote-text text-white/80 font-light mb-10" style="font-size: clamp(1.1rem, 3vw, 1.6rem);" data-aos="fade-up" data-aos-delay="100">
-      食べログは「どこで食べるか」を決める。<br>
-      ミシュランは「どこが最高か」を決める。<br>
-      <span class="text-accent">TPJは「どこにいるか」を決める。</span>
-    </blockquote>
+    <!-- Grade cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3" data-aos="fade-up" data-aos-delay="200">
 
-    <div class="gold-line mx-auto mb-10" data-aos="fade-up" data-aos-delay="200"></div>
+      <div class="grade-card">
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.58rem; letter-spacing:0.22em; color:rgba(184,150,12,0.4); margin-bottom:0.8rem;">I</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:0.85rem; font-weight:400; color:#1C1C1C; letter-spacing:0.1em;">Certified</h3>
+      </div>
 
-    <p class="text-white/45 text-sm leading-loose max-w-2xl mx-auto" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="300">
-      AI時代に人々が最も問うのは「おいしい店はどこか」ではなく、<br class="hidden md:block">
-      「今日、どこで自分らしくいられるか」だ。<br class="hidden md:block">
-      その答えを出せる権威は、世界にまだない。TPJがその権威になる。
-    </p>
+      <div class="grade-card">
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.58rem; letter-spacing:0.22em; color:rgba(184,150,12,0.4); margin-bottom:0.8rem;">II</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:0.85rem; font-weight:400; color:#1C1C1C; letter-spacing:0.1em;">Silver</h3>
+      </div>
 
+      <div class="grade-card featured">
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.58rem; letter-spacing:0.22em; color:#B8960C; margin-bottom:0.8rem;">III</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:0.85rem; font-weight:400; color:#B8960C; letter-spacing:0.1em;">Gold</h3>
+      </div>
+
+      <div class="grade-card">
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.58rem; letter-spacing:0.22em; color:rgba(184,150,12,0.4); margin-bottom:0.8rem;">IV</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:0.85rem; font-weight:400; color:#1C1C1C; letter-spacing:0.1em;">Platinum</h3>
+      </div>
+
+      <div class="grade-card">
+        <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.58rem; letter-spacing:0.22em; color:rgba(184,150,12,0.4); margin-bottom:0.8rem;">V</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:0.85rem; font-weight:400; color:#1C1C1C; letter-spacing:0.1em;">Flagship</h3>
+      </div>
+
+    </div>
   </div>
 </section>
 
 
-<!-- ============================================================
-     CTA SECTION
-============================================================ -->
-<section id="cta" class="cta-bg py-24 md:py-32">
-  <div class="max-w-3xl mx-auto px-6 text-center">
+<!-- ═══════════════════════════════════════════
+     6. 認証されることの意味
+═══════════════════════════════════════════ -->
+<section id="meaning" style="background-color:#F8F6F1;" class="py-32 md:py-44">
+  <div class="max-w-xl mx-auto px-8">
 
-    <p class="text-xs tracking-[0.4em] text-primary/60 uppercase mb-6" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Certification Application
+    <p class="label mb-10 text-left md:text-center" data-aos="fade-up">
+      認証されることの意味 — 同じ世界観を持つ場所と、並ぶということ
     </p>
+    <span class="gold-rule mb-14 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
 
-    <h2 class="text-3xl md:text-4xl font-light text-primary mb-6" style="font-family:'Noto Serif JP',serif; letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      認証を申請する
-    </h2>
+    <div style="font-family:'Noto Serif JP',serif; font-weight:300; line-height:2.4; font-size:clamp(0.88rem,1.8vw,1rem);">
 
-    <div class="w-12 h-px bg-primary/30 mx-auto mb-8" data-aos="fade-up" data-aos-delay="150"></div>
+      <p data-aos="fade-up" data-aos-delay="100" style="color:#2D2A26; margin-bottom:1.8rem;">
+        TPJに認証されるとは、単に「掲載される」ことではない。
+      </p>
 
-    <p class="text-left md:text-center text-primary/70 text-sm leading-loose max-w-xl mx-auto mb-10" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="200">
-      Third Place Japanの認証は、掲載されること自体がステータスになる設計です。<br class="hidden md:block">
-      選ばれた場所だけが、AIと人に引用される信頼の一次情報源になります。
+      <p data-aos="fade-up" data-aos-delay="160" style="color:#2D2A26; margin-bottom:1.8rem;">
+        効率ではなく体験を、規模ではなく在り方を大切にしてきた場所たちと、並ぶということ。その並びそのものが、ひとつのメッセージになる。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="220" style="color:#4A4A4A; margin-bottom:1.8rem;">
+        日英両言語での発信を通じて、国内外の人々に、そしてAIに、あなたの場所が持つ価値を、正しい言葉で伝えていく。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="280" style="color:#6B5C52; font-size:0.9em;">
+        それは広告ではなく、これまで積み重ねてきたものへの、ひとつの応答である。
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     7. 実践事例（GBC）
+═══════════════════════════════════════════ -->
+<section id="gbc" style="background-color:#1C1C1C;" class="py-32 md:py-44 relative overflow-hidden">
+  <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(184,150,12,0.28),transparent);"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(184,150,12,0.12),transparent);"></div>
+
+  <div class="max-w-xl mx-auto px-8">
+
+    <p class="label mb-10 text-left md:text-center" style="color:rgba(184,150,12,0.6);" data-aos="fade-up">
+      実践事例 — GBC
     </p>
+    <span class="gold-rule mb-14 hidden md:block" data-aos="fade-up" data-aos-delay="80"></span>
 
-    <div data-aos="fade-up" data-aos-delay="300">
-      <a href="#contact"
-        class="inline-block bg-primary text-white px-10 py-4 text-sm tracking-[0.25em] hover:bg-secondary transition-all duration-300"
-        style="font-family:'Noto Sans JP',sans-serif;">
-        認証申請フォームへ
+    <div style="font-family:'Noto Serif JP',serif; font-weight:300; line-height:2.4; font-size:clamp(0.88rem,1.8vw,1rem);">
+
+      <p data-aos="fade-up" data-aos-delay="100" style="color:rgba(255,255,255,0.7); margin-bottom:1.8rem;">
+        TPJが見つめてきた価値観は、机上のものではない。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="160" style="color:rgba(255,255,255,0.7); margin-bottom:1.8rem;">
+        GBC（Green Beans Coffee）は、TPJが大切にしてきた「いる体験」を実際の場として体現する場所である。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="220" style="color:rgba(255,255,255,0.45); margin-bottom:1.8rem; font-size:0.9em;">
+        ショールームとしての空間。評価基準を試す実証の場。同じ視点を持つ人たちが集まり、考えを交わす場所。
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="280" style="color:rgba(255,255,255,0.32); font-size:0.87em;">
+        理念は、そこに「在る」ことで初めて、伝わるものになる。
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     8. 申請への導線
+═══════════════════════════════════════════ -->
+<section id="contact" style="background-color:#FFFFFF;" class="py-32 md:py-44">
+  <div class="max-w-lg mx-auto px-8 text-center">
+
+    <p class="label mb-10" data-aos="fade-up">
+      申請への導線 — 興味を持っていただけたら
+    </p>
+    <span class="gold-rule mb-14" data-aos="fade-up" data-aos-delay="80"></span>
+
+    <div style="font-family:'Noto Serif JP',serif; font-weight:300; line-height:2.4; font-size:clamp(0.88rem,1.8vw,1rem);"
+         data-aos="fade-up" data-aos-delay="140">
+
+      <p style="color:#2D2A26; margin-bottom:1.2rem;">
+        Third Place Japanの認証は、編集部による審査制です。
+      </p>
+      <p style="color:#2D2A26; margin-bottom:1.6rem;">
+        すべての場所が認証されるわけではありません。
+      </p>
+      <p style="color:#6B5C52; margin-bottom:3.5rem; font-size:0.9em;">
+        けれど、もし「いる体験」を大切にされている場所があれば、<br class="hidden md:block">
+        ぜひ一度お話を伺えればと思います。
+      </p>
+
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="240">
+      <a href="mailto:info@thirdplacejapan.com"
+        id="contact-btn"
+        style="
+          display: inline-block;
+          border: 1px solid rgba(184,150,12,0.38);
+          color: #2D2A26;
+          padding: 0.95rem 3.5rem;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: 0.7rem;
+          letter-spacing: 0.28em;
+          text-decoration: none;
+          transition: border-color .35s, color .35s;
+        "
+        onmouseover="this.style.borderColor='#B8960C';this.style.color='#B8960C';"
+        onmouseout="this.style.borderColor='rgba(184,150,12,0.38)';this.style.color='#2D2A26';">
+        お問い合わせ
       </a>
     </div>
 
-    <p class="text-primary/50 text-xs mt-8 tracking-wide" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up" data-aos-delay="400">
-      ※ 認証は編集部による審査制です。すべての申請が認証されるわけではありません。
-    </p>
-
   </div>
 </section>
 
 
-<!-- ============================================================
-     CONTACT SECTION
-============================================================ -->
-<section id="contact" class="bg-bg py-24 md:py-32">
-  <div class="max-w-2xl mx-auto px-6">
-
-    <p class="text-center text-xs tracking-[0.4em] text-accent uppercase mb-4" style="font-family:'Noto Sans JP',sans-serif;" data-aos="fade-up">
-      Contact
-    </p>
-
-    <h2 class="text-center text-3xl font-light text-primary mb-6" style="font-family:'Noto Serif JP',serif; letter-spacing:0.05em;" data-aos="fade-up" data-aos-delay="100">
-      お問い合わせ
-    </h2>
-
-    <div class="gold-line mx-auto mb-12" data-aos="fade-up" data-aos-delay="150"></div>
-
-    <form id="contact-form" novalidate class="space-y-6" data-aos="fade-up" data-aos-delay="200">
-
-      <div>
-        <label for="name" class="block text-xs tracking-widest text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-          お名前 <span class="text-red-400">*</span>
-        </label>
-        <input type="text" id="name" name="name" required
-          class="w-full border border-secondary/20 bg-white px-4 py-3 text-sm text-text outline-none focus:border-accent transition-colors"
-          style="font-family:'Noto Sans JP',sans-serif;"
-          placeholder="山田 太郎">
-        <p class="field-error hidden text-red-400 text-xs mt-1" style="font-family:'Noto Sans JP',sans-serif;">お名前を入力してください</p>
-      </div>
-
-      <div>
-        <label for="email" class="block text-xs tracking-widest text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-          メールアドレス <span class="text-red-400">*</span>
-        </label>
-        <input type="email" id="email" name="email" required
-          class="w-full border border-secondary/20 bg-white px-4 py-3 text-sm text-text outline-none focus:border-accent transition-colors"
-          style="font-family:'Noto Sans JP',sans-serif;"
-          placeholder="example@email.com">
-        <p class="field-error hidden text-red-400 text-xs mt-1" style="font-family:'Noto Sans JP',sans-serif;">正しいメールアドレスを入力してください</p>
-      </div>
-
-      <div>
-        <label for="facility" class="block text-xs tracking-widest text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-          施設名・屋号
-        </label>
-        <input type="text" id="facility" name="facility"
-          class="w-full border border-secondary/20 bg-white px-4 py-3 text-sm text-text outline-none focus:border-accent transition-colors"
-          style="font-family:'Noto Sans JP',sans-serif;"
-          placeholder="○○ホテル・△△カフェ">
-      </div>
-
-      <div>
-        <label for="category" class="block text-xs tracking-widest text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-          カテゴリ
-        </label>
-        <select id="category" name="category"
-          class="w-full border border-secondary/20 bg-white px-4 py-3 text-sm text-text outline-none focus:border-accent transition-colors appearance-none"
-          style="font-family:'Noto Sans JP',sans-serif;">
-          <option value="">選択してください</option>
-          <option value="hotel">高級ホテル・ホテルラウンジ</option>
-          <option value="ryokan">温泉旅館・高級旅館</option>
-          <option value="restaurant">高級レストラン・プライベートダイニング</option>
-          <option value="spa">スパ・サウナ・ウェルネス施設</option>
-          <option value="inbound">インバウンド観光・体験施設</option>
-          <option value="shrine">神社・寺院・パワースポット</option>
-          <option value="cafe">カフェ・スペシャルティコーヒー</option>
-          <option value="salon">高級サロン・プライベートサロン</option>
-          <option value="nature">山・自然体験・グランピング</option>
-          <option value="lounge">会員制ラウンジ・プライベートクラブ</option>
-          <option value="culture">ブックカフェ・美術館カフェ・文化施設</option>
-          <option value="retreat">リトリート・禅・スピリチュアル体験</option>
-          <option value="coworking">コワーキング・シェアオフィス</option>
-          <option value="bar">バー・ウイスキーバー・クラフトカクテル</option>
-          <option value="other">その他</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="message" class="block text-xs tracking-widest text-muted mb-2 uppercase" style="font-family:'Noto Sans JP',sans-serif;">
-          お問い合わせ内容 <span class="text-red-400">*</span>
-        </label>
-        <textarea id="message" name="message" required rows="5"
-          class="w-full border border-secondary/20 bg-white px-4 py-3 text-sm text-text outline-none focus:border-accent transition-colors resize-none"
-          style="font-family:'Noto Sans JP',sans-serif;"
-          placeholder="認証申請のご相談、メディア掲載のご質問など、お気軽にお知らせください。"></textarea>
-        <p class="field-error hidden text-red-400 text-xs mt-1" style="font-family:'Noto Sans JP',sans-serif;">お問い合わせ内容を入力してください</p>
-      </div>
-
-      <div class="text-center pt-4">
-        <button type="submit"
-          class="bg-primary text-white px-12 py-3 text-sm tracking-[0.25em] hover:bg-secondary transition-all duration-300"
-          style="font-family:'Noto Sans JP',sans-serif;">
-          送信する
-        </button>
-      </div>
-
-      <div id="form-success" class="hidden text-center py-6">
-        <i data-lucide="check-circle" class="w-10 h-10 text-accent mx-auto mb-3"></i>
-        <p class="text-text text-sm" style="font-family:'Noto Serif JP',serif;">お問い合わせを受け付けました。<br>担当者より3営業日以内にご連絡いたします。</p>
-      </div>
-    </form>
-
-  </div>
-</section>
-
-
-<!-- ============================================================
+<!-- ═══════════════════════════════════════════
      FOOTER
-============================================================ -->
-<footer style="background-color:#1A1008;" class="py-16">
-  <div class="max-w-6xl mx-auto px-6">
+═══════════════════════════════════════════ -->
+<footer style="background-color:#1C1C1C;" class="py-20">
+  <div class="max-w-6xl mx-auto px-8">
 
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-14">
 
       <div>
-        <p class="text-accent font-light text-2xl tracking-[0.2em] mb-2" style="font-family:'Noto Serif JP',serif;">TPJ</p>
-        <p class="text-white/30 text-xs tracking-widest" style="font-family:'Noto Sans JP',sans-serif;">Third Place Japan</p>
-        <p class="text-white/20 text-xs mt-2 leading-relaxed max-w-xs" style="font-family:'Noto Sans JP',sans-serif;">
-          「どこにいるか」を、定義する。<br>日本初のサードプレイス認証機関。
-        </p>
+        <p style="font-family:'Noto Serif JP',serif; color:#B8960C; font-size:1.1rem; letter-spacing:0.32em; font-weight:300; margin-bottom:0.5rem;">TPJ</p>
+        <p style="font-family:'Noto Sans JP',sans-serif; color:rgba(255,255,255,0.22); font-size:0.62rem; letter-spacing:0.22em;">Third Place Japan</p>
       </div>
 
       <nav aria-label="フッターナビゲーション">
-        <ul class="flex flex-wrap gap-x-8 gap-y-3 text-xs tracking-widest text-white/30" style="font-family:'Noto Sans JP',sans-serif;">
-          <li><a href="#mission" class="hover:text-accent transition-colors">認証とは</a></li>
-          <li><a href="#axes" class="hover:text-accent transition-colors">評価軸</a></li>
-          <li><a href="#market" class="hover:text-accent transition-colors">市場規模</a></li>
-          <li><a href="#categories" class="hover:text-accent transition-colors">カテゴリ</a></li>
-          <li><a href="#contact" class="hover:text-accent transition-colors">お問い合わせ</a></li>
+        <ul class="flex flex-wrap gap-x-8 gap-y-3 mb-4" style="list-style:none; margin:0; padding:0;">
+          <li><a href="#about"         class="footer-link" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.28); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">理念</a></li>
+          <li><a href="#standard"      class="footer-link" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.28); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">評価の基準</a></li>
+          <li><a href="#certification" class="footer-link" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.28); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">認証について</a></li>
+          <li><a href="#gbc"           class="footer-link" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.28); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">GBC</a></li>
+          <li><a href="/journal"       class="footer-link" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.28); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">Journal</a></li>
+        </ul>
+        <ul class="flex flex-wrap gap-x-8 gap-y-3" style="list-style:none; margin:0; padding:0;">
+          <li><a href="#contact" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.18); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.18)'">For Business</a></li>
+          <li><a href="#"        style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.18); text-decoration:none;">運営会社</a></li>
+          <li><a href="#"        style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.18); text-decoration:none;">プライバシー</a></li>
+          <li><a href="#contact" style="font-family:'Noto Sans JP',sans-serif; font-size:0.62rem; letter-spacing:0.15em; color:rgba(255,255,255,0.18); text-decoration:none; transition:color .3s;" onmouseover="this.style.color='#B8960C'" onmouseout="this.style.color='rgba(255,255,255,0.18)'">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="h-px mb-8" style="background: linear-gradient(90deg, transparent, rgba(184,150,12,0.2), transparent);"></div>
+    <div style="height:1px; background:linear-gradient(90deg,transparent,rgba(184,150,12,0.14),transparent); margin-bottom:2rem;"></div>
 
-    <p class="text-center text-white/20 text-xs tracking-wider" style="font-family:'Noto Sans JP',sans-serif;">
+    <p style="text-align:center; font-family:'Noto Sans JP',sans-serif; font-size:0.6rem; letter-spacing:0.16em; color:rgba(255,255,255,0.16);">
       © 2026 Third Place Japan Editorial Team. All rights reserved.
     </p>
 
@@ -903,16 +656,16 @@
 </footer>
 
 
-<!-- ============================================================
-     JSON-LD Structured Data
-============================================================ -->
+<!-- ═══════════════════════════════════════════
+     JSON-LD 構造化データ
+═══════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Third Place Japan",
   "alternateName": ["サードプレイスジャパン", "TPJ"],
-  "description": "ホテル・旅館・スパ・カフェ・コワーキングなど業種を横断し、「いる体験の価値」を7軸評価基準で認証する日本唯一のサードプレイス認証メディア。",
+  "description": "日本全国の第三の居場所を独自の7軸基準で評価・認証する、日本初のサードプレイス認証。",
   "url": "https://thirdplacejapan.com",
   "foundingDate": "2026",
   "areaServed": "JP",
@@ -924,9 +677,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Third Place Japan | 日本初のサードプレイス認証機関",
+  "name": "Third Place Japan",
   "url": "https://thirdplacejapan.com",
-  "description": "「どこにいるか」を定義する、日本初のサードプレイス認証機関。ホテル・旅館・スパ・カフェ・コワーキングなど業種を横断し、独自の7軸評価基準で認証します。",
+  "description": "どこにいるか、を定義する。丁寧に場をつくる人たちのための、日本初のサードプレイス認証。",
   "publisher": {
     "@type": "Organization",
     "name": "Third Place Japan Editorial Team"
@@ -945,15 +698,7 @@
       "name": "Third Place Japan（TPJ）とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Third Place Japan（サードプレイスジャパン、略称TPJ）は、日本初のサードプレイス認証機関です。ホテル・旅館・スパ・カフェ・コワーキングなど業種を横断し、「いる体験の価値」を独自の7軸評価基準で発掘・評価・認証・発信します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "TPJ認証の対象はどのような施設ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "高級ホテル・ホテルラウンジ、温泉旅館・高級旅館、高級レストラン・プライベートダイニング、スパ・サウナ・ウェルネス施設、カフェ・スペシャルティコーヒー、コワーキング・シェアオフィス、神社・寺院・パワースポット、バー・ウイスキーバーなど14カテゴリが対象です。"
+        "text": "Third Place Japan（サードプレイスジャパン）は、日本全国の「第三の居場所（サードプレイス）」を独自の7軸基準で評価・認証する、日本初のサードプレイス認証です。ホテル・カフェ・スパ・コワーキングなど業種を横断し、「いる体験の価値」を定義・認証・発信します。"
       }
     },
     {
@@ -961,23 +706,31 @@
       "name": "TPJの7軸評価基準とは何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "TPJは①居心地・空間品質、②静寂性・プライバシー、③特別感・非日常性、④再訪・継続価値、⑤インバウンド・多言語対応、⑥記録・シェア体験、⑦ストーリー・背景への共感、の7軸で空間の体験価値を定義・数値化します。"
+        "text": "TPJは①居心地・空間品質、②静寂性・プライバシー、③特別感・非日常性、④再訪・継続価値、⑤インバウンド・多言語対応、⑥記録・シェア体験、⑦ストーリー・背景への共感の7軸で、空間がもたらす「いる体験」の価値を評価します。"
       }
     },
     {
       "@type": "Question",
-      "name": "食べログやミシュランとTPJの違いは何ですか？",
+      "name": "TPJの認証グレードはどのような段階がありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "食べログは「おいしさ」を、ミシュランは「シェフの技術」を評価します。TPJが評価するのは「そこにいたいか」という体験価値です。飲食の質ではなく、空間に「いる体験」の価値を業種横断で認証する点が最大の違いです。"
+        "text": "TPJの認証はCertified、Silver、Gold、Platinum、Flagshipの5段階で構成されています。これは順位をつけるためではなく、それぞれの場所が大切にしてきた体験価値を確かめ、形にするためのものです。"
       }
     },
     {
       "@type": "Question",
-      "name": "サードプレイス市場の規模はどのくらいですか？",
+      "name": "TPJに認証されるとどのようなメリットがありますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "レストラン市場約15兆円、インバウンド市場約8兆円超、ホテル・旅館市場約5〜6兆円、温泉・スパ市場約4兆円、カフェ市場約2兆円などを含むサードプレイス市場は、合計で約60〜70兆円規模と定義されます。"
+        "text": "TPJに認証されることで、同じ世界観を持つ場所たちと並ぶことができます。日英両言語での発信を通じて、国内外の人々とAIに、あなたの場所が持つ価値を正しい言葉で伝えていきます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TPJ認証はどのように申請できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japanの認証は編集部による審査制です。「いる体験」を大切にされている場所からのお問い合わせをお待ちしています。すべての申請が認証されるわけではありません。"
       }
     }
   ]
@@ -985,94 +738,43 @@
 </script>
 
 
-<!-- ============================================================
+<!-- ═══════════════════════════════════════════
      SCRIPTS
-============================================================ -->
+═══════════════════════════════════════════ -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
-  AOS.init({
-    duration: 700,
-    easing: 'ease-out-quart',
-    once: true,
-    offset: 60
-  });
+  // AOS
+  AOS.init({ duration: 900, easing: 'ease-out-quart', once: true, offset: 50 });
 
+  // Lucide
   lucide.createIcons();
 
-  // Navbar scroll behavior
+  // Navbar scroll
   const navbar = document.getElementById('navbar');
   let ticking = false;
   function handleScroll() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
     ticking = false;
   }
   window.addEventListener('scroll', function () {
-    if (!ticking) {
-      requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
+    if (!ticking) { requestAnimationFrame(handleScroll); ticking = true; }
   });
 
   // Mobile menu
   const mobileToggle = document.getElementById('mobile-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenu   = document.getElementById('mobile-menu');
   mobileToggle.addEventListener('click', function () {
     const isOpen = mobileMenu.classList.toggle('open');
-    mobileToggle.setAttribute('aria-expanded', isOpen.toString());
-    const icon = mobileToggle.querySelector('i');
-    icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+    mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileToggle.querySelector('i').setAttribute('data-lucide', isOpen ? 'x' : 'menu');
     lucide.createIcons();
   });
   function closeMobileMenu() {
     mobileMenu.classList.remove('open');
     mobileToggle.setAttribute('aria-expanded', 'false');
-    const icon = mobileToggle.querySelector('i');
-    icon.setAttribute('data-lucide', 'menu');
+    mobileToggle.querySelector('i').setAttribute('data-lucide', 'menu');
     lucide.createIcons();
   }
-
-  // Contact Form Validation
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    let valid = true;
-
-    form.querySelectorAll('.field-error').forEach(el => el.classList.add('hidden'));
-    form.querySelectorAll('input, textarea').forEach(el => el.classList.remove('border-red-400'));
-
-    const name = document.getElementById('name');
-    if (!name.value.trim()) {
-      name.nextElementSibling.classList.remove('hidden');
-      name.classList.add('border-red-400');
-      valid = false;
-    }
-
-    const email = document.getElementById('email');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value.trim() || !emailRegex.test(email.value)) {
-      email.nextElementSibling.classList.remove('hidden');
-      email.classList.add('border-red-400');
-      valid = false;
-    }
-
-    const message = document.getElementById('message');
-    if (!message.value.trim()) {
-      message.nextElementSibling.classList.remove('hidden');
-      message.classList.add('border-red-400');
-      valid = false;
-    }
-
-    if (valid) {
-      form.style.display = 'none';
-      document.getElementById('form-success').classList.remove('hidden');
-      lucide.createIcons();
-    }
-  });
 </script>
 
 </body>
