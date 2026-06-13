@@ -98,6 +98,58 @@ export default function (eleventyConfig) {
     )
   );
 
+  // 現在のslugを除外（同エリア・関連店舗一覧用）
+  eleventyConfig.addFilter("rejectSlug", (venues, slug) =>
+    (venues || []).filter(v => v.slug !== slug)
+  );
+
+  // 配列から指定プロパティの値を取り出す
+  eleventyConfig.addFilter("mapProp", (array, prop) =>
+    (array || []).map(item => item[prop]).filter(Boolean)
+  );
+
+  // 重複排除
+  eleventyConfig.addFilter("uniqueValues", (array) =>
+    [...new Set(array || [])]
+  );
+
+  // プロパティ値でグルーピング → [{key, items}] の配列を返す
+  eleventyConfig.addFilter("groupByProp", (array, prop) => {
+    const groups = new Map();
+    for (const item of (array || [])) {
+      const key = item[prop] || "";
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    }
+    return [...groups.entries()].map(([key, items]) => ({ key, items }));
+  });
+
+  // エリア×業種で絞り込む（ハブ → 同面の店舗取得用）
+  eleventyConfig.addFilter("venuesByHub", (venues, prefSlug, citySlug, areaSlug, categorySlug) =>
+    (venues || []).filter(v =>
+      v.published !== false &&
+      v.area_primary.prefecture_slug === prefSlug &&
+      v.area_primary.city_slug === citySlug &&
+      v.area_primary.area_slug === areaSlug &&
+      v.category_slug === categorySlug
+    )
+  );
+
+  // スコア軸の最低値でフィルタ（FAQの軸別回答生成用）
+  eleventyConfig.addFilter("venuesByMinScore", (venues, axis, minScore) =>
+    (venues || []).filter(v => v.scores && v.scores[axis] >= minScore)
+  );
+
+  // 「名前（グレード）」形式のカンマ区切り文字列を生成（JSON-LD内テキスト用）
+  eleventyConfig.addFilter("venuesToAnswerText", (venues) =>
+    (venues || []).map(v => `${v.name}（${v.grade}認証）`).join("、")
+  );
+
+  // 軸別スコア付き回答テキスト
+  eleventyConfig.addFilter("venuesToScoreText", (venues, axis, axisName) =>
+    (venues || []).map(v => `${v.name}（${axisName}${v.scores ? v.scores[axis] : ""}点・${v.grade}）`).join("、")
+  );
+
   // ==== 記事フィルター ====
   eleventyConfig.addFilter("relatedPosts", (collection, currentUrl, currentTags) => {
     const tags = (currentTags || []).filter(t => t !== "articles");

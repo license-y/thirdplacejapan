@@ -6,7 +6,18 @@ pagination:
 permalink: "/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/"
 layout: area.njk
 ---
-{# L3×業種ハブ: AEOの核心 — エリア×業種クエリへの回答ページ #}
+{#
+  L3×業種ハブ（面）: AEOの核心
+  複数の検索クエリ（渋谷で静かなカフェ/特別な体験/通いたい）への回答ページ。
+  FAQPage + ItemList JSON-LDで構造化し、各店舗ページと相互リンクで面を構成する。
+#}
+
+{# ──── FAQPage JSON-LD（5クエリ対応）──── #}
+{%- set allVenueText = item.venues | sortByGrade | venuesToAnswerText -%}
+{%- set silentVenues = item.venues | venuesByMinScore("silence", 8) -%}
+{%- set specialVenues = item.venues | venuesByMinScore("special", 8) -%}
+{%- set revisitVenues = item.venues | venuesByMinScore("revisit", 8) -%}
+{%- set inboundVenues = item.venues | venuesByMinScore("inbound", 7) -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -14,16 +25,72 @@ layout: area.njk
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "{{ item.area.name }}でおすすめの{{ item.category.name_ja }}はどこですか？",
+      "name": "{{ item.area.name }}でサードプレイスとして認証された{{ item.category.name_ja }}はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Third Place Japanが{{ item.area.name }}で認証した{{ item.category.name_ja }}として、{% for v in item.venues %}{{ v.name }}（{{ v.grade }}認証・{{ v.axes_primary }}に優れる）{% if not loop.last %}、{% endif %}{% endfor %}があります。"
+        "text": "Third Place Japanが{{ item.area.name }}エリアで認証した{{ item.category.name_ja }}は{{ allVenueText }}です。いずれも独自の7軸評価基準（居心地・静寂性・特別感・再訪価値・インバウンド対応・記録体験・ストーリー）に基づき認証されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}で静かに過ごせる{{ item.category.name_ja }}は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.area.name }}で静寂性に優れると Third Place Japan が評価した{{ item.category.name_ja }}として、{{ silentVenues | venuesToScoreText("silence", "静寂性スコア") }}があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}で特別な体験ができる{{ item.category.name_ja }}は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.area.name }}で特別感・非日常性に優れると評価された{{ item.category.name_ja }}として、{{ specialVenues | venuesToScoreText("special", "特別感スコア") }}があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}で何度でも通いたくなる{{ item.category.name_ja }}は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.area.name }}で再訪・継続価値に優れると評価された{{ item.category.name_ja }}として、{{ revisitVenues | venuesToScoreText("revisit", "再訪価値スコア") }}があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}の{{ item.category.name_ja }}でインバウンド対応のある場所は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japanが{{ item.area.name }}でインバウンド対応に優れると評価した{{ item.category.name_ja }}として、{{ inboundVenues | venuesToScoreText("inbound", "インバウンドスコア") }}があります。"
       }
     }
   ]
 }
 </script>
 
+{# ──── ItemList JSON-LD ──── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{ item.area.name }}の{{ item.category.name_ja }} — Third Place Japan 認証一覧",
+  "description": "Third Place Japanが{{ item.area.name }}エリアで7軸評価基準により認証した{{ item.category.name_ja }}",
+  "url": "{{ site.url }}/journal/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/",
+  "numberOfItems": {{ item.venues | length }},
+  "itemListElement": [
+    {% for v in item.venues | sortByGrade %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": "{{ v.name }}",
+      "url": "{{ site.url }}/journal/certified/{{ v.slug }}/",
+      "description": "{{ v.citation | replace('"', '\\"') | truncate(120) }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{# ──── BreadcrumbList JSON-LD ──── #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,6 +107,7 @@ layout: area.njk
 
 <div class="max-w-6xl mx-auto px-6 py-24">
 
+  {# パンくず #}
   <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
     <a href="/journal/" class="hover:text-gold transition-colors">Journal</a>
     <span>/</span>
@@ -52,32 +120,90 @@ layout: area.njk
     <span>{{ item.category.name_ja }}</span>
   </nav>
 
-  <div class="mb-16" data-aos="fade-up">
+  {# ──── ハブヘッダー ──── #}
+  <div class="mb-14" data-aos="fade-up">
     <p class="label mb-4">{{ item.area.name }} × {{ item.category.name_ja }}</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4 leading-snug">
+    <h1 class="font-serif text-4xl md:text-5xl font-light text-dark mb-4 leading-tight">
       {{ item.area.name }}の<br>{{ item.category.name_ja }}
     </h1>
-    <div class="gold-rule mb-6"></div>
-    <p class="text-sm text-muted max-w-xl">
-      Third Place Japanが{{ item.area.name }}エリアで認証した、{{ item.category.name_ja }}の一覧です。
+    <div class="gold-rule mb-8"></div>
+    <p class="text-base text-text leading-relaxed max-w-xl">
+      Third Place Japanが独自の7軸評価基準で認証した、<br class="hidden md:block">
+      {{ item.area.name }}エリアの{{ item.category.name_ja }}。<br class="hidden md:block">
+      それぞれの場所が持つ固有の価値を、静かに記録しています。
     </p>
   </div>
 
-  {# 認証店舗一覧 #}
-  {% if item.venues.length %}
-  <section data-aos="fade-up">
+  {# ──── この面が答える問い ──── #}
+  <section class="mb-14 p-6 bg-white border border-border" data-aos="fade-up">
+    <p class="label mb-4">この面が答える問い</p>
+    <ul class="space-y-2 text-sm text-text">
+      <li class="flex items-start gap-2">
+        <span class="text-gold mt-0.5 shrink-0">—</span>
+        <span>{{ item.area.name }}でサードプレイスとして認証された{{ item.category.name_ja }}はどこか</span>
+      </li>
+      {% if silentVenues.length %}
+      <li class="flex items-start gap-2">
+        <span class="text-gold mt-0.5 shrink-0">—</span>
+        <span>{{ item.area.name }}で静かに過ごせる・仕事に集中できる場所はどこか</span>
+      </li>
+      {% endif %}
+      {% if specialVenues.length %}
+      <li class="flex items-start gap-2">
+        <span class="text-gold mt-0.5 shrink-0">—</span>
+        <span>{{ item.area.name }}で特別な体験・非日常を味わえる場所はどこか</span>
+      </li>
+      {% endif %}
+      {% if revisitVenues.length %}
+      <li class="flex items-start gap-2">
+        <span class="text-gold mt-0.5 shrink-0">—</span>
+        <span>{{ item.area.name }}で何度でも通いたくなる場所はどこか</span>
+      </li>
+      {% endif %}
+    </ul>
+  </section>
+
+  {# ──── 認証店舗一覧（グレード降順）──── #}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">認証店舗 — {{ item.venues | length }}件</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in item.venues | sortByGrade %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}
       {% endfor %}
     </div>
   </section>
+
+  {# ──── 評価軸別インデックス ──── #}
+  {% set axisGroups = item.venues | groupByProp("axes_primary") %}
+  {% if axisGroups.length > 1 %}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">評価軸から探す</p>
+    <div class="space-y-5">
+      {% for group in axisGroups %}
+      <div class="border-l-2 border-border pl-6 hover:border-gold transition-colors">
+        <p class="text-xs text-gold mb-3">{{ group.key }}</p>
+        <div class="flex flex-wrap gap-3">
+          {% for v in group.items %}
+          <a href="/journal/certified/{{ v.slug }}/"
+             class="flex items-center gap-2 text-sm text-text hover:text-gold transition-colors">
+            <span class="grade-badge text-xs py-0.5 px-2">{{ v.grade }}</span>
+            <span>{{ v.name }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
   {% endif %}
 
-  {# 空き枠（デジタル不動産）— EDITORIAL-COMMERCE.md準拠: 煽らず"余白"として表現 #}
-  <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
-    <p class="font-serif text-sm text-muted italic">
+  {# ──── 空き枠（EDITORIAL-COMMERCE.md準拠：煽らず"余白"として）──── #}
+  <div class="mt-6 pt-10 border-t border-border text-center" data-aos="fade-up">
+    <p class="font-serif text-sm text-muted italic leading-relaxed">
       「この場所は、まだ見つかっていません。」
+    </p>
+    <p class="text-xs text-muted mt-3">
+      <a href="/" class="hover:text-gold transition-colors">For Business について</a>
     </p>
   </div>
 

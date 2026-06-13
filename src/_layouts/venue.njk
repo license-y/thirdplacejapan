@@ -131,6 +131,41 @@ og_type: "article"
     <p class="pt-2 text-xs">Third Place Japan 認証取得：{{ venue.certified_date }}</p>
   </aside>
 
+  {# 同じ面（エリア×業種）の認証店舗 ── 相互リンクで面を構成 #}
+  {% set hubVenues = venues | venuesByHub(
+    venue.area_primary.prefecture_slug,
+    venue.area_primary.city_slug,
+    venue.area_primary.area_slug,
+    venue.category_slug
+  ) | rejectSlug(venue.slug) | sortByGrade %}
+  {% if hubVenues.length %}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="flex items-center justify-between mb-6">
+      <p class="label">同じエリアの認証{{ venue.category }}</p>
+      <a href="/journal/area/{{ venue.area_primary.prefecture_slug }}/{{ venue.area_primary.city_slug }}/{{ venue.area_primary.area_slug }}/{{ venue.category_slug }}/"
+         class="text-xs text-muted hover:text-gold transition-colors">
+        {{ venue.area_primary.area }}×{{ venue.category }}の面を見る →
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {% for v in hubVenues | head(4) %}
+      <a href="/journal/certified/{{ v.slug }}/"
+         class="venue-card flex items-start gap-4 p-4 bg-white group">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="grade-badge text-xs py-0.5 px-2">{{ v.grade }}</span>
+          </div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug truncate">
+            {{ v.name }}
+          </p>
+          <p class="text-xs text-gold mt-1">{{ v.axes_primary }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {# 認証制度への還流導線 #}
   <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
     <p class="text-sm text-muted text-left md:text-center">
