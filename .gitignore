@@ -142,9 +142,5 @@ dev-tools/package-lock.json
 # Project specific - development files
 /prompt*.md
 
-# 11ty ビルド出力（Cloudflare Pagesが自動生成）
-/public/journal/
-/public/en/
-/public/articles/
-/public/articles-sitemap.xml
+# 11ty ビルド出力（検索インデックスのみ除外）
 /public/pagefind/

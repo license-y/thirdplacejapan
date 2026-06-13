@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ venue.name_en }} | Third Place Japan Journal</title>
+  <meta name="description" content="{{ venue.citation_en }}">
+  
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/journal/certified/{{ venue.slug }}/">
+  <link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/journal/certified/{{ venue.slug }}/">
+  <link rel="alternate" hreflang="x-default" href="https://thirdplacejapan.com/journal/certified/{{ venue.slug }}/">
+
+  <!-- OGP -->
+  <meta property="og:title" content="{{ venue.name_en }} | Third Place Japan Journal">
+  <meta property="og:description" content="{{ venue.citation_en }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/en/journal/certified/dagayasandou-coffee/">
+  <meta property="og:image" content="https://thirdplacejapan.com{{ venue.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border: 1px solid var(--color-border);
+      transition: border-color 0.2s ease;
+    }
+    .venue-card:hover {
+      border-color: var(--color-gold);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア"
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/journal/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
+      TPJ Journal
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/journal/feature/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/journal/area/" class="nav-link text-xs tracking-widest transition-colors duration-200">場所をめぐる</a></li>
+      <li><a href="/journal/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/journal/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-6 space-y-4" role="list">
+      <li><a href="/journal/feature/" class="block text-sm text-text hover:text-gold transition-colors py-1">読み物</a></li>
+      <li><a href="/journal/area/" class="block text-sm text-text hover:text-gold transition-colors py-1">場所をめぐる</a></li>
+      <li><a href="/journal/certified/" class="block text-sm text-text hover:text-gold transition-colors py-1">認証店舗</a></li>
+      <li><a href="/en/journal/" class="block text-sm text-text hover:text-gold transition-colors py-1">English</a></li>
+      <li><a href="/" class="block text-sm text-text hover:text-gold transition-colors py-1">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    const scrolled = window.scrollY > 50;
+    nav.style.backgroundColor = scrolled ? 'rgba(248,246,241,0.92)' : 'transparent';
+    nav.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
+    nav.style.borderBottom = scrolled ? '1px solid #E4DDD6' : '1px solid transparent';
+    const color = scrolled ? '#2D2A26' : '#F8F6F1';
+    if (logo) logo.style.color = color;
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dagayasandou Coffee",
+  "description": "Dagayasandou Coffee, a specialty coffee shop in Shibuya&#39;s Dagayasandou neighbourhood, holds Third Place Japan Gold certification for its carefully designed space — where natural light, chosen materials, and a flexible layout create comfort for solo visitors and small groups alike.",
+  "image": "https://thirdplacejapan.com/assets/images/venues/dagayasandou-coffee.jpg",
+  "url": "https://thirdplacejapan.com/en/journal/certified/dagayasandou-coffee/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "渋谷",
+    "addressRegion": "東京都",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.668,
+    "longitude": 139.706
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "TPJ Certification Grade", "value": "Gold" },
+    { "@type": "PropertyValue", "name": "TPJ Certified Date", "value": "2026-03-01" },
+    { "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": 9 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Silence", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Special", "value": 8 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Revisit", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Inbound", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Record", "value": 8 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Story", "value": 7 }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Journal", "item": "https://thirdplacejapan.com/en/journal/" },
+    { "@type": "ListItem", "position": 2, "name": "Certified Venues", "item": "https://thirdplacejapan.com/en/journal/certified/" },
+    { "@type": "ListItem", "position": 3, "name": "Dagayasandou Coffee", "item": "https://thirdplacejapan.com/en/journal/certified/dagayasandou-coffee/" }
+  ]
+}
+</script>
+
+<article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="Breadcrumb">
+    <a href="/en/journal/" class="hover:text-gold transition-colors">Journal</a>
+    <span class="text-border">／</span>
+    <a href="/en/journal/certified/" class="hover:text-gold transition-colors">Certified Venues</a>
+    <span class="text-border">／</span>
+    <span>Dagayasandou Coffee</span>
+  </nav>
+
+  <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
+    <span class="grade-badge">Gold</span>
+    <span class="label">カフェ・スペシャルティコーヒー</span>
+  </div>
+
+  <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-4 leading-tight" data-aos="fade-up">
+    Dagayasandou Coffee
+  </h1>
+
+  <p class="text-sm text-muted mb-10" data-aos="fade-up">
+    渋谷, 東京都, Japan
+  </p>
+
+  
+  <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
+    <p class="font-serif text-base leading-relaxed text-dark">Dagayasandou Coffee, a specialty coffee shop in Shibuya&#39;s Dagayasandou neighbourhood, holds Third Place Japan Gold certification for its carefully designed space — where natural light, chosen materials, and a flexible layout create comfort for solo visitors and small groups alike.</p>
+  </div>
+
+  
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">7-Axis Evaluation Scores</p>
+    <div class="space-y-4">
+      
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Comfort &amp; Space Quality</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 90%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">9</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Silence &amp; Privacy</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Special &amp; Non-ordinary</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 80%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">8</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Revisit Value</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Inbound &amp; Multilingual</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Record &amp; Share Experience</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 80%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">8</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">Story &amp; Background</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+    </div>
+  </section>
+
+  <div class="prose" data-aos="fade-up">
+    
+  </div>
+
+  <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
+    <p>渋谷, 東京都, Japan</p>
+    
+    <p>Nearest Station: 千駄ヶ谷駅 / 北参道駅</p>
+    
+    
+    <p class="pt-2 text-xs">Third Place Japan Certified: 2026-03-01</p>
+  </aside>
+
+  <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
+    <p class="text-sm text-muted">
+      This venue holds Third Place Japan certification.<br>
+      <a href="https://thirdplacejapan.com/certification/" class="text-gold hover:underline">Learn about the certification</a>
+    </p>
+  </div>
+
+  <div class="mt-6 text-center">
+    <a href="/journal/certified/dagayasandou-coffee/" class="label hover:text-dark transition-colors">
+      日本語で読む
+    </a>
+  </div>
+
+</article>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Journal</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/journal/feature/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/journal/story/" class="hover:text-gold transition-colors">店舗ストーリー</a></li>
+          <li><a href="/journal/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">認証</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/journal/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/journal/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+          <li><a href="/contact/" class="hover:text-gold transition-colors">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>
