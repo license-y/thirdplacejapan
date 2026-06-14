@@ -1,43 +1,106 @@
 ---
-layout: journal.njk
+layout: stories.njk
 og_type: "article"
 ---
+{# Article JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title | replace('"', '\\"') }}",
+  "description": "{{ description | replace('"', '\\"') }}",
+  "image": "{{ site.url }}{{ thumbnail or '' }}",
+  "datePublished": "{{ date | dateISO }}",
+  "dateModified": "{{ date | dateISO }}",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/logo.png"
+    }
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "サードプレイス"
+  }
+}
+</script>
+
+{# FAQPage JSON-LD（Q&Aセクションがある場合）#}
+{%- set faqItems = content | extractFAQ -%}
+{% if faqItems.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.a | replace('"', '\\"') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
 <article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
 
   {# パンくず #}
+  {% set catObj = categories | findCategoryBySlug(category_slug) %}
   <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
-    <a href="/journal/" class="hover:text-gold transition-colors">Journal</a>
-    {% if articleType == "feature" %}
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    {% if category_slug == "about" %}
     <span class="text-border">／</span>
-    <a href="/journal/feature/" class="hover:text-gold transition-colors">読み物</a>
-    {% elif articleType == "story" %}
+    <a href="/stories/about/" class="hover:text-gold transition-colors">サードプレイスを知る</a>
+    {% elif catObj %}
     <span class="text-border">／</span>
-    <a href="/journal/story/" class="hover:text-gold transition-colors">店舗ストーリー</a>
+    <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
+    {% elif articleType == "feature" %}
+    <span class="text-border">／</span>
+    <a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a>
     {% endif %}
     <span class="text-border">／</span>
     <span>{{ title }}</span>
   </nav>
 
   {# カテゴリラベル #}
-  {% if tags %}
   <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+    {% if category_slug == "about" %}
+    <span class="label">サードプレイスを知る</span>
+    {% elif catObj %}
+    <span class="label">{{ catObj.name_ja }}</span>
+    {% else %}
     {% for tag in tags %}
     {% if tag != "articles" and tag != "feature" and tag != "story" %}
     <span class="label">{{ tag }}</span>
     {% endif %}
     {% endfor %}
+    {% endif %}
   </div>
-  {% endif %}
 
   {# タイトル #}
   <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
     {{ title }}
   </h1>
 
-  {# 日付 #}
+  {# 日付・著者 #}
   {% if date %}
   <p class="text-xs text-muted mb-12" data-aos="fade-up">
     <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
+    <span class="ml-3">サードプレイスジャパン編集部</span>
   </p>
   {% endif %}
 

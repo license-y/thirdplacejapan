@@ -1,0 +1,66 @@
+---
+title: "サードプレイスを知る"
+description: "サードプレイス（第三の居場所）の定義・歴史・8つの条件を解説する基礎知識ハブ。TPJが「なぜ今、居場所が必要か」を語ります。"
+canonical: "/stories/about/"
+---
+
+{# DefinedTerm JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "サードプレイス",
+  "description": "家（ファーストプレイス）と職場（セカンドプレイス）に次ぐ、第三の居場所のこと。社会学者レイ・オルデンバーグが提唱した概念で、癒し・リラックス・自分時間を提供する場所を指す。",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "Third Place Japan サードプレイス用語集",
+    "url": "{{ site.url }}/stories/about/"
+  }
+}
+</script>
+
+<div class="max-w-4xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>サードプレイスを知る</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">サードプレイスを知る</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">「第三の居場所」とは何か</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-2xl leading-relaxed">
+      家（ファーストプレイス）と職場（セカンドプレイス）に次ぐ、第三の居場所——。<br class="hidden md:block">
+      社会学者レイ・オルデンバーグが提唱したこの概念を、TPJが日本の文脈で再定義します。
+    </p>
+  </div>
+
+  {# 記事一覧 #}
+  {% set aboutPosts = collections.aboutArticles %}
+  {% if aboutPosts and aboutPosts.length %}
+  <div class="space-y-6" data-aos="fade-up">
+    {% for post in aboutPosts %}
+    <a href="{{ post.url }}" class="group block border border-border p-6 hover:border-gold transition-colors">
+      <h2 class="font-serif text-lg font-light text-dark group-hover:text-gold transition-colors mb-2 leading-snug">
+        {{ post.data.title }}
+      </h2>
+      {% if post.data.description %}
+      <p class="text-sm text-muted leading-relaxed line-clamp-2">{{ post.data.description }}</p>
+      {% endif %}
+      <p class="text-xs text-muted mt-3">{{ post.date | dateJa }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="text-center py-16" data-aos="fade-up">
+    <p class="font-serif text-xl font-light text-dark mb-4">準備中です</p>
+    <p class="text-sm text-muted">サードプレイスの基礎知識記事を順次公開予定です。</p>
+    <p class="text-xs text-muted mt-6">
+      <a href="/stories/" class="hover:text-gold transition-colors">← Storiesトップへ</a>
+    </p>
+  </div>
+  {% endif %}
+
+</div>

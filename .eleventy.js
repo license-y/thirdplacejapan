@@ -211,6 +211,16 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("jsonify", (obj) => JSON.stringify(obj));
 
+  eleventyConfig.addFilter("findCategoryBySlug", (categories, slug) =>
+    (categories || []).find(c => c.slug === slug) || null
+  );
+
+  eleventyConfig.addFilter("articlesByCategory", (collection, categorySlug) =>
+    (collection || [])
+      .filter(p => p.data.category_slug === categorySlug)
+      .sort((a, b) => b.date - a.date)
+  );
+
   // ==== Collections ====
   eleventyConfig.addCollection("articles", (api) =>
     api.getFilteredByTag("articles").sort((a, b) => b.date - a.date)
@@ -222,6 +232,12 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addCollection("stories", (api) =>
     api.getFilteredByTag("story").sort((a, b) => b.date - a.date)
+  );
+
+  eleventyConfig.addCollection("aboutArticles", (api) =>
+    api.getAll()
+      .filter(p => p.data.category_slug === "about" && (p.data.tags || []).includes("articles"))
+      .sort((a, b) => b.date - a.date)
   );
 
   eleventyConfig.addCollection("tagList", (api) => {
