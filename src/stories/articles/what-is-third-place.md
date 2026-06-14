@@ -81,7 +81,12 @@ Third Place Japan（サードプレイスジャパン）は、この概念を日
 
 「どこで食べるか」を決めるサービスは無数にある。しかし「どこにいるか」を案内する基準は、まだなかった——TPJはその空白を埋めようとしています。
 
-関連記事：[東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)
+サードプレイスについてさらに詳しく知りたい方は、以下の記事もあわせてお読みください。
+
+- [サードプレイスの意味をわかりやすく解説](/stories/about/third-place-meaning/)
+- [ファースト・セカンド・サードプレイスの違いとは？](/stories/about/first-second-third-place-difference/)
+- [サードプレイスの8つの条件：オルデンバーグの定義をTPJが再解釈](/stories/about/third-place-8-conditions/)
+- [東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)
 
 ---
 
