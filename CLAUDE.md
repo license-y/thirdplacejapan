@@ -177,11 +177,14 @@
 ワンページサイトの作成・編集を行う際は、必ず **`one-page-site-builder` スキル**を使用すること。
 このスキルに、技術スタック（Tailwind CSS v4 / Animate.css / AOS / Lucide）、HTML 構造、固定ナビゲーション仕様、セクション構成、画像最適化方針などの能力がまとまっている。
 
-画像が必要な場合は **`unsplash-image-finder` スキル**を使って Unsplash から取得する。
-
 ## 画像の取得・最適化
 
-- ユーザーから画像が提供されない場合、`unsplash-image-finder` スキルを使って Unsplash から取得する
+- ユーザーから画像が提供されない場合、以下のコマンドでUnsplashから画像を検索して使用する
+  ```bash
+  node dev-tools/unsplash-search.js "キーワード"
+  ```
+- APIキーは `.env.local` の `UNSPLASH_ACCESS_KEY` に設定済み（変更不要）
+- 動作確認は `node dev-tools/unsplash-search.js --check` で実行
 - 記事用画像の保存先: `public/assets/images/articles/`
 - ユーザーが「画像を提供する」と言った場合、`public/assets/images/articles/` フォルダの中から更新日時が最新のファイルを使用する
 - 画像はSEO的により説明的なファイル名にリネームする（例: `01.jpg` → `tokyo-third-place-coworking.jpg`）
