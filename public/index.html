@@ -159,7 +159,10 @@
     #hero {
       height: 100svh;
       min-height: 600px;
-      background: var(--c-dark);
+      background-color: var(--c-dark);
+      background-image: url('https://images.unsplash.com/photo-1768593396351-6dfccd1d38fe?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwzfHxqYXBhbiUyMGNhZmUlMjBpbnRlcmlvciUyMG1pbmltYWx8ZW58MHwwfHx8MTc4MTUxNTQwMnww&ixlib=rb-4.1.0&w=1920&q=85&fm=webp&fit=crop');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -171,7 +174,12 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 55% at 35% 55%, rgba(184,150,12,0.09) 0%, transparent 70%);
+      background: linear-gradient(
+        to bottom,
+        rgba(20,17,14,0.62) 0%,
+        rgba(20,17,14,0.78) 60%,
+        rgba(20,17,14,0.90) 100%
+      );
       pointer-events: none;
     }
 
@@ -497,6 +505,71 @@
       color: rgba(242,238,232,0.2);
     }
 
+    /* ─── Photo Frame ─── */
+    .photo-frame {
+      position: relative;
+      margin: 52px 0 64px;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(184, 150, 12, 0.22);
+      pointer-events: none;
+    }
+
+    .photo-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.38);
+      z-index: 1;
+    }
+
+    .photo-credit a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .photo-credit a:hover { color: rgba(255,255,255,0.65); }
+
+    /* GBC photo style */
+    .gbc-photo {
+      position: relative;
+      margin: 0 0 52px;
+      overflow: hidden;
+      height: 360px;
+    }
+
+    .gbc-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.75);
+    }
+
+    .gbc-photo::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(184, 150, 12, 0.2);
+      pointer-events: none;
+    }
+
     /* ─── Scroll animation ─── */
     .fi {
       opacity: 0;
@@ -523,6 +596,9 @@
 
       .gaze-grid { grid-template-columns: 1fr; }
       .gaze-item { padding: 36px 0; border-left: none !important; }
+
+      .photo-frame img { height: 260px; }
+      .gbc-photo { height: 240px; }
 
       .axis-row { grid-template-columns: 44px 1fr; gap: 0 16px; }
 
@@ -574,6 +650,18 @@
     <div class="inner">
       <span class="label fi">Philosophy</span>
       <h2 class="h2-light fi">効率の先にあるもの</h2>
+      <figure class="photo-frame fi" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1778085263211-9c5034edf839?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwyfHxqYXBhbiUyMGNhZmUlMjBpbnRlcmlvciUyMG1pbmltYWx8ZW58MHwwfHx8MTc4MTUxNTQwMnww&ixlib=rb-4.1.0&w=1200&q=80&fm=webp&fit=crop"
+          alt="Miroku Hotel — Japanese minimal interior"
+          loading="lazy"
+          decoding="async"
+        >
+        <span class="photo-credit">
+          Photo by <a href="https://unsplash.com/@alexphotogram?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Aleksandra Dementeva</a>
+          / <a href="https://unsplash.com?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>
+        </span>
+      </figure>
       <div class="body-text fi">
         <p>かつて、場所を選ぶ基準は「効率」だった。近くて、安くて、便利であること。</p>
         <p>けれど、時代は静かに変わり始めている。人々が本当に求めているのは、「早く済ませられる場所」ではなく、「そこにいたいと思える場所」だ。</p>
@@ -730,6 +818,18 @@
     <div class="inner">
       <span class="gbc-badge fi">Case Study — Flagship</span>
       <h2 class="fi">言葉だけでなく、実践として</h2>
+      <div class="gbc-photo fi" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1766767164066-d2f4571e75d1?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHw2fHxjb2ZmZWUlMjBzaG9wJTIwYXRtb3NwaGVyZSUyMGRhcmt8ZW58MHwwfHx8MTc4MTUxNTQwNXww&ixlib=rb-4.1.0&w=1200&q=80&fm=webp&fit=crop"
+          alt="Barista making coffee — craft coffee atmosphere"
+          loading="lazy"
+          decoding="async"
+        >
+        <span class="photo-credit">
+          Photo by <a href="https://unsplash.com/@mehrpouya?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Mehrpouya H</a>
+          / <a href="https://unsplash.com?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>
+        </span>
+      </div>
       <div class="body-text fi">
         <p>TPJが見つめてきた価値観は、机上のものではない。</p>
         <p>GBC（Green Beans Coffee）は、TPJが大切にしてきた「いる体験」を実際の場として体現する場所である。</p>
