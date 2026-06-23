@@ -86,7 +86,7 @@ canonical: "/stories/"
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="pillar-grid">
         {% for post in collections.aboutArticles %}
         <a href="{{ post.url }}"
-           class="group flex items-stretch bg-white rounded-2xl border border-border hover:border-gold shadow-sm hover:shadow-md transition-all overflow-hidden{% if loop.index > 6 %} pillar-extra hidden{% endif %}">
+           class="group flex items-stretch bg-white rounded-2xl border border-border hover:border-gold shadow-sm hover:shadow-md transition-all overflow-hidden{% if loop.index > 6 %} pillar-extra hidden{% elif loop.index > 4 %} pillar-extra hidden md:flex{% endif %}">
           {% if post.data.thumbnail %}
           <div class="shrink-0 w-24 overflow-hidden">
             <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
@@ -116,12 +116,13 @@ canonical: "/stories/"
       </div>
 
       {# もっとみるボタン #}
-      {% set hiddenCount = collections.aboutArticles.length - 6 %}
-      {% if hiddenCount > 0 %}
-      <div class="text-center mt-7">
+      {% set mobileHiddenCount = collections.aboutArticles.length - 4 %}
+      {% set desktopHiddenCount = collections.aboutArticles.length - 6 %}
+      {% if mobileHiddenCount > 0 %}
+      <div class="text-center mt-7{% if desktopHiddenCount <= 0 %} md:hidden{% endif %}">
         <button id="pillar-more-btn"
                 class="inline-flex items-center gap-2 border border-border rounded-full px-7 py-2.5 text-sm text-text hover:border-gold hover:text-gold transition-all bg-white shadow-sm">
-          もっとみる（{{ hiddenCount }}件）
+          もっとみる（<span class="md:hidden">{{ mobileHiddenCount }}</span><span class="hidden md:inline">{{ desktopHiddenCount }}</span>件）
         </button>
       </div>
       {% endif %}
