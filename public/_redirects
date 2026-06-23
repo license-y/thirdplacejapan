@@ -1,0 +1,8 @@
+# 301 redirects: /journal/ → /stories/ (URL rename)
+/journal/certified/:splat   /stories/certified/:splat   301
+/journal/area/:splat        /stories/area/:splat        301
+/en/journal/:splat          /en/stories/:splat          301
+/journal/*                  /stories/                   301
+
+# 301 redirects: /stories/articles/ → /stories/about/ (ディレクトリ整理)
+/stories/articles/:slug/    /stories/about/:slug/       301

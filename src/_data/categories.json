@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "hotel-lounge",
+    "name_ja": "高級ホテル・ホテルラウンジ",
+    "name_en": "Luxury Hotel & Hotel Lounge",
+    "group": "宿泊系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1677129667171-92abd8740fa3?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "onsen-ryokan",
+    "name_ja": "温泉旅館・高級旅館",
+    "name_en": "Onsen Ryokan & Luxury Inn",
+    "group": "宿泊系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1644413638617-02369c89c156?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "villa-rental",
+    "name_ja": "貸切ヴィラ・一棟貸しの宿",
+    "name_en": "Private Villa & Exclusive Inn",
+    "group": "宿泊系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1753552502151-93914d36ecf2?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcml2YXRlJTIwdmlsbGElMjByZW50YWwlMjBqYXBhbnxlbnwwfDB8fHwxNzgxOTM4NTg1fDA&ixlib=rb-4.1.0&w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "restaurant-dining",
+    "name_ja": "レストラン・ダイニング",
+    "name_en": "Fine Restaurant & Private Dining",
+    "group": "飲食系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1709548145082-04d0cde481d4?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "cafe-specialty-coffee",
+    "name_ja": "カフェ・スペシャルティコーヒー",
+    "name_en": "Café & Specialty Coffee",
+    "group": "飲食系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1633073490205-27c0ad419a84?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "bar-whiskey",
+    "name_ja": "バー・ウイスキー・カクテル",
+    "name_en": "Bar, Whiskey Bar & Craft Cocktail",
+    "group": "飲食系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1777791375148-5d568498cec2?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "spa-sauna-wellness",
+    "name_ja": "スパ・サウナ・ウェルネス施設",
+    "name_en": "Spa, Sauna & Wellness",
+    "group": "癒し・美容系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1764057145780-3ba9929822ba?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "premium-salon",
+    "name_ja": "高級サロン・プライベート",
+    "name_en": "Premium Salon & Private Salon",
+    "group": "癒し・美容系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1778085263211-9c5034edf839?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "coworking",
+    "name_ja": "コワーキング・シェアオフィス",
+    "name_en": "Coworking & Share Office",
+    "group": "仕事系",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1761818645928-47e5dad8ec76?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "members-lounge",
+    "name_ja": "会員制ラウンジ・クラブ",
+    "name_en": "Members' Lounge & Private Club",
+    "group": "会員制",
+    "revenue": true,
+    "image": "https://images.unsplash.com/photo-1730367019960-9906d9cbbf05?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "nature-glamping",
+    "name_ja": "山・自然体験・グランピング",
+    "name_en": "Nature, Outdoor & Glamping",
+    "group": "自然・精神系",
+    "revenue": false,
+    "image": "https://images.unsplash.com/photo-1595270470419-863bd4e1c78c?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "retreat-zen",
+    "name_ja": "リトリート・禅体験",
+    "name_en": "Retreat, Zen & Spiritual Experience",
+    "group": "自然・精神系",
+    "revenue": false,
+    "image": "https://images.unsplash.com/photo-1596429584705-6edf06d84e08?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "shrine-temple",
+    "name_ja": "神社・寺院・パワースポット",
+    "name_en": "Shrine, Temple & Power Spot",
+    "group": "自然・精神系",
+    "revenue": false,
+    "image": "https://images.unsplash.com/photo-1610333902236-075d788f9071?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "inbound-experience",
+    "name_ja": "インバウンド観光・体験施設",
+    "name_en": "Inbound Tourism & Experience",
+    "group": "観光・集客施設系",
+    "revenue": false,
+    "image": "https://images.unsplash.com/photo-1656425379571-48aff9008422?w=800&q=80&fm=webp&fit=crop"
+  },
+  {
+    "slug": "culture-sports-leisure",
+    "name_ja": "文化・スポーツ・レジャー施設",
+    "name_en": "Culture, Sports & Leisure",
+    "group": "観光・集客施設系",
+    "revenue": false,
+    "image": "https://images.unsplash.com/photo-1553134230-64a44a322d59?w=800&q=80&fm=webp&fit=crop"
+  }
+]

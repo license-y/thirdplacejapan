@@ -1,0 +1,133 @@
+---
+layout: journal.njk
+og_type: "article"
+lang: "en"
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ venue.name_en }}",
+  "description": "{{ venue.citation_en | replace('"', '\\"') }}",
+  "image": "{{ site.url }}{{ venue.image }}",
+  "url": "{{ site.url }}/en/journal/certified/{{ venue.slug }}/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ venue.area_primary.area }}",
+    "addressRegion": "{{ venue.area_primary.prefecture }}",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ venue.lat }},
+    "longitude": {{ venue.lng }}
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "TPJ Certification Grade", "value": "{{ venue.grade }}" },
+    { "@type": "PropertyValue", "name": "TPJ Certified Date", "value": "{{ venue.certified_date }}" },
+    { "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": {{ venue.scores.comfort }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Silence", "value": {{ venue.scores.silence }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Special", "value": {{ venue.scores.special }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Story", "value": {{ venue.scores.story }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Revisit", "value": {{ venue.scores.revisit }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Record", "value": {{ venue.scores.record }} },
+    { "@type": "PropertyValue", "name": "TPJ Score: Inbound", "value": {{ venue.scores.inbound }} }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Journal", "item": "{{ site.url }}/en/journal/" },
+    { "@type": "ListItem", "position": 2, "name": "Certified Venues", "item": "{{ site.url }}/en/journal/certified/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ venue.name_en }}", "item": "{{ site.url }}/en/journal/certified/{{ venue.slug }}/" }
+  ]
+}
+</script>
+
+<article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="Breadcrumb">
+    <a href="/en/journal/" class="hover:text-gold transition-colors">Journal</a>
+    <span class="text-border">／</span>
+    <a href="/en/journal/certified/" class="hover:text-gold transition-colors">Certified Venues</a>
+    <span class="text-border">／</span>
+    <span>{{ venue.name_en }}</span>
+  </nav>
+
+  <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
+    <span class="grade-badge">{{ venue.grade }}</span>
+    <span class="label">{{ venue.category }}</span>
+  </div>
+
+  <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-4 leading-tight" data-aos="fade-up">
+    {{ venue.name_en }}
+  </h1>
+
+  <p class="text-sm text-muted mb-10" data-aos="fade-up">
+    {{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan
+  </p>
+
+  {# 引用用一文（英語）#}
+  <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
+    <p class="font-serif text-base leading-relaxed text-dark">{{ venue.citation_en }}</p>
+  </div>
+
+  {# 7-axis scores #}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">7-Axis Evaluation Scores</p>
+    <div class="space-y-4">
+      {% set axisData = [
+        { name: "Comfort & Space Quality", score: venue.scores.comfort },
+        { name: "Silence & Privacy", score: venue.scores.silence },
+        { name: "Special & Non-ordinary", score: venue.scores.special },
+        { name: "Story & Background", score: venue.scores.story },
+        { name: "Revisit Value", score: venue.scores.revisit },
+        { name: "Record & Share Experience", score: venue.scores.record },
+        { name: "Inbound & Multilingual", score: venue.scores.inbound }
+      ] %}
+      {% for ax in axisData %}
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-48 shrink-0">{{ ax.name }}</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: {{ ax.score * 10 }}%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">{{ ax.score }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="prose" data-aos="fade-up">
+    {{ content | safe }}
+  </div>
+
+  <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
+    <p>{{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan</p>
+    {% if venue.nearest_stations and venue.nearest_stations.length %}
+    <p>Nearest Station: {{ venue.nearest_stations | join(" / ") }}</p>
+    {% endif %}
+    {% if venue.url %}
+    <p><a href="{{ venue.url }}" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Official Website ↗</a></p>
+    {% endif %}
+    <p class="pt-2 text-xs">Third Place Japan Certified: {{ venue.certified_date }}</p>
+  </aside>
+
+  <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
+    <p class="text-sm text-muted">
+      This venue holds Third Place Japan certification.<br>
+      <a href="{{ site.main_site_url }}/certification/" class="text-gold hover:underline">Learn about the certification</a>
+    </p>
+  </div>
+
+  <div class="mt-6 text-center">
+    <a href="/journal/certified/{{ venue.slug }}/" class="label hover:text-dark transition-colors">
+      日本語で読む
+    </a>
+  </div>
+
+</article>

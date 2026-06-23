@@ -1,0 +1,158 @@
+---
+pagination:
+  data: categories
+  size: 1
+  alias: cat
+permalink: "/stories/{{ cat.slug }}/"
+title: "{{ cat.name_ja }} | Third Place Japan Stories"
+description: "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。"
+canonical: "/stories/{{ cat.slug }}/"
+---
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>{{ cat.name_ja }}</span>
+  </nav>
+
+  {% if cat.image %}
+  <div class="w-full overflow-hidden mb-16 relative" style="height: 280px" data-aos="fade-up">
+    <img src="{{ cat.image }}" alt="{{ cat.name_ja }}のサードプレイス | Third Place Japan"
+         class="w-full h-full object-cover" loading="lazy" decoding="async">
+    <div class="absolute inset-4 border pointer-events-none" style="border-color: rgba(184,150,12,0.2)"></div>
+  </div>
+  {% endif %}
+
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    {# メインコンテンツ #}
+    <div class="min-w-0">
+
+      <div class="mb-16" data-aos="fade-up">
+        <p class="label mb-4">{{ cat.name_ja }}</p>
+        <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ cat.name_ja }}</h1>
+        <div class="gold-rule mb-6"></div>
+        <p class="text-sm text-muted leading-relaxed">
+          サードプレイスとしての視点から見る、{{ cat.name_ja }}の記事一覧。
+        </p>
+      </div>
+
+      {# 記事一覧 #}
+      {% set catArticles = collections.articles | articlesByCategory(cat.slug) %}
+      {% if catArticles and catArticles.length %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
+        {% for post in catArticles %}
+        <a href="{{ post.url }}" class="group block border border-border hover:border-gold transition-colors">
+          {% if post.data.thumbnail %}
+          <div class="overflow-hidden aspect-video">
+            <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy" decoding="async">
+          </div>
+          {% endif %}
+          <div class="p-5">
+            <h2 class="font-serif text-base font-light text-dark group-hover:text-gold transition-colors leading-snug">
+              {{ post.data.title }}
+            </h2>
+            {% if post.data.description %}
+            <p class="text-xs text-muted mt-2 leading-relaxed line-clamp-2">{{ post.data.description }}</p>
+            {% endif %}
+            <p class="text-xs text-muted mt-2">{{ post.date | dateJa }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="py-16 text-center" data-aos="fade-up">
+        <p class="font-serif text-xl font-light text-dark mb-4">準備中です</p>
+        <p class="text-sm text-muted mb-8">このカテゴリの記事を順次公開予定です。</p>
+        <a href="/stories/" class="label hover:text-dark transition-colors">← Storiesトップへ</a>
+      </div>
+      {% endif %}
+
+      {# このカテゴリの認証店舗 #}
+      {% set catVenues = venues | venuesByCategory(cat.slug) | sortByGrade %}
+      {% if catVenues.length %}
+      <section class="mt-20 pt-10 border-t border-border" data-aos="fade-up">
+        <div class="flex items-center justify-between mb-8">
+          <p class="label">{{ cat.name_ja }}の認証店舗</p>
+          <a href="/stories/certified/" class="text-xs text-muted hover:text-gold transition-colors">認証店舗一覧 →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {% for v in catVenues | head(3) %}
+          {% set cardVenue = v %}{% include "venue-card.njk" %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+    </div>
+
+    {# サイドバー #}
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-8">
+
+        {# カテゴリ #}
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">カテゴリ</p>
+          <ul class="space-y-0">
+            {% for c in categories %}
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/{{ c.slug }}/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 {% if c.slug == cat.slug %}text-gold font-medium{% else %}text-muted hover:text-gold{% endif %}">
+                {{ c.name_ja }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# 最新記事 #}
+        {% set latestPosts = collections.articles | head(5) %}
+        {% if latestPosts and latestPosts.length %}
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">最新記事</p>
+          <ul class="space-y-4">
+            {% for post in latestPosts %}
+            <li>
+              <a href="{{ post.url }}" class="group block">
+                {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
+                {% if postCat %}
+                <p class="text-xs text-gold mb-0.5">{{ postCat.name_ja }}</p>
+                {% elif post.data.category_slug == "about" %}
+                <p class="text-xs text-gold mb-0.5">サードプレイスとは</p>
+                {% endif %}
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">{{ post.data.title }}</p>
+                <p class="text-xs text-muted mt-1">{{ post.date | dateJa }}</p>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {# サードプレイスとは #}
+        {% if collections.aboutArticles and collections.aboutArticles.length %}
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">サードプレイスとは</p>
+          <ul class="space-y-0">
+            {% for post in collections.aboutArticles | head(4) %}
+            <li class="border-b border-border last:border-0">
+              <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                {{ post.data.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+        </div>
+        {% endif %}
+
+      </div>
+    </aside>
+
+  </div>
+</div>

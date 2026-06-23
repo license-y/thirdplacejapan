@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味 | Third Place Japan Stories</title>
+  <meta name="description" content="サードプレイスにおける「アクセス性」の意味を解説。なぜ予約不要・気構え不要・生活動線上にあることが第三の居場所の必要条件なのかを、Third Place Japanがわかりやすく説明します。">
+  
+
+  <!-- hreflang -->
+  
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味 | Third Place Japan Stories">
+  <meta property="og:description" content="サードプレイスにおける「アクセス性」の意味を解説。なぜ予約不要・気構え不要・生活動線上にあることが第三の居場所の必要条件なのかを、Third Place Japanがわかりやすく説明します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/stories/about/third-place-accessibility/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア"
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
+      TPJ Stories
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    if (logo) logo.style.color = color;
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "サードプレイスとは&#92;&quot;気軽に立ち寄れる場所&#92;&quot;である：アクセス性の意味",
+  "description": "サードプレイスにおける「アクセス性」の意味を解説。なぜ予約不要・気構え不要・生活動線上にあることが第三の居場所の必要条件なのかを、Third Place Japanがわかりやすく説明します。",
+  "image": "https://thirdplacejapan.com/assets/images/articles/third-place-accessibility-open-door-cafe.webp",
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "https://thirdplacejapan.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/logo.png"
+    }
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "サードプレイス"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "Q. サードプレイスのアクセス性とは何を意味しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "物理的な近さ（歩いて行ける距離）、心理的な低ハードル（気構えが不要）、時間的な使いやすさ（気軽に立ち寄れる営業時間）の3つを総合した概念です。いずれかが欠けると、日常的な「第三の居場所」として機能しにくくなります。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 遠くにある素晴らしいカフェはサードプレイスになれませんか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "特別な体験は提供できますが、日常的なサードプレイスにはなりにくいです。サードプレイスは「また来よう」と気軽に思える場所であることが重要で、そのためには生活動線上に存在することが理想的です。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 予約が必要なレストランはサードプレイスではないですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "予約制はアクセス性を下げる要因のひとつです。ただし、予約なしで入れる時間帯がある、バーカウンターは予約不要などの場合は、サードプレイス的な機能を持てることもあります。"
+      }
+    }
+    
+  ]
+}
+</script>
+
+
+<div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    
+    <article class="min-w-0">
+
+      
+      
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
+        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+        
+        <span class="text-border">／</span>
+        <a href="/stories/about/" class="hover:text-gold transition-colors">サードプレイスとは</a>
+        
+        <span class="text-border">／</span>
+        <span>サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味</span>
+      </nav>
+
+      
+      <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+        
+        <span class="label">サードプレイスとは</span>
+        
+      </div>
+
+      
+      <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+        サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味
+      </h1>
+
+      
+      
+      <div class="mb-12"></div>
+      
+
+      
+      
+      <div class="mb-10 px-6 py-5 border-l-2 border-gold" style="background-color: rgba(184,150,12,0.04);" data-aos="fade-up">
+        <p class="text-sm text-dark leading-relaxed font-serif">アクセス性とは、予約も気構えも不要で、生活動線の中に自然にある状態を指す。</p>
+      </div>
+      
+
+      
+      
+      <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+        <img src="/assets/images/articles/third-place-accessibility-open-door-cafe.webp" alt="サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味 | サードプレイスジャパン編集部" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      </div>
+      
+
+      
+      <div class="prose" data-aos="fade-up">
+        <p><strong>サードプレイスの条件のひとつに「アクセス性（Accessibility）」がある。アクセス性とは、物理的な近さだけを意味しない。予約が不要であること、気構えが不要であること、そして生活の動線のなかに自然に組み込まれていること——その総体を指す。</strong></p>
+<p>レイ・オルデンバーグは、良いサードプレイスは「開いており（Open）、誰にでも受け入れられている」と述べた。鍵がかかっていないこと。招待状が不要なこと。会費が入場条件にならないこと。これらはすべて、アクセス性の具体的な現れだ。</p>
+<hr>
+<h2>アクセス性の3つの次元</h2>
+<h3>次元1：物理的アクセス</h3>
+<p>最も基本的なアクセス性は、物理的な近さだ。オルデンバーグが調査した場所の多くは、居住区域のなかに、歩いて行ける距離にあった。家から車で30分の素晴らしいカフェより、歩いて5分の平均的な喫茶店のほうが、サードプレイスとして機能しやすい。</p>
+<p>理由は単純だ。「行こうと思ったら行ける」距離が、気軽さを生む。重大な決断を要さず、「ちょっと行ってくる」という感覚で立ち寄れる場所こそ、生活に根ざしたサードプレイスになる。</p>
+<p>東京・渋谷区や表参道エリアの最寄り駅から徒歩数分の場所に認証店舗が集まるのも、この物理的アクセス性を重視する理由からだ。</p>
+<h3>次元2：心理的アクセス</h3>
+<p>物理的に近くても、「入るのに気構えが必要な場所」は心理的アクセスが低い。入店するのに勇気が要る場所、服装を選ぶ場所、初訪者が迷子になる場所——これらはハードルが高く、気軽さを損なう。</p>
+<p>心理的アクセスが高い場所の特徴：</p>
+<ul>
+<li>ドアが開いている（あるいは大きなガラス窓から中が見える）</li>
+<li>外から雰囲気がわかる</li>
+<li>「一人でも大丈夫そう」と感じられる</li>
+<li>メニューが入店前に確認できる</li>
+<li>価格帯が事前に把握できる</li>
+</ul>
+<p>こうした条件が揃うと、「はじめて」の人でも「行ってみよう」と思える場所になる。</p>
+<h3>次元3：時間的アクセス</h3>
+<p>「気軽に立ち寄れる」ためには、時間も重要だ。</p>
+<ul>
+<li>早朝から営業しているか（出勤前に使える）</li>
+<li>夜も開いているか（退勤後に使える）</li>
+<li>行列や待ち時間が少ないか（限られた時間に使える）</li>
+</ul>
+<p>予約が必要なレストランや、週末のみ営業するスポットは、価値があっても「気軽に立ち寄れる」とは言いにくい。サードプレイスとしてのアクセス性は、営業時間の設計とも密接に関わっている。</p>
+<hr>
+<h2>「気構えが不要」の意味</h2>
+<p>アクセス性において最も見落とされがちな要素が、「気構え（mental effort）が不要」という側面だ。</p>
+<p>高級レストランに行くとき、多くの人は服装を選び、予約を取り、コース料理を楽しむための準備をする。これは体験を最大化するための合理的な行動だが、同時に「気構え」を要する。特別な日に行く場所は、日常のサードプレイスにはなりにくい。</p>
+<p>反対に、気軽なカフェは「今日、なんとなく行こう」と思えた瞬間に行ける。特別な準備も心構えも要らない。この「なんとなく」の自発性こそが、日常的なサードプレイスを成立させる核心だ。</p>
+<hr>
+<h2>生活動線とサードプレイス</h2>
+<p>オルデンバーグが強調したのは、良いサードプレイスは「生活のなかに存在する」という点だ。通勤路にある。買い物帰りに寄れる。子どもを送った後に立ち寄れる。この「ついでに行ける」という属性が、習慣的な利用を生み、常連を育て、本当のサードプレイスになっていく。</p>
+<p>現代都市において、この条件を満たす場所は意外に少ない。都市の再開発が進むほど、生活動線上の小さな店舗が大型商業施設に置き換えられていく。「あの角のコーヒー屋」が消え、「商業施設の4階のカフェ」になるとき、アクセス性は下がる。</p>
+<hr>
+<h2>TPJの評価とアクセス性</h2>
+<p>Third Place Japan（サードプレイスジャパン）が認証店舗を評価する際、「最寄り駅から徒歩何分か」「営業時間の設計はどうか」「初訪者にやさしいか」という観点は、7軸評価のなかに間接的に織り込まれている。特に「居心地・空間品質」（第1軸）と「再訪・継続価値」（第5軸）は、継続的に利用できるアクセス性の高さと相関する。</p>
+<p>サードプレイスとしての本質は、一度の特別な体験ではなく、繰り返し戻れる場所にある。それを可能にするのが、アクセス性という目に見えにくい条件だ。</p>
+<hr>
+<h2>まとめ：「また来られる」場所がサードプレイス</h2>
+<p>アクセス性の本質は「また来られる」ことだ。物理的な距離が近く、心理的なハードルが低く、時間的にも使いやすい——この3条件を満たす場所は、人が自然と繰り返し訪れるようになる。</p>
+<p>そして繰り返し訪れることで、常連が育ち、場の文化が生まれ、本当のサードプレイスが完成する。</p>
+<p>アクセス性の概念と合わせて、「<a href="/stories/about/third-place-regulars/">サードプレイスに「常連」が欠かせない理由</a>」もぜひご覧ください。サードプレイスの全体像は「<a href="/stories/about/what-is-third-place/">サードプレイスとは何か？定義・特徴・具体例の完全ガイド</a>」で確認できます。</p>
+<hr>
+<h2>よくある質問（FAQ）</h2>
+<p><strong>Q. サードプレイスのアクセス性とは何を意味しますか？</strong><br>
+物理的な近さ（歩いて行ける距離）、心理的な低ハードル（気構えが不要）、時間的な使いやすさ（気軽に立ち寄れる営業時間）の3つを総合した概念です。いずれかが欠けると、日常的な「第三の居場所」として機能しにくくなります。</p>
+<p><strong>Q. 遠くにある素晴らしいカフェはサードプレイスになれませんか？</strong><br>
+特別な体験は提供できますが、日常的なサードプレイスにはなりにくいです。サードプレイスは「また来よう」と気軽に思える場所であることが重要で、そのためには生活動線上に存在することが理想的です。</p>
+<p><strong>Q. 予約が必要なレストランはサードプレイスではないですか？</strong><br>
+予約制はアクセス性を下げる要因のひとつです。ただし、予約なしで入れる時間帯がある、バーカウンターは予約不要などの場合は、サードプレイス的な機能を持てることもあります。</p>
+
+      </div>
+
+      
+      
+      <div class="mt-14 pt-10 border-t border-border" style="opacity:1;visibility:visible;">
+        <p class="text-xs text-muted text-center mb-5">この記事をシェア</p>
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <a href="https://twitter.com/intent/tweet?text=%E3%82%B5%E3%83%BC%E3%83%89%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9%E3%81%A8%E3%81%AF%22%E6%B0%97%E8%BB%BD%E3%81%AB%E7%AB%8B%E3%81%A1%E5%AF%84%E3%82%8C%E3%82%8B%E5%A0%B4%E6%89%80%22%E3%81%A7%E3%81%82%E3%82%8B%EF%BC%9A%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E6%80%A7%E3%81%AE%E6%84%8F%E5%91%B3&url=https%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fabout%2Fthird-place-accessibility%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X ポスト
+          </a>
+          <a href="https://line.me/R/msg/text/?%E3%82%B5%E3%83%BC%E3%83%89%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9%E3%81%A8%E3%81%AF%22%E6%B0%97%E8%BB%BD%E3%81%AB%E7%AB%8B%E3%81%A1%E5%AF%84%E3%82%8C%E3%82%8B%E5%A0%B4%E6%89%80%22%E3%81%A7%E3%81%82%E3%82%8B%EF%BC%9A%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E6%80%A7%E3%81%AE%E6%84%8F%E5%91%B3%0D%0Ahttps%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fabout%2Fthird-place-accessibility%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fabout%2Fthird-place-accessibility%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-8">
+
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">カテゴリ</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/hotel-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級ホテル・ホテルラウンジ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/onsen-ryokan/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                温泉旅館・高級旅館
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/villa-rental/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                貸切ヴィラ・一棟貸しの宿
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/restaurant-dining/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                レストラン・ダイニング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/cafe-specialty-coffee/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                カフェ・スペシャルティコーヒー
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/bar-whiskey/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                バー・ウイスキー・カクテル
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/spa-sauna-wellness/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                スパ・サウナ・ウェルネス施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/premium-salon/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級サロン・プライベート
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/coworking/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                コワーキング・シェアオフィス
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/members-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                会員制ラウンジ・クラブ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/nature-glamping/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                山・自然体験・グランピング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/retreat-zen/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                リトリート・禅体験
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/shrine-temple/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                神社・寺院・パワースポット
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/inbound-experience/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                インバウンド観光・体験施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/culture-sports-leisure/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                文化・スポーツ・レジャー施設
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">最新記事</p>
+          <ul class="space-y-4">
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する</p>
+                <p class="text-xs text-muted mt-1">2026年6月21日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/shibuya-cafe-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">渋谷のカフェがサードプレイスになる理由：東京・渋谷区スペシャルティコーヒー完全ガイド</p>
+                <p class="text-xs text-muted mt-1">2026年6月21日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法</p>
+                <p class="text-xs text-muted mt-1">2026年6月13日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/about/great-good-place-book/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">サードプレイスとは</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">『The Great Good Place』が示したサードプレイス理論の核心</p>
+                <p class="text-xs text-muted mt-1">2026年6月12日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/shrine-temple/meiji-jingu-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">神社・寺院・パワースポット</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス</p>
+                <p class="text-xs text-muted mt-1">2026年6月11日</p>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">サードプレイスとは</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/great-good-place-book/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                『The Great Good Place』が示したサードプレイス理論の核心
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/ray-oldenburg-third-place/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの提唱者レイ・オルデンバーグとは何者か
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/third-place-examples/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの具体例10選：どんな場所が当てはまるか
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/third-place-ibasho-difference/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスと「居場所」「行きつけ」の正確な使い分け
+              </a>
+            </li>
+            
+          </ul>
+          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+        </div>
+        
+
+      </div>
+    </aside>
+
+  </div>
+
+  
+  
+  
+  <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
+    <div class="flex items-center gap-2 mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <p class="label">関連記事</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <a href="/stories/about/great-good-place-book/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/great-good-place-book-library-reading.webp" alt="『The Great Good Place』が示したサードプレイス理論の核心"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">『The Great Good Place』が示したサードプレイス理論の核心</h3>
+          <p class="text-xs text-muted mt-2">2026年6月12日</p>
+        </div>
+      </a>
+      
+      <a href="/stories/about/ray-oldenburg-third-place/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/ray-oldenburg-urban-sociology-cafe.webp" alt="サードプレイスの提唱者レイ・オルデンバーグとは何者か"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">サードプレイスの提唱者レイ・オルデンバーグとは何者か</h3>
+          <p class="text-xs text-muted mt-2">2026年6月11日</p>
+        </div>
+      </a>
+      
+      <a href="/stories/about/third-place-examples/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/third-place-examples-variety-spaces.webp" alt="サードプレイスの具体例10選：どんな場所が当てはまるか"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">サードプレイスの具体例10選：どんな場所が当てはまるか</h3>
+          <p class="text-xs text-muted mt-2">2026年6月10日</p>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="mt-8 grid grid-cols-2 gap-4" style="opacity:1;visibility:visible;">
+    <div>
+      
+      <a href="/stories/about/third-place-conversation-silence/" class="group block rounded-xl p-5 h-full border border-border hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
+        <p class="text-xs text-muted mb-2">‹ 前の記事</p>
+        <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">サードプレイスにおける会話と沈黙の役割</p>
+      </a>
+      
+    </div>
+    <div>
+      
+      <a href="/stories/about/third-place-ibasho-difference/" class="group block rounded-xl p-5 h-full border border-border hover:border-gold shadow-sm hover:shadow-md transition-all text-right bg-white">
+        <p class="text-xs text-muted mb-2">次の記事 ›</p>
+        <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">サードプレイスと「居場所」「行きつけ」の正確な使い分け</p>
+      </a>
+      
+    </div>
+  </div>
+  
+
+</div>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Stories</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベート</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>

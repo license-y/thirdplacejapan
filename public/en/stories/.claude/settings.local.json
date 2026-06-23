@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L \"https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxob21lJTIwd29yayUyMGNhZmUlMjBsaWZlc3R5bGV8ZW58MHwwfHx8MTc4MjE4OTI0MHww&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/first-second-third-place-cafe-tokyo.webp\" -s)",
+      "Read(//c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/**)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1600508774634-4e11d34730e2?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxjb3dvcmtpbmclMjBsb3VuZ2UlMjBwYXJrJTIwdmFyaWV0eSUyMHNwYWNlc3xlbnwwfDB8fHwxNzgyMTg5NDI2fDA&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/third-place-examples-variety-spaces.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1702865071803-cb154cd45f48?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxjb3p5JTIwYXJtY2hhaXIlMjBsb3VuZ2UlMjByZWFkaW5nJTIwcmVsYXhpbmd8ZW58MHwwfHx8MTc4MjE4OTQ1M3ww&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/third-place-ibasho-cozy-relaxing.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1633073490205-27c0ad419a84?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxjYWZlJTIwaW50ZXJpb3IlMjBtaW5pbWFsJTIwZGVzaWduJTIwamFwYW58ZW58MHwwfHx8MTc4MjE4OTQ2NHww&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/what-is-third-place-cafe-interior.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1621254887152-aa127535ef99?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxwdWJsaWMlMjBzcGFjZSUyMHBhcmslMjBiZW5jaCUyMG5ldXRyYWwlMjBvcGVufGVufDB8MHx8fDE3ODIxODk0Nzl8MA&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/third-place-neutrality-public-space.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1767973821330-f24f3dbc0ef0?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiYXIlMjBjb3VudGVyJTIwcmVndWxhcnMlMjB3YXJtJTIwY29tbXVuaXR5fGVufDB8MHx8fDE3ODIxODk0ODh8MA&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/third-place-regulars-community-warmth.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1571064492294-17e8c2fac904?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxzb2xvJTIwd29yayUyMGxhcHRvcCUyMHdpbmRvdyUyMGNhZmV8ZW58MHwwfHx8MTc4MjE4OTQ5Mnww&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/tokyo-cafe-solo-work-third-place.webp\" -s)",
+      "Bash(curl -L \"https://images.unsplash.com/photo-1517456793572-1d8efd6dc135?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBnYXRoZXJpbmclMjBwbGFjZSUyMHBlb3BsZSUyMHNvY2lhbHxlbnwwfDB8fHwxNzgyMTg5NDk1fDA&ixlib=rb-4.1.0&w=800&q=70&fm=webp&fit=crop\" -o \"/c/Users/yotsu/workspace/thirdplacejapan/public/assets/images/articles/what-is-third-place-japan-interior.webp\" -s)",
+      "Read(//c/Users/yotsu/workspace/thirdplacejapan/**)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

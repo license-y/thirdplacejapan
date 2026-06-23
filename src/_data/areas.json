@@ -1,0 +1,316 @@
+[
+  {
+    "slug": "tokyo",
+    "name": "東京都",
+    "name_en": "Tokyo",
+    "cities": [
+      {
+        "slug": "shibuya-ku",
+        "name": "渋谷区",
+        "name_en": "Shibuya-ku",
+        "areas": [
+          { "slug": "shibuya",      "name": "渋谷",   "name_en": "Shibuya" },
+          { "slug": "daikanyama",   "name": "代官山", "name_en": "Daikanyama" },
+          { "slug": "nakameguro",   "name": "中目黒", "name_en": "Nakameguro" },
+          { "slug": "ebisu",        "name": "恵比寿", "name_en": "Ebisu" },
+          { "slug": "omotesando",   "name": "表参道", "name_en": "Omotesando" },
+          { "slug": "harajuku",     "name": "原宿",   "name_en": "Harajuku" },
+          { "slug": "shinsen",      "name": "神泉",   "name_en": "Shinsen" },
+          { "slug": "tomigaya",     "name": "富ヶ谷", "name_en": "Tomigaya" },
+          { "slug": "hatagaya",     "name": "幡ヶ谷", "name_en": "Hatagaya" },
+          { "slug": "sasazuka",     "name": "笹塚",   "name_en": "Sasazuka" },
+          { "slug": "hatsudai",     "name": "初台",   "name_en": "Hatsudai" },
+          { "slug": "shoto",        "name": "松濤",   "name_en": "Shoto" }
+        ]
+      },
+      {
+        "slug": "minato-ku",
+        "name": "港区",
+        "name_en": "Minato-ku",
+        "areas": [
+          { "slug": "aoyama",        "name": "青山",     "name_en": "Aoyama" },
+          { "slug": "roppongi",      "name": "六本木",   "name_en": "Roppongi" },
+          { "slug": "azabu",         "name": "麻布",     "name_en": "Azabu" },
+          { "slug": "hiroo",         "name": "広尾",     "name_en": "Hiroo" },
+          { "slug": "akasaka",       "name": "赤坂",     "name_en": "Akasaka" },
+          { "slug": "azabujuban",    "name": "麻布十番", "name_en": "Azabu-Juban" },
+          { "slug": "shirokanedai",  "name": "白金台",   "name_en": "Shirokanedai" },
+          { "slug": "mita",          "name": "三田",     "name_en": "Mita" },
+          { "slug": "shibaura",      "name": "芝浦",     "name_en": "Shibaura" },
+          { "slug": "takanawa",      "name": "高輪",     "name_en": "Takanawa" }
+        ]
+      },
+      {
+        "slug": "shinjuku-ku",
+        "name": "新宿区",
+        "name_en": "Shinjuku-ku",
+        "areas": [
+          { "slug": "shinjuku",       "name": "新宿",     "name_en": "Shinjuku" },
+          { "slug": "kagurazaka",     "name": "神楽坂",   "name_en": "Kagurazaka" },
+          { "slug": "takadanobaba",   "name": "高田馬場", "name_en": "Takadanobaba" },
+          { "slug": "yotsuya",        "name": "四谷",     "name_en": "Yotsuya" },
+          { "slug": "waseda",         "name": "早稲田",   "name_en": "Waseda" },
+          { "slug": "nishi-shinjuku", "name": "西新宿",   "name_en": "Nishi-Shinjuku" },
+          { "slug": "ochiai",         "name": "落合",     "name_en": "Ochiai" }
+        ]
+      },
+      {
+        "slug": "chuo-ku",
+        "name": "中央区",
+        "name_en": "Chuo-ku",
+        "areas": [
+          { "slug": "ginza",       "name": "銀座",   "name_en": "Ginza" },
+          { "slug": "nihonbashi",  "name": "日本橋", "name_en": "Nihonbashi" },
+          { "slug": "ningyocho",   "name": "人形町", "name_en": "Ningyocho" },
+          { "slug": "tsukiji",     "name": "築地",   "name_en": "Tsukiji" },
+          { "slug": "tsukishima",  "name": "月島",   "name_en": "Tsukishima" },
+          { "slug": "kachidoki",   "name": "勝どき", "name_en": "Kachidoki" }
+        ]
+      },
+      {
+        "slug": "meguro-ku",
+        "name": "目黒区",
+        "name_en": "Meguro-ku",
+        "areas": [
+          { "slug": "jiyugaoka",      "name": "自由が丘",   "name_en": "Jiyugaoka" },
+          { "slug": "gakugeidaigaku", "name": "学芸大学",   "name_en": "Gakugeidaigaku" },
+          { "slug": "yutenji",        "name": "祐天寺",     "name_en": "Yutenji" },
+          { "slug": "meguro",         "name": "目黒",       "name_en": "Meguro" },
+          { "slug": "musashi-koyama", "name": "武蔵小山",   "name_en": "Musashi-Koyama" },
+          { "slug": "naka-meguro",    "name": "中目黒",     "name_en": "Naka-Meguro" }
+        ]
+      },
+      {
+        "slug": "setagaya-ku",
+        "name": "世田谷区",
+        "name_en": "Setagaya-ku",
+        "areas": [
+          { "slug": "shimokitazawa",  "name": "下北沢",     "name_en": "Shimokitazawa" },
+          { "slug": "sangenjaya",     "name": "三軒茶屋",   "name_en": "Sangenjaya" },
+          { "slug": "futakotamagawa", "name": "二子玉川",   "name_en": "Futakotamagawa" },
+          { "slug": "komazawa",       "name": "駒沢",       "name_en": "Komazawa" },
+          { "slug": "kyodo",          "name": "経堂",       "name_en": "Kyodo" },
+          { "slug": "yoga",           "name": "用賀",       "name_en": "Yoga" },
+          { "slug": "soshigaya",      "name": "祖師ヶ谷大蔵", "name_en": "Soshigaya-Okura" },
+          { "slug": "chitose-funabashi", "name": "千歳船橋", "name_en": "Chitose-Funabashi" }
+        ]
+      },
+      {
+        "slug": "chiyoda-ku",
+        "name": "千代田区",
+        "name_en": "Chiyoda-ku",
+        "areas": [
+          { "slug": "marunouchi",  "name": "丸の内",   "name_en": "Marunouchi" },
+          { "slug": "kanda",       "name": "神田",     "name_en": "Kanda" },
+          { "slug": "ochanomizu",  "name": "御茶ノ水", "name_en": "Ochanomizu" },
+          { "slug": "akihabara",   "name": "秋葉原",   "name_en": "Akihabara" },
+          { "slug": "hibiya",      "name": "日比谷",   "name_en": "Hibiya" },
+          { "slug": "hanzomon",    "name": "半蔵門",   "name_en": "Hanzomon" },
+          { "slug": "iidabashi",   "name": "飯田橋",   "name_en": "Iidabashi" }
+        ]
+      },
+      {
+        "slug": "toshima-ku",
+        "name": "豊島区",
+        "name_en": "Toshima-ku",
+        "areas": [
+          { "slug": "ikebukuro",    "name": "池袋",     "name_en": "Ikebukuro" },
+          { "slug": "sugamo",       "name": "巣鴨",     "name_en": "Sugamo" },
+          { "slug": "otsuka",       "name": "大塚",     "name_en": "Otsuka" },
+          { "slug": "mejiro",       "name": "目白",     "name_en": "Mejiro" },
+          { "slug": "higashi-ikebukuro", "name": "東池袋", "name_en": "Higashi-Ikebukuro" }
+        ]
+      },
+      {
+        "slug": "taito-ku",
+        "name": "台東区",
+        "name_en": "Taito-ku",
+        "areas": [
+          { "slug": "asakusa",   "name": "浅草",   "name_en": "Asakusa" },
+          { "slug": "ueno",      "name": "上野",   "name_en": "Ueno" },
+          { "slug": "kuramae",   "name": "蔵前",   "name_en": "Kuramae" },
+          { "slug": "iriya",     "name": "入谷",   "name_en": "Iriya" },
+          { "slug": "nishi-nippori", "name": "日暮里", "name_en": "Nippori" },
+          { "slug": "okachimachi",   "name": "御徒町", "name_en": "Okachimachi" }
+        ]
+      },
+      {
+        "slug": "koto-ku",
+        "name": "江東区",
+        "name_en": "Koto-ku",
+        "areas": [
+          { "slug": "kiyosumi-shirakawa", "name": "清澄白河", "name_en": "Kiyosumi-Shirakawa" },
+          { "slug": "monzen-nakacho",     "name": "門前仲町", "name_en": "Monzen-Nakacho" },
+          { "slug": "toyosu",             "name": "豊洲",     "name_en": "Toyosu" },
+          { "slug": "kiba",               "name": "木場",     "name_en": "Kiba" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "osaka",
+    "name": "大阪府",
+    "name_en": "Osaka",
+    "cities": [
+      {
+        "slug": "osaka-kita-ku",
+        "name": "大阪市北区",
+        "name_en": "Osaka Kita-ku",
+        "areas": [
+          { "slug": "umeda",           "name": "梅田",     "name_en": "Umeda" },
+          { "slug": "nakanoshima",     "name": "中之島",   "name_en": "Nakanoshima" },
+          { "slug": "tenjin-osaka",    "name": "天満",     "name_en": "Tenjin (Osaka)" },
+          { "slug": "tenjinbashisuji","name": "天神橋筋", "name_en": "Tenjinbashisuji" },
+          { "slug": "minamimorimachi", "name": "南森町",   "name_en": "Minamimorimachi" }
+        ]
+      },
+      {
+        "slug": "osaka-chuo-ku",
+        "name": "大阪市中央区",
+        "name_en": "Osaka Chuo-ku",
+        "areas": [
+          { "slug": "shinsaibashi",  "name": "心斎橋",   "name_en": "Shinsaibashi" },
+          { "slug": "namba",         "name": "難波",     "name_en": "Namba" },
+          { "slug": "tanimachi",     "name": "谷町",     "name_en": "Tanimachi" },
+          { "slug": "osakajo",       "name": "大阪城",   "name_en": "Osaka Castle" },
+          { "slug": "matsuyamachi",  "name": "松屋町",   "name_en": "Matsuyamachi" }
+        ]
+      },
+      {
+        "slug": "osaka-nishi-ku",
+        "name": "大阪市西区",
+        "name_en": "Osaka Nishi-ku",
+        "areas": [
+          { "slug": "horie",         "name": "堀江",     "name_en": "Horie" },
+          { "slug": "awaza",         "name": "阿波座",   "name_en": "Awaza" },
+          { "slug": "nishi-nagahori","name": "西長堀",   "name_en": "Nishi-Nagahori" },
+          { "slug": "kujo",          "name": "九条",     "name_en": "Kujo" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "kyoto",
+    "name": "京都府",
+    "name_en": "Kyoto",
+    "cities": [
+      {
+        "slug": "kyoto-nakagyo-ku",
+        "name": "京都市中京区",
+        "name_en": "Kyoto Nakagyo-ku",
+        "areas": [
+          { "slug": "karasuma",     "name": "烏丸",     "name_en": "Karasuma" },
+          { "slug": "sanjo",        "name": "三条",     "name_en": "Sanjo" },
+          { "slug": "shijo",        "name": "四条",     "name_en": "Shijo" },
+          { "slug": "nishiki",      "name": "錦市場",   "name_en": "Nishiki" },
+          { "slug": "teramachi",    "name": "寺町",     "name_en": "Teramachi" }
+        ]
+      },
+      {
+        "slug": "kyoto-higashiyama-ku",
+        "name": "京都市東山区",
+        "name_en": "Kyoto Higashiyama-ku",
+        "areas": [
+          { "slug": "gion",         "name": "祇園",     "name_en": "Gion" },
+          { "slug": "kiyomizu",     "name": "清水",     "name_en": "Kiyomizu" },
+          { "slug": "yasaka",       "name": "八坂",     "name_en": "Yasaka" },
+          { "slug": "sanjusangendo","name": "三十三間堂","name_en": "Sanjusangendo" },
+          { "slug": "chion-in",     "name": "知恩院",   "name_en": "Chion-in" }
+        ]
+      },
+      {
+        "slug": "kyoto-sakyo-ku",
+        "name": "京都市左京区",
+        "name_en": "Kyoto Sakyo-ku",
+        "areas": [
+          { "slug": "okazaki",          "name": "岡崎",       "name_en": "Okazaki" },
+          { "slug": "demachiyagi",      "name": "出町柳",     "name_en": "Demachiyagi" },
+          { "slug": "ichijoji",         "name": "一乗寺",     "name_en": "Ichijoji" },
+          { "slug": "tetsugaku-no-michi","name": "哲学の道",  "name_en": "Philosopher's Path" },
+          { "slug": "shugakuin",        "name": "修学院",     "name_en": "Shugakuin" }
+        ]
+      },
+      {
+        "slug": "kyoto-kita-ku",
+        "name": "京都市北区",
+        "name_en": "Kyoto Kita-ku",
+        "areas": [
+          { "slug": "kitayama",     "name": "北山",     "name_en": "Kitayama" },
+          { "slug": "kamigamo",     "name": "上賀茂",   "name_en": "Kamigamo" },
+          { "slug": "nishigamo",    "name": "西賀茂",   "name_en": "Nishigamo" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "kanagawa",
+    "name": "神奈川県",
+    "name_en": "Kanagawa",
+    "cities": [
+      {
+        "slug": "yokohama-naka-ku",
+        "name": "横浜市中区",
+        "name_en": "Yokohama Naka-ku",
+        "areas": [
+          { "slug": "kannai",       "name": "関内",       "name_en": "Kannai" },
+          { "slug": "motomachi",    "name": "元町",       "name_en": "Motomachi" },
+          { "slug": "yamashitacho", "name": "山下町",     "name_en": "Yamashitacho" },
+          { "slug": "chinatown",    "name": "中華街",     "name_en": "Chinatown" },
+          { "slug": "isezakicho",   "name": "伊勢佐木町", "name_en": "Isezakicho" }
+        ]
+      },
+      {
+        "slug": "yokohama-nishi-ku",
+        "name": "横浜市西区",
+        "name_en": "Yokohama Nishi-ku",
+        "areas": [
+          { "slug": "minatomirai",  "name": "みなとみらい",   "name_en": "Minatomirai" },
+          { "slug": "yokohama-sta", "name": "横浜駅周辺",     "name_en": "Yokohama Station" },
+          { "slug": "takashimacho", "name": "高島町",         "name_en": "Takashimacho" }
+        ]
+      },
+      {
+        "slug": "kamakura-shi",
+        "name": "鎌倉市",
+        "name_en": "Kamakura",
+        "areas": [
+          { "slug": "kamakura",      "name": "鎌倉",     "name_en": "Kamakura" },
+          { "slug": "kita-kamakura", "name": "北鎌倉",   "name_en": "Kita-Kamakura" },
+          { "slug": "yuigahama",     "name": "由比ガ浜", "name_en": "Yuigahama" },
+          { "slug": "hase",          "name": "長谷",     "name_en": "Hase" },
+          { "slug": "zaimokuza",     "name": "材木座",   "name_en": "Zaimokuza" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "fukuoka",
+    "name": "福岡県",
+    "name_en": "Fukuoka",
+    "cities": [
+      {
+        "slug": "fukuoka-chuo-ku",
+        "name": "福岡市中央区",
+        "name_en": "Fukuoka Chuo-ku",
+        "areas": [
+          { "slug": "tenjin",   "name": "天神",   "name_en": "Tenjin" },
+          { "slug": "yakuin",   "name": "薬院",   "name_en": "Yakuin" },
+          { "slug": "daimyo",   "name": "大名",   "name_en": "Daimyo" },
+          { "slug": "kego",     "name": "警固",   "name_en": "Kego" },
+          { "slug": "imaizumi", "name": "今泉",   "name_en": "Imaizumi" }
+        ]
+      },
+      {
+        "slug": "fukuoka-hakata-ku",
+        "name": "福岡市博多区",
+        "name_en": "Fukuoka Hakata-ku",
+        "areas": [
+          { "slug": "hakata",     "name": "博多",   "name_en": "Hakata" },
+          { "slug": "gion-fk",    "name": "祇園",   "name_en": "Gion (Fukuoka)" },
+          { "slug": "yoshizuka",  "name": "吉塚",   "name_en": "Yoshizuka" },
+          { "slug": "hakataeki",  "name": "博多駅周辺", "name_en": "Hakata Station" }
+        ]
+      }
+    ]
+  }
+]

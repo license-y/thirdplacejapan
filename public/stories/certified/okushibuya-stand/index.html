@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ venue.name }} | Third Place Japan Stories</title>
+  <meta name="description" content="{{ venue.citation }}">
+  
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/certified/{{ venue.slug }}/">
+  <link rel="alternate" hreflang="en" href="https://thirdplacejapan.com{% if venue.has_en %}/en/stories/certified/{{ venue.slug }}/{% endif %}">
+  <link rel="alternate" hreflang="x-default" href="https://thirdplacejapan.com/stories/certified/{{ venue.slug }}/">
+
+  <!-- OGP -->
+  <meta property="og:title" content="{{ venue.name }} | Third Place Japan Stories">
+  <meta property="og:description" content="{{ venue.citation }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/stories/certified/okushibuya-stand/">
+  <meta property="og:image" content="https://thirdplacejapan.com{{ venue.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア"
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
+      TPJ Stories
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    if (logo) logo.style.color = color;
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "奥渋谷スタンド",
+  "description": "奥渋谷スタンドは、東京・渋谷の奥渋谷エリアに位置するネイバーフッドカフェとして Third Place Japan Silver 認証を取得。目立たないが、何度でも戻りたくなる一貫した品質と、常連が静かに集まる場の安定感が評価されています。派手さより「また来たい」を積み重ねる場として認証。",
+  "image": "https://thirdplacejapan.com/assets/images/venues/okushibuya-stand.jpg",
+  "url": "https://thirdplacejapan.com/stories/certified/okushibuya-stand/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "渋谷",
+    "addressRegion": "東京都",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.655,
+    "longitude": 139.7
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "TPJ Certification Grade", "value": "Silver" },
+    { "@type": "PropertyValue", "name": "TPJ Certified Date", "value": "2026-03-15" },
+    { "@type": "PropertyValue", "name": "TPJ Primary Evaluation Axis", "value": "再訪・継続価値" },
+    { "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Silence", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Special", "value": 6 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Story", "value": 7 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Revisit", "value": 9 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Record", "value": 5 },
+    { "@type": "PropertyValue", "name": "TPJ Score: Inbound", "value": 5 }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Stories", "item": "https://thirdplacejapan.com/stories/" },
+    { "@type": "ListItem", "position": 2, "name": "認証店舗", "item": "https://thirdplacejapan.com/stories/certified/" },
+    { "@type": "ListItem", "position": 3, "name": "奥渋谷スタンド", "item": "https://thirdplacejapan.com/stories/certified/okushibuya-stand/" }
+  ]
+}
+</script>
+
+<article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+
+  
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span class="text-border">／</span>
+    <a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗</a>
+    <span class="text-border">／</span>
+    <span>奥渋谷スタンド</span>
+  </nav>
+
+  
+  <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
+    <span class="grade-badge">Silver</span>
+    <span class="label">カフェ・スペシャルティコーヒー</span>
+  </div>
+
+  
+  <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-4 leading-tight" data-aos="fade-up">
+    奥渋谷スタンド
+  </h1>
+
+  
+  <p class="text-sm text-muted mb-10" data-aos="fade-up">
+    <a href="/stories/area/tokyo/shibuya-ku/shibuya/"
+       class="hover:text-gold transition-colors">
+      東京都 渋谷
+    </a>
+    ·
+    <a href="/stories/area/tokyo/shibuya-ku/shibuya/cafe-specialty-coffee/"
+       class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a>
+  </p>
+
+  
+  <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
+    <p class="font-serif text-base leading-relaxed text-dark">奥渋谷スタンドは、東京・渋谷の奥渋谷エリアに位置するネイバーフッドカフェとして Third Place Japan Silver 認証を取得。目立たないが、何度でも戻りたくなる一貫した品質と、常連が静かに集まる場の安定感が評価されています。派手さより「また来たい」を積み重ねる場として認証。</p>
+  </div>
+
+  
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">7軸評価スコア</p>
+    <div class="space-y-4">
+      
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">居心地・空間品質</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">静寂性・プライバシー</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">特別感・非日常性</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 60%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">6</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">ストーリー・背景への共感</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 70%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">7</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">再訪・継続価値</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 90%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">9</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">記録・シェア体験</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 50%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">5</span>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <span class="text-xs text-muted w-40 shrink-0">インバウンド・多言語対応</span>
+        <div class="axis-score-bar flex-1">
+          <div class="axis-score-fill" style="width: 50%"></div>
+        </div>
+        <span class="text-xs text-gold font-light w-6 text-right">5</span>
+      </div>
+      
+    </div>
+  </section>
+
+  
+  <div class="prose" data-aos="fade-up">
+    
+  </div>
+
+  
+  <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
+    <p>東京都 東京都渋谷区</p>
+    
+    <p>最寄駅：渋谷駅・神泉駅</p>
+    
+    
+    <p class="pt-2 text-xs">Third Place Japan 認証取得：2026-03-15</p>
+  </aside>
+
+  
+  
+  
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="flex items-center justify-between mb-6">
+      <p class="label">同じエリアの認証カフェ・スペシャルティコーヒー</p>
+      <a href="/stories/area/tokyo/shibuya-ku/shibuya/cafe-specialty-coffee/"
+         class="text-xs text-muted hover:text-gold transition-colors">
+        渋谷×カフェ・スペシャルティコーヒーの面を見る →
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      
+      <a href="/stories/certified/green-beans-coffee-shibuya/"
+         class="venue-card flex items-start gap-4 p-4 bg-white group">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="grade-badge text-xs py-0.5 px-2">Flagship</span>
+          </div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug truncate">
+            Green Beans Coffee
+          </p>
+          <p class="text-xs text-gold mt-1">居心地・空間品質</p>
+        </div>
+      </a>
+      
+      <a href="/stories/certified/maruaki-roastery-matsudai/"
+         class="venue-card flex items-start gap-4 p-4 bg-white group">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="grade-badge text-xs py-0.5 px-2">Platinum</span>
+          </div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug truncate">
+            丸明ロースタリー 松濤
+          </p>
+          <p class="text-xs text-gold mt-1">特別感・非日常性</p>
+        </div>
+      </a>
+      
+      <a href="/stories/certified/shinsen-coffeehouse/"
+         class="venue-card flex items-start gap-4 p-4 bg-white group">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="grade-badge text-xs py-0.5 px-2">Gold</span>
+          </div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug truncate">
+            神泉珈琲舎
+          </p>
+          <p class="text-xs text-gold mt-1">静寂性・プライバシー</p>
+        </div>
+      </a>
+      
+      <a href="/stories/certified/dagayasandou-coffee/"
+         class="venue-card flex items-start gap-4 p-4 bg-white group">
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="grade-badge text-xs py-0.5 px-2">Gold</span>
+          </div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug truncate">
+            ダガヤサンドウ珈琲所
+          </p>
+          <p class="text-xs text-gold mt-1">居心地・空間品質</p>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
+    <p class="text-sm text-muted text-left md:text-center">
+      この場所は Third Place Japan 認証店舗です。<br class="hidden md:block">
+      <a href="https://thirdplacejapan.com/certification/" class="text-gold hover:underline">認証制度について知る</a>
+    </p>
+  </div>
+
+  
+  
+
+</article>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Stories</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベート</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>

@@ -1,0 +1,369 @@
+---
+layout: stories.njk
+og_type: "article"
+---
+{# ベニュー情報を取得 #}
+{% set v = venues | findVenueBySlug(venue_slug) %}
+
+{# Article + LocalBusiness JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Article", "Review"],
+  "headline": "{{ title | replace('"', '\\"') }}",
+  "description": "{{ description | replace('"', '\\"') }}",
+  "image": "{{ site.url }}{{ thumbnail or (v.image if v else '') }}",
+  "datePublished": "{{ date | dateISO }}",
+  "dateModified": "{{ date | dateISO }}",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/logo.png"
+    }
+  },
+  "inLanguage": "ja"{% if v %},
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "{{ v.name | replace('"', '\\"') }}",
+    "description": "{{ v.citation | replace('"', '\\"') }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ v.area_primary.city }}",
+      "addressRegion": "{{ v.area_primary.prefecture }}",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ v.lat }},
+      "longitude": {{ v.lng }}
+    }
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ v.grade }}",
+    "bestRating": "Flagship",
+    "worstRating": "Certified"
+  }{% endif %}
+}
+</script>
+
+{# FAQPage JSON-LD #}
+{%- set faqItems = content | extractFAQ -%}
+{% if faqItems.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.a | replace('"', '\\"') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+<div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    {# メインコンテンツ #}
+    <article class="min-w-0">
+
+      {# パンくず #}
+      {% set catObj = categories | findCategoryBySlug(category_slug) %}
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12 flex-wrap" aria-label="パンくず">
+        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+        {% if catObj %}
+        <span class="text-border">／</span>
+        <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
+        {% endif %}
+        <span class="text-border">／</span>
+        <span>{{ title }}</span>
+      </nav>
+
+      {# PR・認証開示（必須表示）#}
+      <div class="mb-10 px-5 py-4 border border-border rounded-xl text-xs text-muted leading-relaxed" data-aos="fade-up">
+        <span class="font-medium text-dark">【掲載について】</span>
+        この記事はThird Place Japan（TPJ）が認証した施設の紹介記事です。
+        TPJの評価は独自の7軸基準に基づき、掲載料の有無にかかわらず同一基準で実施しています。
+        認証済みの施設が対象であり、広告掲載による評価変動はありません。
+      </div>
+
+      {# グレードバッジ + ラベル #}
+      <div class="flex flex-wrap items-center gap-3 mb-6" data-aos="fade-up">
+        {% if v %}
+        <span class="grade-badge grade-{{ v.grade_slug }}">{{ v.grade }}</span>
+        {% endif %}
+        {% if catObj %}<span class="label">{{ catObj.name_ja }}</span>{% endif %}
+        <span class="label">TPJ認証</span>
+      </div>
+
+      {# タイトル #}
+      <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+        {{ title }}
+      </h1>
+
+      {# 認証日・著者 #}
+      <p class="text-xs text-muted mb-10" data-aos="fade-up">
+        {% if date %}<time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>{% endif %}
+        {% if v %}<span class="ml-3">認証取得：{{ v.certified_date }}</span>{% endif %}
+        <span class="ml-3">サードプレイスジャパン編集部</span>
+      </p>
+
+      {# サムネイル #}
+      {% if thumbnail %}
+      <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+        <img src="{{ thumbnail }}" alt="{{ title }} | Third Place Japan"
+             class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      </div>
+      {% endif %}
+
+      {# 7軸スコア表 #}
+      {% if v and v.scores %}
+      <section class="mb-12" data-aos="fade-up">
+        <p class="label mb-6">TPJ 7軸評価スコア</p>
+        <div class="border border-border rounded-xl overflow-hidden">
+          {% for axis in axes %}
+          <div class="flex items-center gap-4 px-5 py-4 {% if not loop.last %}border-b border-border{% endif %}">
+            <div class="w-32 shrink-0">
+              <p class="text-xs font-medium text-dark leading-snug">{{ axis.name_ja }}</p>
+              <p class="text-xs text-muted leading-snug mt-0.5">{{ axis.name_en }}</p>
+            </div>
+            <div class="flex-1">
+              <div class="h-1.5 bg-border rounded-full overflow-hidden">
+                {% set score = v.scores[axis.slug] or 0 %}
+                <div class="h-full rounded-full transition-all" style="width: {{ (score / 10 * 100) | round }}%; background-color: #B8960C;"></div>
+              </div>
+            </div>
+            <div class="w-10 text-right shrink-0">
+              <span class="text-sm font-medium text-gold">{{ v.scores[axis.slug] or "—" }}</span>
+              <span class="text-xs text-muted">/10</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <p class="text-xs text-muted mt-3">※ TPJ独自の7軸評価基準に基づくスコアです。<a href="/stories/about/third-place-7-axes/" class="hover:text-gold transition-colors underline">評価基準の詳細</a></p>
+      </section>
+      {% endif %}
+
+      {# ベニュー基本情報 #}
+      {% if v %}
+      <section class="mb-12 p-6 border border-border rounded-xl" data-aos="fade-up">
+        <p class="label mb-4">基本情報</p>
+        <dl class="space-y-3 text-sm">
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">店舗名</dt>
+            <dd class="text-dark">{{ v.name }}</dd>
+          </div>
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">グレード</dt>
+            <dd><span class="grade-badge grade-{{ v.grade_slug }} text-xs">{{ v.grade }}</span></dd>
+          </div>
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">カテゴリ</dt>
+            <dd class="text-dark">{{ v.category }}</dd>
+          </div>
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">住所</dt>
+            <dd class="text-dark">{{ v.address }}</dd>
+          </div>
+          {% if v.nearest_stations and v.nearest_stations.length %}
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">最寄り駅</dt>
+            <dd class="text-dark">{{ v.nearest_stations | join("・") }}</dd>
+          </div>
+          {% endif %}
+          <div class="flex gap-4">
+            <dt class="text-muted w-20 shrink-0">認証取得</dt>
+            <dd class="text-dark">{{ v.certified_date }}</dd>
+          </div>
+        </dl>
+      </section>
+      {% endif %}
+
+      {# 本文 #}
+      <div class="prose" data-aos="fade-up">
+        {{ content | safe }}
+      </div>
+
+      {# 関連・親リンク #}
+      <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
+        <p class="label mb-4">関連コンテンツ</p>
+        <div class="space-y-2">
+          <a href="/stories/certified/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → TPJ認証店舗一覧
+          </a>
+          {% if catObj %}
+          <a href="/stories/{{ category_slug }}/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → {{ catObj.name_ja }}の記事一覧
+          </a>
+          {% endif %}
+          <a href="/stories/about/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → サードプレイスとは何か？（定義・概念を読む）
+          </a>
+        </div>
+      </div>
+
+      {# シェアボタン #}
+      {% set shareUrl = site.url + page.url %}
+      <div class="mt-14 pt-10 border-t border-border" style="opacity:1;visibility:visible;">
+        <p class="text-xs text-muted text-center mb-5">この記事をシェア</p>
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ shareUrl | urlencode }}"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X ポスト
+          </a>
+          <a href="https://line.me/R/msg/text/?{{ title | urlencode }}%0D%0A{{ shareUrl | urlencode }}"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | urlencode }}"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    {# サイドバー #}
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-4">
+
+        {# 認証ステータス #}
+        {% if v %}
+        <div class="p-5 border border-gold rounded-xl shadow-sm" style="background-color: rgba(184,150,12,0.04);">
+          <p class="text-xs font-medium text-dark tracking-widest uppercase mb-3">TPJ認証ステータス</p>
+          <div class="text-center py-3">
+            <span class="grade-badge grade-{{ v.grade_slug }}">{{ v.grade }}</span>
+          </div>
+          <p class="text-xs text-muted text-center mt-2 leading-relaxed">{{ v.citation | truncate(80) }}</p>
+        </div>
+        {% endif %}
+
+        {# カテゴリ #}
+        <div class="bg-white rounded-xl border border-border shadow-sm p-5">
+          <p class="text-xs font-medium text-dark tracking-widest uppercase mb-4">カテゴリ</p>
+          <ul class="space-y-0.5">
+            {% for cat in categories %}
+            <li>
+              <a href="/stories/{{ cat.slug }}/"
+                 class="text-xs leading-snug block px-2 py-1.5 rounded-lg transition-colors
+                 {% if cat.slug == category_slug %}text-gold font-medium bg-gold/5{% else %}text-text hover:text-gold hover:bg-gold/5{% endif %}">
+                {{ cat.name_ja }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# 最新記事 #}
+        {% set latestPosts = collections.articles | head(4) %}
+        {% if latestPosts and latestPosts.length %}
+        <div class="bg-white rounded-xl border border-border shadow-sm p-5">
+          <p class="text-xs font-medium text-dark tracking-widest uppercase mb-4">最新記事</p>
+          <ul class="space-y-4">
+            {% for post in latestPosts %}
+            <li>
+              <a href="{{ post.url }}" class="group block">
+                {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
+                {% if postCat %}
+                <p class="text-xs text-muted mb-0.5">{{ postCat.name_ja }}</p>
+                {% elif post.data.category_slug == "about" %}
+                <p class="text-xs text-muted mb-0.5">サードプレイスとは</p>
+                {% endif %}
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">{{ post.data.title }}</p>
+                <p class="text-xs text-muted mt-1">{{ post.date | dateJa }}</p>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+      </div>
+    </aside>
+
+  </div>
+
+  {# 関連記事 #}
+  {% set relatedArticles = collections.articles | relatedPostsByCat(page.url, category_slug, 3) %}
+  {% if relatedArticles and relatedArticles.length %}
+  <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
+    <div class="flex items-center gap-2 mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <p class="label">関連記事</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% for post in relatedArticles %}
+      <a href="{{ post.url }}" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        {% if post.data.thumbnail %}
+        <div class="h-28 overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        {% else %}
+        <div class="h-28" style="background-color: #f0ede6;"></div>
+        {% endif %}
+        <div class="p-4">
+          {% if post.data.category_slug == "about" %}
+          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          {% else %}
+          {% set relCat = categories | findCategoryBySlug(post.data.category_slug) %}
+          {% if relCat %}<p class="text-xs text-muted mb-1">{{ relCat.name_ja }}</p>{% endif %}
+          {% endif %}
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{ post.data.title }}</h3>
+          <p class="text-xs text-muted mt-2">{{ post.date | dateJa }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {# 前の記事・次の記事 #}
+  {% set prevArticle = collections.articles | prevPost(page.url) %}
+  {% set nextArticle = collections.articles | nextPost(page.url) %}
+  {% if prevArticle or nextArticle %}
+  <div class="mt-8 grid grid-cols-2 gap-4" style="opacity:1;visibility:visible;">
+    <div>
+      {% if prevArticle %}
+      <a href="{{ prevArticle.url }}" class="group block rounded-xl p-5 h-full border border-border hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
+        <p class="text-xs text-muted mb-2">‹ 前の記事</p>
+        <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{ prevArticle.data.title }}</p>
+      </a>
+      {% endif %}
+    </div>
+    <div>
+      {% if nextArticle %}
+      <a href="{{ nextArticle.url }}" class="group block rounded-xl p-5 h-full border border-border hover:border-gold shadow-sm hover:shadow-md transition-all text-right bg-white">
+        <p class="text-xs text-muted mb-2">次の記事 ›</p>
+        <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{ nextArticle.data.title }}</p>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+</div>

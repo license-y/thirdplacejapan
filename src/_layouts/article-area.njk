@@ -1,0 +1,222 @@
+---
+layout: stories.njk
+og_type: "article"
+---
+{# Article JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title | replace('"', '\\"') }}",
+  "description": "{{ description | replace('"', '\\"') }}",
+  "image": "{{ site.url }}{{ thumbnail or '' }}",
+  "datePublished": "{{ date | dateISO }}",
+  "dateModified": "{{ date | dateISO }}",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/logo.png"
+    }
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Place",
+    "name": "{{ area_name or title }}"
+  }
+}
+</script>
+
+{# FAQPage JSON-LD（Q&Aセクションがある場合）#}
+{%- set faqItems = content | extractFAQ -%}
+{% if faqItems.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faqItems %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q | replace('"', '\\"') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.a | replace('"', '\\"') }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+<div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    {# メインコンテンツ #}
+    <article class="min-w-0">
+
+      {# パンくず（エリア階層） #}
+      {% set catObj = categories | findCategoryBySlug(category_slug) %}
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12 flex-wrap" aria-label="パンくず">
+        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+        <span class="text-border">／</span>
+        <a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a>
+        {% if catObj %}
+        <span class="text-border">／</span>
+        <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
+        {% endif %}
+        <span class="text-border">／</span>
+        <span>{{ title }}</span>
+      </nav>
+
+      {# ラベル #}
+      <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+        <span class="label">エリアガイド</span>
+        {% if catObj %}<span class="label">{{ catObj.name_ja }}</span>{% endif %}
+      </div>
+
+      {# タイトル #}
+      <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+        {{ title }}
+      </h1>
+
+      {# 日付・著者 #}
+      {% if date %}
+      <p class="text-xs text-muted mb-10" data-aos="fade-up">
+        <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
+        <span class="ml-3">サードプレイスジャパン編集部</span>
+      </p>
+      {% endif %}
+
+      {# 定義スニペット（エリアの一次情報）#}
+      {% if snippet %}
+      <div class="mb-10 px-6 py-5 border-l-2 border-gold" style="background-color: rgba(184,150,12,0.04);" data-aos="fade-up">
+        <p class="text-sm text-dark leading-relaxed font-serif">{{ snippet }}</p>
+      </div>
+      {% endif %}
+
+      {# サムネイル #}
+      {% if thumbnail %}
+      <div class="mb-12 relative overflow-hidden" data-aos="fade-up">
+        <img src="{{ thumbnail }}" alt="{{ title }} | サードプレイスジャパン編集部"
+             class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+        <div class="absolute inset-3 border pointer-events-none hidden md:block" style="border-color: rgba(184,150,12,0.2)"></div>
+      </div>
+      {% endif %}
+
+      {# 本文 #}
+      <div class="prose" data-aos="fade-up">
+        {{ content | safe }}
+      </div>
+
+      {# このエリアの認証店舗 #}
+      {% if area_slug %}
+      {% set areaVenues = venues | venuesByArea(null, null, area_slug) | sortByGrade %}
+      {% if areaVenues and areaVenues.length %}
+      <section class="mt-20 pt-10 border-t border-border" data-aos="fade-up">
+        <div class="flex items-center justify-between mb-8">
+          <p class="label">{{ area_name or area_slug }}の認証店舗</p>
+          <a href="/stories/certified/" class="text-xs text-muted hover:text-gold transition-colors">認証店舗一覧 →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {% for v in areaVenues | head(4) %}
+          {% set cardVenue = v %}{% include "venue-card.njk" %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+      {% endif %}
+
+      {# 親コンテンツへのリンク #}
+      <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
+        <p class="label mb-4">関連コンテンツ</p>
+        <div class="space-y-2">
+          <a href="/stories/about/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → サードプレイスとは何か？（定義・概念を読む）
+          </a>
+          {% if catObj %}
+          <a href="/stories/{{ category_slug }}/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → {{ catObj.name_ja }}の記事一覧
+          </a>
+          {% endif %}
+          <a href="/stories/area/" class="block text-sm text-muted hover:text-gold transition-colors">
+            → エリアから探す
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    {# サイドバー #}
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-8">
+
+        {# カテゴリ #}
+        <div>
+          <p class="label mb-4">カテゴリ</p>
+          <ul class="space-y-1">
+            {% for cat in categories %}
+            <li>
+              <a href="/stories/{{ cat.slug }}/"
+                 class="text-xs hover:text-gold transition-colors leading-snug block py-0.5
+                 {% if cat.slug == category_slug %}text-gold font-medium{% else %}text-muted{% endif %}">
+                {{ cat.name_ja }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        {# 最新記事 #}
+        {% set latestPosts = collections.articles | head(5) %}
+        {% if latestPosts and latestPosts.length %}
+        <div class="border-t border-border pt-8">
+          <p class="label mb-4">最新記事</p>
+          <ul class="space-y-4">
+            {% for post in latestPosts %}
+            <li>
+              <a href="{{ post.url }}" class="group block">
+                {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
+                {% if postCat %}
+                <p class="text-xs text-gold mb-0.5">{{ postCat.name_ja }}</p>
+                {% elif post.data.category_slug == "about" %}
+                <p class="text-xs text-gold mb-0.5">サードプレイスとは</p>
+                {% endif %}
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">{{ post.data.title }}</p>
+                <p class="text-xs text-muted mt-1">{{ post.date | dateJa }}</p>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {# サードプレイスとは #}
+        {% if collections.aboutArticles and collections.aboutArticles.length %}
+        <div class="border-t border-border pt-8">
+          <p class="label mb-4">サードプレイスとは</p>
+          <ul class="space-y-3">
+            {% for post in collections.aboutArticles | head(4) %}
+            <li>
+              <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-0.5">
+                {{ post.data.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+        </div>
+        {% endif %}
+
+      </div>
+    </aside>
+
+  </div>
+</div>

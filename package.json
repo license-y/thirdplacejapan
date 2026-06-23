@@ -1,0 +1,35 @@
+{
+  "name": "thirdplacejapan",
+  "version": "1.0.0",
+  "description": "Third Place Japan - 日本のサードプレイス専門ポータルサイト",
+  "type": "module",
+  "scripts": {
+    "search": "node dev-tools/unsplash-search.js",
+    "update-images": "node scripts/update-images.js",
+    "dev": "eleventy --serve --input=src --output=public",
+    "build": "node scripts/update-date.js && eleventy --input=src --output=public && pagefind --site public --output-path public/pagefind"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "tinify": "^1.6.0",
+    "undici": "^7.16.0",
+    "unsplash-js": "^7.0.19"
+  },
+  "keywords": [
+    "webpage",
+    "template",
+    "claude-code",
+    "unsplash",
+    "tailwind"
+  ],
+  "author": "Claude Code",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "jimp": "^1.6.1",
+    "pagefind": "^1.5.2"
+  }
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPJ認証バッジ｜Third Place Japan 設置ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: #F8F6F1;
+      color: #2D2A26;
+      line-height: 1.6;
+      padding: 40px 24px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; font-weight: 300; margin-bottom: 8px; color: #1C1C1C; }
+    h2 { font-size: 1rem; font-weight: 500; margin: 32px 0 12px; color: #1C1C1C; border-bottom: 1px solid #E0DDD6; padding-bottom: 8px; }
+    p { font-size: 0.875rem; color: #4A4A4A; margin-bottom: 12px; }
+    code { font-family: 'Courier New', monospace; font-size: 0.8rem; background: #fff; border: 1px solid #E0DDD6; border-radius: 2px; padding: 1px 5px; }
+    pre {
+      background: #1C1C1C;
+      color: #F8F6F1;
+      padding: 20px;
+      border-radius: 2px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+    .badge-preview {
+      background: #fff;
+      border: 1px solid #E0DDD6;
+      padding: 32px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .note { font-size: 0.75rem; color: #888; margin-top: 4px; }
+
+    /* ===== TPJ バッジ スタイル（このまま外部サイトにコピーして使用） ===== */
+    .tpj-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid #B8960C;
+      background: #fff;
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .tpj-badge:hover { background: #FDFBF5; box-shadow: 0 2px 8px rgba(184,150,12,0.15); }
+    .tpj-badge__logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .tpj-badge__logo-mark {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid #B8960C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #B8960C;
+    }
+    .tpj-badge__body { line-height: 1.3; }
+    .tpj-badge__label {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-transform: uppercase;
+    }
+    .tpj-badge__name {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1C1C1C;
+      letter-spacing: 0.02em;
+    }
+    .tpj-badge__grade {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: #B8960C;
+      margin-top: 2px;
+    }
+    .tpj-badge__grade--flagship { background: #1C1C1C; }
+    .tpj-badge__grade--platinum { background: #5C5C7A; }
+    .tpj-badge__grade--gold     { background: #B8960C; }
+    .tpj-badge__grade--silver   { background: #888; }
+    .tpj-badge__grade--certified { background: #4A7A4A; }
+
+    /* スモールバリアント */
+    .tpj-badge--sm {
+      padding: 7px 12px;
+      gap: 8px;
+    }
+    .tpj-badge--sm .tpj-badge__logo-mark { width: 24px; height: 24px; font-size: 9px; }
+    .tpj-badge--sm .tpj-badge__name { font-size: 11px; }
+    .tpj-badge--sm .tpj-badge__grade { font-size: 9px; padding: 1px 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>TPJ認証バッジ 設置ガイド</h1>
+    <p>Third Place Japan（サードプレイスジャパン）認証を取得した施設のウェブサイトに設置いただけるバッジコンポーネントです。</p>
+
+    <!-- ===== プレビュー ===== -->
+    <h2>バッジのプレビュー</h2>
+    <div class="badge-preview">
+
+      <!-- Flagship -->
+      <a href="https://thirdplacejapan.com/stories/certified/" target="_blank" rel="noopener" class="tpj-badge">
+        <div class="tpj-badge__logo">
+          <div class="tpj-badge__logo-mark">TPJ</div>
+        </div>
+        <div class="tpj-badge__body">
+          <span class="tpj-badge__label">Certified by</span>
+          <span class="tpj-badge__name">Third Place Japan</span>
+          <span class="tpj-badge__grade tpj-badge__grade--flagship">Flagship</span>
+        </div>
+      </a>
+
+      <!-- Platinum -->
+      <a href="https://thirdplacejapan.com/stories/certified/" target="_blank" rel="noopener" class="tpj-badge">
+        <div class="tpj-badge__logo">
+          <div class="tpj-badge__logo-mark">TPJ</div>
+        </div>
+        <div class="tpj-badge__body">
+          <span class="tpj-badge__label">Certified by</span>
+          <span class="tpj-badge__name">Third Place Japan</span>
+          <span class="tpj-badge__grade tpj-badge__grade--platinum">Platinum</span>
+        </div>
+      </a>
+
+      <!-- Gold -->
+      <a href="https://thirdplacejapan.com/stories/certified/" target="_blank" rel="noopener" class="tpj-badge">
+        <div class="tpj-badge__logo">
+          <div class="tpj-badge__logo-mark">TPJ</div>
+        </div>
+        <div class="tpj-badge__body">
+          <span class="tpj-badge__label">Certified by</span>
+          <span class="tpj-badge__name">Third Place Japan</span>
+          <span class="tpj-badge__grade tpj-badge__grade--gold">Gold</span>
+        </div>
+      </a>
+
+      <!-- Silver (small) -->
+      <a href="https://thirdplacejapan.com/stories/certified/" target="_blank" rel="noopener" class="tpj-badge tpj-badge--sm">
+        <div class="tpj-badge__logo">
+          <div class="tpj-badge__logo-mark">TPJ</div>
+        </div>
+        <div class="tpj-badge__body">
+          <span class="tpj-badge__label">Certified by</span>
+          <span class="tpj-badge__name">Third Place Japan</span>
+          <span class="tpj-badge__grade tpj-badge__grade--silver">Silver</span>
+        </div>
+      </a>
+
+      <!-- Certified (small) -->
+      <a href="https://thirdplacejapan.com/stories/certified/" target="_blank" rel="noopener" class="tpj-badge tpj-badge--sm">
+        <div class="tpj-badge__logo">
+          <div class="tpj-badge__logo-mark">TPJ</div>
+        </div>
+        <div class="tpj-badge__body">
+          <span class="tpj-badge__label">Certified by</span>
+          <span class="tpj-badge__name">Third Place Japan</span>
+          <span class="tpj-badge__grade tpj-badge__grade--certified">Certified</span>
+        </div>
+      </a>
+
+    </div>
+    <p class="note">左から：Flagship（標準）/ Platinum（標準）/ Gold（標準）/ Silver（スモール）/ Certified（スモール）</p>
+
+    <!-- ===== 設置手順 ===== -->
+    <h2>設置手順</h2>
+    <p>以下のコードをウェブサイトの <code>&lt;head&gt;</code> 内にCSSを、バッジを表示したい場所にHTMLを貼り付けてください。</p>
+
+    <h2>Step 1：CSSをコピーして &lt;head&gt; 内に貼り付ける</h2>
+    <pre>&lt;style&gt;
+.tpj-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid #B8960C;
+  background: #fff;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.tpj-badge:hover { background: #FDFBF5; box-shadow: 0 2px 8px rgba(184,150,12,0.15); }
+.tpj-badge__logo-mark {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #B8960C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #B8960C;
+}
+.tpj-badge__body { line-height: 1.3; }
+.tpj-badge__label { display: block; font-size: 9px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.tpj-badge__name  { display: block; font-size: 13px; font-weight: 500; color: #1C1C1C; }
+.tpj-badge__grade { display: inline-block; padding: 2px 8px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #fff; margin-top: 2px; }
+.tpj-badge__grade--flagship { background: #1C1C1C; }
+.tpj-badge__grade--platinum { background: #5C5C7A; }
+.tpj-badge__grade--gold     { background: #B8960C; }
+.tpj-badge__grade--silver   { background: #888; }
+.tpj-badge__grade--certified { background: #4A7A4A; }
+&lt;/style&gt;</pre>
+
+    <h2>Step 2：バッジHTMLをページに貼り付ける（グレードを変更して使用）</h2>
+    <p>認証グレードに合わせて <code>tpj-badge__grade--{グレード}</code> クラスと表示テキストを変更してください。</p>
+    <pre>&lt;!-- Flagship の場合 --&gt;
+&lt;a href="https://thirdplacejapan.com/stories/certified/"
+   target="_blank" rel="noopener" class="tpj-badge"&gt;
+  &lt;div class="tpj-badge__logo"&gt;
+    &lt;div class="tpj-badge__logo-mark"&gt;TPJ&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tpj-badge__body"&gt;
+    &lt;span class="tpj-badge__label"&gt;Certified by&lt;/span&gt;
+    &lt;span class="tpj-badge__name"&gt;Third Place Japan&lt;/span&gt;
+    &lt;span class="tpj-badge__grade tpj-badge__grade--flagship"&gt;Flagship&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/a&gt;
+
+&lt;!-- Gold の場合 --&gt;
+&lt;a href="https://thirdplacejapan.com/stories/certified/"
+   target="_blank" rel="noopener" class="tpj-badge"&gt;
+  &lt;div class="tpj-badge__logo"&gt;
+    &lt;div class="tpj-badge__logo-mark"&gt;TPJ&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tpj-badge__body"&gt;
+    &lt;span class="tpj-badge__label"&gt;Certified by&lt;/span&gt;
+    &lt;span class="tpj-badge__name"&gt;Third Place Japan&lt;/span&gt;
+    &lt;span class="tpj-badge__grade tpj-badge__grade--gold"&gt;Gold&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</pre>
+
+    <h2>グレード対応表</h2>
+    <p>クラス名とグレード表示テキストの対応は以下のとおりです。</p>
+    <pre>Flagship  → class="tpj-badge__grade tpj-badge__grade--flagship"  ／ テキスト: Flagship
+Platinum  → class="tpj-badge__grade tpj-badge__grade--platinum"  ／ テキスト: Platinum
+Gold      → class="tpj-badge__grade tpj-badge__grade--gold"      ／ テキスト: Gold
+Silver    → class="tpj-badge__grade tpj-badge__grade--silver"    ／ テキスト: Silver
+Certified → class="tpj-badge__grade tpj-badge__grade--certified" ／ テキスト: Certified</pre>
+
+    <h2>注意事項</h2>
+    <p>・バッジのリンク先（<code>href</code>）は必ず <code>https://thirdplacejapan.com/stories/certified/</code> にしてください。</p>
+    <p>・バッジ画像の改変、グレードの改ざんは禁止しています。</p>
+    <p>・認証が失効した場合は速やかにバッジを削除してください。</p>
+    <p>・ご不明な点は <a href="https://thirdplacejapan.com/contact">thirdplacejapan.com/contact</a> までお問い合わせください。</p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+---
+title: "場所をめぐる"
+description: "都道府県・エリアから日本のサードプレイスを探す。Third Place Japan 認証店舗の地域別一覧。"
+canonical: "/stories/area/"
+---
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>場所をめぐる</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">場所をめぐる</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">エリアから探す</h1>
+    <div class="gold-rule"></div>
+  </div>
+
+  <div class="space-y-12" data-aos="fade-up">
+    {% for pref in areas %}
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/{{ pref.slug }}/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          {{ pref.name }}
+        </a>
+        <a href="/stories/area/{{ pref.slug }}/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        {% for city in pref.cities %}
+        <div>
+          <a href="/stories/area/{{ pref.slug }}/{{ city.slug }}/"
+             class="text-xs text-muted block mb-2">
+            {{ city.name }}
+          </a>
+          {% if city.areas and city.areas.length %}
+          <div class="flex flex-wrap gap-2">
+            {% for area in city.areas %}
+            <a href="/stories/area/{{ pref.slug }}/{{ city.slug }}/{{ area.slug }}/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              {{ area.name }}
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

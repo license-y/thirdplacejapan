@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>場所をめぐる | Third Place Japan Stories</title>
+  <meta name="description" content="都道府県・エリアから日本のサードプレイスを探す。Third Place Japan 認証店舗の地域別一覧。">
+  <link rel="canonical" href="https://thirdplacejapan.com/stories/area/">
+
+  <!-- hreflang -->
+  
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="場所をめぐる | Third Place Japan Stories">
+  <meta property="og:description" content="都道府県・エリアから日本のサードプレイスを探す。Third Place Japan 認証店舗の地域別一覧。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thirdplacejapan.com/stories/area/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア"
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
+      TPJ Stories
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    if (logo) logo.style.color = color;
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>場所をめぐる</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">場所をめぐる</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">エリアから探す</h1>
+    <div class="gold-rule"></div>
+  </div>
+
+  <div class="space-y-12" data-aos="fade-up">
+    
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/tokyo/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          東京都
+        </a>
+        <a href="/stories/area/tokyo/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        
+        <div>
+          <a href="/stories/area/tokyo/shibuya-ku/"
+             class="text-xs text-muted block mb-2">
+            渋谷区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/shibuya-ku/shibuya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              渋谷
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/daikanyama/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              代官山
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/nakameguro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              中目黒
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/ebisu/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              恵比寿
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/omotesando/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              表参道
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/harajuku/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              原宿
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/shinsen/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              神泉
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/tomigaya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              富ヶ谷
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/hatagaya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              幡ヶ谷
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/sasazuka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              笹塚
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/hatsudai/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              初台
+            </a>
+            
+            <a href="/stories/area/tokyo/shibuya-ku/shoto/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              松濤
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/minato-ku/"
+             class="text-xs text-muted block mb-2">
+            港区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/minato-ku/aoyama/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              青山
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/roppongi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              六本木
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/azabu/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              麻布
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/hiroo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              広尾
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/akasaka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              赤坂
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/azabujuban/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              麻布十番
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/shirokanedai/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              白金台
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/mita/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              三田
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/shibaura/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              芝浦
+            </a>
+            
+            <a href="/stories/area/tokyo/minato-ku/takanawa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              高輪
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/shinjuku-ku/"
+             class="text-xs text-muted block mb-2">
+            新宿区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/shinjuku/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              新宿
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/kagurazaka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              神楽坂
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/takadanobaba/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              高田馬場
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/yotsuya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              四谷
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/waseda/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              早稲田
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/nishi-shinjuku/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              西新宿
+            </a>
+            
+            <a href="/stories/area/tokyo/shinjuku-ku/ochiai/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              落合
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/chuo-ku/"
+             class="text-xs text-muted block mb-2">
+            中央区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/chuo-ku/ginza/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              銀座
+            </a>
+            
+            <a href="/stories/area/tokyo/chuo-ku/nihonbashi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              日本橋
+            </a>
+            
+            <a href="/stories/area/tokyo/chuo-ku/ningyocho/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              人形町
+            </a>
+            
+            <a href="/stories/area/tokyo/chuo-ku/tsukiji/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              築地
+            </a>
+            
+            <a href="/stories/area/tokyo/chuo-ku/tsukishima/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              月島
+            </a>
+            
+            <a href="/stories/area/tokyo/chuo-ku/kachidoki/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              勝どき
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/meguro-ku/"
+             class="text-xs text-muted block mb-2">
+            目黒区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/meguro-ku/jiyugaoka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              自由が丘
+            </a>
+            
+            <a href="/stories/area/tokyo/meguro-ku/gakugeidaigaku/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              学芸大学
+            </a>
+            
+            <a href="/stories/area/tokyo/meguro-ku/yutenji/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              祐天寺
+            </a>
+            
+            <a href="/stories/area/tokyo/meguro-ku/meguro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              目黒
+            </a>
+            
+            <a href="/stories/area/tokyo/meguro-ku/musashi-koyama/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              武蔵小山
+            </a>
+            
+            <a href="/stories/area/tokyo/meguro-ku/naka-meguro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              中目黒
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/setagaya-ku/"
+             class="text-xs text-muted block mb-2">
+            世田谷区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/setagaya-ku/shimokitazawa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              下北沢
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/sangenjaya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              三軒茶屋
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/futakotamagawa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              二子玉川
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/komazawa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              駒沢
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/kyodo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              経堂
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/yoga/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              用賀
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/soshigaya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              祖師ヶ谷大蔵
+            </a>
+            
+            <a href="/stories/area/tokyo/setagaya-ku/chitose-funabashi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              千歳船橋
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/chiyoda-ku/"
+             class="text-xs text-muted block mb-2">
+            千代田区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/marunouchi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              丸の内
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/kanda/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              神田
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/ochanomizu/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              御茶ノ水
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/akihabara/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              秋葉原
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/hibiya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              日比谷
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/hanzomon/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              半蔵門
+            </a>
+            
+            <a href="/stories/area/tokyo/chiyoda-ku/iidabashi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              飯田橋
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/toshima-ku/"
+             class="text-xs text-muted block mb-2">
+            豊島区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/toshima-ku/ikebukuro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              池袋
+            </a>
+            
+            <a href="/stories/area/tokyo/toshima-ku/sugamo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              巣鴨
+            </a>
+            
+            <a href="/stories/area/tokyo/toshima-ku/otsuka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              大塚
+            </a>
+            
+            <a href="/stories/area/tokyo/toshima-ku/mejiro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              目白
+            </a>
+            
+            <a href="/stories/area/tokyo/toshima-ku/higashi-ikebukuro/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              東池袋
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/taito-ku/"
+             class="text-xs text-muted block mb-2">
+            台東区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/taito-ku/asakusa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              浅草
+            </a>
+            
+            <a href="/stories/area/tokyo/taito-ku/ueno/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              上野
+            </a>
+            
+            <a href="/stories/area/tokyo/taito-ku/kuramae/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              蔵前
+            </a>
+            
+            <a href="/stories/area/tokyo/taito-ku/iriya/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              入谷
+            </a>
+            
+            <a href="/stories/area/tokyo/taito-ku/nishi-nippori/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              日暮里
+            </a>
+            
+            <a href="/stories/area/tokyo/taito-ku/okachimachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              御徒町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/tokyo/koto-ku/"
+             class="text-xs text-muted block mb-2">
+            江東区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/tokyo/koto-ku/kiyosumi-shirakawa/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              清澄白河
+            </a>
+            
+            <a href="/stories/area/tokyo/koto-ku/monzen-nakacho/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              門前仲町
+            </a>
+            
+            <a href="/stories/area/tokyo/koto-ku/toyosu/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              豊洲
+            </a>
+            
+            <a href="/stories/area/tokyo/koto-ku/kiba/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              木場
+            </a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/osaka/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          大阪府
+        </a>
+        <a href="/stories/area/osaka/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        
+        <div>
+          <a href="/stories/area/osaka/osaka-kita-ku/"
+             class="text-xs text-muted block mb-2">
+            大阪市北区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/osaka/osaka-kita-ku/umeda/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              梅田
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-kita-ku/nakanoshima/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              中之島
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-kita-ku/tenjin-osaka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              天満
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-kita-ku/tenjinbashisuji/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              天神橋筋
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-kita-ku/minamimorimachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              南森町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/osaka/osaka-chuo-ku/"
+             class="text-xs text-muted block mb-2">
+            大阪市中央区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/osaka/osaka-chuo-ku/shinsaibashi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              心斎橋
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-chuo-ku/namba/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              難波
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-chuo-ku/tanimachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              谷町
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-chuo-ku/osakajo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              大阪城
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-chuo-ku/matsuyamachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              松屋町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/osaka/osaka-nishi-ku/"
+             class="text-xs text-muted block mb-2">
+            大阪市西区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/osaka/osaka-nishi-ku/horie/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              堀江
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-nishi-ku/awaza/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              阿波座
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-nishi-ku/nishi-nagahori/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              西長堀
+            </a>
+            
+            <a href="/stories/area/osaka/osaka-nishi-ku/kujo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              九条
+            </a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/kyoto/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          京都府
+        </a>
+        <a href="/stories/area/kyoto/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        
+        <div>
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/"
+             class="text-xs text-muted block mb-2">
+            京都市中京区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kyoto/kyoto-nakagyo-ku/karasuma/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              烏丸
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-nakagyo-ku/sanjo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              三条
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-nakagyo-ku/shijo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              四条
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-nakagyo-ku/nishiki/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              錦市場
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-nakagyo-ku/teramachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              寺町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/"
+             class="text-xs text-muted block mb-2">
+            京都市東山区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kyoto/kyoto-higashiyama-ku/gion/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              祇園
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-higashiyama-ku/kiyomizu/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              清水
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-higashiyama-ku/yasaka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              八坂
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-higashiyama-ku/sanjusangendo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              三十三間堂
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-higashiyama-ku/chion-in/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              知恩院
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/"
+             class="text-xs text-muted block mb-2">
+            京都市左京区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kyoto/kyoto-sakyo-ku/okazaki/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              岡崎
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-sakyo-ku/demachiyagi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              出町柳
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-sakyo-ku/ichijoji/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              一乗寺
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-sakyo-ku/tetsugaku-no-michi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              哲学の道
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-sakyo-ku/shugakuin/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              修学院
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/kyoto/kyoto-kita-ku/"
+             class="text-xs text-muted block mb-2">
+            京都市北区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kyoto/kyoto-kita-ku/kitayama/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              北山
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-kita-ku/kamigamo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              上賀茂
+            </a>
+            
+            <a href="/stories/area/kyoto/kyoto-kita-ku/nishigamo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              西賀茂
+            </a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/kanagawa/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          神奈川県
+        </a>
+        <a href="/stories/area/kanagawa/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        
+        <div>
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/"
+             class="text-xs text-muted block mb-2">
+            横浜市中区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kanagawa/yokohama-naka-ku/kannai/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              関内
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-naka-ku/motomachi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              元町
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-naka-ku/yamashitacho/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              山下町
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-naka-ku/chinatown/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              中華街
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-naka-ku/isezakicho/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              伊勢佐木町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/kanagawa/yokohama-nishi-ku/"
+             class="text-xs text-muted block mb-2">
+            横浜市西区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kanagawa/yokohama-nishi-ku/minatomirai/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              みなとみらい
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-nishi-ku/yokohama-sta/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              横浜駅周辺
+            </a>
+            
+            <a href="/stories/area/kanagawa/yokohama-nishi-ku/takashimacho/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              高島町
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/kanagawa/kamakura-shi/"
+             class="text-xs text-muted block mb-2">
+            鎌倉市
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/kanagawa/kamakura-shi/kamakura/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              鎌倉
+            </a>
+            
+            <a href="/stories/area/kanagawa/kamakura-shi/kita-kamakura/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              北鎌倉
+            </a>
+            
+            <a href="/stories/area/kanagawa/kamakura-shi/yuigahama/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              由比ガ浜
+            </a>
+            
+            <a href="/stories/area/kanagawa/kamakura-shi/hase/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              長谷
+            </a>
+            
+            <a href="/stories/area/kanagawa/kamakura-shi/zaimokuza/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              材木座
+            </a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div>
+      <div class="flex items-baseline justify-between mb-5">
+        <a href="/stories/area/fukuoka/"
+           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+          福岡県
+        </a>
+        <a href="/stories/area/fukuoka/"
+           class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
+          すべて見る →
+        </a>
+      </div>
+      <div class="space-y-4">
+        
+        <div>
+          <a href="/stories/area/fukuoka/fukuoka-chuo-ku/"
+             class="text-xs text-muted block mb-2">
+            福岡市中央区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/fukuoka/fukuoka-chuo-ku/tenjin/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              天神
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-chuo-ku/yakuin/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              薬院
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-chuo-ku/daimyo/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              大名
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-chuo-ku/kego/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              警固
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-chuo-ku/imaizumi/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              今泉
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <div>
+          <a href="/stories/area/fukuoka/fukuoka-hakata-ku/"
+             class="text-xs text-muted block mb-2">
+            福岡市博多区
+          </a>
+          
+          <div class="flex flex-wrap gap-2">
+            
+            <a href="/stories/area/fukuoka/fukuoka-hakata-ku/hakata/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              博多
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-hakata-ku/gion-fk/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              祇園
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-hakata-ku/yoshizuka/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              吉塚
+            </a>
+            
+            <a href="/stories/area/fukuoka/fukuoka-hakata-ku/hakataeki/"
+               class="text-xs border border-border rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-colors">
+              博多駅周辺
+            </a>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Stories</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベート</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>

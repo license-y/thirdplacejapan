@@ -1,0 +1,14 @@
+---
+pagination:
+  data: venues
+  size: 1
+  alias: venue
+  addAllPagesToCollections: true
+permalink: "/stories/certified/{{ venue.slug }}/"
+layout: venue.njk
+title: "{{ venue.name }}"
+description: "{{ venue.citation }}"
+hreflang_ja: "/stories/certified/{{ venue.slug }}/"
+hreflang_en: "{% if venue.has_en %}/en/stories/certified/{{ venue.slug }}/{% endif %}"
+og_image: "{{ venue.image }}"
+---

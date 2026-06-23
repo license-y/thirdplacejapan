@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サードプレイスとは | Third Place Japan Stories</title>
+  <meta name="description" content="サードプレイス（第三の居場所）の定義・歴史・8つの条件を解説する基礎知識ハブ。TPJが「なぜ今、居場所が必要か」を語ります。">
+  <link rel="canonical" href="https://thirdplacejapan.com/stories/about/">
+
+  <!-- hreflang -->
+  
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="サードプレイスとは | Third Place Japan Stories">
+  <meta property="og:description" content="サードプレイス（第三の居場所）の定義・歴史・8つの条件を解説する基礎知識ハブ。TPJが「なぜ今、居場所が必要か」を語ります。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thirdplacejapan.com/stories/about/">
+  
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア"
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
+      TPJ Stories
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    if (logo) logo.style.color = color;
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "サードプレイス",
+  "description": "家（ファーストプレイス）と職場（セカンドプレイス）に次ぐ、第三の居場所のこと。社会学者レイ・オルデンバーグが提唱した概念で、癒し・リラックス・自分時間を提供する場所を指す。",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "Third Place Japan サードプレイス用語集",
+    "url": "https://thirdplacejapan.com/stories/about/"
+  }
+}
+</script>
+
+<div class="max-w-3xl mx-auto px-6 py-20">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>サードプレイスとは</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">サードプレイスとは</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">「第三の居場所」とは何か</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-2xl leading-relaxed">
+      家（ファーストプレイス）と職場（セカンドプレイス）に次ぐ、第三の居場所——。<br class="hidden md:block">
+      社会学者レイ・オルデンバーグが提唱したこの概念を、TPJが日本の文脈で再定義します。
+    </p>
+  </div>
+
+  
+  
+  
+  <div class="space-y-4" data-aos="fade-up">
+    
+    <a href="/stories/about/great-good-place-book/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/great-good-place-book-library-reading.webp" alt="『The Great Good Place』が示したサードプレイス理論の核心"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          『The Great Good Place』が示したサードプレイス理論の核心
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          レイ・オルデンバーグの著書『The Great Good Place』の内容・思想・影響を解説。1989年刊のこの本がなぜサードプレイス論の原典となり、現代にも通じるのかをThird Place Japanが紹介します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/ray-oldenburg-third-place/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/ray-oldenburg-urban-sociology-cafe.webp" alt="サードプレイスの提唱者レイ・オルデンバーグとは何者か"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの提唱者レイ・オルデンバーグとは何者か
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスを提唱した社会学者レイ・オルデンバーグの経歴・思想・研究背景を解説。なぜ1980年代アメリカで「第三の居場所」という概念が生まれたのかを、Third Place Japanが詳しく紹介します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-examples/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-examples-variety-spaces.webp" alt="サードプレイスの具体例10選：どんな場所が当てはまるか"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの具体例10選：どんな場所が当てはまるか
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの具体例をカフェ・銭湯・書店・公園など10種類で解説。なぜその場所が「第三の居場所」として機能するのかを、Third Place Japanが条件と照らし合わせながら説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-ibasho-difference/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-ibasho-cozy-relaxing.webp" alt="サードプレイスと「居場所」「行きつけ」の正確な使い分け"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスと「居場所」「行きつけ」の正確な使い分け
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          「サードプレイス」「居場所」「行きつけ」の違いを正確に解説。それぞれが指す意味の違いと重なりを、Third Place Japanが社会学・日本語的文脈から整理します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-accessibility/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-accessibility-open-door-cafe.webp" alt="サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスにおける「アクセス性」の意味を解説。なぜ予約不要・気構え不要・生活動線上にあることが第三の居場所の必要条件なのかを、Third Place Japanがわかりやすく説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-conversation-silence/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-conversation-people-cafe.webp" alt="サードプレイスにおける会話と沈黙の役割"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスにおける会話と沈黙の役割
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスで会話と沈黙がどのように共存するかを解説。なぜ良いサードプレイスは「しゃべらなくてもいい場所」でもあるのか、Third Place Japanが社会学・文化的視点から説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-regulars/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-regulars-community-warmth.webp" alt="サードプレイスに「常連」が欠かせない理由"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスに「常連」が欠かせない理由
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスにおける常連の役割をわかりやすく解説。なぜ常連がいる場所ほど居心地がよく、初めての人も安心して過ごせるのかを、Third Place Japanが社会学の視点から説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-neutrality/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-neutrality-public-space.webp" alt="サードプレイスの「中立性」とは何か？誰もが居やすい場所の条件"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの「中立性」とは何か？誰もが居やすい場所の条件
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの核心的特徴「中立性」をわかりやすく解説。招待不要・立場の解放・義務からの自由という3要素がなぜ第三の居場所に必要なのか、具体例とともにThird Place Japanが説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-8-conditions/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/third-place-conditions-cafe-japan.webp" alt="サードプレイスの8つの条件とは？オルデンバーグの定義をTPJが再解釈"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの8つの条件とは？オルデンバーグの定義をTPJが再解釈
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの8つの条件を解説。レイ・オルデンバーグが提唱した定義と、Third Place Japanが現代日本向けに再解釈した7軸評価基準を比較します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/first-second-third-place-difference/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/first-second-third-place-cafe-tokyo.webp" alt="ファースト・セカンド・サードプレイスの違いとは？3つの場所を整理する"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          ファースト・セカンド・サードプレイスの違いとは？3つの場所を整理する
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          ファーストプレイス・セカンドプレイス・サードプレイスの違いをわかりやすく解説。家・職場・第三の居場所の役割と関係性を、Third Place Japanが具体例とともに整理します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/third-place-meaning/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/what-is-third-place-cafe-interior.webp" alt="サードプレイスの意味をわかりやすく：家・職場の次に必要な「第三の場所」"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの意味をわかりやすく：家・職場の次に必要な「第三の場所」
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスの意味をわかりやすく解説。家（ファーストプレイス）でも職場（セカンドプレイス）でもない「第三の居場所」が、なぜ現代人に必要なのかをThird Place Japanが詳しく説明します。
+        </p>
+        
+      </div>
+    </a>
+    
+    <a href="/stories/about/what-is-third-place/"
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+      
+      <div class="shrink-0 w-40 md:w-52 overflow-hidden">
+        <img src="/assets/images/articles/what-is-third-place-japan-interior.webp" alt="サードプレイスとは何か？定義・特徴・具体例をTPJが完全解説【保存版】"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      
+      <div class="p-5 md:p-6 flex flex-col justify-center min-w-0">
+        <span class="inline-block text-xs text-gold border border-gold rounded-full px-3 py-0.5 mb-3 w-fit">サードプレイスとは</span>
+        <h2 class="font-serif text-base md:text-lg font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイスとは何か？定義・特徴・具体例をTPJが完全解説【保存版】
+        </h2>
+        
+        <p class="text-sm text-muted leading-relaxed"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          サードプレイス（第三の居場所）の定義・歴史・8つの条件・日本での具体例をサードプレイスジャパン編集部が解説。AI時代に「どこにいるか」が問われる理由も。
+        </p>
+        
+      </div>
+    </a>
+    
+  </div>
+  
+
+</div>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Stories</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベート</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>
