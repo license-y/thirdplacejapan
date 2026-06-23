@@ -2,6 +2,7 @@
   {
     "slug": "hotel-lounge",
     "name_ja": "高級ホテル・ホテルラウンジ",
+    "name_short": "ホテルラウンジ",
     "name_en": "Luxury Hotel & Hotel Lounge",
     "group": "宿泊系",
     "revenue": true,
@@ -10,6 +11,7 @@
   {
     "slug": "onsen-ryokan",
     "name_ja": "温泉旅館・高級旅館",
+    "name_short": "温泉旅館",
     "name_en": "Onsen Ryokan & Luxury Inn",
     "group": "宿泊系",
     "revenue": true,
@@ -18,6 +20,7 @@
   {
     "slug": "villa-rental",
     "name_ja": "貸切ヴィラ・一棟貸しの宿",
+    "name_short": "貸切ヴィラ",
     "name_en": "Private Villa & Exclusive Inn",
     "group": "宿泊系",
     "revenue": true,
@@ -26,6 +29,7 @@
   {
     "slug": "restaurant-dining",
     "name_ja": "レストラン・ダイニング",
+    "name_short": "レストラン",
     "name_en": "Fine Restaurant & Private Dining",
     "group": "飲食系",
     "revenue": true,
@@ -34,6 +38,7 @@
   {
     "slug": "cafe-specialty-coffee",
     "name_ja": "カフェ・スペシャルティコーヒー",
+    "name_short": "カフェ・コーヒー",
     "name_en": "Café & Specialty Coffee",
     "group": "飲食系",
     "revenue": true,
@@ -42,6 +47,7 @@
   {
     "slug": "bar-whiskey",
     "name_ja": "バー・ウイスキー・カクテル",
+    "name_short": "バー・カクテル",
     "name_en": "Bar, Whiskey Bar & Craft Cocktail",
     "group": "飲食系",
     "revenue": true,
@@ -50,6 +56,7 @@
   {
     "slug": "spa-sauna-wellness",
     "name_ja": "スパ・サウナ・ウェルネス施設",
+    "name_short": "スパ・サウナ",
     "name_en": "Spa, Sauna & Wellness",
     "group": "癒し・美容系",
     "revenue": true,
@@ -58,6 +65,7 @@
   {
     "slug": "premium-salon",
     "name_ja": "高級サロン・プライベート",
+    "name_short": "高級サロン",
     "name_en": "Premium Salon & Private Salon",
     "group": "癒し・美容系",
     "revenue": true,
@@ -66,6 +74,7 @@
   {
     "slug": "coworking",
     "name_ja": "コワーキング・シェアオフィス",
+    "name_short": "コワーキング",
     "name_en": "Coworking & Share Office",
     "group": "仕事系",
     "revenue": true,
@@ -74,6 +83,7 @@
   {
     "slug": "members-lounge",
     "name_ja": "会員制ラウンジ・クラブ",
+    "name_short": "会員制ラウンジ",
     "name_en": "Members' Lounge & Private Club",
     "group": "会員制",
     "revenue": true,
@@ -82,6 +92,7 @@
   {
     "slug": "nature-glamping",
     "name_ja": "山・自然体験・グランピング",
+    "name_short": "自然・グランピング",
     "name_en": "Nature, Outdoor & Glamping",
     "group": "自然・精神系",
     "revenue": false,
@@ -90,6 +101,7 @@
   {
     "slug": "retreat-zen",
     "name_ja": "リトリート・禅体験",
+    "name_short": "リトリート・禅",
     "name_en": "Retreat, Zen & Spiritual Experience",
     "group": "自然・精神系",
     "revenue": false,
@@ -98,6 +110,7 @@
   {
     "slug": "shrine-temple",
     "name_ja": "神社・寺院・パワースポット",
+    "name_short": "神社・寺院",
     "name_en": "Shrine, Temple & Power Spot",
     "group": "自然・精神系",
     "revenue": false,
@@ -106,6 +119,7 @@
   {
     "slug": "inbound-experience",
     "name_ja": "インバウンド観光・体験施設",
+    "name_short": "インバウンド",
     "name_en": "Inbound Tourism & Experience",
     "group": "観光・集客施設系",
     "revenue": false,
@@ -114,6 +128,7 @@
   {
     "slug": "culture-sports-leisure",
     "name_ja": "文化・スポーツ・レジャー施設",
+    "name_short": "文化・スポーツ",
     "name_en": "Culture, Sports & Leisure",
     "group": "観光・集客施設系",
     "revenue": false,

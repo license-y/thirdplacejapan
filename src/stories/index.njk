@@ -230,17 +230,16 @@ canonical: "/stories/"
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
       {% for cat in categories %}
       <a href="/stories/{{ cat.slug }}/"
-         class="rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md group transition-all bg-white">
+         class="relative block rounded-xl overflow-hidden shadow-sm hover:shadow-md group transition-all aspect-[4/3]">
         {% if cat.image %}
-        <div class="overflow-hidden">
-          <img src="{{ cat.image }}" alt="{{ cat.name_ja }}のサードプレイス | Third Place Japan"
-               class="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-500"
-               loading="lazy" decoding="async">
-        </div>
+        <img src="{{ cat.image }}" alt="{{ cat.name_ja }}のサードプレイス | Third Place Japan"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+        {% else %}
+        <div class="w-full h-full bg-border"></div>
         {% endif %}
-        <div class="p-3 text-center">
-          <p class="text-xs text-text group-hover:text-gold transition-colors whitespace-nowrap">{{ cat.name_short or cat.name_ja }}</p>
-        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+        <p class="absolute bottom-0 inset-x-0 text-white text-[11px] text-center px-2 pb-2 leading-tight font-light tracking-wide whitespace-nowrap">{{ cat.name_short or cat.name_ja }}</p>
       </a>
       {% endfor %}
     </div>
