@@ -155,7 +155,7 @@ canonical: "/stories/"
     {% set featuredCat = categories | findCategoryBySlug(featured.data.category_slug) %}
     <a href="{{ featured.url }}" class="group flex gap-4 rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md bg-white transition-all mb-4 p-4">
       {% if featured.data.thumbnail %}
-      <div class="shrink-0 w-36 h-28 rounded-lg overflow-hidden">
+      <div class="shrink-0 w-36 h-28 rounded-lg overflow-hidden self-center">
         <img src="{{ featured.data.thumbnail }}" alt="{{ featured.data.title }}"
              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
              loading="lazy" decoding="async">
