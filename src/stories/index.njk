@@ -239,7 +239,10 @@ canonical: "/stories/"
         <div class="w-full h-full bg-border"></div>
         {% endif %}
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-        <p class="absolute bottom-0 inset-x-0 text-white text-[11px] text-center px-2 pb-2 leading-tight font-light tracking-wide whitespace-nowrap">{{ cat.name_short or cat.name_ja }}</p>
+        <p class="absolute bottom-0 inset-x-0 text-white text-[11px] text-center px-2 pb-2 leading-tight font-light tracking-wide whitespace-nowrap">
+          <span class="md:hidden">{{ cat.name_short or cat.name_ja }}</span>
+          <span class="hidden md:inline">{{ cat.name_ja }}</span>
+        </p>
       </a>
       {% endfor %}
     </div>
