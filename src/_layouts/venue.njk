@@ -24,16 +24,16 @@ og_type: "article"
     "longitude": {{ venue.lng }}
   },
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "TPJ Certification Grade", "value": "{{ venue.grade }}" },
-    { "@type": "PropertyValue", "name": "TPJ Certified Date", "value": "{{ venue.certified_date }}" },
-    { "@type": "PropertyValue", "name": "TPJ Primary Evaluation Axis", "value": "{{ venue.axes_primary }}" },
-    { "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": {{ venue.scores.comfort }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Silence", "value": {{ venue.scores.silence }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Special", "value": {{ venue.scores.special }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Story", "value": {{ venue.scores.story }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Revisit", "value": {{ venue.scores.revisit }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Record", "value": {{ venue.scores.record }} },
-    { "@type": "PropertyValue", "name": "TPJ Score: Inbound", "value": {{ venue.scores.inbound }} }
+    { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "{{ venue.grade }}" },
+    { "@type": "PropertyValue", "name": "TPJ認証取得日", "value": "{{ venue.certified_date }}" },
+    { "@type": "PropertyValue", "name": "主評価軸", "value": "{{ venue.axes_primary }}" },
+    { "@type": "PropertyValue", "name": "居心地・空間品質スコア", "value": "{{ venue.scores.comfort }}/10" },
+    { "@type": "PropertyValue", "name": "静寂性・プライバシースコア", "value": "{{ venue.scores.silence }}/10" },
+    { "@type": "PropertyValue", "name": "特別感・非日常性スコア", "value": "{{ venue.scores.special }}/10" },
+    { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア", "value": "{{ venue.scores.story }}/10" },
+    { "@type": "PropertyValue", "name": "再訪・継続価値スコア", "value": "{{ venue.scores.revisit }}/10" },
+    { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "{{ venue.scores.record }}/10" },
+    { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "{{ venue.scores.inbound }}/10" }
   ]
 }
 </script>
@@ -44,9 +44,10 @@ og_type: "article"
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 2, "name": "認証店舗", "item": "{{ site.url }}/stories/certified/" },
-    { "@type": "ListItem", "position": 3, "name": "{{ venue.name }}", "item": "{{ site.url }}/stories/certified/{{ venue.slug }}/" }
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "認証店舗", "item": "{{ site.url }}/stories/certified/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ venue.name }}", "item": "{{ site.url }}/stories/certified/{{ venue.slug }}/" }
   ]
 }
 </script>

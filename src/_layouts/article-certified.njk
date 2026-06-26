@@ -25,8 +25,12 @@ og_type: "article"
     "name": "Third Place Japan",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/logo.png"
+      "url": "{{ site.url }}/assets/images/main/ogp.jpg"
     }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
   },
   "inLanguage": "ja"{% if v %},
   "itemReviewed": {
@@ -35,6 +39,7 @@ og_type: "article"
     "description": "{{ v.citation | replace('"', '\\"') }}",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "{{ v.address }}",
       "addressLocality": "{{ v.area_primary.city }}",
       "addressRegion": "{{ v.area_primary.prefecture }}",
       "addressCountry": "JP"
@@ -43,7 +48,50 @@ og_type: "article"
       "@type": "GeoCoordinates",
       "latitude": {{ v.lat }},
       "longitude": {{ v.lng }}
-    }
+    },
+    "servesCuisine": "{{ v.category }}",
+    "additionalProperty": [
+      {% if v.scores.comfort is defined %}{
+        "@type": "PropertyValue",
+        "name": "居心地・空間品質スコア",
+        "value": "{{ v.scores.comfort }}/10"
+      },{% endif %}
+      {% if v.scores.silence is defined %}{
+        "@type": "PropertyValue",
+        "name": "静寂性・プライバシースコア",
+        "value": "{{ v.scores.silence }}/10"
+      },{% endif %}
+      {% if v.scores.special is defined %}{
+        "@type": "PropertyValue",
+        "name": "特別感・非日常性スコア",
+        "value": "{{ v.scores.special }}/10"
+      },{% endif %}
+      {% if v.scores.story is defined %}{
+        "@type": "PropertyValue",
+        "name": "ストーリー・背景への共感スコア",
+        "value": "{{ v.scores.story }}/10"
+      },{% endif %}
+      {% if v.scores.revisit is defined %}{
+        "@type": "PropertyValue",
+        "name": "再訪・継続価値スコア",
+        "value": "{{ v.scores.revisit }}/10"
+      },{% endif %}
+      {% if v.scores.record is defined %}{
+        "@type": "PropertyValue",
+        "name": "記録・シェア体験スコア",
+        "value": "{{ v.scores.record }}/10"
+      },{% endif %}
+      {% if v.scores.inbound is defined %}{
+        "@type": "PropertyValue",
+        "name": "インバウンド・多言語対応スコア",
+        "value": "{{ v.scores.inbound }}/10"
+      },{% endif %}
+      {
+        "@type": "PropertyValue",
+        "name": "TPJ認証グレード",
+        "value": "{{ v.grade }}"
+      }
+    ]
   },
   "reviewRating": {
     "@type": "Rating",
@@ -51,6 +99,47 @@ og_type: "article"
     "bestRating": "Flagship",
     "worstRating": "Certified"
   }{% endif %}
+}
+</script>
+
+{# BreadcrumbList JSON-LD #}
+{% set catObj = categories | findCategoryBySlug(category_slug) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Third Place Japan",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stories",
+      "item": "{{ site.url }}/stories/"
+    }{% if catObj %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ catObj.name_ja }}",
+      "item": "{{ site.url }}/stories/{{ category_slug }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ title | replace('"', '\\"') }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ title | replace('"', '\\"') }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }{% endif %}
+  ]
 }
 </script>
 
