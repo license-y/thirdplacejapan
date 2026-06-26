@@ -364,3 +364,77 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 - 認証記事のサムネイル画像が `images/main/` に保存されており、`images/articles/` に存在しなかった。
 - `images/main/` から `images/articles/` にコピーして解決。
 - **教訓**: 記事サムネイルは必ず `public/assets/images/articles/` に保存する（`images/main/` はメインサイト用）。
+
+---
+
+## AEO・構造化データ 実装ルール（2026-06-26 確定）
+
+### 必須：全ページに適用済みの構造化データ
+
+`src/_layouts/base.njk` がすべての記事サイトページに Organization JSON-LD・OGP・Twitter Card・keywords metaを提供する。新規レイアウトを作成する場合も必ず `base.njk` を継承すること。
+
+### ページ種別ごとの構造化データ対応表
+
+| ページ種別 | テンプレート | 実装済みJSON-LD |
+|---|---|---|
+| メインサイト | `public/index.html` | Organization・WebSite・SearchAction・FAQPage（5問） |
+| 記事（一般） | `src/_layouts/article.njk` | Article・BreadcrumbList・FAQPage（自動抽出） |
+| 記事（エリア） | `src/_layouts/article-area.njk` | Article・BreadcrumbList・FAQPage（自動抽出） |
+| 記事（認証店舗紹介） | `src/_layouts/article-certified.njk` | Article+Review・LocalBusiness・BreadcrumbList・FAQPage |
+| 認証店舗ページ | `src/_layouts/venue.njk` | LocalBusiness（7軸スコア）・BreadcrumbList |
+| 英語版認証店舗 | `src/_layouts/venue-en.njk` | LocalBusiness・BreadcrumbList |
+| Storiesトップ | `src/stories/index.njk` | WebSite・FAQPage（3問） |
+| カテゴリトップ | `src/stories/category-index.njk` | BreadcrumbList・CollectionPage・FAQPage（2問） |
+| エリア一覧 | `src/stories/area/index.njk` | BreadcrumbList・CollectionPage・FAQPage（2問） |
+| 都道府県 | `src/stories/area/l1-prefecture.njk` | BreadcrumbList |
+| 市区町村 | `src/stories/area/l2-city.njk` | BreadcrumbList |
+| エリアハブ | `src/stories/area/l3-area.njk` | FAQPage・BreadcrumbList |
+| エリア×業種 | `src/stories/area/l3-category.njk` | FAQPage（5問）・ItemList・BreadcrumbList |
+| 認証店舗一覧 | `src/stories/certified/index.njk` | ItemList |
+| サードプレイスとは | `src/stories/about/index.njk` | DefinedTerm |
+
+### 新規テンプレート・ページを作成する際の必須チェックリスト
+
+新しいテンプレートファイルまたはページを追加するときは、以下を必ずすべて実装すること：
+
+1. **BreadcrumbList JSON-LD**（`src/` テンプレートの場合）
+   - 構造: `Third Place Japan` → `Stories` → `（必要に応じてカテゴリ）` → `現在のページ`
+   - 全ページ1階層目は必ず `{ "name": "Third Place Japan", "item": "{{ site.url }}" }` から始める
+
+2. **ページ種別に応じたJSON-LD**
+   - 一覧・索引ページ → `CollectionPage` または `ItemList`
+   - 読み物・解説ページ → `Article`（`mainEntityOfPage` も必須）
+   - 店舗詳細ページ → `LocalBusiness`（7軸スコアは `additionalProperty` で構造化）
+   - FAQ・Q&Aを含む場合 → `FAQPage`（`extractFAQ` フィルタで自動抽出 or 手書き）
+
+3. **publisher の logo URL 統一**
+   - 正: `"url": "{{ site.url }}/assets/images/main/ogp.jpg"`
+   - 誤: `"url": "{{ site.url }}/assets/logo.png"` ← 存在しないパスのため使用禁止
+
+4. **OGP og:image のデフォルト設定**
+   - `base.njk` が `thumbnail` → `og_image` → `/assets/images/main/ogp.jpg` の順でフォールバック
+   - 個別ページで `og_image:` または `thumbnail:` をフロントマターに設定すれば上書き可能
+
+### 7軸スコアのJSON-LD化ルール
+
+認証施設の7軸スコアは `additionalProperty` として構造化データに含める。日本語の名称を使うこと：
+
+```json
+"additionalProperty": [
+  { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "{{ venue.grade }}" },
+  { "@type": "PropertyValue", "name": "居心地・空間品質スコア", "value": "{{ venue.scores.comfort }}/10" },
+  { "@type": "PropertyValue", "name": "静寂性・プライバシースコア", "value": "{{ venue.scores.silence }}/10" },
+  { "@type": "PropertyValue", "name": "特別感・非日常性スコア", "value": "{{ venue.scores.special }}/10" },
+  { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア", "value": "{{ venue.scores.story }}/10" },
+  { "@type": "PropertyValue", "name": "再訪・継続価値スコア", "value": "{{ venue.scores.revisit }}/10" },
+  { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "{{ venue.scores.record }}/10" },
+  { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "{{ venue.scores.inbound }}/10" }
+]
+```
+
+### FAQPage の設置ルール（AEO最重要）
+
+- 記事内に `**Q.` で始まる Q&A があれば `extractFAQ` フィルタが自動的に `FAQPage` JSON-LD を生成する
+- カテゴリ・エリア・一覧ページには手書きで `FAQPage` を設置する
+- FAQ質問は「実際に検索されうる形」で立てる（例：「東京でTPJ認証のカフェは？」）
+- 回答は2〜3文に収め、冒頭で直接答える（前置き不要）
