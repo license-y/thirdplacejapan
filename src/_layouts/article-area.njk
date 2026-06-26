@@ -22,7 +22,7 @@ og_type: "article"
     "name": "Third Place Japan",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/images/main/ogp.jpg"
+      "url": "{{ site.url }}/assets/images/main/japan-cafe-interior-hero.webp"
     }
   },
   "mainEntityOfPage": {
@@ -33,6 +33,11 @@ og_type: "article"
   "about": {
     "@type": "Place",
     "name": "{{ area_name or title }}"
+  },
+  "wordCount": {{ content | wordCount }},
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".prose p"]
   }
 }
 </script>

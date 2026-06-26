@@ -12,9 +12,34 @@ layout: area.njk
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 2, "name": "場所をめぐる", "item": "{{ site.url }}/stories/area/" },
-    { "@type": "ListItem", "position": 3, "name": "{{ prefecture.name }}", "item": "{{ site.url }}/stories/area/{{ prefecture.slug }}/" }
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "場所をめぐる", "item": "{{ site.url }}/stories/area/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ prefecture.name }}", "item": "{{ site.url }}/stories/area/{{ prefecture.slug }}/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ prefecture.name }}でTPJ認証を受けたサードプレイスはどこですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ prefecture.name }}のThird Place Japan認証店舗は{{ site.url }}/stories/area/{{ prefecture.slug }}/からエリア・業種別に探せます。カフェ・ホテルラウンジ・スパ・コワーキングなど多業種の認証施設を掲載しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ prefecture.name }}の市区町村ごとにTPJ認証店舗を探せますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。{{ prefecture.name }}の認証店舗は市区町村ごとに絞り込んで探せます。さらにエリア（例：渋谷・青山）と業種（例：カフェ）の掛け合わせでも検索できます。"
+      }
+    }
   ]
 }
 </script>

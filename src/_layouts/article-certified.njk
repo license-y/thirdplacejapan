@@ -25,7 +25,7 @@ og_type: "article"
     "name": "Third Place Japan",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/images/main/ogp.jpg"
+      "url": "{{ site.url }}/assets/images/main/japan-cafe-interior-hero.webp"
     }
   },
   "mainEntityOfPage": {
@@ -98,7 +98,13 @@ og_type: "article"
     "ratingValue": "{{ v.grade }}",
     "bestRating": "Flagship",
     "worstRating": "Certified"
-  }{% endif %}
+  }{% endif %},
+  "wordCount": {{ content | wordCount }},
+  "keywords": "{{ category_slug }}, サードプレイス, TPJ認証{% if v %}, {{ v.name }}, {{ v.category }}, {{ v.area_primary.prefecture }}, {{ v.area_primary.area }}{% endif %}",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".prose p", ".border-l-2"]
+  }
 }
 </script>
 

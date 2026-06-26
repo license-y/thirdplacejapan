@@ -18,13 +18,13 @@
   <meta property="og:description" content="Third Place Japanが認証した、日本全国のサードプレイス。7軸評価基準による認証店舗をグレード別・地域別に掲載しています。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thirdplacejapan.com/stories/certified/">
-  <meta property="og:image" content="https://thirdplacejapan.com/assets/images/main/ogp.jpg">
+  <meta property="og:image" content="https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Third Place Japan Stories">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="認証店舗一覧 | Third Place Japan Stories">
   <meta name="twitter:description" content="Third Place Japanが認証した、日本全国のサードプレイス。7軸評価基準による認証店舗をグレード別・地域別に掲載しています。">
-  <meta name="twitter:image" content="https://thirdplacejapan.com/assets/images/main/ogp.jpg">
+  <meta name="twitter:image" content="https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +134,7 @@
     "url": "https://thirdplacejapan.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://thirdplacejapan.com/assets/images/main/ogp.jpg"
+      "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
     },
     "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
     "areaServed": {
@@ -226,10 +226,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "https://thirdplacejapan.com" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://thirdplacejapan.com/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "認証店舗一覧", "item": "https://thirdplacejapan.com/stories/certified/" }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Third Place Japan 認証店舗一覧",
   "description": "TPJ独自の7軸評価基準による認証店舗リスト",
   "url": "https://thirdplacejapan.com/stories/certified/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thirdplacejapan.com/stories/certified/"
+  },
   "numberOfItems": 5,
   "itemListElement": [
     
@@ -238,6 +255,7 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Green Beans Coffee",
+      "description": "Flagship認証 / カフェ・スペシャルティコーヒー / 東京都渋谷",
       "url": "https://thirdplacejapan.com/stories/certified/green-beans-coffee-shibuya/"
     },
     
@@ -245,6 +263,7 @@
       "@type": "ListItem",
       "position": 2,
       "name": "神泉珈琲舎",
+      "description": "Gold認証 / カフェ・スペシャルティコーヒー / 東京都渋谷",
       "url": "https://thirdplacejapan.com/stories/certified/shinsen-coffeehouse/"
     },
     
@@ -252,6 +271,7 @@
       "@type": "ListItem",
       "position": 3,
       "name": "丸明ロースタリー 松濤",
+      "description": "Platinum認証 / カフェ・スペシャルティコーヒー / 東京都渋谷",
       "url": "https://thirdplacejapan.com/stories/certified/maruaki-roastery-matsudai/"
     },
     
@@ -259,6 +279,7 @@
       "@type": "ListItem",
       "position": 4,
       "name": "ダガヤサンドウ珈琲所",
+      "description": "Gold認証 / カフェ・スペシャルティコーヒー / 東京都渋谷",
       "url": "https://thirdplacejapan.com/stories/certified/dagayasandou-coffee/"
     },
     
@@ -266,9 +287,44 @@
       "@type": "ListItem",
       "position": 5,
       "name": "奥渋谷スタンド",
+      "description": "Silver認証 / カフェ・スペシャルティコーヒー / 東京都渋谷",
       "url": "https://thirdplacejapan.com/stories/certified/okushibuya-stand/"
     }
     
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "TPJ認証店舗とはどのような施設ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TPJ認証店舗とは、Third Place Japan（サードプレイスジャパン）が独自の7軸評価基準（居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応）で審査し、一定水準を超えたと認定した施設です。料理ではなく「いる体験・居場所としての価値」を評価します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TPJ認証のグレードにはどんな種類がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TPJ認証はCertified・Standard・Silver・Gold・Flagshipの5段階グレード制です。Flagshipが最高グレードで、7軸すべてにおいて卓越した体験を提供する施設に与えられます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TPJ認証店舗をエリアや業種で絞り込めますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。認証店舗は都道府県・市区町村・エリアの3階層と、15業種（カフェ・ホテル・スパ・コワーキング等）で絞り込んで探せます。https://thirdplacejapan.com/stories/area/からエリア検索、https://thirdplacejapan.com/stories/から業種別に閲覧できます。"
+      }
+    }
   ]
 }
 </script>

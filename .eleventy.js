@@ -222,6 +222,11 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("urlencode", (str) => encodeURIComponent(str || ""));
 
+  eleventyConfig.addFilter("wordCount", (content) => {
+    if (!content) return 0;
+    return content.replace(/<[^>]*>/g, "").split(/\s+/).filter(Boolean).length;
+  });
+
   eleventyConfig.addFilter("relatedPostsByCat", (collection, currentUrl, categorySlug, limit) => {
     const n = limit || 3;
     const sameCat = (collection || [])
