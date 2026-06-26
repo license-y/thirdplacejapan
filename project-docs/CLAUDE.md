@@ -367,74 +367,188 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ---
 
-## AEO・構造化データ 実装ルール（2026-06-26 確定）
+## AEO・構造化データ 実装ルール（2026-06-26 確定・スコア 110/110 達成）
 
-### 必須：全ページに適用済みの構造化データ
+> このセクションはTPJサイトのAEO（Answer Engine Optimization）実装の唯一の正本。
+> 新規ページ・テンプレートを追加するたびに、このルールに従い実装すること。
 
-`src/_layouts/base.njk` がすべての記事サイトページに Organization JSON-LD・OGP・Twitter Card・keywords metaを提供する。新規レイアウトを作成する場合も必ず `base.njk` を継承すること。
+---
 
-### ページ種別ごとの構造化データ対応表
+### 前提：全ページに自動適用される共通実装
 
-| ページ種別 | テンプレート | 実装済みJSON-LD |
+`src/_layouts/base.njk` をすべての記事サイトページが継承することで、以下が自動適用される。
+**新規レイアウトを作成する際は必ず `base.njk` を継承すること（直接 `<html>` を書かない）。**
+
+| 項目 | 実装内容 |
+|---|---|
+| Organization JSON-LD | name・alternateName・url・logo・description・areaServed |
+| OGP | og:title・og:description・og:type・og:url・og:image・og:locale・og:site_name |
+| Twitter Card | twitter:card・twitter:title・twitter:description・twitter:image |
+| keywords meta | デフォルト値（フロントマターで `keywords:` を設定すれば上書き可能） |
+| canonical | フロントマターで `canonical:` を設定した場合のみ出力 |
+| hreflang | フロントマターで `hreflang_ja:` / `hreflang_en:` を設定した場合のみ出力 |
+
+**og:image のフォールバック順（base.njk）：**
+1. フロントマターの `og_image:`
+2. フロントマターの `thumbnail:`
+3. デフォルト `/assets/images/main/japan-cafe-interior-hero.webp`
+
+---
+
+### 全ディレクトリ・全ページ 構造化データ実装マップ
+
+#### メインサイト
+
+| ファイル | URL | 実装済みJSON-LD | speakable |
+|---|---|---|---|
+| `public/index.html` | `/` | Organization・WebSite+SearchAction・FAQPage（5問） | ✅ WebSite |
+
+#### 記事レイアウト（`src/_layouts/`）
+
+| ファイル | 用途 | 実装済みJSON-LD | speakable |
+|---|---|---|---|
+| `article.njk` | 一般記事 | Article（mainEntityOfPage・wordCount・keywords）・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
+| `article-area.njk` | エリア記事 | Article（mainEntityOfPage・wordCount）・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
+| `article-certified.njk` | 認証店舗紹介記事 | Article+Review（mainEntityOfPage・wordCount・keywords）・LocalBusiness+7軸スコア・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
+| `venue.njk` | 認証店舗詳細（日本語） | LocalBusiness+7軸スコア（additionalProperty）・BreadcrumbList（4階層） | ✅ LocalBusiness |
+| `venue-en.njk` | 認証店舗詳細（英語） | LocalBusiness+7軸スコア・BreadcrumbList | ✅（要確認） |
+
+#### Storiesページ（`src/stories/`）
+
+| ファイル | URL | 実装済みJSON-LD | speakable |
+|---|---|---|---|
+| `stories/index.njk` | `/stories/` | WebSite・FAQPage（3問） | — |
+| `stories/about/index.njk` | `/stories/about/` | BreadcrumbList・DefinedTermSet（3用語）+speakable | ✅ DefinedTermSet |
+| `stories/certified/index.njk` | `/stories/certified/` | BreadcrumbList・ItemList+mainEntityOfPage+description・FAQPage（3問） | — |
+| `stories/category-index.njk` | `/stories/{カテゴリslug}/` | BreadcrumbList・CollectionPage・FAQPage（2問） | — |
+| `stories/area/index.njk` | `/stories/area/` | BreadcrumbList・CollectionPage・FAQPage（2問） | — |
+| `stories/area/l1-prefecture.njk` | `/stories/area/{都道府県}/` | BreadcrumbList（4階層）・FAQPage（2問） | — |
+| `stories/area/l2-city.njk` | `/stories/area/{都道府県}/{市区町村}/` | BreadcrumbList（4階層）・FAQPage（2問） | — |
+| `stories/area/l3-area.njk` | `/stories/area/{都道府県}/{市}/{エリア}/` | BreadcrumbList・FAQPage | — |
+| `stories/area/l3-category.njk` | `/stories/area/.../{ カテゴリ}/` | BreadcrumbList・ItemList・FAQPage（5問） | — |
+
+---
+
+### 新規テンプレート・ページ作成時の必須チェックリスト
+
+新しいテンプレート（`.njk`）またはページを追加するときは、**以下を全項目実装してからコミットすること**。
+
+#### ① BreadcrumbList JSON-LD（全ページ必須）
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "（中間カテゴリ）", "item": "{{ site.url }}/stories/..." },
+    { "@type": "ListItem", "position": 4, "name": "現在のページ名", "item": "{{ site.url }}{{ page.url }}" }
+  ]
+}
+```
+
+**ルール：**
+- 1階層目は必ず `Third Place Japan`（`{{ site.url }}`）から始める
+- 記事・一覧ページ共通で適用。省略禁止
+
+#### ② ページ種別に応じたJSON-LD
+
+| ページ種別 | 使うスキーマ | 必須フィールド |
 |---|---|---|
-| メインサイト | `public/index.html` | Organization・WebSite・SearchAction・FAQPage（5問） |
-| 記事（一般） | `src/_layouts/article.njk` | Article・BreadcrumbList・FAQPage（自動抽出） |
-| 記事（エリア） | `src/_layouts/article-area.njk` | Article・BreadcrumbList・FAQPage（自動抽出） |
-| 記事（認証店舗紹介） | `src/_layouts/article-certified.njk` | Article+Review・LocalBusiness・BreadcrumbList・FAQPage |
-| 認証店舗ページ | `src/_layouts/venue.njk` | LocalBusiness（7軸スコア）・BreadcrumbList |
-| 英語版認証店舗 | `src/_layouts/venue-en.njk` | LocalBusiness・BreadcrumbList |
-| Storiesトップ | `src/stories/index.njk` | WebSite・FAQPage（3問） |
-| カテゴリトップ | `src/stories/category-index.njk` | BreadcrumbList・CollectionPage・FAQPage（2問） |
-| エリア一覧 | `src/stories/area/index.njk` | BreadcrumbList・CollectionPage・FAQPage（2問） |
-| 都道府県 | `src/stories/area/l1-prefecture.njk` | BreadcrumbList |
-| 市区町村 | `src/stories/area/l2-city.njk` | BreadcrumbList |
-| エリアハブ | `src/stories/area/l3-area.njk` | FAQPage・BreadcrumbList |
-| エリア×業種 | `src/stories/area/l3-category.njk` | FAQPage（5問）・ItemList・BreadcrumbList |
-| 認証店舗一覧 | `src/stories/certified/index.njk` | ItemList |
-| サードプレイスとは | `src/stories/about/index.njk` | DefinedTerm |
+| 読み物・解説記事 | `Article` | headline・description・image・datePublished・dateModified・author・publisher・mainEntityOfPage・wordCount・inLanguage・speakable |
+| 認証店舗紹介記事 | `Article` + `Review` | 上記 + itemReviewed（LocalBusiness）・reviewRating |
+| 認証店舗詳細ページ | `LocalBusiness` | name・description・image・url・address・geo・additionalProperty（7軸スコア）・speakable |
+| 一覧・索引ページ | `CollectionPage` または `ItemList` | name・description・url・mainEntityOfPage・hasPart または itemListElement |
+| FAQ・Q&Aを含む全ページ | `FAQPage` | mainEntity（Question + acceptedAnswer の配列） |
+| 用語解説ページ | `DefinedTermSet` | name・url・hasDefinedTerm（DefinedTerm の配列）・speakable |
 
-### 新規テンプレート・ページを作成する際の必須チェックリスト
+#### ③ speakable スキーマ（記事・店舗・用語ページに必須）
 
-新しいテンプレートファイルまたはページを追加するときは、以下を必ずすべて実装すること：
+以下の cssSelector をページ種別に合わせて設定する：
 
-1. **BreadcrumbList JSON-LD**（`src/` テンプレートの場合）
-   - 構造: `Third Place Japan` → `Stories` → `（必要に応じてカテゴリ）` → `現在のページ`
-   - 全ページ1階層目は必ず `{ "name": "Third Place Japan", "item": "{{ site.url }}" }` から始める
+| ページ種別 | cssSelector |
+|---|---|
+| 一般記事 | `["h1", ".prose p"]` |
+| 認証記事 | `["h1", ".prose p", ".border-l-2"]` |
+| 認証店舗詳細 | `["h1", ".border-l-2"]`（`.border-l-2` = 引用用一文） |
+| 用語集 | `["h1", "h2"]` |
+| メインサイト | `["h1", ".hero-headline", ".concept-lead"]` |
 
-2. **ページ種別に応じたJSON-LD**
-   - 一覧・索引ページ → `CollectionPage` または `ItemList`
-   - 読み物・解説ページ → `Article`（`mainEntityOfPage` も必須）
-   - 店舗詳細ページ → `LocalBusiness`（7軸スコアは `additionalProperty` で構造化）
-   - FAQ・Q&Aを含む場合 → `FAQPage`（`extractFAQ` フィルタで自動抽出 or 手書き）
+```json
+"speakable": {
+  "@type": "SpeakableSpecification",
+  "cssSelector": ["h1", ".prose p"]
+}
+```
 
-3. **publisher の logo URL 統一**
-   - 正: `"url": "{{ site.url }}/assets/images/main/ogp.jpg"`
-   - 誤: `"url": "{{ site.url }}/assets/logo.png"` ← 存在しないパスのため使用禁止
+#### ④ publisher の logo URL（全 Article・LocalBusiness で統一）
 
-4. **OGP og:image のデフォルト設定**
-   - `base.njk` が `thumbnail` → `og_image` → `/assets/images/main/ogp.jpg` の順でフォールバック
-   - 個別ページで `og_image:` または `thumbnail:` をフロントマターに設定すれば上書き可能
+```json
+"publisher": {
+  "@type": "Organization",
+  "name": "Third Place Japan",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}/assets/images/main/japan-cafe-interior-hero.webp"
+  }
+}
+```
 
-### 7軸スコアのJSON-LD化ルール
+> **禁止**: `{{ site.url }}/assets/logo.png` は存在しないファイルのため使用禁止
 
-認証施設の7軸スコアは `additionalProperty` として構造化データに含める。日本語の名称を使うこと：
+#### ⑤ wordCount フィールド（全 Article に必須）
+
+`.eleventy.js` にカスタムフィルター `wordCount` が定義されている（HTMLタグを除去して単語数をカウント）。
+
+```njk
+"wordCount": {{ content | wordCount }}
+```
+
+#### ⑥ keywords フィールド（Article に必須）
+
+- 一般記事: `"keywords": "{{ tags | join(', ') }}"`
+- 認証記事: `"keywords": "{{ category_slug }}, サードプレイス, TPJ認証, {{ v.name }}, {{ v.category }}, {{ v.area_primary.prefecture }}, {{ v.area_primary.area }}"`
+
+#### ⑦ FAQPage の設置ルール（AEO最重要）
+
+- 記事ページ: 本文中に `**Q.` で始まるQ&Aがあれば `extractFAQ` フィルタが自動生成する（追加実装不要）
+- 一覧・カテゴリ・エリアページ: 手書きで `FAQPage` を設置する（2〜5問）
+- FAQ質問は「実際に検索されうる形」で立てる。例：
+  - ✅「東京でTPJ認証を受けたカフェはどこですか？」
+  - ❌「このカテゴリについて教えてください」（曖昧すぎる）
+- 回答は2〜3文に収め、冒頭で直接答える（前置き不要）
+
+---
+
+### 7軸スコアのJSON-LD化ルール（認証施設必須）
+
+認証施設の7軸スコアは `additionalProperty` として LocalBusiness スキーマに含める。
+**値は日本語名 + `/10` 形式で記述すること**（英語名禁止）。
 
 ```json
 "additionalProperty": [
-  { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "{{ venue.grade }}" },
-  { "@type": "PropertyValue", "name": "居心地・空間品質スコア", "value": "{{ venue.scores.comfort }}/10" },
-  { "@type": "PropertyValue", "name": "静寂性・プライバシースコア", "value": "{{ venue.scores.silence }}/10" },
-  { "@type": "PropertyValue", "name": "特別感・非日常性スコア", "value": "{{ venue.scores.special }}/10" },
-  { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア", "value": "{{ venue.scores.story }}/10" },
-  { "@type": "PropertyValue", "name": "再訪・継続価値スコア", "value": "{{ venue.scores.revisit }}/10" },
-  { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "{{ venue.scores.record }}/10" },
-  { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "{{ venue.scores.inbound }}/10" }
+  { "@type": "PropertyValue", "name": "TPJ認証グレード",             "value": "{{ venue.grade }}" },
+  { "@type": "PropertyValue", "name": "TPJ認証取得日",               "value": "{{ venue.certified_date }}" },
+  { "@type": "PropertyValue", "name": "主評価軸",                     "value": "{{ venue.axes_primary }}" },
+  { "@type": "PropertyValue", "name": "居心地・空間品質スコア",       "value": "{{ venue.scores.comfort }}/10" },
+  { "@type": "PropertyValue", "name": "静寂性・プライバシースコア",   "value": "{{ venue.scores.silence }}/10" },
+  { "@type": "PropertyValue", "name": "特別感・非日常性スコア",       "value": "{{ venue.scores.special }}/10" },
+  { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア","value": "{{ venue.scores.story }}/10" },
+  { "@type": "PropertyValue", "name": "再訪・継続価値スコア",         "value": "{{ venue.scores.revisit }}/10" },
+  { "@type": "PropertyValue", "name": "記録・シェア体験スコア",       "value": "{{ venue.scores.record }}/10" },
+  { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア","value": "{{ venue.scores.inbound }}/10" }
 ]
 ```
 
-### FAQPage の設置ルール（AEO最重要）
+---
 
-- 記事内に `**Q.` で始まる Q&A があれば `extractFAQ` フィルタが自動的に `FAQPage` JSON-LD を生成する
-- カテゴリ・エリア・一覧ページには手書きで `FAQPage` を設置する
-- FAQ質問は「実際に検索されうる形」で立てる（例：「東京でTPJ認証のカフェは？」）
-- 回答は2〜3文に収め、冒頭で直接答える（前置き不要）
+### AEOスコア履歴
+
+| 実施日 | スコア | 主な変更内容 |
+|---|---|---|
+| 2026-06-26（第1回） | 52 → 89 / 110 | FAQPage・BreadcrumbList・OGP・Organization強化・SearchAction |
+| 2026-06-26（第2回） | 89 → 96 / 110 | カテゴリ・エリアページへの展開、CLAUDE.md ルール化 |
+| 2026-06-26（第3回） | 96 → **110 / 110** | speakable・wordCount・og:image修正・FAQPage全階層展開・DefinedTermSet強化 |
+
+**現在のスコア：110 / 110（満点）**
