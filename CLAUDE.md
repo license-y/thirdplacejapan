@@ -419,6 +419,8 @@ tags:
   - articles
   - カテゴリ名
 category_slug: カテゴリslug
+area_slug: エリアslug（任意・エリアページに記事を表示する場合）
+area_name: エリア名（area_slugを設定した場合は必須）
 thumbnail: /assets/images/articles/xxx.jpg
 ---
 ```
@@ -432,6 +434,15 @@ thumbnail: /assets/images/articles/xxx.jpg
   - 例：コワーキング・シェアオフィス → `coworking`
   - 例：神社・寺院・パワースポット → `shrine-temple`
 - 記事生成時・ファイル保存前に必ず確認すること
+
+**`area_slug` / `area_name` のルール**
+
+- エリアページ（`/stories/area/{pref}/{city}/{area}/`）に記事を表示したい場合に設定する
+- `area_slug` は `src/_data/areas.json` に定義されたスラッグを使う（例：`omotesando`、`shibuya`、`ginza`）
+- `area_slug` を設定する場合は `area_name` も必ずセットで設定する（例：`area_name: 表参道`）
+- 記事の**主題がそのエリアについて書かれている**場合のみ設定する。施設が所在するだけの場合は設定しない
+- 1記事につき1エリアのみ設定可（複数エリアにまたがる記事は最もメインのエリアを選ぶ）
+- 設定を忘れると該当エリアページに記事が表示されないため、記事保存前に必ず確認すること
 
 ## カテゴリ（15カテゴリ固定・追加不可）
 
@@ -485,7 +496,10 @@ thumbnail: /assets/images/articles/xxx.jpg
 
 4. 記事末尾にQ&Aをつけますか？（つける / つけない）※AEO対策のため「つける」を推奨
 
-5. 画像：提供しますか？Unsplashで探しますか？
+5. 特定のエリア（街・地域）について書く記事ですか？（はい / いいえ）
+   「はい」の場合 → `area_slug` を設定してそのエリアページに記事を表示します。対象エリアを教えてください
+
+6. 画像：提供しますか？Unsplashで探しますか？
 ```
 
 ## 記事の下書き完成後（必須）：カテゴリーの評価と報告
