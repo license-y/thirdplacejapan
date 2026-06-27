@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サードプレイスとは&quot;気軽に立ち寄れる場所&quot;である：アクセス性の意味 | Third Place Japan Stories</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="description" content="サードプレイスにおける「アクセス性」の意味を解説。なぜ予約不要・気構え不要・生活動線上にあることが第三の居場所の必要条件なのかを、Third Place Japanがわかりやすく説明します。">
   <meta name="keywords" content="サードプレイス,第三の居場所,Third Place Japan,TPJ,認証,空間評価,カフェ,ホテル,日本">
   
@@ -151,8 +155,8 @@
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
 
     
-    <a href="/stories/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
-      TPJ Stories
+    <a href="/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.png" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
     </a>
 
     
@@ -198,7 +202,6 @@
     nav.style.backdropFilter = 'none';
     nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
     const color = '#F8F6F1';
-    if (logo) logo.style.color = color;
     links.forEach(l => l.style.color = color);
     if (btn) btn.style.color = color;
     ticking = false;
