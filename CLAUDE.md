@@ -415,9 +415,20 @@ date: 2026-06-14
 tags:
   - articles
   - カテゴリ名
+category_slug: カテゴリslug
 thumbnail: /assets/images/articles/xxx.jpg
 ---
 ```
+
+**🚨 `category_slug` は必須フィールド（絶対に省略しない）🚨**
+
+- カテゴリページ（`/stories/{slug}/`）への記事表示は `category_slug` で制御される
+- `tags` にカテゴリ名を入れるだけでは**カテゴリページに表示されない**
+- カテゴリslugの一覧は `src/_data/categories.json` を正とする
+  - 例：カフェ・スペシャルティコーヒー → `cafe-specialty-coffee`
+  - 例：コワーキング・シェアオフィス → `coworking`
+  - 例：神社・寺院・パワースポット → `shrine-temple`
+- 記事生成時・ファイル保存前に必ず確認すること
 
 ## カテゴリ（15カテゴリ固定・追加不可）
 
