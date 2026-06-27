@@ -167,12 +167,15 @@
 2. **`src/` 配下を編集した場合は、必ず `npm run build` を実行してから次のステップへ進む**
    - buildを忘れると `public/` が古いままになり、Cloudflareに変更が反映されない
    - `public/index.html` など `public/` 直下のファイルだけを編集した場合はbuild不要
+   - **`src/_data/` 配下（venues.json・areas.json等）を編集した場合も必ず `npm run build` が必要**
+     データファイルはビルド時にHTMLへ展開される。データだけコミットしても画面には反映されない。
 3. **`src/` のソースファイルと `public/` のビルド済みHTMLの両方**をコミットに含める
 4. `npm run build` 後に生成された `public/` 配下の変更を絶対に漏らさない
 
 **NG例（過去の失敗）：**
 - ❌ `src/` だけコミットして `public/` を含め忘れる → Cloudflareに反映されない
 - ❌ `src/` を編集したのに `npm run build` をせずにコミット → `public/` が古いまま
+- ❌ `src/_data/` のJSONを更新したのに `npm run build` をせずにコミット → 画面に反映されない
 - ❌ git statusを確認せずにコミットしようとする → 変更がないのにコミット操作をしてしまう
 
 ---
