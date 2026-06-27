@@ -6,6 +6,7 @@ date: 2026-06-27
 tags:
   - articles
   - コワーキング・シェアオフィス
+category_slug: coworking
 thumbnail: /assets/images/articles/modern-coworking-lounge-omotesando-tokyo.webp
 permalink: /stories/coworking/omotesando/
 ---
