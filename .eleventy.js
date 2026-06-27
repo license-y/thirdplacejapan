@@ -243,6 +243,12 @@ export default function (eleventyConfig) {
       .sort((a, b) => b.date - a.date)
   );
 
+  eleventyConfig.addFilter("articlesByArea", (collection, areaSlug) =>
+    (collection || [])
+      .filter(p => p.data.area_slug === areaSlug)
+      .sort((a, b) => b.date - a.date)
+  );
+
   // ==== Collections ====
   eleventyConfig.addCollection("articles", (api) =>
     api.getFilteredByTag("articles").sort((a, b) => b.date - a.date)

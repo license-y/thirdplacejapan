@@ -7,6 +7,8 @@ tags:
   - articles
   - カフェ・スペシャルティコーヒー
 category_slug: cafe-specialty-coffee
+area_slug: omotesando
+area_name: 表参道
 thumbnail: /assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp
 ---
 
