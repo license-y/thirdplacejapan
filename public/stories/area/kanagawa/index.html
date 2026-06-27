@@ -281,31 +281,150 @@
   </div>
 
   
+  <section class="mb-12" data-aos="fade-up">
+    <div class="flex items-center border border-border bg-white focus-within:border-gold transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 ml-4" style="color:var(--color-muted)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="area-search"
+        placeholder="エリア・駅名で検索（例：表参道、青山、渋谷）"
+        class="w-full px-4 py-4 text-sm focus:outline-none bg-transparent" />
+      <button id="search-clear" class="hidden px-4 transition-colors" style="color:var(--color-muted)" aria-label="クリア">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <p id="search-hint" class="mt-2 text-xs min-h-[1.25em]" style="color:var(--color-muted)"></p>
+  </section>
+
+  
   <section class="mb-16" data-aos="fade-up">
     <p class="label mb-6">エリアから探す</p>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="city-grid">
       
-      <a href="/stories/area/kanagawa/yokohama-naka-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">横浜市中区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="横浜市中区"
+           data-areas="関内,元町,山下町,中華街,伊勢佐木町"
+           data-area-slugs="kannai,motomachi,yamashitacho,chinatown,isezakicho"
+           data-city-slug="yokohama-naka-ku">
+        <a href="/stories/area/kanagawa/yokohama-naka-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">横浜市中区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/kannai/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="関内">関内</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/motomachi/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="元町">元町</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/yamashitacho/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="山下町">山下町</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/chinatown/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="中華街">中華街</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-naka-ku/isezakicho/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="伊勢佐木町">伊勢佐木町</a>
+          
+        </div>
         
-      </a>
+      </div>
       
-      <a href="/stories/area/kanagawa/yokohama-nishi-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">横浜市西区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="横浜市西区"
+           data-areas="みなとみらい,横浜駅周辺,高島町"
+           data-area-slugs="minatomirai,yokohama-sta,takashimacho"
+           data-city-slug="yokohama-nishi-ku">
+        <a href="/stories/area/kanagawa/yokohama-nishi-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">横浜市西区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kanagawa/yokohama-nishi-ku/minatomirai/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="みなとみらい">みなとみらい</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-nishi-ku/yokohama-sta/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="横浜駅周辺">横浜駅周辺</a>
+          
+          <a href="/stories/area/kanagawa/yokohama-nishi-ku/takashimacho/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="高島町">高島町</a>
+          
+        </div>
         
-      </a>
+      </div>
       
-      <a href="/stories/area/kanagawa/kamakura-shi/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">鎌倉市</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="鎌倉市"
+           data-areas="鎌倉,北鎌倉,由比ガ浜,長谷,材木座"
+           data-area-slugs="kamakura,kita-kamakura,yuigahama,hase,zaimokuza"
+           data-city-slug="kamakura-shi">
+        <a href="/stories/area/kanagawa/kamakura-shi/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">鎌倉市</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kanagawa/kamakura-shi/kamakura/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="鎌倉">鎌倉</a>
+          
+          <a href="/stories/area/kanagawa/kamakura-shi/kita-kamakura/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="北鎌倉">北鎌倉</a>
+          
+          <a href="/stories/area/kanagawa/kamakura-shi/yuigahama/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="由比ガ浜">由比ガ浜</a>
+          
+          <a href="/stories/area/kanagawa/kamakura-shi/hase/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="長谷">長谷</a>
+          
+          <a href="/stories/area/kanagawa/kamakura-shi/zaimokuza/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="材木座">材木座</a>
+          
+        </div>
         
-      </a>
+      </div>
       
+    </div>
+    <div id="no-results" class="hidden py-8 text-center text-sm" style="color:var(--color-muted)">
+      一致するエリア・駅名が見つかりませんでした
     </div>
   </section>
 
@@ -314,6 +433,87 @@
   
 
 </div>
+
+<script>
+(function () {
+  var searchInput = document.getElementById('area-search');
+  var searchClear = document.getElementById('search-clear');
+  var searchHint  = document.getElementById('search-hint');
+  var cityCards   = document.querySelectorAll('.city-card');
+  var noResults   = document.getElementById('no-results');
+  var prefSlug    = 'kanagawa';
+
+  function normalize(str) {
+    return (str || '').toLowerCase().replace(/[\s　]/g, '');
+  }
+
+  function filterCards(query) {
+    var q = normalize(query);
+    var visibleCount = 0;
+    var hintParts = [];
+
+    cityCards.forEach(function (card) {
+      var cityName   = card.dataset.cityName  || '';
+      var citySlug   = card.dataset.citySlug  || '';
+      var areasRaw   = card.dataset.areas     || '';
+      var slugsRaw   = card.dataset.areaSlugs || '';
+      var areas      = areasRaw ? areasRaw.split(',') : [];
+      var areaSlugs  = slugsRaw ? slugsRaw.split(',') : [];
+
+      var cityMatch    = !q || normalize(cityName).includes(q);
+      var matchingIdx  = [];
+      areas.forEach(function (a, i) {
+        if (q && normalize(a).includes(q)) matchingIdx.push(i);
+      });
+      var areaMatch = matchingIdx.length > 0;
+
+      if (!q || cityMatch || areaMatch) {
+        card.style.display = '';
+        visibleCount++;
+
+        // highlight matching area tags
+        card.querySelectorAll('.area-tag').forEach(function (tag) {
+          var aName = tag.dataset.areaName || '';
+          if (q && normalize(aName).includes(q)) {
+            tag.classList.add('border-gold-hl');
+            tag.style.color = 'var(--color-gold)';
+            tag.style.borderColor = 'var(--color-gold)';
+            tag.style.backgroundColor = 'rgba(184,150,12,0.07)';
+            // collect for hint
+            if (hintParts.length < 4) hintParts.push(aName + '（' + cityName + '）');
+          } else {
+            tag.style.color = '';
+            tag.style.borderColor = '';
+            tag.style.backgroundColor = '';
+          }
+        });
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // search hint
+    if (q && hintParts.length) {
+      searchHint.textContent = hintParts.join('、');
+    } else {
+      searchHint.textContent = '';
+    }
+
+    noResults.classList.toggle('hidden', visibleCount > 0);
+    searchClear.classList.toggle('hidden', !q);
+  }
+
+  searchInput.addEventListener('input', function () {
+    filterCards(searchInput.value);
+  });
+
+  searchClear.addEventListener('click', function () {
+    searchInput.value = '';
+    filterCards('');
+    searchInput.focus();
+  });
+})();
+</script>
 
 
 </main>

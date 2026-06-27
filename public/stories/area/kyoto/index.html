@@ -281,38 +281,193 @@
   </div>
 
   
+  <section class="mb-12" data-aos="fade-up">
+    <div class="flex items-center border border-border bg-white focus-within:border-gold transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 ml-4" style="color:var(--color-muted)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="area-search"
+        placeholder="エリア・駅名で検索（例：表参道、青山、渋谷）"
+        class="w-full px-4 py-4 text-sm focus:outline-none bg-transparent" />
+      <button id="search-clear" class="hidden px-4 transition-colors" style="color:var(--color-muted)" aria-label="クリア">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <p id="search-hint" class="mt-2 text-xs min-h-[1.25em]" style="color:var(--color-muted)"></p>
+  </section>
+
+  
   <section class="mb-16" data-aos="fade-up">
     <p class="label mb-6">エリアから探す</p>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="city-grid">
       
-      <a href="/stories/area/kyoto/kyoto-nakagyo-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">京都市中京区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="京都市中京区"
+           data-areas="烏丸,三条,四条,錦市場,寺町"
+           data-area-slugs="karasuma,sanjo,shijo,nishiki,teramachi"
+           data-city-slug="kyoto-nakagyo-ku">
+        <a href="/stories/area/kyoto/kyoto-nakagyo-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">京都市中京区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/karasuma/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="烏丸">烏丸</a>
+          
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/sanjo/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="三条">三条</a>
+          
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/shijo/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="四条">四条</a>
+          
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/nishiki/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="錦市場">錦市場</a>
+          
+          <a href="/stories/area/kyoto/kyoto-nakagyo-ku/teramachi/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="寺町">寺町</a>
+          
+        </div>
         
-      </a>
+      </div>
       
-      <a href="/stories/area/kyoto/kyoto-higashiyama-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">京都市東山区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="京都市東山区"
+           data-areas="祇園,清水,八坂,三十三間堂,知恩院"
+           data-area-slugs="gion,kiyomizu,yasaka,sanjusangendo,chion-in"
+           data-city-slug="kyoto-higashiyama-ku">
+        <a href="/stories/area/kyoto/kyoto-higashiyama-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">京都市東山区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/gion/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="祇園">祇園</a>
+          
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/kiyomizu/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="清水">清水</a>
+          
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/yasaka/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="八坂">八坂</a>
+          
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/sanjusangendo/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="三十三間堂">三十三間堂</a>
+          
+          <a href="/stories/area/kyoto/kyoto-higashiyama-ku/chion-in/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="知恩院">知恩院</a>
+          
+        </div>
         
-      </a>
+      </div>
       
-      <a href="/stories/area/kyoto/kyoto-sakyo-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">京都市左京区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="京都市左京区"
+           data-areas="岡崎,出町柳,一乗寺,哲学の道,修学院"
+           data-area-slugs="okazaki,demachiyagi,ichijoji,tetsugaku-no-michi,shugakuin"
+           data-city-slug="kyoto-sakyo-ku">
+        <a href="/stories/area/kyoto/kyoto-sakyo-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">京都市左京区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/okazaki/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="岡崎">岡崎</a>
+          
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/demachiyagi/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="出町柳">出町柳</a>
+          
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/ichijoji/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="一乗寺">一乗寺</a>
+          
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/tetsugaku-no-michi/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="哲学の道">哲学の道</a>
+          
+          <a href="/stories/area/kyoto/kyoto-sakyo-ku/shugakuin/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="修学院">修学院</a>
+          
+        </div>
         
-      </a>
+      </div>
       
-      <a href="/stories/area/kyoto/kyoto-kita-ku/"
-         class="border border-border p-4 hover:border-gold hover:text-gold transition-colors group">
-        <p class="font-serif text-base font-light group-hover:text-gold transition-colors">京都市北区</p>
+      <div class="city-card border border-border p-4 transition-colors"
+           data-city-name="京都市北区"
+           data-areas="北山,上賀茂,西賀茂"
+           data-area-slugs="kitayama,kamigamo,nishigamo"
+           data-city-slug="kyoto-kita-ku">
+        <a href="/stories/area/kyoto/kyoto-kita-ku/"
+           class="block hover:text-gold transition-colors city-link">
+          <p class="font-serif text-base font-light">京都市北区</p>
+          
+          
+        </a>
         
+        <div class="flex flex-wrap gap-1 mt-3">
+          
+          <a href="/stories/area/kyoto/kyoto-kita-ku/kitayama/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="北山">北山</a>
+          
+          <a href="/stories/area/kyoto/kyoto-kita-ku/kamigamo/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="上賀茂">上賀茂</a>
+          
+          <a href="/stories/area/kyoto/kyoto-kita-ku/nishigamo/"
+             class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
+             style="color:var(--color-muted)"
+             data-area-name="西賀茂">西賀茂</a>
+          
+        </div>
         
-      </a>
+      </div>
       
+    </div>
+    <div id="no-results" class="hidden py-8 text-center text-sm" style="color:var(--color-muted)">
+      一致するエリア・駅名が見つかりませんでした
     </div>
   </section>
 
@@ -321,6 +476,87 @@
   
 
 </div>
+
+<script>
+(function () {
+  var searchInput = document.getElementById('area-search');
+  var searchClear = document.getElementById('search-clear');
+  var searchHint  = document.getElementById('search-hint');
+  var cityCards   = document.querySelectorAll('.city-card');
+  var noResults   = document.getElementById('no-results');
+  var prefSlug    = 'kyoto';
+
+  function normalize(str) {
+    return (str || '').toLowerCase().replace(/[\s　]/g, '');
+  }
+
+  function filterCards(query) {
+    var q = normalize(query);
+    var visibleCount = 0;
+    var hintParts = [];
+
+    cityCards.forEach(function (card) {
+      var cityName   = card.dataset.cityName  || '';
+      var citySlug   = card.dataset.citySlug  || '';
+      var areasRaw   = card.dataset.areas     || '';
+      var slugsRaw   = card.dataset.areaSlugs || '';
+      var areas      = areasRaw ? areasRaw.split(',') : [];
+      var areaSlugs  = slugsRaw ? slugsRaw.split(',') : [];
+
+      var cityMatch    = !q || normalize(cityName).includes(q);
+      var matchingIdx  = [];
+      areas.forEach(function (a, i) {
+        if (q && normalize(a).includes(q)) matchingIdx.push(i);
+      });
+      var areaMatch = matchingIdx.length > 0;
+
+      if (!q || cityMatch || areaMatch) {
+        card.style.display = '';
+        visibleCount++;
+
+        // highlight matching area tags
+        card.querySelectorAll('.area-tag').forEach(function (tag) {
+          var aName = tag.dataset.areaName || '';
+          if (q && normalize(aName).includes(q)) {
+            tag.classList.add('border-gold-hl');
+            tag.style.color = 'var(--color-gold)';
+            tag.style.borderColor = 'var(--color-gold)';
+            tag.style.backgroundColor = 'rgba(184,150,12,0.07)';
+            // collect for hint
+            if (hintParts.length < 4) hintParts.push(aName + '（' + cityName + '）');
+          } else {
+            tag.style.color = '';
+            tag.style.borderColor = '';
+            tag.style.backgroundColor = '';
+          }
+        });
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // search hint
+    if (q && hintParts.length) {
+      searchHint.textContent = hintParts.join('、');
+    } else {
+      searchHint.textContent = '';
+    }
+
+    noResults.classList.toggle('hidden', visibleCount > 0);
+    searchClear.classList.toggle('hidden', !q);
+  }
+
+  searchInput.addEventListener('input', function () {
+    filterCards(searchInput.value);
+  });
+
+  searchClear.addEventListener('click', function () {
+    searchInput.value = '';
+    filterCards('');
+    searchInput.focus();
+  });
+})();
+</script>
 
 
 </main>
