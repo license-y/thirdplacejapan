@@ -62,11 +62,16 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 200;
+      padding: 0 48px;
+      transition: background 0.5s ease, border-color 0.5s ease;
+    }
+    .nav-inner {
+      max-width: var(--w-content);
+      margin: 0 auto;
+      padding: 22px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 22px 48px;
-      transition: background 0.5s ease, border-color 0.5s ease;
     }
 
     #nav.over-dark {
@@ -657,7 +662,8 @@
     @media (max-width: 720px) {
       :root { --sp-section: 80px; }
 
-      #nav { padding: 18px 24px; }
+      #nav { padding: 0 24px; }
+      .nav-inner { padding: 18px 0; }
       .nav-links { display: none; }
       .nav-burger { display: flex; }
 
@@ -683,6 +689,7 @@
 
   <!-- ─── Navigation ─── -->
   <nav id="nav" class="over-dark">
+    <div class="nav-inner">
     <a href="/" class="nav-logo">
       <img src="/assets/images/main/tpj-logo-banner.png" alt="Third Place Japan" loading="eager" decoding="async">
     </a>
@@ -700,6 +707,7 @@
       <span></span>
       <span></span>
     </button>
+    </div>
   </nav>
 
   <div class="nav-overlay" id="overlay" role="dialog" aria-label="ナビゲーション">
