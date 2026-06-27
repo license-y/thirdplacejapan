@@ -7,6 +7,8 @@ tags:
   - articles
   - カフェ・スペシャルティコーヒー
 category_slug: cafe-specialty-coffee
+area_slug: koenji
+area_name: 高円寺
 thumbnail: /assets/images/articles/vintage-alley-cafe-koenji-tokyo.webp
 ---
 

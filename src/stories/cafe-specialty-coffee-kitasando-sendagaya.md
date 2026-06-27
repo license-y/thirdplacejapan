@@ -7,6 +7,8 @@ tags:
   - articles
   - カフェ・スペシャルティコーヒー
 category_slug: cafe-specialty-coffee
+area_slug: sendagaya
+area_name: 千駄ヶ谷
 thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 ---
 
