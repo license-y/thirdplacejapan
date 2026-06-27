@@ -82,12 +82,14 @@
     }
 
     .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 17px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--c-accent);
       text-decoration: none;
+      display: inline-block;
+      line-height: 0;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -681,7 +683,9 @@
 
   <!-- ─── Navigation ─── -->
   <nav id="nav" class="over-dark">
-    <a href="/" class="nav-logo">TPJ</a>
+    <a href="/" class="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner.png" alt="Third Place Japan" loading="eager" decoding="async">
+    </a>
 
     <ul class="nav-links">
       <li><a href="#philosophy">TPJについて</a></li>
