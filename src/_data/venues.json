@@ -18,7 +18,7 @@
       "area": "渋谷"
     },
     "area_secondary": [],
-    "nearest_stations": ["渋谷駅", "表参道駅"],
+    "nearest_stations": ["北参道駅", "千駄ヶ谷駅"],
     "axes_primary": "居心地・空間品質",
     "axes_primary_slug": "comfort",
     "axes_secondary": ["静寂性・プライバシー", "ストーリー・背景への共感"],
@@ -32,13 +32,13 @@
       "record": 7,
       "story": 9
     },
-    "address": "東京都渋谷区",
-    "address_en": "Shibuya, Tokyo, Japan",
+    "address": "東京都渋谷区千駄ヶ谷3-30-1",
+    "address_en": "3-30-1 Sendagaya, Shibuya-ku, Tokyo, Japan",
     "lat": 35.659,
     "lng": 139.701,
     "url": "",
     "image": "/assets/images/venues/green-beans-coffee-shibuya.jpg",
-    "certified_date": "2026-01-01",
+    "certified_date": "2026-06-15",
     "has_en": true,
     "published": true
   },
