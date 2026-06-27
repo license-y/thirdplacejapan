@@ -4,9 +4,10 @@ pagination:
   size: 1
   alias: cat
 permalink: "/stories/{{ cat.slug }}/"
-title: "{{ cat.name_ja }} | Third Place Japan Stories"
-description: "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。"
-canonical: "/stories/{{ cat.slug }}/"
+eleventyComputed:
+  title: "{{ cat.name_ja }}"
+  description: "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。"
+  canonical: "/stories/{{ cat.slug }}/"
 ---
 
 {# BreadcrumbList JSON-LD #}
