@@ -397,7 +397,7 @@ npm run build  # 本番ビルド（Cloudflare Pagesが自動実行）
 ---
 layout: article.njk
 title: 記事タイトル
-description: 100〜120文字の要約
+description: 115〜160字。一文目で結論を完結させ、AI単体引用に耐える密度で書く
 date: 2026-06-14
 tags:
   - articles

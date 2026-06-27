@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内 | Third Place Japan Stories</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="表参道のスペシャルティコーヒーは、明治神宮参道に由来するケヤキ並木の街の路地と地下に根付く。大通りから一手間離れた空間が持つ静寂性と特別感、時間帯で変わる客層の多層性——Third Place Japanが7軸で読む、この街でカフェがサードプレイスとして機能する理由と選び方の条件。">
+  <meta name="keywords" content="サードプレイス,第三の居場所,Third Place Japan,TPJ,認証,空間評価,カフェ,ホテル,日本">
+  
+
+  <!-- hreflang -->
+  
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内 | Third Place Japan Stories">
+  <meta property="og:description" content="表参道のスペシャルティコーヒーは、明治神宮参道に由来するケヤキ並木の街の路地と地下に根付く。大通りから一手間離れた空間が持つ静寂性と特別感、時間帯で変わる客層の多層性——Third Place Japanが7軸で読む、この街でカフェがサードプレイスとして機能する理由と選び方の条件。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/stories/cafe-specialty-coffee-omotesando/">
+  <meta property="og:image" content="https://thirdplacejapan.com/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Third Place Japan Stories">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内 | Third Place Japan Stories">
+  <meta name="twitter:description" content="表参道のスペシャルティコーヒーは、明治神宮参道に由来するケヤキ並木の街の路地と地下に根付く。大通りから一手間離れた空間が持つ静寂性と特別感、時間帯で変わる客層の多層性——Third Place Japanが7軸で読む、この街でカフェがサードプレイスとして機能する理由と選び方の条件。">
+  <meta name="twitter:image" content="https://thirdplacejapan.com/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "alternateName": ["TPJ", "サードプレイスジャパン"],
+    "url": "https://thirdplacejapan.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
+    },
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Japan"
+    }
+  }
+  </script>
+
+  
+</head>
+<body>
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.webp" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+    </ul>
+
+    
+    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
+      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+    </button>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+<script>
+(function() {
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('nav-logo');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+
+  updateNav();
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+})();
+</script>
+
+<main class="pt-16">
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内",
+  "description": "表参道のスペシャルティコーヒーは、明治神宮参道に由来するケヤキ並木の街の路地と地下に根付く。大通りから一手間離れた空間が持つ静寂性と特別感、時間帯で変わる客層の多層性——Third Place Japanが7軸で読む、この街でカフェがサードプレイスとして機能する理由と選び方の条件。",
+  "image": "https://thirdplacejapan.com/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp",
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-06-27",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "https://thirdplacejapan.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thirdplacejapan.com/stories/cafe-specialty-coffee-omotesando/"
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "サードプレイス"
+  },
+  "keywords": "articles, カフェ・スペシャルティコーヒー",
+  "wordCount": 166,
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".prose p"]
+  }
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Third Place Japan",
+      "item": "https://thirdplacejapan.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stories",
+      "item": "https://thirdplacejapan.com/stories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内",
+      "item": "https://thirdplacejapan.com/stories/cafe-specialty-coffee-omotesando/"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "Q. 表参道で静かに過ごせるカフェを選ぶ条件は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道で静寂性を確保するには、大通りから「一手間」ある立地を選ぶことが有効です。地下・半地下型、または路地を二つ以上曲がった先にある店は外の音量が大幅に下がります。南青山・骨董通り方向のエリアは静寂性が高く、Third Place Japan（サードプレイスジャパン）の評価基準でも静寂性軸を重視した立地条件として挙げています。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 表参道のカフェはなぜスペシャルティコーヒーが多いのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道は「空間品質への審美眼が高い客層」が集まる街です。スペシャルティコーヒーが持つ「産地の物語・抽出の技術・カップの美しさ」という価値は、この街の文脈と高い親和性を持ち、2010年代以降に集積しました。インバウンド客にとっても世界共通語として機能する業態であることが、この街での定着をさらに後押ししています。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 表参道でひとりで長時間過ごせるカフェを見分けるには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "キャットストリート沿いの古ビル改装型や南青山方向の地下・中層階の店に、長時間滞在を許容する空間設計があります。席間隔が広く、照明が落ち着いており、回転率を急かす演出がない空間がその指標です。TPJでは再訪・継続価値軸の評価において、長時間の滞在体験を受け入れる空間設計を重視しています。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 外国人でも表参道のカフェに入りやすいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道のスペシャルティコーヒー業態は、東京のなかでも特にインバウンド対応が進んでいます。英語メニューの整備、カード決済対応、産地をビジュアルで示したメニュー構成など、言語の壁を下げる工夫が充実しています。スペシャルティコーヒーという業態自体が国際的に普及しているため、最低限の会話がなくとも注文が成立します。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. 表参道のカフェを選ぶとき、時間帯は関係しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "関係します。平日午前は仕事前のクリエイター・業界関係者が多く、席の雰囲気が落ち着いています。昼以降は観光客比率が上がり、週末の午後はピークを迎えます。静かな時間を求めるなら平日午前か夕方以降が適しています。この時間帯の変化を楽しむこと自体が、表参道のカフェを繰り返し訪れる動機になります。"
+      }
+    }
+    
+  ]
+}
+</script>
+
+
+<div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    
+    <article class="min-w-0">
+
+      
+      
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
+        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+        
+        <span class="text-border">／</span>
+        <span>表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内</span>
+      </nav>
+
+      
+      <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+        
+        
+        
+        
+        
+        <span class="label">カフェ・スペシャルティコーヒー</span>
+        
+        
+        
+      </div>
+
+      
+      <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+        表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内
+      </h1>
+
+      
+      
+      <p class="text-xs text-muted mb-12" data-aos="fade-up">
+        <time datetime="2026-06-27">2026年6月27日</time>
+        <span class="ml-3">サードプレイスジャパン編集部</span>
+      </p>
+      
+
+      
+      
+
+      
+      
+      <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+        <img src="/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp" alt="表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内 | サードプレイスジャパン編集部" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      </div>
+      
+
+      
+      <div class="prose" data-aos="fade-up">
+        <p>表参道のスペシャルティコーヒーは、通りの顔ではなく路地の奥に宿る。ハイブランドが連なる大通りから一歩入った地下や古ビルの一角に、時間の密度を変える空間が点在している。</p>
+<h2>表参道という街と「第三の居場所」</h2>
+<p>表参道の起源は1920年、明治神宮造営に伴い整備された参道にある。ケヤキ並木が続く大通りは、宗教的な格式を持つ空間として計画された。その後、高度経済成長期を経て海外ブランドが集積し、1990年代には「日本のシャンゼリゼ」と称されるようになった。</p>
+<p>この街の地理的特徴は「二層構造」にある。表参道ヒルズや青山通り沿いの「表の顔」と、南青山・骨董通り方向やキャットストリートへと続く「裏の奥行き」。この奥行きこそが、表参道のサードプレイス文化を育てた。</p>
+<p>表通りを歩く人は明確な目的を持っている。買い物、観光、待ち合わせ。しかし路地を入った先の空間は、目的を手放す場所になる。家でも職場でもなく、かといって観光地でもない。その中間地帯に、この街のカフェが静かに根を張っている。</p>
+<h2>表参道でカフェが果たす居場所機能</h2>
+<p>社会学者レイ・オルデンバーグが定義したサードプレイスの要件——中立性、常連性、アクセス性——を、表参道のカフェはどのように満たすか。</p>
+<p><strong>中立性</strong>の観点から言えば、表参道のカフェは「ブランド消費」の論理が支配する大通りに対して、意図的に距離を置いた空間設計を持つ店が多い。地下に降りる、路地を入る、エレベーターで上階に上がる。この「一手間」が、街の喧騒から切り離された中立地帯をつくる。</p>
+<p><strong>常連性</strong>は、観光客比率が高い表参道においても確実に根付いている。常連が生まれる空間には「ラップトップと長時間滞在を許容する席」「バリスタとの会話が成立する規模感」という条件が共通して見られる。</p>
+<p><strong>アクセス性</strong>については、東京メトロ銀座線・千代田線・半蔵門線が交わる表参道駅を擁し、広域からの到達性は都内屈指だ。インバウンド来訪者にとっても「英語が通じる街」という認識が定着しており、言語的なアクセス性も高い。</p>
+<h2>7軸で読む表参道のカフェ</h2>
+<h3>居心地・空間品質 — 素材と天井高が語る格</h3>
+<p>表参道のカフェにおける居心地の軸は、素材と天井の関係に現れる。ケヤキ並木と対話するような緑の借景、倉庫や古い集合住宅を改装した際の躯体の露出、焙煎機が放つ機械的な美しさ。五感に語りかける素材が「ここにいていい」という感覚の根拠になる。均質な内装の空間は、この街では相対的に浮く。</p>
+<h3>静寂性・プライバシー — 「表参道の静かな場所」という希少価値</h3>
+<p>表参道は東京でも有数の通行量と音量を持つエリアだ。週末の大通りは歩道が人で埋まる。だからこそ、地下に降りた瞬間に音が変わる空間、路地を二つ曲がった先にある席の静けさは、際立った価値を持つ。静寂性の軸において表参道のカフェが高い評価を得るのは、「届けるのが難しい静けさを届けている」という構造的な希少性による。</p>
+<h3>特別感・非日常性 — 「今日ここにいる」という重さ</h3>
+<p>スペシャルティコーヒー自体が持つ非日常性——豆の産地、抽出方法、バリスタの説明——に加えて、表参道という街の文脈が特別感の軸に乗る。「ここに来た」という行為が日常を少し引き上げる機能を持つ。一杯のコーヒーが贈り物のような体験として成立するのは、この街の空間的文脈があるからだ。</p>
+<h3>ストーリー・背景への共感 — 参道という100年の時間軸</h3>
+<p>表参道という名称が示す通り、この通りには「神宮への道」という物語がある。ケヤキ並木の樹齢は100年に近づく。その木々が作る緑のトンネルの下でコーヒーを飲むという体験には、都市の時間軸を意識させる力がある。カフェの空間設計がその歴史的文脈と接続しているとき、ストーリー軸のスコアは高くなる。</p>
+<h3>再訪・継続価値 — 時間帯で変わる街の顔を、どう楽しむか</h3>
+<p>表参道は「時間帯で客層が入れ替わる街」だ。平日午前のクリエイター系、昼過ぎの観光客、夕方のオフィスワーカー、週末のインバウンド。同じカフェでも、来る時間帯によって席の雰囲気が変わる。この変化を楽しめる人には高い再訪価値がある。「次はあの時間帯に来てみよう」という動機が、継続的な関係を生む。</p>
+<h3>記録・シェア体験 — ビジュアル文脈との整合</h3>
+<p>表参道は日本でも指折りのビジュアル感度が高い街だ。カフェが記録性の軸で問われるのは、写真に撮ったときの「画角の完結度」だ。ケヤキ並木を窓越しに切り取る席、焙煎機と木材の組み合わせ、カップのデザイン。記録欲を刺激する要素が自然に揃っているとき、その体験は外へと伝播していく。</p>
+<h3>インバウンド・多言語対応 — スペシャルティコーヒーという世界共通語</h3>
+<p>英語対応、カード決済、多言語メニュー。表参道のスペシャルティコーヒー業態は、インバウンド軸において東京のなかで突出した適性を持つ。外国人観光客にとって、スペシャルティコーヒーという「世界共通語」で成立する体験は言語の壁を最小化する。「日本の日常空間に入れた」という感覚を、最も安心して得られる入口がこの街のカフェだ。</p>
+<h2>表参道で&quot;いいサードプレイス&quot;を見分けるには？</h2>
+<p><strong>「表の顔」より「奥の一軒」を選ぶ</strong></p>
+<p>表参道で長く座れるカフェを探すなら、大通り沿いの視認性の高い店より、路地を入った先・地下に降りた先・ビルの中層階を選ぶほうが確率が上がる。人の流れが減るほど、時間の密度が上がる。</p>
+<p><strong>立地別の空間特性：</strong></p>
+<ul>
+<li><strong>南青山・骨董通り方向</strong> — 静寂性と空間品質が高い。プライベートギャラリーや美術館が点在するエリアで、一杯を時間をかけて飲む文化がある</li>
+<li><strong>キャットストリート沿い</strong> — 古ビル改装系が多く、素材と天井高による居心地軸が高い。若い常連が根付く</li>
+<li><strong>表参道駅直上〜ヒルズ周辺</strong> — アクセス性は最高だが、通過客比率が高く、静寂性は低い</li>
+</ul>
+<p><strong>滞在目的別の判断基準：</strong></p>
+<ul>
+<li><strong>ひとりで集中したい</strong> — 壁に向かった個席あり、照明が落ち着いている、BGMが主張しない</li>
+<li><strong>ふたりで話したい</strong> — 外の喧騒を遮る空間設計の有無。テラスは開放感があるが音が散漫になる</li>
+<li><strong>長時間・作業</strong> — 回転率を意識した演出がないか。照明の明るさと席間隔が手がかりになる</li>
+</ul>
+<h2>時間帯による使い分けをどう設計するか</h2>
+<p>表参道は「いつ行くか」で体験の質が変わる街だ。平日午前9〜11時は、クリエイター・ファッション業界関係者がラップトップを開いて静かに仕事前の時間を使っている。カフェのなかに緩やかな集中が漂い、隣の席との距離感が心地よく保たれる。</p>
+<p>正午を過ぎると観光客の流入が増え、空間の性格が変わる。週末の午後2〜4時は、この街でもっとも混雑するピークタイムだ。静寂性を求めるなら、この時間帯を外すことが選択の出発点になる。</p>
+<p>夕方以降は、南青山のギャラリーやセレクトショップを回ったインバウンド客が立ち寄る動線が生まれる。会話の言語が変わり、空間の国際性が上がる。この時間帯の表参道に、この街でしか得られない重層的なサードプレイス機能がある。</p>
+<h2>インバウンド視点：表参道のカフェ</h2>
+<p>外国人来訪者にとって、表参道のカフェには「東京のラグジュアリーを体験する最初の入口」という機能がある。高価格帯ブランドのショッピングには心理的・経済的ハードルがあっても、スペシャルティコーヒー一杯なら試せる。この「プチ体験の手軽さ」が、表参道を世界中からの旅行者にとって親しみやすくしている。</p>
+<p>豆の産地名や抽出方法は国際的に通用する語彙であり、バリスタとの会話が言語の壁を越えて成立する。予約不要、一杯から入れる、時間制限が明示されていない。これらの条件が揃う空間は、旅程が流動的なインバウンド客にとって理想的なサードプレイスになる。</p>
+<h2>よくある質問（FAQ）</h2>
+<p><strong>Q. 表参道で静かに過ごせるカフェを選ぶ条件は？</strong><br>
+表参道で静寂性を確保するには、大通りから「一手間」ある立地を選ぶことが有効です。地下・半地下型、または路地を二つ以上曲がった先にある店は外の音量が大幅に下がります。南青山・骨董通り方向のエリアは静寂性が高く、Third Place Japan（サードプレイスジャパン）の評価基準でも静寂性軸を重視した立地条件として挙げています。</p>
+<p><strong>Q. 表参道のカフェはなぜスペシャルティコーヒーが多いのですか？</strong><br>
+表参道は「空間品質への審美眼が高い客層」が集まる街です。スペシャルティコーヒーが持つ「産地の物語・抽出の技術・カップの美しさ」という価値は、この街の文脈と高い親和性を持ち、2010年代以降に集積しました。インバウンド客にとっても世界共通語として機能する業態であることが、この街での定着をさらに後押ししています。</p>
+<p><strong>Q. 表参道でひとりで長時間過ごせるカフェを見分けるには？</strong><br>
+キャットストリート沿いの古ビル改装型や南青山方向の地下・中層階の店に、長時間滞在を許容する空間設計があります。席間隔が広く、照明が落ち着いており、回転率を急かす演出がない空間がその指標です。TPJでは再訪・継続価値軸の評価において、長時間の滞在体験を受け入れる空間設計を重視しています。</p>
+<p><strong>Q. 外国人でも表参道のカフェに入りやすいですか？</strong><br>
+表参道のスペシャルティコーヒー業態は、東京のなかでも特にインバウンド対応が進んでいます。英語メニューの整備、カード決済対応、産地をビジュアルで示したメニュー構成など、言語の壁を下げる工夫が充実しています。スペシャルティコーヒーという業態自体が国際的に普及しているため、最低限の会話がなくとも注文が成立します。</p>
+<p><strong>Q. 表参道のカフェを選ぶとき、時間帯は関係しますか？</strong><br>
+関係します。平日午前は仕事前のクリエイター・業界関係者が多く、席の雰囲気が落ち着いています。昼以降は観光客比率が上がり、週末の午後はピークを迎えます。静かな時間を求めるなら平日午前か夕方以降が適しています。この時間帯の変化を楽しむこと自体が、表参道のカフェを繰り返し訪れる動機になります。</p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "表参道で静かに過ごせるカフェを選ぶ条件は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道で静寂性を確保するには、大通りから「一手間」ある立地を選ぶことが有効です。地下・半地下型、または路地を二つ以上曲がった先にある店は外の音量が大幅に下がります。南青山・骨董通り方向のエリアは静寂性が高く、Third Place Japan（サードプレイスジャパン）の評価基準でも静寂性軸を重視した立地条件として挙げています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表参道のカフェはなぜスペシャルティコーヒーが多いのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道は「空間品質への審美眼が高い客層」が集まる街です。スペシャルティコーヒーが持つ「産地の物語・抽出の技術・カップの美しさ」という価値は、この街の文脈と高い親和性を持ち、2010年代以降に集積しました。インバウンド客にとっても世界共通語として機能する業態であることが、この街での定着をさらに後押ししています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表参道でひとりで長時間過ごせるカフェを見分けるには？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "キャットストリート沿いの古ビル改装型や南青山方向の地下・中層階の店に、長時間滞在を許容する空間設計があります。席間隔が広く、照明が落ち着いており、回転率を急かす演出がない空間がその指標です。TPJでは再訪・継続価値軸の評価において、長時間の滞在体験を受け入れる空間設計を重視しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "外国人でも表参道のカフェに入りやすいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表参道のスペシャルティコーヒー業態は、東京のなかでも特にインバウンド対応が進んでいます。英語メニューの整備、カード決済対応、産地をビジュアルで示したメニュー構成など、言語の壁を下げる工夫が充実しています。スペシャルティコーヒーという業態自体が国際的に普及しているため、最低限の会話がなくとも注文が成立します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表参道のカフェを選ぶとき、時間帯は関係しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "関係します。平日午前は仕事前のクリエイター・業界関係者が多く、席の雰囲気が落ち着いています。昼以降は観光客比率が上がり、週末の午後はピークを迎えます。静かな時間を求めるなら平日午前か夕方以降が適しています。この時間帯の変化を楽しむこと自体が、表参道のカフェを繰り返し訪れる動機になります。"
+      }
+    }
+  ]
+}
+</script>
+<p>表参道のカフェは、ハイブランドの街の「裏側」にこそ本質がある。大通りの喧騒から一手間離れた路地や地下に、時間の密度を変える空間が点在する。ケヤキ並木という100年近い時間軸と、世界から人が集まる国際性が交差するこの街でカフェをサードプレイスとして選ぶには、「立地の奥行き」「時間帯の読み方」「静寂性の確保」という3つの視点が実践的な指針になる。サードプレイスジャパン（Third Place Japan）では、こうした空間を居心地・静寂性・特別感など7軸で評価・認証している。表参道を擁する<a href="/stories/cafe-specialty-coffee/shibuya/">渋谷区全体のカフェ・スペシャルティコーヒー文化</a>も合わせて参照いただきたい。</p>
+
+      </div>
+
+      
+      
+      <div class="mt-14 pt-10 border-t border-border" style="opacity:1;visibility:visible;">
+        <p class="text-xs text-muted text-center mb-5">この記事をシェア</p>
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <a href="https://twitter.com/intent/tweet?text=%E8%A1%A8%E5%8F%82%E9%81%93%E3%81%A7%E3%82%AB%E3%83%95%E3%82%A7%E3%82%92%E3%82%B5%E3%83%BC%E3%83%89%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9%E3%81%AB%E3%81%99%E3%82%8B%20%E2%80%94%20%E3%82%B1%E3%83%A4%E3%82%AD%E4%B8%A6%E6%9C%A8%E3%81%AE%E8%A1%97%E3%81%AE%E7%AC%AC%E4%B8%89%E3%81%AE%E5%B1%85%E5%A0%B4%E6%89%80%E6%A1%88%E5%86%85&url=https%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fcafe-specialty-coffee-omotesando%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X ポスト
+          </a>
+          <a href="https://line.me/R/msg/text/?%E8%A1%A8%E5%8F%82%E9%81%93%E3%81%A7%E3%82%AB%E3%83%95%E3%82%A7%E3%82%92%E3%82%B5%E3%83%BC%E3%83%89%E3%83%97%E3%83%AC%E3%82%A4%E3%82%B9%E3%81%AB%E3%81%99%E3%82%8B%20%E2%80%94%20%E3%82%B1%E3%83%A4%E3%82%AD%E4%B8%A6%E6%9C%A8%E3%81%AE%E8%A1%97%E3%81%AE%E7%AC%AC%E4%B8%89%E3%81%AE%E5%B1%85%E5%A0%B4%E6%89%80%E6%A1%88%E5%86%85%0D%0Ahttps%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fcafe-specialty-coffee-omotesando%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthirdplacejapan.com%2Fstories%2Fcafe-specialty-coffee-omotesando%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-border px-5 py-2.5 text-xs text-text hover:border-dark hover:text-dark transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-8">
+
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">カテゴリ</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/hotel-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級ホテル・ホテルラウンジ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/onsen-ryokan/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                温泉旅館・高級旅館
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/villa-rental/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                貸切ヴィラ・一棟貸しの宿
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/restaurant-dining/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                レストラン・ダイニング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/cafe-specialty-coffee/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                カフェ・スペシャルティコーヒー
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/bar-whiskey/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                バー・ウイスキー・カクテル
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/spa-sauna-wellness/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                スパ・サウナ・ウェルネス施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/premium-salon/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級サロン・プライベート
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/coworking/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                コワーキング・シェアオフィス
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/members-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                会員制ラウンジ・クラブ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/nature-glamping/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                山・自然体験・グランピング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/retreat-zen/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                リトリート・禅体験
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/shrine-temple/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                神社・寺院・パワースポット
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/inbound-experience/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                インバウンド観光・体験施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/culture-sports-leisure/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                文化・スポーツ・レジャー施設
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">最新記事</p>
+          <ul class="space-y-4">
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee-omotesando/" class="group block">
+                
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内</p>
+                <p class="text-xs text-muted mt-1">2026年6月27日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド</p>
+                <p class="text-xs text-muted mt-1">2026年6月27日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する</p>
+                <p class="text-xs text-muted mt-1">2026年6月21日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/shibuya-cafe-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">渋谷のカフェがサードプレイスになる理由：東京・渋谷区スペシャルティコーヒー完全ガイド</p>
+                <p class="text-xs text-muted mt-1">2026年6月21日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法</p>
+                <p class="text-xs text-muted mt-1">2026年6月13日</p>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">サードプレイスとは</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/great-good-place-book/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                『The Great Good Place』が示したサードプレイス理論の核心
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/ray-oldenburg-third-place/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの提唱者レイ・オルデンバーグとは何者か
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/third-place-examples/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの具体例10選：どんな場所が当てはまるか
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/third-place-ibasho-difference/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスと「居場所」「行きつけ」の正確な使い分け
+              </a>
+            </li>
+            
+          </ul>
+          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+        </div>
+        
+
+      </div>
+    </aside>
+
+  </div>
+
+  
+  
+  
+  <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
+    <div class="flex items-center gap-2 mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <p class="label">関連記事</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <a href="/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/specialty-coffee-shibuya-kitasando.webp" alt="渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド</h3>
+          <p class="text-xs text-muted mt-2">2026年6月27日</p>
+        </div>
+      </a>
+      
+      <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/specialty-coffee-interior-tokyo.webp" alt="【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する</h3>
+          <p class="text-xs text-muted mt-2">2026年6月21日</p>
+        </div>
+      </a>
+      
+      <a href="/stories/cafe-specialty-coffee/shibuya-cafe-third-place/" class="group block bg-white rounded-xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/shibuya-cafe-third-place-tokyo.webp" alt="渋谷のカフェがサードプレイスになる理由：東京・渋谷区スペシャルティコーヒー完全ガイド"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">渋谷のカフェがサードプレイスになる理由：東京・渋谷区スペシャルティコーヒー完全ガイド</h3>
+          <p class="text-xs text-muted mt-2">2026年6月21日</p>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="mt-8 grid grid-cols-2 gap-4" style="opacity:1;visibility:visible;">
+    <div>
+      
+      <a href="/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/" class="group block rounded-xl p-5 h-full border border-border hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
+        <p class="text-xs text-muted mb-2">‹ 前の記事</p>
+        <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド</p>
+      </a>
+      
+    </div>
+    <div>
+      
+    </div>
+  </div>
+  
+
+</div>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <p class="label mb-4">Stories</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベート</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <p class="label mb-4">TPJとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>
