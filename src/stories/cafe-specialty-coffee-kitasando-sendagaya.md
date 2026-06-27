@@ -6,6 +6,7 @@ date: 2026-06-27
 tags:
   - articles
   - カフェ・スペシャルティコーヒー
+category_slug: cafe-specialty-coffee
 thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 ---
 
