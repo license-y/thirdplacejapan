@@ -9,8 +9,10 @@
         "name": "渋谷区",
         "name_en": "Shibuya-ku",
         "areas": [
-          { "slug": "shibuya",      "name": "渋谷",   "name_en": "Shibuya" },
-          { "slug": "daikanyama",   "name": "代官山", "name_en": "Daikanyama" },
+          { "slug": "shibuya",      "name": "渋谷",     "name_en": "Shibuya" },
+          { "slug": "yoyogi",       "name": "代々木",   "name_en": "Yoyogi" },
+          { "slug": "sendagaya",    "name": "千駄ヶ谷", "name_en": "Sendagaya" },
+          { "slug": "daikanyama",   "name": "代官山",   "name_en": "Daikanyama" },
           { "slug": "nakameguro",   "name": "中目黒", "name_en": "Nakameguro" },
           { "slug": "ebisu",        "name": "恵比寿", "name_en": "Ebisu" },
           { "slug": "omotesando",   "name": "表参道", "name_en": "Omotesando" },
@@ -37,7 +39,10 @@
           { "slug": "shirokanedai",  "name": "白金台",   "name_en": "Shirokanedai" },
           { "slug": "mita",          "name": "三田",     "name_en": "Mita" },
           { "slug": "shibaura",      "name": "芝浦",     "name_en": "Shibaura" },
-          { "slug": "takanawa",      "name": "高輪",     "name_en": "Takanawa" }
+          { "slug": "takanawa",      "name": "高輪",     "name_en": "Takanawa" },
+          { "slug": "shinbashi",     "name": "新橋",     "name_en": "Shinbashi" },
+          { "slug": "hamamatsucho",  "name": "浜松町",   "name_en": "Hamamatsucho" },
+          { "slug": "toranomon",     "name": "虎ノ門",   "name_en": "Toranomon" }
         ]
       },
       {
@@ -51,7 +56,9 @@
           { "slug": "yotsuya",        "name": "四谷",     "name_en": "Yotsuya" },
           { "slug": "waseda",         "name": "早稲田",   "name_en": "Waseda" },
           { "slug": "nishi-shinjuku", "name": "西新宿",   "name_en": "Nishi-Shinjuku" },
-          { "slug": "ochiai",         "name": "落合",     "name_en": "Ochiai" }
+          { "slug": "ochiai",         "name": "落合",     "name_en": "Ochiai" },
+          { "slug": "shin-okubo",     "name": "新大久保", "name_en": "Shin-Okubo" },
+          { "slug": "shinanomachi",   "name": "信濃町",   "name_en": "Shinanomachi" }
         ]
       },
       {
@@ -105,6 +112,8 @@
           { "slug": "ochanomizu",  "name": "御茶ノ水", "name_en": "Ochanomizu" },
           { "slug": "akihabara",   "name": "秋葉原",   "name_en": "Akihabara" },
           { "slug": "hibiya",      "name": "日比谷",   "name_en": "Hibiya" },
+          { "slug": "yurakucho",   "name": "有楽町",   "name_en": "Yurakucho" },
+          { "slug": "kasumigaseki","name": "霞ヶ関",   "name_en": "Kasumigaseki" },
           { "slug": "hanzomon",    "name": "半蔵門",   "name_en": "Hanzomon" },
           { "slug": "iidabashi",   "name": "飯田橋",   "name_en": "Iidabashi" }
         ]
@@ -126,12 +135,13 @@
         "name": "台東区",
         "name_en": "Taito-ku",
         "areas": [
-          { "slug": "asakusa",   "name": "浅草",   "name_en": "Asakusa" },
-          { "slug": "ueno",      "name": "上野",   "name_en": "Ueno" },
-          { "slug": "kuramae",   "name": "蔵前",   "name_en": "Kuramae" },
-          { "slug": "iriya",     "name": "入谷",   "name_en": "Iriya" },
-          { "slug": "nishi-nippori", "name": "日暮里", "name_en": "Nippori" },
-          { "slug": "okachimachi",   "name": "御徒町", "name_en": "Okachimachi" }
+          { "slug": "asakusa",      "name": "浅草",   "name_en": "Asakusa" },
+          { "slug": "ueno",         "name": "上野",   "name_en": "Ueno" },
+          { "slug": "uguisudani",   "name": "鶯谷",   "name_en": "Uguisudani" },
+          { "slug": "kuramae",      "name": "蔵前",   "name_en": "Kuramae" },
+          { "slug": "iriya",        "name": "入谷",   "name_en": "Iriya" },
+          { "slug": "nishi-nippori","name": "日暮里", "name_en": "Nippori" },
+          { "slug": "okachimachi",  "name": "御徒町", "name_en": "Okachimachi" }
         ]
       },
       {
@@ -222,6 +232,7 @@
         "name_en": "Shinagawa-ku",
         "areas": [
           { "slug": "shinagawa",       "name": "品川",       "name_en": "Shinagawa" },
+          { "slug": "osaki",           "name": "大崎",       "name_en": "Osaki" },
           { "slug": "gotanda",         "name": "五反田",     "name_en": "Gotanda" },
           { "slug": "musashi-koyama-s","name": "武蔵小山",   "name_en": "Musashi-Koyama" },
           { "slug": "togoshi-ginza",   "name": "戸越銀座",   "name_en": "Togoshi-Ginza" }
@@ -232,9 +243,11 @@
         "name": "北区",
         "name_en": "Kita-ku",
         "areas": [
-          { "slug": "akabane", "name": "赤羽",   "name_en": "Akabane" },
-          { "slug": "oji",     "name": "王子",   "name_en": "Oji" },
-          { "slug": "jujo",    "name": "十条",   "name_en": "Jujo" }
+          { "slug": "akabane",   "name": "赤羽",   "name_en": "Akabane" },
+          { "slug": "oji",       "name": "王子",   "name_en": "Oji" },
+          { "slug": "jujo",      "name": "十条",   "name_en": "Jujo" },
+          { "slug": "komagome",  "name": "駒込",   "name_en": "Komagome" },
+          { "slug": "tabata",    "name": "田端",   "name_en": "Tabata" }
         ]
       },
       {
@@ -273,9 +286,10 @@
         "name": "荒川区",
         "name_en": "Arakawa-ku",
         "areas": [
-          { "slug": "nippori",   "name": "日暮里",   "name_en": "Nippori" },
-          { "slug": "mikawashima","name": "三河島",   "name_en": "Mikawashima" },
-          { "slug": "machiya",   "name": "町屋",     "name_en": "Machiya" }
+          { "slug": "nippori",      "name": "日暮里",   "name_en": "Nippori" },
+          { "slug": "nishi-nippori-a","name": "西日暮里", "name_en": "Nishi-Nippori" },
+          { "slug": "mikawashima", "name": "三河島",   "name_en": "Mikawashima" },
+          { "slug": "machiya",     "name": "町屋",     "name_en": "Machiya" }
         ]
       },
       {
