@@ -287,7 +287,7 @@
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
       <input type="text" id="area-search"
-        placeholder="エリア・駅名で検索（例：表参道、青山、渋谷）"
+        placeholder="エリア・駅名で検索（例：北参道、青山、渋谷）"
         class="w-full px-4 py-4 text-sm focus:outline-none bg-transparent" />
       <button id="search-clear" class="hidden px-4 transition-colors" style="color:var(--color-muted)" aria-label="クリア">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -322,62 +322,74 @@
           <a href="/stories/area/tokyo/shibuya-ku/shibuya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="渋谷">渋谷</a>
+             data-area-name="渋谷"
+             data-area-slug="shibuya">渋谷</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/daikanyama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="代官山">代官山</a>
+             data-area-name="代官山"
+             data-area-slug="daikanyama">代官山</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/nakameguro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="中目黒">中目黒</a>
+             data-area-name="中目黒"
+             data-area-slug="nakameguro">中目黒</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/ebisu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="恵比寿">恵比寿</a>
+             data-area-name="恵比寿"
+             data-area-slug="ebisu">恵比寿</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/omotesando/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="表参道">表参道</a>
+             data-area-name="表参道"
+             data-area-slug="omotesando">表参道</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/harajuku/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="原宿">原宿</a>
+             data-area-name="原宿"
+             data-area-slug="harajuku">原宿</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/shinsen/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="神泉">神泉</a>
+             data-area-name="神泉"
+             data-area-slug="shinsen">神泉</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/tomigaya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="富ヶ谷">富ヶ谷</a>
+             data-area-name="富ヶ谷"
+             data-area-slug="tomigaya">富ヶ谷</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/hatagaya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="幡ヶ谷">幡ヶ谷</a>
+             data-area-name="幡ヶ谷"
+             data-area-slug="hatagaya">幡ヶ谷</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/sasazuka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="笹塚">笹塚</a>
+             data-area-name="笹塚"
+             data-area-slug="sasazuka">笹塚</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/hatsudai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="初台">初台</a>
+             data-area-name="初台"
+             data-area-slug="hatsudai">初台</a>
           
           <a href="/stories/area/tokyo/shibuya-ku/shoto/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="松濤">松濤</a>
+             data-area-name="松濤"
+             data-area-slug="shoto">松濤</a>
           
         </div>
         
@@ -400,52 +412,62 @@
           <a href="/stories/area/tokyo/minato-ku/aoyama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="青山">青山</a>
+             data-area-name="青山"
+             data-area-slug="aoyama">青山</a>
           
           <a href="/stories/area/tokyo/minato-ku/roppongi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="六本木">六本木</a>
+             data-area-name="六本木"
+             data-area-slug="roppongi">六本木</a>
           
           <a href="/stories/area/tokyo/minato-ku/azabu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="麻布">麻布</a>
+             data-area-name="麻布"
+             data-area-slug="azabu">麻布</a>
           
           <a href="/stories/area/tokyo/minato-ku/hiroo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="広尾">広尾</a>
+             data-area-name="広尾"
+             data-area-slug="hiroo">広尾</a>
           
           <a href="/stories/area/tokyo/minato-ku/akasaka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="赤坂">赤坂</a>
+             data-area-name="赤坂"
+             data-area-slug="akasaka">赤坂</a>
           
           <a href="/stories/area/tokyo/minato-ku/azabujuban/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="麻布十番">麻布十番</a>
+             data-area-name="麻布十番"
+             data-area-slug="azabujuban">麻布十番</a>
           
           <a href="/stories/area/tokyo/minato-ku/shirokanedai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="白金台">白金台</a>
+             data-area-name="白金台"
+             data-area-slug="shirokanedai">白金台</a>
           
           <a href="/stories/area/tokyo/minato-ku/mita/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="三田">三田</a>
+             data-area-name="三田"
+             data-area-slug="mita">三田</a>
           
           <a href="/stories/area/tokyo/minato-ku/shibaura/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="芝浦">芝浦</a>
+             data-area-name="芝浦"
+             data-area-slug="shibaura">芝浦</a>
           
           <a href="/stories/area/tokyo/minato-ku/takanawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="高輪">高輪</a>
+             data-area-name="高輪"
+             data-area-slug="takanawa">高輪</a>
           
         </div>
         
@@ -468,37 +490,44 @@
           <a href="/stories/area/tokyo/shinjuku-ku/shinjuku/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="新宿">新宿</a>
+             data-area-name="新宿"
+             data-area-slug="shinjuku">新宿</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/kagurazaka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="神楽坂">神楽坂</a>
+             data-area-name="神楽坂"
+             data-area-slug="kagurazaka">神楽坂</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/takadanobaba/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="高田馬場">高田馬場</a>
+             data-area-name="高田馬場"
+             data-area-slug="takadanobaba">高田馬場</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/yotsuya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="四谷">四谷</a>
+             data-area-name="四谷"
+             data-area-slug="yotsuya">四谷</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/waseda/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="早稲田">早稲田</a>
+             data-area-name="早稲田"
+             data-area-slug="waseda">早稲田</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/nishi-shinjuku/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="西新宿">西新宿</a>
+             data-area-name="西新宿"
+             data-area-slug="nishi-shinjuku">西新宿</a>
           
           <a href="/stories/area/tokyo/shinjuku-ku/ochiai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="落合">落合</a>
+             data-area-name="落合"
+             data-area-slug="ochiai">落合</a>
           
         </div>
         
@@ -521,32 +550,38 @@
           <a href="/stories/area/tokyo/chuo-ku/ginza/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="銀座">銀座</a>
+             data-area-name="銀座"
+             data-area-slug="ginza">銀座</a>
           
           <a href="/stories/area/tokyo/chuo-ku/nihonbashi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="日本橋">日本橋</a>
+             data-area-name="日本橋"
+             data-area-slug="nihonbashi">日本橋</a>
           
           <a href="/stories/area/tokyo/chuo-ku/ningyocho/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="人形町">人形町</a>
+             data-area-name="人形町"
+             data-area-slug="ningyocho">人形町</a>
           
           <a href="/stories/area/tokyo/chuo-ku/tsukiji/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="築地">築地</a>
+             data-area-name="築地"
+             data-area-slug="tsukiji">築地</a>
           
           <a href="/stories/area/tokyo/chuo-ku/tsukishima/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="月島">月島</a>
+             data-area-name="月島"
+             data-area-slug="tsukishima">月島</a>
           
           <a href="/stories/area/tokyo/chuo-ku/kachidoki/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="勝どき">勝どき</a>
+             data-area-name="勝どき"
+             data-area-slug="kachidoki">勝どき</a>
           
         </div>
         
@@ -569,32 +604,38 @@
           <a href="/stories/area/tokyo/meguro-ku/jiyugaoka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="自由が丘">自由が丘</a>
+             data-area-name="自由が丘"
+             data-area-slug="jiyugaoka">自由が丘</a>
           
           <a href="/stories/area/tokyo/meguro-ku/gakugeidaigaku/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="学芸大学">学芸大学</a>
+             data-area-name="学芸大学"
+             data-area-slug="gakugeidaigaku">学芸大学</a>
           
           <a href="/stories/area/tokyo/meguro-ku/yutenji/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="祐天寺">祐天寺</a>
+             data-area-name="祐天寺"
+             data-area-slug="yutenji">祐天寺</a>
           
           <a href="/stories/area/tokyo/meguro-ku/meguro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="目黒">目黒</a>
+             data-area-name="目黒"
+             data-area-slug="meguro">目黒</a>
           
           <a href="/stories/area/tokyo/meguro-ku/musashi-koyama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵小山">武蔵小山</a>
+             data-area-name="武蔵小山"
+             data-area-slug="musashi-koyama">武蔵小山</a>
           
           <a href="/stories/area/tokyo/meguro-ku/naka-meguro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="中目黒">中目黒</a>
+             data-area-name="中目黒"
+             data-area-slug="naka-meguro">中目黒</a>
           
         </div>
         
@@ -617,42 +658,50 @@
           <a href="/stories/area/tokyo/setagaya-ku/shimokitazawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="下北沢">下北沢</a>
+             data-area-name="下北沢"
+             data-area-slug="shimokitazawa">下北沢</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/sangenjaya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="三軒茶屋">三軒茶屋</a>
+             data-area-name="三軒茶屋"
+             data-area-slug="sangenjaya">三軒茶屋</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/futakotamagawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="二子玉川">二子玉川</a>
+             data-area-name="二子玉川"
+             data-area-slug="futakotamagawa">二子玉川</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/komazawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="駒沢">駒沢</a>
+             data-area-name="駒沢"
+             data-area-slug="komazawa">駒沢</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/kyodo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="経堂">経堂</a>
+             data-area-name="経堂"
+             data-area-slug="kyodo">経堂</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/yoga/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="用賀">用賀</a>
+             data-area-name="用賀"
+             data-area-slug="yoga">用賀</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/soshigaya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="祖師ヶ谷大蔵">祖師ヶ谷大蔵</a>
+             data-area-name="祖師ヶ谷大蔵"
+             data-area-slug="soshigaya">祖師ヶ谷大蔵</a>
           
           <a href="/stories/area/tokyo/setagaya-ku/chitose-funabashi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="千歳船橋">千歳船橋</a>
+             data-area-name="千歳船橋"
+             data-area-slug="chitose-funabashi">千歳船橋</a>
           
         </div>
         
@@ -675,37 +724,44 @@
           <a href="/stories/area/tokyo/chiyoda-ku/marunouchi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="丸の内">丸の内</a>
+             data-area-name="丸の内"
+             data-area-slug="marunouchi">丸の内</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/kanda/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="神田">神田</a>
+             data-area-name="神田"
+             data-area-slug="kanda">神田</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/ochanomizu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="御茶ノ水">御茶ノ水</a>
+             data-area-name="御茶ノ水"
+             data-area-slug="ochanomizu">御茶ノ水</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/akihabara/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="秋葉原">秋葉原</a>
+             data-area-name="秋葉原"
+             data-area-slug="akihabara">秋葉原</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/hibiya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="日比谷">日比谷</a>
+             data-area-name="日比谷"
+             data-area-slug="hibiya">日比谷</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/hanzomon/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="半蔵門">半蔵門</a>
+             data-area-name="半蔵門"
+             data-area-slug="hanzomon">半蔵門</a>
           
           <a href="/stories/area/tokyo/chiyoda-ku/iidabashi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="飯田橋">飯田橋</a>
+             data-area-name="飯田橋"
+             data-area-slug="iidabashi">飯田橋</a>
           
         </div>
         
@@ -728,27 +784,32 @@
           <a href="/stories/area/tokyo/toshima-ku/ikebukuro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="池袋">池袋</a>
+             data-area-name="池袋"
+             data-area-slug="ikebukuro">池袋</a>
           
           <a href="/stories/area/tokyo/toshima-ku/sugamo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="巣鴨">巣鴨</a>
+             data-area-name="巣鴨"
+             data-area-slug="sugamo">巣鴨</a>
           
           <a href="/stories/area/tokyo/toshima-ku/otsuka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="大塚">大塚</a>
+             data-area-name="大塚"
+             data-area-slug="otsuka">大塚</a>
           
           <a href="/stories/area/tokyo/toshima-ku/mejiro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="目白">目白</a>
+             data-area-name="目白"
+             data-area-slug="mejiro">目白</a>
           
           <a href="/stories/area/tokyo/toshima-ku/higashi-ikebukuro/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東池袋">東池袋</a>
+             data-area-name="東池袋"
+             data-area-slug="higashi-ikebukuro">東池袋</a>
           
         </div>
         
@@ -771,32 +832,38 @@
           <a href="/stories/area/tokyo/taito-ku/asakusa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="浅草">浅草</a>
+             data-area-name="浅草"
+             data-area-slug="asakusa">浅草</a>
           
           <a href="/stories/area/tokyo/taito-ku/ueno/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="上野">上野</a>
+             data-area-name="上野"
+             data-area-slug="ueno">上野</a>
           
           <a href="/stories/area/tokyo/taito-ku/kuramae/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="蔵前">蔵前</a>
+             data-area-name="蔵前"
+             data-area-slug="kuramae">蔵前</a>
           
           <a href="/stories/area/tokyo/taito-ku/iriya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="入谷">入谷</a>
+             data-area-name="入谷"
+             data-area-slug="iriya">入谷</a>
           
           <a href="/stories/area/tokyo/taito-ku/nishi-nippori/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="日暮里">日暮里</a>
+             data-area-name="日暮里"
+             data-area-slug="nishi-nippori">日暮里</a>
           
           <a href="/stories/area/tokyo/taito-ku/okachimachi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="御徒町">御徒町</a>
+             data-area-name="御徒町"
+             data-area-slug="okachimachi">御徒町</a>
           
         </div>
         
@@ -819,22 +886,26 @@
           <a href="/stories/area/tokyo/koto-ku/kiyosumi-shirakawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="清澄白河">清澄白河</a>
+             data-area-name="清澄白河"
+             data-area-slug="kiyosumi-shirakawa">清澄白河</a>
           
           <a href="/stories/area/tokyo/koto-ku/monzen-nakacho/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="門前仲町">門前仲町</a>
+             data-area-name="門前仲町"
+             data-area-slug="monzen-nakacho">門前仲町</a>
           
           <a href="/stories/area/tokyo/koto-ku/toyosu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="豊洲">豊洲</a>
+             data-area-name="豊洲"
+             data-area-slug="toyosu">豊洲</a>
           
           <a href="/stories/area/tokyo/koto-ku/kiba/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="木場">木場</a>
+             data-area-name="木場"
+             data-area-slug="kiba">木場</a>
           
         </div>
         
@@ -857,22 +928,26 @@
           <a href="/stories/area/tokyo/suginami-ku/koenji/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="高円寺">高円寺</a>
+             data-area-name="高円寺"
+             data-area-slug="koenji">高円寺</a>
           
           <a href="/stories/area/tokyo/suginami-ku/asagaya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="阿佐ヶ谷">阿佐ヶ谷</a>
+             data-area-name="阿佐ヶ谷"
+             data-area-slug="asagaya">阿佐ヶ谷</a>
           
           <a href="/stories/area/tokyo/suginami-ku/ogikubo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="荻窪">荻窪</a>
+             data-area-name="荻窪"
+             data-area-slug="ogikubo">荻窪</a>
           
           <a href="/stories/area/tokyo/suginami-ku/nishi-ogikubo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="西荻窪">西荻窪</a>
+             data-area-name="西荻窪"
+             data-area-slug="nishi-ogikubo">西荻窪</a>
           
         </div>
         
@@ -895,17 +970,20 @@
           <a href="/stories/area/tokyo/nerima-ku/nerima/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="練馬">練馬</a>
+             data-area-name="練馬"
+             data-area-slug="nerima">練馬</a>
           
           <a href="/stories/area/tokyo/nerima-ku/shakujii-koen/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="石神井公園">石神井公園</a>
+             data-area-name="石神井公園"
+             data-area-slug="shakujii-koen">石神井公園</a>
           
           <a href="/stories/area/tokyo/nerima-ku/hikarigaoka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="光が丘">光が丘</a>
+             data-area-name="光が丘"
+             data-area-slug="hikarigaoka">光が丘</a>
           
         </div>
         
@@ -928,17 +1006,20 @@
           <a href="/stories/area/tokyo/ota-ku/kamata/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="蒲田">蒲田</a>
+             data-area-name="蒲田"
+             data-area-slug="kamata">蒲田</a>
           
           <a href="/stories/area/tokyo/ota-ku/omori/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="大森">大森</a>
+             data-area-name="大森"
+             data-area-slug="omori">大森</a>
           
           <a href="/stories/area/tokyo/ota-ku/denenchofu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="田園調布">田園調布</a>
+             data-area-name="田園調布"
+             data-area-slug="denenchofu">田園調布</a>
           
         </div>
         
@@ -961,17 +1042,20 @@
           <a href="/stories/area/tokyo/itabashi-ku/itabashi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="板橋">板橋</a>
+             data-area-name="板橋"
+             data-area-slug="itabashi">板橋</a>
           
           <a href="/stories/area/tokyo/itabashi-ku/oyama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="大山">大山</a>
+             data-area-name="大山"
+             data-area-slug="oyama">大山</a>
           
           <a href="/stories/area/tokyo/itabashi-ku/narimasu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="成増">成増</a>
+             data-area-name="成増"
+             data-area-slug="narimasu">成増</a>
           
         </div>
         
@@ -994,17 +1078,20 @@
           <a href="/stories/area/tokyo/adachi-ku/kita-senju/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="北千住">北千住</a>
+             data-area-name="北千住"
+             data-area-slug="kita-senju">北千住</a>
           
           <a href="/stories/area/tokyo/adachi-ku/nishi-arai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="西新井">西新井</a>
+             data-area-name="西新井"
+             data-area-slug="nishi-arai">西新井</a>
           
           <a href="/stories/area/tokyo/adachi-ku/ayase/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="綾瀬">綾瀬</a>
+             data-area-name="綾瀬"
+             data-area-slug="ayase">綾瀬</a>
           
         </div>
         
@@ -1027,17 +1114,20 @@
           <a href="/stories/area/tokyo/edogawa-ku/kasai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="葛西">葛西</a>
+             data-area-name="葛西"
+             data-area-slug="kasai">葛西</a>
           
           <a href="/stories/area/tokyo/edogawa-ku/koiwa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="小岩">小岩</a>
+             data-area-name="小岩"
+             data-area-slug="koiwa">小岩</a>
           
           <a href="/stories/area/tokyo/edogawa-ku/nishi-kasai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="西葛西">西葛西</a>
+             data-area-name="西葛西"
+             data-area-slug="nishi-kasai">西葛西</a>
           
         </div>
         
@@ -1060,17 +1150,20 @@
           <a href="/stories/area/tokyo/katsushika-ku/kameari/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="亀有">亀有</a>
+             data-area-name="亀有"
+             data-area-slug="kameari">亀有</a>
           
           <a href="/stories/area/tokyo/katsushika-ku/kanamachi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="金町">金町</a>
+             data-area-name="金町"
+             data-area-slug="kanamachi">金町</a>
           
           <a href="/stories/area/tokyo/katsushika-ku/shibamata/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="柴又">柴又</a>
+             data-area-name="柴又"
+             data-area-slug="shibamata">柴又</a>
           
         </div>
         
@@ -1093,22 +1186,26 @@
           <a href="/stories/area/tokyo/shinagawa-ku/shinagawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="品川">品川</a>
+             data-area-name="品川"
+             data-area-slug="shinagawa">品川</a>
           
           <a href="/stories/area/tokyo/shinagawa-ku/gotanda/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="五反田">五反田</a>
+             data-area-name="五反田"
+             data-area-slug="gotanda">五反田</a>
           
           <a href="/stories/area/tokyo/shinagawa-ku/musashi-koyama-s/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵小山">武蔵小山</a>
+             data-area-name="武蔵小山"
+             data-area-slug="musashi-koyama-s">武蔵小山</a>
           
           <a href="/stories/area/tokyo/shinagawa-ku/togoshi-ginza/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="戸越銀座">戸越銀座</a>
+             data-area-name="戸越銀座"
+             data-area-slug="togoshi-ginza">戸越銀座</a>
           
         </div>
         
@@ -1131,17 +1228,20 @@
           <a href="/stories/area/tokyo/kita-ku/akabane/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="赤羽">赤羽</a>
+             data-area-name="赤羽"
+             data-area-slug="akabane">赤羽</a>
           
           <a href="/stories/area/tokyo/kita-ku/oji/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="王子">王子</a>
+             data-area-name="王子"
+             data-area-slug="oji">王子</a>
           
           <a href="/stories/area/tokyo/kita-ku/jujo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="十条">十条</a>
+             data-area-name="十条"
+             data-area-slug="jujo">十条</a>
           
         </div>
         
@@ -1164,17 +1264,20 @@
           <a href="/stories/area/tokyo/nakano-ku/nakano/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="中野">中野</a>
+             data-area-name="中野"
+             data-area-slug="nakano">中野</a>
           
           <a href="/stories/area/tokyo/nakano-ku/shin-nakano/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="新中野">新中野</a>
+             data-area-name="新中野"
+             data-area-slug="shin-nakano">新中野</a>
           
           <a href="/stories/area/tokyo/nakano-ku/saginomiya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="鷺ノ宮">鷺ノ宮</a>
+             data-area-name="鷺ノ宮"
+             data-area-slug="saginomiya">鷺ノ宮</a>
           
         </div>
         
@@ -1197,17 +1300,20 @@
           <a href="/stories/area/tokyo/sumida-ku/oshiage/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="押上">押上</a>
+             data-area-name="押上"
+             data-area-slug="oshiage">押上</a>
           
           <a href="/stories/area/tokyo/sumida-ku/kinshicho/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="錦糸町">錦糸町</a>
+             data-area-name="錦糸町"
+             data-area-slug="kinshicho">錦糸町</a>
           
           <a href="/stories/area/tokyo/sumida-ku/ryogoku/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="両国">両国</a>
+             data-area-name="両国"
+             data-area-slug="ryogoku">両国</a>
           
         </div>
         
@@ -1230,22 +1336,26 @@
           <a href="/stories/area/tokyo/bunkyo-ku/hongo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="本郷">本郷</a>
+             data-area-name="本郷"
+             data-area-slug="hongo">本郷</a>
           
           <a href="/stories/area/tokyo/bunkyo-ku/nezu/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="根津">根津</a>
+             data-area-name="根津"
+             data-area-slug="nezu">根津</a>
           
           <a href="/stories/area/tokyo/bunkyo-ku/yushima/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="湯島">湯島</a>
+             data-area-name="湯島"
+             data-area-slug="yushima">湯島</a>
           
           <a href="/stories/area/tokyo/bunkyo-ku/korakuen/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="後楽園">後楽園</a>
+             data-area-name="後楽園"
+             data-area-slug="korakuen">後楽園</a>
           
         </div>
         
@@ -1268,17 +1378,20 @@
           <a href="/stories/area/tokyo/arakawa-ku/nippori/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="日暮里">日暮里</a>
+             data-area-name="日暮里"
+             data-area-slug="nippori">日暮里</a>
           
           <a href="/stories/area/tokyo/arakawa-ku/mikawashima/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="三河島">三河島</a>
+             data-area-name="三河島"
+             data-area-slug="mikawashima">三河島</a>
           
           <a href="/stories/area/tokyo/arakawa-ku/machiya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="町屋">町屋</a>
+             data-area-name="町屋"
+             data-area-slug="machiya">町屋</a>
           
         </div>
         
@@ -1301,17 +1414,20 @@
           <a href="/stories/area/tokyo/musashino/kichijoji/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="吉祥寺">吉祥寺</a>
+             data-area-name="吉祥寺"
+             data-area-slug="kichijoji">吉祥寺</a>
           
           <a href="/stories/area/tokyo/musashino/mitaka-sta-north/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="三鷹駅北口">三鷹駅北口</a>
+             data-area-name="三鷹駅北口"
+             data-area-slug="mitaka-sta-north">三鷹駅北口</a>
           
           <a href="/stories/area/tokyo/musashino/musashisakai/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵境">武蔵境</a>
+             data-area-name="武蔵境"
+             data-area-slug="musashisakai">武蔵境</a>
           
         </div>
         
@@ -1334,12 +1450,14 @@
           <a href="/stories/area/tokyo/mitaka/mitaka/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="三鷹">三鷹</a>
+             data-area-name="三鷹"
+             data-area-slug="mitaka">三鷹</a>
           
           <a href="/stories/area/tokyo/mitaka/shinkawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="新川">新川</a>
+             data-area-name="新川"
+             data-area-slug="shinkawa">新川</a>
           
         </div>
         
@@ -1362,12 +1480,14 @@
           <a href="/stories/area/tokyo/chofu/chofu-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="調布">調布</a>
+             data-area-name="調布"
+             data-area-slug="chofu-sta">調布</a>
           
           <a href="/stories/area/tokyo/chofu/sengawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="仙川">仙川</a>
+             data-area-name="仙川"
+             data-area-slug="sengawa">仙川</a>
           
         </div>
         
@@ -1390,7 +1510,8 @@
           <a href="/stories/area/tokyo/fuchu/fuchu-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="府中">府中</a>
+             data-area-name="府中"
+             data-area-slug="fuchu-sta">府中</a>
           
         </div>
         
@@ -1413,7 +1534,8 @@
           <a href="/stories/area/tokyo/tachikawa/tachikawa-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="立川">立川</a>
+             data-area-name="立川"
+             data-area-slug="tachikawa-sta">立川</a>
           
         </div>
         
@@ -1436,12 +1558,14 @@
           <a href="/stories/area/tokyo/hachioji/hachioji-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="八王子">八王子</a>
+             data-area-name="八王子"
+             data-area-slug="hachioji-sta">八王子</a>
           
           <a href="/stories/area/tokyo/hachioji/minamiosawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="南大沢">南大沢</a>
+             data-area-name="南大沢"
+             data-area-slug="minamiosawa">南大沢</a>
           
         </div>
         
@@ -1464,12 +1588,14 @@
           <a href="/stories/area/tokyo/machida/machida-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="町田">町田</a>
+             data-area-name="町田"
+             data-area-slug="machida-sta">町田</a>
           
           <a href="/stories/area/tokyo/machida/minami-machida/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="南町田">南町田</a>
+             data-area-name="南町田"
+             data-area-slug="minami-machida">南町田</a>
           
         </div>
         
@@ -1492,12 +1618,14 @@
           <a href="/stories/area/tokyo/kodaira/kodaira-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="小平">小平</a>
+             data-area-name="小平"
+             data-area-slug="kodaira-sta">小平</a>
           
           <a href="/stories/area/tokyo/kodaira/hanakoganei/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="花小金井">花小金井</a>
+             data-area-name="花小金井"
+             data-area-slug="hanakoganei">花小金井</a>
           
         </div>
         
@@ -1520,12 +1648,14 @@
           <a href="/stories/area/tokyo/hino/hino-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="日野">日野</a>
+             data-area-name="日野"
+             data-area-slug="hino-sta">日野</a>
           
           <a href="/stories/area/tokyo/hino/takahata-fudo/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="高幡不動">高幡不動</a>
+             data-area-name="高幡不動"
+             data-area-slug="takahata-fudo">高幡不動</a>
           
         </div>
         
@@ -1548,12 +1678,14 @@
           <a href="/stories/area/tokyo/nishitokyo/tanashi/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="田無">田無</a>
+             data-area-name="田無"
+             data-area-slug="tanashi">田無</a>
           
           <a href="/stories/area/tokyo/nishitokyo/hoya/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="保谷">保谷</a>
+             data-area-name="保谷"
+             data-area-slug="hoya">保谷</a>
           
         </div>
         
@@ -1576,12 +1708,14 @@
           <a href="/stories/area/tokyo/higashimurayama/higashimurayama-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東村山">東村山</a>
+             data-area-name="東村山"
+             data-area-slug="higashimurayama-sta">東村山</a>
           
           <a href="/stories/area/tokyo/higashimurayama/kumegawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="久米川">久米川</a>
+             data-area-name="久米川"
+             data-area-slug="kumegawa">久米川</a>
           
         </div>
         
@@ -1604,12 +1738,14 @@
           <a href="/stories/area/tokyo/tama/tama-center/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="多摩センター">多摩センター</a>
+             data-area-name="多摩センター"
+             data-area-slug="tama-center">多摩センター</a>
           
           <a href="/stories/area/tokyo/tama/nagayama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="永山">永山</a>
+             data-area-name="永山"
+             data-area-slug="nagayama">永山</a>
           
         </div>
         
@@ -1632,12 +1768,14 @@
           <a href="/stories/area/tokyo/ome/ome-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="青梅">青梅</a>
+             data-area-name="青梅"
+             data-area-slug="ome-sta">青梅</a>
           
           <a href="/stories/area/tokyo/ome/kawabe/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="河辺">河辺</a>
+             data-area-name="河辺"
+             data-area-slug="kawabe">河辺</a>
           
         </div>
         
@@ -1660,7 +1798,8 @@
           <a href="/stories/area/tokyo/kokubunji/kokubunji-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="国分寺">国分寺</a>
+             data-area-name="国分寺"
+             data-area-slug="kokubunji-sta">国分寺</a>
           
         </div>
         
@@ -1683,12 +1822,14 @@
           <a href="/stories/area/tokyo/koganei/musashi-koganei/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵小金井">武蔵小金井</a>
+             data-area-name="武蔵小金井"
+             data-area-slug="musashi-koganei">武蔵小金井</a>
           
           <a href="/stories/area/tokyo/koganei/higashi-koganei/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東小金井">東小金井</a>
+             data-area-name="東小金井"
+             data-area-slug="higashi-koganei">東小金井</a>
           
         </div>
         
@@ -1711,7 +1852,8 @@
           <a href="/stories/area/tokyo/higashikurume/higashikurume-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東久留米">東久留米</a>
+             data-area-name="東久留米"
+             data-area-slug="higashikurume-sta">東久留米</a>
           
         </div>
         
@@ -1734,12 +1876,14 @@
           <a href="/stories/area/tokyo/akishima/akishima-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="昭島">昭島</a>
+             data-area-name="昭島"
+             data-area-slug="akishima-sta">昭島</a>
           
           <a href="/stories/area/tokyo/akishima/higashi-nakagami/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東中神">東中神</a>
+             data-area-name="東中神"
+             data-area-slug="higashi-nakagami">東中神</a>
           
         </div>
         
@@ -1762,12 +1906,14 @@
           <a href="/stories/area/tokyo/inagi/inagi-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="稲城">稲城</a>
+             data-area-name="稲城"
+             data-area-slug="inagi-sta">稲城</a>
           
           <a href="/stories/area/tokyo/inagi/minami-tama/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="南多摩">南多摩</a>
+             data-area-name="南多摩"
+             data-area-slug="minami-tama">南多摩</a>
           
         </div>
         
@@ -1790,12 +1936,14 @@
           <a href="/stories/area/tokyo/higashiyamato/higashiyamato-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="東大和">東大和</a>
+             data-area-name="東大和"
+             data-area-slug="higashiyamato-sta">東大和</a>
           
           <a href="/stories/area/tokyo/higashiyamato/tamagawa-josui/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="玉川上水">玉川上水</a>
+             data-area-name="玉川上水"
+             data-area-slug="tamagawa-josui">玉川上水</a>
           
         </div>
         
@@ -1818,12 +1966,14 @@
           <a href="/stories/area/tokyo/akiruno/akigawa/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="秋川">秋川</a>
+             data-area-name="秋川"
+             data-area-slug="akigawa">秋川</a>
           
           <a href="/stories/area/tokyo/akiruno/musashi-hikida/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵引田">武蔵引田</a>
+             data-area-name="武蔵引田"
+             data-area-slug="musashi-hikida">武蔵引田</a>
           
         </div>
         
@@ -1846,7 +1996,8 @@
           <a href="/stories/area/tokyo/komae/komae-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="狛江">狛江</a>
+             data-area-name="狛江"
+             data-area-slug="komae-sta">狛江</a>
           
         </div>
         
@@ -1869,12 +2020,14 @@
           <a href="/stories/area/tokyo/kunitachi/kunitachi-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="国立">国立</a>
+             data-area-name="国立"
+             data-area-slug="kunitachi-sta">国立</a>
           
           <a href="/stories/area/tokyo/kunitachi/yaho/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="谷保">谷保</a>
+             data-area-name="谷保"
+             data-area-slug="yaho">谷保</a>
           
         </div>
         
@@ -1897,7 +2050,8 @@
           <a href="/stories/area/tokyo/kiyose/kiyose-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="清瀬">清瀬</a>
+             data-area-name="清瀬"
+             data-area-slug="kiyose-sta">清瀬</a>
           
         </div>
         
@@ -1920,7 +2074,8 @@
           <a href="/stories/area/tokyo/musashimurayama/musashimurayama-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="武蔵村山">武蔵村山</a>
+             data-area-name="武蔵村山"
+             data-area-slug="musashimurayama-sta">武蔵村山</a>
           
         </div>
         
@@ -1943,7 +2098,8 @@
           <a href="/stories/area/tokyo/fussa/fussa-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="福生">福生</a>
+             data-area-name="福生"
+             data-area-slug="fussa-sta">福生</a>
           
         </div>
         
@@ -1966,7 +2122,8 @@
           <a href="/stories/area/tokyo/hamura/hamura-sta/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="羽村">羽村</a>
+             data-area-name="羽村"
+             data-area-slug="hamura-sta">羽村</a>
           
         </div>
         
@@ -2113,12 +2270,153 @@
 
 <script>
 (function () {
+  /* ── 駅名 → エリア マッピング（東京都） ── */
+  var STATION_ALIASES = {
+    /* 渋谷区 */
+    '北参道':     { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'harajuku',   areaName: '原宿' },
+    '明治神宮前': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'harajuku',   areaName: '原宿' },
+    '代々木公園': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'tomigaya',   areaName: '富ヶ谷' },
+    '代々木上原': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'tomigaya',   areaName: '富ヶ谷' },
+    '池尻大橋':   { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'nakameguro', areaName: '中目黒' },
+    '祐天寺':     { citySlug: 'meguro-ku',  cityName: '目黒区', areaSlug: 'yutenji',    areaName: '祐天寺' },
+    /* 港区 */
+    '外苑前':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '青山一丁目':   { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '表参道':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '乃木坂':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '六本木一丁目': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'roppongi',     areaName: '六本木' },
+    '神谷町':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'roppongi',     areaName: '六本木' },
+    '赤坂見附':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '溜池山王':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '国会議事堂前': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '白金高輪':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shirokanedai', areaName: '白金台' },
+    '高輪ゲートウェイ': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa', areaName: '高輪' },
+    '泉岳寺':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa',     areaName: '高輪' },
+    '品川':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa',     areaName: '高輪' },
+    '田町':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    '三田':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    '浜松町':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '天王洲アイル': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '竹芝':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '芝公園':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    /* 新宿区 */
+    '新宿三丁目':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'shinjuku',      areaName: '新宿' },
+    '東新宿':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'shinjuku',      areaName: '新宿' },
+    '都庁前':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'nishi-shinjuku', areaName: '西新宿' },
+    '西新宿五丁目': { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'nishi-shinjuku', areaName: '西新宿' },
+    '牛込神楽坂':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '神楽坂':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '四谷三丁目':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'yotsuya',       areaName: '四谷' },
+    '曙橋':         { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'yotsuya',       areaName: '四谷' },
+    '牛込柳町':     { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '中井':         { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'ochiai',        areaName: '落合' },
+    '落合南長崎':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'ochiai',        areaName: '落合' },
+    /* 千代田区 */
+    '東京':         { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '大手町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '二重橋前':     { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '有楽町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '日比谷':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '桜田門':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '半蔵門':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hanzomon',   areaName: '半蔵門' },
+    '永田町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hanzomon',   areaName: '半蔵門' },
+    '九段下':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '水道橋':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '市ケ谷':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '末広町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'akihabara',  areaName: '秋葉原' },
+    '小川町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'kanda',      areaName: '神田' },
+    /* 中央区 */
+    '東銀座':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ginza',      areaName: '銀座' },
+    '銀座一丁目': { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ginza',      areaName: '銀座' },
+    '築地市場':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '新富町':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '八丁堀':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '三越前':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'nihonbashi', areaName: '日本橋' },
+    '小伝馬町':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '水天宮前':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '浜町':       { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '勝どき':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'kachidoki',  areaName: '勝どき' },
+    /* 目黒区 */
+    '都立大学':   { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'jiyugaoka',      areaName: '自由が丘' },
+    '緑が丘':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'jiyugaoka',      areaName: '自由が丘' },
+    '大岡山':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'meguro',          areaName: '目黒' },
+    '西小山':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'musashi-koyama',  areaName: '武蔵小山' },
+    '洗足':       { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'musashi-koyama',  areaName: '武蔵小山' },
+    '不動前':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'meguro',          areaName: '目黒' },
+    '学芸大学':   { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'gakugeidaigaku',  areaName: '学芸大学' },
+    /* 世田谷区 */
+    '世田谷代田': { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'shimokitazawa',  areaName: '下北沢' },
+    '池ノ上':     { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'shimokitazawa',  areaName: '下北沢' },
+    '若林':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '松陰神社前': { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '西太子堂':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '駒沢大学':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'komazawa',       areaName: '駒沢' },
+    '桜新町':     { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'futakotamagawa', areaName: '二子玉川' },
+    '瀬田':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'futakotamagawa', areaName: '二子玉川' },
+    '千歳烏山':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'chitose-funabashi', areaName: '千歳船橋' },
+    '仙川':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'chitose-funabashi', areaName: '千歳船橋' },
+    /* 豊島区 */
+    '東池袋':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'higashi-ikebukuro', areaName: '東池袋' },
+    '北池袋':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'ikebukuro',         areaName: '池袋' },
+    '椎名町':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'ikebukuro',         areaName: '池袋' },
+    /* 台東区 */
+    '浅草橋':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'kuramae',    areaName: '蔵前' },
+    '蔵前':     { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'kuramae',    areaName: '蔵前' },
+    '田原町':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'asakusa',    areaName: '浅草' },
+    '本所吾妻橋': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'asakusa',  areaName: '浅草' },
+    '上野広小路': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',     areaName: '上野' },
+    '上野御徒町': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',     areaName: '上野' },
+    '稲荷町':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',       areaName: '上野' },
+    /* 墨田区 */
+    '押上':       { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'oshiage',  areaName: '押上' },
+    'スカイツリー': { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'oshiage', areaName: '押上' },
+    '錦糸町':     { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'kinshicho', areaName: '錦糸町' },
+    '両国':       { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'ryogoku',  areaName: '両国' },
+    /* 江東区 */
+    '辰巳':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'toyosu',              areaName: '豊洲' },
+    '越中島':   { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'kiyosumi-shirakawa',  areaName: '清澄白河' },
+    '住吉':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'kiyosumi-shirakawa',  areaName: '清澄白河' },
+    '森下':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'monzen-nakacho',      areaName: '門前仲町' },
+    /* 品川区 */
+    '大崎':     { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'gotanda',       areaName: '五反田' },
+    '旗の台':   { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'togoshi-ginza', areaName: '戸越銀座' },
+    '戸越':     { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'togoshi-ginza', areaName: '戸越銀座' },
+    '西大井':   { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'shinagawa',     areaName: '品川' },
+    /* 文京区 */
+    '東大前':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '本郷三丁目': { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '後楽園':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'korakuen',  areaName: '後楽園' },
+    '春日':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'korakuen',  areaName: '後楽園' },
+    '白山':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '根津':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'nezu',      areaName: '根津' },
+    '千駄木':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'nezu',      areaName: '根津' },
+    '湯島':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'yushima',   areaName: '湯島' },
+    /* 北区 */
+    '王子神谷': { citySlug: 'kita-ku', cityName: '北区', areaSlug: 'oji',     areaName: '王子' },
+    '志茂':     { citySlug: 'kita-ku', cityName: '北区', areaSlug: 'akabane', areaName: '赤羽' },
+    /* 荒川区 */
+    '西日暮里': { citySlug: 'arakawa-ku', cityName: '荒川区', areaSlug: 'nippori',    areaName: '日暮里' },
+    '三河島':   { citySlug: 'arakawa-ku', cityName: '荒川区', areaSlug: 'mikawashima', areaName: '三河島' },
+    /* 杉並区 */
+    '東高円寺': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'koenji',        areaName: '高円寺' },
+    '新高円寺': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'koenji',        areaName: '高円寺' },
+    '南阿佐ヶ谷': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'asagaya',    areaName: '阿佐ヶ谷' },
+    '西荻窪':   { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'nishi-ogikubo', areaName: '西荻窪' },
+    /* 中野区 */
+    '新中野':   { citySlug: 'nakano-ku', cityName: '中野区', areaSlug: 'shin-nakano', areaName: '新中野' },
+    /* 武蔵野市 */
+    '井の頭公園': { citySlug: 'musashino', cityName: '武蔵野市', areaSlug: 'kichijoji', areaName: '吉祥寺' },
+    '三鷹':       { citySlug: 'musashino', cityName: '武蔵野市', areaSlug: 'mitaka-sta-north', areaName: '三鷹駅北口' },
+    /* 大田区 */
+    '多摩川':     { citySlug: 'ota-ku', cityName: '大田区', areaSlug: 'denenchofu', areaName: '田園調布' },
+    '石川台':     { citySlug: 'ota-ku', cityName: '大田区', areaSlug: 'denenchofu', areaName: '田園調布' },
+  };
+
   var searchInput = document.getElementById('area-search');
   var searchClear = document.getElementById('search-clear');
   var searchHint  = document.getElementById('search-hint');
   var cityCards   = document.querySelectorAll('.city-card');
   var noResults   = document.getElementById('no-results');
-  var prefSlug    = 'tokyo';
 
   function normalize(str) {
     return (str || '').toLowerCase().replace(/[\s　]/g, '');
@@ -2129,61 +2427,84 @@
     var visibleCount = 0;
     var hintParts = [];
 
+    /* 駅名エイリアスでマッチした citySlug を収集 */
+    var stationHits = {}; /* citySlug -> [{station, areaSlug, areaName, cityName}] */
+    if (q.length >= 1) {
+      Object.keys(STATION_ALIASES).forEach(function (station) {
+        if (normalize(station).includes(q)) {
+          var info = STATION_ALIASES[station];
+          if (!stationHits[info.citySlug]) stationHits[info.citySlug] = [];
+          stationHits[info.citySlug].push({
+            station: station,
+            areaSlug: info.areaSlug,
+            areaName: info.areaName,
+            cityName: info.cityName
+          });
+        }
+      });
+    }
+
     cityCards.forEach(function (card) {
-      var cityName   = card.dataset.cityName  || '';
-      var citySlug   = card.dataset.citySlug  || '';
-      var areasRaw   = card.dataset.areas     || '';
-      var slugsRaw   = card.dataset.areaSlugs || '';
-      var areas      = areasRaw ? areasRaw.split(',') : [];
-      var areaSlugs  = slugsRaw ? slugsRaw.split(',') : [];
+      var cityName  = card.dataset.cityName  || '';
+      var citySlug  = card.dataset.citySlug  || '';
+      var areasRaw  = card.dataset.areas     || '';
+      var areas     = areasRaw ? areasRaw.split(',') : [];
 
       var cityMatch    = !q || normalize(cityName).includes(q);
-      var matchingIdx  = [];
-      areas.forEach(function (a, i) {
-        if (q && normalize(a).includes(q)) matchingIdx.push(i);
-      });
-      var areaMatch = matchingIdx.length > 0;
+      var areaMatch    = q && areas.some(function (a) { return normalize(a).includes(q); });
+      var stationMatch = !!(stationHits[citySlug]);
 
-      if (!q || cityMatch || areaMatch) {
+      if (!q || cityMatch || areaMatch || stationMatch) {
         card.style.display = '';
         visibleCount++;
 
-        // highlight matching area tags
+        /* エリアタグをハイライト */
         card.querySelectorAll('.area-tag').forEach(function (tag) {
-          var aName = tag.dataset.areaName || '';
-          if (q && normalize(aName).includes(q)) {
-            tag.classList.add('border-gold-hl');
-            tag.style.color = 'var(--color-gold)';
-            tag.style.borderColor = 'var(--color-gold)';
+          var aName    = tag.dataset.areaName || '';
+          var aSlug    = tag.dataset.areaSlug || '';
+          var hlByArea = q && normalize(aName).includes(q);
+          var hlByStation = stationMatch && stationHits[citySlug].some(function (h) {
+            return h.areaSlug === aSlug;
+          });
+          if (hlByArea || hlByStation) {
+            tag.style.color           = 'var(--color-gold)';
+            tag.style.borderColor     = 'var(--color-gold)';
             tag.style.backgroundColor = 'rgba(184,150,12,0.07)';
-            // collect for hint
-            if (hintParts.length < 4) hintParts.push(aName + '（' + cityName + '）');
           } else {
-            tag.style.color = '';
-            tag.style.borderColor = '';
+            tag.style.color           = '';
+            tag.style.borderColor     = '';
             tag.style.backgroundColor = '';
           }
         });
+
+        /* ヒント文字列を収集（駅名マッチ優先） */
+        if (stationMatch) {
+          stationHits[citySlug].forEach(function (h) {
+            if (hintParts.length < 4) {
+              hintParts.push(h.station + ' → ' + h.areaName + '（' + h.cityName + '）');
+            }
+          });
+        } else if (q) {
+          areas.forEach(function (a) {
+            if (normalize(a).includes(q) && hintParts.length < 4) {
+              hintParts.push(a + '（' + cityName + '）');
+            }
+          });
+        }
       } else {
         card.style.display = 'none';
+        card.querySelectorAll('.area-tag').forEach(function (tag) {
+          tag.style.color = tag.style.borderColor = tag.style.backgroundColor = '';
+        });
       }
     });
 
-    // search hint
-    if (q && hintParts.length) {
-      searchHint.textContent = hintParts.join('、');
-    } else {
-      searchHint.textContent = '';
-    }
-
+    searchHint.textContent = (q && hintParts.length) ? hintParts.join('、') : '';
     noResults.classList.toggle('hidden', visibleCount > 0);
     searchClear.classList.toggle('hidden', !q);
   }
 
-  searchInput.addEventListener('input', function () {
-    filterCards(searchInput.value);
-  });
-
+  searchInput.addEventListener('input', function () { filterCards(searchInput.value); });
   searchClear.addEventListener('click', function () {
     searchInput.value = '';
     filterCards('');

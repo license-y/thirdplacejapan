@@ -69,7 +69,7 @@ layout: area.njk
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
       <input type="text" id="area-search"
-        placeholder="エリア・駅名で検索（例：表参道、青山、渋谷）"
+        placeholder="エリア・駅名で検索（例：北参道、青山、渋谷）"
         class="w-full px-4 py-4 text-sm focus:outline-none bg-transparent" />
       <button id="search-clear" class="hidden px-4 transition-colors" style="color:var(--color-muted)" aria-label="クリア">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -104,7 +104,8 @@ layout: area.njk
           <a href="/stories/area/{{ prefecture.slug }}/{{ city.slug }}/{{ area.slug }}/"
              class="area-tag inline-block text-xs border border-border rounded-full px-2 py-0.5 hover:border-gold hover:text-gold transition-colors"
              style="color:var(--color-muted)"
-             data-area-name="{{ area.name }}">{{ area.name }}</a>
+             data-area-name="{{ area.name }}"
+             data-area-slug="{{ area.slug }}">{{ area.name }}</a>
           {% endfor %}
         </div>
         {% endif %}
@@ -133,12 +134,153 @@ layout: area.njk
 
 <script>
 (function () {
+  /* ── 駅名 → エリア マッピング（東京都） ── */
+  var STATION_ALIASES = {
+    /* 渋谷区 */
+    '北参道':     { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'harajuku',   areaName: '原宿' },
+    '明治神宮前': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'harajuku',   areaName: '原宿' },
+    '代々木公園': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'tomigaya',   areaName: '富ヶ谷' },
+    '代々木上原': { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'tomigaya',   areaName: '富ヶ谷' },
+    '池尻大橋':   { citySlug: 'shibuya-ku', cityName: '渋谷区', areaSlug: 'nakameguro', areaName: '中目黒' },
+    '祐天寺':     { citySlug: 'meguro-ku',  cityName: '目黒区', areaSlug: 'yutenji',    areaName: '祐天寺' },
+    /* 港区 */
+    '外苑前':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '青山一丁目':   { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '表参道':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '乃木坂':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'aoyama',       areaName: '青山' },
+    '六本木一丁目': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'roppongi',     areaName: '六本木' },
+    '神谷町':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'roppongi',     areaName: '六本木' },
+    '赤坂見附':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '溜池山王':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '国会議事堂前': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'akasaka',      areaName: '赤坂' },
+    '白金高輪':     { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shirokanedai', areaName: '白金台' },
+    '高輪ゲートウェイ': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa', areaName: '高輪' },
+    '泉岳寺':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa',     areaName: '高輪' },
+    '品川':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'takanawa',     areaName: '高輪' },
+    '田町':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    '三田':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    '浜松町':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '天王洲アイル': { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '竹芝':         { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'shibaura',     areaName: '芝浦' },
+    '芝公園':       { citySlug: 'minato-ku', cityName: '港区', areaSlug: 'mita',         areaName: '三田' },
+    /* 新宿区 */
+    '新宿三丁目':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'shinjuku',      areaName: '新宿' },
+    '東新宿':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'shinjuku',      areaName: '新宿' },
+    '都庁前':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'nishi-shinjuku', areaName: '西新宿' },
+    '西新宿五丁目': { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'nishi-shinjuku', areaName: '西新宿' },
+    '牛込神楽坂':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '神楽坂':       { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '四谷三丁目':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'yotsuya',       areaName: '四谷' },
+    '曙橋':         { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'yotsuya',       areaName: '四谷' },
+    '牛込柳町':     { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'kagurazaka',    areaName: '神楽坂' },
+    '中井':         { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'ochiai',        areaName: '落合' },
+    '落合南長崎':   { citySlug: 'shinjuku-ku', cityName: '新宿区', areaSlug: 'ochiai',        areaName: '落合' },
+    /* 千代田区 */
+    '東京':         { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '大手町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '二重橋前':     { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'marunouchi', areaName: '丸の内' },
+    '有楽町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '日比谷':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '桜田門':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hibiya',     areaName: '日比谷' },
+    '半蔵門':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hanzomon',   areaName: '半蔵門' },
+    '永田町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'hanzomon',   areaName: '半蔵門' },
+    '九段下':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '水道橋':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '市ケ谷':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'iidabashi',  areaName: '飯田橋' },
+    '末広町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'akihabara',  areaName: '秋葉原' },
+    '小川町':       { citySlug: 'chiyoda-ku', cityName: '千代田区', areaSlug: 'kanda',      areaName: '神田' },
+    /* 中央区 */
+    '東銀座':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ginza',      areaName: '銀座' },
+    '銀座一丁目': { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ginza',      areaName: '銀座' },
+    '築地市場':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '新富町':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '八丁堀':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'tsukiji',    areaName: '築地' },
+    '三越前':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'nihonbashi', areaName: '日本橋' },
+    '小伝馬町':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '水天宮前':   { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '浜町':       { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'ningyocho',  areaName: '人形町' },
+    '勝どき':     { citySlug: 'chuo-ku', cityName: '中央区', areaSlug: 'kachidoki',  areaName: '勝どき' },
+    /* 目黒区 */
+    '都立大学':   { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'jiyugaoka',      areaName: '自由が丘' },
+    '緑が丘':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'jiyugaoka',      areaName: '自由が丘' },
+    '大岡山':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'meguro',          areaName: '目黒' },
+    '西小山':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'musashi-koyama',  areaName: '武蔵小山' },
+    '洗足':       { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'musashi-koyama',  areaName: '武蔵小山' },
+    '不動前':     { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'meguro',          areaName: '目黒' },
+    '学芸大学':   { citySlug: 'meguro-ku', cityName: '目黒区', areaSlug: 'gakugeidaigaku',  areaName: '学芸大学' },
+    /* 世田谷区 */
+    '世田谷代田': { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'shimokitazawa',  areaName: '下北沢' },
+    '池ノ上':     { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'shimokitazawa',  areaName: '下北沢' },
+    '若林':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '松陰神社前': { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '西太子堂':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'sangenjaya',     areaName: '三軒茶屋' },
+    '駒沢大学':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'komazawa',       areaName: '駒沢' },
+    '桜新町':     { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'futakotamagawa', areaName: '二子玉川' },
+    '瀬田':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'futakotamagawa', areaName: '二子玉川' },
+    '千歳烏山':   { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'chitose-funabashi', areaName: '千歳船橋' },
+    '仙川':       { citySlug: 'setagaya-ku', cityName: '世田谷区', areaSlug: 'chitose-funabashi', areaName: '千歳船橋' },
+    /* 豊島区 */
+    '東池袋':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'higashi-ikebukuro', areaName: '東池袋' },
+    '北池袋':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'ikebukuro',         areaName: '池袋' },
+    '椎名町':     { citySlug: 'toshima-ku', cityName: '豊島区', areaSlug: 'ikebukuro',         areaName: '池袋' },
+    /* 台東区 */
+    '浅草橋':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'kuramae',    areaName: '蔵前' },
+    '蔵前':     { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'kuramae',    areaName: '蔵前' },
+    '田原町':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'asakusa',    areaName: '浅草' },
+    '本所吾妻橋': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'asakusa',  areaName: '浅草' },
+    '上野広小路': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',     areaName: '上野' },
+    '上野御徒町': { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',     areaName: '上野' },
+    '稲荷町':   { citySlug: 'taito-ku', cityName: '台東区', areaSlug: 'ueno',       areaName: '上野' },
+    /* 墨田区 */
+    '押上':       { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'oshiage',  areaName: '押上' },
+    'スカイツリー': { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'oshiage', areaName: '押上' },
+    '錦糸町':     { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'kinshicho', areaName: '錦糸町' },
+    '両国':       { citySlug: 'sumida-ku', cityName: '墨田区', areaSlug: 'ryogoku',  areaName: '両国' },
+    /* 江東区 */
+    '辰巳':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'toyosu',              areaName: '豊洲' },
+    '越中島':   { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'kiyosumi-shirakawa',  areaName: '清澄白河' },
+    '住吉':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'kiyosumi-shirakawa',  areaName: '清澄白河' },
+    '森下':     { citySlug: 'koto-ku', cityName: '江東区', areaSlug: 'monzen-nakacho',      areaName: '門前仲町' },
+    /* 品川区 */
+    '大崎':     { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'gotanda',       areaName: '五反田' },
+    '旗の台':   { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'togoshi-ginza', areaName: '戸越銀座' },
+    '戸越':     { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'togoshi-ginza', areaName: '戸越銀座' },
+    '西大井':   { citySlug: 'shinagawa-ku', cityName: '品川区', areaSlug: 'shinagawa',     areaName: '品川' },
+    /* 文京区 */
+    '東大前':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '本郷三丁目': { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '後楽園':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'korakuen',  areaName: '後楽園' },
+    '春日':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'korakuen',  areaName: '後楽園' },
+    '白山':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'hongo',     areaName: '本郷' },
+    '根津':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'nezu',      areaName: '根津' },
+    '千駄木':     { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'nezu',      areaName: '根津' },
+    '湯島':       { citySlug: 'bunkyo-ku', cityName: '文京区', areaSlug: 'yushima',   areaName: '湯島' },
+    /* 北区 */
+    '王子神谷': { citySlug: 'kita-ku', cityName: '北区', areaSlug: 'oji',     areaName: '王子' },
+    '志茂':     { citySlug: 'kita-ku', cityName: '北区', areaSlug: 'akabane', areaName: '赤羽' },
+    /* 荒川区 */
+    '西日暮里': { citySlug: 'arakawa-ku', cityName: '荒川区', areaSlug: 'nippori',    areaName: '日暮里' },
+    '三河島':   { citySlug: 'arakawa-ku', cityName: '荒川区', areaSlug: 'mikawashima', areaName: '三河島' },
+    /* 杉並区 */
+    '東高円寺': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'koenji',        areaName: '高円寺' },
+    '新高円寺': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'koenji',        areaName: '高円寺' },
+    '南阿佐ヶ谷': { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'asagaya',    areaName: '阿佐ヶ谷' },
+    '西荻窪':   { citySlug: 'suginami-ku', cityName: '杉並区', areaSlug: 'nishi-ogikubo', areaName: '西荻窪' },
+    /* 中野区 */
+    '新中野':   { citySlug: 'nakano-ku', cityName: '中野区', areaSlug: 'shin-nakano', areaName: '新中野' },
+    /* 武蔵野市 */
+    '井の頭公園': { citySlug: 'musashino', cityName: '武蔵野市', areaSlug: 'kichijoji', areaName: '吉祥寺' },
+    '三鷹':       { citySlug: 'musashino', cityName: '武蔵野市', areaSlug: 'mitaka-sta-north', areaName: '三鷹駅北口' },
+    /* 大田区 */
+    '多摩川':     { citySlug: 'ota-ku', cityName: '大田区', areaSlug: 'denenchofu', areaName: '田園調布' },
+    '石川台':     { citySlug: 'ota-ku', cityName: '大田区', areaSlug: 'denenchofu', areaName: '田園調布' },
+  };
+
   var searchInput = document.getElementById('area-search');
   var searchClear = document.getElementById('search-clear');
   var searchHint  = document.getElementById('search-hint');
   var cityCards   = document.querySelectorAll('.city-card');
   var noResults   = document.getElementById('no-results');
-  var prefSlug    = '{{ prefecture.slug }}';
 
   function normalize(str) {
     return (str || '').toLowerCase().replace(/[\s　]/g, '');
@@ -149,61 +291,84 @@ layout: area.njk
     var visibleCount = 0;
     var hintParts = [];
 
+    /* 駅名エイリアスでマッチした citySlug を収集 */
+    var stationHits = {}; /* citySlug -> [{station, areaSlug, areaName, cityName}] */
+    if (q.length >= 1) {
+      Object.keys(STATION_ALIASES).forEach(function (station) {
+        if (normalize(station).includes(q)) {
+          var info = STATION_ALIASES[station];
+          if (!stationHits[info.citySlug]) stationHits[info.citySlug] = [];
+          stationHits[info.citySlug].push({
+            station: station,
+            areaSlug: info.areaSlug,
+            areaName: info.areaName,
+            cityName: info.cityName
+          });
+        }
+      });
+    }
+
     cityCards.forEach(function (card) {
-      var cityName   = card.dataset.cityName  || '';
-      var citySlug   = card.dataset.citySlug  || '';
-      var areasRaw   = card.dataset.areas     || '';
-      var slugsRaw   = card.dataset.areaSlugs || '';
-      var areas      = areasRaw ? areasRaw.split(',') : [];
-      var areaSlugs  = slugsRaw ? slugsRaw.split(',') : [];
+      var cityName  = card.dataset.cityName  || '';
+      var citySlug  = card.dataset.citySlug  || '';
+      var areasRaw  = card.dataset.areas     || '';
+      var areas     = areasRaw ? areasRaw.split(',') : [];
 
       var cityMatch    = !q || normalize(cityName).includes(q);
-      var matchingIdx  = [];
-      areas.forEach(function (a, i) {
-        if (q && normalize(a).includes(q)) matchingIdx.push(i);
-      });
-      var areaMatch = matchingIdx.length > 0;
+      var areaMatch    = q && areas.some(function (a) { return normalize(a).includes(q); });
+      var stationMatch = !!(stationHits[citySlug]);
 
-      if (!q || cityMatch || areaMatch) {
+      if (!q || cityMatch || areaMatch || stationMatch) {
         card.style.display = '';
         visibleCount++;
 
-        // highlight matching area tags
+        /* エリアタグをハイライト */
         card.querySelectorAll('.area-tag').forEach(function (tag) {
-          var aName = tag.dataset.areaName || '';
-          if (q && normalize(aName).includes(q)) {
-            tag.classList.add('border-gold-hl');
-            tag.style.color = 'var(--color-gold)';
-            tag.style.borderColor = 'var(--color-gold)';
+          var aName    = tag.dataset.areaName || '';
+          var aSlug    = tag.dataset.areaSlug || '';
+          var hlByArea = q && normalize(aName).includes(q);
+          var hlByStation = stationMatch && stationHits[citySlug].some(function (h) {
+            return h.areaSlug === aSlug;
+          });
+          if (hlByArea || hlByStation) {
+            tag.style.color           = 'var(--color-gold)';
+            tag.style.borderColor     = 'var(--color-gold)';
             tag.style.backgroundColor = 'rgba(184,150,12,0.07)';
-            // collect for hint
-            if (hintParts.length < 4) hintParts.push(aName + '（' + cityName + '）');
           } else {
-            tag.style.color = '';
-            tag.style.borderColor = '';
+            tag.style.color           = '';
+            tag.style.borderColor     = '';
             tag.style.backgroundColor = '';
           }
         });
+
+        /* ヒント文字列を収集（駅名マッチ優先） */
+        if (stationMatch) {
+          stationHits[citySlug].forEach(function (h) {
+            if (hintParts.length < 4) {
+              hintParts.push(h.station + ' → ' + h.areaName + '（' + h.cityName + '）');
+            }
+          });
+        } else if (q) {
+          areas.forEach(function (a) {
+            if (normalize(a).includes(q) && hintParts.length < 4) {
+              hintParts.push(a + '（' + cityName + '）');
+            }
+          });
+        }
       } else {
         card.style.display = 'none';
+        card.querySelectorAll('.area-tag').forEach(function (tag) {
+          tag.style.color = tag.style.borderColor = tag.style.backgroundColor = '';
+        });
       }
     });
 
-    // search hint
-    if (q && hintParts.length) {
-      searchHint.textContent = hintParts.join('、');
-    } else {
-      searchHint.textContent = '';
-    }
-
+    searchHint.textContent = (q && hintParts.length) ? hintParts.join('、') : '';
     noResults.classList.toggle('hidden', visibleCount > 0);
     searchClear.classList.toggle('hidden', !q);
   }
 
-  searchInput.addEventListener('input', function () {
-    filterCards(searchInput.value);
-  });
-
+  searchInput.addEventListener('input', function () { filterCards(searchInput.value); });
   searchClear.addEventListener('click', function () {
     searchInput.value = '';
     filterCards('');
