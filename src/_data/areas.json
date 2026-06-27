@@ -144,6 +144,365 @@
           { "slug": "toyosu",             "name": "豊洲",     "name_en": "Toyosu" },
           { "slug": "kiba",               "name": "木場",     "name_en": "Kiba" }
         ]
+      },
+      {
+        "slug": "suginami-ku",
+        "name": "杉並区",
+        "name_en": "Suginami-ku",
+        "areas": [
+          { "slug": "koenji",       "name": "高円寺",   "name_en": "Koenji" },
+          { "slug": "asagaya",      "name": "阿佐ヶ谷", "name_en": "Asagaya" },
+          { "slug": "ogikubo",      "name": "荻窪",     "name_en": "Ogikubo" },
+          { "slug": "nishi-ogikubo","name": "西荻窪",   "name_en": "Nishi-Ogikubo" }
+        ]
+      },
+      {
+        "slug": "nerima-ku",
+        "name": "練馬区",
+        "name_en": "Nerima-ku",
+        "areas": [
+          { "slug": "nerima",          "name": "練馬",       "name_en": "Nerima" },
+          { "slug": "shakujii-koen",   "name": "石神井公園", "name_en": "Shakujii-Koen" },
+          { "slug": "hikarigaoka",     "name": "光が丘",     "name_en": "Hikarigaoka" }
+        ]
+      },
+      {
+        "slug": "ota-ku",
+        "name": "大田区",
+        "name_en": "Ota-ku",
+        "areas": [
+          { "slug": "kamata",         "name": "蒲田",       "name_en": "Kamata" },
+          { "slug": "omori",          "name": "大森",       "name_en": "Omori" },
+          { "slug": "denenchofu",     "name": "田園調布",   "name_en": "Denenchofu" }
+        ]
+      },
+      {
+        "slug": "itabashi-ku",
+        "name": "板橋区",
+        "name_en": "Itabashi-ku",
+        "areas": [
+          { "slug": "itabashi",  "name": "板橋",   "name_en": "Itabashi" },
+          { "slug": "oyama",     "name": "大山",   "name_en": "Oyama" },
+          { "slug": "narimasu",  "name": "成増",   "name_en": "Narimasu" }
+        ]
+      },
+      {
+        "slug": "adachi-ku",
+        "name": "足立区",
+        "name_en": "Adachi-ku",
+        "areas": [
+          { "slug": "kita-senju", "name": "北千住",   "name_en": "Kita-Senju" },
+          { "slug": "nishi-arai", "name": "西新井",   "name_en": "Nishi-Arai" },
+          { "slug": "ayase",      "name": "綾瀬",     "name_en": "Ayase" }
+        ]
+      },
+      {
+        "slug": "edogawa-ku",
+        "name": "江戸川区",
+        "name_en": "Edogawa-ku",
+        "areas": [
+          { "slug": "kasai",       "name": "葛西",     "name_en": "Kasai" },
+          { "slug": "koiwa",       "name": "小岩",     "name_en": "Koiwa" },
+          { "slug": "nishi-kasai", "name": "西葛西",   "name_en": "Nishi-Kasai" }
+        ]
+      },
+      {
+        "slug": "katsushika-ku",
+        "name": "葛飾区",
+        "name_en": "Katsushika-ku",
+        "areas": [
+          { "slug": "kameari",   "name": "亀有",   "name_en": "Kameari" },
+          { "slug": "kanamachi", "name": "金町",   "name_en": "Kanamachi" },
+          { "slug": "shibamata", "name": "柴又",   "name_en": "Shibamata" }
+        ]
+      },
+      {
+        "slug": "shinagawa-ku",
+        "name": "品川区",
+        "name_en": "Shinagawa-ku",
+        "areas": [
+          { "slug": "shinagawa",       "name": "品川",       "name_en": "Shinagawa" },
+          { "slug": "gotanda",         "name": "五反田",     "name_en": "Gotanda" },
+          { "slug": "musashi-koyama-s","name": "武蔵小山",   "name_en": "Musashi-Koyama" },
+          { "slug": "togoshi-ginza",   "name": "戸越銀座",   "name_en": "Togoshi-Ginza" }
+        ]
+      },
+      {
+        "slug": "kita-ku",
+        "name": "北区",
+        "name_en": "Kita-ku",
+        "areas": [
+          { "slug": "akabane", "name": "赤羽",   "name_en": "Akabane" },
+          { "slug": "oji",     "name": "王子",   "name_en": "Oji" },
+          { "slug": "jujo",    "name": "十条",   "name_en": "Jujo" }
+        ]
+      },
+      {
+        "slug": "nakano-ku",
+        "name": "中野区",
+        "name_en": "Nakano-ku",
+        "areas": [
+          { "slug": "nakano",      "name": "中野",     "name_en": "Nakano" },
+          { "slug": "shin-nakano", "name": "新中野",   "name_en": "Shin-Nakano" },
+          { "slug": "saginomiya",  "name": "鷺ノ宮",   "name_en": "Saginomiya" }
+        ]
+      },
+      {
+        "slug": "sumida-ku",
+        "name": "墨田区",
+        "name_en": "Sumida-ku",
+        "areas": [
+          { "slug": "oshiage",    "name": "押上",     "name_en": "Oshiage" },
+          { "slug": "kinshicho",  "name": "錦糸町",   "name_en": "Kinshicho" },
+          { "slug": "ryogoku",    "name": "両国",     "name_en": "Ryogoku" }
+        ]
+      },
+      {
+        "slug": "bunkyo-ku",
+        "name": "文京区",
+        "name_en": "Bunkyo-ku",
+        "areas": [
+          { "slug": "hongo",       "name": "本郷",     "name_en": "Hongo" },
+          { "slug": "nezu",        "name": "根津",     "name_en": "Nezu" },
+          { "slug": "yushima",     "name": "湯島",     "name_en": "Yushima" },
+          { "slug": "korakuen",    "name": "後楽園",   "name_en": "Korakuen" }
+        ]
+      },
+      {
+        "slug": "arakawa-ku",
+        "name": "荒川区",
+        "name_en": "Arakawa-ku",
+        "areas": [
+          { "slug": "nippori",   "name": "日暮里",   "name_en": "Nippori" },
+          { "slug": "mikawashima","name": "三河島",   "name_en": "Mikawashima" },
+          { "slug": "machiya",   "name": "町屋",     "name_en": "Machiya" }
+        ]
+      },
+      {
+        "slug": "musashino",
+        "name": "武蔵野市",
+        "name_en": "Musashino",
+        "areas": [
+          { "slug": "kichijoji",        "name": "吉祥寺",       "name_en": "Kichijoji" },
+          { "slug": "mitaka-sta-north", "name": "三鷹駅北口",   "name_en": "Mitaka Sta. North" },
+          { "slug": "musashisakai",     "name": "武蔵境",       "name_en": "Musashisakai" }
+        ]
+      },
+      {
+        "slug": "mitaka",
+        "name": "三鷹市",
+        "name_en": "Mitaka",
+        "areas": [
+          { "slug": "mitaka",    "name": "三鷹",   "name_en": "Mitaka" },
+          { "slug": "shinkawa",  "name": "新川",   "name_en": "Shinkawa" }
+        ]
+      },
+      {
+        "slug": "chofu",
+        "name": "調布市",
+        "name_en": "Chofu",
+        "areas": [
+          { "slug": "chofu-sta", "name": "調布",   "name_en": "Chofu" },
+          { "slug": "sengawa",   "name": "仙川",   "name_en": "Sengawa" }
+        ]
+      },
+      {
+        "slug": "fuchu",
+        "name": "府中市",
+        "name_en": "Fuchu",
+        "areas": [
+          { "slug": "fuchu-sta", "name": "府中",   "name_en": "Fuchu" }
+        ]
+      },
+      {
+        "slug": "tachikawa",
+        "name": "立川市",
+        "name_en": "Tachikawa",
+        "areas": [
+          { "slug": "tachikawa-sta", "name": "立川",   "name_en": "Tachikawa" }
+        ]
+      },
+      {
+        "slug": "hachioji",
+        "name": "八王子市",
+        "name_en": "Hachioji",
+        "areas": [
+          { "slug": "hachioji-sta", "name": "八王子",   "name_en": "Hachioji" },
+          { "slug": "minamiosawa",  "name": "南大沢",   "name_en": "Minamiosawa" }
+        ]
+      },
+      {
+        "slug": "machida",
+        "name": "町田市",
+        "name_en": "Machida",
+        "areas": [
+          { "slug": "machida-sta",   "name": "町田",     "name_en": "Machida" },
+          { "slug": "minami-machida","name": "南町田",   "name_en": "Minami-Machida" }
+        ]
+      },
+      {
+        "slug": "kodaira",
+        "name": "小平市",
+        "name_en": "Kodaira",
+        "areas": [
+          { "slug": "kodaira-sta",      "name": "小平",     "name_en": "Kodaira" },
+          { "slug": "hanakoganei",      "name": "花小金井", "name_en": "Hanakoganei" }
+        ]
+      },
+      {
+        "slug": "hino",
+        "name": "日野市",
+        "name_en": "Hino",
+        "areas": [
+          { "slug": "hino-sta",       "name": "日野",       "name_en": "Hino" },
+          { "slug": "takahata-fudo",  "name": "高幡不動",   "name_en": "Takahata-Fudo" }
+        ]
+      },
+      {
+        "slug": "nishitokyo",
+        "name": "西東京市",
+        "name_en": "Nishitokyo",
+        "areas": [
+          { "slug": "tanashi",  "name": "田無",   "name_en": "Tanashi" },
+          { "slug": "hoya",     "name": "保谷",   "name_en": "Hoya" }
+        ]
+      },
+      {
+        "slug": "higashimurayama",
+        "name": "東村山市",
+        "name_en": "Higashimurayama",
+        "areas": [
+          { "slug": "higashimurayama-sta", "name": "東村山",   "name_en": "Higashimurayama" },
+          { "slug": "kumegawa",            "name": "久米川",   "name_en": "Kumegawa" }
+        ]
+      },
+      {
+        "slug": "tama",
+        "name": "多摩市",
+        "name_en": "Tama",
+        "areas": [
+          { "slug": "tama-center",  "name": "多摩センター", "name_en": "Tama Center" },
+          { "slug": "nagayama",     "name": "永山",         "name_en": "Nagayama" }
+        ]
+      },
+      {
+        "slug": "ome",
+        "name": "青梅市",
+        "name_en": "Ome",
+        "areas": [
+          { "slug": "ome-sta",  "name": "青梅",   "name_en": "Ome" },
+          { "slug": "kawabe",   "name": "河辺",   "name_en": "Kawabe" }
+        ]
+      },
+      {
+        "slug": "kokubunji",
+        "name": "国分寺市",
+        "name_en": "Kokubunji",
+        "areas": [
+          { "slug": "kokubunji-sta", "name": "国分寺",   "name_en": "Kokubunji" }
+        ]
+      },
+      {
+        "slug": "koganei",
+        "name": "小金井市",
+        "name_en": "Koganei",
+        "areas": [
+          { "slug": "musashi-koganei", "name": "武蔵小金井", "name_en": "Musashi-Koganei" },
+          { "slug": "higashi-koganei", "name": "東小金井",   "name_en": "Higashi-Koganei" }
+        ]
+      },
+      {
+        "slug": "higashikurume",
+        "name": "東久留米市",
+        "name_en": "Higashikurume",
+        "areas": [
+          { "slug": "higashikurume-sta", "name": "東久留米",   "name_en": "Higashikurume" }
+        ]
+      },
+      {
+        "slug": "akishima",
+        "name": "昭島市",
+        "name_en": "Akishima",
+        "areas": [
+          { "slug": "akishima-sta",   "name": "昭島",     "name_en": "Akishima" },
+          { "slug": "higashi-nakagami","name": "東中神",   "name_en": "Higashi-Nakagami" }
+        ]
+      },
+      {
+        "slug": "inagi",
+        "name": "稲城市",
+        "name_en": "Inagi",
+        "areas": [
+          { "slug": "inagi-sta",   "name": "稲城",     "name_en": "Inagi" },
+          { "slug": "minami-tama", "name": "南多摩",   "name_en": "Minami-Tama" }
+        ]
+      },
+      {
+        "slug": "higashiyamato",
+        "name": "東大和市",
+        "name_en": "Higashiyamato",
+        "areas": [
+          { "slug": "higashiyamato-sta", "name": "東大和",     "name_en": "Higashiyamato" },
+          { "slug": "tamagawa-josui",    "name": "玉川上水",   "name_en": "Tamagawa-Josui" }
+        ]
+      },
+      {
+        "slug": "akiruno",
+        "name": "あきる野市",
+        "name_en": "Akiruno",
+        "areas": [
+          { "slug": "akigawa",       "name": "秋川",     "name_en": "Akigawa" },
+          { "slug": "musashi-hikida","name": "武蔵引田", "name_en": "Musashi-Hikida" }
+        ]
+      },
+      {
+        "slug": "komae",
+        "name": "狛江市",
+        "name_en": "Komae",
+        "areas": [
+          { "slug": "komae-sta", "name": "狛江",   "name_en": "Komae" }
+        ]
+      },
+      {
+        "slug": "kunitachi",
+        "name": "国立市",
+        "name_en": "Kunitachi",
+        "areas": [
+          { "slug": "kunitachi-sta", "name": "国立",   "name_en": "Kunitachi" },
+          { "slug": "yaho",          "name": "谷保",   "name_en": "Yaho" }
+        ]
+      },
+      {
+        "slug": "kiyose",
+        "name": "清瀬市",
+        "name_en": "Kiyose",
+        "areas": [
+          { "slug": "kiyose-sta", "name": "清瀬",   "name_en": "Kiyose" }
+        ]
+      },
+      {
+        "slug": "musashimurayama",
+        "name": "武蔵村山市",
+        "name_en": "Musashimurayama",
+        "areas": [
+          { "slug": "musashimurayama-sta", "name": "武蔵村山",   "name_en": "Musashimurayama" }
+        ]
+      },
+      {
+        "slug": "fussa",
+        "name": "福生市",
+        "name_en": "Fussa",
+        "areas": [
+          { "slug": "fussa-sta", "name": "福生",   "name_en": "Fussa" }
+        ]
+      },
+      {
+        "slug": "hamura",
+        "name": "羽村市",
+        "name_en": "Hamura",
+        "areas": [
+          { "slug": "hamura-sta", "name": "羽村",   "name_en": "Hamura" }
+        ]
       }
     ]
   },
