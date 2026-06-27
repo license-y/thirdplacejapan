@@ -7,9 +7,10 @@ pagination:
 permalink: "/en/stories/certified/{{ venue.slug }}/"
 layout: venue-en.njk
 lang: "en"
-title: "{{ venue.name_en }}"
-description: "{{ venue.citation_en }}"
-hreflang_ja: "/stories/certified/{{ venue.slug }}/"
-hreflang_en: "/en/stories/certified/{{ venue.slug }}/"
-og_image: "{{ venue.image }}"
+eleventyComputed:
+  title: "{{ venue.name_en }}"
+  description: "{{ venue.citation_en }}"
+  hreflang_ja: "/stories/certified/{{ venue.slug }}/"
+  hreflang_en: "/en/stories/certified/{{ venue.slug }}/"
+  og_image: "{{ venue.image }}"
 ---
