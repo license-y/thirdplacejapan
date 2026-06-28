@@ -7,7 +7,7 @@ tags:
   - articles
   - バー・ウイスキー・カクテル
 category_slug: bar-whiskey
-thumbnail: /assets/images/articles/whiskey-bar-counter-roppongi-tokyo.webp
+thumbnail: /assets/images/articles/bar-whiskey-chuo-ginza-tokyo.webp
 permalink: /stories/bar-whiskey/chuo/
 ---
 

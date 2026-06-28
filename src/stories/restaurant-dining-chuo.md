@@ -7,7 +7,7 @@ tags:
   - articles
   - レストラン・ダイニング
 category_slug: restaurant-dining
-thumbnail: /assets/images/articles/restaurant-dining-minato-ku-tokyo.webp
+thumbnail: /assets/images/articles/restaurant-dining-chuo-ginza-tokyo.webp
 permalink: /stories/restaurant-dining/chuo/
 ---
 

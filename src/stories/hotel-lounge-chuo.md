@@ -7,7 +7,7 @@ tags:
   - articles
   - 高級ホテル・ホテルラウンジ
 category_slug: hotel-lounge
-thumbnail: /assets/images/articles/hotel-lounge-ginza-tokyo.webp
+thumbnail: /assets/images/articles/hotel-lounge-chuo-nihonbashi-tokyo.webp
 permalink: /stories/hotel-lounge/chuo/
 ---
 
