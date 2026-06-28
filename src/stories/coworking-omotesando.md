@@ -13,8 +13,6 @@ thumbnail: /assets/images/articles/modern-coworking-lounge-omotesando-tokyo.webp
 permalink: /stories/coworking/omotesando/
 ---
 
-# 表参道でコワーキングをサードプレイスにする — 業界集積地の第三の仕事場案内
-
 表参道のコワーキングは仕事場ではなく、セルフブランディングの舞台として機能する。ファッション・広告・クリエイター業界が徒歩圏に密集するこの街区で、どこで働くかは仕事の文脈をつくり、誰と隣り合わせになるかがキャリアを動かす可能性を持つ。
 
 ---
