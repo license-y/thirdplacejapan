@@ -147,40 +147,67 @@ hreflang_en: "/en/stories/"
       カフェ・神社・ホテル・自然体験など15カテゴリ・全国エリア別に、<br class="hidden md:block">
       あなたの居場所を探すための読み物を届けます。
     </p>
-    {# 検索窓 #}
-    <div class="relative max-w-xl md:mx-auto">
-      <div class="relative flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="absolute left-4 text-muted pointer-events-none shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input id="portal-search" type="text" placeholder="記事・エリア・カテゴリを検索..."
-          class="w-full border border-gold/50 bg-white rounded-full pl-10 pr-4 py-3 text-sm text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors shadow-sm" autocomplete="off" />
-      </div>
-      <div id="portal-search-results" class="hidden absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg border border-border z-50 max-h-72 overflow-y-auto"></div>
-    </div>
+    {# 検索窓（Pagefind UI）#}
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+    <style>
+      #portal-search-widget .pagefind-ui__search-input {
+        border: 1px solid rgba(184,150,12,0.5);
+        border-radius: 9999px;
+        background: #fff;
+        color: #2D2A26;
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        width: 100%;
+      }
+      #portal-search-widget .pagefind-ui__search-input:focus {
+        outline: none;
+        border-color: #B8960C;
+      }
+      #portal-search-widget .pagefind-ui__search-input::placeholder { color: #9B9490; }
+      #portal-search-widget .pagefind-ui__search-clear { display: none !important; }
+      #portal-search-widget .pagefind-ui__results-area { margin-top: 0.5rem; }
+      #portal-search-widget .pagefind-ui__results {
+        background: #fff;
+        border: 1px solid #E5E2DC;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        overflow: hidden;
+        max-height: 18rem;
+        overflow-y: auto;
+      }
+      #portal-search-widget .pagefind-ui__result {
+        border-bottom: 1px solid #E5E2DC;
+        padding: 0.75rem 1rem;
+        transition: background 0.15s;
+      }
+      #portal-search-widget .pagefind-ui__result:last-child { border-bottom: none; }
+      #portal-search-widget .pagefind-ui__result:hover { background: #F8F6F1; }
+      #portal-search-widget .pagefind-ui__result-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+      #portal-search-widget .pagefind-ui__result-title a { color: inherit; text-decoration: none; }
+      #portal-search-widget .pagefind-ui__result-title a:hover { color: #B8960C; }
+      #portal-search-widget .pagefind-ui__result-excerpt { font-size: 0.75rem; color: #9B9490; margin-top: 0.25rem; }
+      #portal-search-widget .pagefind-ui__result-link { display: none; }
+      #portal-search-widget .pagefind-ui__message { font-size: 0.875rem; color: #9B9490; padding: 0.75rem 1rem; }
+      #portal-search-widget .pagefind-ui__button { display: none; }
+      #portal-search-widget .pagefind-ui__form::before { left: 1rem; top: 50%; transform: translateY(-50%); color: #9B9490; }
+    </style>
+    <div id="portal-search-widget" class="max-w-xl md:mx-auto"></div>
+    <script src="/pagefind/pagefind-ui.js"></script>
     <script>
-    (async () => {
-      const input = document.getElementById('portal-search');
-      const box = document.getElementById('portal-search-results');
-      if (!input) return;
-      let pf;
-      try { pf = await import('/pagefind/pagefind.js'); await pf.init(); } catch(e) { return; }
-      input.addEventListener('input', async function() {
-        const q = this.value.trim();
-        if (!q) { box.classList.add('hidden'); box.innerHTML = ''; return; }
-        const r = await pf.search(q);
-        if (!r.results.length) {
-          box.innerHTML = '<p class="px-4 py-3 text-sm text-muted">見つかりませんでした</p>';
-          box.classList.remove('hidden'); return;
+    window.addEventListener('DOMContentLoaded', function() {
+      new PagefindUI({
+        element: '#portal-search-widget',
+        showSubResults: false,
+        showImages: false,
+        excerptLength: 30,
+        resetStyles: false,
+        translations: {
+          placeholder: '記事・エリア・カテゴリを検索...',
+          zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
         }
-        const items = await Promise.all(r.results.slice(0, 6).map(function(x){ return x.data(); }));
-        box.innerHTML = items.map(function(d) {
-          return '<a href="' + d.url + '" class="block px-4 py-3 hover:bg-ivory border-b border-border last:border-0 transition-colors"><p class="font-serif text-sm text-dark leading-snug">' + (d.meta && d.meta.title ? d.meta.title : '') + '</p></a>';
-        }).join('');
-        box.classList.remove('hidden');
       });
-      document.addEventListener('click', function(e) {
-        if (!input.contains(e.target) && !box.contains(e.target)) box.classList.add('hidden');
-      });
-    })();
+    });
     </script>
   </div>
 
