@@ -87,6 +87,27 @@ layout: area.njk
         </div>
       </section>
       {% endif %}
+      {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
+      {% if cityArticles.length %}
+      <section class="mb-12" data-aos="fade-up">
+        <p class="label mb-6">{{ item.city.name }}の関連記事</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {% for post in cityArticles %}
+          <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+            {% if post.data.thumbnail %}
+            <div class="aspect-video overflow-hidden">
+              <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+            </div>
+            {% endif %}
+            <div class="p-4">
+              <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+              <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
       {% set cityVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug) %}
       {% if cityVenues.length %}
       <section data-aos="fade-up">
@@ -165,8 +186,29 @@ layout: area.njk
     <div class="flex flex-wrap gap-3">
       {% for area in item.city.areas %}
       <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ area.slug }}/"
-         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors">
+         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors rounded-full">
         {{ area.name }}
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
+  {% if cityArticles.length %}
+  <section class="mb-16" data-aos="fade-up">
+    <p class="label mb-6">{{ item.city.name }}の関連記事</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in cityArticles %}
+      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+          <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+        </div>
       </a>
       {% endfor %}
     </div>
