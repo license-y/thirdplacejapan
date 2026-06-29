@@ -1,0 +1,82 @@
+---
+title: "最新記事一覧 | Third Place Japan Stories"
+description: "Third Place Japan Storiesの最新記事一覧。サードプレイスの文化・場所・体験を伝える読み物を、新着順に掲載しています。"
+canonical: "/stories/latest/"
+permalink: "/stories/latest/"
+---
+
+{# CollectionPage JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "最新記事一覧 | Third Place Japan Stories",
+  "description": "Third Place Japan Storiesの最新記事一覧。サードプレイスの文化・場所・体験を伝える読み物を、新着順に掲載しています。",
+  "url": "{{ site.url }}/stories/latest/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>最新記事一覧</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">Third Place Japan Stories</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">最新記事一覧</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted leading-relaxed">
+      サードプレイスの文化・場所・体験を伝える読み物。新着順に掲載しています。
+    </p>
+  </div>
+
+  {# 記事一覧（全件・新着順）#}
+  {% if collections.articles and collections.articles.length %}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+    {% for post in collections.articles %}
+    {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
+    <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
+      {% if post.data.thumbnail %}
+      <div class="aspect-video overflow-hidden">
+        <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      {% else %}
+      <div class="aspect-video bg-ivory"></div>
+      {% endif %}
+      <div class="p-4">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">
+            {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
+          </span>
+        </div>
+        <h2 class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          {{ post.data.title }}
+        </h2>
+        {% if post.data.description %}
+        <p class="text-xs text-muted leading-relaxed mb-3"
+           style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+          {{ post.data.description }}
+        </p>
+        {% endif %}
+        <p class="text-xs text-muted">{{ post.date | dateJa }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-sm text-muted">記事はまだありません。</p>
+  {% endif %}
+
+</div>
