@@ -21,6 +21,39 @@ canonical: "/stories/"
 }
 </script>
 
+{# BreadcrumbList JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}/"},
+    {"@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/"}
+  ]
+}
+</script>
+
+{# ItemList JSON-LD（最新記事）#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Third Place Japan Stories — 最新記事",
+  "url": "{{ site.url }}/stories/",
+  "itemListElement": [
+    {% set recentPosts = collections.articles | head(8) %}
+    {% for post in recentPosts %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": {{ post.data.title | dump }},
+      "url": "{{ site.url }}{{ post.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 {# FAQPage JSON-LD（AEO対策）#}
 <script type="application/ld+json">
 {
@@ -99,10 +132,45 @@ canonical: "/stories/"
     <p class="text-sm font-medium text-dark max-w-2xl text-left md:text-center md:mx-auto mb-3">
       <strong>Third Place Japan（サードプレイスジャパン）は、家でも職場でもない「第三の居場所」を7軸で評価・認証する日本初のメディアです。</strong>
     </p>
-    <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto">
+    <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto mb-8">
       カフェ・神社・ホテル・自然体験など15カテゴリ・全国エリア別に、<br class="hidden md:block">
       あなたの居場所を探すための読み物を届けます。
     </p>
+    {# 検索窓 #}
+    <div class="relative max-w-xl md:mx-auto">
+      <div class="relative flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="absolute left-4 text-muted pointer-events-none shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="portal-search" type="text" placeholder="記事・エリア・カテゴリを検索..."
+          class="w-full border border-gold/50 bg-white rounded-full pl-10 pr-4 py-3 text-sm text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors shadow-sm" autocomplete="off" />
+      </div>
+      <div id="portal-search-results" class="hidden absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg border border-border z-50 max-h-72 overflow-y-auto"></div>
+    </div>
+    <script>
+    (async () => {
+      const input = document.getElementById('portal-search');
+      const box = document.getElementById('portal-search-results');
+      if (!input) return;
+      let pf;
+      try { pf = await import('/pagefind/pagefind.js'); await pf.init(); } catch(e) { return; }
+      input.addEventListener('input', async function() {
+        const q = this.value.trim();
+        if (!q) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+        const r = await pf.search(q);
+        if (!r.results.length) {
+          box.innerHTML = '<p class="px-4 py-3 text-sm text-muted">見つかりませんでした</p>';
+          box.classList.remove('hidden'); return;
+        }
+        const items = await Promise.all(r.results.slice(0, 6).map(function(x){ return x.data(); }));
+        box.innerHTML = items.map(function(d) {
+          return '<a href="' + d.url + '" class="block px-4 py-3 hover:bg-ivory border-b border-border last:border-0 transition-colors"><p class="font-serif text-sm text-dark leading-snug">' + (d.meta && d.meta.title ? d.meta.title : '') + '</p></a>';
+        }).join('');
+        box.classList.remove('hidden');
+      });
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !box.contains(e.target)) box.classList.add('hidden');
+      });
+    })();
+    </script>
   </div>
 
   {# 最新記事 #}
@@ -150,34 +218,38 @@ canonical: "/stories/"
       {% endfor %}
     </div>
 
-    {# リスト記事（3件目以降・6件分の高さでスクロール）#}
-    <div class="border border-gold/30 rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:360px;overflow-y:auto;">
+    {# グリッド記事（3〜8件目）#}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
       {% for post in latestArticles %}
-      {% if loop.index > 2 %}
+      {% if loop.index > 2 and loop.index <= 8 %}
       {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
-      <a href="{{ post.url }}" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors{% if not loop.last %} border-b border-border{% endif %}">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="{{ post.url }}" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           {% if post.data.thumbnail %}
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           {% endif %}
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">{% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% endif %}</p>
-          {% if post.data.area_name %}<p class="text-xs text-muted font-medium leading-tight">{{ post.data.area_name }}</p>{% endif %}
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">{{ post.date | dateJa }}</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
+            </span>
+            {% if post.data.area_name %}<span class="text-[10px] text-muted">{{ post.data.area_name }}</span>{% endif %}
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
+          <p class="text-[10px] text-muted mt-1">{{ post.date | dateJa }}</p>
         </div>
       </a>
       {% endif %}
       {% endfor %}
     </div>
 
-    {# 記事一覧ボタン #}
+    {# 記事一覧ボタン（主CTA）#}
     <div class="text-center">
-      <a href="/stories/latest/" class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white text-sm px-8 py-3 rounded-full transition-colors">
-        記事一覧はこちら →
+      <a href="/stories/latest/" class="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-white text-sm px-8 py-3 rounded-full transition-colors shadow-sm font-medium">
+        記事一覧をすべて見る →
       </a>
     </div>
 
@@ -241,10 +313,10 @@ canonical: "/stories/"
       {% endfor %}
     </div>
 
-    {# TPJガイド一覧リンク #}
+    {# TPJガイド一覧リンク（副CTA）#}
     <div class="text-center mt-7">
       <a href="/stories/about/"
-         class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+         class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
         TPJガイド一覧はこちら →
       </a>
     </div>
@@ -332,11 +404,28 @@ canonical: "/stories/"
     </div>
 
     <div class="text-center">
-      <a href="/stories/area/" class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+      <a href="/stories/area/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
         エリア一覧はこちら →
       </a>
     </div>
   </div>
+
+  {# 認証店舗リンク #}
+  {% set published = venues | publishedVenues %}
+  {% if published.length %}
+  <div class="mb-20" data-aos="fade-up">
+    <a href="/stories/certified/" class="flex items-center justify-between bg-white border border-gold/30 rounded-xl px-6 py-4 shadow-sm hover:shadow-md hover:border-gold transition-all group">
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors">TPJ認証店舗</p>
+          <p class="text-xs text-muted mt-0.5">7軸評価基準で認証された施設 — {{ published.length }}件掲載中</p>
+        </div>
+      </div>
+      <span class="text-xs text-gold font-medium">すべて見る →</span>
+    </a>
+  </div>
+  {% endif %}
 
   {# FAQ（AEO対策）#}
   <div class="mb-20" data-aos="fade-up">
@@ -430,24 +519,5 @@ canonical: "/stories/"
   });
   </script>
 
-  {# 認証店舗リンク #}
-  {% set published = venues | publishedVenues %}
-  {% if published.length %}
-  <div data-aos="fade-up">
-    <div class="flex items-center justify-between mb-8">
-      <div class="flex items-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-        <h2 class="font-serif text-xl font-light text-dark">認証店舗</h2>
-        <span class="text-sm text-muted hidden md:inline">— TPJ認証を取得した施設</span>
-      </div>
-      <a href="/stories/certified/" class="text-xs text-muted hover:text-gold transition-colors">すべて見る →</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in published | sortByGrade | head(3) %}
-      {% set cardVenue = v %}{% include "venue-card.njk" %}
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
 
 </section>

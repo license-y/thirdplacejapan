@@ -246,6 +246,88 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "https://thirdplacejapan.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Stories", "item": "https://thirdplacejapan.com/stories/"}
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Third Place Japan Stories — 最新記事",
+  "url": "https://thirdplacejapan.com/stories/",
+  "itemListElement": [
+    
+    
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": &quot;中央区でバー・ウイスキーをサードプレイスにする——商人の街が育てた、日本のバーの本道&quot;,
+      "url": "https://thirdplacejapan.com/stories/bar-whiskey/chuo/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": &quot;銀座のバーをサードプレイスにする——日本バー文化の聖地で、静かに向き合う夜&quot;,
+      "url": "https://thirdplacejapan.com/stories/bar-whiskey/ginza/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": &quot;港区でバーをサードプレイスにする — 国際性・権威・静寂が描く「夜の居場所」地図&quot;,
+      "url": "https://thirdplacejapan.com/stories/bar-whiskey/minato/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": &quot;六本木でバーをサードプレイスにする——国際都市の夜が生む「言語を超えた居場所」&quot;,
+      "url": "https://thirdplacejapan.com/stories/bar-whiskey/roppongi/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": &quot;渋谷区でカフェをサードプレイスにする — 6エリアが描く「過ごし方」の地図&quot;,
+      "url": "https://thirdplacejapan.com/stories/cafe-specialty-coffee/shibuya/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": &quot;渋谷区でコワーキングをサードプレイスにする — 6エリアが示す「働く居場所」の地図&quot;,
+      "url": "https://thirdplacejapan.com/stories/coworking/shibuya/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": &quot;中央区でホテルラウンジをサードプレイスにする——東京の地理的中心に滞在するという感覚&quot;,
+      "url": "https://thirdplacejapan.com/stories/hotel-lounge/chuo/"
+    },
+    
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": &quot;銀座のホテルラウンジをサードプレイスにする——旅の途中が生む、一期一会の中立地帯&quot;,
+      "url": "https://thirdplacejapan.com/stories/hotel-lounge/ginza/"
+    }
+    
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -320,10 +402,45 @@
     <p class="text-sm font-medium text-dark max-w-2xl text-left md:text-center md:mx-auto mb-3">
       <strong>Third Place Japan（サードプレイスジャパン）は、家でも職場でもない「第三の居場所」を7軸で評価・認証する日本初のメディアです。</strong>
     </p>
-    <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto">
+    <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto mb-8">
       カフェ・神社・ホテル・自然体験など15カテゴリ・全国エリア別に、<br class="hidden md:block">
       あなたの居場所を探すための読み物を届けます。
     </p>
+    
+    <div class="relative max-w-xl md:mx-auto">
+      <div class="relative flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="absolute left-4 text-muted pointer-events-none shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="portal-search" type="text" placeholder="記事・エリア・カテゴリを検索..."
+          class="w-full border border-gold/50 bg-white rounded-full pl-10 pr-4 py-3 text-sm text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors shadow-sm" autocomplete="off" />
+      </div>
+      <div id="portal-search-results" class="hidden absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg border border-border z-50 max-h-72 overflow-y-auto"></div>
+    </div>
+    <script>
+    (async () => {
+      const input = document.getElementById('portal-search');
+      const box = document.getElementById('portal-search-results');
+      if (!input) return;
+      let pf;
+      try { pf = await import('/pagefind/pagefind.js'); await pf.init(); } catch(e) { return; }
+      input.addEventListener('input', async function() {
+        const q = this.value.trim();
+        if (!q) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+        const r = await pf.search(q);
+        if (!r.results.length) {
+          box.innerHTML = '<p class="px-4 py-3 text-sm text-muted">見つかりませんでした</p>';
+          box.classList.remove('hidden'); return;
+        }
+        const items = await Promise.all(r.results.slice(0, 6).map(function(x){ return x.data(); }));
+        box.innerHTML = items.map(function(d) {
+          return '<a href="' + d.url + '" class="block px-4 py-3 hover:bg-ivory border-b border-border last:border-0 transition-colors"><p class="font-serif text-sm text-dark leading-snug">' + (d.meta && d.meta.title ? d.meta.title : '') + '</p></a>';
+        }).join('');
+        box.classList.remove('hidden');
+      });
+      document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !box.contains(e.target)) box.classList.add('hidden');
+      });
+    })();
+    </script>
   </div>
 
   
@@ -434,7 +551,7 @@
     </div>
 
     
-    <div class="border border-gold/30 rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:360px;overflow-y:auto;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
       
       
       
@@ -442,352 +559,172 @@
       
       
       
-      <a href="/stories/bar-whiskey/minato/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/bar-whiskey/minato/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/bar-whiskey-minato-ku-tokyo-night.webp" alt="港区でバーをサードプレイスにする — 国際性・権威・静寂が描く「夜の居場所」地図"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">港区でバーをサードプレイスにする — 国際性・権威・静寂が描く「夜の居場所」地図</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">バー・ウイスキー・カクテル</p>
-          <p class="text-xs text-muted font-medium leading-tight">港区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              バー・ウイスキー・カクテル
+            </span>
+            <span class="text-[10px] text-muted">港区</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">港区でバーをサードプレイスにする — 国際性・権威・静寂が描く「夜の居場所」地図</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/bar-whiskey/roppongi/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/bar-whiskey/roppongi/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/whiskey-bar-counter-roppongi-tokyo.webp" alt="六本木でバーをサードプレイスにする——国際都市の夜が生む「言語を超えた居場所」"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">六本木でバーをサードプレイスにする——国際都市の夜が生む「言語を超えた居場所」</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">バー・ウイスキー・カクテル</p>
-          <p class="text-xs text-muted font-medium leading-tight">六本木</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              バー・ウイスキー・カクテル
+            </span>
+            <span class="text-[10px] text-muted">六本木</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">六本木でバーをサードプレイスにする——国際都市の夜が生む「言語を超えた居場所」</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/cafe-specialty-coffee/shibuya/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/cafe-specialty-coffee/shibuya/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/cafe-specialty-coffee-shibuya-ku-tokyo.webp" alt="渋谷区でカフェをサードプレイスにする — 6エリアが描く「過ごし方」の地図"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">渋谷区でカフェをサードプレイスにする — 6エリアが描く「過ごし方」の地図</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">カフェ・スペシャルティコーヒー</p>
-          <p class="text-xs text-muted font-medium leading-tight">渋谷区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              カフェ・スペシャルティコーヒー
+            </span>
+            <span class="text-[10px] text-muted">渋谷区</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">渋谷区でカフェをサードプレイスにする — 6エリアが描く「過ごし方」の地図</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/coworking/shibuya/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/coworking/shibuya/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/coworking-shibuya-ku-tokyo-startup.webp" alt="渋谷区でコワーキングをサードプレイスにする — 6エリアが示す「働く居場所」の地図"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">渋谷区でコワーキングをサードプレイスにする — 6エリアが示す「働く居場所」の地図</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">コワーキング・シェアオフィス</p>
-          <p class="text-xs text-muted font-medium leading-tight">渋谷区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              コワーキング・シェアオフィス
+            </span>
+            <span class="text-[10px] text-muted">渋谷区</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">渋谷区でコワーキングをサードプレイスにする — 6エリアが示す「働く居場所」の地図</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/hotel-lounge/chuo/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/hotel-lounge/chuo/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/hotel-lounge-chuo-nihonbashi-tokyo.webp" alt="中央区でホテルラウンジをサードプレイスにする——東京の地理的中心に滞在するという感覚"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">中央区でホテルラウンジをサードプレイスにする——東京の地理的中心に滞在するという感覚</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">高級ホテル・ホテルラウンジ</p>
-          <p class="text-xs text-muted font-medium leading-tight">中央区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              高級ホテル・ホテルラウンジ
+            </span>
+            <span class="text-[10px] text-muted">中央区</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">中央区でホテルラウンジをサードプレイスにする——東京の地理的中心に滞在するという感覚</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/hotel-lounge/ginza/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+      <a href="/stories/hotel-lounge/ginza/" class="group flex items-center gap-3 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all p-3 overflow-hidden">
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
           
           <img src="/assets/images/articles/hotel-lounge-ginza-tokyo.webp" alt="銀座のホテルラウンジをサードプレイスにする——旅の途中が生む、一期一会の中立地帯"
-               class="w-full h-full object-cover"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
           
         </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">銀座のホテルラウンジをサードプレイスにする——旅の途中が生む、一期一会の中立地帯</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">高級ホテル・ホテルラウンジ</p>
-          <p class="text-xs text-muted font-medium leading-tight">銀座</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 flex-wrap">
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
+              高級ホテル・ホテルラウンジ
+            </span>
+            <span class="text-[10px] text-muted">銀座</span>
+          </div>
+          <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">銀座のホテルラウンジをサードプレイスにする——旅の途中が生む、一期一会の中立地帯</h3>
+          <p class="text-[10px] text-muted mt-1">2026年6月28日</p>
         </div>
       </a>
       
       
       
       
-      <a href="/stories/members-lounge/chuo/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/members-lounge-chuo-ku-tokyo.webp" alt="中央区で会員制ラウンジをサードプレイスにする——江戸の商人文化が育む、帰属の居場所"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">中央区で会員制ラウンジをサードプレイスにする——江戸の商人文化が育む、帰属の居場所</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">会員制ラウンジ・クラブ</p>
-          <p class="text-xs text-muted font-medium leading-tight">中央区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
       
       
       
       
-      <a href="/stories/members-lounge/ginza/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/members-lounge-ginza-tokyo.webp" alt="銀座で会員制ラウンジをサードプレイスにする——格の街が生む帰属感の逆説"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">銀座で会員制ラウンジをサードプレイスにする——格の街が生む帰属感の逆説</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">会員制ラウンジ・クラブ</p>
-          <p class="text-xs text-muted font-medium leading-tight">銀座</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
       
       
       
       
-      <a href="/stories/premium-salon/omotesando/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/luxury-salon-interior-omotesando-tokyo.webp" alt="表参道で高級サロンをサードプレイスにする — 「見られる街」で完全に見られない時間"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">表参道で高級サロンをサードプレイスにする — 「見られる街」で完全に見られない時間</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">高級サロン・プライベートサロン</p>
-          <p class="text-xs text-muted font-medium leading-tight">表参道</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
       
       
       
       
-      <a href="/stories/premium-salon/shibuya/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/premium-salon-shibuya-ku-tokyo-wellness.webp" alt="渋谷区で高級サロンをサードプレイスにする — 「公と私の切り替え装置」としての居場所地図"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">渋谷区で高級サロンをサードプレイスにする — 「公と私の切り替え装置」としての居場所地図</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">高級サロン・プライベートサロン</p>
-          <p class="text-xs text-muted font-medium leading-tight">渋谷区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
       
       
       
       
-      <a href="/stories/restaurant-dining/azabujuban/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/restaurant-dining-azabujuban-tokyo.webp" alt="麻布十番でダイニングをサードプレイスにする——「観光客が来ない街」の食の居場所案内"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">麻布十番でダイニングをサードプレイスにする——「観光客が来ない街」の食の居場所案内</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">麻布十番</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
       
       
       
       
-      <a href="/stories/restaurant-dining/chuo/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/restaurant-dining-chuo-ginza-tokyo.webp" alt="中央区でレストランをサードプレイスにする——江戸から続く食の時間軸が深い、日本食の原点エリア"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">中央区でレストランをサードプレイスにする——江戸から続く食の時間軸が深い、日本食の原点エリア</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">中央区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/restaurant-dining/ginza/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/restaurant-dining-ginza-tokyo.webp" alt="銀座でレストランをサードプレイスにする——日本料理の本流が集まる街の、食の居場所"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">銀座でレストランをサードプレイスにする——日本料理の本流が集まる街の、食の居場所</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">銀座</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/restaurant-dining/minato/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/restaurant-dining-minato-ku-tokyo.webp" alt="港区でダイニングをサードプレイスにする — 生活・権威・国際・静寂が描く食の居場所地図"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">港区でダイニングをサードプレイスにする — 生活・権威・国際・静寂が描く食の居場所地図</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">港区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/restaurant-dining/omotesando/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/dining-social-restaurant-omotesando-tokyo.webp" alt="表参道でダイニングをサードプレイスにする — 「誰と来るか」が決める社交の居場所案内"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">表参道でダイニングをサードプレイスにする — 「誰と来るか」が決める社交の居場所案内</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">表参道</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/restaurant-dining/shibuya/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/shibuya-ku-dining-restaurant-map-tokyo.webp" alt="渋谷区でダイニングをサードプレイスにする — 6エリアが描く食の居場所マップ"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">渋谷区でダイニングをサードプレイスにする — 6エリアが描く食の居場所マップ</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">レストラン・ダイニング</p>
-          <p class="text-xs text-muted font-medium leading-tight">渋谷区</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月28日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/cafe-specialty-coffee-kitasando-sendagaya/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors border-b border-border">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp" alt="北参道・千駄ヶ谷でカフェをサードプレイスにする — ダガヤサンドの第三の居場所案内"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">北参道・千駄ヶ谷でカフェをサードプレイスにする — ダガヤサンドの第三の居場所案内</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">カフェ・スペシャルティコーヒー</p>
-          <p class="text-xs text-muted font-medium leading-tight">千駄ヶ谷</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月27日</p>
-        </div>
-      </a>
-      
-      
-      
-      
-      <a href="/stories/cafe-specialty-coffee-koenji/" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors">
-        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
-          
-          <img src="/assets/images/articles/vintage-alley-cafe-koenji-tokyo.webp" alt="高円寺でカフェをサードプレイスにする — 古着と路地の街の第三の居場所案内"
-               class="w-full h-full object-cover"
-               loading="lazy" decoding="async">
-          
-        </div>
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">高円寺でカフェをサードプレイスにする — 古着と路地の街の第三の居場所案内</h3>
-        <div class="shrink-0 text-right">
-          <p class="text-xs text-muted leading-tight">カフェ・スペシャルティコーヒー</p>
-          <p class="text-xs text-muted font-medium leading-tight">高円寺</p>
-          <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">2026年6月27日</p>
-        </div>
-      </a>
       
       
     </div>
 
     
     <div class="text-center">
-      <a href="/stories/latest/" class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white text-sm px-8 py-3 rounded-full transition-colors">
-        記事一覧はこちら →
+      <a href="/stories/latest/" class="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-white text-sm px-8 py-3 rounded-full transition-colors shadow-sm font-medium">
+        記事一覧をすべて見る →
       </a>
     </div>
 
@@ -1114,7 +1051,7 @@
     
     <div class="text-center mt-7">
       <a href="/stories/about/"
-         class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+         class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
         TPJガイド一覧はこちら →
       </a>
     </div>
@@ -1396,11 +1333,28 @@
     </div>
 
     <div class="text-center">
-      <a href="/stories/area/" class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+      <a href="/stories/area/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
         エリア一覧はこちら →
       </a>
     </div>
   </div>
+
+  
+  
+  
+  <div class="mb-20" data-aos="fade-up">
+    <a href="/stories/certified/" class="flex items-center justify-between bg-white border border-gold/30 rounded-xl px-6 py-4 shadow-sm hover:shadow-md hover:border-gold transition-all group">
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div>
+          <p class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors">TPJ認証店舗</p>
+          <p class="text-xs text-muted mt-0.5">7軸評価基準で認証された施設 — 5件掲載中</p>
+        </div>
+      </div>
+      <span class="text-xs text-gold font-medium">すべて見る →</span>
+    </a>
+  </div>
+  
 
   
   <div class="mb-20" data-aos="fade-up">
@@ -1494,95 +1448,6 @@
   });
   </script>
 
-  
-  
-  
-  <div data-aos="fade-up">
-    <div class="flex items-center justify-between mb-8">
-      <div class="flex items-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-        <h2 class="font-serif text-xl font-light text-dark">認証店舗</h2>
-        <span class="text-sm text-muted hidden md:inline">— TPJ認証を取得した施設</span>
-      </div>
-      <a href="/stories/certified/" class="text-xs text-muted hover:text-gold transition-colors">すべて見る →</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      
-<a href="/stories/certified/green-beans-coffee-shibuya/" class="venue-card block p-4 md:p-6 bg-white border border-border hover:border-gold hover:bg-ivory transition-colors group">
-  <div class="flex items-start justify-between mb-3">
-    <span class="grade-badge text-xs">Flagship</span>
-    <span class="label text-xs">カフェ・スペシャルティコーヒー</span>
-  </div>
-  <h3 class="font-serif text-lg font-light text-dark mb-1.5 group-hover:text-gold transition-colors">
-    Green Beans Coffee
-  </h3>
-  <p class="text-xs text-muted mb-3">
-    東京都 渋谷
-  </p>
-  <p class="text-sm text-text leading-relaxed line-clamp-2 md:line-clamp-3">Green Beans Coffeeは、東京・渋谷のスペシャルティコーヒー専門店として Third Place Japan Flagship 認証を取得。居心地と静寂性の両軸に優れ、一人時間・仕事・読書に最適な都市型サードプレイスとして認証されています。</p>
-  <div class="mt-3 flex flex-wrap gap-1.5 md:gap-2">
-    <span class="text-xs text-gold border border-gold px-3 py-0.5 rounded-full">居心地・空間品質</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">静寂性・プライバシー</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">ストーリー・背景への共感</span>
-    
-  </div>
-</a>
-
-      
-      
-<a href="/stories/certified/maruaki-roastery-matsudai/" class="venue-card block p-4 md:p-6 bg-white border border-border hover:border-gold hover:bg-ivory transition-colors group">
-  <div class="flex items-start justify-between mb-3">
-    <span class="grade-badge text-xs">Platinum</span>
-    <span class="label text-xs">カフェ・スペシャルティコーヒー</span>
-  </div>
-  <h3 class="font-serif text-lg font-light text-dark mb-1.5 group-hover:text-gold transition-colors">
-    丸明ロースタリー 松濤
-  </h3>
-  <p class="text-xs text-muted mb-3">
-    東京都 渋谷
-  </p>
-  <p class="text-sm text-text leading-relaxed line-clamp-2 md:line-clamp-3">丸明ロースタリー 松濤は、東京・渋谷の高級住宅街・松濤に位置する築80年の町家を改装したロースタリーカフェとして Third Place Japan Platinum 認証を取得。他では体験できない空間の佇まいと、農園直送の希少豆が生む非日常感が、サードプレイスとしての特別性を際立てると評価されています。</p>
-  <div class="mt-3 flex flex-wrap gap-1.5 md:gap-2">
-    <span class="text-xs text-gold border border-gold px-3 py-0.5 rounded-full">特別感・非日常性</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">ストーリー・背景への共感</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">居心地・空間品質</span>
-    
-  </div>
-</a>
-
-      
-      
-<a href="/stories/certified/shinsen-coffeehouse/" class="venue-card block p-4 md:p-6 bg-white border border-border hover:border-gold hover:bg-ivory transition-colors group">
-  <div class="flex items-start justify-between mb-3">
-    <span class="grade-badge text-xs">Gold</span>
-    <span class="label text-xs">カフェ・スペシャルティコーヒー</span>
-  </div>
-  <h3 class="font-serif text-lg font-light text-dark mb-1.5 group-hover:text-gold transition-colors">
-    神泉珈琲舎
-  </h3>
-  <p class="text-xs text-muted mb-3">
-    東京都 渋谷
-  </p>
-  <p class="text-sm text-text leading-relaxed line-clamp-2 md:line-clamp-3">神泉珈琲舎は、東京・渋谷の住宅街に佇む自家焙煎カフェとして Third Place Japan Gold 認証を取得。周辺の商業地の喧騒から切り離された静けさと、長時間でも気兼ねなく過ごせる空間設計が評価されています。渋谷で静かにコーヒーと向き合いたい一人時間に最適なサードプレイスとして認証。</p>
-  <div class="mt-3 flex flex-wrap gap-1.5 md:gap-2">
-    <span class="text-xs text-gold border border-gold px-3 py-0.5 rounded-full">静寂性・プライバシー</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">居心地・空間品質</span>
-    
-    <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">再訪・継続価値</span>
-    
-  </div>
-</a>
-
-      
-    </div>
-  </div>
-  
 
 </section>
 
