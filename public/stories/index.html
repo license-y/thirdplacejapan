@@ -464,22 +464,17 @@
       #portal-search-widget .pagefind-ui__form::before { left: 1rem; top: 50%; transform: translateY(-50%); color: #9B9490; }
     </style>
     <div id="portal-search-widget" class="max-w-xl md:mx-auto"></div>
-    <script src="/pagefind/pagefind-ui.js"></script>
-    <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      new PagefindUI({
-        element: '#portal-search-widget',
-        showSubResults: false,
-        showImages: false,
-        excerptLength: 30,
-        resetStyles: false,
-        translations: {
-          placeholder: '記事・エリア・カテゴリを検索...',
-          zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
-        }
-      });
-    });
-    </script>
+    <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({
+      element: '#portal-search-widget',
+      showSubResults: false,
+      showImages: false,
+      excerptLength: 30,
+      resetStyles: false,
+      translations: {
+        placeholder: '記事・エリア・カテゴリを検索...',
+        zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
+      }
+    })"></script>
   </div>
 
   
