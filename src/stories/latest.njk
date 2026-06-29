@@ -41,10 +41,10 @@ permalink: "/stories/latest/"
 
   {# 記事一覧（全件・新着順）#}
   {% if collections.articles and collections.articles.length %}
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="article-grid" data-aos="fade-up">
     {% for post in collections.articles %}
     {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
-    <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
+    <a href="{{ post.url }}" class="article-card group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
       {% if post.data.thumbnail %}
       <div class="aspect-video overflow-hidden">
         <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
@@ -75,8 +75,52 @@ permalink: "/stories/latest/"
     </a>
     {% endfor %}
   </div>
+
+  {# もっとみるボタン #}
+  <div id="load-more-wrap" class="text-center hidden">
+    <button id="load-more-btn"
+            class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-8 py-3 text-sm transition-colors shadow-sm">
+      もっとみる（残り <span id="load-more-count"></span> 件）
+    </button>
+  </div>
   {% else %}
   <p class="text-sm text-muted">記事はまだありません。</p>
   {% endif %}
 
 </div>
+
+<script>
+(function() {
+  var BATCH = 21;
+  var visible = BATCH;
+  var cards = Array.from(document.querySelectorAll('.article-card'));
+  var total = cards.length;
+  var wrap = document.getElementById('load-more-wrap');
+  var btn = document.getElementById('load-more-btn');
+  var countEl = document.getElementById('load-more-count');
+
+  function update() {
+    cards.forEach(function(card, i) {
+      if (i < visible) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    var remaining = total - visible;
+    if (remaining <= 0) {
+      wrap.classList.add('hidden');
+    } else {
+      wrap.classList.remove('hidden');
+      countEl.textContent = remaining;
+    }
+  }
+
+  btn.addEventListener('click', function() {
+    visible += BATCH;
+    update();
+  });
+
+  update();
+})();
+</script>
