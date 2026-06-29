@@ -85,7 +85,7 @@ canonical: "/stories/"
       {% for post in latestArticles %}
       {% if loop.index <= 2 %}
       {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
-      <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
+      <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-gold">
         {% if post.data.thumbnail %}
         <div class="aspect-[8/3] overflow-hidden">
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
