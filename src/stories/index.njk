@@ -101,7 +101,7 @@ canonical: "/stories/"
               {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
             </span>
             {% if post.data.area_name %}
-            <span class="text-xs text-muted">{{ post.data.area_name }}</span>
+            <span class="text-xs text-muted font-medium">{{ post.data.area_name }}</span>
             {% endif %}
             <span class="new-badge hidden bg-[#6B4F3A] text-white text-[10px] font-medium tracking-widest px-2.5 py-0.5 rounded-full" data-publish="{{ post.date | dateISO }}">NEW</span>
           </div>
@@ -131,7 +131,7 @@ canonical: "/stories/"
         <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
         <div class="shrink-0 text-right">
           <p class="text-xs text-muted leading-tight">{% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% endif %}</p>
-          {% if post.data.area_name %}<p class="text-xs text-muted leading-tight">{{ post.data.area_name }}</p>{% endif %}
+          {% if post.data.area_name %}<p class="text-xs text-muted font-medium leading-tight">{{ post.data.area_name }}</p>{% endif %}
           <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">{{ post.date | dateJa }}</p>
         </div>
       </a>
