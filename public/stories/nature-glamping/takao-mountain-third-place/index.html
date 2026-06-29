@@ -857,16 +857,37 @@
 </main>
 <footer class="mt-24 border-t border-border">
   <div class="max-w-6xl mx-auto px-6 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-      <div>
-        <p class="label mb-4">Stories</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
+
+      <!-- ① 最新記事 -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">最新記事</p>
         <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a></li>
-          <li><a href="/stories/area/" class="hover:text-gold transition-colors">場所をめぐる</a></li>
-          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
-          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+          
+          
+          <li><a href="/stories/about/what-is-third-place/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスとは何か？定義・特徴・具体例をTPJが完全解説【保存版】</a></li>
+          
+          <li><a href="/stories/about/third-place-meaning/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスの意味をわかりやすく：家・職場の次に必要な「第三の場所」</a></li>
+          
+          <li><a href="/stories/about/first-second-third-place-difference/" class="hover:text-gold transition-colors line-clamp-1">ファースト・セカンド・サードプレイスの違いとは？3つの場所を整理する</a></li>
+          
+          <li><a href="/stories/about/third-place-8-conditions/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスの8つの条件とは？オルデンバーグの定義をTPJが再解釈</a></li>
+          
+        </ul>
+        <a href="/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">記事一覧 →</a>
+      </div>
+
+      <!-- ② サードプレイスとは -->
+      <div>
+        <p class="label mb-4">サードプレイスとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物・コラム</a></li>
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
         </ul>
       </div>
+
+      <!-- ③ カテゴリ -->
       <div class="col-span-2 md:col-span-1">
         <p class="label mb-4">カテゴリ</p>
         <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
@@ -903,13 +924,35 @@
           
         </ul>
       </div>
+
+      <!-- ④ エリア -->
       <div>
-        <p class="label mb-4">TPJとは</p>
+        <p class="label mb-4">エリア</p>
         <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
-          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+          
+          <li><a href="/stories/area/tokyo/" class="hover:text-gold transition-colors">東京都</a></li>
+          
+          <li><a href="/stories/area/osaka/" class="hover:text-gold transition-colors">大阪府</a></li>
+          
+          <li><a href="/stories/area/kyoto/" class="hover:text-gold transition-colors">京都府</a></li>
+          
+          <li><a href="/stories/area/kanagawa/" class="hover:text-gold transition-colors">神奈川県</a></li>
+          
+          <li><a href="/stories/area/fukuoka/" class="hover:text-gold transition-colors">福岡県</a></li>
+          
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors mt-1 block">場所をめぐる →</a></li>
         </ul>
       </div>
+
+      <!-- ⑤ 認証店舗 -->
+      <div>
+        <p class="label mb-4">認証店舗</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+          <li><a href="/en/stories/" class="hover:text-gold transition-colors">English</a></li>
+        </ul>
+      </div>
+
     </div>
     <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
