@@ -19,6 +19,22 @@ layout: area.njk
         "@type": "Answer",
         "text": "Third Place Japanが{{ item.area.name }}で認証した場所として、{% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}{% for v in av %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}のサードプレイスの特徴は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）のサードプレイスは、エリアの街の性格を反映した独自の居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.area.name }}ではどんな業種のサードプレイスが見つかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.area.name }}ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・認証しています。"
+      }
     }
   ]
 }
@@ -234,5 +250,62 @@ layout: area.njk
   {% else %}
   <p class="text-sm text-muted" data-aos="fade-up">このエリアの認証店舗は準備中です。</p>
   {% endif %}
+
+  {# FAQ セクション #}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="flex items-center gap-3 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <h2 class="font-serif text-xl font-light text-dark">よくある質問</h2>
+    </div>
+    <div class="space-y-3">
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.area.name }}でサードプレイスとして認証された場所はどこですか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          {% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+          {% if av.length %}
+          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}で認証した場所として、{% for v in av %}<a href="/stories/certified/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
+          {% else %}
+          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}の認証店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.area.name }}のサードプレイスの特徴は何ですか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）のサードプレイスは、エリアの街の性格を反映した独自の居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。</p>
+        </div>
+      </div>
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.area.name }}ではどんな業種のサードプレイスが見つかりますか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・認証しています。</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    document.querySelectorAll('.area-faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body = this.nextElementSibling;
+        var icon = this.querySelector('[data-lucide]');
+        var isOpen = this.getAttribute('aria-expanded') === 'true';
+        body.classList.toggle('hidden', isOpen);
+        this.setAttribute('aria-expanded', !isOpen);
+        if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+      });
+    });
+    </script>
+  </section>
 </div>
 {% endif %}

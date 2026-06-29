@@ -2,6 +2,11 @@
 layout: stories.njk
 og_type: "article"
 ---
+{# hreflang: 日本語記事の自己参照（英語版がある場合は記事frontmatterにhreflang_enを追加）#}
+<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url }}">
+{% if hreflang_en %}<link rel="alternate" hreflang="en" href="{{ site.url }}{{ hreflang_en }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">{% endif %}
+
 {# Article JSON-LD #}
 <script type="application/ld+json">
 {

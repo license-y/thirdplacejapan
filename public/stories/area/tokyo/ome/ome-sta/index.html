@@ -141,10 +141,13 @@
       "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
     },
     "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
+    "foundingDate": "2025",
     "areaServed": {
       "@type": "Country",
       "name": "Japan"
-    }
+    },
+    "knowsAbout": ["サードプレイス", "第三の居場所", "third place", "居場所", "空間評価", "サードプレイス認証", "7軸評価"],
+    "inLanguage": ["ja", "en"]
   }
   </script>
 
@@ -237,6 +240,22 @@
         "@type": "Answer",
         "text": "Third Place Japanが青梅で認証した場所として、があります。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "青梅のサードプレイスの特徴は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "青梅（青梅市・東京都）のサードプレイスは、エリアの街の性格を反映した独自の居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "青梅ではどんな業種のサードプレイスが見つかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "青梅ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・認証しています。"
+      }
     }
   ]
 }
@@ -288,6 +307,61 @@
   
   <p class="text-sm text-muted" data-aos="fade-up">このエリアの認証店舗は準備中です。</p>
   
+
+  
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="flex items-center gap-3 mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+      <h2 class="font-serif text-xl font-light text-dark">よくある質問</h2>
+    </div>
+    <div class="space-y-3">
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">青梅でサードプレイスとして認証された場所はどこですか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          
+          
+          <p class="text-sm text-muted leading-relaxed">青梅の認証店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
+          
+        </div>
+      </div>
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">青梅のサードプレイスの特徴は何ですか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">青梅（青梅市・東京都）のサードプレイスは、エリアの街の性格を反映した独自の居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。</p>
+        </div>
+      </div>
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">青梅ではどんな業種のサードプレイスが見つかりますか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">青梅ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・認証しています。</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    document.querySelectorAll('.area-faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body = this.nextElementSibling;
+        var icon = this.querySelector('[data-lucide]');
+        var isOpen = this.getAttribute('aria-expanded') === 'true';
+        body.classList.toggle('hidden', isOpen);
+        this.setAttribute('aria-expanded', !isOpen);
+        if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+      });
+    });
+    </script>
+  </section>
 </div>
 
 
