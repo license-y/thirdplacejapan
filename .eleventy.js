@@ -1,5 +1,12 @@
 import { createRequire } from "module";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 const require = createRequire(import.meta.url);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const areasData = JSON.parse(readFileSync(join(__dirname, "src/_data/areas.json"), "utf-8"));
 
 // 15業種スラッグ（AEO-PLAYBOOK 正本）
 const CATEGORY_SLUGS = {
@@ -221,6 +228,44 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("urlencode", (str) => encodeURIComponent(str || ""));
+
+  // エリア階層情報取得（area_slug → 都道府県・市区町村・エリア情報）
+  eleventyConfig.addFilter("areaInfo", (areaSlug) => {
+    if (!areaSlug) return null;
+    for (const pref of areasData) {
+      for (const city of pref.cities) {
+        const area = city.areas.find(a => a.slug === areaSlug);
+        if (area) {
+          return {
+            prefSlug: pref.slug, prefName: pref.name,
+            citySlug: city.slug, cityName: city.name,
+            areaSlug: area.slug, areaName: area.name,
+            prefUrl: `/stories/area/${pref.slug}/`,
+            cityUrl: `/stories/area/${pref.slug}/${city.slug}/`,
+            areaUrl: `/stories/area/${pref.slug}/${city.slug}/${area.slug}/`,
+          };
+        }
+      }
+    }
+    return null;
+  });
+
+  // 市区町村名から階層情報取得（area_slugなしのエリアピラー記事用）
+  eleventyConfig.addFilter("cityInfo", (cityName) => {
+    if (!cityName) return null;
+    for (const pref of areasData) {
+      const city = pref.cities.find(c => c.name === cityName);
+      if (city) {
+        return {
+          prefSlug: pref.slug, prefName: pref.name,
+          citySlug: city.slug, cityName: city.name,
+          prefUrl: `/stories/area/${pref.slug}/`,
+          cityUrl: `/stories/area/${pref.slug}/${city.slug}/`,
+        };
+      }
+    }
+    return null;
+  });
 
   eleventyConfig.addFilter("wordCount", (content) => {
     if (!content) return 0;

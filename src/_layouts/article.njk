@@ -163,12 +163,40 @@ og_type: "article"
         {{ title }}
       </h1>
 
-      {# 日付・著者（ピラー記事=aboutカテゴリは非表示）#}
+      {# 日付・著者・エリア（ピラー記事=aboutカテゴリは非表示）#}
       {% if date and category_slug != "about" %}
-      <p class="text-xs text-muted mb-12" data-aos="fade-up">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-12 text-xs text-muted" data-aos="fade-up">
         <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
-        <span class="ml-3">サードプレイスジャパン編集部</span>
-      </p>
+        <span>サードプレイスジャパン編集部</span>
+        {% if area_slug %}
+        {% set aInfo = area_slug | areaInfo %}
+        {% if aInfo %}
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="{{ aInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ aInfo.prefName }}</a>
+          <span class="opacity-40">/</span>
+          <a href="{{ aInfo.cityUrl }}" class="hover:text-gold transition-colors">{{ aInfo.cityName }}</a>
+          <span class="opacity-40">/</span>
+          <a href="{{ aInfo.areaUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ aInfo.areaName }}</a>
+        </span>
+        {% endif %}
+        {% elif area_name %}
+        {% set cInfo = area_name | cityInfo %}
+        {% if cInfo %}
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="{{ cInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ cInfo.prefName }}</a>
+          <span class="opacity-40">/</span>
+          <a href="{{ cInfo.cityUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ cInfo.cityName }}</a>
+        </span>
+        {% else %}
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="font-medium text-dark">{{ area_name }}</span>
+        </span>
+        {% endif %}
+        {% endif %}
+      </div>
       {% elif category_slug == "about" %}
       <div class="mb-12"></div>
       {% endif %}
