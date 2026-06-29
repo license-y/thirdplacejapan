@@ -206,33 +206,16 @@ canonical: "/stories/"
       {% endfor %}
     </div>
 
-    {# もっとみるボタン #}
-    {% set mobileHiddenCount = collections.aboutArticles.length - 6 %}
-    {% set desktopHiddenCount = collections.aboutArticles.length - 9 %}
-    {% if mobileHiddenCount > 0 %}
-    <div class="text-center mt-7{% if desktopHiddenCount <= 0 %} md:hidden{% endif %}">
-      <button id="pillar-more-btn"
-              class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
-        もっとみる（<span class="md:hidden">{{ mobileHiddenCount }}</span><span class="hidden md:inline">{{ desktopHiddenCount }}</span>件）
-      </button>
+    {# TPJガイド一覧リンク #}
+    <div class="text-center mt-7">
+      <a href="/stories/about/"
+         class="inline-flex items-center gap-2 bg-[#6B4F3A] hover:bg-[#5a4030] text-white rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+        TPJガイド一覧はこちら →
+      </a>
     </div>
-    {% endif %}
 
   </div>
   {% endif %}
-
-  <script>
-  (function() {
-    var btn = document.getElementById('pillar-more-btn');
-    if (!btn) return;
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.pillar-extra').forEach(function(el) {
-        el.classList.remove('hidden');
-      });
-      btn.style.display = 'none';
-    });
-  })();
-  </script>
 
   {# 15カテゴリナビ #}
   <div class="mb-20" data-aos="fade-up">
