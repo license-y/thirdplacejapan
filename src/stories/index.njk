@@ -157,13 +157,13 @@ canonical: "/stories/"
       {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
       <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
         {% if post.data.thumbnail %}
-        <div class="aspect-video overflow-hidden">
+        <div class="aspect-[8/3] overflow-hidden">
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                loading="lazy" decoding="async">
         </div>
         {% else %}
-        <div class="aspect-video bg-ivory"></div>
+        <div class="aspect-[8/3] bg-ivory"></div>
         {% endif %}
         <div class="p-4">
           <div class="flex items-center gap-2 mb-2">
@@ -182,14 +182,20 @@ canonical: "/stories/"
       {% endfor %}
     </div>
 
-    {# リスト記事（3件目以降・5件分の高さでスクロール）#}
-    <div class="border border-border rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:270px;overflow-y:auto;">
+    {# リスト記事（3件目以降・6件分の高さでスクロール）#}
+    <div class="border border-border rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:360px;overflow-y:auto;">
       {% for post in latestArticles %}
       {% if loop.index > 2 %}
       {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
-      <a href="{{ post.url }}" class="group flex items-center gap-4 px-4 py-3.5 hover:bg-ivory transition-colors{% if not loop.last %} border-b border-border{% endif %}">
-        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">
-          <span class="new-badge hidden inline-block align-middle bg-[#6B4F3A] text-white text-[9px] font-medium tracking-widest px-2 py-0.5 rounded-full mr-1.5" data-publish="{{ post.date | dateISO }}">NEW</span>{{ post.data.title }}</h3>
+      <a href="{{ post.url }}" class="group flex items-center gap-3 px-4 py-2.5 hover:bg-ivory transition-colors{% if not loop.last %} border-b border-border{% endif %}">
+        <div class="shrink-0 w-10 h-10 rounded-md overflow-hidden bg-border">
+          {% if post.data.thumbnail %}
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+               class="w-full h-full object-cover"
+               loading="lazy" decoding="async">
+          {% endif %}
+        </div>
+        <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug min-w-0 flex-1" style="display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
         <div class="shrink-0 text-right">
           <p class="text-xs text-muted leading-tight">{% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% endif %}</p>
           <p class="text-xs text-muted whitespace-nowrap leading-tight mt-0.5">{{ post.date | dateJa }}</p>
