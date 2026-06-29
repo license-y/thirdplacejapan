@@ -17,6 +17,15 @@ canonical: "/stories/"
     "@type": "Organization",
     "name": "Third Place Japan",
     "url": "{{ site.url }}"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/stories/?q={search_term}",
+    "query-input": "required name=search_term"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".answer-lead", ".faq-body p"]
   }
 }
 </script>
@@ -129,7 +138,7 @@ canonical: "/stories/"
       日本のサードプレイスを知る
     </h1>
     <div class="gold-rule mb-6"></div>
-    <p class="text-sm font-medium text-dark max-w-2xl text-left md:text-center md:mx-auto mb-3">
+    <p class="answer-lead text-sm font-medium text-dark max-w-2xl text-left md:text-center md:mx-auto mb-3">
       <strong>Third Place Japan（サードプレイスジャパン）は、家でも職場でもない「第三の居場所」を7軸で評価・認証する日本初のメディアです。</strong>
     </p>
     <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto mb-8">

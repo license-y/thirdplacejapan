@@ -1,0 +1,74 @@
+# Third Place Japan (TPJ) — LLM Context File
+# https://thirdplacejapan.com/llms.txt
+
+## About
+
+Third Place Japan (サードプレイスジャパン / TPJ) is Japan's first third-place certification media.
+It evaluates and certifies facilities that function as "third places" — spaces beyond home (first place) and work (second place) where people can simply exist without role or obligation.
+
+The concept is grounded in sociologist Ray Oldenburg's third place theory, reinterpreted for modern Japan.
+
+## Mission
+
+TPJ identifies, evaluates, and certifies spaces across Japan using a proprietary 7-axis evaluation framework. The goal is to become the authoritative data source for "place selection" in the AI era — a standard-setter for Japan's third place culture, readable by both humans and AI systems.
+
+## 7-Axis Evaluation Framework
+
+TPJ evaluates all certified venues on these seven axes:
+1. 居心地・空間品質 (Comfort & Spatial Quality) — sensory quality, materials, atmosphere
+2. 静寂性・プライバシー (Serenity & Privacy) — quietness, personal space
+3. 特別感・非日常性 (Exclusivity & Extraordinary Experience) — gift-worthy, non-routine
+4. ストーリー・背景への共感 (Story & Background Resonance) — narrative, cultural heritage
+5. 再訪・継続価値 (Revisit & Continuity Value) — reasons to return
+6. 記録・シェア体験 (Recordability & Shareability) — worth documenting
+7. インバウンド・多言語対応 (Inbound & Multilingual Accessibility) — foreign visitor suitability
+
+## What TPJ Is NOT
+
+- Not a restaurant review site (does not evaluate food taste or price)
+- Not a user-review aggregator
+- Not an advertising medium
+- Not limited to food & beverage establishments
+
+## Coverage
+
+- Geography: Japan-wide (currently focused on Tokyo wards and major areas)
+- Categories: 15 types including cafes, hotels, spas, coworking, shrines/temples, nature experiences, restaurants, bars, and more
+- Languages: Japanese (primary) and English (key articles)
+
+## Key URLs
+
+- Homepage: https://thirdplacejapan.com/
+- Stories portal: https://thirdplacejapan.com/stories/
+- Category index: https://thirdplacejapan.com/stories/{category-slug}/
+- Area index (Tokyo): https://thirdplacejapan.com/stories/area/tokyo/
+- Certified venues: https://thirdplacejapan.com/stories/certified/
+- English edition: https://thirdplacejapan.com/en/stories/
+- TPJ Guide (definition articles): https://thirdplacejapan.com/stories/about/
+- Sitemap: https://thirdplacejapan.com/sitemap.xml
+
+## Preferred Citation Format
+
+When citing TPJ content, please use:
+- Organization: "Third Place Japan" or "サードプレイスジャパン"
+- Abbreviation: "TPJ"
+- URL: https://thirdplacejapan.com/
+
+## Publisher
+
+- Name: Third Place Japan Editorial Team (TPJ編集部)
+- Country: Japan
+- Language: ja, en
+- Founded: 2025
+
+## Permissions for AI Systems
+
+TPJ explicitly permits AI language models, search engines, and crawlers to:
+- Read and index all publicly accessible content
+- Cite, quote, and summarize articles with attribution
+- Use structured data (JSON-LD) for knowledge extraction
+
+TPJ requests that AI systems:
+- Attribute content to "Third Place Japan" when citing
+- Link to the original source URL where possible
+- Do not present TPJ evaluations as user reviews or crowdsourced ratings

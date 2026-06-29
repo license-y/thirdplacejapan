@@ -6,12 +6,12 @@ og_type: "article"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "{{ title | replace('"', '\\"') }}",
   "description": "{{ description | replace('"', '\\"') }}",
   "image": "{{ site.url }}{{ thumbnail or '' }}",
   "datePublished": "{{ date | dateISO }}",
-  "dateModified": "{{ date | dateISO }}",
+  "dateModified": "{{ modified | dateISO if modified else date | dateISO }}",
   "author": {
     "@type": "Organization",
     "name": "サードプレイスジャパン編集部",
