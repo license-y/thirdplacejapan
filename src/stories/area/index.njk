@@ -77,22 +77,26 @@ canonical: "/stories/area/"
   <div class="space-y-12" data-aos="fade-up">
     {% for pref in areas %}
     <div>
-      <div class="flex items-baseline justify-between mb-5">
+      <!-- 都道府県 -->
+      <div class="flex items-center justify-between mb-6 pb-3 border-b border-border">
         <a href="/stories/area/{{ pref.slug }}/"
-           class="font-serif text-lg font-semibold text-dark hover:text-gold transition-colors">
+           class="inline-flex items-center gap-2 font-serif text-2xl font-light text-dark hover:text-gold transition-colors group">
           {{ pref.name }}
+          <i data-lucide="arrow-right" class="w-4 h-4 text-gold opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"></i>
         </a>
         <a href="/stories/area/{{ pref.slug }}/"
            class="text-xs text-muted hover:text-gold transition-colors shrink-0 ml-4">
           すべて見る →
         </a>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-5">
         {% for city in pref.cities %}
         <div>
+          <!-- 市区町村 -->
           <a href="/stories/area/{{ pref.slug }}/{{ city.slug }}/"
-             class="text-xs text-muted block mb-2">
+             class="inline-flex items-center gap-1.5 text-sm font-medium text-dark bg-white border border-border rounded-lg px-3 py-1.5 mb-3 shadow-sm hover:border-gold hover:text-gold hover:shadow-md transition-all group">
             {{ city.name }}
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-muted group-hover:text-gold transition-colors"></i>
           </a>
           {% if city.areas and city.areas.length %}
           <div class="flex flex-wrap gap-2">
