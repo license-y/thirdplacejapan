@@ -85,7 +85,10 @@ layout: area.njk
     <p class="label mb-6">エリアから探す</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="city-grid">
       {% for city in prefecture.cities %}
-      <div class="city-card border border-border p-4 transition-colors"
+      {% set cityVenues = venues | venuesByArea(prefecture.slug, city.slug) %}
+      {% set cityArticles = collections.articles | articlesByCity(prefecture.slug, city.slug) %}
+      {% set hasContent = cityVenues.length or cityArticles.length %}
+      <div class="city-card p-4 transition-colors border border-gold"
            data-city-name="{{ city.name }}"
            data-areas="{% for area in city.areas %}{{ area.name }}{% if not loop.last %},{% endif %}{% endfor %}"
            data-area-slugs="{% for area in city.areas %}{{ area.slug }}{% if not loop.last %},{% endif %}{% endfor %}"
@@ -93,7 +96,6 @@ layout: area.njk
         <a href="/stories/area/{{ prefecture.slug }}/{{ city.slug }}/"
            class="block hover:text-gold transition-colors city-link">
           <p class="font-serif text-base font-light">{{ city.name }}</p>
-          {% set cityVenues = venues | venuesByArea(prefecture.slug, city.slug) %}
           {% if cityVenues.length %}
           <p class="text-xs mt-0.5" style="color:var(--color-muted)">{{ cityVenues.length }}件の認証店舗</p>
           {% endif %}
@@ -116,6 +118,29 @@ layout: area.njk
       一致するエリア・駅名が見つかりませんでした
     </div>
   </section>
+
+  {# この都道府県の関連記事（最新6件） #}
+  {% set prefArticles = collections.articles | articlesByPrefecture(prefecture.slug, 6) %}
+  {% if prefArticles.length %}
+  <section class="mb-16" data-aos="fade-up">
+    <p class="label mb-6">{{ prefecture.name }}の関連記事</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in prefArticles %}
+      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+          <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   {# この都道府県の全認証店舗 #}
   {% set prefVenues = venues | venuesByArea(prefecture.slug) %}

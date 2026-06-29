@@ -294,6 +294,29 @@ export default function (eleventyConfig) {
       .sort((a, b) => b.date - a.date)
   );
 
+  // 都道府県レベルの記事取得（都道府県内の全エリアslug・市区町村名に一致する記事を最新順で返す）
+  eleventyConfig.addFilter("articlesByPrefecture", (collection, prefSlug, limit) => {
+    if (!collection) return [];
+    const n = limit || 6;
+    const areaSlugs = new Set();
+    const cityNames = new Set();
+    for (const pref of areasData) {
+      if (pref.slug !== prefSlug) continue;
+      for (const city of pref.cities) {
+        cityNames.add(city.name);
+        (city.areas || []).forEach(a => areaSlugs.add(a.slug));
+      }
+      break;
+    }
+    return collection
+      .filter(p =>
+        (p.data.area_slug && areaSlugs.has(p.data.area_slug)) ||
+        (p.data.area_name && cityNames.has(p.data.area_name))
+      )
+      .sort((a, b) => b.date - a.date)
+      .slice(0, n);
+  });
+
   // 市区町村レベルの記事取得（area_slugが市内エリアに一致、またはarea_nameが市区町村名に一致）
   eleventyConfig.addFilter("articlesByCity", (collection, prefSlug, citySlug) => {
     if (!collection) return [];
