@@ -43,8 +43,8 @@ layout: area.njk
 }
 </script>
 
-{% if item.city.slug == 'shibuya-ku' and item.prefecture.slug == 'tokyo' %}
-{# ── 試験的実装：渋谷区のみ2カラム＋Googleマップ ── #}
+{% if item.prefecture.slug == 'tokyo' %}
+{# ── 東京都の全市区町村：2カラム＋Googleマップ ── #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
