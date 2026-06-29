@@ -8,6 +8,7 @@ tags:
   - レストラン・ダイニング
 category_slug: restaurant-dining
 thumbnail: /assets/images/articles/restaurant-dining-chuo-ginza-tokyo.webp
+area_name: 中央区
 permalink: /stories/restaurant-dining/chuo/
 ---
 

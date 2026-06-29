@@ -8,6 +8,7 @@ tags:
   - レストラン・ダイニング
 category_slug: restaurant-dining
 thumbnail: /assets/images/articles/restaurant-dining-minato-ku-tokyo.webp
+area_name: 港区
 permalink: /stories/restaurant-dining/minato/
 ---
 

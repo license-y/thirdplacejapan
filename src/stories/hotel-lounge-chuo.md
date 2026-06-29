@@ -8,6 +8,7 @@ tags:
   - 高級ホテル・ホテルラウンジ
 category_slug: hotel-lounge
 thumbnail: /assets/images/articles/hotel-lounge-chuo-nihonbashi-tokyo.webp
+area_name: 中央区
 permalink: /stories/hotel-lounge/chuo/
 ---
 

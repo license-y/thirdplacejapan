@@ -8,6 +8,7 @@ tags:
   - バー・ウイスキー・カクテル
 category_slug: bar-whiskey
 thumbnail: /assets/images/articles/bar-whiskey-minato-ku-tokyo-night.webp
+area_name: 港区
 permalink: /stories/bar-whiskey/minato/
 ---
 

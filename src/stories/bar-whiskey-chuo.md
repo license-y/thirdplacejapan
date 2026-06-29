@@ -8,6 +8,7 @@ tags:
   - バー・ウイスキー・カクテル
 category_slug: bar-whiskey
 thumbnail: /assets/images/articles/bar-whiskey-chuo-ginza-tokyo.webp
+area_name: 中央区
 permalink: /stories/bar-whiskey/chuo/
 ---
 

@@ -8,6 +8,7 @@ tags:
   - 高級サロン・プライベートサロン
 category_slug: premium-salon
 thumbnail: /assets/images/articles/premium-salon-shibuya-ku-tokyo-wellness.webp
+area_name: 渋谷区
 permalink: /stories/premium-salon/shibuya/
 ---
 

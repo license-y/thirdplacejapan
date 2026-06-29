@@ -8,6 +8,7 @@ tags:
   - 会員制ラウンジ・クラブ
 category_slug: members-lounge
 thumbnail: /assets/images/articles/members-lounge-chuo-ku-tokyo.webp
+area_name: 中央区
 permalink: /stories/members-lounge/chuo/
 ---
 
