@@ -116,7 +116,7 @@ canonical: "/stories/"
     </div>
 
     {# リスト記事（3件目以降・6件分の高さでスクロール）#}
-    <div class="border border-border rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:360px;overflow-y:auto;">
+    <div class="border border-gold/30 rounded-xl bg-white overflow-hidden shadow-sm mb-6" style="max-height:360px;overflow-y:auto;">
       {% for post in latestArticles %}
       {% if loop.index > 2 %}
       {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
@@ -177,7 +177,7 @@ canonical: "/stories/"
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="pillar-grid">
       {% for post in collections.aboutArticles %}
       <a href="{{ post.url }}"
-         class="group flex items-stretch bg-white rounded-2xl border border-border hover:border-gold shadow-sm hover:shadow-md transition-all overflow-hidden{% if loop.index > 9 %} pillar-extra hidden{% elif loop.index > 6 %} pillar-extra hidden md:flex{% endif %}">
+         class="group flex items-stretch bg-white rounded-2xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all overflow-hidden{% if loop.index > 9 %} pillar-extra hidden{% elif loop.index > 6 %} pillar-extra hidden md:flex{% endif %}">
         {% if post.data.thumbnail %}
         <div class="shrink-0 w-24 overflow-hidden">
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
