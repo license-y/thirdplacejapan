@@ -94,11 +94,14 @@ layout: area.njk
            data-area-slugs="{% for area in city.areas %}{{ area.slug }}{% if not loop.last %},{% endif %}{% endfor %}"
            data-city-slug="{{ city.slug }}">
         <a href="/stories/area/{{ prefecture.slug }}/{{ city.slug }}/"
-           class="block hover:text-gold transition-colors city-link">
-          <p class="font-serif text-base font-light">{{ city.name }}</p>
-          {% if cityVenues.length %}
-          <p class="text-xs mt-0.5" style="color:var(--color-muted)">{{ cityVenues.length }}件の認証店舗</p>
-          {% endif %}
+           class="flex items-center justify-between group city-link">
+          <div>
+            <p class="font-serif text-base font-normal transition-colors" style="color:var(--color-gold)">{{ city.name }}</p>
+            {% if cityVenues.length %}
+            <p class="text-xs mt-0.5" style="color:var(--color-muted)">{{ cityVenues.length }}件の認証店舗</p>
+            {% endif %}
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" style="color:var(--color-gold)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
         {% if city.areas.length %}
         <div class="flex flex-wrap gap-1 mt-3">
