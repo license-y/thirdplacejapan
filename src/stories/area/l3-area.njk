@@ -44,16 +44,18 @@ layout: area.njk
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 2, "name": "{{ item.prefecture.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/" },
-    { "@type": "ListItem", "position": 3, "name": "{{ item.city.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" },
-    { "@type": "ListItem", "position": 4, "name": "{{ item.area.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/" }
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ item.prefecture.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ item.city.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" },
+    { "@type": "ListItem", "position": 5, "name": "{{ item.area.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/" }
   ]
 }
 </script>
 
-{% if item.area.slug == 'sendagaya' and item.city.slug == 'shibuya-ku' %}
-{# ── 試験的実装：千駄ヶ谷のみ2カラム＋Googleマップ ── #}
+{# Place + CollectionPage JSON-LD（全 L3 エリアに適用）#}
+{% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+{% set areaArts = collections.articles | articlesByArea(item.area.slug) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,10 +71,6 @@ layout: area.njk
   "hasMap": "https://www.google.com/maps/search/{{ item.area.name }}+{{ item.city.name }}+{{ item.prefecture.name }}"
 }
 </script>
-
-{# CollectionPage JSON-LD #}
-{% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
-{% set areaArts = collections.articles | articlesByArea(item.area.slug) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,6 +90,9 @@ layout: area.njk
   ]{% endif %}
 }
 </script>
+
+{% if item.area.slug == 'sendagaya' and item.city.slug == 'shibuya-ku' %}
+{# ── 試験的実装：千駄ヶ谷のみ2カラム＋Googleマップ ── #}
 
 <div class="max-w-6xl mx-auto px-6 py-24">
   <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">

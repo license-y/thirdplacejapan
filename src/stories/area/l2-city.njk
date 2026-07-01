@@ -62,8 +62,7 @@ layout: area.njk
 }
 </script>
 
-{% if item.prefecture.slug == 'tokyo' %}
-{# ── 東京都の全市区町村：2カラム＋Googleマップ ── #}
+{# AdministrativeArea JSON-LD（全市区町村に適用）#}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,6 +74,9 @@ layout: area.njk
   "hasMap": "https://www.google.com/maps/search/{{ item.city.name }}+{{ item.prefecture.name }}"
 }
 </script>
+
+{% if item.prefecture.slug == 'tokyo' %}
+{# ── 東京都の全市区町村：2カラム＋Googleマップ ── #}
 
 <div class="max-w-6xl mx-auto px-6 py-24">
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">

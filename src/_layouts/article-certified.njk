@@ -6,6 +6,7 @@ og_type: "article"
 {% set v = venues | findVenueBySlug(venue_slug) %}
 
 {# Article + LocalBusiness JSON-LD #}
+{%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +33,11 @@ og_type: "article"
     "@type": "WebPage",
     "@id": "{{ site.url }}{{ page.url }}"
   },
-  "inLanguage": "ja"{% if v %},
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "サードプレイス"
+  }{% if v %},
   "itemReviewed": {
     "@type": "LocalBusiness",
     "name": "{{ v.name | replace('"', '\\"') }}",
@@ -95,9 +100,10 @@ og_type: "article"
   },
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": "{{ v.grade }}",
-    "bestRating": "Flagship",
-    "worstRating": "Certified"
+    "ratingValue": {{ gradeNums[v.grade] or 1 }},
+    "bestRating": 5,
+    "worstRating": 1,
+    "description": "TPJ認証グレード {{ v.grade }}"
   }{% endif %},
   "wordCount": {{ content | wordCount }},
   "keywords": "{{ category_slug }}, サードプレイス, TPJ認証{% if v %}, {{ v.name }}, {{ v.category }}, {{ v.area_primary.prefecture }}, {{ v.area_primary.area }}{% endif %}",

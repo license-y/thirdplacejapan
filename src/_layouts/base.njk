@@ -11,7 +11,7 @@
   <meta name="description" content="{{ description or site.description }}">
   {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% else %}<meta name="keywords" content="サードプレイス,第三の居場所,Third Place Japan,TPJ,認証,空間評価,カフェ,ホテル,日本">{% endif %}
   <meta name="robots" content="index, follow">
-  {% if canonical %}<link rel="canonical" href="{{ site.url }}{{ canonical }}">{% endif %}
+  <link rel="canonical" href="{{ site.url }}{% if canonical %}{{ canonical }}{% else %}{{ page.url }}{% endif %}">
 
   <!-- hreflang -->
   {% if hreflang_ja %}<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ hreflang_ja }}">{% endif %}
@@ -148,7 +148,11 @@
       "name": "Japan"
     },
     "knowsAbout": ["サードプレイス", "第三の居場所", "third place", "居場所", "空間評価", "サードプレイス認証", "7軸評価"],
-    "inLanguage": ["ja", "en"]
+    "inLanguage": ["ja", "en"],
+    "sameAs": [
+      "https://thirdplacejapan.com",
+      "https://thirdplacejapan.com/stories/"
+    ]
   }
   </script>
 
