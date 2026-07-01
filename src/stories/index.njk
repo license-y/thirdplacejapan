@@ -22,8 +22,11 @@ hreflang_en: "/en/stories/"
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "{{ site.url }}/stories/?q={search_term}",
-    "query-input": "required name=search_term"
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ site.url }}/stories/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
   },
   "speakable": {
     "@type": "SpeakableSpecification",

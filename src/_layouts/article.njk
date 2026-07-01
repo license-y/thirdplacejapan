@@ -20,7 +20,9 @@ og_type: "article"
   "author": {
     "@type": "Organization",
     "name": "サードプレイスジャパン編集部",
-    "url": "{{ site.url }}"
+    "url": "{{ site.url }}",
+    "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。",
+    "knowsAbout": ["サードプレイス", "第三の居場所", "空間評価", "7軸評価基準"]
   },
   "publisher": {
     "@type": "Organization",
@@ -226,7 +228,7 @@ og_type: "article"
       {% endif %}
 
       {# 本文 #}
-      <div class="prose" data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-aos="fade-up">
         {{ content | safe }}
       </div>
 
