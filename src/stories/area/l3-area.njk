@@ -70,6 +70,29 @@ layout: area.njk
 }
 </script>
 
+{# CollectionPage JSON-LD #}
+{% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+{% set areaArts = collections.articles | articlesByArea(item.area.slug) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ item.area.name }}のサードプレイス | Third Place Japan",
+  "description": "{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）でThird Place Japanが認証したサードプレイス。カフェ・ホテル・スパなど業種横断で7軸評価した場所の一覧。",
+  "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/",
+  "inLanguage": "ja",
+  "about": { "@type": "Place", "name": "{{ item.area.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}" } },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" }{% if areaArts.length or areaVenues.length %},
+  "hasPart": [
+    {% set parts = [] %}
+    {% for post in areaArts | head(5) %}{% set parts = parts.concat([{"@type":"Article","headline":post.data.title,"url":site.url + post.url}]) %}{% endfor %}
+    {% for v in areaVenues | head(5) %}{% set parts = parts.concat([{"@type":"LocalBusiness","name":v.name,"url":site.url + "/stories/certified/" + v.slug + "/"}]) %}{% endfor %}
+    {% for p in parts %}{ "@type": {{ p["@type"] | dump }}, {% if p.headline %}"headline": {{ p.headline | dump }}{% else %}"name": {{ p.name | dump }}{% endif %}, "url": {{ p.url | dump }} }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]{% endif %}
+}
+</script>
+
 <div class="max-w-6xl mx-auto px-6 py-24">
   <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>

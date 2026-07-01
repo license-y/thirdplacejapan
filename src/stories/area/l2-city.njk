@@ -43,6 +43,25 @@ layout: area.njk
 }
 </script>
 
+{# CollectionPage JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ item.city.name }}のサードプレイス | Third Place Japan",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanが認証したサードプレイス。エリア別・カテゴリ別に7軸評価基準で認証した場所を掲載。",
+  "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/",
+  "inLanguage": "ja",
+  "about": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" } },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "hasPart": [
+    {% for area in item.city.areas %}
+    { "@type": "WebPage", "name": "{{ area.name }}のサードプレイス", "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ area.slug }}/" }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 {% if item.prefecture.slug == 'tokyo' %}
 {# ── 東京都の全市区町村：2カラム＋Googleマップ ── #}
 <script type="application/ld+json">

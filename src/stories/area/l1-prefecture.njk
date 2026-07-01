@@ -44,6 +44,25 @@ layout: area.njk
 }
 </script>
 
+{# CollectionPage JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ prefecture.name }}のサードプレイス | Third Place Japan",
+  "description": "{{ prefecture.name }}でThird Place Japanが認証したサードプレイス。市区町村・エリア・業種横断で7軸評価基準により認証した場所を掲載。",
+  "url": "{{ site.url }}/stories/area/{{ prefecture.slug }}/",
+  "inLanguage": "ja",
+  "about": { "@type": "AdministrativeArea", "name": "{{ prefecture.name }}" },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "hasPart": [
+    {% for city in prefecture.cities %}
+    { "@type": "WebPage", "name": "{{ city.name }}のサードプレイス", "url": "{{ site.url }}/stories/area/{{ prefecture.slug }}/{{ city.slug }}/" }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <div class="max-w-6xl mx-auto px-6 py-24">
 
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">
