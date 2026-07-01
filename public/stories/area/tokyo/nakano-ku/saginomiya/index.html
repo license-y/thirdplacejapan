@@ -305,31 +305,40 @@
     document.getElementById('search-open-btn-mobile')
   ].filter(Boolean);
 
-  // ページロード完了後に PagefindUI を初期化（bundlePath を明示指定）
-  window.addEventListener('load', function() {
-    if (typeof PagefindUI !== 'undefined') {
-      new PagefindUI({
-        element: '#nav-search-widget',
-        bundlePath: '/pagefind/',
-        showSubResults: false,
-        showImages: false,
-        excerptLength: 35,
-        resetStyles: false,
-        translations: {
-          placeholder: '記事・エリア・カテゴリを検索...',
-          zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
-        }
-      });
-    }
-  });
+  let searchInited = false;
 
   function openSearch() {
+    // まずオーバーレイを表示（要素がvisibleになってからPagefindUIを初期化）
     overlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
-    setTimeout(function() {
-      var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
-      if (inp) inp.focus();
-    }, 80);
+
+    if (!searchInited && typeof PagefindUI !== 'undefined') {
+      // display:none が解除されてから描画されるよう rAF を挟む
+      requestAnimationFrame(function() {
+        new PagefindUI({
+          element: '#nav-search-widget',
+          bundlePath: '/pagefind/',
+          showSubResults: false,
+          showImages: false,
+          excerptLength: 35,
+          resetStyles: false,
+          translations: {
+            placeholder: '記事・エリア・カテゴリを検索...',
+            zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
+          }
+        });
+        searchInited = true;
+        setTimeout(function() {
+          var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
+          if (inp) inp.focus();
+        }, 150);
+      });
+    } else {
+      setTimeout(function() {
+        var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
+        if (inp) inp.focus();
+      }, 80);
+    }
   }
 
   function closeSearch() {
