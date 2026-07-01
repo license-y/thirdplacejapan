@@ -154,50 +154,36 @@
   
 </head>
 <body>
-  
-<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-<style>
-  #nav-search-widget .pagefind-ui__search-input {
+  <style>
+  #pf-input {
+    width: 100%;
     border: 1px solid rgba(184,150,12,0.5);
     border-radius: 9999px;
     background: #fff;
     color: #2D2A26;
-    font-size: 0.95rem;
-    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    width: 100%;
-  }
-  #nav-search-widget .pagefind-ui__search-input:focus {
     outline: none;
-    border-color: #B8960C;
+    font-family: inherit;
   }
-  #nav-search-widget .pagefind-ui__search-input::placeholder { color: #9B9490; }
-  #nav-search-widget .pagefind-ui__search-clear { display: none !important; }
-  #nav-search-widget .pagefind-ui__results-area { margin-top: 0.5rem; }
-  #nav-search-widget .pagefind-ui__results {
-    background: #fff;
-    border: 1px solid #E5E2DC;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    overflow: hidden;
-    max-height: 22rem;
-    overflow-y: auto;
-  }
-  #nav-search-widget .pagefind-ui__result {
+  #pf-input:focus { border-color: #B8960C; }
+  #pf-input::placeholder { color: #9B9490; }
+  #pf-input-wrap { position: relative; }
+  #pf-input-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #pf-results { margin-top: 0.5rem; max-height: 22rem; overflow-y: auto; }
+  #pf-results a {
+    display: block;
+    padding: 0.65rem 0.75rem;
     border-bottom: 1px solid #E5E2DC;
-    padding: 0.75rem 1rem;
-    transition: background 0.15s;
+    text-decoration: none;
+    transition: background 0.12s;
   }
-  #nav-search-widget .pagefind-ui__result:last-child { border-bottom: none; }
-  #nav-search-widget .pagefind-ui__result:hover { background: #F8F6F1; }
-  #nav-search-widget .pagefind-ui__result-title { font-family: serif; font-size: 0.9rem; color: #2D2A26; font-weight: 300; }
-  #nav-search-widget .pagefind-ui__result-title a { color: inherit; text-decoration: none; }
-  #nav-search-widget .pagefind-ui__result-title a:hover { color: #B8960C; }
-  #nav-search-widget .pagefind-ui__result-excerpt { font-size: 0.75rem; color: #9B9490; margin-top: 0.25rem; }
-  #nav-search-widget .pagefind-ui__result-link { display: none; }
-  #nav-search-widget .pagefind-ui__message { font-size: 0.875rem; color: #9B9490; padding: 0.75rem 1rem; }
-  #nav-search-widget .pagefind-ui__button { display: none; }
-  #nav-search-widget .pagefind-ui__form::before { left: 1rem; top: 50%; transform: translateY(-50%); color: #9B9490; }
+  #pf-results a:last-child { border-bottom: none; }
+  #pf-results a:hover { background: #F8F6F1; }
+  #pf-results .pf-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+  #pf-results .pf-excerpt { font-size: 0.72rem; color: #9B9490; margin-top: 0.2rem; line-height: 1.5; }
+  #pf-msg { font-size: 0.8rem; color: #9B9490; padding: 0.75rem 0; }
 </style>
 
 <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -249,18 +235,20 @@
 <div id="search-overlay" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-label="記事検索">
   <div class="bg-ivory w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
     <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
-      <p class="font-serif text-base font-light text-dark">記事・エリア・カテゴリを検索</p>
-      <button id="search-close-btn" aria-label="閉じる" class="p-1 text-muted hover:text-dark transition-colors">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
+      <p class="font-serif text-base font-light text-dark">記事を検索</p>
+      <button id="search-close-btn" aria-label="閉じる" class="p-1 text-muted hover:text-dark transition-colors" style="line-height:1">✕</button>
     </div>
     <div class="px-6 py-4">
-      <div id="nav-search-widget"></div>
+      <div id="pf-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B9490" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="pf-input" placeholder="記事・エリア・カテゴリを検索..." autocomplete="off" spellcheck="false">
+      </div>
+      <div id="pf-results"></div>
+      <div id="pf-msg"></div>
     </div>
   </div>
 </div>
 
-<script src="/pagefind/pagefind-ui.js"></script>
 <script>
 (function() {
   /* ── ナビ色制御 ── */
@@ -281,7 +269,6 @@
     if (btn) btn.style.color = color;
     ticking = false;
   }
-
   window.addEventListener('scroll', () => {
     if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
   }, { passive: true });
@@ -297,48 +284,31 @@
     });
   }
 
-  /* ── 検索オーバーレイ ── */
-  const overlay = document.getElementById('search-overlay');
+  /* ── 検索（Pagefind JS API）── */
+  const overlay  = document.getElementById('search-overlay');
   const closeBtn = document.getElementById('search-close-btn');
+  const input    = document.getElementById('pf-input');
+  const results  = document.getElementById('pf-results');
+  const msg      = document.getElementById('pf-msg');
   const openBtns = [
     document.getElementById('search-open-btn'),
     document.getElementById('search-open-btn-mobile')
   ].filter(Boolean);
 
-  let searchInited = false;
+  let pf = null;
+  let timer = null;
+
+  async function loadPF() {
+    if (pf) return pf;
+    pf = await import('/pagefind/pagefind.js');
+    await pf.init();
+    return pf;
+  }
 
   function openSearch() {
-    // まずオーバーレイを表示（要素がvisibleになってからPagefindUIを初期化）
     overlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
-
-    if (!searchInited && typeof PagefindUI !== 'undefined') {
-      // display:none が解除されてから描画されるよう rAF を挟む
-      requestAnimationFrame(function() {
-        new PagefindUI({
-          element: '#nav-search-widget',
-          bundlePath: '/pagefind/',
-          showSubResults: false,
-          showImages: false,
-          excerptLength: 35,
-          resetStyles: false,
-          translations: {
-            placeholder: '記事・エリア・カテゴリを検索...',
-            zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
-          }
-        });
-        searchInited = true;
-        setTimeout(function() {
-          var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
-          if (inp) inp.focus();
-        }, 150);
-      });
-    } else {
-      setTimeout(function() {
-        var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
-        if (inp) inp.focus();
-      }, 80);
-    }
+    setTimeout(function() { if (input) input.focus(); }, 80);
   }
 
   function closeSearch() {
@@ -346,14 +316,40 @@
     document.body.style.overflow = '';
   }
 
+  if (input) {
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      const q = this.value.trim();
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; return; }
+      timer = setTimeout(async function() {
+        try {
+          const pagefind = await loadPF();
+          const res = await pagefind.search(q);
+          if (!res.results.length) {
+            results.innerHTML = '';
+            msg.textContent = '「' + q + '」の検索結果はありませんでした';
+            return;
+          }
+          msg.textContent = '';
+          const items = await Promise.all(res.results.slice(0, 8).map(function(r) { return r.data(); }));
+          results.innerHTML = items.map(function(item) {
+            var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+            return '<a href="' + item.url + '">'
+              + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+              + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+              + '</a>';
+          }).join('');
+        } catch(e) {
+          msg.textContent = '検索を読み込めませんでした';
+        }
+      }, 250);
+    });
+  }
+
   openBtns.forEach(function(b) { b.addEventListener('click', openSearch); });
   if (closeBtn) closeBtn.addEventListener('click', closeSearch);
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeSearch();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeSearch();
-  });
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
 })();
 </script>
 
