@@ -1,0 +1,125 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  {# ── メインサイト ── #}
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  {# ── 記事サイトトップ ── #}
+  <url>
+    <loc>{{ site.url }}/stories/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/"/>
+  </url>
+
+  {# 英語版トップ #}
+  <url>
+    <loc>{{ site.url }}/en/stories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/"/>
+  </url>
+
+  {# 記事一覧 / TPJガイド / 認証店舗 / エリアトップ #}
+  <url>
+    <loc>{{ site.url }}/stories/latest/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/stories/about/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/stories/certified/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/stories/area/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  {# ── 15カテゴリページ ── #}
+  {% for cat in categories %}
+  <url>
+    <loc>{{ site.url }}/stories/{{ cat.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+
+  {# ── エリアページ（都道府県 → 市区町村 → エリア）── #}
+  {% for pref in areas %}
+  <url>
+    <loc>{{ site.url }}/stories/area/{{ pref.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {% for city in pref.cities %}
+  <url>
+    <loc>{{ site.url }}/stories/area/{{ pref.slug }}/{{ city.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {% for area in city.areas %}
+  <url>
+    <loc>{{ site.url }}/stories/area/{{ pref.slug }}/{{ city.slug }}/{{ area.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+  {% endfor %}
+  {% endfor %}
+
+  {# ── 認証店舗詳細ページ ── #}
+  {% set publishedVenueList = venues | publishedVenues %}
+  {% for venue in publishedVenueList %}
+  <url>
+    <loc>{{ site.url }}/stories/certified/{{ venue.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    {% if venue.slug_en %}
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/certified/{{ venue.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/"/>
+    {% endif %}
+  </url>
+  {% if venue.slug_en %}
+  <url>
+    <loc>{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/certified/{{ venue.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/"/>
+  </url>
+  {% endif %}
+  {% endfor %}
+
+  {# ── 記事ページ（全記事）── #}
+  {% for post in collections.articles %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.data.modified | dateISO if post.data.modified else post.date | dateISO }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>{% if post.data.category_slug == 'about' %}0.7{% else %}0.7{% endif %}</priority>
+    {% if post.data.hreflang_en %}
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}{{ post.url }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ post.data.hreflang_en }}"/>
+    {% endif %}
+  </url>
+  {% endfor %}
+
+</urlset>
