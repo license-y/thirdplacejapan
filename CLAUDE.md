@@ -171,12 +171,14 @@
      データファイルはビルド時にHTMLへ展開される。データだけコミットしても画面には反映されない。
 3. **`src/` のソースファイルと `public/` のビルド済みHTMLの両方**をコミットに含める
 4. `npm run build` 後に生成された `public/` 配下の変更を絶対に漏らさない
+5. **`public/pagefind/` も必ずコミットに含める**（検索インデックス。含めないと検索窓が表示されなくなる）
 
 **NG例（過去の失敗）：**
 - ❌ `src/` だけコミットして `public/` を含め忘れる → Cloudflareに反映されない
 - ❌ `src/` を編集したのに `npm run build` をせずにコミット → `public/` が古いまま
 - ❌ `src/_data/` のJSONを更新したのに `npm run build` をせずにコミット → 画面に反映されない
 - ❌ git statusを確認せずにコミットしようとする → 変更がないのにコミット操作をしてしまう
+- ❌ `public/pagefind/` をコミットし忘れる → 検索窓がサイト上で消える（2026-07-01に発生した障害）
 
 ---
 
@@ -561,11 +563,16 @@ thumbnail: /assets/images/articles/xxx.jpg
 
 ---
 
-## 自動生成されるファイル（.gitignore対象）
+## 自動生成されるファイル
 
+**gitignore対象（コミット不要）：**
 - `public/articles/` — ビルド時に生成
 - `public/articles-sitemap.xml` — 記事サイトマップ（記事追加時に自動更新）
-- `public/pagefind/` — 検索インデックス
+
+**コミット必須（検索機能のため）：**
+- `public/pagefind/` — 検索インデックス。**`npm run build` 後は必ずコミットに含めること**
+  - gitignore対象から外してあるため、`git add public/pagefind/` でステージングされる
+  - コミットしないと Cloudflare Pages に検索インデックスが届かず、検索窓が表示されない
 
 ---
 
