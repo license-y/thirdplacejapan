@@ -4,6 +4,7 @@ title: "ファースト・セカンド・サードプレイスの違いとは？
 description: "ファーストプレイス・セカンドプレイス・サードプレイスの違いをわかりやすく解説。家・職場・第三の居場所の役割と関係性を、Third Place Japanが具体例とともに整理します。"
 date: 2026-06-03
 category_slug: about
+area_name: 東京
 thumbnail: "/assets/images/articles/first-second-third-place-cafe-tokyo.webp"
 tags:
   - articles

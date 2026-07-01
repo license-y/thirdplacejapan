@@ -4,6 +4,7 @@ title: サードプレイスにおける会話と沈黙の役割
 description: サードプレイスで会話と沈黙がどのように共存するかを解説。なぜ良いサードプレイスは「しゃべらなくてもいい場所」でもあるのか、Third Place Japanが社会学・文化的視点から説明します。
 date: 2026-06-07
 category_slug: about
+area_name: 東京
 thumbnail: "/assets/images/articles/third-place-conversation-people-cafe.webp"
 snippet: 第三の居場所では会話が中心的な活動でありながら、一人で静かに過ごす自由も保たれる。
 tags:

@@ -4,6 +4,7 @@ title: サードプレイスに「常連」が欠かせない理由
 description: サードプレイスにおける常連の役割をわかりやすく解説。なぜ常連がいる場所ほど居心地がよく、初めての人も安心して過ごせるのかを、Third Place Japanが社会学の視点から説明します。
 date: 2026-06-06
 category_slug: about
+area_name: 東京
 thumbnail: "/assets/images/articles/third-place-regulars-community-warmth.webp"
 snippet: 常連の存在が場の空気をつくり、初めての人にも居心地と帰属感を与える。
 tags:

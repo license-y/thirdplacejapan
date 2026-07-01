@@ -4,6 +4,7 @@ title: "サードプレイスの意味をわかりやすく：家・職場の次
 description: "サードプレイスの意味をわかりやすく解説。家（ファーストプレイス）でも職場（セカンドプレイス）でもない「第三の居場所」が、なぜ現代人に必要なのかをThird Place Japanが詳しく説明します。"
 date: 2026-06-02
 category_slug: about
+area_name: 東京
 thumbnail: "/assets/images/articles/what-is-third-place-cafe-interior.webp"
 tags:
   - articles
