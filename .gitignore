@@ -142,5 +142,5 @@ dev-tools/package-lock.json
 # Project specific - development files
 /prompt*.md
 
-# 11ty ビルド出力（検索インデックスのみ除外）
-/public/pagefind/
+# 11ty ビルド出力
+# /public/pagefind/ はデプロイ用にコミット対象に変更
