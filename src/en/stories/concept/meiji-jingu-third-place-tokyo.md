@@ -25,7 +25,7 @@ Oldenburg identified several characteristics of third places: neutral ground, a 
 
 **Neutral ground**: The shrine's gravel path welcomes everyone equally — tourists, office workers on a lunch break, couples, solo visitors. No one is asked their business.
 
-**Accessibility**: Free to enter (the inner garden is ¥500). Open from sunrise to sunset. Harajuku Station is one minute away, Meiji-Jingumae Station three minutes. No reservation required.
+**Accessibility**: Free to enter (the inner garden requires a small entry fee — confirm current rates before visiting). Open from sunrise to sunset. Harajuku Station is one minute away, Meiji-Jingumae Station three minutes. No reservation required.
 
 **Leveling function**: On the gravel path, the noise of urban status — work titles, social media, the pace of Harajuku — falls away. The forest equalizes.
 
@@ -49,7 +49,7 @@ Knowing this story changes the experience of walking the path. The gravel underf
 
 **Stay after the hall.** Most visitors complete the main ritual and leave. The northern sections of the grounds — paths toward the inner garden and the Meiji Memorial Hall — are quieter and less visited.
 
-**Use the inner garden.** For ¥500, the Meiji Jingu Gyoen (inner garden) offers a further layer of quiet: an iris garden, a traditional Japanese structure, and the spring called Kiyomasa-no-Ido that has drawn visitors for centuries.
+**Use the inner garden.** The Meiji Jingu Gyoen (inner garden) requires a small entry fee and offers a further layer of quiet: an iris garden, a traditional Japanese structure, and the spring called Kiyomasa-no-Ido that has drawn visitors for centuries.
 
 ---
 
@@ -72,7 +72,7 @@ Knowing this story changes the experience of walking the path. The gravel underf
 - **Address**: 1-1 Kamizono-cho, Yoyogi, Shibuya-ku, Tokyo 151-8557
 - **Nearest stations**: Harajuku Station (JR Yamanote Line) — 1 min walk; Meiji-Jingumae Station (Tokyo Metro) — 3 min walk
 - **Opening hours**: Sunrise to sunset (varies by season)
-- **Admission**: Free (inner garden: ¥500)
+- **Admission**: Free (inner garden: small entry fee — confirm current rates before visiting)
 - **Official site**: meijijingu.or.jp
 
 ---
