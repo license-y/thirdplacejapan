@@ -265,7 +265,6 @@
 (function() {
   /* ── ナビ色制御 ── */
   const nav = document.getElementById('nav');
-  const logo = document.getElementById('nav-logo');
   const links = nav.querySelectorAll('.nav-link');
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -306,15 +305,12 @@
     document.getElementById('search-open-btn-mobile')
   ].filter(Boolean);
 
-  let searchInited = false;
-
-  function openSearch() {
-    overlay.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    // 初回のみ PagefindUI を初期化
-    if (!searchInited && typeof PagefindUI !== 'undefined') {
+  // ページロード完了後に PagefindUI を初期化（bundlePath を明示指定）
+  window.addEventListener('load', function() {
+    if (typeof PagefindUI !== 'undefined') {
       new PagefindUI({
         element: '#nav-search-widget',
+        bundlePath: '/pagefind/',
         showSubResults: false,
         showImages: false,
         excerptLength: 35,
@@ -324,13 +320,16 @@
           zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
         }
       });
-      searchInited = true;
     }
-    // インプットにフォーカス
+  });
+
+  function openSearch() {
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
     setTimeout(function() {
       var inp = document.querySelector('#nav-search-widget .pagefind-ui__search-input');
       if (inp) inp.focus();
-    }, 100);
+    }, 80);
   }
 
   function closeSearch() {
