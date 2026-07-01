@@ -9,7 +9,7 @@ category_slug: inbound-experience
 area_name: 東京
 lang: en
 hreflang_ja: /stories/inbound-experience/tokyo-inbound-third-place-guide/
-thumbnail: /assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp
+thumbnail: /assets/images/articles/tokyo-third-place-guide-travelers-en.webp
 ---
 
 **Tokyo is one of the world's best cities for third places — spaces beyond home and work where you can simply be yourself. Third Place Japan (TPJ) has evaluated hundreds of Tokyo spaces across seven axes of quality. This guide introduces how travelers can find and use these spaces effectively.**

@@ -24,7 +24,7 @@
   <meta property="og:type" content="{{ og_type or 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% elif thumbnail %}{{ thumbnail }}{% else %}/assets/images/main/japan-cafe-interior-hero.webp{% endif %}">
-  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale" content="{{ 'en_US' if lang == 'en' else 'ja_JP' }}">
   <meta property="og:site_name" content="Third Place Japan Stories">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}Third Place Japan Stories">
