@@ -147,63 +147,14 @@ hreflang_en: "/en/stories/"
       カフェ・神社・ホテル・自然体験など15カテゴリ・全国エリア別に、<br class="hidden md:block">
       あなたの居場所を探すための読み物を届けます。
     </p>
-    {# 検索窓（Pagefind UI）#}
-    <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-    <style>
-      #portal-search-widget .pagefind-ui__search-input {
-        border: 1px solid rgba(184,150,12,0.5);
-        border-radius: 9999px;
-        background: #fff;
-        color: #2D2A26;
-        font-size: 0.875rem;
-        padding: 0.75rem 1rem 0.75rem 2.5rem;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        width: 100%;
-      }
-      #portal-search-widget .pagefind-ui__search-input:focus {
-        outline: none;
-        border-color: #B8960C;
-      }
-      #portal-search-widget .pagefind-ui__search-input::placeholder { color: #9B9490; }
-      #portal-search-widget .pagefind-ui__search-clear { display: none !important; }
-      #portal-search-widget .pagefind-ui__results-area { margin-top: 0.5rem; }
-      #portal-search-widget .pagefind-ui__results {
-        background: #fff;
-        border: 1px solid #E5E2DC;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        overflow: hidden;
-        max-height: 18rem;
-        overflow-y: auto;
-      }
-      #portal-search-widget .pagefind-ui__result {
-        border-bottom: 1px solid #E5E2DC;
-        padding: 0.75rem 1rem;
-        transition: background 0.15s;
-      }
-      #portal-search-widget .pagefind-ui__result:last-child { border-bottom: none; }
-      #portal-search-widget .pagefind-ui__result:hover { background: #F8F6F1; }
-      #portal-search-widget .pagefind-ui__result-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
-      #portal-search-widget .pagefind-ui__result-title a { color: inherit; text-decoration: none; }
-      #portal-search-widget .pagefind-ui__result-title a:hover { color: #B8960C; }
-      #portal-search-widget .pagefind-ui__result-excerpt { font-size: 0.75rem; color: #9B9490; margin-top: 0.25rem; }
-      #portal-search-widget .pagefind-ui__result-link { display: none; }
-      #portal-search-widget .pagefind-ui__message { font-size: 0.875rem; color: #9B9490; padding: 0.75rem 1rem; }
-      #portal-search-widget .pagefind-ui__button { display: none; }
-      #portal-search-widget .pagefind-ui__form::before { left: 1rem; top: 50%; transform: translateY(-50%); color: #9B9490; }
-    </style>
-    <div id="portal-search-widget" class="max-w-xl md:mx-auto"></div>
-    <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({
-      element: '#portal-search-widget',
-      showSubResults: false,
-      showImages: false,
-      excerptLength: 30,
-      resetStyles: false,
-      translations: {
-        placeholder: '記事・エリア・カテゴリを検索...',
-        zero_results: '「[SEARCH_TERM]」の検索結果はありませんでした'
-      }
-    })"></script>
+    {# 検索ボタン（クリックでナビ検索オーバーレイを開く）#}
+    <div class="max-w-xl md:mx-auto">
+      <button onclick="document.getElementById('search-open-btn').click()"
+              class="w-full flex items-center gap-3 bg-white border border-gold/50 hover:border-gold rounded-full px-5 py-3 shadow-sm transition-all group">
+        <i data-lucide="search" class="w-4 h-4 text-muted group-hover:text-gold transition-colors shrink-0"></i>
+        <span class="text-sm text-muted group-hover:text-dark transition-colors">記事・エリア・カテゴリを検索...</span>
+      </button>
+    </div>
   </div>
 
   {# 最新記事 #}
