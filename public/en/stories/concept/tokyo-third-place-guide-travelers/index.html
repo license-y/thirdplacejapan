@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan | Third Place Japan Stories</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="Third Place Japan&#39;s guide to the best third places in Tokyo for travelers — specialty coffee, hotel lounges, shrines, coworking spaces — curated by TPJ&#39;s 7-axis evaluation framework.">
+  <meta name="keywords" content="サードプレイス,第三の居場所,Third Place Japan,TPJ,認証,空間評価,カフェ,ホテル,日本">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/">
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan | Third Place Japan Stories">
+  <meta property="og:description" content="Third Place Japan&#39;s guide to the best third places in Tokyo for travelers — specialty coffee, hotel lounges, shrines, coworking spaces — curated by TPJ&#39;s 7-axis evaluation framework.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/">
+  <meta property="og:image" content="https://thirdplacejapan.com/assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Third Place Japan Stories">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan | Third Place Japan Stories">
+  <meta name="twitter:description" content="Third Place Japan&#39;s guide to the best third places in Tokyo for travelers — specialty coffee, hotel lounges, shrines, coworking spaces — curated by TPJ&#39;s 7-axis evaluation framework.">
+  <meta name="twitter:image" content="https://thirdplacejapan.com/assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "alternateName": ["TPJ", "サードプレイスジャパン"],
+    "url": "https://thirdplacejapan.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
+    },
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
+    "foundingDate": "2025",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Japan"
+    },
+    "knowsAbout": ["サードプレイス", "第三の居場所", "third place", "居場所", "空間評価", "サードプレイス認証", "7軸評価"],
+    "inLanguage": ["ja", "en"],
+    "sameAs": [
+      "https://thirdplacejapan.com",
+      "https://thirdplacejapan.com/stories/"
+    ]
+  }
+  </script>
+
+  
+</head>
+<body>
+  <style>
+  #pf-input {
+    width: 100%;
+    border: 1px solid rgba(184,150,12,0.5);
+    border-radius: 9999px;
+    background: #fff;
+    color: #2D2A26;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: inherit;
+  }
+  #pf-input:focus { border-color: #B8960C; }
+  #pf-input::placeholder { color: #9B9490; }
+  #pf-input-wrap { position: relative; }
+  #pf-input-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #pf-results { margin-top: 0.5rem; max-height: 22rem; overflow-y: auto; }
+  #pf-results a {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #E5E2DC;
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+  #pf-results a:last-child { border-bottom: none; }
+  #pf-results a:hover { background: #F8F6F1; }
+  #pf-results .pf-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+  #pf-results .pf-excerpt { font-size: 0.72rem; color: #9B9490; margin-top: 0.2rem; line-height: 1.5; }
+  #pf-msg { font-size: 0.8rem; color: #9B9490; padding: 0.75rem 0; }
+</style>
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
+
+    
+    <a href="/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.webp" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+      <li>
+        <button id="search-open-btn" aria-label="記事を検索" class="nav-link p-1 transition-colors duration-200">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+      </li>
+    </ul>
+
+    
+    <div class="lg:hidden flex items-center gap-2">
+      <button id="search-open-btn-mobile" aria-label="記事を検索" class="p-2 transition-colors duration-300">
+        <i data-lucide="search" class="w-5 h-5"></i>
+      </button>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+              class="p-2 transition-colors duration-300" id="menu-btn">
+        <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
+      <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
+      <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<div id="search-overlay" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-label="記事検索">
+  <div class="bg-ivory w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+    <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
+      <p class="font-serif text-base font-light text-dark">記事を検索</p>
+      <button id="search-close-btn" aria-label="閉じる" class="p-1 text-muted hover:text-dark transition-colors" style="line-height:1">✕</button>
+    </div>
+    <div class="px-6 py-4">
+      <div id="pf-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B9490" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="pf-input" placeholder="記事・エリア・カテゴリを検索..." autocomplete="off" spellcheck="false">
+      </div>
+      <div id="pf-results"></div>
+      <div id="pf-msg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  /* ── ナビ色制御 ── */
+  const nav = document.getElementById('nav');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#6B4F3A';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(107,79,58,0.8)';
+    const color = '#F8F6F1';
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+  updateNav();
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+
+  /* ── 検索（Pagefind JS API）── */
+  const overlay  = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-close-btn');
+  const input    = document.getElementById('pf-input');
+  const results  = document.getElementById('pf-results');
+  const msg      = document.getElementById('pf-msg');
+  const openBtns = [
+    document.getElementById('search-open-btn'),
+    document.getElementById('search-open-btn-mobile')
+  ].filter(Boolean);
+
+  let pf = null;
+  let timer = null;
+
+  async function loadPF() {
+    if (pf) return pf;
+    pf = await import('/pagefind/pagefind.js');
+    await pf.init();
+    return pf;
+  }
+
+  function openSearch() {
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function() { if (input) input.focus(); }, 80);
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (input) {
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      const q = this.value.trim();
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; return; }
+      timer = setTimeout(async function() {
+        try {
+          const pagefind = await loadPF();
+          const res = await pagefind.search(q);
+          if (!res.results.length) {
+            results.innerHTML = '';
+            msg.textContent = '「' + q + '」の検索結果はありませんでした';
+            return;
+          }
+          msg.textContent = '';
+          const items = await Promise.all(res.results.slice(0, 8).map(function(r) { return r.data(); }));
+          results.innerHTML = items.map(function(item) {
+            var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+            return '<a href="' + item.url + '">'
+              + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+              + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+              + '</a>';
+          }).join('');
+        } catch(e) {
+          msg.textContent = '検索を読み込めませんでした';
+        }
+      }, 250);
+    });
+  }
+
+  openBtns.forEach(function(b) { b.addEventListener('click', openSearch); });
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+})();
+</script>
+
+<main class="pt-16">
+  
+<link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/">
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan",
+  "description": "Third Place Japan&#39;s guide to the best third places in Tokyo for travelers — specialty coffee, hotel lounges, shrines, coworking spaces — curated by TPJ&#39;s 7-axis evaluation framework.",
+  "image": "https://thirdplacejapan.com/assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "https://thirdplacejapan.com",
+    "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。",
+    "knowsAbout": ["サードプレイス", "第三の居場所", "空間評価", "7軸評価基準"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/japan-cafe-interior-hero.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Third Place Japan Stories",
+    "url": "https://thirdplacejapan.com/stories/"
+  },
+  "inLanguage": "ja",
+  "about": {
+    "@type": "Thing",
+    "name": "サードプレイス"
+  },
+  "keywords": "articles",
+  "wordCount": 1154,
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".prose p"]
+  }
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Third Place Japan",
+      "item": "https://thirdplacejapan.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stories",
+      "item": "https://thirdplacejapan.com/stories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "インバウンド観光・体験施設",
+      "item": "https://thirdplacejapan.com/stories/inbound-experience/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan",
+      "item": "https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "Q. Do I need to speak Japanese to use Tokyo&#39;s third places?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most specialty coffee shops and hotel lounges have English menus or visual menus. Shrines and gardens require no Japanese at all. The physical experience of a third place — sitting, drinking, observing — crosses language barriers naturally."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. What is the average cost of using a Tokyo third place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A coffee in a specialty café runs ¥600–1,000. Hotel lounge drinks start around ¥1,500. Shrines and public gardens are free or ¥500. Coworking day passes range from ¥1,500–3,000. The quality of experience is rarely correlated with price at the higher end."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. What is Third Place Japan&#39;s certification, and how can I use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japan evaluates spaces across seven axes — comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Certified venues have met a documented quality standard. See the TPJ certified venue list for options across Tokyo neighborhoods."
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "Q. What are the best neighborhoods for third places in Tokyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For cafés: Shimokitazawa, Kiyosumi-Shirakawa, Sendagaya, Daikanyama. For hotel lounges: Ginza, Shinjuku West, Roppongi. For shrines and nature: Harajuku (Meiji Jingu), Shinjuku (Shinjuku Gyoen), Asakusa (Senso-ji). For coworking: Shibuya, Shinjuku, Omotesando. Each neighborhood has a distinct character — choose based on the pace and mood you are looking for."
+      }
+    }
+    
+  ]
+}
+</script>
+
+
+<div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_256px] gap-12 lg:gap-16 items-start">
+
+    
+    <article class="min-w-0">
+
+      
+      
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
+        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+        
+        <span class="text-border">／</span>
+        <a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a>
+        
+        <span class="text-border">／</span>
+        <span>Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan</span>
+      </nav>
+
+      
+      <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
+        
+        <span class="label">インバウンド観光・体験施設</span>
+        
+      </div>
+
+      
+      <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-6 leading-tight" data-aos="fade-up">
+        Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan
+      </h1>
+
+      
+      
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-12 text-xs text-muted" data-aos="fade-up">
+        <time datetime="2026-07-01">2026年7月1日</time>
+        <span>サードプレイスジャパン編集部</span>
+        
+        
+        
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="font-medium text-dark">東京</span>
+        </span>
+        
+        
+      </div>
+      
+
+      
+      
+
+      
+      
+      <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+        <img src="/assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp" alt="Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan | サードプレイスジャパン編集部" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      </div>
+      
+
+      
+      <div class="prose" data-pagefind-body data-aos="fade-up">
+        <p><strong>Tokyo is one of the world's best cities for third places — spaces beyond home and work where you can simply be yourself. Third Place Japan (TPJ) has evaluated hundreds of Tokyo spaces across seven axes of quality. This guide introduces how travelers can find and use these spaces effectively.</strong></p>
+<p>Whether you are in Tokyo for a week or working remotely for a month, one of the most valuable things you can do is find your third place: a space that becomes yours. Not a tourist attraction to check off, but a place to return to, to think in, to feel at home in briefly.</p>
+<hr>
+<h2>What Is a Third Place?</h2>
+<p>The concept was developed by American sociologist Ray Oldenburg, who observed that healthy social life requires three distinct environments: home (first place), work or school (second place), and a &quot;third place&quot; — a neutral, accessible, regularly-visited space where people gather informally.</p>
+<p>Classic examples include the French café, the British pub, the American diner. In Japan, the concept maps onto spaces that have existed for centuries — the neighborhood sento (public bath), the kissaten (old-style coffee shop), the temple garden — as well as modern equivalents like specialty coffee shops, hotel lounges, and coworking spaces.</p>
+<p>Japan's version of the third place is shaped by a particular cultural sensibility: the concept of <em>ibasho</em>, a place where one belongs. This is not merely about convenience or comfort, but about a deeper sense of being accepted and at ease, without performance.</p>
+<hr>
+<h2>Why Tokyo Works for Third Places</h2>
+<p>Tokyo might seem like an unlikely city for third places — it's vast, fast, and often overwhelming. But precisely because it is a city of 14 million people living at close quarters, Tokyo has developed an exceptional culture of quiet, private space within public environments.</p>
+<p>Several factors work in the traveler's favor:</p>
+<p><strong>Density of options</strong>: Within a single neighborhood, you will find multiple cafés, hotel lounges, libraries, parks, and wellness spaces — each with its own character and mode of use.</p>
+<p><strong>Cultural norms around quiet</strong>: Japan's social code values restraint in public. This means that most third places in Tokyo are significantly quieter than their equivalents in European or American cities. A Tokyo café at noon may be more peaceful than a London café at 8 a.m.</p>
+<p><strong>Solo-use culture</strong>: Japan has a strong culture of solo activity — dining alone, traveling alone, visiting a café alone. This means that third places are designed and operated with the solo visitor in mind, not as an afterthought.</p>
+<p><strong>Quality of space design</strong>: Japanese spatial design attends to material, light, sound, and proportion in ways that directly affect the quality of the third place experience. The difference between a well-designed and a poorly-designed space is immediately felt.</p>
+<hr>
+<h2>Types of Third Places for Travelers</h2>
+<h3>Specialty Coffee Shops</h3>
+<p>Tokyo's specialty coffee scene is among the best in the world. Beyond the technical quality of the coffee, the best shops offer spaces with careful attention to sound, seating, and lighting — conditions that support both solo and social use.</p>
+<p>Areas to explore: Shimokitazawa, Kiyosumi-Shirakawa, Sendagaya, Daikanyama. Each neighborhood has developed a distinct café culture worth experiencing on its own terms.</p>
+<p>What to look for: counter seating (solo-friendly), natural light, material quality (wood, stone, ceramic), the pace at which other customers move and speak.</p>
+<p>See <a href="/stories/cafe-specialty-coffee/">TPJ's certified cafés</a> for evaluated options.</p>
+<h3>Hotel Lounges</h3>
+<p>Tokyo's major hotel districts — Ginza, Shinjuku West, Roppongi, Shibuya — contain hotel lobbies and lounges that are accessible to non-guests (for the cost of a drink or small meal). These spaces offer a reliable environment: consistent quiet, comfortable seating, and multilingual service.</p>
+<p>The advantage for travelers: you already know the quality level before entering. The disadvantage: the experience can feel anonymous.</p>
+<p>See <a href="/stories/hotel-lounge/">TPJ's hotel lounge evaluations</a> for spaces that transcend the generic.</p>
+<h3>Shrines and Temple Gardens</h3>
+<p>Meiji Jingu (Harajuku), Senso-ji (Asakusa), the gardens of Shinjuku Gyoen — these spaces function as third places in the fullest Oldenburg sense: free to enter, open to all, regularly visited by locals as well as tourists.</p>
+<p>The specific quality they offer is silence within the city. For travelers overstimulated by urban density, these spaces provide a physiological reset that no café can match.</p>
+<h3>Coworking Spaces</h3>
+<p>For travelers who are also working, Tokyo's coworking sector is mature and well-distributed. Day passes are widely available, English support is increasingly common, and the quality of facilities (desk, power, Wi-Fi) is generally high.</p>
+<p>See <a href="/stories/coworking/">TPJ's coworking evaluations</a> for spaces that meet third-place quality standards beyond mere functionality.</p>
+<h3>Onsen and Wellness</h3>
+<p>Tokyo's sento (public bathhouse) culture is undergoing a revival. Modern versions — combining traditional bathing with sauna, resting areas, and café services — are becoming some of the city's most valued third places for locals and travelers alike. The language barrier is manageable; the experience speaks for itself.</p>
+<hr>
+<h2>Practical Tips for Finding Your Third Place</h2>
+<p><strong>Walk before you decide.</strong> Tokyo's best third places are not always the first ones you find. Spend time walking a neighborhood before choosing where to settle.</p>
+<p><strong>Arrive off-peak.</strong> Weekday mid-morning (10–noon) is the quietest time in most Tokyo third places. Weekend afternoons can be crowded in popular neighborhoods.</p>
+<p><strong>Pay attention to the other customers.</strong> A space where people are working, reading, or sitting quietly without checking their phones is a reliable indicator of third-place quality.</p>
+<p><strong>Use cash.</strong> Many smaller cafés and traditional spaces still prefer cash (yen). Having coins and small bills saves friction at the point of entry.</p>
+<p><strong>Respect the quiet.</strong> In Japan's better third places, the default is quiet. Phone calls and loud conversation are generally frowned upon. The culture that creates the quiet you enjoy depends on you maintaining it.</p>
+<hr>
+<h2>FAQ</h2>
+<p><strong>Q. Do I need to speak Japanese to use Tokyo's third places?</strong><br>
+No. Most specialty coffee shops and hotel lounges have English menus or visual menus. Shrines and gardens require no Japanese at all. The physical experience of a third place — sitting, drinking, observing — crosses language barriers naturally.</p>
+<p><strong>Q. What is the average cost of using a Tokyo third place?</strong><br>
+A coffee in a specialty café runs ¥600–1,000. Hotel lounge drinks start around ¥1,500. Shrines and public gardens are free or ¥500. Coworking day passes range from ¥1,500–3,000. The quality of experience is rarely correlated with price at the higher end.</p>
+<p><strong>Q. What is Third Place Japan's certification, and how can I use it?</strong><br>
+Third Place Japan evaluates spaces across seven axes — comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Certified venues have met a documented quality standard. See the <a href="/stories/certified/">TPJ certified venue list</a> for options across Tokyo neighborhoods.</p>
+<p><strong>Q. What are the best neighborhoods for third places in Tokyo?</strong><br>
+For cafés: Shimokitazawa, Kiyosumi-Shirakawa, Sendagaya, Daikanyama. For hotel lounges: Ginza, Shinjuku West, Roppongi. For shrines and nature: Harajuku (Meiji Jingu), Shinjuku (Shinjuku Gyoen), Asakusa (Senso-ji). For coworking: Shibuya, Shinjuku, Omotesando. Each neighborhood has a distinct character — choose based on the pace and mood you are looking for.</p>
+
+      </div>
+
+      
+      
+      <div class="mt-14 pt-10 border-t border-border" style="opacity:1;visibility:visible;">
+        <p class="text-xs text-muted text-center mb-5">この記事をシェア</p>
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <a href="https://twitter.com/intent/tweet?text=Tokyo%20Third%20Places%3A%20A%20Traveler&#39;s%20Guide%20to%20Finding%20Your%20Space%20in%20Japan&url=https%3A%2F%2Fthirdplacejapan.com%2Fen%2Fstories%2Fconcept%2Ftokyo-third-place-guide-travelers%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-gold/30 px-5 py-2.5 text-xs text-text hover:border-gold hover:text-gold transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X ポスト
+          </a>
+          <a href="https://line.me/R/msg/text/?Tokyo%20Third%20Places%3A%20A%20Traveler&#39;s%20Guide%20to%20Finding%20Your%20Space%20in%20Japan%0D%0Ahttps%3A%2F%2Fthirdplacejapan.com%2Fen%2Fstories%2Fconcept%2Ftokyo-third-place-guide-travelers%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-gold/30 px-5 py-2.5 text-xs text-text hover:border-gold hover:text-gold transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthirdplacejapan.com%2Fen%2Fstories%2Fconcept%2Ftokyo-third-place-guide-travelers%2F"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 border border-gold/30 px-5 py-2.5 text-xs text-text hover:border-gold hover:text-gold transition-all rounded-full bg-white shadow-sm hover:shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+    </article>
+
+    
+    <aside class="hidden lg:block">
+      <div class="sticky top-24 space-y-8">
+
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">カテゴリ</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/hotel-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級ホテル・ホテルラウンジ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/onsen-ryokan/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                温泉旅館・高級旅館
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/villa-rental/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                貸切ヴィラ・一棟貸しの宿
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/restaurant-dining/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                レストラン・ダイニング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/cafe-specialty-coffee/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                カフェ・スペシャルティコーヒー
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/bar-whiskey/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                バー・ウイスキー・カクテル
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/spa-sauna-wellness/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                スパ・サウナ・ウェルネス施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/premium-salon/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                高級サロン・プライベートサロン
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/coworking/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                コワーキング・シェアオフィス
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/members-lounge/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                会員制ラウンジ・クラブ
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/nature-glamping/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                山・自然体験・グランピング
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/retreat-zen/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                リトリート・禅体験
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/shrine-temple/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                神社・寺院・パワースポット
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/inbound-experience/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-gold font-medium">
+                インバウンド観光・体験施設
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/culture-sports-leisure/"
+                 class="text-xs leading-snug block py-1.5 transition-colors
+                 text-muted hover:text-gold">
+                文化・スポーツ・レジャー施設
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">最新記事</p>
+          <ul class="space-y-4">
+            
+            <li>
+              <a href="/en/stories/concept/meiji-jingu-third-place-tokyo/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">神社・寺院・パワースポット</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">Meiji Jingu as a Third Place: Finding Silence in Central Tokyo</p>
+                <p class="text-xs text-muted mt-1">2026年7月1日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/en/stories/concept/tokyo-third-place-guide-travelers/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">インバウンド観光・体験施設</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan</p>
+                <p class="text-xs text-muted mt-1">2026年7月1日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/en/stories/concept/what-is-third-place-japan/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">サードプレイスとは</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho</p>
+                <p class="text-xs text-muted mt-1">2026年7月1日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/spa-sauna-wellness/aoyama-spa-third-place/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">スパ・サウナ・ウェルネス施設</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">青山でスパとサードプレイスを重ねる。感度の高い街が生む、静寂とウェルネスの居場所</p>
+                <p class="text-xs text-muted mt-1">2026年7月1日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/cafe-specialty-coffee/ginza-third-place-guide/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">銀座でサードプレイスを見つける。老舗の静寂が宿る、東京の第三の居場所</p>
+                <p class="text-xs text-muted mt-1">2026年7月1日</p>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        
+        
+        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+          <p class="label mb-4">サードプレイスとは</p>
+          <ul class="space-y-0">
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/en/stories/concept/what-is-third-place-japan/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/great-good-place-book/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                『The Great Good Place』が示したサードプレイス理論の核心
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/ray-oldenburg-third-place/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの提唱者レイ・オルデンバーグとは何者か
+              </a>
+            </li>
+            
+            <li class="border-b border-border last:border-0">
+              <a href="/stories/about/third-place-examples/" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
+                サードプレイスの具体例10選：どんな場所が当てはまるか
+              </a>
+            </li>
+            
+          </ul>
+          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+        </div>
+        
+
+      </div>
+    </aside>
+
+  </div>
+
+  
+  
+  
+  <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
+    <div class="flex items-center gap-2 mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <p class="label">関連記事</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <a href="/stories/inbound-experience/tokyo-inbound-third-place-guide/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp" alt="外国人旅行者のための東京サードプレイスガイド。言葉の壁を超えた居場所"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">インバウンド観光・体験施設</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">外国人旅行者のための東京サードプレイスガイド。言葉の壁を超えた居場所</h3>
+          <p class="text-xs text-muted mt-2">2026年7月1日</p>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/meiji-jingu-third-place-tokyo/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/meiji-jingu-shrine-tokyo-third-place.webp" alt="Meiji Jingu as a Third Place: Finding Silence in Central Tokyo"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">神社・寺院・パワースポット</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Meiji Jingu as a Third Place: Finding Silence in Central Tokyo</h3>
+          <p class="text-xs text-muted mt-2">2026年7月1日</p>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/what-is-third-place-japan/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/what-is-third-place-japan-interior.webp" alt="What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho</h3>
+          <p class="text-xs text-muted mt-2">2026年7月1日</p>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  <div class="mt-8 grid grid-cols-2 gap-4" style="opacity:1;visibility:visible;">
+    <div>
+      
+      <a href="/en/stories/concept/what-is-third-place-japan/" class="group flex items-center gap-3 rounded-xl p-4 h-full border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
+        
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
+          <img src="/assets/images/articles/what-is-third-place-japan-interior.webp" alt="What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="min-w-0">
+          <p class="text-xs text-muted mb-1">‹ 前の記事</p>
+          <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho</p>
+        </div>
+      </a>
+      
+    </div>
+    <div>
+      
+      <a href="/en/stories/concept/meiji-jingu-third-place-tokyo/" class="group flex items-center gap-3 rounded-xl p-4 h-full border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
+        <div class="min-w-0 flex-1 text-right">
+          <p class="text-xs text-muted mb-1">次の記事 ›</p>
+          <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Meiji Jingu as a Third Place: Finding Silence in Central Tokyo</p>
+        </div>
+        
+        <div class="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-border">
+          <img src="/assets/images/articles/meiji-jingu-shrine-tokyo-third-place.webp" alt="Meiji Jingu as a Third Place: Finding Silence in Central Tokyo"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+      </a>
+      
+    </div>
+  </div>
+  
+
+</div>
+
+</main>
+<footer class="mt-24 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
+
+      <!-- ① 最新記事 -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">最新記事</p>
+        <ul class="space-y-2 text-xs text-muted">
+          
+          
+          <li><a href="/stories/about/what-is-third-place/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスとは何か？定義・特徴・具体例をTPJが完全解説【保存版】</a></li>
+          
+          <li><a href="/stories/about/third-place-meaning/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスの意味をわかりやすく：家・職場の次に必要な「第三の場所」</a></li>
+          
+          <li><a href="/stories/about/first-second-third-place-difference/" class="hover:text-gold transition-colors line-clamp-1">ファースト・セカンド・サードプレイスの違いとは？3つの場所を整理する</a></li>
+          
+          <li><a href="/stories/about/third-place-8-conditions/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスの8つの条件とは？オルデンバーグの定義をTPJが再解釈</a></li>
+          
+        </ul>
+        <a href="/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">記事一覧 →</a>
+      </div>
+
+      <!-- ② サードプレイスとは -->
+      <div>
+        <p class="label mb-4">サードプレイスとは</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物・コラム</a></li>
+          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
+          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+        </ul>
+      </div>
+
+      <!-- ③ カテゴリ -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="label mb-4">カテゴリ</p>
+        <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
+          
+          <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
+          
+          <li><a href="/stories/onsen-ryokan/" class="hover:text-gold transition-colors">温泉旅館・高級旅館</a></li>
+          
+          <li><a href="/stories/villa-rental/" class="hover:text-gold transition-colors">貸切ヴィラ・一棟貸しの宿</a></li>
+          
+          <li><a href="/stories/restaurant-dining/" class="hover:text-gold transition-colors">レストラン・ダイニング</a></li>
+          
+          <li><a href="/stories/cafe-specialty-coffee/" class="hover:text-gold transition-colors">カフェ・スペシャルティコーヒー</a></li>
+          
+          <li><a href="/stories/bar-whiskey/" class="hover:text-gold transition-colors">バー・ウイスキー・カクテル</a></li>
+          
+          <li><a href="/stories/spa-sauna-wellness/" class="hover:text-gold transition-colors">スパ・サウナ・ウェルネス施設</a></li>
+          
+          <li><a href="/stories/premium-salon/" class="hover:text-gold transition-colors">高級サロン・プライベートサロン</a></li>
+          
+          <li><a href="/stories/coworking/" class="hover:text-gold transition-colors">コワーキング・シェアオフィス</a></li>
+          
+          <li><a href="/stories/members-lounge/" class="hover:text-gold transition-colors">会員制ラウンジ・クラブ</a></li>
+          
+          <li><a href="/stories/nature-glamping/" class="hover:text-gold transition-colors">山・自然体験・グランピング</a></li>
+          
+          <li><a href="/stories/retreat-zen/" class="hover:text-gold transition-colors">リトリート・禅体験</a></li>
+          
+          <li><a href="/stories/shrine-temple/" class="hover:text-gold transition-colors">神社・寺院・パワースポット</a></li>
+          
+          <li><a href="/stories/inbound-experience/" class="hover:text-gold transition-colors">インバウンド観光・体験施設</a></li>
+          
+          <li><a href="/stories/culture-sports-leisure/" class="hover:text-gold transition-colors">文化・スポーツ・レジャー施設</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- ④ エリア -->
+      <div>
+        <p class="label mb-4">エリア</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/area/tokyo/" class="hover:text-gold transition-colors">東京都</a></li>
+          <li><a href="/stories/area/" class="hover:text-gold transition-colors mt-1 block">場所をめぐる →</a></li>
+        </ul>
+        <p class="mt-3 text-xs text-muted opacity-60">エリア拡大中</p>
+      </div>
+
+      <!-- ⑤ 認証店舗 -->
+      <div>
+        <p class="label mb-4">認証店舗</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/stories/certified/" class="hover:text-gold transition-colors">認証店舗一覧</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <a href="/en/stories/" class="inline-flex items-center gap-1.5 text-xs border border-gold/40 text-muted rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-all">
+        <i data-lucide="globe" class="w-3 h-3"></i>
+        English
+      </a>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>
