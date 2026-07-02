@@ -342,6 +342,11 @@
             "name_en": "Kanda"
           },
           {
+            "slug": "jimbocho",
+            "name": "神保町",
+            "name_en": "Jimbocho"
+          },
+          {
             "slug": "ochanomizu",
             "name": "御茶ノ水",
             "name_en": "Ochanomizu"

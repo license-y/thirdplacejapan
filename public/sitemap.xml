@@ -547,6 +547,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/jimbocho/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/ochanomizu/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
