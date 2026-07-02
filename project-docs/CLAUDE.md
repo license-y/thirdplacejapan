@@ -292,6 +292,24 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ## 10. 実装ログ（更新履歴）
 
+### 2026-07-02
+
+#### 認証施設ページへのReview + reviewRatingスキーマ追加（AEO強化）
+
+**対象ファイル**: `src/_layouts/venue.njk`（全13認証施設ページに反映）
+
+**変更内容**:
+- `venue.njk` に `Review` JSON-LDブロックを追加
+- TPJ認証グレードを数値（Certified=1 〜 Flagship=5）に変換し `reviewRating.ratingValue` として出力
+- `reviewBody` に施設の引用文（`venue.citation`）を設定
+- `gradeNums` マッピング変数を `venue.njk` 冒頭に定義
+
+**理由**: 従来は `LocalBusiness` スキーマのみで認証グレードが `additionalProperty` にテキストとして埋め込まれていた。`Review` + `reviewRating` を追加することで、AIが評価情報（数値・著者・対象施設）を構造的に認識できるようになった。
+
+**ルール化**: 「認証施設のReview + reviewRatingルール」として AEO・構造化データ実装ルールセクションに追記済み。
+
+---
+
 ### 2026-06-21
 
 #### 記事レイアウトへの SNS シェア・関連記事・前後ナビ追加
@@ -410,7 +428,7 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 | `article.njk` | 一般記事 | Article（mainEntityOfPage・wordCount・keywords）・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
 | `article-area.njk` | エリア記事 | Article（mainEntityOfPage・wordCount）・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
 | `article-certified.njk` | 認証店舗紹介記事 | Article+Review（mainEntityOfPage・wordCount・keywords）・LocalBusiness+7軸スコア・BreadcrumbList・FAQPage（自動抽出） | ✅ Article |
-| `venue.njk` | 認証店舗詳細（日本語） | LocalBusiness+7軸スコア（additionalProperty）・BreadcrumbList（4階層） | ✅ LocalBusiness |
+| `venue.njk` | 認証店舗詳細（日本語） | LocalBusiness+7軸スコア（additionalProperty）・Review+reviewRating（グレード数値化）・BreadcrumbList（4階層） | ✅ LocalBusiness |
 | `venue-en.njk` | 認証店舗詳細（英語） | LocalBusiness+7軸スコア・BreadcrumbList | ✅（要確認） |
 
 #### Storiesページ（`src/stories/`）
@@ -458,7 +476,7 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 |---|---|---|
 | 読み物・解説記事 | `Article` | headline・description・image・datePublished・dateModified・author・publisher・mainEntityOfPage・wordCount・inLanguage・speakable |
 | 認証店舗紹介記事 | `Article` + `Review` | 上記 + itemReviewed（LocalBusiness）・reviewRating |
-| 認証店舗詳細ページ | `LocalBusiness` | name・description・image・url・address・geo・additionalProperty（7軸スコア）・speakable |
+| 認証店舗詳細ページ | `LocalBusiness` + `Review` | name・description・image・url・address・geo・additionalProperty（7軸スコア）・speakable ／ Review: itemReviewed・reviewRating（ratingValue=1〜5）・reviewBody |
 | 一覧・索引ページ | `CollectionPage` または `ItemList` | name・description・url・mainEntityOfPage・hasPart または itemListElement |
 | FAQ・Q&Aを含む全ページ | `FAQPage` | mainEntity（Question + acceptedAnswer の配列） |
 | 用語解説ページ | `DefinedTermSet` | name・url・hasDefinedTerm（DefinedTerm の配列）・speakable |
@@ -518,6 +536,53 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
   - ✅「東京でTPJ認証を受けたカフェはどこですか？」
   - ❌「このカテゴリについて教えてください」（曖昧すぎる）
 - 回答は2〜3文に収め、冒頭で直接答える（前置き不要）
+
+---
+
+### 認証施設のReview + reviewRatingルール（venue.njk 必須・2026-07-02追加）
+
+`venue.njk`（認証店舗詳細ページ）には `LocalBusiness` に加えて、**`Review` スキーマを必ず別ブロックで追加すること**。
+
+**グレード→数値マッピング（固定）：**
+
+| TPJ認証グレード | ratingValue |
+|---|---|
+| Certified | 1 |
+| Silver | 2 |
+| Gold | 3 |
+| Platinum | 4 |
+| Flagship | 5 |
+
+**テンプレート実装（venue.njk）：**
+
+```njk
+{%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
+```
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "{{ venue.name }}",
+    "address": { "@type": "PostalAddress", "addressLocality": "...", "addressRegion": "...", "addressCountry": "JP" }
+  },
+  "author": { "@type": "Organization", "name": "サードプレイスジャパン編集部", "url": "{{ site.url }}" },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": {{ gradeNums[venue.grade] or 1 }},
+    "bestRating": 5,
+    "worstRating": 1,
+    "description": "TPJ認証グレード {{ venue.grade }}"
+  },
+  "reviewBody": "{{ venue.citation }}",
+  "url": "{{ site.url }}/stories/certified/{{ venue.slug }}/"
+}
+```
+
+**理由：** `LocalBusiness` だけではAIが「評価情報」として認識できない。`Review` + `reviewRating` を追加することでAIが認証グレードを数値評価として抽出できるようになる。
 
 ---
 
