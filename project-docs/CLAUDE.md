@@ -292,6 +292,41 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ## 10. 実装ログ（更新履歴）
 
+### 2026-07-02（デザイン統一）
+
+#### サイドバースタイル統一（ゴールド枠＋白背景）
+
+全ページのサイドバー（カテゴリ・最新記事・サードプレイスとは）を以下スタイルに統一。
+
+**統一スタイル**:
+```html
+class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;"
+```
+
+**対象ファイル（4ファイル）**:
+
+| ファイル | 対象ページ |
+|---|---|
+| `src/_layouts/article.njk` | 通常記事ページ（全記事） |
+| `src/_layouts/article-certified.njk` | 認証記事ページ |
+| `src/_layouts/article-area.njk` | エリアページ記事レイアウト |
+| `src/stories/category-index.njk` | 15カテゴリ一覧ページ |
+
+**変更不要のサイドバー**（カテゴリリスト形式ではないため対象外）:
+- `src/stories/area/l2-city.njk` / `l3-area.njk` → Googleマップ iframeサイドバー
+- `src/_layouts/venue.njk` / `venue-en.njk` → 住所・最寄駅テキスト情報
+
+#### ヘッダーカラー変更
+
+- `src/_includes/nav-stories.njk` のナビ背景色を `#6B4F3A`（赤みブラウン）→ `#2D2A26`（ダークウォームブラウン）に変更
+- ボトムボーダー: `rgba(107,79,58,0.8)` → `rgba(184,150,12,0.25)`（ゴールド薄線）に変更
+
+#### 前の記事・次の記事ナビ レイアウト変更
+
+- モバイル: 1カラム縦並び、PC（`md:`以上）: 2カラム横並び（`grid grid-cols-1 md:grid-cols-2`）
+- 「次の記事」: テキスト左・写真右（「前の記事」と対称レイアウト）
+- 対象ファイル: `src/_layouts/article.njk` / `article-certified.njk`
+
 ### 2026-07-02
 
 #### 認証施設ページへのReview + reviewRatingスキーマ追加（AEO強化）
