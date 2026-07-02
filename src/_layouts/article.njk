@@ -50,7 +50,7 @@ og_type: "article"
   "wordCount": {{ content | wordCount }},
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".prose p"]
+    "cssSelector": ["h1", ".answer-lead", ".faq-body p"]
   }
 }
 </script>
@@ -215,7 +215,7 @@ og_type: "article"
 
       {# 定義スニペット #}
       {% if snippet %}
-      <div class="mb-10 px-6 py-5 border-l-2 border-gold" style="background-color: rgba(184,150,12,0.04);" data-aos="fade-up">
+      <div class="answer-lead mb-10 px-6 py-5 border-l-2 border-gold" style="background-color: rgba(184,150,12,0.04);" data-aos="fade-up">
         <p class="text-sm text-dark leading-relaxed font-serif">{{ snippet }}</p>
       </div>
       {% endif %}
@@ -224,6 +224,13 @@ og_type: "article"
       {% if thumbnail %}
       <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
         <img src="{{ thumbnail }}" alt="{{ title }} | サードプレイスジャパン編集部" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      </div>
+      {% endif %}
+
+      {# 結論ファースト要約ブロック（AEO対応・snippet がない記事に自動表示）#}
+      {% if not snippet and description %}
+      <div class="answer-lead mb-10 px-5 py-4 rounded-xl" style="background-color: rgba(184,150,12,0.06); border-left: 2px solid #B8960C;" data-aos="fade-up">
+        <p class="text-sm font-medium text-dark leading-relaxed">{{ description }}</p>
       </div>
       {% endif %}
 
