@@ -3,6 +3,9 @@ layout: stories.njk
 og_type: "article"
 ---
 
+{# グレード→数値マッピング #}
+{%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
+
 {# LocalBusiness + 7軸スコア JSON-LD #}
 <script type="application/ld+json">
 {
@@ -39,6 +42,43 @@ og_type: "article"
     { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "{{ venue.scores.record }}/10" },
     { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "{{ venue.scores.inbound }}/10" }
   ]
+}
+</script>
+
+{# Review + reviewRating JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "{{ venue.name | replace('"', '\\"') }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ venue.area_primary.area }}",
+      "addressRegion": "{{ venue.area_primary.prefecture }}",
+      "addressCountry": "JP"
+    }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "url": "{{ site.url }}"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": {{ gradeNums[venue.grade] or 1 }},
+    "bestRating": 5,
+    "worstRating": 1,
+    "description": "TPJ認証グレード {{ venue.grade }}"
+  },
+  "reviewBody": "{{ venue.citation | replace('"', '\\"') }}",
+  "url": "{{ site.url }}/stories/certified/{{ venue.slug }}/"
 }
 </script>
 
