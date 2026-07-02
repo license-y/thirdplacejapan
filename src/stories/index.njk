@@ -27,10 +27,6 @@ hreflang_en: "/en/stories/"
       "urlTemplate": "{{ site.url }}/stories/?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
-  },
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".answer-lead", ".faq-body p"]
   }
 }
 </script>
@@ -60,8 +56,12 @@ hreflang_en: "/en/stories/"
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "name": {{ post.data.title | dump }},
-      "url": "{{ site.url }}{{ post.url }}"
+      "item": {
+        "@type": "Article",
+        "@id": "{{ site.url }}{{ post.url }}",
+        "name": {{ post.data.title | dump }},
+        "url": "{{ site.url }}{{ post.url }}"
+      }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]
