@@ -225,7 +225,7 @@ og_type: "article"
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">サードプレイスとは</p>
           <ul class="space-y-0">
-            {% for post in collections.aboutArticles | head(4) %}
+            {% for post in collections.aboutArticles | head(5) %}
             <li class="border-b border-border last:border-0">
               <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
                 {{ post.data.title }}
