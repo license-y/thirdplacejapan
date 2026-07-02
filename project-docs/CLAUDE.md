@@ -292,6 +292,14 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ## 10. 実装ログ（更新履歴）
 
+### 2026-07-02（デザイン統一・続き）
+
+#### サイドバー「サードプレイスとは」表示件数を5件に統一
+
+- 変更前：`head(4)`（4件表示）→ 変更後：`head(5)`（5件表示）
+- 対象ファイル：`src/_layouts/article.njk` / `article-area.njk` / `src/stories/category-index.njk`
+- `article-certified.njk` にはこのセクションがないため対象外
+
 ### 2026-07-02（デザイン統一）
 
 #### サイドバースタイル統一（ゴールド枠＋白背景）
