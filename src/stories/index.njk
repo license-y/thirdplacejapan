@@ -51,7 +51,7 @@ hreflang_en: "/en/stories/"
   "name": "Third Place Japan Stories — 最新記事",
   "url": "{{ site.url }}/stories/",
   "itemListElement": [
-    {% set recentPosts = collections.articles | head(8) %}
+    {% set recentPosts = collections.articles | rejectLang("en") | head(8) %}
     {% for post in recentPosts %}
     {
       "@type": "ListItem",
