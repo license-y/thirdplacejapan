@@ -181,13 +181,13 @@ og_type: "article"
       <div class="sticky top-24 space-y-8">
 
         {# カテゴリ #}
-        <div>
+        <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">カテゴリ</p>
-          <ul class="space-y-1">
+          <ul class="space-y-0">
             {% for cat in categories %}
-            <li>
+            <li class="border-b border-border last:border-0">
               <a href="/stories/{{ cat.slug }}/"
-                 class="text-xs hover:text-gold transition-colors leading-snug block py-0.5
+                 class="text-xs hover:text-gold transition-colors leading-snug block py-1.5
                  {% if cat.slug == category_slug %}text-gold font-medium{% else %}text-muted{% endif %}">
                 {{ cat.name_ja }}
               </a>
@@ -199,7 +199,7 @@ og_type: "article"
         {# 最新記事 #}
         {% set latestPosts = collections.articles | head(5) %}
         {% if latestPosts and latestPosts.length %}
-        <div class="border-t border-border pt-8">
+        <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">最新記事</p>
           <ul class="space-y-4">
             {% for post in latestPosts %}
@@ -222,12 +222,12 @@ og_type: "article"
 
         {# サードプレイスとは #}
         {% if collections.aboutArticles and collections.aboutArticles.length %}
-        <div class="border-t border-border pt-8">
+        <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">サードプレイスとは</p>
-          <ul class="space-y-3">
+          <ul class="space-y-0">
             {% for post in collections.aboutArticles | head(4) %}
-            <li>
-              <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-0.5">
+            <li class="border-b border-border last:border-0">
+              <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
                 {{ post.data.title }}
               </a>
             </li>
