@@ -272,7 +272,7 @@ og_type: "article"
       <div class="sticky top-24 space-y-8">
 
         {# カテゴリ #}
-        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+        <div class="rounded-xl p-5 shadow-sm" style="border:1px solid rgba(184,150,12,0.22);background-color:#FDFBF8;">
           <p class="label mb-4">カテゴリ</p>
           <ul class="space-y-0">
             {% for cat in categories %}
@@ -290,7 +290,7 @@ og_type: "article"
         {# 最新記事 #}
         {% set latestPosts = collections.articles | head(5) %}
         {% if latestPosts and latestPosts.length %}
-        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+        <div class="rounded-xl p-5 shadow-sm" style="border:1px solid rgba(184,150,12,0.22);background-color:#FDFBF8;">
           <p class="label mb-4">最新記事</p>
           <ul class="space-y-4">
             {% for post in latestPosts %}
@@ -313,7 +313,7 @@ og_type: "article"
 
         {# サードプレイスとは #}
         {% if collections.aboutArticles and collections.aboutArticles.length %}
-        <div class="border border-border rounded-xl p-5" style="background-color: rgba(184,150,12,0.03);">
+        <div class="rounded-xl p-5 shadow-sm" style="border:1px solid rgba(184,150,12,0.22);background-color:#FDFBF8;">
           <p class="label mb-4">サードプレイスとは</p>
           <ul class="space-y-0">
             {% for post in collections.aboutArticles | head(4) %}
