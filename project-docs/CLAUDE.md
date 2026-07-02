@@ -320,6 +320,8 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 1. **シェアボタン**（記事本文末尾）: X（Twitter）・LINE・Facebook の3ボタン。タイトルとURLをURLエンコードして各SNSの公式シェアURLに渡す。
 2. **関連記事**（グリッド外・全幅）: 同じ `category_slug` の記事を最大3件、サムネイル付きで表示。同カテゴリが3件未満の場合は他カテゴリの最新記事で補完。
 3. **前の記事・次の記事**（関連記事の下）: `collections.articles`（日付降順）から前後を取得。左＝古い記事、右＝新しい記事。
+   - **レイアウト**: モバイルは1カラム（縦並び）、PC（`md:` 以上）は2カラム横並び。`grid grid-cols-1 md:grid-cols-2 gap-4` で実装。
+   - **対象ファイル**: `src/_layouts/article.njk`・`src/_layouts/article-certified.njk`（両方に同じ実装）
 
 **追加フィルター（`.eleventy.js`）**:
 - `urlencode(str)` → `encodeURIComponent` ラッパー
