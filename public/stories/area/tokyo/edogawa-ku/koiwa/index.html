@@ -343,30 +343,64 @@
     document.body.style.overflow = '';
   }
 
+  const PAGE_SIZE = 15;
+  let allResults = [];
+  let shownCount = 0;
+
+  function renderItem(item) {
+    var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+    return '<a href="' + item.url + '">'
+      + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+      + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+      + '</a>';
+  }
+
+  function updateMoreBtn() {
+    var existing = document.getElementById('pf-more-btn');
+    if (existing) existing.remove();
+    if (shownCount < allResults.length) {
+      var remaining = allResults.length - shownCount;
+      var btn = document.createElement('button');
+      btn.id = 'pf-more-btn';
+      btn.textContent = 'さらに' + Math.min(remaining, PAGE_SIZE) + '件を表示（残り' + remaining + '件）';
+      btn.style.cssText = 'display:block;width:100%;margin-top:0.5rem;padding:0.6rem;font-size:0.75rem;color:#B8960C;border:1px solid rgba(184,150,12,0.4);border-radius:0.5rem;background:#fff;cursor:pointer;';
+      btn.addEventListener('click', async function() {
+        var next = allResults.slice(shownCount, shownCount + PAGE_SIZE);
+        var items = await Promise.all(next.map(function(r) { return r.data(); }));
+        items.forEach(function(item) {
+          var div = document.createElement('div');
+          div.innerHTML = renderItem(item);
+          results.insertBefore(div.firstChild, btn);
+        });
+        shownCount += items.length;
+        updateMoreBtn();
+      });
+      results.appendChild(btn);
+    }
+  }
+
   if (input) {
     input.addEventListener('input', function() {
       clearTimeout(timer);
       const q = this.value.trim();
-      if (!q) { results.innerHTML = ''; msg.textContent = ''; return; }
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; allResults = []; shownCount = 0; return; }
       timer = setTimeout(async function() {
         try {
           const pagefind = await loadPF();
           const res = await pagefind.search(q);
-          if (!res.results.length) {
+          allResults = res.results;
+          shownCount = 0;
+          if (!allResults.length) {
             results.innerHTML = '';
             msg.textContent = '「' + q + '」の検索結果はありませんでした';
             return;
           }
-          const total = res.results.length;
-          msg.textContent = total + '件ヒット' + (total > 15 ? '（上位15件を表示）' : '');
-          const items = await Promise.all(res.results.slice(0, 15).map(function(r) { return r.data(); }));
-          results.innerHTML = items.map(function(item) {
-            var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
-            return '<a href="' + item.url + '">'
-              + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
-              + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
-              + '</a>';
-          }).join('');
+          msg.textContent = allResults.length + '件ヒット';
+          var first = allResults.slice(0, PAGE_SIZE);
+          var items = await Promise.all(first.map(function(r) { return r.data(); }));
+          shownCount = items.length;
+          results.innerHTML = items.map(renderItem).join('');
+          updateMoreBtn();
         } catch(e) {
           msg.textContent = '検索を読み込めませんでした';
         }
