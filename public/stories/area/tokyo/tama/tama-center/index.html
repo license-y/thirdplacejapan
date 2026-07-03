@@ -280,6 +280,7 @@
   const nav = document.getElementById('nav');
   const links = nav.querySelectorAll('.nav-link');
   const btn = document.getElementById('menu-toggle');
+  const mobileSearchBtn = document.getElementById('search-open-btn-mobile');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
@@ -292,6 +293,7 @@
     const color = '#F8F6F1';
     links.forEach(l => l.style.color = color);
     if (btn) btn.style.color = color;
+    if (mobileSearchBtn) mobileSearchBtn.style.color = color;
     ticking = false;
   }
   window.addEventListener('scroll', () => {
