@@ -193,12 +193,13 @@ hreflang_en: "/en/stories/"
             {% if post.data.area_name %}
             <span class="text-xs text-muted font-medium">{{ post.data.area_name }}</span>
             {% endif %}
-            <span class="new-badge hidden text-red-500 border border-red-500 text-[10px] font-medium tracking-widest px-2.5 py-0.5 rounded-full" data-publish="{{ post.date | dateISO }}">NEW</span>
+            <span class="new-badge hidden text-gold border border-gold text-[10px] font-medium tracking-widest px-2.5 py-0.5 rounded-full" data-publish="{{ post.date | dateISO }}">NEW</span>
           </div>
           <h3 class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
           {% if post.data.description %}
           <p class="text-xs text-muted leading-relaxed" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.description }}</p>
           {% endif %}
+          <p class="text-[10px] text-muted mt-2">{{ post.date | dateJa }}</p>
         </div>
       </a>
       {% endif %}
