@@ -1,0 +1,166 @@
+---
+pagination:
+  data: areaL2Cat
+  size: 1
+  alias: item
+permalink: "/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/"
+layout: area.njk
+---
+{# ──── FAQPage JSON-LD ──── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ item.city.name }}でサードプレイスとして認証された{{ item.category.name_ja }}はどこですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Third Place Japanが{{ item.city.name }}で認証した{{ item.category.name_ja }}の情報は、{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/から確認できます。独自の7軸評価基準（居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応）に基づき認証されています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.city.name }}で静かに過ごせる{{ item.category.name_ja }}は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.city.name }}の{{ item.category.name_ja }}の中で静寂性に優れた場所については、Third Place Japanのエリア別カテゴリページから各エリアの詳細をご確認ください。7軸評価の「静寂性・プライバシー」スコアをもとに認証しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ item.city.name }}の{{ item.category.name_ja }}の特徴は何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.city.name }}（{{ item.prefecture.name }}）の{{ item.category.name_ja }}は、街の性格を反映した多様な居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。"
+      }
+    }
+  ]
+}
+</script>
+
+{# ──── BreadcrumbList JSON-LD ──── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ item.prefecture.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/" },
+    { "@type": "ListItem", "position": 4, "name": "{{ item.city.name }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" },
+    { "@type": "ListItem", "position": 5, "name": "{{ item.category.name_ja }}", "item": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/" }
+  ]
+}
+</script>
+
+{# ──── CollectionPage JSON-LD ──── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "{{ item.city.name }}の{{ item.category.name_ja }} | Third Place Japan",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanが認証した{{ item.category.name_ja }}。7軸評価基準で認証した場所の一覧。",
+  "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/",
+  "inLanguage": "ja",
+  "about": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" } },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" }
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  {# パンくず #}
+  <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>/</span>
+    <a href="/stories/area/{{ item.prefecture.slug }}/" class="hover:text-gold transition-colors">{{ item.prefecture.name }}</a>
+    <span>/</span>
+    <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="hover:text-gold transition-colors">{{ item.city.name }}</a>
+    <span>/</span>
+    <span>{{ item.category.name_ja }}</span>
+  </nav>
+
+  {# ──── ヘッダー ──── #}
+  <div class="mb-14" data-aos="fade-up">
+    <p class="label mb-4">{{ item.city.name }} × {{ item.category.name_ja }}</p>
+    <h1 class="font-serif text-4xl md:text-5xl font-light text-dark mb-4 leading-tight">
+      {{ item.city.name }}の<br>{{ item.category.name_ja }}
+    </h1>
+    <div class="gold-rule mb-8"></div>
+    <p class="text-base text-text leading-relaxed max-w-xl">
+      Third Place Japanが独自の7軸評価基準で認証した、<br class="hidden md:block">
+      {{ item.city.name }}の{{ item.category.name_ja }}。<br class="hidden md:block">
+      それぞれの場所が持つ固有の価値を、静かに記録しています。
+    </p>
+  </div>
+
+  {# ──── 関連記事 ──── #}
+  {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) | articlesByCategory(item.category.slug) %}
+  {% if cityArticles and cityArticles.length %}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">関連記事 — {{ cityArticles.length }}件</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for post in cityArticles %}
+      <a href="{{ post.url }}" class="group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-gold/30 hover:border-gold">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <h3 class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>
+          <p class="text-[10px] text-muted">{{ post.date | dateJa }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {# ──── 認証店舗一覧 ──── #}
+  {% if item.venues and item.venues.length %}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">認証店舗 — {{ item.venues | length }}件</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for v in item.venues | sortByGrade %}
+      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {# 記事も店舗もない場合 #}
+  {% if (not cityArticles or not cityArticles.length) and (not item.venues or not item.venues.length) %}
+  <p class="text-sm text-muted" data-aos="fade-up">このカテゴリの認証店舗・記事は準備中です。</p>
+  {% endif %}
+
+  {# ──── 他の業種へのリンク ──── #}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <p class="label mb-6">{{ item.city.name }}の他の業種</p>
+    <div class="flex flex-wrap gap-3">
+      {% for cat in areaL2Cat %}
+      {% if cat.prefecture.slug == item.prefecture.slug and cat.city.slug == item.city.slug and cat.category.slug != item.category.slug %}
+      <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ cat.category.slug }}/"
+         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors rounded-full">
+        {{ cat.category.name_ja }}
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {# ──── フッター ──── #}
+  <div class="mt-10 pt-10 border-t border-border text-center" data-aos="fade-up">
+    <p class="font-serif text-sm text-muted italic leading-relaxed">
+      「この場所は、まだ見つかっていません。」
+    </p>
+    <p class="text-xs text-muted mt-3">
+      <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="hover:text-gold transition-colors">← {{ item.city.name }}のサードプレイス一覧へ</a>
+    </p>
+  </div>
+
+</div>

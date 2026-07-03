@@ -108,6 +108,20 @@ layout: area.njk
         </div>
       </section>
       {% endif %}
+      {# 業種から探す #}
+      <section class="mb-12" data-aos="fade-up">
+        <p class="label mb-6">業種から探す</p>
+        <div class="flex flex-wrap gap-3">
+          {% for cat in areaL2Cat %}
+          {% if cat.prefecture.slug == item.prefecture.slug and cat.city.slug == item.city.slug %}
+          <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ cat.category.slug }}/"
+             class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors rounded-full">
+            {{ cat.category.name_ja }}
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </section>
       {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
       {% if cityArticles.length %}
       <section class="mb-12" data-aos="fade-up">
@@ -214,6 +228,20 @@ layout: area.njk
     </div>
   </section>
   {% endif %}
+  {# 業種から探す #}
+  <section class="mb-16" data-aos="fade-up">
+    <p class="label mb-6">業種から探す</p>
+    <div class="flex flex-wrap gap-3">
+      {% for cat in areaL2Cat %}
+      {% if cat.prefecture.slug == item.prefecture.slug and cat.city.slug == item.city.slug %}
+      <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ cat.category.slug }}/"
+         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors rounded-full">
+        {{ cat.category.name_ja }}
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
   {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
   {% if cityArticles.length %}
   <section class="mb-16" data-aos="fade-up">
