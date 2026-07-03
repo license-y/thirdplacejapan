@@ -176,8 +176,9 @@
             msg.textContent = '「' + q + '」の検索結果はありませんでした';
             return;
           }
-          msg.textContent = '';
-          const items = await Promise.all(res.results.slice(0, 8).map(function(r) { return r.data(); }));
+          const total = res.results.length;
+          msg.textContent = total + '件ヒット' + (total > 15 ? '（上位15件を表示）' : '');
+          const items = await Promise.all(res.results.slice(0, 15).map(function(r) { return r.data(); }));
           results.innerHTML = items.map(function(item) {
             var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
             return '<a href="' + item.url + '">'

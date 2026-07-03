@@ -294,6 +294,33 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ### 2026-07-03
 
+#### 検索：件数表示＋表示件数を15件に拡大
+
+**対象ファイル**：`src/_includes/nav-stories.njk`
+
+**変更内容**：
+
+| 項目 | 変更前 | 変更後 |
+|---|---|---|
+| 表示件数 | 上位8件 | 上位15件 |
+| 件数表示 | なし | 「○件ヒット」を常時表示 |
+| 15件超の場合 | 超過分は無表示・通知なし | 「○件ヒット（上位15件を表示）」と明示 |
+
+**実装箇所**（`nav-stories.njk` 内 Pagefind コールバック）：
+```js
+const total = res.results.length;
+msg.textContent = total + '件ヒット' + (total > 15 ? '（上位15件を表示）' : '');
+const items = await Promise.all(res.results.slice(0, 15).map(...));
+```
+
+**ルール化**：
+- 検索表示件数の上限は **15件** を基準とする
+- 件数表示は必須。ユーザーが「これ以上あるか」を判断できるようにする
+- 上限を超えた場合は「（上位N件を表示）」と必ず明示する
+- 将来的に「もっと見る」ボタンを追加する場合は、`res.results` の残りを `slice(15, 30)` で追加取得する方式で実装する
+
+---
+
 #### .prose テーブルスタイル追加（table・th・td の枠・余白定義）
 
 **背景**：記事本文内の Markdown テーブルにスタイルが当たらず、枠なし・余白なしで読みにくい状態だった。
