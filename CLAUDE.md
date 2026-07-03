@@ -420,6 +420,12 @@ npm run build  # 本番ビルド（Cloudflare Pagesが自動実行）
 
 **重要**: `npm run dev` では検索（Pagefind）は動作しない。検索テストは `npm run build` 後に `npx serve public` で確認。
 
+## 検索UIの設定値
+
+- **1回の表示件数（PAGE_SIZE）：25件**（`src/_includes/nav-stories.njk` 内の `const PAGE_SIZE = 25`）
+  - 初回表示・「さらに表示」ボタン押下ともに25件ずつ表示する
+  - 変更する場合はこの定数のみ編集すればよい
+
 ## フロントマターのテンプレート
 
 ```markdown
