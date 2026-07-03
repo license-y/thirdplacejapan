@@ -100,8 +100,9 @@
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 28px;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -115,6 +116,18 @@
     #nav.over-dark  .nav-links a { color: rgba(242, 238, 232, 0.65); }
     #nav.over-light .nav-links a { color: var(--c-muted); }
     .nav-links a:hover { color: var(--c-accent) !important; }
+
+    .nav-links .nav-cta a {
+      color: var(--c-accent) !important;
+      border: 1px solid rgba(184,150,12,0.5);
+      padding: 6px 14px;
+      letter-spacing: 0.08em;
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav-links .nav-cta a:hover {
+      background: var(--c-accent);
+      color: #F2EEE8 !important;
+    }
 
     /* Hamburger */
     .nav-burger {
@@ -150,7 +163,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 48px;
+      gap: 40px;
     }
     .nav-overlay.open { display: flex; }
     .nav-overlay a {
@@ -163,6 +176,14 @@
       transition: color 0.3s ease;
     }
     .nav-overlay a:hover { color: var(--c-accent); }
+    .nav-overlay .overlay-cta {
+      font-size: 14px;
+      font-family: var(--font-sans);
+      color: var(--c-accent) !important;
+      border: 1px solid rgba(184,150,12,0.5);
+      padding: 10px 24px;
+      letter-spacing: 0.1em;
+    }
 
     /* ─── Sections ─── */
     .s-light { background: var(--c-bg);     padding: var(--sp-section) 48px; }
@@ -290,7 +311,62 @@
 
     .body-text p + p { margin-top: 24px; }
 
-    /* ─── Gaze (まなざし) ─── */
+    /* ─── "詳しく見る" button ─── */
+    .btn-more {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--c-accent);
+      background: none;
+      border: 1px solid rgba(184,150,12,0.35);
+      padding: 8px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+      font-family: var(--font-sans);
+    }
+    .btn-more:hover { background: rgba(184,150,12,0.08); }
+    .btn-more-dark {
+      color: rgba(184,150,12,0.8);
+      border-color: rgba(184,150,12,0.3);
+    }
+
+    /* ─── No-Buy block ─── */
+    .no-buy-block {
+      text-align: center;
+      padding: 80px 32px;
+    }
+    .no-buy-eyebrow {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(184,150,12,0.6);
+      margin-bottom: 36px;
+    }
+    .no-buy-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 300;
+      color: #F2EEE8;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+    .no-buy-sub {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(242,238,232,0.45);
+      line-height: 2.2;
+      letter-spacing: 0.04em;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+
+    /* ─── Gaze ─── */
     .gaze-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -334,164 +410,253 @@
       line-height: 2;
     }
 
-    /* ─── Axes (7軸) ─── */
-    .axes-tag {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: rgba(184, 150, 12, 0.5);
-      border: 1px solid rgba(184, 150, 12, 0.18);
-      padding: 4px 12px;
-      margin-bottom: 48px;
-    }
-
-    /* ─── Product Axes ─── */
-    .axes-intro {
+    /* ─── Criteria Map ─── */
+    .cmap-lead {
       font-size: 15px;
       font-weight: 300;
       color: var(--c-muted);
       line-height: 2.1;
       margin-bottom: 56px;
+      max-width: 720px;
     }
 
-    .axis-list { border-top: 1px solid rgba(45,42,38,0.08); }
+    .cmap-group {
+      border-radius: 4px;
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+    .cmap-group-label {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .cmap-group-basho  { background: #EDE8DF; }
+    .cmap-group-basho  .cmap-group-label { color: var(--c-muted); }
+    .cmap-group-kokoro { background: #2D4A3E; }
+    .cmap-group-kokoro .cmap-group-label { color: rgba(242,238,232,0.55); }
+    .cmap-group-hiroga { background: #2A2520; }
+    .cmap-group-hiroga .cmap-group-label { color: rgba(242,238,232,0.45); }
 
-    .axis-row {
+    .cmap-row {
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 0 28px;
-      align-items: baseline;
-      padding: 26px 0;
-      border-bottom: 1px solid rgba(45,42,38,0.08);
+      grid-template-columns: 1fr 48px 1fr;
+      gap: 0 8px;
+      align-items: center;
+      margin-bottom: 12px;
     }
+    .cmap-row:last-child { margin-bottom: 0; }
 
-    .axis-n {
-      font-size: 10px;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      color: var(--c-accent);
-      padding-top: 2px;
+    .cmap-card {
+      padding: 18px 20px;
+      border-radius: 3px;
     }
+    .cmap-group-basho  .cmap-card { background: rgba(255,255,255,0.55); }
+    .cmap-group-kokoro .cmap-card { background: rgba(255,255,255,0.07); }
+    .cmap-group-hiroga .cmap-card { background: rgba(255,255,255,0.05); }
 
-    .axis-title {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--c-text);
-      margin-bottom: 6px;
-      letter-spacing: 0.02em;
-    }
-
-    .axis-desc {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--c-muted);
-      line-height: 1.9;
-    }
-
-    .axis-group {
-      padding: 32px 0 10px;
-    }
-
-    .axis-group-label {
+    .cmap-card-num {
       font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: rgba(184, 150, 12, 0.5);
-    }
-
-    .tpp-case {
-      margin-top: 56px;
-      padding: 40px 0 0;
-      border-top: 1px solid rgba(45,42,38,0.08);
-    }
-
-    .tpp-case-eyebrow {
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
+      letter-spacing: 0.2em;
       color: var(--c-accent);
       display: block;
-      margin-bottom: 18px;
+      margin-bottom: 6px;
     }
+    .cmap-group-kokoro .cmap-card-num,
+    .cmap-group-hiroga .cmap-card-num { color: rgba(184,150,12,0.7); }
 
-    .tpp-case-title {
+    .cmap-card-title {
       font-family: var(--font-serif);
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 400;
-      color: var(--c-text);
-      margin-bottom: 12px;
-      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+      line-height: 1.5;
     }
+    .cmap-group-basho  .cmap-card-title { color: var(--c-text); }
+    .cmap-group-kokoro .cmap-card-title { color: #F2EEE8; }
+    .cmap-group-hiroga .cmap-card-title { color: #F2EEE8; }
 
-    .tpp-case-body {
-      font-size: 13px;
+    .cmap-card-desc {
+      font-size: 11px;
       font-weight: 300;
-      color: var(--c-muted);
-      line-height: 2;
+      line-height: 1.8;
+    }
+    .cmap-group-basho  .cmap-card-desc { color: var(--c-muted); }
+    .cmap-group-kokoro .cmap-card-desc { color: rgba(242,238,232,0.5); }
+    .cmap-group-hiroga .cmap-card-desc { color: rgba(242,238,232,0.4); }
+
+    .cmap-product-card .btn-more {
+      margin-top: 12px;
+      font-size: 10px;
+      padding: 5px 14px;
     }
 
-    /* ─── Grades ─── */
-    .grades-intro {
+    .cmap-arrow {
+      text-align: center;
+      font-size: 18px;
+      color: var(--c-accent);
+      user-select: none;
+    }
+    .cmap-group-basho .cmap-arrow { color: rgba(184,150,12,0.6); }
+
+    /* ─── Grades Table ─── */
+    .grades-lead {
       font-size: 15px;
       font-weight: 300;
       color: rgba(242,238,232,0.55);
       line-height: 2.1;
-      margin-bottom: 56px;
-    }
-
-    .grades-intro p + p { margin-top: 20px; }
-
-    .grade-ladder {
-      border-top: 1px solid rgba(242,238,232,0.08);
       margin-bottom: 48px;
     }
 
-    .grade-row {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      padding: 22px 0;
+    .grade-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 32px;
+    }
+    .grade-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    .grade-table th {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(242,238,232,0.28);
+      text-align: left;
+      padding: 0 16px 18px 0;
       border-bottom: 1px solid rgba(242,238,232,0.08);
     }
-
-    .grade-name {
+    .grade-table td {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(242,238,232,0.6);
+      padding: 18px 16px 18px 0;
+      border-bottom: 1px solid rgba(242,238,232,0.06);
+      line-height: 1.8;
+      vertical-align: top;
+    }
+    .grade-table tr:last-child td { border-bottom: none; }
+    .grade-table .grade-name-cell {
       font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      width: 100px;
+      white-space: nowrap;
+    }
+    .grade-table tr:nth-child(1) .grade-name-cell { color: rgba(242,238,232,0.32); }
+    .grade-table tr:nth-child(2) .grade-name-cell { color: rgba(242,238,232,0.46); }
+    .grade-table tr:nth-child(3) .grade-name-cell { color: rgba(242,238,232,0.62); }
+    .grade-table tr:nth-child(4) .grade-name-cell { color: rgba(242,238,232,0.80); }
+    .grade-table tr:nth-child(5) .grade-name-cell { color: #F2EEE8; }
+
+    .grade-free-badge {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: var(--c-accent);
+      border: 1px solid rgba(184,150,12,0.4);
+      padding: 2px 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .grade-table .btn-more {
+      margin-top: 8px;
+      font-size: 10px;
+      padding: 4px 12px;
+    }
+
+    .grade-note {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(242,238,232,0.32);
+      line-height: 2;
+      padding: 28px 32px;
+      border: 1px solid rgba(242,238,232,0.07);
+      margin-top: 16px;
+    }
+
+    /* ─── Services Table ─── */
+    .services-notice {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 1.9;
+      padding: 18px 24px;
+      border: 1px solid rgba(184,150,12,0.3);
+      background: rgba(184,150,12,0.04);
+      margin-bottom: 44px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .services-notice::before {
+      content: '─';
+      color: var(--c-accent);
       flex-shrink: 0;
     }
 
-    .grade-row:nth-child(1) .grade-name { color: rgba(242,238,232,0.32); }
-    .grade-row:nth-child(2) .grade-name { color: rgba(242,238,232,0.46); }
-    .grade-row:nth-child(3) .grade-name { color: rgba(242,238,232,0.62); }
-    .grade-row:nth-child(4) .grade-name { color: rgba(242,238,232,0.80); }
-    .grade-row:nth-child(5) .grade-name { color: #F2EEE8; }
-
-    .grade-bar { height: 1px; background: rgba(184,150,12,0.25); }
-    .grade-row:nth-child(1) .grade-bar { width: 18%; }
-    .grade-row:nth-child(2) .grade-bar { width: 35%; }
-    .grade-row:nth-child(3) .grade-bar { width: 54%; }
-    .grade-row:nth-child(4) .grade-bar { width: 74%; }
-    .grade-row:nth-child(5) .grade-bar {
-      flex: 1;
-      background: linear-gradient(90deg, rgba(184,150,12,0.65), rgba(184,150,12,0.08));
+    .service-table-wrap { overflow-x: auto; }
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
     }
-
-    .grades-closing {
-      font-size: 14px;
+    .service-table th {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      text-align: left;
+      padding: 0 16px 16px 0;
+      border-bottom: 1px solid rgba(45,42,38,0.1);
+    }
+    .service-table td {
+      font-size: 13px;
       font-weight: 300;
-      color: rgba(242,238,232,0.38);
-      line-height: 2;
-      padding-top: 40px;
-      border-top: 1px solid rgba(242,238,232,0.07);
+      color: var(--c-muted);
+      padding: 18px 16px 18px 0;
+      border-bottom: 1px solid rgba(45,42,38,0.07);
+      line-height: 1.8;
+      vertical-align: top;
     }
+    .service-table tr:last-child td { border-bottom: none; }
+    .service-table .svc-name {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-text);
+      white-space: nowrap;
+    }
+    .service-table .btn-more {
+      margin-top: 6px;
+      font-size: 10px;
+      padding: 4px 12px;
+    }
+
+    .service-independence {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(45,42,38,0.08);
+    }
+    .service-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--c-accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184,150,12,0.3);
+      padding-bottom: 2px;
+    }
+    .service-link:hover { border-bottom-color: var(--c-accent); }
 
     /* ─── GBC ─── */
     .gbc-badge {
@@ -514,6 +679,224 @@
       letter-spacing: 0.03em;
       line-height: 1.5;
       margin-bottom: 44px;
+    }
+
+    /* ─── Step Flow ─── */
+    .step-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 52px;
+    }
+    .step-flow::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: calc(10% + 16px);
+      right: calc(10% + 16px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(184,150,12,0.3) 0%, rgba(184,150,12,0.1) 100%);
+    }
+    .step-item {
+      text-align: center;
+      padding: 0 8px;
+      position: relative;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,150,12,0.4);
+      background: var(--c-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--c-accent);
+      position: relative;
+      z-index: 1;
+    }
+    .step-title {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .step-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 1.9;
+    }
+
+    /* ─── FAQ Accordion ─── */
+    .faq-list { margin-top: 8px; }
+
+    .faq-details {
+      border-bottom: 1px solid rgba(45,42,38,0.09);
+    }
+    .faq-details:first-child { border-top: 1px solid rgba(45,42,38,0.09); }
+
+    .faq-details summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 40px 22px 0;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--c-text);
+      letter-spacing: 0.02em;
+      position: relative;
+      user-select: none;
+    }
+    .faq-details summary::-webkit-details-marker { display: none; }
+    .faq-details summary::after {
+      content: '+';
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: var(--c-accent);
+      font-weight: 300;
+      transition: transform 0.25s;
+    }
+    .faq-details[open] summary::after {
+      content: '−';
+    }
+    .faq-answer {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 2.1;
+      padding: 0 40px 24px 0;
+    }
+
+    /* ─── For Business CTA ─── */
+    .for-biz-inner {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .for-biz-eyebrow {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(184,150,12,0.6);
+      margin-bottom: 28px;
+    }
+    .for-biz-h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 4vw, 44px);
+      font-weight: 300;
+      color: #F2EEE8;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+    .for-biz-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(242,238,232,0.45);
+      line-height: 2.2;
+      margin-bottom: 44px;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--c-dark);
+      background: var(--c-accent);
+      padding: 16px 36px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.25s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .for-biz-link {
+      display: inline-block;
+      margin-top: 20px;
+      margin-left: 24px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(242,238,232,0.45);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .for-biz-link:hover { color: rgba(242,238,232,0.75); }
+
+    /* ─── Photo Frame ─── */
+    .photo-frame {
+      position: relative;
+      margin: 52px 0 64px;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(184, 150, 12, 0.22);
+      pointer-events: none;
+    }
+
+    .photo-credit {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.38);
+      z-index: 1;
+    }
+
+    .photo-credit a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .photo-credit a:hover { color: rgba(255,255,255,0.65); }
+
+    /* GBC photo style */
+    .gbc-photo {
+      position: relative;
+      margin: 0 0 52px;
+      overflow: hidden;
+      height: 360px;
+    }
+
+    .gbc-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.75);
+    }
+
+    .gbc-photo::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(184, 150, 12, 0.2);
+      pointer-events: none;
     }
 
     /* ─── Footer ─── */
@@ -581,71 +964,6 @@
       color: rgba(242,238,232,0.2);
     }
 
-    /* ─── Photo Frame ─── */
-    .photo-frame {
-      position: relative;
-      margin: 52px 0 64px;
-      overflow: hidden;
-    }
-
-    .photo-frame img {
-      display: block;
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .photo-frame::after {
-      content: '';
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(184, 150, 12, 0.22);
-      pointer-events: none;
-    }
-
-    .photo-credit {
-      position: absolute;
-      bottom: 10px;
-      right: 16px;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.38);
-      z-index: 1;
-    }
-
-    .photo-credit a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .photo-credit a:hover { color: rgba(255,255,255,0.65); }
-
-    /* GBC photo style */
-    .gbc-photo {
-      position: relative;
-      margin: 0 0 52px;
-      overflow: hidden;
-      height: 360px;
-    }
-
-    .gbc-photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: brightness(0.75);
-    }
-
-    .gbc-photo::after {
-      content: '';
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(184, 150, 12, 0.2);
-      pointer-events: none;
-    }
-
     /* ─── Scroll animation ─── */
     .fi {
       opacity: 0;
@@ -658,6 +976,71 @@
     .fi-d2 { transition-delay: 0.2s; }
     .fi-d3 { transition-delay: 0.3s; }
     .fi-d4 { transition-delay: 0.4s; }
+
+    /* ─── Modals ─── */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal[hidden] { display: none; }
+
+    .modal-bd {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,23,20,0.72);
+    }
+    .modal-box {
+      position: relative;
+      background: var(--c-bg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 48px;
+      border-radius: 2px;
+    }
+    .modal-x {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--c-muted);
+      line-height: 1;
+      padding: 4px 8px;
+    }
+    .modal-x:hover { color: var(--c-text); }
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--c-text);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .modal-body {
+      font-size: 14px;
+      color: var(--c-muted);
+      line-height: 2.1;
+    }
+    .modal-cta {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--c-accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184,150,12,0.3);
+      padding-bottom: 2px;
+    }
+    .modal-cta:hover { border-bottom-color: var(--c-accent); }
 
     /* ─── Responsive ─── */
     @media (max-width: 720px) {
@@ -677,12 +1060,38 @@
       .photo-frame img { height: 260px; }
       .gbc-photo { height: 240px; }
 
-      .axis-row { grid-template-columns: 44px 1fr; gap: 0 16px; }
-
-      .grade-row { gap: 20px; }
-      .grade-name { width: 80px; }
-
       .footer-cols { grid-template-columns: 1fr; gap: 36px; }
+
+      /* Criteria Map: arrow rotates 90deg (→ becomes ↓) */
+      .cmap-row {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+      }
+      .cmap-arrow {
+        transform: rotate(90deg);
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      /* Step flow: vertical */
+      .step-flow {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .step-flow::before { display: none; }
+      .step-item { text-align: left; display: flex; gap: 20px; align-items: flex-start; }
+      .step-num { flex-shrink: 0; margin: 0; }
+
+      /* Modal box */
+      .modal-box { padding: 32px 24px; }
+    }
+
+    @media (max-width: 900px) and (min-width: 721px) {
+      .step-flow {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .step-flow::before { display: none; }
     }
   </style>
 </head>
@@ -691,32 +1100,34 @@
   <!-- ─── Navigation ─── -->
   <nav id="nav" class="over-dark">
     <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="/assets/images/main/tpj-logo-banner.png" alt="Third Place Japan" loading="eager" decoding="async">
-    </a>
+      <a href="/" class="nav-logo">
+        <img src="/assets/images/main/tpj-logo-banner.png" alt="Third Place Japan" loading="eager" decoding="async">
+      </a>
 
-    <ul class="nav-links">
-      <li><a href="#philosophy">TPJについて</a></li>
-      <li><a href="#axes">空間の基準</a></li>
-      <li><a href="#product-axes">プロダクトの基準</a></li>
-      <li><a href="#grades">認証について</a></li>
-      <li><a href="/stories/">Stories</a></li>
-    </ul>
+      <ul class="nav-links">
+        <li><a href="#philosophy">TPJについて</a></li>
+        <li><a href="#criteria-map">7基準対応表</a></li>
+        <li><a href="#grades">認証グレード</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="/stories/">Stories</a></li>
+        <li class="nav-cta"><a href="#for-business">For Business</a></li>
+      </ul>
 
-    <button class="nav-burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="nav-burger" id="burger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
   <div class="nav-overlay" id="overlay" role="dialog" aria-label="ナビゲーション">
     <a href="#philosophy">TPJについて</a>
-    <a href="#axes">空間の基準</a>
-    <a href="#product-axes">プロダクトの基準</a>
-    <a href="#grades">認証について</a>
+    <a href="#criteria-map">7基準対応表</a>
+    <a href="#grades">認証グレード</a>
+    <a href="#services">サービス</a>
     <a href="/stories/">Stories</a>
+    <a href="#for-business" class="overlay-cta">For Business</a>
   </div>
 
   <!-- ─── 1. Hero ─── -->
@@ -728,7 +1139,19 @@
     </div>
   </section>
 
-  <!-- ─── 2. 思想 ─── -->
+  <!-- ─── 2. No-Buy ─── -->
+  <section id="no-buy" class="s-dark">
+    <div class="inner">
+      <div class="no-buy-block fi">
+        <span class="no-buy-eyebrow">TPJ — 認証の中立性</span>
+        <p class="no-buy-headline">「認証は、買えない。」</p>
+        <p class="no-buy-sub">評価・グレードは覆面調査員による独立した判断に基づきます。いかなる有償サービスの利用も、認証の可否やグレードに影響を与えることはありません。</p>
+        <button class="btn-more btn-more-dark" data-modal="modal-no-buy" id="trigger-modal-no-buy">詳しく見る</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. Philosophy ─── -->
   <section id="philosophy" class="s-light">
     <div class="inner">
       <span class="label fi">Philosophy</span>
@@ -736,7 +1159,7 @@
       <figure class="photo-frame fi" aria-hidden="true">
         <img
           src="/assets/images/main/specialty-coffee-interior-tokyo.webp"
-          alt="Miroku Hotel — Japanese minimal interior"
+          alt="Specialty coffee interior — Japanese minimal atmosphere"
           loading="lazy"
           decoding="async"
         >
@@ -751,10 +1174,11 @@
         <p>居心地。静けさ。自分の時間。日常から少し離れた、特別な体験。そうした価値は、これまで正しく言葉にされてこなかった。口コミの星の数や、検索順位では測れない。</p>
         <p>Third Place Japanは、この「いる体験の価値」を見つめ直すための小さな視点として生まれた。</p>
       </div>
+      <button class="btn-more fi" data-modal="modal-philosophy" id="trigger-modal-philosophy">詳しく見る</button>
     </div>
   </section>
 
-  <!-- ─── 3. まなざし ─── -->
+  <!-- ─── 4. Gaze ─── -->
   <section id="gaze" class="s-alt">
     <div class="inner">
       <span class="label fi">Our Gaze</span>
@@ -764,233 +1188,297 @@
           <span class="gaze-kw">Discover</span>
           <p class="gaze-title">見つける</p>
           <p class="gaze-body">派手な広告の裏側にある、丁寧に育てられた場所を見つける。規模ではなく、在り方を見る。</p>
+          <button class="btn-more" style="margin-top:20px" data-modal="modal-gaze-1" id="trigger-modal-gaze-1">詳しく見る</button>
         </div>
         <div class="gaze-item fi fi-d2">
           <span class="gaze-kw">Evaluate</span>
           <p class="gaze-title">見つめる</p>
           <p class="gaze-body">好き嫌いではなく、構造化された視点で、その空間がもたらす体験を見つめる。</p>
+          <button class="btn-more" style="margin-top:20px" data-modal="modal-gaze-2" id="trigger-modal-gaze-2">詳しく見る</button>
         </div>
         <div class="gaze-item fi fi-d3">
           <span class="gaze-kw">Certify</span>
           <p class="gaze-title">認める</p>
           <p class="gaze-body">数値化しづらかった価値を、ひとつの形として認める。競争のためでなく、大切にしてきたものを言葉にして残すために。</p>
+          <button class="btn-more" style="margin-top:20px" data-modal="modal-gaze-3" id="trigger-modal-gaze-3">詳しく見る</button>
         </div>
         <div class="gaze-item fi fi-d4">
           <span class="gaze-kw">Publish</span>
           <p class="gaze-title">伝える</p>
           <p class="gaze-body">その価値を、日本語と英語で、人にもAIにも届く形で発信する。静かに、しかし確かに。</p>
+          <button class="btn-more" style="margin-top:20px" data-modal="modal-gaze-4" id="trigger-modal-gaze-4">詳しく見る</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── 4. 空間の7基準 ─── -->
-  <section id="axes" class="s-light">
+  <!-- ─── 5. Criteria Map ─── -->
+  <section id="criteria-map" class="s-light">
     <div class="inner">
-      <span class="label fi">Evaluation — Place</span>
-      <h2 class="h2-light fi">空間の7基準 ─ いる体験を、7つの視点で見つめる</h2>
-      <p class="axes-intro fi">居心地のよさは、星の数では測れない。静けさは、口コミでは伝わらない。<br>その場所が持つ物語は、検索結果には現れない。<br>だからTPJは、独自の7つの軸で、空間が持つ価値を丁寧に見つめ直す。</p>
+      <span class="label fi">Evaluation — Place × Product</span>
+      <h2 class="h2-light fi">空間の7基準 × プロダクト7基準</h2>
+      <p class="cmap-lead fi">TPJが空間を評価する7つの軸は、そのままプロダクトの評価軸へと翻訳されます。認証された体験は、持ち帰れる形へ。</p>
 
-      <div class="axis-list">
+      <!-- Group 1: 場の質 -->
+      <div class="cmap-group cmap-group-basho fi">
+        <span class="cmap-group-label">場の質 — その場で感じる空間</span>
 
-        <div class="axis-group fi">
-          <span class="axis-group-label">場の質 — その場で感じる空間</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">01</span>
-          <div>
-            <p class="axis-title">居心地・空間品質</p>
-            <p class="axis-desc">光、音、温度、素材——五感で感じる、空間そのものの質。</p>
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">01</span>
+            <p class="cmap-card-title">居心地・空間品質</p>
+            <p class="cmap-card-desc">光、音、温度、素材——五感で感じる空間の質</p>
           </div>
-        </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">02</span>
-          <div>
-            <p class="axis-title">静寂性・プライバシー</p>
-            <p class="axis-desc">誰にも邪魔されない時間が守られているか。</p>
-          </div>
-        </div>
-
-        <div class="axis-group fi">
-          <span class="axis-group-label">心の核 — 心が動く</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">03</span>
-          <div>
-            <p class="axis-title">特別感・非日常性</p>
-            <p class="axis-desc">日常から少し離れた、ここにしかない体験があるか。</p>
-          </div>
-        </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">04</span>
-          <div>
-            <p class="axis-title">ストーリー・背景への共感</p>
-            <p class="axis-desc">その場所が積み重ねてきた歴史や哲学、こだわり。</p>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 01</span>
+            <p class="cmap-card-title">五感品質・素材</p>
+            <p class="cmap-card-desc">手に取るだけであの空間の記憶が蘇るか</p>
+            <button class="btn-more" data-modal="modal-cmap-1" id="trigger-modal-cmap-1">詳しく見る</button>
           </div>
         </div>
 
-        <div class="axis-group fi">
-          <span class="axis-group-label">広がり — 続く、伝わる、世界へ</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">05</span>
-          <div>
-            <p class="axis-title">再訪・継続価値</p>
-            <p class="axis-desc">また訪れたいと思わせる力。</p>
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">02</span>
+            <p class="cmap-card-title">静寂性・プライバシー</p>
+            <p class="cmap-card-desc">誰にも邪魔されない時間が守られているか</p>
+          </div>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 02</span>
+            <p class="cmap-card-title">静けさの再現</p>
+            <p class="cmap-card-desc">自宅で自分時間を演出できるか</p>
+            <button class="btn-more" data-modal="modal-cmap-2" id="trigger-modal-cmap-2">詳しく見る</button>
           </div>
         </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">06</span>
-          <div>
-            <p class="axis-title">記録・シェア体験</p>
-            <p class="axis-desc">誰かに伝えたくなる、心が動いた瞬間があるか。</p>
+      </div>
+
+      <!-- Group 2: 心の核 -->
+      <div class="cmap-group cmap-group-kokoro fi">
+        <span class="cmap-group-label">心の核 — 心が動く</span>
+
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">03</span>
+            <p class="cmap-card-title">特別感・非日常性</p>
+            <p class="cmap-card-desc">日常から少し離れた、ここにしかない体験</p>
           </div>
-        </div>
-        <div class="axis-row fi fi-d3">
-          <span class="axis-n">07</span>
-          <div>
-            <p class="axis-title">インバウンド・多言語対応</p>
-            <p class="axis-desc">海外からの訪問者も安心して過ごせるか。</p>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 03</span>
+            <p class="cmap-card-title">特別感・ギフト体験</p>
+            <p class="cmap-card-desc">贈る瞬間、開ける瞬間に非日常が宿るか</p>
+            <button class="btn-more" data-modal="modal-cmap-3" id="trigger-modal-cmap-3">詳しく見る</button>
           </div>
         </div>
 
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">04</span>
+            <p class="cmap-card-title">ストーリー・背景への共感</p>
+            <p class="cmap-card-desc">積み重ねてきた歴史や哲学</p>
+          </div>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 04</span>
+            <p class="cmap-card-title">ストーリー継承</p>
+            <p class="cmap-card-desc">背景ごと、贈れるか</p>
+            <button class="btn-more" data-modal="modal-cmap-4" id="trigger-modal-cmap-4">詳しく見る</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 3: 広がり -->
+      <div class="cmap-group cmap-group-hiroga fi">
+        <span class="cmap-group-label">広がり — 続く、伝わる、世界へ</span>
+
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">05</span>
+            <p class="cmap-card-title">再訪・継続価値</p>
+            <p class="cmap-card-desc">また訪れたいと思わせる力</p>
+          </div>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 05</span>
+            <p class="cmap-card-title">再購入・回遊価値</p>
+            <p class="cmap-card-desc">また手に取りたいと思わせる力</p>
+            <button class="btn-more" data-modal="modal-cmap-5" id="trigger-modal-cmap-5">詳しく見る</button>
+          </div>
+        </div>
+
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">06</span>
+            <p class="cmap-card-title">記録・シェア体験</p>
+            <p class="cmap-card-desc">誰かに伝えたくなる瞬間があるか</p>
+          </div>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 06</span>
+            <p class="cmap-card-title">シェア・記録性</p>
+            <p class="cmap-card-desc">撮りたくなる、語りたくなる設計</p>
+            <button class="btn-more" data-modal="modal-cmap-6" id="trigger-modal-cmap-6">詳しく見る</button>
+          </div>
+        </div>
+
+        <div class="cmap-row">
+          <div class="cmap-card">
+            <span class="cmap-card-num">07</span>
+            <p class="cmap-card-title">インバウンド・多言語対応</p>
+            <p class="cmap-card-desc">海外からの訪問者も安心して過ごせるか</p>
+          </div>
+          <div class="cmap-arrow">→</div>
+          <div class="cmap-card cmap-product-card">
+            <span class="cmap-card-num">Product 07</span>
+            <p class="cmap-card-title">インバウンド適性</p>
+            <p class="cmap-card-desc">持ち運べるか、多言語対応しているか</p>
+            <button class="btn-more" data-modal="modal-cmap-7" id="trigger-modal-cmap-7">詳しく見る</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── 5. プロダクトの7基準 ─── -->
-  <section id="product-axes" class="s-alt">
-    <div class="inner">
-      <span class="label fi">Evaluation — Product</span>
-      <h2 class="h2-light fi">プロダクトの7基準 ─ 持ち帰れる体験を、7つの視点で確かめる</h2>
-      <p class="axes-intro fi">認証された空間の体験を、プロダクトとして持ち帰れる形に翻訳できているか。<br>場所の7基準と1対1で対応する7つの視点で、その価値を見つめる。</p>
-
-      <div class="axis-list">
-
-        <div class="axis-group fi">
-          <span class="axis-group-label">場の質 — その場で感じた空間を、手元に</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">01</span>
-          <div>
-            <p class="axis-title">五感品質・素材</p>
-            <p class="axis-desc">味、香り、素材、パッケージ——手に取るだけで、あの空間の記憶が蘇るか。</p>
-          </div>
-        </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">02</span>
-          <div>
-            <p class="axis-title">静けさの再現</p>
-            <p class="axis-desc">自宅で「自分時間」を演出できるか。あの場所にいる静けさを、日常に持ち込めるか。</p>
-          </div>
-        </div>
-
-        <div class="axis-group fi">
-          <span class="axis-group-label">心の核 — 贈る瞬間、開ける瞬間に、物語が動く</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">03</span>
-          <div>
-            <p class="axis-title">特別感・ギフト体験</p>
-            <p class="axis-desc">贈る瞬間、開ける瞬間に、非日常が宿っているか。</p>
-          </div>
-        </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">04</span>
-          <div>
-            <p class="axis-title">ストーリー継承</p>
-            <p class="axis-desc">その場所が積み重ねてきた背景ごと、贈れるか。</p>
-          </div>
-        </div>
-
-        <div class="axis-group fi">
-          <span class="axis-group-label">広がり — 続く、伝わる、世界へ</span>
-        </div>
-        <div class="axis-row fi fi-d1">
-          <span class="axis-n">05</span>
-          <div>
-            <p class="axis-title">再購入・回遊価値</p>
-            <p class="axis-desc">また手に取りたいと思わせる力。そしてその場所へ、また足を運ばせるか。</p>
-          </div>
-        </div>
-        <div class="axis-row fi fi-d2">
-          <span class="axis-n">06</span>
-          <div>
-            <p class="axis-title">シェア・記録性</p>
-            <p class="axis-desc">撮りたくなる、語りたくなる設計。誰かに伝えたい衝動があるか。</p>
-          </div>
-        </div>
-        <div class="axis-row fi fi-d3">
-          <span class="axis-n">07</span>
-          <div>
-            <p class="axis-title">インバウンド適性</p>
-            <p class="axis-desc">持ち運べるか、多言語対応しているか。東京みやげとして、世界に渡せるか。</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="tpp-case fi">
-        <span class="tpp-case-eyebrow">First Case — Product Flagship</span>
-        <p class="tpp-case-title">キタサンドウ・リザーブ</p>
-        <p class="tpp-case-body">GBC（Green Beans Coffee）が手がけるコーヒーギフトレーベル。認証された旗艦店の体験を「持ち帰れる東京コーヒーギフト」として翻訳した、TPP第1号事例。サードプレイスで過ごした時間を、贈る形にする。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 6. グレード ─── -->
+  <!-- ─── 6. Grades ─── -->
   <section id="grades" class="s-dark">
     <div class="inner">
       <span class="label label-dark fi">Certification Grade</span>
-      <h2 class="h2-dark fi">認証という形 ─ 在り方を、確かめるための指標</h2>
-      <div class="grades-intro fi">
-        <p>TPJの認証は、5つの段階で構成されている。</p>
-        <p>これは順位をつけるためのものではない。それぞれの場所がどのような体験を大切にしてきたのかを確かめ、静かに形にするためのものだ。</p>
+      <h2 class="h2-dark fi">5段階の認証グレード</h2>
+      <p class="grades-lead fi">認証は順位ではありません。それぞれの場所の在り方を確かめ、形にするための指標です。</p>
+
+      <div class="grade-table-wrap fi">
+        <table class="grade-table">
+          <thead>
+            <tr>
+              <th>グレード</th>
+              <th>入口・申請方法</th>
+              <th>審査</th>
+              <th>費用</th>
+              <th>主なメリット</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="grade-name-cell">Certified</td>
+              <td>自薦・他薦いずれも可</td>
+              <td>覆面調査員による基礎確認</td>
+              <td>登録料・年会費ともに無料 <span class="grade-free-badge">無料</span></td>
+              <td>「第三の居場所」として初めて記録される</td>
+              <td><button class="btn-more btn-more-dark" data-modal="modal-grade-certified" id="trigger-modal-grade-certified">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="grade-name-cell">Silver</td>
+              <td>オーナー・責任者本人からの問い合わせ必須</td>
+              <td>ヒアリング＋複数回訪問・合議</td>
+              <td>お問い合わせください</td>
+              <td>7基準スコア掲載・ストーリー掲載可</td>
+              <td><button class="btn-more btn-more-dark" data-modal="modal-grade-silver" id="trigger-modal-grade-silver">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="grade-name-cell">Gold</td>
+              <td>Silver認証施設のうち継続対話を経たもの</td>
+              <td>再訪調査＋継続評価</td>
+              <td>お問い合わせください</td>
+              <td>再訪価値認定・メディア紹介機会が増える</td>
+              <td><button class="btn-more btn-more-dark" data-modal="modal-grade-gold" id="trigger-modal-grade-gold">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="grade-name-cell">Platinum</td>
+              <td>Gold認証施設のうち卓越した体験価値を持つもの</td>
+              <td>複数チームによる厳格な再評価</td>
+              <td>お問い合わせください</td>
+              <td>国内外への発信（英語版含む）で優先掲載</td>
+              <td><button class="btn-more btn-more-dark" data-modal="modal-grade-platinum" id="trigger-modal-grade-platinum">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="grade-name-cell">Flagship</td>
+              <td>TPJが「理念を体現する」と認めた最上位</td>
+              <td>編集部による最終審査</td>
+              <td>お問い合わせください</td>
+              <td>TPJの理念を体現する存在として最上位掲載</td>
+              <td><button class="btn-more btn-more-dark" data-modal="modal-grade-flagship" id="trigger-modal-grade-flagship">詳しく見る</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <div class="grade-ladder fi">
-        <div class="grade-row">
-          <span class="grade-name">Certified</span>
-          <span class="grade-bar"></span>
-        </div>
-        <div class="grade-row">
-          <span class="grade-name">Silver</span>
-          <span class="grade-bar"></span>
-        </div>
-        <div class="grade-row">
-          <span class="grade-name">Gold</span>
-          <span class="grade-bar"></span>
-        </div>
-        <div class="grade-row">
-          <span class="grade-name">Platinum</span>
-          <span class="grade-bar"></span>
-        </div>
-        <div class="grade-row">
-          <span class="grade-name">Flagship</span>
-          <span class="grade-bar"></span>
-        </div>
+      <div class="grade-note fi">
+        グレードが上がるごとに、7基準を広く、かつ深く満たしていることが求められます。Certifiedは基礎的な該当性の確認に留まりますが、Silver以降は各軸のスコアが明示され、Platinum・Flagshipでは7軸すべてにおいて高水準であることが前提となります。
       </div>
-
-      <p class="grades-closing fi">認証されるということは、その場所の在り方が、ひとつの基準として認められるということ。<br>希少性は、結果として生まれるものであり、目的ではない。</p>
     </div>
   </section>
 
-  <!-- ─── 7. 認証されることの意味 ─── -->
-  <section id="meaning" class="s-light">
+  <!-- ─── 7. Services ─── -->
+  <section id="services" class="s-alt">
     <div class="inner">
-      <span class="label fi">The Meaning</span>
-      <h2 class="h2-light fi">認証されることの意味 ─ 同じ世界観を持つ場所と、並ぶということ</h2>
-      <div class="body-text fi">
-        <p>TPJに認証されるとは、単に「掲載される」ことではない。</p>
-        <p>効率ではなく体験を、規模ではなく在り方を大切にしてきた場所たちと、並ぶということ。その並びそのものが、ひとつのメッセージになる。</p>
-        <p>日英両言語での発信を通じて、国内外の人々に、そしてAIに、あなたの場所が持つ価値を、正しい言葉で伝えていく。</p>
-        <p>それは広告ではなく、これまで積み重ねてきたものへの、ひとつの応答である。</p>
+      <span class="label fi">For Business — Optional Services</span>
+      <h2 class="h2-light fi">法人向けサービスメニュー</h2>
+
+      <div class="services-notice fi">
+        認証プロセスとは独立した、任意のご支援サービスです。
       </div>
+
+      <div class="service-table-wrap fi">
+        <table class="service-table">
+          <thead>
+            <tr>
+              <th>サービス</th>
+              <th>内容</th>
+              <th>こんな事業者向け</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="svc-name">サードプレイスの<br>空間プロデュース</td>
+              <td>7基準に基づき、空間そのものの設計・改善を支援</td>
+              <td>「第三の居場所」としての空間を構築、または既存空間を7基準に沿って磨き上げたい事業者</td>
+              <td><button class="btn-more" data-modal="modal-service-1" id="trigger-modal-service-1">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="svc-name">7つの基準の<br>プロダクト化</td>
+              <td>空間で体現された7基準を、持ち帰れるプロダクトへ翻訳する企画・監修支援</td>
+              <td>認証済みの体験を商品化し、新たな収益源やブランド発信につなげたい事業者</td>
+              <td><button class="btn-more" data-modal="modal-service-2" id="trigger-modal-service-2">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="svc-name">PR記事制作</td>
+              <td>TPJメディア上での記事制作・掲載</td>
+              <td>認証取得の背景やこだわりを発信したい施設</td>
+              <td><button class="btn-more" data-modal="modal-service-3" id="trigger-modal-service-3">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="svc-name">掲載枠<br>（購入 または 月額）</td>
+              <td>地域×業種で限定される掲載枠。買い切りまたは月額でのご利用が可能</td>
+              <td>エリア内での露出を強化したい施設、継続的な掲載を希望する施設</td>
+              <td><button class="btn-more" data-modal="modal-service-4" id="trigger-modal-service-4">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="svc-name">認証登録料</td>
+              <td>認証施設としての登録費用（Silver以上）</td>
+              <td>認証取得が決まった施設（初回）</td>
+              <td><button class="btn-more" data-modal="modal-service-5" id="trigger-modal-service-5">詳しく見る</button></td>
+            </tr>
+            <tr>
+              <td class="svc-name">年会費</td>
+              <td>認証施設としての年間運用費用（Silver以上）</td>
+              <td>認証を継続運用する施設</td>
+              <td><button class="btn-more" data-modal="modal-service-6" id="trigger-modal-service-6">詳しく見る</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="service-independence fi"><strong>これらのサービスのご利用有無は、認証の評価・グレードには一切影響しません。</strong></p>
+      <a href="#for-business" class="service-link fi">詳細・お問い合わせ → For Business</a>
     </div>
   </section>
 
   <!-- ─── 8. GBC ─── -->
-  <section id="gbc" class="s-alt">
+  <section id="gbc" class="s-light">
     <div class="inner">
       <span class="gbc-badge fi">Case Study — Flagship</span>
       <h2 class="fi">言葉だけでなく、実践として</h2>
@@ -1012,6 +1500,108 @@
         <p>ショールームとしての空間。評価基準を試す実証の場。同じ視点を持つ人たちが集まり、考えを交わす場所。</p>
         <p>理念は、そこに「在る」ことで初めて、伝わるものになる。</p>
       </div>
+      <button class="btn-more fi" style="margin-top:28px" data-modal="modal-gbc" id="trigger-modal-gbc">詳しく見る</button>
+    </div>
+  </section>
+
+  <!-- ─── 9. Flow ─── -->
+  <section id="flow" class="s-alt">
+    <div class="inner">
+      <span class="label fi">Process</span>
+      <h2 class="h2-light fi">認証までの流れ</h2>
+      <div class="step-flow fi">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div>
+            <p class="step-title">お問い合わせ</p>
+            <p class="step-desc">For BusinessページよりTPJへご連絡ください（Certifiedは自薦・他薦のみで可）</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div>
+            <p class="step-title">情報登録・確認</p>
+            <p class="step-desc">施設の基本情報を登録。Certifiedは簡易登録のみ</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div>
+            <p class="step-title">覆面調査</p>
+            <p class="step-desc">調査員が事前通知なしで訪問・評価。Silver以上は複数回</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div>
+            <p class="step-title">評価確定・認証授与</p>
+            <p class="step-desc">7基準スコアを確定し、グレードを授与</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">05</div>
+          <div>
+            <p class="step-title">（任意）サービス相談</p>
+            <p class="step-desc">空間プロデュース・プロダクト化・掲載枠などは認証とは独立して相談可能</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 10. FAQ ─── -->
+  <section id="faq" class="s-light">
+    <div class="inner">
+      <span class="label fi">FAQ</span>
+      <h2 class="h2-light fi">よくある質問</h2>
+      <div class="faq-list fi">
+
+        <details class="faq-details">
+          <summary>Certified認証の取得に費用はかかりますか？</summary>
+          <div class="faq-answer">Certified認証は、登録料・年会費ともに完全無料です。自薦・他薦を問わず申請でき、簡易的な情報の登録のみで審査を受けられます。費用が発生するのはSilver以上のグレードからで、詳細はお問い合わせください。</div>
+        </details>
+
+        <details class="faq-details">
+          <summary>Silver以上の認証はどのように申請しますか？</summary>
+          <div class="faq-answer">Silver以上の認証は、施設オーナーまたは責任者本人からのお問い合わせが必要です。第三者が代理申請することはできません。お問い合わせ後、TPJ編集部との初回ヒアリングを経て審査が始まります。</div>
+        </details>
+
+        <details class="faq-details">
+          <summary>掲載枠や記事制作、空間プロデュースを利用しないと認証されませんか？</summary>
+          <div class="faq-answer">いいえ。掲載枠・記事制作・空間プロデュース・プロダクト化等の有償サービスのご利用は、認証の可否やグレードに一切影響しません。これらは認証とは独立した任意のサービスです。評価は覆面調査員の独立した判断に基づきます。</div>
+        </details>
+
+        <details class="faq-details">
+          <summary>認証までどのくらいの期間がかかりますか？</summary>
+          <div class="faq-answer">グレードによって異なります。Certifiedは基礎確認のみで比較的短期間です。Silver以上は複数回の覆面調査と合議を経るため、数週間から数ヶ月かかる場合があります。詳細はお問い合わせください。</div>
+        </details>
+
+        <details class="faq-details">
+          <summary>掲載枠の「購入」と「月額」の違いは何ですか？</summary>
+          <div class="faq-answer">「購入」は一括払いでの掲載枠の確保です。「月額」は継続的な掲載料によるご利用で、更新の柔軟性があります。どちらも地域×業種で枠数が限定されています。詳細・空き状況はFor BusinessページよりTPJへお問い合わせください。</div>
+        </details>
+
+        <details class="faq-details">
+          <summary>認証後、グレードは変動しますか？</summary>
+          <div class="faq-answer">はい。TPJは継続的な評価を行います。空間の質が維持・向上していれば上位グレードへの昇格があります。また、認証基準を満たさなくなった場合には、グレードの見直しが行われることもあります。これは認証の誠実さを保つための仕組みです。</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 11. For Business CTA ─── -->
+  <section id="for-business" class="s-dark">
+    <div class="inner">
+      <div class="for-biz-inner fi">
+        <span class="for-biz-eyebrow">For Business</span>
+        <h2 class="for-biz-h2">丁寧に場をつくる方へ</h2>
+        <p class="for-biz-body">Certified認証（無料）のご登録、Silver以上の認証審査へのお問い合わせ、有償サービスのご相談はすべてこちらから。</p>
+        <div>
+          <a href="mailto:hello@thirdplacejapan.com" class="btn-primary">お問い合わせ・資料請求</a>
+          <a href="/stories/" class="for-biz-link">Stories（記事を読む）→</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1024,9 +1614,9 @@
           <h3>Third Place Japan</h3>
           <ul>
             <li><a href="#philosophy">理念</a></li>
-            <li><a href="#axes">空間の7基準</a></li>
-            <li><a href="#product-axes">プロダクトの7基準</a></li>
-            <li><a href="#grades">認証について</a></li>
+            <li><a href="#criteria-map">7基準対応表</a></li>
+            <li><a href="#grades">認証グレード</a></li>
+            <li><a href="#services">サービス</a></li>
             <li><a href="#gbc">GBC</a></li>
             <li><a href="/stories/">Stories</a></li>
           </ul>
@@ -1034,7 +1624,7 @@
         <div class="footer-col">
           <h3>Other</h3>
           <ul>
-            <li><a href="#">For Business</a></li>
+            <li><a href="#for-business">For Business</a></li>
             <li><a href="#">運営会社</a></li>
             <li><a href="#">プライバシーポリシー</a></li>
           </ul>
@@ -1044,7 +1634,329 @@
     </div>
   </footer>
 
+  <!-- ═══════════════════════════════════
+       MODALS (all in DOM, JS controls visibility)
+       ═══════════════════════════════════ -->
+
+  <!-- No-Buy -->
+  <div id="modal-no-buy" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-no-buy-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-no-buy-title">評価プロセスの独立性について</h3>
+      <div class="modal-body">TPJの認証は、覆面調査員が独立した基準に基づいて行います。調査員の身元・訪問日は事前に施設へ通知されません。評価スコアと認証グレードの決定プロセスに、掲載枠・記事制作・空間プロデュース等の有償サービスは一切関与しません。Certifiedグレードは登録料・年会費ともに無料です。Silver以上のグレード審査も、オーナーとの対話と調査員の記録に基づくものであり、お金で買うことはできません。この独立性こそ、TPJ認証の信頼の根拠です。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Philosophy -->
+  <div id="modal-philosophy" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-philosophy-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-philosophy-title">効率の先にあるもの</h3>
+      <div class="modal-body">TPJは2025年に創設されました。食べログが「飲食店の評価」を定義したように、TPJは「いる体験の価値」を定義する存在を目指しています。7つの評価軸は、社会学者レイ・オルデンバーグのサードプレイス理論を現代日本に再解釈したものです。居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応という7軸は、口コミでも星の数でも捉えきれなかった「いる体験」を構造化します。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Gaze 1 -->
+  <div id="modal-gaze-1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gaze-1-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-gaze-1-title">見つける — Discover</h3>
+      <div class="modal-body">TPJの調査員は、広告費をかけていない場所、目立たない場所にこそ注目します。規模の大きさではなく、その場所が大切にしてきた在り方——光の当て方、音の設計、訪れた人への敬意——を探しています。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Gaze 2 -->
+  <div id="modal-gaze-2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gaze-2-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-gaze-2-title">見つめる — Evaluate</h3>
+      <div class="modal-body">7つの評価軸すべてに対し、複数回の訪問記録をつけます。調査員の主観ではなく、具体的な観察事実と基準への照合に基づきます。Silver以上では、複数の調査員による合議を経ます。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Gaze 3 -->
+  <div id="modal-gaze-3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gaze-3-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-gaze-3-title">認める — Certify</h3>
+      <div class="modal-body">認証は、その場所の在り方への承認です。競争のための順位ではなく、その場所が積み重ねてきたものを言葉にして残すために行います。Certifiedは誰でも入口に立てる公平な第一層であり、Silver以上はオーナー本人との対話を経た、より深い認証です。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Gaze 4 -->
+  <div id="modal-gaze-4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gaze-4-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-gaze-4-title">伝える — Publish</h3>
+      <div class="modal-body">認証内容は日本語と英語の両方で発信します。構造化データ（JSON-LD）により、人だけでなくAIにも正確に届く設計です。国内外のメディア・AI検索エンジンへの引用を通じて、その場所の価値が世界に伝わります。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 1 -->
+  <div id="modal-cmap-1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-1-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-1-title">居心地・空間品質 → 五感品質・素材</h3>
+      <div class="modal-body">空間の居心地を生む要素——光、音、温度、素材の選択——を、プロダクトの素材・香り・パッケージへ翻訳します。認証された空間のアンビエンスを手元で再現できるかを評価します。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 2 -->
+  <div id="modal-cmap-2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-2-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-2-title">静寂性・プライバシー → 静けさの再現</h3>
+      <div class="modal-body">その場所が持つ静けさ——音設計、視線の配慮、空間の余白——を、プロダクトがどこまで日常に持ち込めるかを見ます。使用する時間に「自分だけの時間」が生まれるか。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 3 -->
+  <div id="modal-cmap-3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-3-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-3-title">特別感・非日常性 → 特別感・ギフト体験</h3>
+      <div class="modal-body">その空間でしか得られない体験——建築、眺望、季節の演出——を、プロダクトの開封体験・ギフト包装・限定性へ翻訳します。受け取った人が「特別な何か」を感じるかを評価します。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 4 -->
+  <div id="modal-cmap-4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-4-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-4-title">ストーリー・背景への共感 → ストーリー継承</h3>
+      <div class="modal-body">その場所が持つ物語——創業の経緯、職人のこだわり、地域との関係——を、プロダクトのコピー・ブックレット・QRコンテンツで伝えられるかを見ます。プロダクトそのものが語り部になっているか。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 5 -->
+  <div id="modal-cmap-5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-5-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-5-title">再訪・継続価値 → 再購入・回遊価値</h3>
+      <div class="modal-body">空間への再訪を促す仕掛け——季節限定メニュー、常連への特別な配慮——が、プロダクトでは定期購入・シリーズ展開・リフィル設計などに翻訳されます。一回で終わらない関係性を設計できているか。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 6 -->
+  <div id="modal-cmap-6" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-6-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-6-title">記録・シェア体験 → シェア・記録性</h3>
+      <div class="modal-body">空間での「誰かに見せたい」衝動——映える角度、特別な照明、記念になる瞬間——が、プロダクトでは視覚設計・SNS映えするパッケージ・ハッシュタグ設計へと翻訳されます。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Criteria Map 7 -->
+  <div id="modal-cmap-7" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-cmap-7-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-cmap-7-title">インバウンド・多言語対応 → インバウンド適性</h3>
+      <div class="modal-body">空間での英語メニュー・スタッフ対応・文化的配慮が、プロダクトでは多言語パッケージ・国際配送対応・海外向けギフト展開に翻訳されます。「東京みやげ」として世界に渡せるか。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Grade: Certified -->
+  <div id="modal-grade-certified" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-grade-certified-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-grade-certified-title">Certified — 開かれた入口</h3>
+      <div class="modal-body">Certifiedは、誰の元にも開かれた第一層です。自薦・他薦を問わず、簡易的な情報があれば、まずその場所を「第三の居場所」として記録します。登録料・年会費ともに無料です。表示は基本情報と7基準の概要のみのシンプルな形ですが、「言葉にされ、記録される」ことそのものが意味を持ちます。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Grade: Silver -->
+  <div id="modal-grade-silver" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-grade-silver-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-grade-silver-title">Silver — 対話の始まり</h3>
+      <div class="modal-body">Silverから、オーナーや施設責任者本人との対話が始まります。問い合わせの後、TPJ編集部とのヒアリングを経て、覆面調査員が複数回訪問します。7基準スコアが明示され、その場所のストーリー・哲学をページに掲載することが可能になります。「静かに、丁寧に運営されている場所」としての認証です。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Grade: Gold -->
+  <div id="modal-grade-gold" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-grade-gold-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-grade-gold-title">Gold — 継続の証明</h3>
+      <div class="modal-body">Silver認証を経た施設が、継続的な調査・対話を経て到達するグレードです。一度の評価ではなく、時間をかけた観察によって「質が持続している」ことが確認された場所です。詳細な認証ページ（ストーリー・写真を含む）が掲載され、メディアでの紹介機会が増えます。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Grade: Platinum -->
+  <div id="modal-grade-platinum" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-grade-platinum-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-grade-platinum-title">Platinum — 稀有である</h3>
+      <div class="modal-body">「質が高い」を超え、「稀有である」と認められたグレードです。複数チームによる複数回の再評価を経て、7基準すべてにおいて高水準であることが確認されます。国内外への発信（英語版含む）で優先的に取り上げられます。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Grade: Flagship -->
+  <div id="modal-grade-flagship" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-grade-flagship-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-grade-flagship-title">Flagship — 理念の体現</h3>
+      <div class="modal-body">TPJが「理想的なサードプレイスの理念を最も誠実に体現している」と認めた最上位の認証です。編集部による最終審査（覆面調査記録の総合評価＋編集責任者の確認）を経ます。「最も高いものを売る」場所ではなく、TPJが大切にしてきた世界観を、最も誠実に表している場所です。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 1 -->
+  <div id="modal-service-1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-1-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-1-title">サードプレイスの空間プロデュース</h3>
+      <div class="modal-body">TPJの7基準（居心地・静寂性・特別感・ストーリー・再訪価値・記録性・インバウンド適性）に基づき、空間の設計・改善をご支援します。既存のレイアウト、音環境、照明、素材選択を7基準の観点から評価し、具体的な改善案を提案します。詳細はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 2 -->
+  <div id="modal-service-2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-2-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-2-title">7つの基準のプロダクト化</h3>
+      <div class="modal-body">空間で体現された7基準を、持ち帰れるプロダクト（ギフト・グッズ等）へ翻訳する企画・監修をご支援します。上記の「7基準対応表」で示した翻訳の考え方に基づき、プロダクトのコンセプト立案から素材選定・ブランディングまでをサポートします。詳細はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 3 -->
+  <div id="modal-service-3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-3-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-3-title">PR記事制作</h3>
+      <div class="modal-body">TPJ Storiesメディア（https://thirdplacejapan.com/stories/）での記事制作・掲載をご提供します。認証取得の背景、施設のこだわり、7基準に基づく評価の詳細を、TPJ編集部が執筆します。記事はJSON-LD構造化データを実装し、AIへの引用も想定した設計で公開されます。詳細はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 4 -->
+  <div id="modal-service-4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-4-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-4-title">掲載枠（購入 または 月額）</h3>
+      <div class="modal-body">地域×業種で限定される掲載枠を、2種類の形態でご提供します。「購入」は一括払いでの掲載枠確保、「月額」は継続的な掲載料によるご利用です。エリア内での露出強化や継続的な発信を希望する施設向けのオプションです。詳細・空き状況はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 5 -->
+  <div id="modal-service-5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-5-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-5-title">認証登録料（Silver以上）</h3>
+      <div class="modal-body">Silver以上の認証が確定した施設に対する、初回の登録費用です。認証ページの制作・公開、構造化データの実装、多言語対応などの初期設定にかかる実務コストです。詳細はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- Service 6 -->
+  <div id="modal-service-6" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-6-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-service-6-title">年会費（Silver以上）</h3>
+      <div class="modal-body">Silver以上の認証施設としての年間運用費用です。認証情報の維持・更新、掲載内容のメンテナンス、継続的な発信にかかる実務コストです。詳細はお問い合わせください。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
+  <!-- GBC -->
+  <div id="modal-gbc" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-gbc-title" hidden>
+    <div class="modal-bd" aria-hidden="true"></div>
+    <div class="modal-box">
+      <button class="modal-x" aria-label="閉じる">&times;</button>
+      <h3 class="modal-title" id="modal-gbc-title">Green Beans Coffee — TPJ Flagship認証</h3>
+      <div class="modal-body">GBC（Green Beans Coffee）は、TPJが大切にしてきた「いる体験」を実際の場として体現するTPJ初のFlagship認証施設です。ショールームとしての空間。評価基準を試す実証の場。同じ視点を持つ人たちが集まり、考えを交わす場所。TPJは、理念を「在る」ことで伝えるために、GBCと共にあります。</div>
+      <a href="#for-business" class="modal-cta">お問い合わせはこちら →</a>
+    </div>
+  </div>
+
   <script>
+    // ─── Modal system ───
+    const openModal = (id, triggerId) => {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.removeAttribute('hidden');
+      modal.dataset.triggerId = triggerId;
+      document.body.style.overflow = 'hidden';
+      const firstFocusable = modal.querySelector('button, [href], [tabindex]:not([tabindex="-1"])');
+      if (firstFocusable) firstFocusable.focus();
+      modal._trapHandler = e => trapFocus(e, modal);
+      modal.addEventListener('keydown', modal._trapHandler);
+    };
+
+    const closeModal = (modal) => {
+      modal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+      modal.removeEventListener('keydown', modal._trapHandler);
+      const trigger = document.getElementById(modal.dataset.triggerId);
+      if (trigger) trigger.focus();
+    };
+
+    const trapFocus = (e, modal) => {
+      if (e.key === 'Escape') { closeModal(modal); return; }
+      if (e.key !== 'Tab') return;
+      const focusable = [...modal.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])')].filter(el => !el.disabled);
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+      }
+    };
+
+    // Wire up all modal triggers
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      if (!btn.id) btn.id = 'trigger-' + btn.dataset.modal;
+      btn.addEventListener('click', () => openModal(btn.dataset.modal, btn.id));
+    });
+
+    // Close buttons and backdrops
+    document.querySelectorAll('.modal-x, .modal-bd').forEach(el => {
+      el.addEventListener('click', () => closeModal(el.closest('.modal')));
+    });
+
     // ─── Nav hero-mode ↔ scrolled ───
     const nav  = document.getElementById('nav');
     const hero = document.getElementById('hero');
@@ -1098,6 +2010,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://thirdplacejapan.com/#organization",
     "name": "Third Place Japan",
     "alternateName": ["TPJ", "サードプレイスジャパン"],
     "url": "https://thirdplacejapan.com",
@@ -1108,6 +2021,7 @@
       "height": 275
     },
     "description": "日本全国のサードプレイス（第三の居場所）を独自の7軸基準で評価・認証する、日本初のプラットフォーム。居心地・静寂性・特別感など7つの視点で空間の価値を測り、国内外へ日英両言語で発信する。",
+    "foundingDate": "2025",
     "areaServed": {
       "@type": "Country",
       "name": "Japan"
@@ -1124,6 +2038,7 @@
     "inLanguage": "ja",
     "publisher": {
       "@type": "Organization",
+      "@id": "https://thirdplacejapan.com/#organization",
       "name": "Third Place Japan"
     },
     "potentialAction": {
@@ -1139,46 +2054,99 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": "https://thirdplacejapan.com/#criteria-set",
+    "name": "TPJ空間評価7基準",
+    "hasDefinedTerm": [
+      {
+        "@type": "DefinedTerm",
+        "name": "居心地・空間品質",
+        "description": "光、音、温度、素材——五感で感じる空間の質"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "静寂性・プライバシー",
+        "description": "誰にも邪魔されない時間が守られているか"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "特別感・非日常性",
+        "description": "日常から少し離れた、ここにしかない体験があるか"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "ストーリー・背景への共感",
+        "description": "その場所が積み重ねてきた歴史や哲学、こだわり"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "再訪・継続価値",
+        "description": "また訪れたいと思わせる力"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "記録・シェア体験",
+        "description": "誰かに伝えたくなる、心が動いた瞬間があるか"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "インバウンド・多言語対応",
+        "description": "海外からの訪問者も安心して過ごせるか"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "サードプレイスとはどのような場所ですか？",
+        "name": "Certified認証の取得に費用はかかりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "サードプレイス（第三の居場所）とは、自宅（第一の場所）でも職場・学校（第二の場所）でもない、自分らしく過ごせる第三の空間を指します。Third Place Japanでは、居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応の7軸で評価・認証しています。カフェ・ホテルラウンジ・スパ・コワーキング・神社など業種を横断して評価します。"
+          "text": "Certified認証は、登録料・年会費ともに完全無料です。自薦・他薦を問わず申請でき、簡易的な情報の登録のみで審査を受けられます。費用が発生するのはSilver以上のグレードからで、詳細はお問い合わせください。"
         }
       },
       {
         "@type": "Question",
-        "name": "Third Place JapanのTPJ認証基準は何ですか？",
+        "name": "Silver以上の認証はどのように申請しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Third Place Japan（TPJ）は独自の7軸評価基準で空間を評価します。7軸とは、①居心地・空間品質、②静寂性・プライバシー、③特別感・非日常性、④ストーリー・背景への共感、⑤再訪・継続価値、⑥記録・シェア体験、⑦インバウンド・多言語対応です。各軸10点満点で採点し、総合評価に基づきCertified・Standard・Silver・Gold・Flagshipの5段階グレードで認証します。"
+          "text": "Silver以上の認証は、施設オーナーまたは責任者本人からのお問い合わせが必要です。第三者が代理申請することはできません。お問い合わせ後、TPJ編集部との初回ヒアリングを経て審査が始まります。"
         }
       },
       {
         "@type": "Question",
-        "name": "東京でTPJ認証を受けたサードプレイスはありますか？",
+        "name": "掲載枠や記事制作、空間プロデュースを利用しないと認証されませんか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "東京には複数のTPJ認証スポットがあります。渋谷のGreen Beans Coffee（Flagship認証）など、都内各エリアで認証施設が増えています。最新の認証一覧はThird Place Japan Stories（https://thirdplacejapan.com/stories/）でご確認いただけます。"
+          "text": "いいえ。掲載枠・記事制作・空間プロデュース・プロダクト化等の有償サービスのご利用は、認証の可否やグレードに一切影響しません。これらは認証とは独立した任意のサービスです。評価は覆面調査員の独立した判断に基づきます。"
         }
       },
       {
         "@type": "Question",
-        "name": "TPJ認証はどのような施設・業種が対象ですか？",
+        "name": "認証までどのくらいの期間がかかりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Third Place Japanは業種横断で認証を行います。対象はカフェ・スペシャルティコーヒー、高級ホテル・ラウンジ、温泉旅館、レストラン、バー、スパ・サウナ、コワーキングスペース、会員制ラウンジ、神社・寺院、自然体験・グランピング施設など15業種です。「食べること」ではなく「そこにいること」の体験価値を評価します。"
+          "text": "グレードによって異なります。Certifiedは基礎確認のみで比較的短期間です。Silver以上は複数回の覆面調査と合議を経るため、数週間から数ヶ月かかる場合があります。詳細はお問い合わせください。"
         }
       },
       {
         "@type": "Question",
-        "name": "Third Place JapanとミシュランガイドやTripAdvisorの違いは？",
+        "name": "掲載枠の「購入」と「月額」の違いは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Third Place Japan（TPJ）は「料理の質」ではなく「いる体験・居場所としての価値」を評価します。ミシュランガイドは飲食体験を、TripAdvisorはユーザー口コミを集計しますが、TPJは空間の居心地・静寂性・特別感など7軸の独自基準で第三者評価を行う、日本初のサードプレイス専門認証機関です。"
+          "text": "「購入」は一括払いでの掲載枠の確保です。「月額」は継続的な掲載料によるご利用で、更新の柔軟性があります。どちらも地域×業種で枠数が限定されています。詳細・空き状況はFor BusinessページよりTPJへお問い合わせください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "認証後、グレードは変動しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。TPJは継続的な評価を行います。空間の質が維持・向上していれば上位グレードへの昇格があります。また、認証基準を満たさなくなった場合には、グレードの見直しが行われることもあります。これは認証の誠実さを保つための仕組みです。"
         }
       }
     ]
