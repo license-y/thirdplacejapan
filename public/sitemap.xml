@@ -381,6 +381,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shinjuku-ku/kabukicho/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shinjuku-ku/shinanomachi/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

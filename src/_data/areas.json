@@ -199,6 +199,11 @@
             "name_en": "Shin-Okubo"
           },
           {
+            "slug": "kabukicho",
+            "name": "歌舞伎町",
+            "name_en": "Kabukicho"
+          },
+          {
             "slug": "shinanomachi",
             "name": "信濃町",
             "name_en": "Shinanomachi"
