@@ -292,6 +292,45 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ## 10. 実装ログ（更新履歴）
 
+### 2026-07-03
+
+#### .prose スタイル追加（ul・ol・li・hr の余白定義）
+
+**背景**：記事本文内のリンクリストと次のセクション（FAQなど）の間に余白がなく、読みづらい状態が発生。
+
+**原因**：`base.njk` の `.prose` スタイルに `ul`・`ol`・`li`・`hr` の定義がなく、ブラウザデフォルト（余白ゼロ）が適用されていた。
+
+**対象ファイル**：`src/_layouts/base.njk`
+
+**追加スタイル**：
+```css
+.prose ul  { margin-bottom: 1.5em; padding-left: 1.5em; list-style: disc; }
+.prose ol  { margin-bottom: 1.5em; padding-left: 1.5em; list-style: decimal; }
+.prose li  { margin-bottom: 0.5em; line-height: 1.8; }
+.prose hr  { margin: 2.5em 0; border: none; border-top: 1px solid var(--color-border); }
+```
+
+**ルール化**：記事本文（`.prose`）に新しいHTML要素を使う際は、`base.njk` の `.prose` スタイルに定義があるか必ず確認すること。未定義の場合はスタイルを追加する。
+
+---
+
+#### 全ページの余白縮小（フッター上・コンテンツ下）
+
+**背景**：FAQセクション下・フッター上の空白が過大（`mt-24` + `py-24` = 約192px）。
+
+**変更内容**：
+
+| ファイル | 変更前 | 変更後 |
+|---|---|---|
+| `footer-journal.njk` / `footer-stories.njk` | `mt-24` | `mt-14` |
+| `article.njk` / `article-area.njk` / `article-certified.njk` | `py-16 md:py-24` | `py-10 md:py-16` |
+| `stories/category-index.njk` / `latest.njk` | `py-24` | `pt-16 pb-10` |
+| `stories/index.njk` | `pt-24 pb-10` | `pt-16 pb-8` |
+
+**ルール化**：コンテンツ末尾の下padding は `pb-8`〜`pb-10`、フッターの上margin は `mt-14` を基準とする。
+
+---
+
 ### 2026-07-02（デザイン統一・続き）
 
 #### サイドバー「サードプレイスとは」表示件数を5件に統一
