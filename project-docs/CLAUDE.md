@@ -294,6 +294,40 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ### 2026-07-03
 
+#### .prose テーブルスタイル追加（table・th・td の枠・余白定義）
+
+**背景**：記事本文内の Markdown テーブルにスタイルが当たらず、枠なし・余白なしで読みにくい状態だった。
+
+**対象ファイル**：`src/_layouts/base.njk`
+
+**追加スタイル**：
+```css
+.prose table { width: 100%; border-collapse: collapse; margin: 1.75em 0; font-size: 0.875rem; }
+.prose table th {
+  background-color: #F0EDE6;       /* アイボリー背景 */
+  font-weight: 500;
+  text-align: left;
+  padding: 0.6em 1em;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-serif);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.prose table td {
+  padding: 0.6em 1em;
+  border: 1px solid var(--color-border);
+  line-height: 1.7;
+  vertical-align: top;
+}
+.prose table tr:nth-child(even) td { background-color: #FAFAF8; }  /* 偶数行ストライプ */
+```
+
+**ルール化**：記事本文で Markdown テーブル（`|列|列|` 記法）を使う場合、スタイルは `base.njk` の `.prose table` が自動適用される。個別スタイルの追加は不要。
+
+**AEO効果**：`<th>` ヘッダーが明示されることで AI がテーブルの列ヘッダーとデータの関係を正確に読み取れる。比較表・評価表は積極的に使うこと。
+
+---
+
 #### .prose スタイル追加（ul・ol・li・hr の余白定義）
 
 **背景**：記事本文内のリンクリストと次のセクション（FAQなど）の間に余白がなく、読みづらい状態が発生。
