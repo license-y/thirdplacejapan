@@ -6,6 +6,7 @@ date: 2026-07-01
 tags:
   - articles
 category_slug: retreat-zen
+area_slug: yanaka
 area_name: 谷中
 thumbnail: /assets/images/articles/yanaka-retreat-zen-tokyo.webp
 lang: ja
