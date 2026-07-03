@@ -8,6 +8,7 @@ tags:
   - レストラン・ダイニング
 category_slug: restaurant-dining
 thumbnail: /assets/images/articles/shibuya-ku-dining-restaurant-map-tokyo.webp
+area_slug: shibuya
 area_name: 渋谷区
 permalink: /stories/restaurant-dining/shibuya/
 ---

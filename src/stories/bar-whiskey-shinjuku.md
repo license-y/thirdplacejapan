@@ -7,6 +7,7 @@ tags:
   - articles
   - バー・ウイスキー・カクテル
 category_slug: bar-whiskey
+area_slug: shinjuku
 area_name: 新宿区
 thumbnail: /assets/images/articles/bar-whiskey-shinjuku-ku-tokyo-night.webp
 permalink: /stories/bar-whiskey/shinjuku/

@@ -8,6 +8,7 @@ tags:
   - カフェ・スペシャルティコーヒー
 category_slug: cafe-specialty-coffee
 thumbnail: /assets/images/articles/cafe-specialty-coffee-shibuya-ku-tokyo.webp
+area_slug: shibuya
 area_name: 渋谷区
 permalink: /stories/cafe-specialty-coffee/shibuya/
 ---

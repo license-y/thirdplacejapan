@@ -7,6 +7,7 @@ tags:
   - articles
   - レストラン・ダイニング
 category_slug: restaurant-dining
+area_slug: shinjuku
 area_name: 新宿区
 thumbnail: /assets/images/articles/restaurant-dining-shinjuku-ku-tokyo.webp
 permalink: /stories/restaurant-dining/shinjuku/

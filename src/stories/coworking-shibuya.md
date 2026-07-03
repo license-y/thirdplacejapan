@@ -8,6 +8,7 @@ tags:
   - コワーキング・シェアオフィス
 category_slug: coworking
 thumbnail: /assets/images/articles/coworking-shibuya-ku-tokyo-startup.webp
+area_slug: shibuya
 area_name: 渋谷区
 permalink: /stories/coworking/shibuya/
 ---
