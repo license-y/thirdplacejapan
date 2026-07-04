@@ -34,13 +34,13 @@ og_type: "article"
     { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "{{ venue.grade }}" },
     { "@type": "PropertyValue", "name": "TPJ認証取得日", "value": "{{ venue.certified_date }}" },
     { "@type": "PropertyValue", "name": "主評価軸", "value": "{{ venue.axes_primary }}" },
-    { "@type": "PropertyValue", "name": "居心地・空間品質スコア", "value": "{{ venue.scores.comfort }}/10" },
-    { "@type": "PropertyValue", "name": "静寂性・プライバシースコア", "value": "{{ venue.scores.silence }}/10" },
-    { "@type": "PropertyValue", "name": "特別感・非日常性スコア", "value": "{{ venue.scores.special }}/10" },
-    { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア", "value": "{{ venue.scores.story }}/10" },
-    { "@type": "PropertyValue", "name": "再訪・継続価値スコア", "value": "{{ venue.scores.revisit }}/10" },
-    { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "{{ venue.scores.record }}/10" },
-    { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "{{ venue.scores.inbound }}/10" }
+    { "@type": "PropertyValue", "name": "五感品質・素材スコア", "value": "{{ venue.scores.comfort }}/10" },
+    { "@type": "PropertyValue", "name": "静けさの再現スコア", "value": "{{ venue.scores.silence }}/10" },
+    { "@type": "PropertyValue", "name": "特別感・ギフト体験スコア", "value": "{{ venue.scores.special }}/10" },
+    { "@type": "PropertyValue", "name": "ストーリー継承スコア", "value": "{{ venue.scores.story }}/10" },
+    { "@type": "PropertyValue", "name": "再購入・回遊価値スコア", "value": "{{ venue.scores.revisit }}/10" },
+    { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": "{{ venue.scores.record }}/10" },
+    { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": "{{ venue.scores.inbound }}/10" }
   ]
 }
 </script>
@@ -134,28 +134,72 @@ og_type: "article"
     <p class="font-serif text-base leading-relaxed text-dark">{{ venue.citation }}</p>
   </div>
 
-  {# 7軸スコア #}
+  {# 空間の7基準スコア #}
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7軸評価スコア</p>
-    <div class="space-y-4">
-      {% set axisData = [
-        { slug: "comfort", name: "居心地・空間品質", score: venue.scores.comfort },
-        { slug: "silence", name: "静寂性・プライバシー", score: venue.scores.silence },
-        { slug: "special", name: "特別感・非日常性", score: venue.scores.special },
-        { slug: "story", name: "ストーリー・背景への共感", score: venue.scores.story },
-        { slug: "revisit", name: "再訪・継続価値", score: venue.scores.revisit },
-        { slug: "record", name: "記録・シェア体験", score: venue.scores.record },
-        { slug: "inbound", name: "インバウンド・多言語対応", score: venue.scores.inbound }
-      ] %}
-      {% for ax in axisData %}
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">{{ ax.name }}</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: {{ ax.score * 10 }}%"></div>
+    <p class="label mb-6">空間の7基準</p>
+    <div class="space-y-6">
+
+      {# 【場の質】その場で感じる空間 #}
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【場の質】その場で感じる空間</p>
+        <div class="space-y-3">
+          {% set axGroup1 = [
+            { slug: "comfort", name: "五感品質・素材", score: venue.scores.comfort },
+            { slug: "silence", name: "静けさの再現", score: venue.scores.silence }
+          ] %}
+          {% for ax in axGroup1 %}
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">{{ ax.name }}</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: {{ ax.score * 10 }}%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">{{ ax.score }}</span>
+          </div>
+          {% endfor %}
         </div>
-        <span class="text-xs text-gold font-light w-6 text-right">{{ ax.score }}</span>
       </div>
-      {% endfor %}
+
+      {# 【心の核】心が動く #}
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【心の核】心が動く</p>
+        <div class="space-y-3">
+          {% set axGroup2 = [
+            { slug: "special", name: "特別感・ギフト体験", score: venue.scores.special },
+            { slug: "story", name: "ストーリー継承", score: venue.scores.story }
+          ] %}
+          {% for ax in axGroup2 %}
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">{{ ax.name }}</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: {{ ax.score * 10 }}%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">{{ ax.score }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# 【広がり】続く・伝わる・世界へ #}
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【広がり】続く・伝わる・世界へ</p>
+        <div class="space-y-3">
+          {% set axGroup3 = [
+            { slug: "revisit", name: "再購入・回遊価値", score: venue.scores.revisit },
+            { slug: "record", name: "シェア・記録性", score: venue.scores.record },
+            { slug: "inbound", name: "インバウンド適性", score: venue.scores.inbound }
+          ] %}
+          {% for ax in axGroup3 %}
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">{{ ax.name }}</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: {{ ax.score * 10 }}%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">{{ ax.score }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -173,7 +217,7 @@ og_type: "article"
     {% if venue.url %}
     <p><a href="{{ venue.url }}" target="_blank" rel="noopener" class="hover:text-gold transition-colors">公式サイト ↗</a></p>
     {% endif %}
-    <p class="pt-2 text-xs">Third Place Japan 認証取得：{{ venue.certified_date }}</p>
+    <p class="pt-2 text-xs">Third Place Japan TPJセレクト掲載：{{ venue.certified_date }}</p>
   </aside>
 
   {# 同じ面（エリア×業種）の認証店舗 #}
@@ -186,7 +230,7 @@ og_type: "article"
   {% if hubVenues.length %}
   <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
     <div class="flex items-center justify-between mb-6">
-      <p class="label">同じエリアの認証{{ venue.category }}</p>
+      <p class="label">同じエリアの{{ venue.category }}</p>
       <a href="/stories/area/{{ venue.area_primary.prefecture_slug }}/{{ venue.area_primary.city_slug }}/{{ venue.area_primary.area_slug }}/{{ venue.category_slug }}/"
          class="text-xs text-muted hover:text-gold transition-colors">
         {{ venue.area_primary.area }}×{{ venue.category }}の面を見る →

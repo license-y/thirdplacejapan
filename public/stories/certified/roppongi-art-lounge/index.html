@@ -222,7 +222,7 @@
     
     <ul class="hidden lg:flex items-center gap-8" role="list">
       <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
-      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">認証店舗</a></li>
+      <li><a href="/stories/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJセレクト</a></li>
       <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
       <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
       <li>
@@ -249,7 +249,7 @@
   <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
     <ul class="max-w-6xl mx-auto px-6 py-4 flex items-center gap-6" role="list">
       <li><a href="/stories/about/" class="text-sm text-text hover:text-gold transition-colors">読み物</a></li>
-      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">認証店舗</a></li>
+      <li><a href="/stories/certified/" class="text-sm text-text hover:text-gold transition-colors">TPJセレクト</a></li>
       <li><a href="/en/stories/" class="text-sm text-text hover:text-gold transition-colors">English</a></li>
       <li><a href="/" class="text-sm text-text hover:text-gold transition-colors">TPJとは</a></li>
     </ul>
@@ -445,13 +445,13 @@
     { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "Gold" },
     { "@type": "PropertyValue", "name": "TPJ認証取得日", "value": "2026-04-15" },
     { "@type": "PropertyValue", "name": "主評価軸", "value": "特別感・非日常性" },
-    { "@type": "PropertyValue", "name": "居心地・空間品質スコア", "value": "8/10" },
-    { "@type": "PropertyValue", "name": "静寂性・プライバシースコア", "value": "7/10" },
-    { "@type": "PropertyValue", "name": "特別感・非日常性スコア", "value": "9/10" },
-    { "@type": "PropertyValue", "name": "ストーリー・背景への共感スコア", "value": "8/10" },
-    { "@type": "PropertyValue", "name": "再訪・継続価値スコア", "value": "7/10" },
-    { "@type": "PropertyValue", "name": "記録・シェア体験スコア", "value": "9/10" },
-    { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア", "value": "9/10" }
+    { "@type": "PropertyValue", "name": "五感品質・素材スコア", "value": "8/10" },
+    { "@type": "PropertyValue", "name": "静けさの再現スコア", "value": "7/10" },
+    { "@type": "PropertyValue", "name": "特別感・ギフト体験スコア", "value": "9/10" },
+    { "@type": "PropertyValue", "name": "ストーリー継承スコア", "value": "8/10" },
+    { "@type": "PropertyValue", "name": "再購入・回遊価値スコア", "value": "7/10" },
+    { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": "9/10" },
+    { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": "9/10" }
   ]
 }
 </script>
@@ -547,66 +547,92 @@
 
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7軸評価スコア</p>
-    <div class="space-y-4">
+    <p class="label mb-6">空間の7基準</p>
+    <div class="space-y-6">
+
       
-      
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">居心地・空間品質</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 80%"></div>
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【場の質】その場で感じる空間</p>
+        <div class="space-y-3">
+          
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">五感品質・素材</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 80%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">8</span>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">静けさの再現</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 70%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">7</span>
+          </div>
+          
         </div>
-        <span class="text-xs text-gold font-light w-6 text-right">8</span>
       </div>
+
       
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">静寂性・プライバシー</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 70%"></div>
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【心の核】心が動く</p>
+        <div class="space-y-3">
+          
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">特別感・ギフト体験</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 90%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">9</span>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">ストーリー継承</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 80%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">8</span>
+          </div>
+          
         </div>
-        <span class="text-xs text-gold font-light w-6 text-right">7</span>
       </div>
+
       
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">特別感・非日常性</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 90%"></div>
+      <div>
+        <p class="text-xs text-muted font-medium mb-3 tracking-wider">【広がり】続く・伝わる・世界へ</p>
+        <div class="space-y-3">
+          
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">再購入・回遊価値</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 70%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">7</span>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">シェア・記録性</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 90%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">9</span>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <span class="text-xs text-muted w-36 shrink-0">インバウンド適性</span>
+            <div class="axis-score-bar flex-1">
+              <div class="axis-score-fill" style="width: 90%"></div>
+            </div>
+            <span class="text-xs text-gold font-light w-6 text-right">9</span>
+          </div>
+          
         </div>
-        <span class="text-xs text-gold font-light w-6 text-right">9</span>
       </div>
-      
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">ストーリー・背景への共感</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 80%"></div>
-        </div>
-        <span class="text-xs text-gold font-light w-6 text-right">8</span>
-      </div>
-      
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">再訪・継続価値</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 70%"></div>
-        </div>
-        <span class="text-xs text-gold font-light w-6 text-right">7</span>
-      </div>
-      
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">記録・シェア体験</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 90%"></div>
-        </div>
-        <span class="text-xs text-gold font-light w-6 text-right">9</span>
-      </div>
-      
-      <div class="flex items-center gap-4">
-        <span class="text-xs text-muted w-40 shrink-0">インバウンド・多言語対応</span>
-        <div class="axis-score-bar flex-1">
-          <div class="axis-score-fill" style="width: 90%"></div>
-        </div>
-        <span class="text-xs text-gold font-light w-6 text-right">9</span>
-      </div>
-      
+
     </div>
   </section>
 
@@ -622,7 +648,7 @@
     <p>最寄駅：六本木駅・麻布十番駅</p>
     
     
-    <p class="pt-2 text-xs">Third Place Japan 認証取得：2026-04-15</p>
+    <p class="pt-2 text-xs">Third Place Japan TPJセレクト掲載：2026-04-15</p>
   </aside>
 
   

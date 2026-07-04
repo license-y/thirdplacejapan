@@ -60,37 +60,37 @@ og_type: "article"
     "additionalProperty": [
       {% if v.scores.comfort is defined %}{
         "@type": "PropertyValue",
-        "name": "居心地・空間品質スコア",
+        "name": "五感品質・素材スコア",
         "value": "{{ v.scores.comfort }}/10"
       },{% endif %}
       {% if v.scores.silence is defined %}{
         "@type": "PropertyValue",
-        "name": "静寂性・プライバシースコア",
+        "name": "静けさの再現スコア",
         "value": "{{ v.scores.silence }}/10"
       },{% endif %}
       {% if v.scores.special is defined %}{
         "@type": "PropertyValue",
-        "name": "特別感・非日常性スコア",
+        "name": "特別感・ギフト体験スコア",
         "value": "{{ v.scores.special }}/10"
       },{% endif %}
       {% if v.scores.story is defined %}{
         "@type": "PropertyValue",
-        "name": "ストーリー・背景への共感スコア",
+        "name": "ストーリー継承スコア",
         "value": "{{ v.scores.story }}/10"
       },{% endif %}
       {% if v.scores.revisit is defined %}{
         "@type": "PropertyValue",
-        "name": "再訪・継続価値スコア",
+        "name": "再購入・回遊価値スコア",
         "value": "{{ v.scores.revisit }}/10"
       },{% endif %}
       {% if v.scores.record is defined %}{
         "@type": "PropertyValue",
-        "name": "記録・シェア体験スコア",
+        "name": "シェア・記録性スコア",
         "value": "{{ v.scores.record }}/10"
       },{% endif %}
       {% if v.scores.inbound is defined %}{
         "@type": "PropertyValue",
-        "name": "インバウンド・多言語対応スコア",
+        "name": "インバウンド適性スコア",
         "value": "{{ v.scores.inbound }}/10"
       },{% endif %}
       {
