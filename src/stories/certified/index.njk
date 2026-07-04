@@ -1,5 +1,5 @@
 ---
-title: "TPJセレクト一覧"
+title: "TPJセレクト ― 気になる居場所たち"
 description: "Third Place Japan編集部がセレクトした、日本全国のサードプレイス。編集部が見つけた、いま気になる居場所をグレード別・地域別に掲載しています。"
 canonical: "/stories/certified/"
 ---
@@ -12,7 +12,7 @@ canonical: "/stories/certified/"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "TPJセレクト一覧", "item": "{{ site.url }}/stories/certified/" }
+    { "@type": "ListItem", "position": 3, "name": "TPJセレクト", "item": "{{ site.url }}/stories/certified/" }
   ]
 }
 </script>
@@ -36,8 +36,8 @@ canonical: "/stories/certified/"
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "name": "{{ v.name }}",
-      "description": "{{ v.grade }}認証 / {{ v.category }} / {{ v.area_primary.prefecture }}{{ v.area_primary.area }}",
+      "name": {{ v.name | dump | safe }},
+      "description": "{{ v.grade }} / {{ v.category }} / {{ v.area_primary.prefecture }}{{ v.area_primary.area }}",
       "url": "{{ site.url }}/stories/certified/{{ v.slug }}/"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
@@ -79,6 +79,10 @@ canonical: "/stories/certified/"
 }
 </script>
 
+{% set published = venues | publishedVenues %}
+{% set flagshipVenues = venues | venuesByGrade('flagship') %}
+{% set selectCount = published.length - flagshipVenues.length %}
+
 <div class="max-w-6xl mx-auto px-6 py-24">
 
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">
@@ -89,7 +93,7 @@ canonical: "/stories/certified/"
 
   <div class="mb-16" data-aos="fade-up">
     <p class="label mb-4">TPJ Select</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4">TPJセレクト一覧</h1>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">TPJセレクト ― 気になる居場所たち</h1>
     <div class="gold-rule mb-6"></div>
     <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto">
       Third Place Japan編集部が見つけた、いま気になる居場所です。<br class="hidden md:block">
@@ -97,33 +101,86 @@ canonical: "/stories/certified/"
     </p>
   </div>
 
-  {# グレードフィルタ（視覚的ナビ）#}
-  <div class="flex flex-wrap gap-3 mb-12" data-aos="fade-up">
-    <span class="label self-center mr-2">グレード</span>
-    {% for g in grades %}
-    <a href="#grade-{{ g.slug }}"
-       class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors">
-      {{ g.name }}
+  {# ── Flagship セクション（GBC単独・最上部固定枠） ── #}
+  {% if flagshipVenues.length %}
+  <section class="mb-20" data-aos="fade-up">
+    <div class="flex items-center gap-3 mb-2 pb-4 border-b border-gold/40">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <p class="label">Flagship</p>
+    </div>
+    <p class="text-xs text-muted mb-8">Third Place Japanが提唱する理想の空間を体現する旗艦店</p>
+    {% for v in flagshipVenues %}
+    <a href="/stories/certified/{{ v.slug }}/"
+       class="flex flex-col md:flex-row gap-6 bg-white border-2 border-gold/60 hover:border-gold rounded-2xl p-8 shadow-md hover:shadow-xl transition-all group">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          <span class="text-xs font-medium tracking-widest text-gold uppercase">Flagship</span>
+          <span class="text-xs text-muted border border-border rounded-full px-2 py-0.5 ml-2">{{ v.category }}</span>
+        </div>
+        <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-2 group-hover:text-gold transition-colors">
+          {{ v.name }}
+        </h2>
+        <p class="text-xs text-muted mb-5">
+          {{ v.area_primary.prefecture }} {{ v.area_primary.area }}
+          {% if v.nearest_stations and v.nearest_stations.length %}
+           ／ {{ v.nearest_stations | join("・") }}
+          {% endif %}
+        </p>
+        <p class="text-sm text-text leading-relaxed mb-6">{{ v.citation }}</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs text-gold border border-gold px-3 py-0.5 rounded-full">{{ v.axes_primary }}</span>
+          {% for ax in v.axes_secondary %}
+          <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">{{ ax }}</span>
+          {% endfor %}
+        </div>
+      </div>
     </a>
     {% endfor %}
-  </div>
+  </section>
+  {% endif %}
 
-  {# グレード別一覧 #}
-  {% for g in grades | reverse %}
-  {% set gradeVenues = venues | venuesByGrade(g.slug) %}
-  {% if gradeVenues.length %}
-  <section id="grade-{{ g.slug }}" class="mb-16" data-aos="fade-up">
-    <div class="flex items-center gap-4 mb-8 pb-4 border-b border-border">
-      <span class="grade-badge">{{ g.name }}</span>
-      <p class="text-sm text-muted">{{ g.description_ja }}</p>
+  {# ── TPJセレクト セクション（その他実店舗一覧） ── #}
+  {% if selectCount > 0 %}
+  <section class="mb-16" data-aos="fade-up">
+    <div class="flex items-center justify-between mb-2 pb-4 border-b border-border">
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <p class="label">TPJセレクト</p>
+      </div>
+      <span class="text-xs text-muted border border-border rounded-full px-3 py-1">随時追加中：現在{{ selectCount }}件</span>
     </div>
+    <p class="text-xs text-muted mb-8">編集部が見つけた、いま気になる居場所</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in gradeVenues %}
-      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% for v in published %}
+      {% if v.grade_slug != 'flagship' %}
+      <a href="/stories/certified/{{ v.slug }}/"
+         class="venue-card block p-4 md:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all group">
+        <div class="flex items-start justify-between mb-3">
+          <div class="flex items-center gap-1.5 text-xs text-muted border border-border rounded-full px-2.5 py-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            TPJセレクト
+          </div>
+          <span class="label text-xs">{{ v.category }}</span>
+        </div>
+        <h3 class="font-serif text-lg font-light text-dark mb-1.5 group-hover:text-gold transition-colors">
+          {{ v.name }}
+        </h3>
+        <p class="text-xs text-muted mb-3">
+          {{ v.area_primary.prefecture }} {{ v.area_primary.area }}
+        </p>
+        <p class="text-sm text-text leading-relaxed line-clamp-3">{{ v.citation }}</p>
+        <div class="mt-3 flex flex-wrap gap-1.5">
+          <span class="text-xs text-gold border border-gold px-3 py-0.5 rounded-full">{{ v.axes_primary }}</span>
+          {% for ax in v.axes_secondary %}
+          <span class="text-xs text-muted border border-border px-3 py-0.5 rounded-full">{{ ax }}</span>
+          {% endfor %}
+        </div>
+      </a>
+      {% endif %}
       {% endfor %}
     </div>
   </section>
   {% endif %}
-  {% endfor %}
 
 </div>
