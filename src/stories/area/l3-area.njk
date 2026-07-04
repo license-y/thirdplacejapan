@@ -147,7 +147,7 @@ layout: area.njk
   {% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
   {% if areaVenues.length %}
   <section data-aos="fade-up">
-    <p class="label mb-6">認証店舗</p>
+    <p class="label mb-6">セレクト店舗</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in areaVenues | sortByGrade %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}
@@ -155,7 +155,7 @@ layout: area.njk
     </div>
   </section>
   {% else %}
-  <p class="text-sm text-muted" data-aos="fade-up">このエリアの認証店舗は準備中です。</p>
+  <p class="text-sm text-muted" data-aos="fade-up">このエリアのセレクト店舗は準備中です。</p>
   {% endif %}
 
   {# FAQ セクション #}
@@ -176,7 +176,7 @@ layout: area.njk
           {% if av.length %}
           <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}で認証した場所として、{% for v in av %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
           {% else %}
-          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}の認証店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
+          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
           {% endif %}
         </div>
       </div>

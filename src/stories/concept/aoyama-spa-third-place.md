@@ -88,7 +88,7 @@ thumbnail: /assets/images/articles/aoyama-spa-wellness-tokyo.webp
 
 青山・外苑エリアには、スパ以外のサードプレイスも充実しています。外苑の銀杏並木沿いの散歩道、ギャラリー巡り、オーガニックカフェ——これらをウェルネス体験と組み合わせることで、青山を「整える一日」の場として活用できます。
 
-[スパ・サウナ・ウェルネス施設カテゴリ](/stories/spa-sauna-wellness/)でTPJ認証の詳細を、[TPJセレクト一覧](/stories/select/)では全認証施設を確認できます。
+[スパ・サウナ・ウェルネス施設カテゴリ](/stories/spa-sauna-wellness/)でTPJ認証の詳細を、[TPJセレクト一覧](/stories/select/)では全セレクト施設を確認できます。
 
 ---
 

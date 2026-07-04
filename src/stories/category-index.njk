@@ -66,10 +66,10 @@ eleventyComputed:
     },
     {
       "@type": "Question",
-      "name": "{{ cat.name_ja }}のTPJ認証店舗を探すにはどうすればいいですか？",
+      "name": "{{ cat.name_ja }}のTPJセレクト店舗を探すにはどうすればいいですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Third Place Japan Storiesの認証店舗ページ（{{ site.url }}/stories/select/）から業種・エリアで絞り込んで探せます。{{ cat.name_ja }}カテゴリのTPJ認証店舗は、7軸評価で一定水準を超えた施設のみが掲載されています。"
+        "text": "Third Place Japan Storiesのセレクト店舗ページ（{{ site.url }}/stories/select/）から業種・エリアで絞り込んで探せます。{{ cat.name_ja }}カテゴリのTPJセレクト店舗は、7軸評価で一定水準を超えた施設のみが掲載されています。"
       }
     }
   ]
@@ -139,12 +139,12 @@ eleventyComputed:
       </div>
       {% endif %}
 
-      {# このカテゴリの認証店舗 #}
+      {# このカテゴリのセレクト店舗 #}
       {% set catVenues = venues | venuesByCategory(cat.slug) | sortByGrade %}
       {% if catVenues.length %}
       <section class="mt-20 pt-10 border-t border-border" data-aos="fade-up">
         <div class="flex items-center justify-between mb-8">
-          <p class="label">{{ cat.name_ja }}の認証店舗</p>
+          <p class="label">{{ cat.name_ja }}のセレクト店舗</p>
           <a href="/stories/select/" class="text-xs text-muted hover:text-gold transition-colors">TPJセレクト一覧 →</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -174,12 +174,12 @@ eleventyComputed:
         </div>
         <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
           <button class="faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
-            <span class="font-serif text-sm font-light text-dark leading-snug">{{ cat.name_ja }}のTPJ認証店舗を探すにはどうすればいいですか？</span>
+            <span class="font-serif text-sm font-light text-dark leading-snug">{{ cat.name_ja }}のTPJセレクト店舗を探すにはどうすればいいですか？</span>
             <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
           </button>
           <div class="faq-body px-6 pb-5">
             <div class="gold-rule mb-4"></div>
-            <p class="text-sm text-muted leading-relaxed">Third Place Japan Storiesの認証店舗ページから業種・エリアで絞り込んで探せます。{{ cat.name_ja }}カテゴリのTPJ認証店舗は、7軸評価で一定水準を超えた施設のみが掲載されています。</p>
+            <p class="text-sm text-muted leading-relaxed">Third Place Japan Storiesのセレクト店舗ページから業種・エリアで絞り込んで探せます。{{ cat.name_ja }}カテゴリのTPJセレクト店舗は、7軸評価で一定水準を超えた施設のみが掲載されています。</p>
           </div>
         </div>
         <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">

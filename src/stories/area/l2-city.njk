@@ -28,7 +28,7 @@ layout: area.njk
       "name": "{{ item.city.name }}でサードプレイスとして認証された場所はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}のThird Place Japan認証店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）で認証された施設を掲載しています。"
+        "text": "{{ item.city.name }}のThird Place Japanセレクト店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）で認証された施設を掲載しています。"
       }
     },
     {
@@ -36,7 +36,7 @@ layout: area.njk
       "name": "{{ item.city.name }}で一人でゆっくり過ごせるカフェやスペースは？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}のTPJ認証店舗のうち、静寂性・プライバシースコアが高い施設がおすすめです。Third Place Japan Storiesのエリアページから業種別に絞り込んで探せます。"
+        "text": "{{ item.city.name }}のTPJセレクト店舗のうち、静寂性・プライバシースコアが高い施設がおすすめです。Third Place Japan Storiesのエリアページから業種別に絞り込んで探せます。"
       }
     }
   ]
@@ -146,7 +146,7 @@ layout: area.njk
       {% set cityVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug) %}
       {% if cityVenues.length %}
       <section data-aos="fade-up">
-        <p class="label mb-6">認証店舗</p>
+        <p class="label mb-6">セレクト店舗</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {% for v in cityVenues | sortByGrade %}
           {% set cardVenue = v %}{% include "venue-card.njk" %}
@@ -154,7 +154,7 @@ layout: area.njk
         </div>
       </section>
       {% else %}
-      <p class="text-sm text-muted" data-aos="fade-up">この地域の認証店舗は準備中です。</p>
+      <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト店舗は準備中です。</p>
       {% endif %}
     </div>
 
@@ -193,7 +193,7 @@ layout: area.njk
       </div>
       <div class="border-t border-border pt-6">
         <p class="text-xs leading-relaxed" style="color:var(--color-muted)">
-          Third Place Japanは{{ item.city.name }}の認証施設情報を独自の7軸基準で評価・掲載しています。
+          Third Place Japanは{{ item.city.name }}のセレクト施設情報を独自の7軸基準で評価・掲載しています。
         </p>
       </div>
     </aside>
@@ -266,7 +266,7 @@ layout: area.njk
   {% set cityVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug) %}
   {% if cityVenues.length %}
   <section data-aos="fade-up">
-    <p class="label mb-6">認証店舗</p>
+    <p class="label mb-6">セレクト店舗</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in cityVenues | sortByGrade %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}
@@ -274,7 +274,7 @@ layout: area.njk
     </div>
   </section>
   {% else %}
-  <p class="text-sm text-muted" data-aos="fade-up">この地域の認証店舗は準備中です。</p>
+  <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト店舗は準備中です。</p>
   {% endif %}
 </div>
 {% endif %}

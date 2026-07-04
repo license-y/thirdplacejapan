@@ -29,15 +29,15 @@ layout: area.njk
       "name": "{{ prefecture.name }}でTPJ認証を受けたサードプレイスはどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ prefecture.name }}のThird Place Japan認証店舗は{{ site.url }}/stories/area/{{ prefecture.slug }}/からエリア・業種別に探せます。カフェ・ホテルラウンジ・スパ・コワーキングなど多業種の認証施設を掲載しています。"
+        "text": "{{ prefecture.name }}のThird Place Japanセレクト店舗は{{ site.url }}/stories/area/{{ prefecture.slug }}/からエリア・業種別に探せます。カフェ・ホテルラウンジ・スパ・コワーキングなど多業種のセレクト施設を掲載しています。"
       }
     },
     {
       "@type": "Question",
-      "name": "{{ prefecture.name }}の市区町村ごとにTPJ認証店舗を探せますか？",
+      "name": "{{ prefecture.name }}の市区町村ごとにTPJセレクト店舗を探せますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "はい。{{ prefecture.name }}の認証店舗は市区町村ごとに絞り込んで探せます。さらにエリア（例：渋谷・青山）と業種（例：カフェ）の掛け合わせでも検索できます。"
+        "text": "はい。{{ prefecture.name }}のセレクト店舗は市区町村ごとに絞り込んで探せます。さらにエリア（例：渋谷・青山）と業種（例：カフェ）の掛け合わせでも検索できます。"
       }
     }
   ]
@@ -118,7 +118,7 @@ layout: area.njk
           <div>
             <p class="font-serif text-base font-normal transition-colors" style="color:var(--color-gold)">{{ city.name }}</p>
             {% if cityVenues.length %}
-            <p class="text-xs mt-0.5" style="color:var(--color-muted)">{{ cityVenues.length }}件の認証店舗</p>
+            <p class="text-xs mt-0.5" style="color:var(--color-muted)">{{ cityVenues.length }}件のセレクト店舗</p>
             {% endif %}
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" style="color:var(--color-gold)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -165,11 +165,11 @@ layout: area.njk
   </section>
   {% endif %}
 
-  {# この都道府県の全認証店舗 #}
+  {# この都道府県の全セレクト店舗 #}
   {% set prefVenues = venues | venuesByArea(prefecture.slug) %}
   {% if prefVenues.length %}
   <section data-aos="fade-up">
-    <p class="label mb-6">認証店舗</p>
+    <p class="label mb-6">セレクト店舗</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in prefVenues | sortByGrade %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}

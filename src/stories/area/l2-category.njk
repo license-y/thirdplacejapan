@@ -121,10 +121,10 @@ layout: area.njk
   </section>
   {% endif %}
 
-  {# ──── 認証店舗一覧 ──── #}
+  {# ──── セレクト店舗一覧 ──── #}
   {% if item.venues and item.venues.length %}
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">認証店舗 — {{ item.venues | length }}件</p>
+    <p class="label mb-6">セレクト店舗 — {{ item.venues | length }}件</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in item.venues | sortByGrade %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}
@@ -135,7 +135,7 @@ layout: area.njk
 
   {# 記事も店舗もない場合 #}
   {% if (not cityArticles or not cityArticles.length) and (not item.venues or not item.venues.length) %}
-  <p class="text-sm text-muted" data-aos="fade-up">このカテゴリの認証店舗・記事は準備中です。</p>
+  <p class="text-sm text-muted" data-aos="fade-up">このカテゴリのセレクト店舗・記事は準備中です。</p>
   {% endif %}
 
   {# ──── 他の業種へのリンク ──── #}
