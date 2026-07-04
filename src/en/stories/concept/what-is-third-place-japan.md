@@ -90,7 +90,7 @@ A nice café is a place you enjoy visiting. A third place is a place you return 
 By Oldenburg's original definition, yes — conversation is central. But in the Japanese context, solo presence in a shared space can be fully third-place in character. Our framework includes axes (silence, privacy, revisit value) that capture the quality of solo third-place experience.
 
 **Q. What does TPJ certification mean?**<br>
-A TPJ-certified space has been evaluated against our seven-axis framework and found to meet the standard across multiple dimensions. Certification does not mean the space is perfect — it means it has been evaluated honestly and found to function as a genuine third place. See [certified venues](/stories/certified/) for the full list.
+A TPJ-certified space has been evaluated against our seven-axis framework and found to meet the standard across multiple dimensions. Certification does not mean the space is perfect — it means it has been evaluated honestly and found to function as a genuine third place. See [certified venues](/stories/select/) for the full list.
 
 **Q. How is Japan's ibasho different from a Western third place?**<br>
 *Ibasho* emphasizes the individual's sense of being accepted — of not needing to perform or justify one's presence. A Western third place is more explicitly social. In practice, the best spaces satisfy both: they welcome solo visitors and create the conditions for organic social connection, without requiring either.

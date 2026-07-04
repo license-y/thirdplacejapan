@@ -84,7 +84,7 @@ thumbnail: /assets/images/articles/shimokitazawa-cafe-culture-tokyo.webp
 
 ## 下北沢から足を伸ばす
 
-下北沢から電車で10〜20分圏内には、[渋谷のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/shibuya/)エリアや、[文化・スポーツ・レジャー施設カテゴリ](/stories/culture-sports-leisure/)で評価している空間があります。[TPJ認証店舗一覧](/stories/certified/)も、下北沢周辺エリアの選択肢として参照ください。
+下北沢から電車で10〜20分圏内には、[渋谷のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/shibuya/)エリアや、[文化・スポーツ・レジャー施設カテゴリ](/stories/culture-sports-leisure/)で評価している空間があります。[TPJセレクト一覧](/stories/select/)も、下北沢周辺エリアの選択肢として参照ください。
 
 ---
 
@@ -103,4 +103,4 @@ thumbnail: /assets/images/articles/shimokitazawa-cafe-culture-tokyo.webp
 店舗によって異なります。作業を前提にする場合は、入店前にWi-Fiと電源の有無を確認することを推奨します。下北沢では作業用途よりも「過ごす時間の質」を重視したカフェが多い傾向があります。
 
 **Q. 下北沢でTPJ認証されている施設はありますか？**<br>
-Third Place Japan（サードプレイスジャパン）は下北沢エリアでも7軸評価による認証審査を実施しています。[認証店舗一覧](/stories/certified/)から最新の認証状況をご確認ください。
+Third Place Japan（サードプレイスジャパン）は下北沢エリアでも7軸評価による認証審査を実施しています。[TPJセレクト一覧](/stories/select/)から最新の認証状況をご確認ください。

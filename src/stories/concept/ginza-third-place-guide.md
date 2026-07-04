@@ -84,7 +84,7 @@ thumbnail: /assets/images/articles/ginza-cafe-third-place-tokyo.webp
 
 **レストラン・ダイニング**：ランチタイムの銀座の名店を昼のサードプレイスとして使う方法もあります。[レストラン・ダイニングの銀座記事](/stories/restaurant-dining/ginza/)で取り上げています。
 
-より厳選されたTPJ認証施設は、[認証店舗一覧](/stories/certified/)から銀座エリアで絞り込めます。
+より厳選されたTPJ認証施設は、[TPJセレクト一覧](/stories/select/)から銀座エリアで絞り込めます。
 
 ---
 
@@ -112,4 +112,4 @@ thumbnail: /assets/images/articles/ginza-cafe-third-place-tokyo.webp
 多くのホテルのラウンジ・バーは非宿泊者でも利用可能です。ただし混雑状況や予約の要否は施設ごとに異なります。TPJ認証の[ホテルラウンジ銀座記事](/stories/hotel-lounge/ginza/)で評価した施設を参照してください。
 
 **Q. 銀座でインバウンド観光客が使いやすいサードプレイスは？**<br>
-銀座は国際的な観光地のため、英語対応・カード決済・多言語メニューを備えた施設が多いエリアです。Third Place Japan の7軸評価では「インバウンド・多言語対応」を独立した評価軸として採点しており、認証施設一覧で確認できます。
+銀座は国際的な観光地のため、英語対応・カード決済・多言語メニューを備えた施設が多いエリアです。Third Place Japan の7軸評価では「インバウンド・多言語対応」を独立した評価軸として採点しており、TPJセレクト一覧で確認できます。

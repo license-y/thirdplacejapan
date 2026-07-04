@@ -6,3 +6,9 @@
 
 # 301 redirects: /stories/articles/ → /stories/about/ (ディレクトリ整理)
 /stories/articles/:slug/    /stories/about/:slug/       301
+
+# 301 redirects: /stories/certified/ → /stories/select/ (TPJセレクトURL変更 2026-07-04)
+/stories/certified/:splat   /stories/select/:splat      301
+/stories/certified          /stories/select/            301
+/en/stories/certified/:splat /en/stories/select/:splat  301
+/en/stories/certified       /en/stories/select/         301

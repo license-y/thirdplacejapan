@@ -84,7 +84,7 @@ layout: area.njk
   "hasPart": [
     {% set parts = [] %}
     {% for post in areaArts | head(5) %}{% set parts = parts.concat([{"@type":"Article","headline":post.data.title,"url":site.url + post.url}]) %}{% endfor %}
-    {% for v in areaVenues | head(5) %}{% set parts = parts.concat([{"@type":"LocalBusiness","name":v.name,"url":site.url + "/stories/certified/" + v.slug + "/"}]) %}{% endfor %}
+    {% for v in areaVenues | head(5) %}{% set parts = parts.concat([{"@type":"LocalBusiness","name":v.name,"url":site.url + "/stories/select/" + v.slug + "/"}]) %}{% endfor %}
     {% for p in parts %}{ "@type": {{ p["@type"] | dump }}, {% if p.headline %}"headline": {{ p.headline | dump }}{% else %}"name": {{ p.name | dump }}{% endif %}, "url": {{ p.url | dump }} }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]{% endif %}
@@ -174,7 +174,7 @@ layout: area.njk
           <div class="gold-rule mb-4"></div>
           {% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
           {% if av.length %}
-          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}で認証した場所として、{% for v in av %}<a href="/stories/certified/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
+          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}で認証した場所として、{% for v in av %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
           {% else %}
           <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}の認証店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
           {% endif %}

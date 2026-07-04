@@ -43,7 +43,7 @@ eleventyExcludeFromCollections: true
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{ site.url }}/stories/certified/</loc>
+    <loc>{{ site.url }}/stories/select/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,21 +89,21 @@ eleventyExcludeFromCollections: true
   {% set publishedVenueList = venues | publishedVenues %}
   {% for venue in publishedVenueList %}
   <url>
-    <loc>{{ site.url }}/stories/certified/{{ venue.slug }}/</loc>
+    <loc>{{ site.url }}/stories/select/{{ venue.slug }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     {% if venue.slug_en %}
-    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/certified/{{ venue.slug }}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/select/{{ venue.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug_en }}/"/>
     {% endif %}
   </url>
   {% if venue.slug_en %}
   <url>
-    <loc>{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/</loc>
+    <loc>{{ site.url }}/en/stories/select/{{ venue.slug_en }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/certified/{{ venue.slug }}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/certified/{{ venue.slug_en }}/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/select/{{ venue.slug }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug_en }}/"/>
   </url>
   {% endif %}
   {% endfor %}

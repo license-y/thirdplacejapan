@@ -39,7 +39,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1537,7 +1537,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/green-beans-coffee-shibuya/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/green-beans-coffee-shibuya/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1545,7 +1545,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/onibus-coffee-nakameguro/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/onibus-coffee-nakameguro/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1553,7 +1553,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/koffee-mameya-omotesando/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/koffee-mameya-omotesando/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1561,7 +1561,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/sarutahiko-coffee-ebisu/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/sarutahiko-coffee-ebisu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1569,7 +1569,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/switch-coffee-meguro/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/switch-coffee-meguro/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1577,7 +1577,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/glitch-coffee-kanda/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/glitch-coffee-kanda/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1585,7 +1585,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/the-roastery-nozy-coffee-harajuku/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/the-roastery-nozy-coffee-harajuku/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1593,7 +1593,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/arise-coffee-roasters-kiyosumi/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/arise-coffee-roasters-kiyosumi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1601,7 +1601,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/streamer-coffee-harajuku/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/streamer-coffee-harajuku/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1609,7 +1609,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/trunk-hotel-omotesando/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/trunk-hotel-omotesando/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1617,7 +1617,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/bna-wall-nihonbashi/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/bna-wall-nihonbashi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1625,7 +1625,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/co-ba-shibuya/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/co-ba-shibuya/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1633,7 +1633,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/saunalab-kanda/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/saunalab-kanda/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1641,7 +1641,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/shibuya-saunas/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/shibuya-saunas/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1649,7 +1649,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/kosugiyu-koenji/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/kosugiyu-koenji/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1657,7 +1657,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/the-sg-club-shibuya/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/the-sg-club-shibuya/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1665,7 +1665,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/bunkitsu-roppongi/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/bunkitsu-roppongi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1673,7 +1673,7 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/morioka-shoten-ginza/</loc>
+    <loc>https://thirdplacejapan.com/stories/select/morioka-shoten-ginza/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     

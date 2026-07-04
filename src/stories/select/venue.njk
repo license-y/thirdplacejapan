@@ -4,12 +4,12 @@ pagination:
   size: 1
   alias: venue
   addAllPagesToCollections: true
-permalink: "/stories/certified/{{ venue.slug }}/"
+permalink: "/stories/select/{{ venue.slug }}/"
 layout: venue.njk
 eleventyComputed:
   title: "{{ venue.name }}"
   description: "{{ venue.citation }}"
-  hreflang_ja: "/stories/certified/{{ venue.slug }}/"
-  hreflang_en: "{% if venue.has_en %}/en/stories/certified/{{ venue.slug }}/{% endif %}"
+  hreflang_ja: "/stories/select/{{ venue.slug }}/"
+  hreflang_en: "{% if venue.has_en %}/en/stories/select/{{ venue.slug }}/{% endif %}"
   og_image: "{{ venue.image }}"
 ---

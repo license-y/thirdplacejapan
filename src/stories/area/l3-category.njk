@@ -76,7 +76,7 @@ layout: area.njk
       "@type": "ListItem",
       "position": {{ loop.index }},
       "name": "{{ v.name }}",
-      "url": "{{ site.url }}/stories/certified/{{ v.slug }}/",
+      "url": "{{ site.url }}/stories/select/{{ v.slug }}/",
       "description": "{{ v.citation | replace('"', '\\"') | truncate(120) }}"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
@@ -182,7 +182,7 @@ layout: area.njk
   </section>
   {% endif %}
 
-  {# ──── 認証店舗一覧（グレード降順）──── #}
+  {# ──── TPJセレクト一覧（グレード降順）──── #}
   {% if item.venues and item.venues.length %}
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-6">認証店舗 — {{ item.venues | length }}件</p>
@@ -205,7 +205,7 @@ layout: area.njk
         <p class="text-xs text-gold mb-3">{{ group.key }}</p>
         <div class="flex flex-wrap gap-3">
           {% for v in group.items %}
-          <a href="/stories/certified/{{ v.slug }}/"
+          <a href="/stories/select/{{ v.slug }}/"
              class="flex items-center gap-2 text-sm text-text hover:text-gold transition-colors">
             <span class="grade-badge text-xs py-0.5 px-2">{{ v.grade }}</span>
             <span>{{ v.name }}</span>

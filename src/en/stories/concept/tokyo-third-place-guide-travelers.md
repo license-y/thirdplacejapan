@@ -105,7 +105,7 @@ No. Most specialty coffee shops and hotel lounges have English menus or visual m
 A coffee in a specialty café runs ¥600–1,000. Hotel lounge drinks start around ¥1,500. Shrines and public gardens are free or ¥500. Coworking day passes range from ¥1,500–3,000. The quality of experience is rarely correlated with price at the higher end.
 
 **Q. What is Third Place Japan's certification, and how can I use it?**<br>
-Third Place Japan evaluates spaces across seven axes — comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Certified venues have met a documented quality standard. See the [TPJ certified venue list](/stories/certified/) for options across Tokyo neighborhoods.
+Third Place Japan evaluates spaces across seven axes — comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Certified venues have met a documented quality standard. See the [TPJ certified venue list](/stories/select/) for options across Tokyo neighborhoods.
 
 **Q. What are the best neighborhoods for third places in Tokyo?**<br>
 For cafés: Shimokitazawa, Kiyosumi-Shirakawa, Sendagaya, Daikanyama. For hotel lounges: Ginza, Shinjuku West, Roppongi. For shrines and nature: Harajuku (Meiji Jingu), Shinjuku (Shinjuku Gyoen), Asakusa (Senso-ji). For coworking: Shibuya, Shinjuku, Omotesando. Each neighborhood has a distinct character — choose based on the pace and mood you are looking for.
