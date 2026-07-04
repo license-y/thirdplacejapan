@@ -1545,22 +1545,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/fuglen-tokyo/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/blue-bottle-coffee-kiyosumi/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/certified/onibus-coffee-nakameguro/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1570,14 +1554,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/certified/koffee-mameya-omotesando/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/arabica-azabudai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1633,30 +1609,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/tokyo-edition-toranomon/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/andaz-tokyo-toranomon/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/the-okura-tokyo/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/certified/trunk-hotel-omotesando/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1666,30 +1618,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/certified/bna-wall-nihonbashi/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/new-york-bar-park-hyatt/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/wework-shibuya-scramble/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/share-lounge-roppongi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
@@ -1729,14 +1657,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/certified/spa-laqua-korakuen/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/certified/the-sg-club-shibuya/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1746,22 +1666,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/certified/bunkitsu-roppongi/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/daikanyama-tsutaya-books/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/certified/book-and-bed-shinjuku/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
