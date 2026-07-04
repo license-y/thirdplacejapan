@@ -23,6 +23,7 @@
 /stories/certified/book-and-bed-shinjuku/         /stories/select/   301
 # ── 残り18件: 新URLの対応ページへ ──
 /stories/certified/:splat   /stories/select/:splat      301
+/stories/certified/         /stories/select/            301
 /stories/certified          /stories/select/            301
 
 # ── 英語版：削除済み施設 + 旧プレースホルダー → /en/stories/select/ ──
@@ -45,6 +46,7 @@
 /en/stories/certified/shinsen-coffeehouse/           /en/stories/select/   301
 # ── 残りの英語版（現存する施設）: 新URLへ ──
 /en/stories/certified/:splat /en/stories/select/:splat  301
+/en/stories/certified/      /en/stories/select/         301
 /en/stories/certified       /en/stories/select/         301
 
 # 301 redirects: /stories/select/ 削除施設17件 → 一覧ページへ（2026-07-04）
