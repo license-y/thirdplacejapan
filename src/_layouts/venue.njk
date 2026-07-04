@@ -38,7 +38,7 @@ og_type: "article"
     { "@type": "PropertyValue", "name": "静けさの再現スコア", "value": "{{ venue.scores.silence }}/10" },
     { "@type": "PropertyValue", "name": "特別感・ギフト体験スコア", "value": "{{ venue.scores.special }}/10" },
     { "@type": "PropertyValue", "name": "ストーリー継承スコア", "value": "{{ venue.scores.story }}/10" },
-    { "@type": "PropertyValue", "name": "再購入・回遊価値スコア", "value": "{{ venue.scores.revisit }}/10" },
+    { "@type": "PropertyValue", "name": "愛用・回遊価値スコア", "value": "{{ venue.scores.revisit }}/10" },
     { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": "{{ venue.scores.record }}/10" },
     { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": "{{ venue.scores.inbound }}/10" }
   ]
@@ -186,7 +186,7 @@ og_type: "article"
         <p class="text-xs text-muted font-medium mb-3 tracking-wider">【広がり】続く・伝わる・世界へ</p>
         <div class="space-y-3">
           {% set axGroup3 = [
-            { slug: "revisit", name: "再購入・回遊価値", score: venue.scores.revisit },
+            { slug: "revisit", name: "愛用・回遊価値", score: venue.scores.revisit },
             { slug: "record", name: "シェア・記録性", score: venue.scores.record },
             { slug: "inbound", name: "インバウンド適性", score: venue.scores.inbound }
           ] %}
