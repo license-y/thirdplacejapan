@@ -294,6 +294,68 @@ Third Place Product **Certified ／ Silver ／ Gold ／ Platinum ／ Flagship**
 
 ### 2026-07-04
 
+#### TPJセレクト掲載店舗を実在13店舗に全面更新
+
+**対象ファイル**
+- `src/_data/venues.json` — 全面書き換え
+
+**変更内容**
+Green Beans Coffee以外の架空12施設を削除し、実在する東京のサードプレイスに差し替え。
+
+| 店舗名 | カテゴリ | エリア | グレード |
+|---|---|---|---|
+| FUGLEN TOKYO | カフェ | 渋谷区・富ヶ谷 | Gold |
+| Blue Bottle Coffee 清澄白河 | カフェ | 江東区・清澄白河 | Platinum |
+| ONIBUS COFFEE 中目黒 | カフェ | 目黒区・中目黒 | Silver |
+| KOFFEE MAMEYA | カフェ | 渋谷区・表参道 | Gold |
+| % ARABICA Tokyo 麻布台ヒルズ | カフェ | 港区・虎ノ門 | Gold |
+| 猿田彦珈琲 恵比寿本店 | カフェ | 渋谷区・恵比寿 | Silver |
+| The Tokyo EDITION, Toranomon | ホテルラウンジ | 港区・虎ノ門 | Gold |
+| New York Bar（パークハイアット東京） | バー | 新宿区・西新宿 | Platinum |
+| WeWork 渋谷スクランブルスクエア | コワーキング | 渋谷区・渋谷 | Certified |
+| SaunaLab Kanda | スパ・サウナ | 千代田区・神田 | Gold |
+| 渋谷SAUNAS | スパ・サウナ | 渋谷区・渋谷 | Gold |
+| The SG Club | バー | 渋谷区・渋谷 | Platinum |
+
+**ルール**（今後の追加時も遵守）
+- 実在性が確認できる店舗のみ掲載（公式URL・住所が確認できるもの）
+- 実在するが同意未取得 → 「TPJセレクト（評論扱い）」として掲載継続可
+- 架空・placeholder → 即時非表示
+
+---
+
+#### TPJセレクトページをFlagship＋TPJセレクトの2セクション構成に再編
+
+**対象ファイル**
+- `src/stories/certified/index.njk` — 全面再構成
+- `src/stories/index.njk` — ウィジェット説明文更新
+
+**ラベル設計（確定）**
+
+| 対象 | ラベル | バッジ | 文言トーン |
+|---|---|---|---|
+| GBC（Green Beans Coffee） | **Flagship** | 盾アイコン・金枠 | 「Third Place Japanが提唱する理想の空間を体現する旗艦店」 |
+| その他実店舗（無償・編集部発掘） | **TPJセレクト** | 虫眼鏡アイコン・ソフトボーダー | 「編集部が見つけた、いま気になる居場所」 |
+| 将来のSilver以上（有償・審査あり） | 認証（Certified/Silver/Gold等） | グレード別バッジ | 「7基準に基づき正式に認証された施設」 |
+
+**ページ構成**
+- 上部固定枠：Flagship（GBC単独・盾アイコン・金枠大カード）
+- 下部グリッド：TPJセレクト一覧（虫眼鏡バッジ・「随時追加中：現在N件」表示）
+- グレードフィルターナビは撤廃
+- 各カードのバッジ：`TPJセレクト`（Certified/Gold等のグレード名は無償枠に非表示）
+
+**ウィジェット説明文（確定）**
+`随時追加中：現在{{ published.length }}件を編集部が調査・ご紹介しています`
+- `published.length` は publishedVenues フィルターで自動算出（施設追加・削除に連動）
+- 「N件掲載中」のような断定表示は使用しない
+
+**ルール（今後も遵守）**
+- 「Certified」という文言・バッジは、無償枠（TPJセレクト）には一切使用しない
+- GBCは「Certified」ではなく「Flagship」として別枠
+- 正式認証（有償・同意取得済み・Silver以上）が揃った段階で、再度 `/stories/certified/` を正式な「認証店舗一覧」ページとして切り直す予定
+
+---
+
 #### TPJ認証店舗 → TPJセレクト 表記変更
 
 **対象ファイル**
