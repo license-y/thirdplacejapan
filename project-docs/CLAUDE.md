@@ -532,6 +532,33 @@ Green Beans Coffee以外の架空12施設を削除し、実在する東京のサ
 
 ---
 
+#### venue詳細ページのUIをTPJセレクト仕様に統一
+
+**対象ファイル**
+- `src/_layouts/venue.njk`
+
+**変更内容**
+
+| 変更箇所 | 変更前 | 変更後 |
+|---|---|---|
+| パンくず（JSON-LD・表示） | 認証店舗 | TPJセレクト |
+| グレードバッジ（施設名上） | 全施設に表示（Silver/Gold等） | Flagshipのみ表示 |
+| 関連施設カードのグレードバッジ | 全カードに表示（Silver/Gold等） | 削除（非表示） |
+| サイトリンク表示 | テキストリンク「公式サイト ↗」 | ゴールド枠ピルボタン「関連サイト」 |
+| GBC（Green Beans Coffee）のURL | 空欄 | https://greenbeanscoffeeambassador.com/ |
+
+**ルール（今後も遵守）**
+
+- グレードバッジ（Certified/Silver/Gold/Platinum）は**無償TPJセレクト枠では表示しない**
+  - Flagshipのみ例外的に表示（`{% if venue.grade_slug == 'flagship' %}`で制御）
+  - 有償認証（同意取得・正式査定済み）が揃った段階で表示を復活させる
+- 関連施設カードにもグレードバッジは表示しない（一覧ページ・詳細ページとも統一）
+- 「公式サイト」という表現は使わない。「関連サイト」に統一する
+  - URLがない施設は非表示（`{% if venue.url %}`）。グルメサイト等の代替URLを設定してよい
+  - ボタンスタイル：`border border-gold text-gold rounded-full px-4 py-1.5`、ホバーでゴールド塗りつぶし
+
+---
+
 #### TPJセレクト掲載施設を30件に拡充（フェーズ1完了）
 
 **対象ファイル**
