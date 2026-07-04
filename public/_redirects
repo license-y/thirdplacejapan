@@ -8,7 +8,41 @@
 /stories/articles/:slug/    /stories/about/:slug/       301
 
 # 301 redirects: /stories/certified/ → /stories/select/ (TPJセレクトURL変更 2026-07-04)
+# ── 削除済み施設（12件）: 個別ページが存在しないため一覧ページへ送る（:splatより先に記述）──
+/stories/certified/blue-bottle-coffee-kiyosumi/   /stories/select/   301
+/stories/certified/fuglen-tokyo/                  /stories/select/   301
+/stories/certified/arabica-azabudai/              /stories/select/   301
+/stories/certified/tokyo-edition-toranomon/       /stories/select/   301
+/stories/certified/andaz-tokyo-toranomon/         /stories/select/   301
+/stories/certified/the-okura-tokyo/               /stories/select/   301
+/stories/certified/new-york-bar-park-hyatt/       /stories/select/   301
+/stories/certified/wework-shibuya-scramble/       /stories/select/   301
+/stories/certified/share-lounge-roppongi/         /stories/select/   301
+/stories/certified/spa-laqua-korakuen/            /stories/select/   301
+/stories/certified/daikanyama-tsutaya-books/      /stories/select/   301
+/stories/certified/book-and-bed-shinjuku/         /stories/select/   301
+# ── 残り18件: 新URLの対応ページへ ──
 /stories/certified/:splat   /stories/select/:splat      301
 /stories/certified          /stories/select/            301
+
+# ── 英語版：削除済み施設 + 旧プレースホルダー → /en/stories/select/ ──
+/en/stories/certified/blue-bottle-coffee-kiyosumi/   /en/stories/select/   301
+/en/stories/certified/fuglen-tokyo/                  /en/stories/select/   301
+/en/stories/certified/arabica-azabudai/              /en/stories/select/   301
+/en/stories/certified/tokyo-edition-toranomon/       /en/stories/select/   301
+/en/stories/certified/andaz-tokyo-toranomon/         /en/stories/select/   301
+/en/stories/certified/the-okura-tokyo/               /en/stories/select/   301
+/en/stories/certified/new-york-bar-park-hyatt/       /en/stories/select/   301
+/en/stories/certified/spa-laqua-korakuen/            /en/stories/select/   301
+/en/stories/certified/daikanyama-tsutaya-books/      /en/stories/select/   301
+/en/stories/certified/book-and-bed-shinjuku/         /en/stories/select/   301
+/en/stories/certified/aoyama-wellness-studio/        /en/stories/select/   301
+/en/stories/certified/dagayasandou-coffee/           /en/stories/select/   301
+/en/stories/certified/ginza-tea-house-chuo/          /en/stories/select/   301
+/en/stories/certified/kiyosumi-roastery-koto/        /en/stories/select/   301
+/en/stories/certified/maruaki-roastery-matsudai/     /en/stories/select/   301
+/en/stories/certified/roppongi-art-lounge/           /en/stories/select/   301
+/en/stories/certified/shinsen-coffeehouse/           /en/stories/select/   301
+# ── 残りの英語版（現存する施設）: 新URLへ ──
 /en/stories/certified/:splat /en/stories/select/:splat  301
 /en/stories/certified       /en/stories/select/         301
