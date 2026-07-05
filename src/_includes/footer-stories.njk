@@ -6,7 +6,7 @@
       <div class="col-span-2 md:col-span-1">
         <p class="label mb-4">最新記事</p>
         <ul class="space-y-2 text-xs text-muted">
-          {% set latestPosts = collections.articles | reverse | head(4) %}
+          {% set latestPosts = collections.articles | rejectLang("en") | head(4) %}
           {% for post in latestPosts %}
           <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
           {% endfor %}
@@ -14,14 +14,16 @@
         <a href="/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">記事一覧 →</a>
       </div>
 
-      <!-- ② サードプレイスとは -->
+      <!-- ② TPJガイド -->
       <div>
-        <p class="label mb-4">サードプレイスとは</p>
+        <p class="label mb-4">TPJガイド</p>
         <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/stories/about/" class="hover:text-gold transition-colors">読み物・コラム</a></li>
-          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
-          <li><a href="/certification/" class="hover:text-gold transition-colors">認証制度について</a></li>
+          {% set guidePosts = collections.aboutArticles | head(4) %}
+          {% for post in guidePosts %}
+          <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
+          {% endfor %}
         </ul>
+        <a href="/stories/about/" class="inline-block mt-3 text-xs text-gold hover:underline">TPJガイド一覧 →</a>
       </div>
 
       <!-- ③ カテゴリ -->
@@ -37,11 +39,20 @@
       <!-- ④ エリア -->
       <div>
         <p class="label mb-4">エリア</p>
-        <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/stories/area/tokyo/" class="hover:text-gold transition-colors">東京都</a></li>
-          <li><a href="/stories/area/" class="hover:text-gold transition-colors mt-1 block">場所をめぐる →</a></li>
+        <ul class="text-xs text-muted grid grid-cols-2 gap-x-3 gap-y-2">
+          <li><a href="/stories/area/tokyo/shibuya-ku/" class="hover:text-gold transition-colors">渋谷区</a></li>
+          <li><a href="/stories/area/tokyo/minato-ku/" class="hover:text-gold transition-colors">港区</a></li>
+          <li><a href="/stories/area/tokyo/shinjuku-ku/" class="hover:text-gold transition-colors">新宿区</a></li>
+          <li><a href="/stories/area/tokyo/chuo-ku/" class="hover:text-gold transition-colors">中央区</a></li>
+          <li><a href="/stories/area/tokyo/meguro-ku/" class="hover:text-gold transition-colors">目黒区</a></li>
+          <li><a href="/stories/area/tokyo/setagaya-ku/" class="hover:text-gold transition-colors">世田谷区</a></li>
+          <li><a href="/stories/area/tokyo/chiyoda-ku/" class="hover:text-gold transition-colors">千代田区</a></li>
+          <li><a href="/stories/area/tokyo/toshima-ku/" class="hover:text-gold transition-colors">豊島区</a></li>
+          <li><a href="/stories/area/tokyo/taito-ku/" class="hover:text-gold transition-colors">台東区</a></li>
+          <li><a href="/stories/area/tokyo/koto-ku/" class="hover:text-gold transition-colors">江東区</a></li>
+          <li class="opacity-50 col-span-2 mt-1">エリア拡大中</li>
         </ul>
-        <p class="mt-3 text-xs text-muted opacity-60">エリア拡大中</p>
+        <a href="/stories/area/" class="inline-block mt-3 text-xs text-gold hover:underline">場所をめぐる →</a>
       </div>
 
       <!-- ⑤ TPJセレクト -->
