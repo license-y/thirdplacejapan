@@ -153,36 +153,48 @@
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile overlay */
+    /* Mobile panel (compact drawer below nav) */
     .nav-overlay {
       display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(26, 23, 20, 0.97);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(248, 246, 241, 0.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(184, 150, 12, 0.15);
+      border-bottom: 1px solid rgba(184, 150, 12, 0.12);
       z-index: 190;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
+      padding: 14px 48px;
     }
-    .nav-overlay.open { display: flex; }
+    .nav-overlay.open { display: block; }
+    .nav-overlay ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      max-width: var(--w-content);
+      margin: 0 auto;
+      padding: 0;
+      flex-wrap: wrap;
+    }
     .nav-overlay a {
-      font-family: var(--font-serif);
-      font-size: 22px;
+      font-family: var(--font-sans);
+      font-size: 13px;
       font-weight: 300;
-      letter-spacing: 0.08em;
-      color: rgba(242, 238, 232, 0.8);
+      letter-spacing: 0.06em;
+      color: var(--c-text);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.2s;
     }
     .nav-overlay a:hover { color: var(--c-accent); }
     .nav-overlay .overlay-cta {
-      font-size: 14px;
-      font-family: var(--font-sans);
       color: var(--c-accent) !important;
       border: 1px solid rgba(184,150,12,0.5);
-      padding: 10px 24px;
-      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      letter-spacing: 0.08em;
     }
 
     /* ─── Sections ─── */
@@ -1191,16 +1203,18 @@
         <span></span>
       </button>
     </div>
-  </nav>
 
-  <div class="nav-overlay" id="overlay" role="dialog" aria-label="ナビゲーション">
-    <a href="#philosophy">TPJについて</a>
-    <a href="#criteria-map">7基準対応表</a>
-    <a href="#grades">認証グレード</a>
-    <a href="#services">サービス</a>
-    <a href="/stories/">Stories</a>
-    <a href="#for-business" class="overlay-cta">For Business</a>
-  </div>
+    <div class="nav-overlay" id="overlay" role="dialog" aria-label="ナビゲーション">
+      <ul>
+        <li><a href="#philosophy">TPJについて</a></li>
+        <li><a href="#criteria-map">7基準対応表</a></li>
+        <li><a href="#grades">認証グレード</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="/stories/">Stories</a></li>
+        <li><a href="#for-business" class="overlay-cta">For Business</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- ─── 1. Hero ─── -->
   <section id="hero">
@@ -2101,14 +2115,12 @@
       burger.classList.remove('open');
       overlay.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     }
 
     burger.addEventListener('click', () => {
       const open = overlay.classList.toggle('open');
       burger.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
     });
 
     overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
