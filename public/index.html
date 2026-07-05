@@ -1144,15 +1144,20 @@
 
       .footer-cols { grid-template-columns: 1fr; gap: 36px; }
 
-      /* Criteria Map: arrow rotates 90deg (→ becomes ↓) */
+      /* Criteria Map: mobile single-column layout */
+      .cmap-group {
+        padding: 24px 16px;
+      }
       .cmap-row {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+      }
+      .cmap-card {
+        padding: 16px;
       }
       .cmap-arrow {
+        text-align: center;
+        padding: 4px 0;
         transform: rotate(90deg);
-        text-align: left;
-        padding-left: 20px;
       }
 
       /* Step flow: vertical */
