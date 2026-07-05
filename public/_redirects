@@ -49,39 +49,3 @@
 /en/stories/certified/      /en/stories/select/         301
 /en/stories/certified       /en/stories/select/         301
 
-# 301 redirects: /stories/select/ 削除施設17件 → 一覧ページへ（2026-07-04）
-/stories/select/onibus-coffee-nakameguro/         /stories/select/   301
-/stories/select/koffee-mameya-omotesando/         /stories/select/   301
-/stories/select/sarutahiko-coffee-ebisu/          /stories/select/   301
-/stories/select/switch-coffee-meguro/             /stories/select/   301
-/stories/select/glitch-coffee-kanda/              /stories/select/   301
-/stories/select/the-roastery-nozy-coffee-harajuku/ /stories/select/  301
-/stories/select/arise-coffee-roasters-kiyosumi/   /stories/select/   301
-/stories/select/streamer-coffee-harajuku/         /stories/select/   301
-/stories/select/trunk-hotel-omotesando/           /stories/select/   301
-/stories/select/bna-wall-nihonbashi/              /stories/select/   301
-/stories/select/co-ba-shibuya/                    /stories/select/   301
-/stories/select/saunalab-kanda/                   /stories/select/   301
-/stories/select/shibuya-saunas/                   /stories/select/   301
-/stories/select/kosugiyu-koenji/                  /stories/select/   301
-/stories/select/the-sg-club-shibuya/              /stories/select/   301
-/stories/select/bunkitsu-roppongi/                /stories/select/   301
-/stories/select/morioka-shoten-ginza/             /stories/select/   301
-# ── 英語版同 ──
-/en/stories/select/onibus-coffee-nakameguro/         /en/stories/select/   301
-/en/stories/select/koffee-mameya-omotesando/         /en/stories/select/   301
-/en/stories/select/sarutahiko-coffee-ebisu/          /en/stories/select/   301
-/en/stories/select/switch-coffee-meguro/             /en/stories/select/   301
-/en/stories/select/glitch-coffee-kanda/              /en/stories/select/   301
-/en/stories/select/the-roastery-nozy-coffee-harajuku/ /en/stories/select/ 301
-/en/stories/select/arise-coffee-roasters-kiyosumi/   /en/stories/select/   301
-/en/stories/select/streamer-coffee-harajuku/         /en/stories/select/   301
-/en/stories/select/trunk-hotel-omotesando/           /en/stories/select/   301
-/en/stories/select/bna-wall-nihonbashi/              /en/stories/select/   301
-/en/stories/select/co-ba-shibuya/                    /en/stories/select/   301
-/en/stories/select/saunalab-kanda/                   /en/stories/select/   301
-/en/stories/select/shibuya-saunas/                   /en/stories/select/   301
-/en/stories/select/kosugiyu-koenji/                  /en/stories/select/   301
-/en/stories/select/the-sg-club-shibuya/              /en/stories/select/   301
-/en/stories/select/bunkitsu-roppongi/                /en/stories/select/   301
-/en/stories/select/morioka-shoten-ginza/             /en/stories/select/   301
