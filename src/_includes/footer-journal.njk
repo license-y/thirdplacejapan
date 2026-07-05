@@ -6,7 +6,7 @@
       <div class="col-span-2 md:col-span-1">
         <p class="label mb-4">Latest Articles</p>
         <ul class="space-y-2 text-xs text-muted">
-          {% set latestPosts = collections.articles | reverse | head(4) %}
+          {% set latestPosts = collections.articles | head(4) %}
           {% for post in latestPosts %}
           <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
           {% endfor %}

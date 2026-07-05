@@ -560,6 +560,35 @@ npm run build  # 本番ビルド（Cloudflare Pagesが自動実行）
   - 初回表示・「さらに表示」ボタン押下ともに25件ずつ表示する
   - 変更する場合はこの定数のみ編集すればよい
 
+## フッターの「最新記事」・「記事一覧」ルール（2026-07-05確定）
+
+### 記事一覧リンクのURL
+
+- **日本語フッター**（`src/_includes/footer-stories.njk`）の「記事一覧 →」は `/stories/latest/` を指す
+- **英語フッター**（`src/_includes/footer-journal.njk`）の「All Articles →」は `/en/stories/` を指す
+  （`/en/stories/latest/` は未作成のため。作成した場合は `/en/stories/latest/` に変更する）
+
+### 最新記事の取得方法
+
+`collections.articles` はすでに **新しい順（date降順）** でソート済み（`.eleventy.js` の `addCollection` で定義）。
+
+```njk
+{# 正しい実装 #}
+{% set latestPosts = collections.articles | rejectLang("en") | head(4) %}
+
+{# ❌ 禁止：| reverse を使うと古い記事4件が取れてしまう #}
+{% set latestPosts = collections.articles | reverse | head(4) %}
+```
+
+- `| reverse` は使わない
+- 日本語フッターでは `rejectLang("en")` で英語記事を除外する
+- 英語フッターでは `head(4)` のみ（英語記事フィルタリングは今後の課題）
+
+### TPJガイド記事の取得
+
+- `collections.aboutArticles`（`category_slug: "about"` かつ `tags: articles` の記事を新しい順で返す）を使う
+- 一覧リンクは `/stories/about/` を指す
+
 ## フロントマターのテンプレート
 
 ```markdown
