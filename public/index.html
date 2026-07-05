@@ -1042,6 +1042,76 @@
     }
     .modal-cta:hover { border-bottom-color: var(--c-accent); }
 
+    /* ─── Overview Ladder ─── */
+    .overview-ladder { max-width: 540px; }
+    .ovl-base {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 32px;
+      border: 1px solid rgba(184,150,12,0.25);
+      background: rgba(184,150,12,0.04);
+    }
+    .ovl-tag {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 10px;
+    }
+    .ovl-name {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .ovl-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 1.9;
+    }
+    .ovl-divider {
+      padding: 14px 32px;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: rgba(184,150,12,0.65);
+      border-left: 1px solid rgba(184,150,12,0.25);
+      border-right: 1px solid rgba(184,150,12,0.25);
+    }
+    .ovl-grades {
+      border: 1px solid rgba(45,42,38,0.1);
+      border-top: none;
+    }
+    .ovl-grade {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 32px;
+      border-bottom: 1px solid rgba(45,42,38,0.06);
+    }
+    .ovl-grade:last-child { border-bottom: none; }
+    .ovl-grade-name {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-text);
+    }
+    .ovl-grade-attr {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--c-muted);
+      letter-spacing: 0.06em;
+    }
+    .ovl-grade-flagship .ovl-grade-name { color: var(--c-accent); }
+
     /* ─── Responsive ─── */
     @media (max-width: 720px) {
       :root { --sp-section: 80px; }
@@ -1081,6 +1151,8 @@
       .step-flow::before { display: none; }
       .step-item { text-align: left; display: flex; gap: 20px; align-items: flex-start; }
       .step-num { flex-shrink: 0; margin: 0; }
+
+      .ovl-base { flex-direction: column; gap: 16px; }
 
       /* Modal box */
       .modal-box { padding: 32px 24px; }
@@ -1158,13 +1230,13 @@
       <h2 class="h2-light fi">効率の先にあるもの</h2>
       <figure class="photo-frame fi" aria-hidden="true">
         <img
-          src="/assets/images/main/specialty-coffee-interior-tokyo.webp"
-          alt="Specialty coffee interior — Japanese minimal atmosphere"
+          src="/assets/images/main/serene-cafe-interior-philosophy.webp"
+          alt="Serene cafe interior — third place atmosphere"
           loading="lazy"
           decoding="async"
         >
         <span class="photo-credit">
-          Photo by <a href="https://unsplash.com/@alexphotogram?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Aleksandra Dementeva</a>
+          Photo by <a href="https://unsplash.com/@petrsevcovic?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Petr Sevcovic</a>
           / <a href="https://unsplash.com?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>
         </span>
       </figure>
@@ -1341,6 +1413,55 @@
     </div>
   </section>
 
+  <!-- ─── 5b. 掲載の全体像 ─── -->
+  <section id="select-overview" class="s-alt">
+    <div class="inner">
+      <span class="label fi">Overview</span>
+      <h2 class="h2-light fi">掲載の全体像</h2>
+      <div class="body-text fi" style="margin-bottom: 48px;">
+        <p>TPJには2つの掲載形態があります。編集部が申請不要で発掘・紹介する「TPJセレクト」と、施設様からのお申し込みによる「正式認証（Certified以上）」です。TPJセレクトが裾野を広く持つ入口となり、そこから正式認証への経路が続きます。</p>
+      </div>
+
+      <div class="overview-ladder fi">
+        <div class="ovl-base">
+          <div class="ovl-left">
+            <span class="ovl-tag">入口 · 無償 · 申請不要</span>
+            <p class="ovl-name">TPJセレクト</p>
+            <p class="ovl-desc">編集部が全国の居場所を独自の7軸評価基準で発掘・紹介します。施設様からのお申し込みは不要です。</p>
+          </div>
+          <a href="/stories/select/" class="btn-more" style="white-space:nowrap;align-self:center;">掲載一覧</a>
+        </div>
+
+        <div class="ovl-divider">施設様からのお申し込みで正式認証へ ↓</div>
+
+        <div class="ovl-grades">
+          <div class="ovl-grade">
+            <span class="ovl-grade-name">Certified</span>
+            <span class="ovl-grade-attr">無償 · 要申請</span>
+          </div>
+          <div class="ovl-grade">
+            <span class="ovl-grade-name">Silver</span>
+            <span class="ovl-grade-attr">有償</span>
+          </div>
+          <div class="ovl-grade">
+            <span class="ovl-grade-name">Gold</span>
+            <span class="ovl-grade-attr">有償</span>
+          </div>
+          <div class="ovl-grade">
+            <span class="ovl-grade-name">Platinum</span>
+            <span class="ovl-grade-attr">有償</span>
+          </div>
+          <div class="ovl-grade ovl-grade-flagship">
+            <span class="ovl-grade-name">Flagship</span>
+            <span class="ovl-grade-attr">最上位 · 招待制</span>
+          </div>
+        </div>
+
+        <p style="font-size: 13px; color: var(--c-muted); margin-top: 24px; line-height: 2;">TPJセレクトに掲載された施設様が正式認証を希望される場合は、<a href="#for-business" style="color:var(--c-accent);">For Business</a>ページよりお申し込みください。審査のうえ認定を発行いたします。</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ─── 6. Grades ─── -->
   <section id="grades" class="s-dark">
     <div class="inner">
@@ -1363,10 +1484,10 @@
           <tbody>
             <tr>
               <td class="grade-name-cell">Certified</td>
-              <td>自薦・他薦いずれも可</td>
+              <td>施設様からのお申し込み（自薦・他薦いずれも可）</td>
               <td>覆面調査員による基礎確認</td>
               <td>登録料・年会費ともに無料 <span class="grade-free-badge">無料</span></td>
-              <td>「第三の居場所」として初めて記録される</td>
+              <td>「第三の居場所」として正式に記録される（TPJセレクトとは別の正式認証）</td>
               <td><button class="btn-more btn-more-dark" data-modal="modal-grade-certified" id="trigger-modal-grade-certified">詳しく見る</button></td>
             </tr>
             <tr>
@@ -1484,13 +1605,13 @@
       <h2 class="fi">言葉だけでなく、実践として</h2>
       <div class="gbc-photo fi" aria-hidden="true">
         <img
-          src="/assets/images/main/coffee-shop-atmosphere-dark.webp"
-          alt="Barista making coffee — craft coffee atmosphere"
+          src="/assets/images/main/craft-coffee-flagship-gbc.webp"
+          alt="Craft coffee bar — flagship third place"
           loading="lazy"
           decoding="async"
         >
         <span class="photo-credit">
-          Photo by <a href="https://unsplash.com/@mehrpouya?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Mehrpouya H</a>
+          Photo by <a href="https://unsplash.com/@yanapisenaud?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Yanapi Senaud</a>
           / <a href="https://unsplash.com?utm_source=thirdplacejapan&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>
         </span>
       </div>
@@ -1596,7 +1717,7 @@
       <div class="for-biz-inner fi">
         <span class="for-biz-eyebrow">For Business</span>
         <h2 class="for-biz-h2">丁寧に場をつくる方へ</h2>
-        <p class="for-biz-body">Certified認証（無料）のご登録、Silver以上の認証審査へのお問い合わせ、有償サービスのご相談はすべてこちらから。</p>
+        <p class="for-biz-body">Certified以上の正式認証へのお申し込み、Silver以上の認証審査へのお問い合わせ、有償サービスのご相談はすべてこちらから。</p>
         <div>
           <a href="mailto:hello@thirdplacejapan.com" class="btn-primary">お問い合わせ・資料請求</a>
           <a href="/stories/" class="for-biz-link">Stories（記事を読む）→</a>
