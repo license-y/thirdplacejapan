@@ -90,7 +90,7 @@ og_type: "article"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "TPJセレクト", "item": "{{ site.url }}/stories/select/" },
+    { "@type": "ListItem", "position": 3, "name": {% if venue.grade_slug == "flagship" %}"Flagship"{% else %}"TPJセレクト"{% endif %}, "item": "{{ site.url }}/stories/select/" },
     { "@type": "ListItem", "position": 4, "name": "{{ venue.name }}", "item": "{{ site.url }}/stories/select/{{ venue.slug }}/" }
   ]
 }
@@ -102,7 +102,7 @@ og_type: "article"
   <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
     <span class="text-border">／</span>
-    <a href="/stories/select/" class="hover:text-gold transition-colors">TPJセレクト</a>
+    <a href="/stories/select/" class="hover:text-gold transition-colors">{% if venue.grade_slug == "flagship" %}Flagship{% else %}TPJセレクト{% endif %}</a>
     <span class="text-border">／</span>
     <span>{{ venue.name }}</span>
   </nav>
@@ -110,6 +110,9 @@ og_type: "article"
   {# カテゴリ #}
   <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
     <span class="label">{{ venue.category }}</span>
+    {% if venue.grade_slug == "flagship" %}
+    <span class="text-xs font-medium tracking-wider text-gold border border-gold px-3 py-1 rounded-full">Flagship</span>
+    {% endif %}
   </div>
 
   {# 店舗名 #}
@@ -217,7 +220,7 @@ og_type: "article"
     <p><a href="{{ venue.url }}" target="_blank" rel="noopener"
           class="inline-block border border-gold text-gold text-xs font-medium px-4 py-1.5 rounded-full hover:bg-gold hover:text-white transition-colors">関連サイト</a></p>
     {% endif %}
-    <p class="pt-2 text-xs">Third Place Japan TPJセレクト掲載：{{ venue.certified_date }}</p>
+    <p class="pt-2 text-xs">Third Place Japan {% if venue.grade_slug == "flagship" %}Flagship認定：{% else %}TPJセレクト掲載：{% endif %}{{ venue.certified_date }}</p>
   </aside>
 
   {# 同じ面（エリア×業種）のセレクト店舗 #}
@@ -254,10 +257,18 @@ og_type: "article"
 
   {# 認証制度への還流導線 #}
   <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
+    {% if venue.grade_slug == "flagship" %}
+    <div class="text-left md:text-center">
+      <span class="inline-block text-xs font-medium tracking-wider text-gold border border-gold px-4 py-1.5 rounded-full mb-3">Flagship</span>
+      <p class="text-sm text-muted">Third Place Japanの実証店舗として、理想の空間づくりを検証しています。</p>
+      <p class="mt-3"><a href="{{ site.main_site_url }}/" class="text-gold hover:underline text-sm">TPJについて知る</a></p>
+    </div>
+    {% else %}
     <p class="text-sm text-muted text-left md:text-center">
       この場所は Third Place Japan セレクト店舗です。<br class="hidden md:block">
       <a href="{{ site.main_site_url }}/" class="text-gold hover:underline">TPJについて知る</a>
     </p>
+    {% endif %}
   </div>
 
   {# 英語版リンク #}
