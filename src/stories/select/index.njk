@@ -154,10 +154,14 @@ canonical: "/stories/select/"
     {# グレード凡例 #}
     <div class="flex flex-wrap gap-2 items-center mb-6 p-4 bg-white rounded-xl shadow-sm">
       <span class="text-xs text-muted mr-1">認証グレード：</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
-      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
+      <span class="inline-flex items-center gap-1.5 text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border-2" style="color:#1C1C1C;border-color:#1C1C1C;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        Flagship
+      </span>
       <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
+      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
       <a href="/stories/about/certification-grades/" class="text-xs text-muted hover:text-gold transition-colors ml-auto underline underline-offset-2">グレードの違いを見る →</a>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -166,21 +170,9 @@ canonical: "/stories/select/"
       <a href="/stories/select/{{ v.slug }}/"
          class="venue-card block p-4 md:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all group">
         <div class="flex items-start justify-between mb-3">
-          <div>
-            {% if v.grade_slug == "platinum" %}
-              <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
-            {% elif v.grade_slug == "gold" %}
-              <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
-            {% elif v.grade_slug == "silver" %}
-              <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
-            {% elif v.grade_slug == "certified" %}
-              <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
-            {% else %}
-              <span class="inline-flex items-center gap-1.5 text-xs text-muted border border-border rounded-full px-2.5 py-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                TPJセレクト
-              </span>
-            {% endif %}
+          <div class="flex items-center gap-1.5 text-xs text-muted border border-border rounded-full px-2.5 py-0.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            TPJセレクト
           </div>
           <span class="label text-xs">{{ v.category }}</span>
         </div>
