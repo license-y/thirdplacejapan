@@ -1263,6 +1263,62 @@ eleventyConfig.addFilter("rejectLang", (array, lang) =>
 
 ---
 
+## ✅ LocalBusiness の検索最適化プロパティ（venue.njk グレード条件付き）
+
+以下のプロパティはグレードに応じて条件出力する（`thisLevel` による制御）。
+
+### openingHours（Silver以上・`thisLevel >= 2`）
+
+```json
+"openingHours": ["Mo-Su 10:30-20:00"]
+```
+
+- Google・AIが「今開いているか」を判定する。形式は Schema.org の `OpeningHoursSpecification` 準拠
+- 曜日コード：Mo / Tu / We / Th / Fr / Sa / Su
+- 複数パターン例：`["Mo-Fr 09:00-18:00", "Sa-Su 10:00-17:00"]`
+- `venues.json` には `opening_hours`（配列・JSON-LD用）と `opening_hours_display`（文字列・UI表示用）の2フィールドで管理する
+
+### sameAs（Silver以上・`thisLevel >= 2`）
+
+```json
+"sameAs": ["https://example.com/", "https://www.instagram.com/handle"]
+```
+
+- 公式サイト・Instagram・Googleビジネスプロフィール等のURLを配列で列挙する
+- エンティティ認識を強化し、AIが同一施設として正しく識別する効果がある
+- 空配列 `[]` は警告の原因になるため、URLが確定しない場合はフィールド自体を省略する
+
+### amenityFeature（Platinum以上・`thisLevel >= 4`）
+
+**禁止**：文字列配列で出力する
+```json
+"amenityFeature": ["Wi-Fi", "電源", "禁煙"]
+```
+
+**正しい実装**：`LocationFeatureSpecification` オブジェクト形式
+```json
+"amenityFeature": [
+  { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+  { "@type": "LocationFeatureSpecification", "name": "電源", "value": true },
+  { "@type": "LocationFeatureSpecification", "name": "禁煙", "value": true }
+]
+```
+
+- `venues.json` の `amenity_features` は文字列配列で保持し、テンプレート側でオブジェクト変換する
+- `value: true` は「その設備がある」を意味する。ない場合は `value: false` または省略する
+- 「Wi-Fiあるカフェ」「電源あり」等の条件検索・AI回答に対応する重要プロパティ
+
+### smokingAllowed（Platinum以上・`thisLevel >= 4`）
+
+```json
+"smokingAllowed": false
+```
+
+- `true` / `false` のBoolean値で指定。文字列 `"false"` は不可
+- 禁煙・喫煙可の条件検索に対応する
+
+---
+
 # SEO・AEO記事作成指針
 
 ## メディア名の表記ルール（SEO対策・必須）
