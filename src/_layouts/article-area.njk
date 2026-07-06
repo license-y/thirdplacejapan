@@ -9,7 +9,12 @@ og_type: "article"
   "@type": "Article",
   "headline": "{{ title | replace('"', '\\"') }}",
   "description": "{{ description | replace('"', '\\"') }}",
-  "image": "{{ site.url }}{{ thumbnail or '' }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ thumbnail or '' }}",
+    "width": 800,
+    "height": 450
+  },
   "datePublished": "{{ date | dateISO }}",
   "dateModified": "{{ date | dateISO }}",
   "author": {
@@ -22,7 +27,9 @@ og_type: "article"
     "name": "Third Place Japan",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.url }}/assets/images/main/tpj-logo.png"
+      "url": "{{ site.url }}/assets/images/main/tpj-logo.png",
+      "width": 900,
+      "height": 275
     }
   },
   "mainEntityOfPage": {
