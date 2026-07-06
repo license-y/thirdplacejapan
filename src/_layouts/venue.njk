@@ -416,7 +416,7 @@ og_type: "article"
     <p class="label mb-4">サードプレイス関連タグ</p>
     <div class="flex flex-wrap gap-2">
       {% for tag in venue.tags | head(tagLimit) %}
-      <span class="text-xs px-3 py-1 border border-border rounded-full text-muted bg-white">{{ tag }}</span>
+      <span class="text-xs px-3 py-1 border border-gold/30 rounded-full text-muted bg-white">{{ tag }}</span>
       {% endfor %}
     </div>
   </section>
