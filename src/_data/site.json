@@ -7,5 +7,6 @@
   "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
   "description_en": "Japan's dedicated third-place media — certifying spaces where you can simply be.",
   "twitter": "@ThirdPlaceJapan",
-  "main_site_url": "https://thirdplacejapan.com"
+  "main_site_url": "https://thirdplacejapan.com",
+  "ga4_id": "G-37RDY9RX09"
 }
