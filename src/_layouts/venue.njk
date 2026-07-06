@@ -54,8 +54,8 @@ og_type: "article"
     "longitude": {{ venue.lng }}
   }
   {% endif %}
-  {% if thisLevel >= 2 and venue.same_as %},
-  "sameAs": {{ venue.same_as | dump | safe }}
+  {% if thisLevel >= 2 and (venue.url or venue.instagram_url) %},
+  "sameAs": [{% if venue.url %}{{ venue.url | dump | safe }}{% endif %}{% if venue.url and venue.instagram_url %},{% endif %}{% if venue.instagram_url %}{{ venue.instagram_url | dump | safe }}{% endif %}]
   {% endif %}
   {% if thisLevel >= 2 and venue.opening_hours %},
   "openingHours": {{ venue.opening_hours | dump | safe }}
