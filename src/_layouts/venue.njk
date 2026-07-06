@@ -5,6 +5,8 @@ og_type: "article"
 
 {# グレード→数値マッピング #}
 {%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
+{%- set gradeLevels = {"certified": 1, "silver": 2, "gold": 3, "platinum": 4, "flagship": 5} -%}
+{%- set thisLevel = gradeLevels[venue.grade_slug] or 0 -%}
 
 {# 7軸スコア平均（AggregateRating用） #}
 {%- set totalScore = venue.scores.comfort + venue.scores.silence + venue.scores.special + venue.scores.story + venue.scores.revisit + venue.scores.record + venue.scores.inbound -%}
@@ -15,20 +17,15 @@ og_type: "article"
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "{{ venue.name }}",
-  "description": "{{ venue.citation | replace('"', '\\"') }}",
+  "name": {{ venue.name | dump | safe }},
+  "description": {{ venue.citation | dump | safe }},
   "image": "{{ site.url }}{{ venue.image }}",
   "url": "{{ site.url }}/stories/select/{{ venue.slug }}/",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "{{ venue.area_primary.area }}",
-    "addressRegion": "{{ venue.area_primary.prefecture }}",
+    "addressLocality": {{ venue.area_primary.area | dump | safe }},
+    "addressRegion": {{ venue.area_primary.prefecture | dump | safe }},
     "addressCountry": "JP"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": {{ venue.lat }},
-    "longitude": {{ venue.lng }}
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -39,9 +36,9 @@ og_type: "article"
     "reviewCount": 1
   },
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "{{ venue.grade }}" },
+    { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": {{ venue.grade | dump | safe }} },
     { "@type": "PropertyValue", "name": "TPJ認証取得日", "value": "{{ venue.certified_date }}" },
-    { "@type": "PropertyValue", "name": "主評価軸", "value": "{{ venue.axes_primary }}" },
+    { "@type": "PropertyValue", "name": "主評価軸", "value": {{ venue.axes_primary | dump | safe }} },
     { "@type": "PropertyValue", "name": "五感品質・素材スコア", "value": {{ venue.scores.comfort }} },
     { "@type": "PropertyValue", "name": "静けさの再現スコア", "value": {{ venue.scores.silence }} },
     { "@type": "PropertyValue", "name": "特別感・ギフト体験スコア", "value": {{ venue.scores.special }} },
@@ -50,6 +47,37 @@ og_type: "article"
     { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": {{ venue.scores.record }} },
     { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": {{ venue.scores.inbound }} }
   ]
+  {% if thisLevel >= 1 %},
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ venue.lat }},
+    "longitude": {{ venue.lng }}
+  }
+  {% endif %}
+  {% if thisLevel >= 2 and venue.same_as %},
+  "sameAs": {{ venue.same_as | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 2 and venue.opening_hours %},
+  "openingHours": {{ venue.opening_hours | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 2 and venue.price_range %},
+  "priceRange": {{ venue.price_range | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.telephone %},
+  "telephone": {{ venue.telephone | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.menu_url %},
+  "hasMenu": {{ venue.menu_url | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.serves_cuisine %},
+  "servesCuisine": {{ venue.serves_cuisine | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 4 and venue.amenity_features %},
+  "amenityFeature": {{ venue.amenity_features | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 4 and venue.smoking_allowed !== undefined %},
+  "smokingAllowed": {{ venue.smoking_allowed }}
+  {% endif %}
 }
 </script>
 
@@ -60,11 +88,11 @@ og_type: "article"
   "@type": "Review",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "name": "{{ venue.name | replace('"', '\\"') }}",
+    "name": {{ venue.name | dump | safe }},
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "{{ venue.area_primary.area }}",
-      "addressRegion": "{{ venue.area_primary.prefecture }}",
+      "addressLocality": {{ venue.area_primary.area | dump | safe }},
+      "addressRegion": {{ venue.area_primary.prefecture | dump | safe }},
       "addressCountry": "JP"
     }
   },
@@ -85,7 +113,7 @@ og_type: "article"
     "worstRating": 1,
     "description": "TPJ認証グレード {{ venue.grade }}"
   },
-  "reviewBody": "{{ venue.citation | replace('"', '\\"') }}",
+  "reviewBody": {{ venue.citation | dump | safe }},
   "additionalProperty": [
     { "@type": "PropertyValue", "name": "五感品質・素材", "value": {{ venue.scores.comfort }} },
     { "@type": "PropertyValue", "name": "静けさの再現", "value": {{ venue.scores.silence }} },
@@ -124,12 +152,30 @@ og_type: "article"
     <span>{{ venue.name }}</span>
   </nav>
 
-  {# カテゴリ #}
-  <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
+  {# カテゴリ+グレードバッジ #}
+  <div class="flex items-center gap-3 flex-wrap mb-6" data-aos="fade-up">
     <span class="label">{{ venue.category }}</span>
+    {# グレードバッジ #}
     {% if venue.grade_slug == "flagship" %}
-    <span class="text-xs font-medium tracking-wider text-gold border border-gold px-3 py-1 rounded-full">Flagship</span>
+      <span class="inline-flex items-center gap-1.5 text-xs font-medium tracking-wider px-3 py-1 rounded-full border-2" style="color:#1C1C1C;border-color:#1C1C1C;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        Flagship
+      </span>
+    {% elif venue.grade_slug == "platinum" %}
+      <span class="text-xs font-medium tracking-wider px-3 py-1 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
+    {% elif venue.grade_slug == "gold" %}
+      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-3 py-1 rounded-full">Gold</span>
+    {% elif venue.grade_slug == "silver" %}
+      <span class="text-xs font-medium tracking-wider px-3 py-1 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
+    {% elif venue.grade_slug == "certified" %}
+      <span class="text-xs font-medium tracking-wider px-3 py-1 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
+    {% else %}
+      <span class="inline-flex items-center gap-1.5 text-xs text-muted border border-border px-3 py-1 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        TPJセレクト
+      </span>
     {% endif %}
+    <a href="/stories/about/certification-grades/" class="text-xs text-muted hover:text-gold transition-colors underline underline-offset-2">グレードとは？</a>
   </div>
 
   {# 店舗名 #}
@@ -234,6 +280,20 @@ og_type: "article"
     </div>
   </section>
 
+  {# タグ（グレード別上限数） #}
+  {% if venue.tags and venue.tags.length %}
+  {%- set maxTagsMap = {"certified": 5, "silver": 10, "gold": 15, "platinum": 18, "flagship": 20} -%}
+  {%- set tagLimit = maxTagsMap[venue.grade_slug] or 5 -%}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-4">サードプレイス関連タグ</p>
+    <div class="flex flex-wrap gap-2">
+      {% for tag in venue.tags | head(tagLimit) %}
+      <span class="text-xs px-3 py-1 border border-border rounded-full text-muted bg-white">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {# 記事本文 #}
   <div class="prose" data-aos="fade-up">
     {{ content | safe }}
@@ -294,8 +354,16 @@ og_type: "article"
     </div>
     {% else %}
     <p class="text-sm text-muted text-left md:text-center">
-      この場所は Third Place Japan セレクト店舗です。<br class="hidden md:block">
+      {% if venue.grade_slug == "platinum" %}Third Place Japan 認証店舗（Platinum）として掲載しています。
+      {% elif venue.grade_slug == "gold" %}Third Place Japan 認証店舗（Gold）として掲載しています。
+      {% elif venue.grade_slug == "silver" %}Third Place Japan 認証店舗（Silver）として掲載しています。
+      {% elif venue.grade_slug == "certified" %}Third Place Japan 認証店舗（Certified）として掲載しています。
+      {% else %}この場所は Third Place Japan セレクト店舗です。
+      {% endif %}
+      <br class="hidden md:block">
       <a href="{{ site.main_site_url }}/" class="text-gold hover:underline">TPJについて知る</a>
+      <span class="mx-2 text-border">·</span>
+      <a href="/stories/about/certification-grades/" class="text-gold hover:underline">認証グレードとは</a>
     </p>
     {% endif %}
   </div>
