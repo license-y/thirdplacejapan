@@ -224,8 +224,8 @@ og_type: "article"
     <p class="font-serif text-base leading-relaxed text-dark">{{ venue.citation }}</p>
   </div>
 
-  {# 施設情報（営業時間・価格帯・電話・メニュー） #}
-  {% if venue.opening_hours_display or venue.price_range or venue.telephone or venue.menu_url %}
+  {# 施設情報（営業時間・価格帯・電話・メニュー）— TPJセレクトは非表示 #}
+  {% if (venue.opening_hours_display or venue.price_range or venue.telephone or venue.menu_url) and venue.grade_slug != "select" %}
   <div class="mb-12 bg-stone-50 rounded-xl px-5 py-4 flex flex-wrap gap-x-8 gap-y-3 text-sm" data-aos="fade-up">
     {% if venue.opening_hours_display %}
     <div class="flex items-center gap-2" style="color:#3D2B1F;">
@@ -463,10 +463,10 @@ og_type: "article"
     {% if venue.nearest_stations and venue.nearest_stations.length %}
     <p>最寄駅：{{ venue.nearest_stations | join("・") }}</p>
     {% endif %}
-    {% if venue.opening_hours_display %}
+    {% if venue.opening_hours_display and venue.grade_slug != "select" %}
     <p>営業時間：{{ venue.opening_hours_display }}</p>
     {% endif %}
-    {% if venue.price_range %}
+    {% if venue.price_range and venue.grade_slug != "select" %}
     <p>価格帯：{{ venue.price_range }}</p>
     {% endif %}
     <div class="flex flex-wrap gap-2 pt-2">
@@ -500,6 +500,9 @@ og_type: "article"
       </a>
       {% endif %}
     </div>
+    {% if venue.grade_slug == "select" %}
+    <p class="pt-3 text-xs leading-relaxed" style="color:#3D2B1F;">営業日・営業時間などの詳細は変動することがあります。「地図を見る」から最新情報をご確認ください。</p>
+    {% endif %}
     <p class="pt-2 text-xs">Third Place Japan {% if venue.grade_slug == "flagship" %}Flagship認定：{% else %}TPJセレクト掲載：{% endif %}{{ venue.certified_date }}</p>
   </aside>
 
