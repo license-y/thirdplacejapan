@@ -57,7 +57,6 @@ hreflang_en: "/en/stories/"
       "@type": "ListItem",
       "position": {{ loop.index }},
       "item": {
-        "@type": "Article",
         "@id": "{{ site.url }}{{ post.url }}",
         "name": {{ post.data.title | dump | safe }},
         "url": "{{ site.url }}{{ post.url }}"
