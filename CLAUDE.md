@@ -489,6 +489,26 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 - `grade_slug` が flagship 以外（certified / silver / gold / platinum）の施設が「TPJセレクト」グリッドに表示される
 - **施設を追加する際は必ず `project-docs/TPJセレクト掲載基準ルールブック.md` の7基準・カテゴリ配分・大手禁止ルールを確認すること**
 
+## TPJセレクト 掲載仕様（2026-07-06確定）
+
+TPJセレクトは、認証グレードとは別軸の「編集部招待制」枠。施設からのお申し込み不要。
+
+| 項目 | 仕様 |
+|---|---|
+| `grade` | `"TPJセレクト"` |
+| `grade_slug` | `"select"`（certified/silver/gold/platinum/flagship のいずれでもない値） |
+| citation | 100〜150字。編集部視点の一言紹介 |
+| FAQ | 2〜3問。「どんな場所か」「アクセス」「営業時間」など基礎情報のみ |
+| tags | **なし（設定しない）** |
+| 底部テキスト | 「この場所は Third Place Japan セレクト店舗です」（venue.njk の `{% else %}` 分岐で自動表示） |
+| 写真 | 専用写真なし（デフォルト画像 `/assets/images/main/japan-cafe-interior-hero.webp` のまま） |
+| JSON-LD | geo・sameAs・openingHours 等のグレード別拡張プロパティは出力されない（thisLevel=0） |
+
+**認証グレードとの違い：**
+- TPJセレクトは「編集部の目利き」であり、商取引・申請・審査は発生しない
+- タグ・FAQ は最小限。情報の厚みは認証グレードに委ねる設計
+- `grade_slug: "select"` にすることで template が自動的に「TPJセレクト」バッジ（虫眼鏡アイコン）を表示する
+
 ## citation（紹介文）バリエーション化ルール
 
 - **「Third Place Japan編集部がTPJセレクトに選出。」という完全に同一の一文を複数施設で使い回すことは禁止**
