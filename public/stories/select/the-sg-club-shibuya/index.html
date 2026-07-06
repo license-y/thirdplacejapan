@@ -588,6 +588,9 @@
   
 
   
+  
+
+  
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-6">空間の7基準</p>
     <div class="space-y-6">
@@ -680,6 +683,82 @@
 
   
   
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">7基準レーダーチャート</p>
+    <div class="flex flex-col items-center gap-4">
+      <div id="radar-chart-container" style="width:220px;height:220px;"></div>
+      <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
+        <span class="text-xs text-muted">五感品質 <strong class="text-gold">9</strong></span>
+        <span class="text-xs text-muted">静けさ <strong class="text-gold">8</strong></span>
+        <span class="text-xs text-muted">特別感 <strong class="text-gold">9</strong></span>
+        <span class="text-xs text-muted">ストーリー <strong class="text-gold">8</strong></span>
+        <span class="text-xs text-muted">愛用価値 <strong class="text-gold">9</strong></span>
+        <span class="text-xs text-muted">記録性 <strong class="text-gold">8</strong></span>
+        <span class="text-xs text-muted">インバウンド <strong class="text-gold">9</strong></span>
+      </div>
+    </div>
+    <script>
+    (function() {
+      var scores = [9, 8, 9, 8, 9, 8, 9];
+      var labels = ["五感品質", "静けさ", "特別感", "ストーリー", "愛用価値", "記録性", "インバウンド"];
+      var cx = 110, cy = 110, r = 80, n = 7;
+      var ns = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", "0 0 220 220");
+      svg.setAttribute("width", "220");
+      svg.setAttribute("height", "220");
+      svg.setAttribute("aria-hidden", "true");
+      // Grid rings
+      [2,4,6,8,10].forEach(function(lv) {
+        var c = document.createElementNS(ns, "circle");
+        c.setAttribute("cx", cx); c.setAttribute("cy", cy);
+        c.setAttribute("r", r * lv / 10);
+        c.setAttribute("fill", "none"); c.setAttribute("stroke", "#e5e0d8"); c.setAttribute("stroke-width", "0.5");
+        svg.appendChild(c);
+      });
+      // Axis lines
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var ln = document.createElementNS(ns, "line");
+        ln.setAttribute("x1", cx); ln.setAttribute("y1", cy);
+        ln.setAttribute("x2", (cx + r * Math.cos(ang)).toFixed(1));
+        ln.setAttribute("y2", (cy + r * Math.sin(ang)).toFixed(1));
+        ln.setAttribute("stroke", "#e5e0d8"); ln.setAttribute("stroke-width", "0.5");
+        svg.appendChild(ln);
+      }
+      // Score polygon
+      var pts = [];
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var sr = r * scores[i] / 10;
+        pts.push((cx + sr * Math.cos(ang)).toFixed(1) + "," + (cy + sr * Math.sin(ang)).toFixed(1));
+      }
+      var poly = document.createElementNS(ns, "polygon");
+      poly.setAttribute("points", pts.join(" "));
+      poly.setAttribute("fill", "rgba(184,150,12,0.15)");
+      poly.setAttribute("stroke", "#B8960C"); poly.setAttribute("stroke-width", "1.5");
+      svg.appendChild(poly);
+      // Labels
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var tx = cx + (r + 20) * Math.cos(ang);
+        var ty = cy + (r + 20) * Math.sin(ang);
+        var txt = document.createElementNS(ns, "text");
+        txt.setAttribute("x", tx.toFixed(1)); txt.setAttribute("y", ty.toFixed(1));
+        txt.setAttribute("text-anchor", "middle"); txt.setAttribute("dominant-baseline", "middle");
+        txt.setAttribute("font-size", "8"); txt.setAttribute("fill", "#888");
+        txt.textContent = labels[i];
+        svg.appendChild(txt);
+      }
+      var container = document.getElementById("radar-chart-container");
+      if (container) container.appendChild(svg);
+    })();
+    </script>
+  </section>
+  
+
+  
+  
 
   
   <div class="prose" data-aos="fade-up">
@@ -699,9 +778,15 @@
     <p>最寄駅：渋谷駅</p>
     
     
-    <p><a href="https://www.sg-club.com/" target="_blank" rel="noopener"
-          class="inline-block border border-gold text-gold text-xs font-medium px-4 py-1.5 rounded-full hover:bg-gold hover:text-white transition-colors">関連サイト</a></p>
     
+    <div class="flex flex-wrap gap-2 pt-2">
+      
+      <a href="https://www.sg-club.com/" target="_blank" rel="noopener"
+         class="inline-block border border-gold text-gold text-xs font-medium px-4 py-1.5 rounded-full hover:bg-gold hover:text-white transition-colors">公式サイト</a>
+      
+      
+      
+    </div>
     <p class="pt-2 text-xs">Third Place Japan TPJセレクト掲載：2026-07-01</p>
   </aside>
 
