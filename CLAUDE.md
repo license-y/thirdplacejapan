@@ -1332,13 +1332,33 @@ eleventyConfig.addFilter("rejectLang", (array, lang) =>
 - ❌ 住所から手動で推定した座標を入れる
 - ❌ 小数点を丸めた概算値（例：`35.659`）を使う
 
-**理由**：`lat`/`lng` は JSON-LD `geo: GeoCoordinates` として出力されるほか、「地図を見る」ボタンのURLにも使用される。不正確な座標は誤った場所にピンが立つ。
+**理由**：`lat`/`lng` は JSON-LD `geo: GeoCoordinates` として出力される。
 
-**確認コマンド**（追加後に必ず検証）：
+### maps_url フィールド（必須・絶対厳守）
+
+**❌ `?q=lat,lng` 形式を「地図を見る」ボタンに使ってはいけない**
+
 ```
-https://maps.google.com/?q={lat},{lng}
+https://maps.google.com/?q=35.6775167,139.7078346
 ```
-上記URLをブラウザで開いて、店舗の正確な位置にピンが立つことを確認する。
+→ Googleが最寄りの登録店舗に座標をスナップするため、**意図しない別店舗にピンが立つ**場合がある（2026-07-06 GBCで確認：TERRAFORM COFFEEにピンが立った）
+
+**✅ 正しい実装：`maps_url` フィールドを設定する**
+
+```json
+"maps_url": "https://www.google.com/maps/place/店舗名/@緯度,経度,17z"
+```
+
+**取得方法**：
+1. Googleマップで店舗名を検索し、正しいピンが立った状態のURLをコピーする
+2. `?entry=ttu&g_ep=...` 以降のパラメータは省略してよい
+3. `venues.json` の `maps_url` フィールドに設定する
+
+**「地図を見る」ボタンのURL優先順位（venue.njk）**：
+1. `venue.maps_url` が設定されている → そのURLを使用（推奨）
+2. 未設定 → `https://maps.google.com/?q={{ venue.address }}` （住所検索にフォールバック）
+
+**確認方法**：設定後にブラウザで実際に開き、目視で正しい店舗にピンが立つことを確認する。
 
 ---
 
