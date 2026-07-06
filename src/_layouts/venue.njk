@@ -141,6 +141,28 @@ og_type: "article"
 }
 </script>
 
+{# FAQPage JSON-LD（venue.faq が存在する場合のみ） #}
+{% if venue.faq and venue.faq.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in venue.faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
 <article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
 
   {# パンくず #}
@@ -298,6 +320,33 @@ og_type: "article"
   <div class="prose" data-aos="fade-up">
     {{ content | safe }}
   </div>
+
+  {# 施設紹介本文（venue.body） #}
+  {% if venue.body %}
+  <div class="prose mt-6" data-aos="fade-up">
+    {{ venue.body | safe }}
+  </div>
+  {% endif %}
+
+  {# FAQ（venue.faq） #}
+  {% if venue.faq and venue.faq.length %}
+  <section class="mt-14 mb-2" data-aos="fade-up">
+    <p class="label mb-6">よくある質問</p>
+    <div class="space-y-3">
+      {% for item in venue.faq %}
+      <details class="bg-white rounded-xl shadow-sm border border-border">
+        <summary class="px-5 py-4 cursor-pointer text-sm font-medium text-dark list-none flex items-center justify-between gap-3">
+          <span>{{ item.q }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">
+          {{ item.a }}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   {# 基本情報 #}
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
