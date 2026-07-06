@@ -489,25 +489,35 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 - `grade_slug` が flagship 以外（certified / silver / gold / platinum）の施設が「TPJセレクト」グリッドに表示される
 - **施設を追加する際は必ず `project-docs/TPJセレクト掲載基準ルールブック.md` の7基準・カテゴリ配分・大手禁止ルールを確認すること**
 
-## TPJセレクト 掲載仕様（2026-07-06確定）
+## TPJセレクト 掲載仕様（2026-07-06確定・2026-07-07更新）
 
 TPJセレクトは、認証グレードとは別軸の「編集部招待制」枠。施設からのお申し込み不要。
+**参照ページ（原則ルール）**：https://thirdplacejapan.com/stories/select/onibus-coffee-nakameguro/
 
 | 項目 | 仕様 |
 |---|---|
 | `grade` | `"TPJセレクト"` |
 | `grade_slug` | `"select"`（certified/silver/gold/platinum/flagship のいずれでもない値） |
 | citation | 100〜150字。編集部視点の一言紹介 |
-| FAQ | 2〜3問。「どんな場所か」「アクセス」「営業時間」など基礎情報のみ |
+| FAQ | 2〜3問。「どんな場所か」「アクセス」など基礎情報のみ。**営業時間・価格帯は不確定要素のためNG** |
+| FAQ順序 | 自然な流れで配置する。例：①どんな場所か → ②施設の特徴 → ③アクセス |
 | tags | **なし（設定しない）** |
-| 底部テキスト | 「この場所は Third Place Japan セレクト店舗です」（venue.njk の `{% else %}` 分岐で自動表示） |
+| 表示ボタン | **「関連サイト」「地図を見る」のみ**。Instagram・電話・メニュー等は表示しない |
+| 営業時間・価格帯表示 | **非表示**（上部バー・下部asideともに。`grade_slug == "select"` で自動制御） |
+| 地図確認コメント | 「地図を見る」ボタン下部に自動表示：「営業日・営業時間・電話番号など店舗の詳細情報は変動することがあります。「地図を見る」から最新の店舗情報をご確認ください。」 |
+| 底部テキスト | 「この場所は Third Place Japan セレクト店舗です」＋「TPJについて知る」「グレードとは？」の2リンク（グレー表示） |
 | 写真 | 専用写真なし（デフォルト画像 `/assets/images/main/japan-cafe-interior-hero.webp` のまま） |
 | JSON-LD | geo・sameAs・openingHours 等のグレード別拡張プロパティは出力されない（thisLevel=0） |
+
+**バッジ・ロゴの表示ルール（TPJセレクト専用）：**
+- **5段階認証グレード（Flagship / Platinum / Gold / Silver / Certified）のバッジ・ロゴは一切表示しない**
+- 表示するのは「TPJセレクト」バッジ（虫眼鏡アイコン）のみ
+- グレード凡例バー・グレード関連の視覚要素もTPJセレクト施設ページには表示しない
+- `grade_slug: "select"` にすることで template が自動制御する
 
 **認証グレードとの違い：**
 - TPJセレクトは「編集部の目利き」であり、商取引・申請・審査は発生しない
 - タグ・FAQ は最小限。情報の厚みは認証グレードに委ねる設計
-- `grade_slug: "select"` にすることで template が自動的に「TPJセレクト」バッジ（虫眼鏡アイコン）を表示する
 
 ## citation（紹介文）バリエーション化ルール
 
