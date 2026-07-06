@@ -73,7 +73,11 @@ og_type: "article"
   "servesCuisine": {{ venue.serves_cuisine | dump | safe }}
   {% endif %}
   {% if thisLevel >= 4 and venue.amenity_features %},
-  "amenityFeature": {{ venue.amenity_features | dump | safe }}
+  "amenityFeature": [
+    {% for f in venue.amenity_features %}
+    { "@type": "LocationFeatureSpecification", "name": {{ f | dump | safe }}, "value": true }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
   {% endif %}
   {% if thisLevel >= 4 and venue.smoking_allowed !== undefined %},
   "smokingAllowed": {{ venue.smoking_allowed }}
