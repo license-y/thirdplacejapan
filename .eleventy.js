@@ -273,7 +273,15 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("wordCount", (content) => {
     if (!content) return 0;
-    return content.replace(/<[^>]*>/g, "").split(/\s+/).filter(Boolean).length;
+    const text = content.replace(/<[^>]*>/g, "");
+    const cjkChars = (text.match(/[\u3040-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/g) || []).length;
+    const latinWords = text.replace(/[\u3040-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF]/g, " ").split(/\s+/).filter(Boolean).length;
+    return cjkChars + latinWords;
+  });
+
+  eleventyConfig.addFilter("cleanKeywords", (tags) => {
+    const systemTags = ["articles", "feature", "story"];
+    return [...new Set(tags || [])].filter(t => !systemTags.includes(t)).join(", ");
   });
 
   eleventyConfig.addFilter("relatedPostsByCat", (collection, currentUrl, categorySlug, limit) => {
