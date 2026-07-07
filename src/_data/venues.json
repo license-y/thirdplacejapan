@@ -835,8 +835,8 @@
     "name": "森岡書店 銀座",
     "name_en": "Morioka Shoten Ginza",
     "citation": "森岡書店は、中央区銀座の古いビルの一室に構える「一冊の本を売る書店」。毎週一冊だけを扱うというコンセプトが、本との向き合い方を根本から問い直す。銀座の喧騒からわずかに外れた静寂の中で、ページをめくる時間の特別感は際立っている。",
-    "grade": "Gold",
-    "grade_slug": "gold",
+    "grade": "TPJセレクト",
+    "grade_slug": "select",
     "category": "文化・スポーツ・レジャー施設",
     "category_slug": "culture-sports-leisure",
     "area_primary": {
@@ -862,11 +862,16 @@
       "record": 8,
       "story": 9
     },
-    "address": "東京都中央区銀座1-28-15",
-    "address_en": "1-28-15 Ginza, Chuo-ku, Tokyo, Japan",
-    "lat": 35.671,
-    "lng": 139.765,
-    "url": "https://moriokashoten.com/",
+    "address": "〒104-0061 東京都中央区銀座1-28-15",
+    "address_en": "1-28-15 Ginza, Chuo-ku, Tokyo 104-0061, Japan",
+    "lat": 35.6720587,
+    "lng": 139.7718447,
+    "maps_url": "https://www.google.com/maps/place/%E6%A3%AE%E5%B2%A1%E6%9B%B8%E5%BA%97+%E9%8A%80%E5%BA%A7%E5%BA%97/@35.672063,139.7692698,17z/data=!3m2!4b1!5s0x60188be0346614c5:0x9261be041b99ff95!4m6!3m5!1s0x60188be034673aa9:0x213fea848eca79cd!8m2!3d35.6720587!4d139.7718447!16s%2Fg%2F11bxfjxf2l",
+    "url": "https://www.instagram.com/moriokashoten",
+    "faq": [
+      { "q": "森岡書店 銀座はどのような場所ですか？", "a": "中央区銀座の古いビルの一室に構える「一冊の本を売る書店」です。毎週一冊だけを扱うというコンセプトが、本との向き合い方を根本から問い直します。" },
+      { "q": "銀座駅からのアクセスを教えてください。", "a": "東京メトロ銀座駅・JR新橋駅から徒歩圏内、銀座1丁目の路地に位置しています。" }
+    ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
     "has_en": false,
