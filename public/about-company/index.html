@@ -262,6 +262,40 @@
     .company-row dd a { color: var(--c-accent); text-decoration: none; }
     .company-row dd a:hover { text-decoration: underline; }
 
+    .editor-profile {
+      max-width: 640px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(45,42,38,0.1);
+    }
+    .editor-name {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 14px;
+    }
+    .editor-title {
+      display: inline-block;
+      margin-left: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--c-accent);
+      border: 1px solid rgba(184,150,12,0.4);
+      border-radius: 999px;
+      padding: 3px 12px;
+      vertical-align: middle;
+    }
+    .editor-bio {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 2.1;
+      letter-spacing: 0.02em;
+    }
+
     .back-link {
       display: inline-block;
       margin-top: 56px;
@@ -400,14 +434,6 @@
           <dd>東京都千代田区神田佐久間町2-18-1 秋葉原STMフロント10階</dd>
         </div>
         <div class="company-row">
-          <dt>運営責任者</dt>
-          <dd>加瀬俊幸</dd>
-        </div>
-        <div class="company-row">
-          <dt>編集責任者</dt>
-          <dd>加瀬俊幸</dd>
-        </div>
-        <div class="company-row">
           <dt>事業内容</dt>
           <dd>サードプレイスのメディア運営、居場所づくり・空間プロデュース</dd>
         </div>
@@ -416,6 +442,12 @@
           <dd><a href="mailto:hello@thirdplacejapan.com">hello@thirdplacejapan.com</a></dd>
         </div>
       </dl>
+
+      <div class="editor-profile">
+        <span class="label">Editor</span>
+        <p class="editor-name">加瀬俊幸 <span class="editor-title">TPJ編集長</span></p>
+        <p class="editor-bio">日本各地の「居場所」を訪ね歩き、独自の7軸評価基準の策定に携わる。効率だけでは測れない空間の価値を、静かに、丁寧に言葉にすることを大切にしている。</p>
+      </div>
 
       <a href="/" class="back-link">← Third Place Japan トップへ戻る</a>
     </div>
@@ -488,9 +520,11 @@
         "addressCountry": "JP"
       },
       "email": "hello@thirdplacejapan.com",
-      "founder": {
+      "employee": {
         "@type": "Person",
-        "name": "加瀬俊幸"
+        "name": "加瀬俊幸",
+        "jobTitle": "TPJ編集長",
+        "description": "日本各地の「居場所」を訪ね歩き、独自の7軸評価基準の策定に携わる。効率だけでは測れない空間の価値を、静かに、丁寧に言葉にすることを大切にしている。"
       }
     }
   }
