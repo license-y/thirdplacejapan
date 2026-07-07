@@ -488,6 +488,7 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 - `grade_slug: "flagship"` の施設は一覧ページの「Flagship」固定枠に表示される（現在はGBC 1件）
 - `grade_slug` が flagship 以外（certified / silver / gold / platinum）の施設が「TPJセレクト」グリッドに表示される
 - **施設を追加する際は必ず `project-docs/TPJセレクト掲載基準ルールブック.md` の7基準・カテゴリ配分・大手禁止ルールを確認すること**
+- **一覧ページ（`src/stories/select/index.njk`）のTPJセレクトグリッドは新着順（新しい施設が上部）に表示する**（2026-07-07確定）。実装は `{% for v in published | reverse %}`。`venues.json` には末尾に追記していくため、`reverse` で新着が先頭に来る
 
 ## TPJセレクト 掲載仕様（2026-07-06確定・2026-07-07更新）
 
