@@ -152,7 +152,7 @@ canonical: "/stories/select/"
     </div>
     <p class="text-xs text-muted mb-8">TPJ編集部が、いまいたいと思う場所。</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in published %}
+      {% for v in published | reverse %}
       {% if v.grade_slug != 'flagship' %}
       <a href="/stories/select/{{ v.slug }}/"
          class="venue-card block p-4 md:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all group">
