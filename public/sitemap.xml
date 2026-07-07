@@ -1657,14 +1657,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/select/co-ba-shibuya/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    
-  </url>
-  
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/select/bunkitsu-roppongi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

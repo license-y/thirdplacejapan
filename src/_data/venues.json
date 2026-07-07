@@ -737,53 +737,6 @@
     "published": true
   },
   {
-    "slug": "co-ba-shibuya",
-    "name": "co-ba shibuya",
-    "name_en": "co-ba shibuya",
-    "citation": "co-ba shibuyaは、渋谷区に拠点を置く独立系コワーキングスペース。会員制のゆるやかなコミュニティと、仕事と対話が混在する柔らかい空間設計が、職場でも自宅でもない「第三の仕事場」を実現している。",
-    "grade": "TPJセレクト",
-    "grade_slug": "select",
-    "category": "コワーキング・シェアオフィス",
-    "category_slug": "coworking",
-    "area_primary": {
-      "prefecture_slug": "tokyo",
-      "prefecture": "東京都",
-      "city_slug": "shibuya-ku",
-      "city": "渋谷区",
-      "area_slug": "shibuya",
-      "area": "渋谷"
-    },
-    "area_secondary": [],
-    "nearest_stations": ["渋谷駅"],
-    "axes_primary": "愛用・回遊価値",
-    "axes_primary_slug": "revisit",
-    "axes_secondary": ["静けさの再現"],
-    "axes_secondary_slugs": ["silence"],
-    "scores": {
-      "comfort": 7,
-      "silence": 7,
-      "special": 6,
-      "revisit": 8,
-      "inbound": 6,
-      "record": 6,
-      "story": 7
-    },
-    "address": "〒150-0002 東京都渋谷区渋谷3-26-16",
-    "address_en": "3-26-16 Shibuya, Shibuya-ku, Tokyo 150-0002, Japan",
-    "lat": 35.6540904,
-    "lng": 139.705523,
-    "maps_url": "https://www.google.com/maps/place/co-ba+shibuya/@35.6540947,139.7029481,17z/data=!3m2!4b1!5s0x60188b5b6e414acd:0xe371a968dcd26dd4!4m6!3m5!1s0x60188b5b6e7e7213:0x74a4a1c554bdf381!8m2!3d35.6540904!4d139.705523!16s%2Fg%2F1tf7b2c0",
-    "url": "https://co-ba.net/shibuya/",
-    "faq": [
-      { "q": "co-ba shibuyaはどのような場所ですか？", "a": "渋谷区渋谷に拠点を置く会員制の独立系コワーキングスペースです。仕事と対話が混在する柔らかい空間設計が特徴で、職場でも自宅でもない「第三の仕事場」として機能しています。" },
-      { "q": "渋谷駅からのアクセスを教えてください。", "a": "JR・東京メトロ・東急各線「渋谷」駅から徒歩圏内、渋谷3丁目のビル5F・6Fに位置しています。" }
-    ],
-    "image": "/assets/images/main/japan-cafe-interior-hero.webp",
-    "certified_date": "2026-07-05",
-    "has_en": false,
-    "published": true
-  },
-  {
     "slug": "bunkitsu-roppongi",
     "name": "文喫 六本木",
     "name_en": "Bunkitsu Roppongi",
