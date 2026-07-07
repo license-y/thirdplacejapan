@@ -848,7 +848,7 @@
       "area": "銀座"
     },
     "area_secondary": [],
-    "nearest_stations": ["新橋駅", "銀座駅"],
+    "nearest_stations": ["新富町駅"],
     "axes_primary": "特別感・ギフト体験",
     "axes_primary_slug": "special",
     "axes_secondary": ["ストーリー継承", "静けさの再現"],
@@ -870,7 +870,7 @@
     "url": "https://www.instagram.com/moriokashoten",
     "faq": [
       { "q": "森岡書店 銀座はどのような場所ですか？", "a": "中央区銀座の古いビルの一室に構える「一冊の本を売る書店」です。毎週一冊だけを扱うというコンセプトが、本との向き合い方を根本から問い直します。" },
-      { "q": "銀座駅からのアクセスを教えてください。", "a": "東京メトロ銀座駅・JR新橋駅から徒歩圏内、銀座1丁目の路地に位置しています。" }
+      { "q": "新富町駅からのアクセスを教えてください。", "a": "東京メトロ有楽町線「新富町」駅から徒歩圏内、銀座1丁目の路地に位置しています。" }
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
