@@ -244,8 +244,8 @@
       "record": 7,
       "story": 7
     },
-    "address": "東京都千代田区神田錦町3-9",
-    "address_en": "3-9 Kanda-Nishikicho, Chiyoda-ku, Tokyo, Japan",
+    "address": "〒101-0054 東京都千代田区神田錦町3-3-9",
+    "address_en": "3-3-9 Kanda-Nishikicho, Chiyoda-ku, Tokyo 101-0054, Japan",
     "lat": 35.692255,
     "lng": 139.7595759,
     "url": "https://saunalab.jp/kanda/",
