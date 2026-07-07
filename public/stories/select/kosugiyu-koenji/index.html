@@ -450,7 +450,7 @@
     "reviewCount": 1
   },
   "additionalProperty": [
-    { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "Gold" },
+    { "@type": "PropertyValue", "name": "TPJ認証グレード", "value": "TPJセレクト" },
     { "@type": "PropertyValue", "name": "TPJ認証取得日", "value": "2026-07-05" },
     { "@type": "PropertyValue", "name": "主評価軸", "value": "ストーリー継承" },
     { "@type": "PropertyValue", "name": "五感品質・素材スコア", "value": 8 },
@@ -461,15 +461,7 @@
     { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": 7 },
     { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": 5 }
   ]
-  ,
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 35.705,
-    "longitude": 139.649
-  }
   
-  ,
-  "sameAs": ["https://kosugiyu.co.jp/"]
   
   
   
@@ -508,10 +500,10 @@
   },
   "reviewRating": {
     "@type": "Rating",
-    "ratingValue": 3,
+    "ratingValue": 1,
     "bestRating": 5,
     "worstRating": 1,
-    "description": "TPJ認証グレード Gold"
+    "description": "TPJ認証グレード TPJセレクト"
   },
   "reviewBody": "小杉湯は、杉並区高円寺に昭和9年から続く銭湯。三代にわたり守られてきた木造建築と、地域コミュニティの拠点としての役割が、「ただ体を洗う場所」を超えた居場所性を生んでいる。週に一度通うことで育まれる、日常の中の小さな帰属感。",
   "additionalProperty": [
@@ -543,6 +535,34 @@
 
 
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    
+    {
+      "@type": "Question",
+      "name": "小杉湯はどのような場所ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "杉並区高円寺に昭和9年から続く銭湯です。三代にわたり守られてきた木造建築を舞台に、地域コミュニティの拠点としての役割を果たしてきました。"
+      }
+    },
+    
+    {
+      "@type": "Question",
+      "name": "高円寺駅からのアクセスを教えてください。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JR中央線・総武線「高円寺」駅から徒歩圏内、高円寺北3丁目の住宅街に位置しています。"
+      }
+    }
+    
+  ]
+}
+</script>
+
 
 <article class="max-w-2xl mx-auto px-6 py-16 md:py-24">
 
@@ -560,7 +580,10 @@
     <span class="label">スパ・サウナ・ウェルネス施設</span>
     
     
-      <span class="text-xs font-light tracking-widest px-2.5 py-0.5 rounded-full border border-gold/40 text-gold/70">Gold</span>
+      <span class="inline-flex items-center gap-1.5 text-xs text-muted border border-border px-2.5 py-0.5 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        TPJセレクト
+      </span>
     
   </div>
 
@@ -698,10 +721,37 @@
 
   
   
+  <section class="mt-14 mb-2" data-aos="fade-up">
+    <p class="label mb-6">よくある質問</p>
+    <div class="space-y-3">
+      
+      <details class="bg-white rounded-xl shadow-sm border border-border">
+        <summary class="px-5 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between gap-3" style="color:#3D2B1F;">
+          <span>小杉湯はどのような場所ですか？</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">
+          杉並区高円寺に昭和9年から続く銭湯です。三代にわたり守られてきた木造建築を舞台に、地域コミュニティの拠点としての役割を果たしてきました。
+        </div>
+      </details>
+      
+      <details class="bg-white rounded-xl shadow-sm border border-border">
+        <summary class="px-5 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between gap-3" style="color:#3D2B1F;">
+          <span>高円寺駅からのアクセスを教えてください。</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">
+          JR中央線・総武線「高円寺」駅から徒歩圏内、高円寺北3丁目の住宅街に位置しています。
+        </div>
+      </details>
+      
+    </div>
+  </section>
+  
 
   
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
-    <p>東京都 東京都杉並区高円寺北3-32-2</p>
+    <p>東京都 〒166-0002 東京都杉並区高円寺北3-32-17</p>
     
     <p>最寄駅：高円寺駅</p>
     
@@ -716,13 +766,15 @@
       
       
       
-      <a href="https://maps.google.com/?q=東京都杉並区高円寺北3-32-2" target="_blank" rel="noopener"
+      <a href="https://www.google.com/maps/place/%E5%B0%8F%E6%9D%89%E6%B9%AF/@35.708071,139.6461916,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f27e71b0d029:0xcac1c06748a11ee2!8m2!3d35.7080667!4d139.6487665!16s%2Fg%2F1vxvhx4k" target="_blank" rel="noopener"
          class="inline-flex items-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-1.5 rounded-full hover:border-gold hover:text-gold transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
         地図を見る
       </a>
       
     </div>
+    
+    <p class="pt-3 text-xs leading-relaxed" style="color:#3D2B1F;">営業日・営業時間・電話番号など店舗の詳細情報は変動することがあります。「地図を見る」から最新の店舗情報をご確認ください。</p>
     
     <p class="pt-2 text-xs">Third Place Japan TPJセレクト掲載：2026-07-05</p>
   </aside>
@@ -735,7 +787,7 @@
   <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
     
     <p class="text-sm text-muted text-left md:text-center">
-      Third Place Japan 認証店舗（Gold）として掲載しています。
+      この場所は Third Place Japan セレクト店舗です。
       
       <br class="hidden md:block">
       <a href="https://thirdplacejapan.com/" class="text-muted hover:text-gold transition-colors text-xs">TPJについて知る</a>

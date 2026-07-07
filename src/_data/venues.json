@@ -694,8 +694,8 @@
     "name": "小杉湯",
     "name_en": "Kosugiyu Sento",
     "citation": "小杉湯は、杉並区高円寺に昭和9年から続く銭湯。三代にわたり守られてきた木造建築と、地域コミュニティの拠点としての役割が、「ただ体を洗う場所」を超えた居場所性を生んでいる。週に一度通うことで育まれる、日常の中の小さな帰属感。",
-    "grade": "Gold",
-    "grade_slug": "gold",
+    "grade": "TPJセレクト",
+    "grade_slug": "select",
     "category": "スパ・サウナ・ウェルネス施設",
     "category_slug": "spa-sauna",
     "area_primary": {
@@ -721,11 +721,16 @@
       "record": 7,
       "story": 9
     },
-    "address": "東京都杉並区高円寺北3-32-2",
-    "address_en": "3-32-2 Koenji-Kita, Suginami-ku, Tokyo, Japan",
-    "lat": 35.705,
-    "lng": 139.649,
+    "address": "〒166-0002 東京都杉並区高円寺北3-32-17",
+    "address_en": "3-32-17 Koenji-Kita, Suginami-ku, Tokyo 166-0002, Japan",
+    "lat": 35.7080667,
+    "lng": 139.6487665,
+    "maps_url": "https://www.google.com/maps/place/%E5%B0%8F%E6%9D%89%E6%B9%AF/@35.708071,139.6461916,17z/data=!3m1!4b1!4m6!3m5!1s0x6018f27e71b0d029:0xcac1c06748a11ee2!8m2!3d35.7080667!4d139.6487665!16s%2Fg%2F1vxvhx4k",
     "url": "https://kosugiyu.co.jp/",
+    "faq": [
+      { "q": "小杉湯はどのような場所ですか？", "a": "杉並区高円寺に昭和9年から続く銭湯です。三代にわたり守られてきた木造建築を舞台に、地域コミュニティの拠点としての役割を果たしてきました。" },
+      { "q": "高円寺駅からのアクセスを教えてください。", "a": "JR中央線・総武線「高円寺」駅から徒歩圏内、高円寺北3丁目の住宅街に位置しています。" }
+    ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
     "has_en": false,
