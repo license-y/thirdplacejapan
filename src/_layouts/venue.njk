@@ -413,7 +413,7 @@ og_type: "article"
 
   {# タグ（グレード別上限数） #}
   {% if venue.tags and venue.tags.length %}
-  {%- set maxTagsMap = {"certified": 5, "silver": 10, "gold": 15, "platinum": 18, "flagship": 20} -%}
+  {%- set maxTagsMap = {"certified": 5, "silver": 10, "gold": 15, "platinum": 20, "flagship": 25} -%}
   {%- set tagLimit = maxTagsMap[venue.grade_slug] or 5 -%}
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-4">サードプレイス関連タグ</p>
