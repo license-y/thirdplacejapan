@@ -788,8 +788,8 @@
     "name": "文喫 六本木",
     "name_en": "Bunkitsu Roppongi",
     "citation": "文喫は、港区六本木に位置する「入場料のある本屋」。約3万冊の蔵書に囲まれた複数の読書空間と、セレクトされたコーヒーが、「本との偶然の出会い」を演出する。知的な孤独と静寂が許容される、稀有な都市のサードプレイス。",
-    "grade": "Gold",
-    "grade_slug": "gold",
+    "grade": "TPJセレクト",
+    "grade_slug": "select",
     "category": "文化・スポーツ・レジャー施設",
     "category_slug": "culture-sports-leisure",
     "area_primary": {
@@ -815,11 +815,16 @@
       "record": 8,
       "story": 8
     },
-    "address": "東京都港区六本木6-1-20 六本木電気ビル",
-    "address_en": "6-1-20 Roppongi, Minato-ku, Tokyo, Japan",
-    "lat": 35.661,
-    "lng": 139.731,
-    "url": "https://bunkitsu.jp/",
+    "address": "〒106-0032 東京都港区六本木6-1-20",
+    "address_en": "6-1-20 Roppongi, Minato-ku, Tokyo 106-0032, Japan",
+    "lat": 35.662317,
+    "lng": 139.7312805,
+    "maps_url": "https://www.google.com/maps/place/%E6%96%87%E5%96%AB+%E5%85%AD%E6%9C%AC%E6%9C%A8/@35.6623213,139.7287056,17z/data=!3m2!4b1!5s0x60188b77f067bce5:0x7afa3511cf11c100!4m6!3m5!1s0x60188b2d8705fb8b:0x470e7e447987d6f3!8m2!3d35.662317!4d139.7312805!16s%2Fg%2F11gxxfxnt2",
+    "url": "https://roppongi.bunkitsu.jp/",
+    "faq": [
+      { "q": "文喫 六本木はどのような場所ですか？", "a": "港区六本木に位置する「入場料のある本屋」です。約3万冊の蔵書に囲まれた複数の読書空間と、セレクトされたコーヒーが「本との偶然の出会い」を演出しています。" },
+      { "q": "六本木駅からのアクセスを教えてください。", "a": "東京メトロ日比谷線・都営大江戸線「六本木」駅から徒歩圏内、六本木6丁目に位置しています。" }
+    ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
     "has_en": false,
