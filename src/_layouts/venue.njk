@@ -257,63 +257,13 @@ og_type: "article"
   {# Flagship専用：実証店舗セクション #}
   {% if venue.grade_slug == "flagship" %}
   <section class="mb-12 bg-stone-50 border border-gold/30 rounded-xl px-6 py-6" data-aos="fade-up">
-    <div class="flex items-center justify-between gap-3 mb-3">
-      <p class="label mb-0">Third Place Japanの実証店舗として</p>
-      <button type="button" id="proof-store-modal-trigger" class="inline-flex items-center gap-1 text-xs text-gold border border-gold/50 rounded-full px-3 py-1 hover:border-gold transition-colors shrink-0">
-        実証店舗とは？
-      </button>
-    </div>
-    <p class="text-sm leading-relaxed mb-3" style="color:#3D2B1F;">{{ venue.name }}では、TPJ編集部が現地に継続的に足を運び、席と席の間隔、照明の色温度と明るさ、BGMの音量、スタッフの声かけのタイミングといった要素を、実際の営業時間帯に沿って定点観測しています。</p>
-    <p class="text-sm leading-relaxed mb-3" style="color:#3D2B1F;">観測で見えてきた「静けさが保たれる条件」や「一人客が長居しやすい配置」は、そのつど店舗側にフィードバックし、レイアウトや接客の微調整に反映してきました。この往復を積み重ねた知見が、TPJセレクトの評価基準や認証審査の判断材料になっています。</p>
-    <p class="text-sm leading-relaxed mb-4" style="color:#3D2B1F;">「自店舗でも同じような居心地の空間をつくりたい」という方は、法人サイトよりお気軽にご覧ください。</p>
+    <p class="label mb-3">Third Place Japanの実証店舗として</p>
+    <p class="text-sm leading-relaxed mb-4" style="color:#3D2B1F;">{{ venue.name }}は、Third Place Japanが提唱する「理想の空間づくり」を、実際の店舗として体現・検証する実証店舗です。ここで積み重ねられた知見は、TPJセレクトの評価基準や、今後整備される認証制度の審査基準そのものに反映されています。</p>
+    <p class="text-sm leading-relaxed mb-4" style="color:#3D2B1F;">内装設計、動線づくり、静けさを保つための工夫など、この場所で実践されている取り組みの多くは、Third Place Japanが取り組む居場所づくり・空間プロデュースの実例でもあります。「自店舗でも同じような居心地の空間をつくりたい」という方は、法人サイトよりお気軽にご覧ください。</p>
     <a href="{{ site.main_site_url }}/#services" class="inline-flex items-center gap-1.5 text-xs text-gold border border-gold/50 rounded-full px-4 py-1.5 hover:border-gold transition-colors">
       居場所づくり・空間プロデュースについて詳しくみる →
     </a>
   </section>
-
-  {# 実証店舗とは？ モーダル #}
-  <div id="proof-store-modal" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-labelledby="proof-store-modal-title">
-    <div class="bg-ivory w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
-      <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
-        <p id="proof-store-modal-title" class="font-serif text-base font-light text-dark">実証店舗とは？</p>
-        <button type="button" id="proof-store-modal-close" aria-label="閉じる" class="text-muted hover:text-gold transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="px-6 py-5 max-h-[70vh] overflow-y-auto space-y-4 text-sm leading-relaxed" style="color:#3D2B1F;">
-        <p>実証店舗とは、Third Place Japanが提唱する「理想の居場所設計」を、実際の店舗として体現・継続検証する場所です。TPJ認証の中でも、<strong>Flagshipのうち、TPJ自身が空間設計の知見を継続的に検証する特別な位置づけ</strong>を指します。</p>
-        <p><strong>関係性：</strong>実証店舗 ⊂ Flagship ⊂ TPJ認証。すべての実証店舗はFlagshipですが、すべてのFlagshipが実証店舗になるわけではありません。</p>
-        <p><strong>具体的に検証していること：</strong></p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>静寂性を保つための席の配置と動線設計</li>
-          <li>照明・音響・素材による五感品質の再現</li>
-          <li>「急かさない」接客姿勢が居心地に与える影響</li>
-        </ul>
-        <p>ここで積み重ねた知見は、TPJセレクトの評価基準や認証審査の判断材料として反映されます。一般のお客様は、実証店舗であっても通常のカフェとして特別な手続きなくご利用いただけます。</p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-  (function() {
-    var trigger = document.getElementById('proof-store-modal-trigger');
-    var modal = document.getElementById('proof-store-modal');
-    var closeBtn = document.getElementById('proof-store-modal-close');
-    if (!trigger || !modal || !closeBtn) return;
-
-    function openModal() { modal.classList.remove('hidden'); }
-    function closeModal() { modal.classList.add('hidden'); }
-
-    trigger.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-    });
-  })();
-  </script>
   {% endif %}
 
   {# 空間の7基準スコア #}
