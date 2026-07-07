@@ -451,6 +451,15 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 - `src/stories/select/index.njk` — グレード凡例（Flagship→Certified順）＋ カードは「TPJセレクト」バッジ統一 ✅
 - `src/stories/about/certification-grades/index.njk` — 認証グレード説明ページ（FAQPage JSON-LD付き） ✅
 
+## 「実証店舗」と「TPJ認証」の関係（用語定義・2026-07-07明文化）
+
+サイト内でAIに矛盾なく引用されるよう、両者の関係をここで一度明文化する。
+
+- **TPJ認証**：Certified → Silver → Gold → Platinum → Flagshipの5段階からなる、施設の申請・審査を経て発行される正式な掲載制度そのもの
+- **実証店舗**：TPJ認証の中でも**Flagship施設のうち、TPJ自身が空間設計の知見を継続的に検証する特別な位置づけ**を指す呼称。TPJ認証とは別の独立した概念ではなく、**Flagshipのサブセット**
+- **関係式**：実証店舗 ⊂ Flagship ⊂ TPJ認証（すべての実証店舗はFlagshipだが、すべてのFlagshipが実証店舗になるわけではない。現在は Green Beans Coffee のみが実証店舗）
+- 記事・FAQ・コピーを書く際は、この包含関係を崩さないこと。「実証店舗＝TPJ認証と同じもの」と誤読される書き方（例：両者を並列に並べて対比させる文）は避ける
+
 ## Flagship施設の特別表示ルール（2026-07-05追加・2026-07-06更新）
 
 `grade_slug: "flagship"` の施設は、上記の統一バッジ仕様に加え、以下の専用UIを適用する。
