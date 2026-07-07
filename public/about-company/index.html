@@ -267,6 +267,7 @@
       margin-top: 56px;
       padding-top: 40px;
       border-top: 1px solid rgba(45,42,38,0.1);
+      scroll-margin-top: 100px;
     }
     .editor-name {
       font-family: var(--font-serif);
@@ -330,8 +331,8 @@
     }
     .footer-cols {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
       margin-bottom: 36px;
     }
     .footer-col h3 {
@@ -452,7 +453,7 @@
         </div>
       </dl>
 
-      <div class="editor-profile">
+      <div class="editor-profile" id="editorial-team">
         <span class="label">Editorial Team</span>
         <p class="page-title" style="font-size:20px;margin-bottom:20px;">TPJ編集部について</p>
         <p class="editor-bio">TPJ編集部は、「どこにいるか、を定義する。」をコンセプトに、日本各地のサードプレイスの価値を中立・公平な視点で発信する編集チームです。掲載施設の評価・認証においては、公正性を重視するため、調査員は覆面調査員として実際に現地を訪問し、先入観や利害関係に左右されない客観的な調査・評価を行っています。</p>
@@ -460,7 +461,7 @@
         <p class="editor-bio">また、TPJ編集部は調査・編集にとどまらず、ブランディング、マーケティング、SEO・MEO・AEOをはじめとするAI時代の集客戦略にも強みを持っています。店舗や地域の魅力を国内外へ効果的に発信し、インバウンド需要にも対応できる情報設計を推進。データとクリエイティブの両面から新たな価値を創出し、地域・事業者・利用者をつなぐプラットフォームとして進化を続けています。</p>
       </div>
 
-      <div class="editor-profile">
+      <div class="editor-profile" id="editor">
         <span class="label">Editor</span>
         <p class="editor-name">加瀬俊幸 <span class="editor-title">TPJ編集長</span></p>
         <p class="editor-bio">大手外資系企業で長年エンジニアとして勤務し、業務改善やDX（デジタルトランスフォーメーション）の推進、システム設計・運用など、企業の生産性向上を支える業務に従事。課題を構造化し、本質を見極める分析力と、データに基づいた改善手法を培う。</p>
@@ -489,11 +490,19 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Other</h3>
+          <h3>TPJについて</h3>
+          <ul>
+            <li><a href="/about-company/#editor">TPJ編集長</a></li>
+            <li><a href="/about-company/#editorial-team">TPJ編集部</a></li>
+            <li><a href="/guidelines/">TPJ公式ガイドライン</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>運営情報</h3>
           <ul>
             <li><a href="/#for-business">For Business</a></li>
             <li><a href="/about-company/">運営会社</a></li>
-            <li><a href="/guidelines/">TPJ公式ガイドライン</a></li>
+            <li><a href="mailto:hello@thirdplacejapan.com">お問い合わせ</a></li>
           </ul>
         </div>
       </div>
