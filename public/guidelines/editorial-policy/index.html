@@ -12,18 +12,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TPJ公式ガイドライン ─ Third Place Japan</title>
-  <link rel="canonical" href="https://thirdplacejapan.com/guidelines/">
+  <title>TPJ編集ポリシー ─ Third Place Japan</title>
+  <link rel="canonical" href="https://thirdplacejapan.com/guidelines/editorial-policy/">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="description" content="TPJ公式ガイドライン ― 信頼される認証プラットフォームのために。Third Place Japanの運営理念・認証の公平性・AI活用方針・利用者と事業者への約束をまとめています。">
+  <meta name="description" content="TPJ編集ポリシー ― Third Place Japanの記事制作・編集基準。実体験の重視、客観性、正確性、AI時代の情報設計、広告と編集の独立性についてまとめています。">
   <meta name="robots" content="noindex, follow">
-  <meta property="og:title" content="TPJ公式ガイドライン ─ Third Place Japan">
-  <meta property="og:description" content="信頼される認証プラットフォームのために。Third Place Japanの運営方針と品質基準。">
+  <meta property="og:title" content="TPJ編集ポリシー ─ Third Place Japan">
+  <meta property="og:description" content="Third Place Japanの記事制作・編集基準について。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thirdplacejapan.com/guidelines/">
+  <meta property="og:url" content="https://thirdplacejapan.com/guidelines/editorial-policy/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Third Place Japan">
 
@@ -256,26 +256,7 @@
       margin-bottom: 36px;
     }
 
-    /* TPJ認証について（宣言） */
-    .declaration-block {
-      max-width: 680px;
-      margin-top: 48px;
-      padding: 32px;
-      background: var(--c-dark-2);
-      border-radius: 4px;
-    }
-    .declaration-block .label { color: var(--c-accent); }
-    .declaration-block .section-title {
-      color: #F2EEE8;
-      margin-bottom: 16px;
-      font-size: 20px;
-    }
-    .declaration-block .body-text {
-      color: rgba(242,238,232,0.7);
-      max-width: none;
-    }
-
-    /* 5つの約束 */
+    /* 編集方針（promise-item を流用） */
     .promise-item {
       display: flex;
       gap: 20px;
@@ -304,101 +285,6 @@
       color: var(--c-muted);
       line-height: 2;
     }
-
-    /* ガイドライン一覧（カード表示） */
-    .policy-chapter { margin-bottom: 40px; }
-    .policy-chapter:last-child { margin-bottom: 0; }
-    .policy-chapter .chapter-title {
-      display: block;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      color: var(--c-accent);
-      margin-bottom: 16px;
-    }
-    .policy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .policy-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(45,42,38,0.06);
-      padding: 18px 20px;
-    }
-    a.policy-card {
-      display: block;
-      text-decoration: none;
-      transition: box-shadow 0.3s ease;
-    }
-    a.policy-card:hover {
-      box-shadow: 0 4px 16px rgba(45,42,38,0.12);
-    }
-    .policy-card-title {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--c-text);
-      margin-bottom: 8px;
-      letter-spacing: 0.01em;
-    }
-    .policy-card-desc {
-      font-size: 12.5px;
-      font-weight: 300;
-      color: var(--c-muted);
-      line-height: 1.8;
-    }
-    .policy-card::after {
-      content: '※準備中';
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--c-muted);
-      border: 1px solid rgba(45,42,38,0.15);
-      border-radius: 999px;
-      padding: 2px 9px;
-    }
-    .policy-card.is-published::after {
-      content: '公開中 →';
-      color: var(--c-accent);
-      border-color: rgba(184,150,12,0.35);
-    }
-    .policy-note {
-      font-size: 13px;
-      color: var(--c-muted);
-      margin-bottom: 28px;
-    }
-
-    .meta-table {
-      max-width: 640px;
-      border-top: 1px solid rgba(45,42,38,0.1);
-    }
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(45,42,38,0.1);
-    }
-    .meta-row dt {
-      width: 140px;
-      flex-shrink: 0;
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--c-muted);
-    }
-    .meta-row dd {
-      flex: 1;
-      min-width: 200px;
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--c-text);
-    }
-    .meta-row dd a { color: var(--c-accent); text-decoration: none; }
-    .meta-row dd a:hover { text-decoration: underline; }
 
     .back-link {
       display: inline-block;
@@ -481,7 +367,6 @@
     @media (max-width: 640px) {
       main { padding: 128px 24px 80px; }
       .footer-cols { grid-template-columns: 1fr; gap: 32px; }
-      .meta-row dt { width: 100%; }
     }
   </style>
 </head>
@@ -523,198 +408,64 @@
 
   <main>
     <div class="inner">
-      <p class="breadcrumb"><a href="/">Third Place Japan</a> ／ TPJ公式ガイドライン</p>
-      <span class="label">Official Guidelines</span>
-      <h1 class="page-title">TPJ公式ガイドライン</h1>
-      <p class="page-subtitle">― 信頼される認証プラットフォームのために ―</p>
+      <p class="breadcrumb"><a href="/">Third Place Japan</a> ／ <a href="/guidelines/">TPJ公式ガイドライン</a> ／ 編集ポリシー</p>
+      <span class="label">Editorial Policy</span>
+      <h1 class="page-title">TPJ編集ポリシー</h1>
+      <p class="page-subtitle">― 信頼できる情報発信のために ―</p>
 
-      <h2 class="section-title" style="margin-bottom:20px;">TPJ公式ガイドラインについて</h2>
-      <p class="body-text">TPJ（Third Place Japan）は、「どこにいるか、を定義する。」を理念に、日本全国のサードプレイスを調査・評価・発信する認証プラットフォームです。</p>
-      <p class="body-text">本ガイドラインは、TPJが提供する情報の信頼性、公平性、透明性を維持するための基本方針を定めたものです。</p>
-      <p class="body-text">利用者、掲載施設、地域社会の皆様に安心してご利用いただけるよう、編集・調査・認証・AI活用・情報管理に関する基準を公開しています。</p>
-
-      <div class="declaration-block">
-        <span class="label">TPJ Certification</span>
-        <h2 class="section-title">TPJ認証について</h2>
-        <p class="body-text">TPJ認証は、広告掲載や掲載料によって評価が変化するものではありません。独自の評価基準、現地調査、編集確認を通じて、利用者にとって価値ある情報提供を行うことを目的としています。</p>
-        <p class="body-text">施設の規模や知名度だけではなく、空間価値、体験価値、利用者視点など、多角的な評価基準に基づき判断します。評価の詳細は<a href="/#criteria-map" style="color:var(--c-accent);">7基準対応表</a>をご覧ください。</p>
-      </div>
+      <p class="body-text">TPJ（Third Place Japan）は、「どこにいるか、を定義する。」を理念に、サードプレイスに関する情報を中立・公平な視点で発信しています。</p>
+      <p class="body-text">私たちは、単なる施設紹介ではなく、その場所が提供する体験価値や空間価値を正しく伝えることを編集方針としています。</p>
 
       <div class="section-block">
-        <h2 class="section-title">TPJが大切にする5つの約束</h2>
+        <h2 class="section-title">編集方針</h2>
 
         <div class="promise-item">
           <span class="promise-num">1</span>
           <div>
-            <p class="promise-title">中立・公平な認証</p>
-            <p class="promise-desc">TPJは、公平性を最優先に考えています。掲載料や広告契約の有無によって評価が変わることはありません。認証・評価は、独自の基準に基づき、客観性を重視して実施します。</p>
+            <p class="promise-title">実体験を重視した情報発信</p>
+            <p class="promise-desc">TPJの記事制作では、公開情報だけではなく、可能な限り現地訪問、体験、取材などを通じて情報を収集します。実際にその場所で過ごした経験をもとに、利用者が知りたい価値を丁寧に伝えます。</p>
           </div>
         </div>
 
         <div class="promise-item">
           <span class="promise-num">2</span>
           <div>
-            <p class="promise-title">正確で信頼できる情報</p>
-            <p class="promise-desc">現地調査、取材、公開情報など複数の情報源をもとに編集を行い、公開後も必要に応じて内容を更新し、情報の品質向上に努めます。</p>
+            <p class="promise-title">客観性を重視した編集</p>
+            <p class="promise-desc">記事制作では、個人的な印象だけに依存せず、空間、サービス、利便性、体験価値など複数の視点から情報を整理します。</p>
           </div>
         </div>
 
         <div class="promise-item">
           <span class="promise-num">3</span>
           <div>
-            <p class="promise-title">AI時代に対応した情報発信</p>
-            <p class="promise-desc">TPJはAI技術を活用しながらも、人による確認・編集を経た情報のみを公開します。検索エンジンやAIに正しく理解される情報設計を行い、国内外へ価値ある情報を届けます。</p>
+            <p class="promise-title">正確性と更新性</p>
+            <p class="promise-desc">掲載情報については正確性の確認に努めます。営業時間、サービス内容、料金、施設情報など変更される可能性がある情報については、必要に応じて確認・更新を行います。</p>
           </div>
         </div>
 
         <div class="promise-item">
           <span class="promise-num">4</span>
           <div>
-            <p class="promise-title">利用者と事業者への誠実な対応</p>
-            <p class="promise-desc">透明性を大切にし、ご意見や訂正依頼には誠実かつ迅速に対応します。安心して利用できるプラットフォームづくりを継続します。</p>
+            <p class="promise-title">AI時代に対応した情報設計</p>
+            <p class="promise-desc">TPJでは、AI検索時代においても正しく情報が理解されるよう、構造化された情報設計、明確な文章表現、専門性の高いコンテンツ制作を行います。AI技術を活用する場合においても、編集部による確認・品質管理を実施します。</p>
           </div>
         </div>
 
         <div class="promise-item">
           <span class="promise-num">5</span>
           <div>
-            <p class="promise-title">地域価値の創出</p>
-            <p class="promise-desc">地域の魅力や文化、人々が集う場所を継続的に発信し、日本全国のサードプレイスの価値向上と地域活性化に貢献します。</p>
+            <p class="promise-title">広告と編集の独立性</p>
+            <p class="promise-desc">広告掲載や協賛の有無によって、記事内容や評価結果が不当に変更されることはありません。読者にとって価値ある情報提供を最優先とします。</p>
           </div>
         </div>
       </div>
 
       <div class="section-block">
-        <h2 class="section-title">TPJ公式ガイドライン一覧</h2>
-        <p class="policy-note">以下は今後公開予定のガイドラインです。TPJでは基準・方針を順次整備し、準備が整い次第、公開してまいります。</p>
-
-        <div class="policy-chapter">
-          <span class="chapter-title">第1章　基本方針</span>
-          <div class="policy-grid">
-            <a class="policy-card is-published" href="/guidelines/mission/">
-              <p class="policy-card-title">運営理念（Mission・Vision・Value）</p>
-              <p class="policy-card-desc">TPJが目指す価値観と存在意義について</p>
-            </a>
-            <a class="policy-card is-published" href="/guidelines/editorial-policy/">
-              <p class="policy-card-title">編集ポリシー</p>
-              <p class="policy-card-desc">TPJの記事制作・編集基準について</p>
-            </a>
-            <div class="policy-card">
-              <p class="policy-card-title">プライバシーポリシー</p>
-              <p class="policy-card-desc">個人情報の取り扱い方針について</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">利用規約</p>
-              <p class="policy-card-desc">サイトご利用にあたっての規約</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="policy-chapter">
-          <span class="chapter-title">第2章　認証制度</span>
-          <div class="policy-grid">
-            <a class="policy-card is-published" href="/guidelines/certification-policy/">
-              <p class="policy-card-title">認証・評価ポリシー</p>
-              <p class="policy-card-desc">TPJ独自評価基準と認証制度について</p>
-            </a>
-            <div class="policy-card">
-              <p class="policy-card-title">調査・認証ガイドライン</p>
-              <p class="policy-card-desc">覆面調査員による調査・認証の進め方</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">TPJ認証マーク利用ガイドライン</p>
-              <p class="policy-card-desc">認証マークの使用条件について</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="policy-chapter">
-          <span class="chapter-title">第3章　AI・デジタル</span>
-          <div class="policy-grid">
-            <div class="policy-card">
-              <p class="policy-card-title">AI利用ポリシー</p>
-              <p class="policy-card-desc">AI時代における情報発信方針について</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">AI・検索エンジン向け情報公開ポリシー</p>
-              <p class="policy-card-desc">AI・検索エンジンへの情報提供方針</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="policy-chapter">
-          <span class="chapter-title">第4章　利用者・事業者向け</span>
-          <div class="policy-grid">
-            <div class="policy-card">
-              <p class="policy-card-title">広告掲載ポリシー</p>
-              <p class="policy-card-desc">広告掲載の基準と評価への非影響について</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">口コミ・レビュー掲載ポリシー</p>
-              <p class="policy-card-desc">口コミ・レビューの取り扱い方針</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">情報訂正・削除依頼ポリシー</p>
-              <p class="policy-card-desc">掲載情報の訂正・削除依頼の手順</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="policy-chapter">
-          <span class="chapter-title">その他</span>
-          <div class="policy-grid">
-            <div class="policy-card">
-              <p class="policy-card-title">よくある質問（FAQ）</p>
-              <p class="policy-card-desc">TPJに関するよくある質問</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">お問い合わせ</p>
-              <p class="policy-card-desc">TPJへのお問い合わせ方法</p>
-            </div>
-            <div class="policy-card">
-              <p class="policy-card-title">サイトマップ</p>
-              <p class="policy-card-desc">サイト全体の構成一覧</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="section-title">編集部の責任</h2>
+        <p class="body-text">TPJ編集部は、信頼される情報プラットフォームであり続けるため、透明性、公平性、継続的な改善を重視した運営を行います。</p>
       </div>
 
-      <div class="section-block">
-        <h2 class="section-title">ガイドラインの改定について</h2>
-        <p class="body-text">TPJは、法令の改正、社会環境の変化、サービス内容の向上に応じて、本ガイドラインを適宜見直します。改定後の内容は、本サイトへ掲載した時点から効力を有します。</p>
-      </div>
-
-      <div class="section-block">
-        <h2 class="section-title">更新履歴</h2>
-        <dl class="meta-table">
-          <div class="meta-row">
-            <dt>2026年6月15日</dt>
-            <dd>TPJ公式ガイドライン公開</dd>
-          </div>
-        </dl>
-        <p class="body-text" style="margin-top:16px;font-size:13px;">今後の改定内容は、随時こちらに追記します。</p>
-      </div>
-
-      <p class="body-text" style="font-size:13px;max-width:680px;margin-top:32px;">TPJ公式ガイドラインは、TPJの運営理念、編集方針、認証制度、情報管理方針を体系化したものです。今後、サービス拡大に伴い各項目の詳細ガイドラインを順次公開します。</p>
-
-      <div class="section-block">
-        <dl class="meta-table">
-          <div class="meta-row">
-            <dt>運営事業者</dt>
-            <dd>ライトワークス株式会社</dd>
-          </div>
-          <div class="meta-row">
-            <dt>制定日</dt>
-            <dd>2026年6月15日</dd>
-          </div>
-          <div class="meta-row">
-            <dt>お問い合わせ</dt>
-            <dd><a href="mailto:hello@thirdplacejapan.com">hello@thirdplacejapan.com</a></dd>
-          </div>
-        </dl>
-      </div>
-
-      <a href="/" class="back-link">← Third Place Japan トップへ戻る</a>
+      <a href="/guidelines/" class="back-link">← TPJ公式ガイドライン一覧へ戻る</a>
     </div>
   </main>
 
@@ -780,15 +531,20 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "TPJ公式ガイドライン ─ 信頼される認証プラットフォームのために",
-    "url": "https://thirdplacejapan.com/guidelines/",
-    "datePublished": "2026-06-15",
+    "name": "TPJ編集ポリシー ─ Third Place Japan",
+    "url": "https://thirdplacejapan.com/guidelines/editorial-policy/",
+    "datePublished": "2026-07-07",
+    "isPartOf": {
+      "@type": "WebPage",
+      "name": "TPJ公式ガイドライン",
+      "url": "https://thirdplacejapan.com/guidelines/"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Third Place Japan",
       "url": "https://thirdplacejapan.com"
     },
-    "about": "Third Place Japanの運営理念・認証の公平性・AI活用方針・利用者と事業者への約束をまとめた公式ガイドライン"
+    "about": "Third Place Japanの記事制作・編集基準をまとめた編集ポリシーページ"
   }
   </script>
 
