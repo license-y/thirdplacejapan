@@ -340,6 +340,23 @@
       color: var(--c-muted);
       line-height: 1.8;
     }
+    .policy-card::after {
+      content: '※準備中';
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--c-muted);
+      border: 1px solid rgba(45,42,38,0.15);
+      border-radius: 999px;
+      padding: 2px 9px;
+    }
+    .policy-note {
+      font-size: 13px;
+      color: var(--c-muted);
+      margin-bottom: 28px;
+    }
 
     .meta-table {
       max-width: 640px;
@@ -507,6 +524,7 @@
         <span class="label">TPJ Certification</span>
         <h2 class="section-title">TPJ認証について</h2>
         <p class="body-text">TPJ認証は、広告掲載や掲載料によって評価が変化するものではありません。独自の評価基準、現地調査、編集確認を通じて、利用者にとって価値ある情報提供を行うことを目的としています。</p>
+        <p class="body-text">施設の規模や知名度だけではなく、空間価値、体験価値、利用者視点など、多角的な評価基準に基づき判断します。評価の詳細は<a href="/#criteria-map" style="color:var(--c-accent);">7基準対応表</a>をご覧ください。</p>
       </div>
 
       <div class="section-block">
@@ -555,6 +573,7 @@
 
       <div class="section-block">
         <h2 class="section-title">TPJ公式ガイドライン一覧</h2>
+        <p class="policy-note">以下は今後公開予定のガイドラインです。TPJでは基準・方針を順次整備し、準備が整い次第、公開してまいります。</p>
 
         <div class="policy-chapter">
           <span class="chapter-title">第1章　基本方針</span>
