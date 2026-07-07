@@ -12,18 +12,18 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>運営会社 ─ Third Place Japan</title>
-  <link rel="canonical" href="https://thirdplacejapan.com/about-company/">
+  <title>TPJ公式ガイドライン ─ Third Place Japan</title>
+  <link rel="canonical" href="https://thirdplacejapan.com/guidelines/">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <meta name="description" content="Third Place Japan（サードプレイスジャパン）を運営するライトワークス株式会社の会社概要ページです。所在地・運営責任者・事業内容・お問い合わせ先を掲載しています。">
+  <meta name="description" content="TPJ公式ガイドライン ― 信頼される認証プラットフォームのために。Third Place Japanの運営理念・認証の公平性・AI活用方針・利用者と事業者への約束をまとめています。">
   <meta name="robots" content="noindex, follow">
-  <meta property="og:title" content="運営会社 ─ Third Place Japan">
-  <meta property="og:description" content="Third Place Japanを運営するライトワークス株式会社の会社概要。">
+  <meta property="og:title" content="TPJ公式ガイドライン ─ Third Place Japan">
+  <meta property="og:description" content="信頼される認証プラットフォームのために。Third Place Japanの運営方針と品質基準。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thirdplacejapan.com/about-company/">
+  <meta property="og:url" content="https://thirdplacejapan.com/guidelines/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="Third Place Japan">
 
@@ -67,7 +67,7 @@
       margin: 0 auto;
     }
 
-    /* ─── Navigation（over-lightのみ・シンプル版） ─── */
+    /* ─── Navigation ─── */
     #nav {
       position: fixed;
       inset: 0 0 auto;
@@ -219,7 +219,16 @@
       font-weight: 400;
       font-size: clamp(24px, 4vw, 38px);
       color: var(--c-text);
-      margin-bottom: 28px;
+      margin-bottom: 14px;
+    }
+
+    .page-subtitle {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--c-accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 44px;
     }
 
     .body-text {
@@ -228,74 +237,140 @@
       color: var(--c-muted);
       line-height: 2.1;
       letter-spacing: 0.02em;
-      max-width: 640px;
-      margin-bottom: 56px;
+      max-width: 680px;
     }
+    .body-text + .body-text { margin-top: 22px; }
 
-    .company-table {
+    .section-block {
       max-width: 720px;
+      margin-top: 64px;
+      padding-top: 48px;
       border-top: 1px solid rgba(45,42,38,0.1);
     }
-    .company-row {
+
+    h2.section-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 36px;
+    }
+
+    /* 5つの約束 */
+    .promise-item {
+      display: flex;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(45,42,38,0.08);
+    }
+    .promise-item:first-of-type { padding-top: 0; }
+    .promise-num {
+      flex-shrink: 0;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--c-accent);
+      width: 36px;
+    }
+    .promise-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .promise-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 2;
+    }
+
+    /* ガイドライン一覧（ツリー表示） */
+    .tree-root {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 4px;
+    }
+    ul.tree,
+    ul.tree ul {
+      list-style: none;
+    }
+    ul.tree {
+      margin-left: 4px;
+    }
+    ul.tree ul {
+      margin-left: 12px;
+    }
+    ul.tree li {
+      position: relative;
+      padding: 8px 0 8px 24px;
+      margin-left: 12px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--c-muted);
+      letter-spacing: 0.01em;
+      border-left: 1px solid rgba(184, 150, 12, 0.3);
+    }
+    ul.tree li:last-child {
+      border-left: 1px solid transparent;
+      background: linear-gradient(rgba(184,150,12,0.3), rgba(184,150,12,0.3)) no-repeat;
+      background-size: 1px 26px;
+      background-position: 0 0;
+    }
+    ul.tree li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 26px;
+      width: 16px;
+      height: 1px;
+      background: rgba(184, 150, 12, 0.3);
+    }
+    ul.tree > li > .chapter-title {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-text);
+      letter-spacing: 0.02em;
+    }
+    ul.tree ul {
+      padding-bottom: 8px;
+    }
+    ul.tree > li > ul {
+      padding-bottom: 0;
+    }
+
+    .meta-table {
+      max-width: 640px;
+      border-top: 1px solid rgba(45,42,38,0.1);
+    }
+    .meta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px 24px;
-      padding: 22px 0;
+      padding: 18px 0;
       border-bottom: 1px solid rgba(45,42,38,0.1);
     }
-    .company-row dt {
-      width: 160px;
+    .meta-row dt {
+      width: 140px;
       flex-shrink: 0;
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.08em;
       color: var(--c-muted);
     }
-    .company-row dd {
+    .meta-row dd {
       flex: 1;
       min-width: 200px;
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--c-text);
-      line-height: 1.9;
-    }
-    .company-row dd a { color: var(--c-accent); text-decoration: none; }
-    .company-row dd a:hover { text-decoration: underline; }
-
-    .editor-profile {
-      max-width: 640px;
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(45,42,38,0.1);
-    }
-    .editor-name {
-      font-family: var(--font-serif);
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--c-text);
-      margin-bottom: 14px;
-    }
-    .editor-title {
-      display: inline-block;
-      margin-left: 10px;
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--c-accent);
-      border: 1px solid rgba(184,150,12,0.4);
-      border-radius: 999px;
-      padding: 3px 12px;
-      vertical-align: middle;
-    }
-    .editor-bio {
       font-size: 14px;
       font-weight: 300;
-      color: var(--c-muted);
-      line-height: 2.1;
-      letter-spacing: 0.02em;
+      color: var(--c-text);
     }
-    .editor-bio + .editor-bio { margin-top: 20px; }
+    .meta-row dd a { color: var(--c-accent); text-decoration: none; }
+    .meta-row dd a:hover { text-decoration: underline; }
 
     .back-link {
       display: inline-block;
@@ -378,7 +453,7 @@
     @media (max-width: 640px) {
       main { padding: 128px 24px 80px; }
       .footer-cols { grid-template-columns: 1fr; gap: 32px; }
-      .company-row dt { width: 100%; }
+      .meta-row dt { width: 100%; }
     }
   </style>
 </head>
@@ -420,52 +495,128 @@
 
   <main>
     <div class="inner">
-      <p class="breadcrumb"><a href="/">Third Place Japan</a> ／ 運営会社</p>
-      <span class="label">Company</span>
-      <h1 class="page-title">運営会社</h1>
-      <p class="body-text">Third Place Japan（サードプレイスジャパン）は、以下の会社が運営しています。</p>
+      <p class="breadcrumb"><a href="/">Third Place Japan</a> ／ TPJ公式ガイドライン</p>
+      <span class="label">Official Guidelines</span>
+      <h1 class="page-title">TPJ公式ガイドライン</h1>
+      <p class="page-subtitle">― 信頼される認証プラットフォームのために ―</p>
 
-      <dl class="company-table">
-        <div class="company-row">
-          <dt>会社名</dt>
-          <dd>ライトワークス株式会社</dd>
-        </div>
-        <div class="company-row">
-          <dt>運営</dt>
-          <dd>TPJ事務局</dd>
-        </div>
-        <div class="company-row">
-          <dt>所在地</dt>
-          <dd>東京都千代田区神田佐久間町2-18-1 秋葉原STMフロント10階</dd>
-        </div>
-        <div class="company-row">
-          <dt>運営責任者</dt>
-          <dd>加瀬俊幸（TPJ編集責任者）</dd>
-        </div>
-        <div class="company-row">
-          <dt>事業内容</dt>
-          <dd>サードプレイスのメディア運営、居場所づくり・空間プロデュース</dd>
-        </div>
-        <div class="company-row">
-          <dt>お問い合わせ先</dt>
-          <dd><a href="mailto:hello@thirdplacejapan.com">hello@thirdplacejapan.com</a></dd>
-        </div>
-      </dl>
+      <p class="body-text">Third Place Japan（以下「TPJ」）は、「どこにいるか、を定義する。」をコンセプトに、日本全国のサードプレイスを中立・公平な視点で調査・認証・発信する認証プラットフォームです。</p>
+      <p class="body-text">私たちは、単に施設や店舗を紹介するメディアではありません。人が心からくつろぎ、自分らしく過ごせる「居場所」の価値を可視化し、利用者と事業者を信頼でつなぐことを使命としています。</p>
+      <p class="body-text">そのためTPJでは、編集・調査・認証・情報発信・AI活用・広告掲載に至るまで、一貫した運営基準を設けています。</p>
+      <p class="body-text">本ガイドラインは、利用者、掲載事業者、自治体、パートナー企業など、TPJに関わるすべての皆様に対し、私たちの運営方針と品質基準を明確にするために公開しています。</p>
 
-      <div class="editor-profile">
-        <span class="label">Editorial Team</span>
-        <p class="page-title" style="font-size:20px;margin-bottom:20px;">TPJ編集部について</p>
-        <p class="editor-bio">TPJ編集部は、「どこにいるか、を定義する。」をコンセプトに、日本各地のサードプレイスの価値を中立・公平な視点で発信する編集チームです。掲載施設の評価・認証においては、公正性を重視するため、調査員は覆面調査員として実際に現地を訪問し、先入観や利害関係に左右されない客観的な調査・評価を行っています。</p>
-        <p class="editor-bio">編集部には、高級ホテル・ホテルラウンジ、温泉旅館、ヴィラ、カフェ、レストラン、コワーキングスペースなど、15カテゴリそれぞれの分野に精通した調査員・編集者が在籍。各地域の特性や文化、利用者の視点を踏まえながら、独自の評価基準に基づく質の高いコンテンツを制作しています。今後は全国へと調査エリアを拡大し、「どこにいるか、を定義する。」という新しい価値観をより多くの人へ届けていきます。</p>
-        <p class="editor-bio">また、TPJ編集部は調査・編集にとどまらず、ブランディング、マーケティング、SEO・MEO・AEOをはじめとするAI時代の集客戦略にも強みを持っています。店舗や地域の魅力を国内外へ効果的に発信し、インバウンド需要にも対応できる情報設計を推進。データとクリエイティブの両面から新たな価値を創出し、地域・事業者・利用者をつなぐプラットフォームとして進化を続けています。</p>
+      <div class="section-block">
+        <h2 class="section-title">TPJが大切にする5つの約束</h2>
+
+        <div class="promise-item">
+          <span class="promise-num">1</span>
+          <div>
+            <p class="promise-title">中立・公平な認証</p>
+            <p class="promise-desc">TPJは、公平性を最優先に考えています。掲載料や広告契約の有無によって評価が変わることはありません。認証・評価は、独自の基準に基づき、客観性を重視して実施します。</p>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <span class="promise-num">2</span>
+          <div>
+            <p class="promise-title">正確で信頼できる情報</p>
+            <p class="promise-desc">現地調査、取材、公開情報など複数の情報源をもとに編集を行い、公開後も必要に応じて内容を更新し、情報の品質向上に努めます。</p>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <span class="promise-num">3</span>
+          <div>
+            <p class="promise-title">AI時代に対応した情報発信</p>
+            <p class="promise-desc">TPJはAI技術を活用しながらも、人による確認・編集を経た情報のみを公開します。検索エンジンやAIに正しく理解される情報設計を行い、国内外へ価値ある情報を届けます。</p>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <span class="promise-num">4</span>
+          <div>
+            <p class="promise-title">利用者と事業者への誠実な対応</p>
+            <p class="promise-desc">透明性を大切にし、ご意見や訂正依頼には誠実かつ迅速に対応します。安心して利用できるプラットフォームづくりを継続します。</p>
+          </div>
+        </div>
+
+        <div class="promise-item">
+          <span class="promise-num">5</span>
+          <div>
+            <p class="promise-title">地域価値の創出</p>
+            <p class="promise-desc">地域の魅力や文化、人々が集う場所を継続的に発信し、日本全国のサードプレイスの価値向上と地域活性化に貢献します。</p>
+          </div>
+        </div>
       </div>
 
-      <div class="editor-profile">
-        <span class="label">Editor</span>
-        <p class="editor-name">加瀬俊幸 <span class="editor-title">TPJ編集長</span></p>
-        <p class="editor-bio">大手外資系企業で長年エンジニアとして勤務し、業務改善やDX（デジタルトランスフォーメーション）の推進、システム設計・運用など、企業の生産性向上を支える業務に従事。課題を構造化し、本質を見極める分析力と、データに基づいた改善手法を培う。</p>
-        <p class="editor-bio">その一方で、「人が心からくつろげる場所とは何か」というテーマに関心を持ち、日本各地のホテルラウンジ、カフェ、温泉旅館、ヴィラなど数多くのサードプレイスを訪問・取材。エンジニアとして培った論理的思考と現地での体験を融合させ、空間・接客・居心地などを多角的に評価する独自の「7軸評価基準」の策定に携わる。</p>
-        <p class="editor-bio">現在はTPJ（Third Place Japan）編集長として、「効率」や「利便性」だけでは測れない空間の価値を、客観性と体験の両面から丁寧に発信。読者が自分らしく過ごせる「居場所」と出会えるよう、一つひとつの場所に向き合いながら、信頼性の高いコンテンツ制作を続けている。</p>
+      <div class="section-block">
+        <h2 class="section-title">TPJ公式ガイドライン一覧</h2>
+
+        <p class="tree-root">TPJ公式ガイドライン</p>
+        <ul class="tree">
+          <li>
+            <span class="chapter-title">第1章　基本方針</span>
+            <ul>
+              <li>運営理念（Mission・Vision・Value）</li>
+              <li>編集ポリシー</li>
+              <li>プライバシーポリシー</li>
+              <li>利用規約</li>
+            </ul>
+          </li>
+          <li>
+            <span class="chapter-title">第2章　認証制度</span>
+            <ul>
+              <li>認証・評価ポリシー</li>
+              <li>調査・認証ガイドライン</li>
+              <li>TPJ認証マーク利用ガイドライン</li>
+            </ul>
+          </li>
+          <li>
+            <span class="chapter-title">第3章　AI・デジタル</span>
+            <ul>
+              <li>AI利用ポリシー</li>
+              <li>AI・検索エンジン向け情報公開ポリシー</li>
+            </ul>
+          </li>
+          <li>
+            <span class="chapter-title">第4章　利用者・事業者向け</span>
+            <ul>
+              <li>広告掲載ポリシー</li>
+              <li>口コミ・レビュー掲載ポリシー</li>
+              <li>情報訂正・削除依頼ポリシー</li>
+            </ul>
+          </li>
+          <li>
+            <span class="chapter-title">その他</span>
+            <ul>
+              <li>よくある質問（FAQ）</li>
+              <li>お問い合わせ</li>
+              <li>サイトマップ</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2 class="section-title">ガイドラインの改定について</h2>
+        <p class="body-text">TPJは、法令の改正、社会環境の変化、サービス内容の向上に応じて、本ガイドラインを適宜見直します。改定後の内容は、本サイトへ掲載した時点から効力を有します。</p>
+      </div>
+
+      <div class="section-block">
+        <dl class="meta-table">
+          <div class="meta-row">
+            <dt>運営事業者</dt>
+            <dd>ライトワークス株式会社</dd>
+          </div>
+          <div class="meta-row">
+            <dt>制定日</dt>
+            <dd>2026年6月15日</dd>
+          </div>
+          <div class="meta-row">
+            <dt>お問い合わせ</dt>
+            <dd><a href="mailto:hello@thirdplacejapan.com">hello@thirdplacejapan.com</a></dd>
+          </div>
+        </dl>
       </div>
 
       <a href="/" class="back-link">← Third Place Japan トップへ戻る</a>
@@ -525,29 +676,16 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "運営会社 ─ Third Place Japan",
-    "url": "https://thirdplacejapan.com/about-company/",
-    "mainEntity": {
+    "@type": "WebPage",
+    "name": "TPJ公式ガイドライン ─ 信頼される認証プラットフォームのために",
+    "url": "https://thirdplacejapan.com/guidelines/",
+    "datePublished": "2026-06-15",
+    "publisher": {
       "@type": "Organization",
-      "name": "ライトワークス株式会社",
-      "alternateName": "TPJ事務局",
-      "description": "TPJ編集部は、「どこにいるか、を定義する。」をコンセプトに、日本各地のサードプレイスの価値を中立・公平な視点で発信する編集チームです。覆面調査員による客観的な現地調査と、15カテゴリそれぞれの分野に精通した調査員・編集者の知見に基づき、質の高いコンテンツを制作しています。",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "神田佐久間町2-18-1 秋葉原STMフロント10階",
-        "addressLocality": "千代田区",
-        "addressRegion": "東京都",
-        "addressCountry": "JP"
-      },
-      "email": "hello@thirdplacejapan.com",
-      "employee": {
-        "@type": "Person",
-        "name": "加瀬俊幸",
-        "jobTitle": "運営責任者 / TPJ編集長",
-        "description": "大手外資系企業でエンジニアとしてDX推進やシステム設計・運用に従事した経験を活かし、日本各地のホテルラウンジ・カフェ・温泉旅館・ヴィラなどを訪問・取材。論理的思考と現地での体験を融合させた独自の「7軸評価基準」の策定に携わる。"
-      }
-    }
+      "name": "Third Place Japan",
+      "url": "https://thirdplacejapan.com"
+    },
+    "about": "Third Place Japanの運営理念・認証の公平性・AI活用方針・利用者と事業者への約束をまとめた公式ガイドライン"
   }
   </script>
 
