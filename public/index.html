@@ -1822,7 +1822,7 @@
         <h2 class="for-biz-h2">丁寧に場をつくる方へ</h2>
         <p class="for-biz-body">Certified以上の正式認証へのお申し込み、Silver以上の認証審査へのお問い合わせ、各種ご支援のご相談はすべてこちらから。</p>
         <div>
-          <button type="button" class="btn-primary" data-modal="modal-contact-form">お問い合わせ・資料請求</button>
+          <button type="button" class="btn-primary" data-modal="modal-contact-form">お問い合わせ</button>
           <a href="/stories/" class="for-biz-link">Stories（記事を読む）→</a>
         </div>
       </div>
@@ -1858,7 +1858,7 @@
           <ul>
             <li><a href="#for-business">For Business</a></li>
             <li><a href="/about-company/">運営会社</a></li>
-            <li><a href="mailto:hello@thirdplacejapan.com">お問い合わせ</a></li>
+            <li><a href="#for-business">お問い合わせ</a></li>
           </ul>
         </div>
       </div>
@@ -2150,13 +2150,13 @@
     <div class="modal-bd" aria-hidden="true"></div>
     <div class="modal-box">
       <button class="modal-x" aria-label="閉じる">&times;</button>
-      <h3 class="modal-title" id="modal-contact-form-title">お問い合わせ・資料請求</h3>
+      <h3 class="modal-title" id="modal-contact-form-title">お問い合わせ</h3>
       <div class="modal-body" style="margin-bottom:28px;">Certified以上の正式認証へのお申し込み、Silver以上の認証審査へのお問い合わせ、各種ご支援のご相談は、以下のフォームよりご連絡ください。内容を確認のうえ、TPJ編集部より折り返しご連絡いたします。</div>
 
       <form id="contact-form">
         <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
         <input type="hidden" name="access_key" value="1dbc9d44-aa69-4e8d-b5ec-e1926ca91fba">
-        <input type="hidden" name="subject" value="【TPJ】お問い合わせ・資料請求">
+        <input type="hidden" name="subject" value="【TPJ】お問い合わせ">
         <input type="hidden" name="from_name" value="Third Place Japan お問い合わせフォーム">
 
         <div class="form-field">
@@ -2275,7 +2275,7 @@
           }
         } catch (err) {
           statusEl.className = 'form-status is-error';
-          statusEl.textContent = '送信に失敗しました。お手数ですが hello@thirdplacejapan.com へ直接ご連絡ください。';
+          statusEl.textContent = '送信に失敗しました。お手数ですが contact@thirdplacejapan.com へ直接ご連絡ください。';
         } finally {
           submitBtn.disabled = false;
           submitBtn.textContent = '送信する';
