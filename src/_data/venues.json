@@ -45,6 +45,7 @@
     "instagram_url": "https://www.instagram.com/green.beanscoffee",
     "amenity_features": ["Wi-Fi", "電源", "禁煙"],
     "smoking_allowed": false,
+    "bean_varieties_count": 30,
     "opening_hours": ["Mo-Su 10:30-20:00"],
     "opening_hours_display": "10:30〜20:00（L.O. 19:30）",
     "price_range": "¥1,000〜¥2,000",

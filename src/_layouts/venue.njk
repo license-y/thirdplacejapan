@@ -227,11 +227,12 @@ og_type: "article"
   {# 施設情報（営業時間・価格帯・電話）— TPJセレクトは非表示 #}
   {% if (venue.opening_hours_display or venue.price_range or venue.telephone) and venue.grade_slug != "select" %}
   {% set hasRoast = venue.tags and "自家焙煎機" in venue.tags %}
+  {% set hasBeanVarieties = venue.bean_varieties_count %}
   {% set hasWifiPower = venue.amenity_features and "Wi-Fi" in venue.amenity_features and "電源" in venue.amenity_features %}
   {% set hasGlutenFree = venue.tags and "グルテンフリー" in venue.tags %}
   {% set hasPetFriendly = venue.tags and "店内ペット同伴可" in venue.tags %}
   {% set showNonSmoking = venue.smoking_allowed == false %}
-  {% set hasAmenityBadge = hasRoast or hasWifiPower or hasGlutenFree or hasPetFriendly or showNonSmoking %}
+  {% set hasAmenityBadge = hasRoast or hasBeanVarieties or hasWifiPower or hasGlutenFree or hasPetFriendly or showNonSmoking %}
   <div class="mb-12 bg-stone-50 rounded-xl px-5 py-4" data-aos="fade-up">
     <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
       {% if venue.opening_hours_display %}
@@ -254,12 +255,37 @@ og_type: "article"
       {% endif %}
     </div>
     {% if hasAmenityBadge %}
-    <div class="flex flex-wrap gap-2 mt-3 pt-3 border-t border-stone-200">
-      {% if hasRoast %}<span class="text-xs px-3 py-1 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">自家焙煎コーヒー専門店</span>{% endif %}
-      {% if hasWifiPower %}<span class="text-xs px-3 py-1 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">Wi-Fi・電源完備</span>{% endif %}
-      {% if hasGlutenFree %}<span class="text-xs px-3 py-1 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">グルテンフリー対応</span>{% endif %}
-      {% if hasPetFriendly %}<span class="text-xs px-3 py-1 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">店内ペット同伴可</span>{% endif %}
-      {% if showNonSmoking %}<span class="text-xs px-3 py-1 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">禁煙</span>{% endif %}
+    <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-stone-200">
+      {% if hasRoast %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="coffee" class="w-3.5 h-3.5 shrink-0"></i>自家焙煎コーヒー専門店
+      </span>
+      {% endif %}
+      {% if hasBeanVarieties %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="bean" class="w-3.5 h-3.5 shrink-0"></i>{{ venue.bean_varieties_count }}種類のコーヒー豆
+      </span>
+      {% endif %}
+      {% if hasWifiPower %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="wifi" class="w-3.5 h-3.5 shrink-0"></i>Wi-Fi・電源完備
+      </span>
+      {% endif %}
+      {% if hasGlutenFree %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="wheat-off" class="w-3.5 h-3.5 shrink-0"></i>グルテンフリー対応
+      </span>
+      {% endif %}
+      {% if hasPetFriendly %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="paw-print" class="w-3.5 h-3.5 shrink-0"></i>店内ペット同伴可
+      </span>
+      {% endif %}
+      {% if showNonSmoking %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-stone-200" style="color:#3D2B1F;">
+        <i data-lucide="cigarette-off" class="w-3.5 h-3.5 shrink-0"></i>禁煙
+      </span>
+      {% endif %}
     </div>
     {% endif %}
   </div>
