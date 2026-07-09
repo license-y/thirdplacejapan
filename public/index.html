@@ -2251,6 +2251,8 @@
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       const statusEl = document.getElementById('contact-form-status');
+      let contactFailCount = 0;
+      const CONTACT_EMAIL_B64 = 'Y29udGFjdEB0aGlyZHBsYWNlamFwYW4uY29t'; // contact@thirdplacejapan.com
       contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitBtn = contactForm.querySelector('.form-submit');
@@ -2267,6 +2269,7 @@
           });
           const data = await res.json();
           if (data.success) {
+            contactFailCount = 0;
             statusEl.className = 'form-status is-success';
             statusEl.textContent = 'お問い合わせを受け付けました。折り返しご連絡いたします。';
             contactForm.reset();
@@ -2274,8 +2277,14 @@
             throw new Error(data.message || 'send failed');
           }
         } catch (err) {
+          contactFailCount++;
           statusEl.className = 'form-status is-error';
-          statusEl.textContent = '送信に失敗しました。しばらく時間をおいてから再度お試しください。';
+          if (contactFailCount >= 3) {
+            const email = atob(CONTACT_EMAIL_B64);
+            statusEl.textContent = `送信に失敗が続いています。お手数ですが ${email} まで直接ご連絡ください。`;
+          } else {
+            statusEl.textContent = '送信に失敗しました。しばらく時間をおいてから再度お試しいただくか、別のメールアドレスでの送信もお試しください。';
+          }
         } finally {
           submitBtn.disabled = false;
           submitBtn.textContent = '送信する';
