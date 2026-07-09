@@ -219,6 +219,14 @@ og_type: "article"
        class="hover:text-gold transition-colors">{{ venue.category }}</a>
   </p>
 
+  {# 施設写真（専用画像が設定されている施設のみ表示。共通デフォルト画像の使い回しはしない） #}
+  {% set hasDedicatedImage = venue.image and venue.image != "/assets/images/main/japan-cafe-interior-hero.webp" %}
+  {% if hasDedicatedImage %}
+  <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+    <img src="{{ venue.image }}" alt="{{ venue.name }} | Third Place Japan" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+  </div>
+  {% endif %}
+
   {# 引用用一文（AEO核心・AIが引用する一文） #}
   <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
     <p class="font-serif text-base leading-relaxed text-dark">{{ venue.citation }}</p>
