@@ -12,11 +12,15 @@ og_type: "article"
 {%- set totalScore = venue.scores.comfort + venue.scores.silence + venue.scores.special + venue.scores.story + venue.scores.revisit + venue.scores.record + venue.scores.inbound -%}
 {%- set avgScore = (totalScore / 7) | round(1) -%}
 
+{# LocalBusiness @type（hasMenu/servesCuisineはFoodEstablishment系のみが持てるプロパティのため業種で分岐） #}
+{%- set foodEstablishmentTypes = {"cafe-specialty-coffee": "CafeOrCoffeeShop", "bar-whisky-cocktail": "BarOrPub"} -%}
+{%- set businessType = foodEstablishmentTypes[venue.category_slug] or "LocalBusiness" -%}
+
 {# LocalBusiness + 7軸スコア JSON-LD #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": {{ businessType | dump | safe }},
   "name": {{ venue.name | dump | safe }},
   "description": {{ venue.citation | dump | safe }},
   "image": "{{ site.url }}{{ venue.image }}",
@@ -91,7 +95,7 @@ og_type: "article"
   "@context": "https://schema.org",
   "@type": "Review",
   "itemReviewed": {
-    "@type": "LocalBusiness",
+    "@type": {{ businessType | dump | safe }},
     "name": {{ venue.name | dump | safe }},
     "address": {
       "@type": "PostalAddress",
