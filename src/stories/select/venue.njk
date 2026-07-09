@@ -7,7 +7,7 @@ pagination:
 permalink: "/stories/select/{{ venue.slug }}/"
 layout: venue.njk
 eleventyComputed:
-  title: "{{ venue.name }}"
+  title: "{{ venue.name }}（{{ venue.area_primary.area }}）| {{ venue.category }}"
   description: "{{ venue.citation }}"
   hreflang_ja: "/stories/select/{{ venue.slug }}/"
   hreflang_en: "{% if venue.has_en %}/en/stories/select/{{ venue.slug }}/{% endif %}"

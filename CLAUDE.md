@@ -1510,6 +1510,25 @@ https://maps.google.com/?q=35.6775167,139.7078346
 - 検索意図を想定して立てる（「東京 サードプレイス おすすめ」「京都 カフェ 居場所」「スパ 整う 東京」など）
 - 下書きを書き始める前に、SEO/AEOを意識したタイトル案を2〜3個提示してユーザーに選んでもらう
 
+## 施設ページ（venue）のtitleタグルール（2026-07-09追加）
+
+施設詳細ページ（`/stories/select/{slug}/`）の `<title>` は `src/stories/select/venue.njk` の `eleventyComputed.title` で**全施設共通のテンプレート**として一括生成する。個別施設ごとにfrontmatterで上書きしない。
+
+**確定フォーマット：**
+```
+{{ venue.name }}（{{ venue.area_primary.area }}）| {{ venue.category }}
+```
+`base.njk` が末尾に ` | Third Place Japan Stories` を自動付与するため、実際の出力は：
+```
+Green Beans Coffee（千駄ヶ谷）| カフェ・スペシャルティコーヒー | Third Place Japan Stories
+```
+
+**ルール：**
+- エリア名（`venue.area_primary.area`）と業種（`venue.category`）を必ず含める（検索流入・地名キーワード対策）
+- **「No.1」「最高」「一番」など裏付けのない優劣・ランキング表現は禁止**（上記「記事品質チェックルール」の誇大表現禁止と同じ理由。TPJに施設間の公式ランキング制度は存在しない）
+- H1（`venue.name`）や`citation`など他の表示箇所とは独立した項目であり、titleタグ変更がページ本文・パンくず表示に影響することはない
+- テンプレートが共通のため、変更すると**全施設ページのtitleが一括で変わる**。個別施設だけ変えたい場合はテンプレートではなくvenues.jsonにtitle専用フィールドを追加する設計に変更する必要がある（現状は未対応）
+
 ## 必須キーワード（全記事に含める）
 
 - **「サードプレイス」または「第三の居場所」** → 全記事に必ず1回以上
@@ -1779,6 +1798,35 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 **ルール化**：「施設情報カード 設備バッジルール」を新規セクションとしてCLAUDE.mdに追加済み（`venues.json必須フィールド一覧`の直後）。「タグマスターリスト」に3タグ追加済み。
 
 **ルール化**：本セクション上部の「レスポンシブデザイン原則（例外）」「お金・ビジネス色を排した表現ルール（適用範囲追加）」「TPJセレクト 運用ルール（底部テキストのモバイル改行）」「メインサイト管理ルール（`#grades`審査プロセス表現・モーダルCTA運用・フッター2カラム化）」に反映済み。
+
+---
+
+### 設備バッジの枠線を金枠に変更
+
+**対象ファイル**
+- `src/_layouts/venue.njk` — 設備バッジ6個の `border border-stone-200` を `border border-gold/50` に変更
+
+**変更内容**：ユーザー指摘（枠が視認しにくい）を受け、既存の「タグ」セクション（`border-gold/30`）と統一感のある金枠に変更。
+
+---
+
+### 施設ページ（venue）titleタグの改善（エリア名・業種を追加）
+
+**対象ファイル**
+- `src/stories/select/venue.njk` — `eleventyComputed.title` のフォーマット変更
+- ビルドにより全17施設ページの `<title>` / `og:title` / `twitter:title` が再生成
+
+**変更内容**
+
+| 変更前 | 変更後 |
+|---|---|
+| `{{ venue.name }}` | `{{ venue.name }}（{{ venue.area_primary.area }}）\| {{ venue.category }}` |
+
+出力例：`Green Beans Coffee（千駄ヶ谷）| カフェ・スペシャルティコーヒー | Third Place Japan Stories`
+
+**経緯**：外部からの改善提案で「静寂性No.1」等の文言を含むtitle案が出たが、施設間の公式ランキングが存在しないため誇大表現ルール違反と判断し不採用。エリア名・業種の追加のみ採用した。同提案にあった構造化データ（FAQPage/LocalBusiness/Review/BreadcrumbList）は確認の結果すべて実装済みだったため対応不要と判断。Flagship施設のパンくずURL不整合（ラベル「Flagship」→リンク先`/stories/select/`）も指摘があったが、現状維持と決定（専用ページ新設は見送り）。
+
+**ルール化**：「施設ページ（venue）のtitleタグルール」を新規セクションとしてCLAUDE.mdに追加済み（「タイトル作成のルール」の直後）。
 
 ---
 
