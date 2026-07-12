@@ -9,6 +9,7 @@ category_slug: inbound-experience
 area_name: 台東区
 thumbnail: /assets/images/articles/taito-ku-inbound-experience-tokyo.webp
 lang: ja
+hreflang_en: /en/stories/inbound-experience/taito/
 ---
 
 **台東区は、江戸文化・職人文化・下町の日常が一つの行政区に共存する東京インバウンド体験の原点だ。渋谷のトレンド体験でも港区の国際体験でもなく、「日本の伝統文化が今も生きている」体験を求める旅行者の居場所として、台東区は東京で唯一の文化的密度を持つ。**

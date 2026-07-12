@@ -2,10 +2,15 @@
 layout: stories.njk
 og_type: "article"
 ---
-{# hreflang: 日本語記事の自己参照（英語版がある場合は記事frontmatterにhreflang_enを追加）#}
-<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url }}">
+{# hreflang: 自己参照＋対訳版への相互リンク（langフロントマターに応じて自己言語を判定）#}
+<link rel="alternate" hreflang="{{ lang or 'ja' }}" href="{{ site.url }}{{ page.url }}">
+{%- if lang == "en" -%}
+{% if hreflang_ja %}<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ hreflang_ja }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ hreflang_ja }}">{% endif %}
+{%- else -%}
 {% if hreflang_en %}<link rel="alternate" hreflang="en" href="{{ site.url }}{{ hreflang_en }}">
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">{% endif %}
+{%- endif %}
 
 {# Article JSON-LD #}
 <script type="application/ld+json">
@@ -47,7 +52,7 @@ og_type: "article"
     "name": "Third Place Japan Stories",
     "url": "{{ site.url }}/stories/"
   },
-  "inLanguage": "ja",
+  "inLanguage": "{{ lang or 'ja' }}",
   "about": {
     "@type": "Thing",
     "name": "サードプレイス"
