@@ -9,6 +9,7 @@ category_slug: culture-sports-leisure
 area_name: 台東区
 thumbnail: /assets/images/articles/taito-ku-culture-leisure-tokyo.webp
 lang: ja
+hreflang_en: /en/stories/culture-sports-leisure/taito/
 ---
 
 **台東区は、国際水準の文化複合地区（上野）・江戸の演芸と伝統工芸（浅草）・現代クラフトの集積（蔵前）が一つの行政区に共存する東京の文化密度エリアだ。文化施設を「消費」するのでなく、公園・路地・川沿いとともに「過ごす」体験として使うことで、台東区の文化施設はサードプレイスとして機能する。**
