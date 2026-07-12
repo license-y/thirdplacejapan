@@ -9,6 +9,7 @@ category_slug: retreat-zen
 area_name: 台東区
 thumbnail: /assets/images/articles/taito-ku-retreat-zen-tokyo.webp
 lang: ja
+hreflang_en: /en/stories/retreat-zen/taito/
 ---
 
 **台東区は、30以上の寺院が集まる谷中を核に、早朝の境内・公園の静寂・隅田川沿いの余白とあわせて、都市のなかでリトリート体験が成立する東京稀有な行政区だ。「禅的な静けさ」を求める都市生活者と旅行者の双方にとって、台東区は東京で最も「余白」が残る居場所の一つだ。**

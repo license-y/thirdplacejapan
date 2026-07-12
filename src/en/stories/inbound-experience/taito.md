@@ -107,4 +107,4 @@ Taito-ku is the one Tokyo ward where Edo-period culture still runs as daily life
 
 ---
 
-Related reading: [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) and [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/) explore how this framework applies across the city. Third Place Japan is also preparing dedicated guides to Taito-ku's temple retreats and cultural facilities — check back for updates.
+Related reading: [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) and [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/) explore how this framework applies across the city. For Yanaka's temple town and the ward's quieter side, see [Taito-ku as a Third Place: Finding Retreat and Zen Stillness Without Leaving Tokyo](/en/stories/retreat-zen/taito/). Third Place Japan is also preparing a dedicated guide to the ward's cultural facilities — check back for updates.
