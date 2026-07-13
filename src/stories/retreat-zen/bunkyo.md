@@ -9,6 +9,7 @@ category_slug: retreat-zen
 area_name: 文京区
 thumbnail: /assets/images/articles/bunkyo-ku-retreat-zen-tokyo.webp
 lang: ja
+hreflang_en: /en/stories/retreat-zen/bunkyo/
 ---
 
 **文京区は、東京大学本郷キャンパスを核とする学者町の坂道と、特別名勝に指定された二つの大名庭園が共存する、学問と結びついた孤独が居場所として機能する東京でも稀有な行政区だ。信仰の静けさでも自然の静けさでもなく、「考えるための一人時間」を求める人にとって、文京区は東京で最も条件が揃った街の一つだ。**

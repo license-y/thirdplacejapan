@@ -9,6 +9,7 @@ category_slug: shrine-temple
 area_name: 文京区
 thumbnail: /assets/images/articles/bunkyo-ku-shrine-temple-tokyo.webp
 lang: ja
+hreflang_en: /en/stories/shrine-temple/bunkyo/
 ---
 
 **文京区の神社仏閣は、日本のどこよりも色濃く「学業成就」という一つの祈りに染まっている。学問の神を祀る古社、儒学の総本山だった聖堂、東京十社に数えられる格式高い神社——これらが大学町という土地の性格と重なり合いながら、受験生と学生の祈りを今も受け止め続けている。**

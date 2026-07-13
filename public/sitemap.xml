@@ -1690,10 +1690,29 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/retreat-zen/bunkyo/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/shrine-temple/bunkyo/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/bunkyo/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/retreat-zen/bunkyo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/retreat-zen/bunkyo/"/>
     
   </url>
   
@@ -1702,6 +1721,9 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/shrine-temple/bunkyo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/shrine-temple/bunkyo/"/>
     
   </url>
   
