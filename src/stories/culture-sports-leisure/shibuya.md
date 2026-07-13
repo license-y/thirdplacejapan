@@ -10,6 +10,7 @@ area_name: 渋谷区
 thumbnail: /assets/images/articles/yoyogi-park-fountain-shibuya-culture.webp
 area_slug: shibuya
 lang: ja
+hreflang_en: /en/stories/culture-sports-leisure/shibuya/
 ---
 
 **渋谷区の文化・スポーツ・レジャーは、「見て終わる」体験ではなく「体を動かして参加する」体験として機能する行政区だ。国立代々木競技場のスポーツ観戦、代々木公園・宮下公園のストリートカルチャー、道玄坂の複合文化施設——上野の鑑賞型文化とは異なる軸を渋谷区は持つ。**

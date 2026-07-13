@@ -96,7 +96,7 @@ No — Asakusa is one neighborhood within Taito-ku. The ward also includes Ueno 
 It depends heavily on what you do. Visiting Sensoji Temple, walking Yanaka's backstreets, and entering Ueno Park are all free. Kimono rental, rickshaw rides, craft workshops, and museum admission vary by operator and venue, so it's worth checking current rates on each venue's official site before you go.
 
 **Q. How is Taito-ku different from areas like Shibuya or Minato?**<br>
-Shibuya and Harajuku center on contemporary pop culture; Minato-ku, Roppongi in particular, centers on international city life. Taito-ku's core offering is different: traditional culture that continues to function as daily life rather than history on display. None of these is objectively better — they answer different questions about what you want from Tokyo.
+[Shibuya and Harajuku](/en/stories/inbound-experience/shibuya/) center on contemporary pop culture; Minato-ku, Roppongi in particular, centers on international city life. Taito-ku's core offering is different: traditional culture that continues to function as daily life rather than history on display. None of these is objectively better — they answer different questions about what you want from Tokyo.
 
 **Q. Will I need to speak Japanese to enjoy Taito-ku?**<br>
 Not really. Asakusa and Ueno's major sites have English signage and staff accustomed to international visitors, so the language barrier there is low. Yanaka and Kuramae offer less multilingual infrastructure, but walking a backstreet or entering a temple courtyard doesn't require language at all — much of what Taito-ku offers works the same way regardless of what you speak.

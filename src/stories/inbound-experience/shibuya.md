@@ -10,6 +10,7 @@ area_name: 渋谷区
 thumbnail: /assets/images/articles/shibuya-crossing-harajuku-inbound-tokyo.webp
 area_slug: shibuya
 lang: ja
+hreflang_en: /en/stories/inbound-experience/shibuya/
 ---
 
 **渋谷区は、世界的に知られるスクランブル交差点と原宿・竹下通りを擁する、日本の「今」がそのままインバウンド体験になる行政区だ。江戸文化を継承する台東区とは対極の、同時代性そのものを目的地にする構造を渋谷区は持つ。**
