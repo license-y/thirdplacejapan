@@ -2,7 +2,7 @@
 layout: article.njk
 title: "Taito-ku as a Third Place: Where Asakusa, Ueno, and Yanaka Keep Edo Culture Alive"
 description: "Taito-ku is where Edo-era culture still functions as daily life, not a museum exhibit — the most culturally dense ward in Tokyo for inbound travelers."
-date: 2026-07-12
+date: 2026-07-05
 tags:
   - articles
 category_slug: inbound-experience

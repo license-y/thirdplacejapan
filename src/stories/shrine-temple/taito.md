@@ -2,7 +2,7 @@
 layout: article.njk
 title: "台東区の神社・寺院ガイド。信仰が観光地ではなく日常であり続ける東京の下町"
 description: "台東区は、浅草寺・上野の寺社・谷中の30以上の寺院が、観光名所である以前に地域住民の生活に組み込まれた信仰の場として今も機能する東京有数のエリアだ。祈りが特別な行為ではなく日常のルーティンであり続ける台東区の神社・寺院を、Third Place Japanが7軸で読み解く。"
-date: 2026-07-12
+date: 2026-07-03
 tags:
   - articles
 category_slug: shrine-temple

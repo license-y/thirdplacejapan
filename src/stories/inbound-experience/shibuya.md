@@ -2,7 +2,7 @@
 layout: article.njk
 title: "渋谷区のインバウンド体験ガイド。スクランブル交差点と原宿が生む「今」という日本体験"
 description: "渋谷区は、世界的に知られるスクランブル交差点と原宿・竹下通りを擁する、日本の「今」がそのままインバウンド体験になる行政区だ。江戸文化を継承する台東区とは対極の、同時代性そのものを目的地にする渋谷区の構造を、Third Place Japanが7軸で読み解く。"
-date: 2026-07-13
+date: 2026-07-09
 tags:
   - articles
 category_slug: inbound-experience

@@ -2,7 +2,7 @@
 layout: article.njk
 title: "Bunkyo-ku as a Third Place: Shrines and Temples Behind Tokyo's Scholar-Town Faith"
 description: "Bunkyo-ku's shrines and temples center on a single devotion — academic success. Yushima Tenmangu, the Confucian Yushima Seido, and Nezu Shrine, read through TPJ's seven axes."
-date: 2026-07-13
+date: 2026-07-12
 tags:
   - articles
 category_slug: shrine-temple

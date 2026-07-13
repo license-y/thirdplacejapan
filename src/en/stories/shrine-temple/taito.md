@@ -2,7 +2,7 @@
 layout: article.njk
 title: "Taito-ku as a Third Place: Where Faith Is Daily Life, Not a Sightseeing Stop"
 description: "Taito-ku's shrines and temples — Sensoji, Ueno's shrines, Yanaka's 30-plus temples — remain living faith woven into daily life, not sightseeing stops."
-date: 2026-07-12
+date: 2026-07-07
 tags:
   - articles
 category_slug: shrine-temple

@@ -2,7 +2,7 @@
 layout: article.njk
 title: "Taito-ku as a Third Place: Finding Retreat and Zen Stillness Without Leaving Tokyo"
 description: "Taito-ku offers genuine retreat inside Tokyo — Yanaka's temple alleys, Ueno's park stillness, and Asakusa's early mornings, read through TPJ's seven axes."
-date: 2026-07-12
+date: 2026-07-06
 tags:
   - articles
 category_slug: retreat-zen

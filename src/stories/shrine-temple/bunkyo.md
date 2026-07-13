@@ -2,7 +2,7 @@
 layout: article.njk
 title: "文京区の神社・寺院ガイド。学問の神と格式高い社が支える、東京の学業成就の聖域"
 description: "文京区は、学問の神を祀る古社、儒学の総本山だった聖堂、東京十社に数えられる格式高い神社、徳川将軍家の生母ゆかりの寺院が集まる、東京でも稀有な「学業成就」の信仰圏だ。受験生の祈りが今も息づく文京区の神社・寺院を、Third Place Japanが7軸で読み解く。"
-date: 2026-07-13
+date: 2026-07-10
 tags:
   - articles
 category_slug: shrine-temple

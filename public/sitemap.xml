@@ -1690,14 +1690,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/shibuya/</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1706,7 +1698,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/retreat-zen/bunkyo/</loc>
+    <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/shibuya/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1715,37 +1707,23 @@
   
   <url>
     <loc>https://thirdplacejapan.com/en/stories/shrine-temple/bunkyo/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/shibuya/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <loc>https://thirdplacejapan.com/en/stories/retreat-zen/bunkyo/</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    
-    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/culture-sports-leisure/shibuya/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/culture-sports-leisure/shibuya/"/>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/shibuya/</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/shibuya/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/"/>
     
   </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/bunkyo/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -1756,7 +1734,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/bunkyo/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -1766,16 +1744,30 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/taito/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/shibuya/</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/shibuya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/"/>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/inbound-experience/taito/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/shibuya/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/culture-sports-leisure/shibuya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/culture-sports-leisure/shibuya/"/>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/shrine-temple/taito/</loc>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -1783,28 +1775,9 @@
   
   <url>
     <loc>https://thirdplacejapan.com/en/stories/retreat-zen/taito/</loc>
-    <lastmod>2026-07-12</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/en/stories/shrine-temple/taito/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/taito/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/shrine-temple/taito/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/shrine-temple/taito/"/>
     
   </url>
   
@@ -1813,6 +1786,33 @@
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/inbound-experience/taito/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/taito/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/taito/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/shrine-temple/taito/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/shrine-temple/taito/"/>
     
   </url>
   

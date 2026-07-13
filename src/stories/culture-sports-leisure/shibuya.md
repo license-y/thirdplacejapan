@@ -2,7 +2,7 @@
 layout: article.njk
 title: "渋谷区の文化・スポーツ・レジャーガイド。代々木競技場と公園群が育む「参加する文化」"
 description: "渋谷区は、1964年東京五輪の遺産である国立代々木競技場、複合文化施設が集まる道玄坂、ストリートスポーツが根づく代々木公園や駅前の屋上公園が共存する行政区だ。「見て終わる」上野の鑑賞型文化とは異なる、体を動かし参加する文化消費のあり方を、Third Place Japanが7軸で読み解く。"
-date: 2026-07-13
+date: 2026-07-08
 tags:
   - articles
 category_slug: culture-sports-leisure
