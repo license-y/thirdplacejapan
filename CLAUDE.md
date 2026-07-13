@@ -1342,6 +1342,28 @@ eleventyConfig.addFilter("rejectLang", (array, lang) =>
 
 **注意**：Nunjucks の `selectattr` フィルターはドット記法（`data.lang`）のパス解決に不具合があり使用不可。必ず `rejectLang` カスタムフィルターを使うこと。
 
+### 英語ページ側は `selectLang` を使う（2026-07-13追加）
+
+英語ページ（`/en/stories/` 配下）で「英語記事のみ」を取得したい場合は、`rejectLang("ja")` ではなく専用の `selectLang("en")` を使う。
+
+```njk
+{% set enArticles = collections.articles | selectLang("en") %}
+```
+
+**フィルター定義**（`.eleventy.js`）：
+```js
+eleventyConfig.addFilter("selectLang", (array, lang) =>
+  (array || []).filter(item => item.data && item.data.lang === lang)
+);
+```
+
+**背景（2026-07-13発見・修正済みの不具合）**：`src/en/stories/index.njk`（英語記事トップ）が3本の記事カードをハードコードしており、新規に英語記事を追加しても一覧に反映されない状態だった。また `src/_layouts/article.njk` のサイドバー「最新記事」ブロックが `collections.articles | head(5)` と言語フィルタなしで実装されており、英語記事ページなのに日本語記事タイトルが混在して表示されていた。
+
+**恒久対応（今後この不具合を再発させないためのルール）**：
+- `src/en/stories/index.njk` は `collections.articles | selectLang("en")` を全件ループで表示する方式に変更済み。**英語記事を追加する際、このページのテンプレートを個別に更新する必要はない**（`lang: en` を設定するだけで自動反映される）
+- `src/_layouts/article.njk` のサイドバー「最新記事」は `collections.articles | selectLang(lang or "ja")` でページ自身の言語に絞り込み済み。ラベル・カテゴリ名も `lang == "en"` の場合は英語表記（`postCat.name_en`）に切り替わる
+- **新しく「記事一覧」「最新記事」「関連記事」等の一覧系UIを追加する場合は、必ず対象ページの言語で `selectLang` / `rejectLang` によるフィルタリングを行うこと。** `collections.articles` を言語フィルタなしでそのまま使うと同じ不具合が再発する
+
 ---
 
 ## ✅ LocalBusiness @type のカテゴリ別マッピング（venue.njk・2026-07-09追加）
@@ -1823,6 +1845,32 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 ---
 
 # 実装ログ
+
+## 2026-07-13
+
+### 文京区ピラー2本の英語化・英語記事一覧/サイドバーの言語フィルタリング不具合修正
+
+**対象ファイル**
+- `src/en/stories/retreat-zen/bunkyo.md` / `src/en/stories/shrine-temple/bunkyo.md` — 新規作成（英語版）
+- `src/stories/retreat-zen/bunkyo.md` / `src/stories/shrine-temple/bunkyo.md` — `hreflang_en` 追記
+- `public/assets/images/articles/hongo-hilly-stone-steps-bunkyo-en.webp` / `vermillion-shrine-hall-bunkyo-en.webp` — 英語版専用サムネイル追加
+- `.eleventy.js` — `selectLang` フィルター新規追加
+- `src/en/stories/index.njk` — 記事一覧をハードコードから動的取得に変更
+- `src/_layouts/article.njk` — サイドバー「最新記事」の言語フィルタリング修正
+
+**変更内容**
+
+| 変更箇所 | 内容 |
+|---|---|
+| 文京区2本の英語化 | `docs/TPJ英語版制作憲法.md` に従い翻訳ではなく再構成として執筆。retreat-zenは本郷の坂・小石川後楽園と六義園・根津千駄木の文人街、shrine-templeは湯島天満宮・聖堂・根津神社・傳通院の「学業成就」信仰を核に据えた。taito版との対比軸はFAQで自然に言及し、文京区2本同士の相互リンクを優先 |
+| `/en/stories/` 記事一覧 | 3本ハードコード → `collections.articles \| selectLang("en")` で全件動的表示に変更。"More English articles coming soon." を削除 |
+| サイドバー「最新記事」 | `collections.articles \| head(5)`（言語フィルタなし）→ `collections.articles \| selectLang(lang or "ja")` に変更。英語ページでは "Latest Articles" ラベル・`name_en` カテゴリ表記に切り替え |
+
+**発見された不具合の背景**：英語記事を新規追加しても `/en/stories/` トップと記事ページのサイドバーに反映されない状態が続いていた。原因はテンプレート側（ハードコード・言語フィルタ欠如）であり、記事側frontmatterの不備ではなかった。
+
+**ルール化**：「ItemList の言語フィルタリング（日英混在環境）」セクションに「英語ページ側は `selectLang` を使う」を追記済み。今後、記事一覧・最新記事・関連記事等の一覧系UIを新規実装する際は、対象ページの言語で `selectLang` / `rejectLang` によるフィルタリングを必須とする。
+
+---
 
 ## 2026-07-09
 

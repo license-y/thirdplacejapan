@@ -298,20 +298,20 @@ og_type: "article"
           </ul>
         </div>
 
-        {# 最新記事 #}
-        {% set latestPosts = collections.articles | head(5) %}
+        {# 最新記事（現在のページと同じ言語のみ） #}
+        {% set latestPosts = collections.articles | selectLang(lang or "ja") | head(5) %}
         {% if latestPosts and latestPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
-          <p class="label mb-4">最新記事</p>
+          <p class="label mb-4">{{ "Latest Articles" if lang == "en" else "最新記事" }}</p>
           <ul class="space-y-4">
             {% for post in latestPosts %}
             <li>
               <a href="{{ post.url }}" class="group block">
                 {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
                 {% if postCat %}
-                <p class="text-xs text-gold mb-0.5">{{ postCat.name_ja }}</p>
+                <p class="text-xs text-gold mb-0.5">{{ postCat.name_en if lang == "en" else postCat.name_ja }}</p>
                 {% elif post.data.category_slug == "about" %}
-                <p class="text-xs text-gold mb-0.5">サードプレイスとは</p>
+                <p class="text-xs text-gold mb-0.5">{{ "What Is a Third Place" if lang == "en" else "サードプレイスとは" }}</p>
                 {% endif %}
                 <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">{{ post.data.title }}</p>
                 <p class="text-xs text-muted mt-1">{{ post.date | dateJa }}</p>

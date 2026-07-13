@@ -208,6 +208,10 @@ export default function (eleventyConfig) {
     (array || []).filter(item => item.data && item.data.lang !== lang)
   );
 
+  eleventyConfig.addFilter("selectLang", (array, lang) =>
+    (array || []).filter(item => item.data && item.data.lang === lang)
+  );
+
   eleventyConfig.addFilter("extractFAQ", (content) => {
     if (!content) return [];
     const items = [];
