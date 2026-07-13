@@ -1872,6 +1872,24 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 
 ---
 
+### 外部実装ガイド（tpj_implementation_guide.md）の内容検証 — 対応不要と判断
+
+**経緯**：外部から提供された実装ガイド（`grade`フィールド導入・バッジ出し分け・JSON-LDグレード別出し分け・件数統一・タグ表示の5項目）の内容を、実際のコードベースと照合した。
+
+**検証結果**
+
+| ガイドの項目 | 判定 | 詳細 |
+|---|---|---|
+| 0章：施設ごとのYAMLファイル + `gradeConfig.js` への移行 | ❌ 前提が異なる | 実際は `src/_data/venues.json` の単一ファイルで一元管理し、`grade`/`grade_slug`フィールドは既に存在。移行提案は不要（既存設計を壊すだけ） |
+| 1章：グレード別バッジ・文言の出し分け | ✅ 実装済み | `src/_layouts/venue.njk` の `gradeLevels`/`thisLevel` 判定で対応済み |
+| 2章：グレード別JSON-LD（LocalBusiness）出し分け | ✅ 実装済み | Silver以上=openingHours/sameAs、Platinum以上=amenityFeature/smokingAllowed 等、venue.njk内で条件出力済み |
+| 3章：トップページ「18件」と一覧ページ「17件」の件数ズレ | ❌ 現状は問題なし | `src/stories/index.njk`・`src/stories/select/index.njk` とも `selectCount`（`published.length - flagshipVenues.length`）という同一の動的計算式・同一データソースを使用。ビルド済み`public/`・本番サイトともに両ページ「16件」で一致していることを確認済み（2026-07-13時点） |
+| 4章：タグプール・グレード別上限数 | ✅ 実装済み | `maxTagsMap`（Certified:5〜Flagship:25）で対応済み。CLAUDE.md「タグマスターリスト」と一致 |
+
+**判断**：ガイドの提案はいずれも不採用。1・2・4章は既存実装と同等かそれ以上の内容が既に本番に反映済み、0章は既存のvenues.json一元管理設計と矛盾するため不採用、3章は検証の結果ズレが実在しないことを確認した。コード変更は行っていない。
+
+---
+
 ## 2026-07-09
 
 ### モーダルCTA削除・グレード表現の調整・モバイル表示修正
