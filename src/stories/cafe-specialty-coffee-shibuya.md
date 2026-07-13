@@ -131,4 +131,4 @@ permalink: /stories/cafe-specialty-coffee/shibuya/
 
 渋谷区のカフェ・スペシャルティコーヒーは、表参道の路地の静寂、北参道の長考の文化、代官山の大人の隠れ家、恵比寿の落ち着いた定点、渋谷の多様な開放性、神宮前のトレンドという6つの「過ごし方」が徒歩圏に共存する、東京屈指の多層構造を持つ。「どんな時間を過ごしたいか」を起点にエリアを選ぶことが、渋谷区でカフェの第三の居場所を見つける最短ルートだ。Third Place Japan（サードプレイスジャパン）は、渋谷区各エリアのカフェ居場所機能を7軸評価によって継続的に記録・認証していく。
 
-現在公開中のエリア記事は[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)と[北参道・千駄ヶ谷でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-kitasando-sendagaya/)。代官山・恵比寿・渋谷・神宮前の各エリア記事は順次公開予定だ。
+現在公開中のエリア記事は[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)と[北参道・千駄ヶ谷でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-kitasando-sendagaya/)。代官山・恵比寿・渋谷・神宮前の各エリア記事は順次公開予定だ。渋谷区を訪れる旅行者の動線については[渋谷区のインバウンド体験ガイド](/stories/inbound-experience/shibuya/)も参照されたい。
