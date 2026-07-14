@@ -40,6 +40,19 @@
     /* ─── Reset ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ─── Accessibility ─── */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     /* ─── Design tokens ─── */
     :root {
       --c-bg:       #F8F6F1;
@@ -1315,7 +1328,7 @@
   <section id="hero">
     <div class="hero-body">
       <span class="hero-eyebrow">Third Place Japan</span>
-      <h1 class="hero-headline">どこにいるか、を定義する。</h1>
+      <h1 class="hero-headline">どこにいるか、を定義する。<span class="sr-only">日本初のサードプレイス認証 ― Third Place Japan（サードプレイスジャパン）</span></h1>
       <p class="hero-sub">丁寧に場をつくる人たちのための、日本初のサードプレイス認証。</p>
     </div>
   </section>
@@ -1340,7 +1353,7 @@
       <figure class="photo-frame fi" aria-hidden="true">
         <img
           src="/assets/images/main/serene-cafe-interior-philosophy.webp"
-          alt="Serene cafe interior — third place atmosphere"
+          alt="サードプレイスの空気を感じる、静かなカフェの店内"
           loading="lazy"
           decoding="async"
         >
@@ -1363,7 +1376,7 @@
   <section id="gaze" class="s-alt">
     <div class="inner">
       <span class="label fi">Our Gaze</span>
-      <h2 class="h2-light fi">Third Place Japanのまなざし</h2>
+      <h2 class="h2-light fi">サードプレイスジャパンのまなざし</h2>
       <div class="gaze-grid">
         <div class="gaze-item fi fi-d1">
           <span class="gaze-kw">Discover</span>
@@ -1715,7 +1728,7 @@
       <div class="gbc-photo fi" aria-hidden="true">
         <img
           src="/assets/images/main/craft-coffee-flagship-gbc.webp"
-          alt="Craft coffee bar — flagship third place"
+          alt="サードプレイスを体現するクラフトコーヒーバー"
           loading="lazy"
           decoding="async"
         >
@@ -2356,6 +2369,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Third Place Japan",
+    "alternateName": ["サードプレイスジャパン", "TPJ"],
     "url": "https://thirdplacejapan.com",
     "description": "どこにいるか、を定義する。丁寧に場をつくる人たちのための、日本初のサードプレイス認証。",
     "inLanguage": "ja",
