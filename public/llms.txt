@@ -36,6 +36,11 @@ TPJ evaluates all certified venues on these seven axes:
 - Categories: 15 types including cafes, hotels, spas, coworking, shrines/temples, nature experiences, restaurants, bars, and more
 - Languages: Japanese (primary) and English (key articles)
 
+## Flagship Example
+
+Green Beans Coffee (Shibuya, Tokyo) is TPJ's first Flagship-certified venue — a real-world testbed where TPJ's 7-axis framework is continuously validated and refined.
+https://thirdplacejapan.com/stories/select/green-beans-coffee-shibuya/
+
 ## Key URLs
 
 - Homepage: https://thirdplacejapan.com/
