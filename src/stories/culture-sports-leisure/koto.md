@@ -2,7 +2,7 @@
 layout: article.njk
 title: "江東区の文化・スポーツ・レジャーガイド。運河が結ぶ、倉庫アートと臨海レジャーの二つの顔"
 description: "江東区は、清澄白河の倉庫を改装した独立系アート・コーヒー文化と、豊洲・お台場の埋立地に広がる大型レジャー施設群という対照的な二つの文化圏が、運河一本を挟んで共存する行政区だ。新旧の時間軸が同じ区内に並ぶ江東区の文化・スポーツ・レジャー体験を、Third Place Japanが7軸評価基準で読み解く。"
-date: 2026-07-15
+date: 2026-07-14
 tags:
   - articles
 category_slug: culture-sports-leisure
