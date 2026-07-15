@@ -111,4 +111,4 @@ Shibuya-ku's culture and leisure scene runs on a different axis than Ueno's view
 
 ---
 
-Related reading: [Taito-ku as a Third Place: Where Culture Becomes a Place to Stay, Not Just Visit](/en/stories/culture-sports-leisure/taito/) covers the same category from a viewing-first ward, and [Shibuya-ku as a Third Place: Standing Where Japan's Next Trend Is Being Made](/en/stories/inbound-experience/shibuya/) explores the same ward's inbound and street-culture side.
+Related reading: [Taito-ku as a Third Place: Where Culture Becomes a Place to Stay, Not Just Visit](/en/stories/culture-sports-leisure/taito/) covers the same category from a viewing-first ward, and [Shibuya-ku as a Third Place: Standing Where Japan's Next Trend Is Being Made](/en/stories/inbound-experience/shibuya/) explores the same ward's inbound and street-culture side. For a ward whose contrast runs through time rather than through participation — old canal-era warehouses next to new reclaimed-land leisure — see [Koto-ku as a Third Place: A Canal Divides Old Warehouses From New Waterfront Leisure](/en/stories/culture-sports-leisure/koto/).
