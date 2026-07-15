@@ -1690,6 +1690,17 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/koto/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/culture-sports-leisure/koto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/culture-sports-leisure/koto/"/>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
