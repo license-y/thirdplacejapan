@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37RDY9RX09"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-37RDY9RX09');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI利用ポリシー ─ Third Place Japan</title>
+  <link rel="canonical" href="https://thirdplacejapan.com/guidelines/ai-usage-policy/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="AI利用ポリシー ― 日本初のサードプレイス認証Third Place JapanにおけるAI技術の活用方針。人による確認、情報の信頼性、AI時代への対応についてまとめています。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="AI利用ポリシー ─ Third Place Japan">
+  <meta property="og:description" content="AI時代における情報品質への取り組み。TPJのAI活用方針。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thirdplacejapan.com/guidelines/ai-usage-policy/">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Third Place Japan">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Design tokens（メインサイトと共通） ─── */
+    :root {
+      --c-bg:       #F8F6F1;
+      --c-bg-alt:   #F2EFE8;
+      --c-dark:     #1A1714;
+      --c-dark-2:   #1C1C1C;
+      --c-text:     #2D2A26;
+      --c-muted:    #5C5852;
+      --c-accent:   #B8960C;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans:  'Noto Sans JP', sans-serif;
+      --w-content:  1152px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      color: var(--c-text);
+      background: var(--c-bg);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.9;
+    }
+
+    a { color: inherit; }
+
+    .inner {
+      max-width: var(--w-content);
+      margin: 0 auto;
+    }
+
+    /* ─── Navigation ─── */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      padding: 0 48px;
+      background: rgba(248, 246, 241, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(184, 150, 12, 0.12);
+    }
+    .nav-inner {
+      max-width: var(--w-content);
+      margin: 0 auto;
+      padding: 22px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      text-decoration: none;
+      display: inline-block;
+      line-height: 0;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      color: var(--c-muted);
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--c-accent); }
+    .nav-links .nav-cta a {
+      color: var(--c-accent) !important;
+      border: 1px solid rgba(184,150,12,0.5);
+      padding: 6px 14px;
+      letter-spacing: 0.08em;
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav-links .nav-cta a:hover {
+      background: var(--c-accent);
+      color: #F2EEE8 !important;
+    }
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .nav-burger span {
+      display: block;
+      height: 1px;
+      background: var(--c-muted);
+      transition: all 0.3s ease;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-overlay {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(248, 246, 241, 0.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(184, 150, 12, 0.15);
+      border-bottom: 1px solid rgba(184, 150, 12, 0.12);
+      z-index: 190;
+      padding: 14px 48px;
+    }
+    .nav-overlay.open { display: block; }
+    .nav-overlay ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      max-width: var(--w-content);
+      margin: 0 auto;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .nav-overlay a {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--c-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-overlay a:hover { color: var(--c-accent); }
+    .nav-overlay .overlay-cta {
+      color: var(--c-accent) !important;
+      border: 1px solid rgba(184,150,12,0.5);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+    }
+
+    /* ─── Content ─── */
+    main {
+      padding: 148px 48px 128px;
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: var(--c-muted);
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+    }
+    .breadcrumb a { text-decoration: none; }
+    .breadcrumb a:hover { color: var(--c-accent); }
+
+    .label {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 28px;
+    }
+
+    h1.page-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(24px, 4vw, 38px);
+      color: var(--c-text);
+      margin-bottom: 14px;
+    }
+
+    .page-subtitle {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--c-accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 44px;
+    }
+
+    .body-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--c-muted);
+      line-height: 2.1;
+      letter-spacing: 0.02em;
+      max-width: 680px;
+    }
+    .body-text + .body-text { margin-top: 22px; }
+
+    .section-block {
+      max-width: 720px;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(45,42,38,0.1);
+    }
+
+    h2.section-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--c-text);
+      margin-bottom: 36px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 56px;
+      font-size: 13px;
+      color: var(--c-muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .back-link:hover { color: var(--c-accent); }
+
+    /* ─── Footer（メインサイトと共通） ─── */
+    footer {
+      background: var(--c-dark-2);
+      padding: 56px 48px 36px;
+    }
+    .footer-inner {
+      max-width: var(--w-content);
+      margin: 0 auto;
+    }
+    .footer-logo {
+      display: inline-block;
+      margin-bottom: 32px;
+      text-decoration: none;
+      line-height: 0;
+    }
+    .footer-logo img {
+      display: block;
+      width: 168px;
+      height: auto;
+      border-radius: 2px;
+    }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .footer-col h3 {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(242,238,232,0.22);
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .footer-col ul li a {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: rgba(242,238,232,0.42);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-col ul li a:hover { color: var(--c-accent); }
+    .footer-link-highlight {
+      display: inline-block;
+      border: 1px solid rgba(184,150,12,0.5);
+      border-radius: 999px;
+      padding: 3px 12px;
+      margin-top: 1px;
+      color: var(--c-accent) !important;
+    }
+    .footer-link-highlight:hover { border-color: var(--c-accent); }
+    .footer-copy {
+      border-top: 1px solid rgba(242,238,232,0.07);
+      padding-top: 18px;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: rgba(242,238,232,0.2);
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 128px 24px 80px; }
+      .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/assets/images/main/tpj-logo-banner.png" alt="Third Place Japan" loading="eager" decoding="async">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/#philosophy">TPJについて</a></li>
+        <li><a href="/#criteria-map">7基準対応表</a></li>
+        <li><a href="/#grades">認証グレード</a></li>
+        <li><a href="/#services">サービス</a></li>
+        <li><a href="/stories/">Stories</a></li>
+        <li class="nav-cta"><a href="/#for-business">For Business</a></li>
+      </ul>
+
+      <button class="nav-burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="overlay">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="nav-overlay" id="overlay" role="dialog" aria-label="ナビゲーション">
+      <ul>
+        <li><a href="/#philosophy">TPJについて</a></li>
+        <li><a href="/#criteria-map">7基準対応表</a></li>
+        <li><a href="/#grades">認証グレード</a></li>
+        <li><a href="/#services">サービス</a></li>
+        <li><a href="/stories/">Stories</a></li>
+        <li><a href="/#for-business" class="overlay-cta">For Business</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="inner">
+      <p class="breadcrumb"><a href="/">Third Place Japan</a> ／ <a href="/guidelines/">TPJ公式ガイドライン</a> ／ AI利用ポリシー</p>
+      <span class="label">AI Usage Policy</span>
+      <h1 class="page-title">AI利用ポリシー</h1>
+      <p class="page-subtitle">― AI時代における情報品質への取り組み ―</p>
+
+      <p class="body-text">TPJ（Third Place Japan）は、AI技術の発展を積極的に活用しながらも、情報の正確性、信頼性、透明性を最優先に考えています。</p>
+      <p class="body-text">本ポリシーは、TPJにおけるAIの利用方針を定めるものです。</p>
+
+      <div class="section-block">
+        <h2 class="section-title">AIの活用目的</h2>
+        <p class="body-text">TPJでは、編集業務や情報整理、文章作成支援、データ分析などにAI技術を活用する場合があります。</p>
+        <p class="body-text">AIは業務を効率化するための支援ツールであり、最終的な編集・公開判断はTPJ編集部が行います。</p>
+      </div>
+
+      <div class="section-block">
+        <h2 class="section-title">人による確認</h2>
+        <p class="body-text">AIが生成した文章や情報については、そのまま掲載することはありません。</p>
+        <p class="body-text">編集部が内容を確認し、必要に応じて修正・補足を行った上で公開します。</p>
+      </div>
+
+      <div class="section-block">
+        <h2 class="section-title">情報の信頼性</h2>
+        <p class="body-text">TPJでは、現地調査、取材、公開情報など複数の情報源をもとに編集を行い、AIによる生成内容だけに依存しません。</p>
+        <p class="body-text">利用者にとって信頼できる情報を提供することを最優先としています。</p>
+      </div>
+
+      <div class="section-block">
+        <h2 class="section-title">AI時代への対応</h2>
+        <p class="body-text">TPJは、検索エンジンや生成AIに正しく理解される情報設計を目指し、構造化されたコンテンツや透明性の高い編集方針を採用しています。</p>
+        <p class="body-text">情報の出典や運営方針を明確にし、長期的に信頼される情報プラットフォームの構築を進めます。</p>
+      </div>
+
+      <div class="section-block">
+        <h2 class="section-title">継続的な改善</h2>
+        <p class="body-text">AI技術は日々進化しています。</p>
+        <p class="body-text">TPJでは、技術や社会環境の変化に応じて、本ポリシーや運営体制を継続的に見直し、より高品質な情報提供に努めます。</p>
+      </div>
+
+      <a href="/guidelines/" class="back-link">← TPJ公式ガイドライン一覧へ戻る</a>
+    </div>
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><img src="/assets/images/main/tpj-logo.png" alt="Third Place Japan" loading="lazy" decoding="async"></a>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Third Place Japan</h3>
+          <ul>
+            <li><a href="/#philosophy">理念</a></li>
+            <li><a href="/#criteria-map">7基準対応表</a></li>
+            <li><a href="/#grades">認証グレード</a></li>
+            <li><a href="/#services">サービス</a></li>
+            <li><a href="/#gbc">実証店舗</a></li>
+            <li><a href="/stories/" class="footer-link-highlight">Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>TPJについて</h3>
+          <ul>
+            <li><a href="/about-company/#editor">TPJ編集長</a></li>
+            <li><a href="/about-company/#editorial-team">TPJ編集部</a></li>
+            <li><a href="/guidelines/">TPJ公式ガイドライン</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>運営情報</h3>
+          <ul>
+            <li><a href="/#for-business">For Business</a></li>
+            <li><a href="/about-company/">運営会社</a></li>
+            <li><a href="/#for-business">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© Third Place Japan</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Mobile nav ───
+    const burger  = document.getElementById('burger');
+    const overlay = document.getElementById('overlay');
+
+    function closeMenu() {
+      burger.classList.remove('open');
+      overlay.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+
+    burger.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+    });
+
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  </script>
+
+  <!-- ─── Structured Data ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AI利用ポリシー ─ Third Place Japan",
+    "url": "https://thirdplacejapan.com/guidelines/ai-usage-policy/",
+    "datePublished": "2026-07-15",
+    "isPartOf": {
+      "@type": "WebPage",
+      "name": "TPJ公式ガイドライン",
+      "url": "https://thirdplacejapan.com/guidelines/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Third Place Japan",
+      "url": "https://thirdplacejapan.com"
+    },
+    "about": "Third Place JapanにおけるAI技術の活用方針をまとめたポリシーページ"
+  }
+  </script>
+
+</body>
+</html>
