@@ -2153,7 +2153,7 @@
     <div class="modal-box">
       <button class="modal-x" aria-label="閉じる">&times;</button>
       <h3 class="modal-title" id="modal-contact-form-title">お問い合わせ</h3>
-      <div class="modal-body" style="margin-bottom:28px;">ご質問やご相談は、以下のフォームより気軽にお寄せください。内容を確認のうえ、Third Place Japan編集部より折り返しご連絡いたします。</div>
+      <div class="modal-body" style="margin-bottom:28px;">ご質問やご相談は、以下のフォームより気軽にお寄せください。内容を確認のうえ、2営業日（48時間）以内にThird Place Japan編集部より折り返しご連絡いたします。</div>
 
       <form id="contact-form">
         <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off">
@@ -2282,7 +2282,7 @@
           if (data.success) {
             contactFailCount = 0;
             statusEl.className = 'form-status is-success';
-            statusEl.textContent = 'お問い合わせを受け付けました。折り返しご連絡いたします。';
+            statusEl.textContent = 'お問い合わせを受け付けました。2営業日（48時間）以内にご連絡いたします。';
             contactForm.reset();
           } else {
             throw new Error(data.message || 'send failed');
