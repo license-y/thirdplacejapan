@@ -11,6 +11,7 @@ area_slug: shinjuku
 area_name: 新宿区
 thumbnail: /assets/images/articles/restaurant-dining-shinjuku-ku-tokyo.webp
 permalink: /stories/restaurant-dining/shinjuku/
+hreflang_en: /en/stories/restaurant-dining/shinjuku/
 ---
 
 新宿区のレストランは、対極の食文化が同一行政区に共存する点で東京の他の区と一線を画す。江戸の花街の記憶を持つ神楽坂の静かな路地と、在留外国人コミュニティの生活インフラとして根を張った新大久保の専門的な多国籍性——この二つが同じ区の地図に載っている。中央区の江戸から続く歴史の深度でも、港区の国際ブランドの格でもない、「生活の実態が食文化に直結する」という新宿区の固有性をサードプレイスジャパン（Third Place Japan）が7軸で読み解く。

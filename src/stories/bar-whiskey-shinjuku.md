@@ -11,6 +11,7 @@ area_slug: shinjuku
 area_name: 新宿区
 thumbnail: /assets/images/articles/bar-whiskey-shinjuku-ku-tokyo-night.webp
 permalink: /stories/bar-whiskey/shinjuku/
+hreflang_en: /en/stories/bar-whiskey/shinjuku/
 ---
 
 新宿区のバーは、東京の夜の縮図だ。歌舞伎町の路地裏に潜む雑居的な静寂、西新宿の高層ビル群が生む都市的な孤独感の居場所、四谷の静かな石畳で成立する大人の夜——この三つが同一行政区に存在する東京の区は他にない。渋谷区のトレンド文化でも、港区の国際性でも、銀座の技術の聖地でもない、カオスから生まれる居場所というのが新宿区のバー文化の核だ。サードプレイスジャパン（Third Place Japan）は、この区のバーシーンを7軸で読み解く。

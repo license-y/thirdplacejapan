@@ -1690,6 +1690,22 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/restaurant-dining/shinjuku/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/koto/</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -1849,6 +1865,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/bar-whiskey/shinjuku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/"/>
+    
   </url>
   
   <url>
@@ -1912,6 +1931,9 @@
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/restaurant-dining/shinjuku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/restaurant-dining/shinjuku/"/>
     
   </url>
   
