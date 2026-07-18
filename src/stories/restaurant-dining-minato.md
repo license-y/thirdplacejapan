@@ -10,6 +10,7 @@ category_slug: restaurant-dining
 thumbnail: /assets/images/articles/restaurant-dining-minato-ku-tokyo.webp
 area_name: 港区
 permalink: /stories/restaurant-dining/minato/
+hreflang_en: /en/stories/restaurant-dining/minato/
 ---
 
 港区のレストランは、食の「意味」がエリアによって完全に分かれる。麻布十番では近隣居住者の生活の定点として、赤坂では政財界の権威ある社交として、六本木では多国籍な人間が交差する国際の食として、白金台・広尾では高級住宅居住者の静かな日常として——東京のなかで、これほど食の居場所の性格が細かく分節化された行政区は港区をおいてほかにない。

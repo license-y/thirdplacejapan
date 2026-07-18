@@ -10,6 +10,7 @@ category_slug: bar-whiskey
 thumbnail: /assets/images/articles/bar-whiskey-minato-ku-tokyo-night.webp
 area_name: 港区
 permalink: /stories/bar-whiskey/minato/
+hreflang_en: /en/stories/bar-whiskey/minato/
 ---
 
 港区のバーは、国際性・権威・静寂という三つの文脈が、エリアごとに全く異なる「夜の居場所」を生む。同じ成人向けのバーカウンターでも、六本木では言語を超えた中立地帯になり、赤坂では政財界の社交の場になり、麻布十番では近隣住民の週次の定点になる——この多様性こそが、港区のバーシーンを東京の他の行政区と根本的に異なるものにしている。本記事は成人向けの空間を対象とする。
