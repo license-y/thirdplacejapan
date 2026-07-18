@@ -1690,30 +1690,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/chuo/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/minato/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/en/stories/cafe-specialty-coffee/chiyoda/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1730,14 +1706,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/hotel-lounge/chuo/</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/en/stories/members-lounge/chuo/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1746,8 +1714,32 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/chuo/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/hotel-lounge/chuo/</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/restaurant-dining/chuo/</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/minato/</loc>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -1755,7 +1747,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/en/stories/restaurant-dining/minato/</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -1763,7 +1755,15 @@
   
   <url>
     <loc>https://thirdplacejapan.com/en/stories/restaurant-dining/shinjuku/</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

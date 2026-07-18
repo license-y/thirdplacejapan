@@ -2,7 +2,7 @@
 layout: article.njk
 title: "Shinjuku-ku as a Third Place: Where Daily Life Shapes What Tokyo Eats"
 description: "Shinjuku-ku holds two opposite food cultures within one ward — the hushed alleys of a former geisha district and the working multilingual food streets of a migrant neighborhood — read through TPJ's seven axes."
-date: 2026-07-18
+date: 2026-07-16
 tags:
   - articles
 category_slug: restaurant-dining
