@@ -10,6 +10,7 @@ category_slug: members-lounge
 thumbnail: /assets/images/articles/members-lounge-chuo-ku-tokyo.webp
 area_name: 中央区
 permalink: /stories/members-lounge/chuo/
+hreflang_en: /en/stories/members-lounge/chuo/
 ---
 
 中央区の会員制ラウンジは、江戸以来の商人文化という長い時間軸の上に立っている。銀座の格の帰属感、日本橋の老舗・金融の文脈、人形町の下町・粋の蓄積——三つの街区がそれぞれ異なる会員制の形を生み出す中央区は、「帰属する」という居場所の機能を最も多層的に持つ東京の行政区のひとつだ。

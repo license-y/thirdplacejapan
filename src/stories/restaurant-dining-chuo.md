@@ -10,6 +10,7 @@ category_slug: restaurant-dining
 thumbnail: /assets/images/articles/restaurant-dining-chuo-ginza-tokyo.webp
 area_name: 中央区
 permalink: /stories/restaurant-dining/chuo/
+hreflang_en: /en/stories/restaurant-dining/chuo/
 ---
 
 中央区の食は、時間の層が異なる。江戸時代に両国・日本橋・人形町で花開いた料亭文化、明治以降に築地が担った東京の食材流通の中心、銀座が長年支えてきた接待の格の文脈——この三つが一つの行政区に積み重なっているエリアは、東京の他の区には存在しない。「食べる場所を選ぶことが、日本の食文化の歴史に参加することだ」という感覚が、中央区の食の場を他と決定的に分けている。

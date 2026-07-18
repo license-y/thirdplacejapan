@@ -1690,6 +1690,14 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/chuo/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/minato/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1699,6 +1707,30 @@
   
   <url>
     <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/hotel-lounge/chuo/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/members-lounge/chuo/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/restaurant-dining/chuo/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2096,6 +2128,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/bar-whiskey/chuo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/bar-whiskey/chuo/"/>
+    
   </url>
   
   <url>
@@ -2147,6 +2182,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/hotel-lounge/chuo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/hotel-lounge/chuo/"/>
+    
   </url>
   
   <url>
@@ -2162,6 +2200,9 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/members-lounge/chuo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/members-lounge/chuo/"/>
     
   </url>
   
@@ -2202,6 +2243,9 @@
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/restaurant-dining/chuo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/restaurant-dining/chuo/"/>
     
   </url>
   

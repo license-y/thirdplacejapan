@@ -10,6 +10,7 @@ category_slug: bar-whiskey
 thumbnail: /assets/images/articles/bar-whiskey-chuo-ginza-tokyo.webp
 area_name: 中央区
 permalink: /stories/bar-whiskey/chuo/
+hreflang_en: /en/stories/bar-whiskey/chuo/
 ---
 
 中央区のバー文化には、商業都市が育てたという固有の骨格がある。江戸以来の両替商・呉服商が「信頼できる場所で人と会う」ことを商習慣の中心に置いてきたこの区では、バーという居場所が単なる飲酒の場ではなく、商人的な信頼の蓄積と技術への敬意という文脈の上に根付いた。渋谷のトレンドバーでもなく、六本木の国際的なナイトライフでもない——「日本のバーの本道」とでも呼ぶべき文脈が中央区の夜を支えている。

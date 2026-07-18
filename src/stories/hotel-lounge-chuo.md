@@ -10,6 +10,7 @@ category_slug: hotel-lounge
 thumbnail: /assets/images/articles/hotel-lounge-chuo-nihonbashi-tokyo.webp
 area_name: 中央区
 permalink: /stories/hotel-lounge/chuo/
+hreflang_en: /en/stories/hotel-lounge/chuo/
 ---
 
 中央区のホテルラウンジで過ごすとき、場所の意味が重層化する。日本橋が江戸五街道の起点として設置されたのは1603年。皇居（旧江戸城）まで直線で約2km、東京湾まで約3km——この数字は、中央区が文字どおり「東京の地理的・歴史的中心」に位置するという事実を表している。「今、東京の中心にいる」という感覚が滞在に意味を与える体験は、渋谷区や港区のホテルラウンジでは代替できない。
