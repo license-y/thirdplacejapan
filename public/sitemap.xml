@@ -1714,6 +1714,22 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/cafe-specialty-coffee/chiyoda/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/hotel-lounge/chiyoda/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/hotel-lounge/chuo/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -1932,6 +1948,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/cafe-specialty-coffee/chiyoda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/cafe-specialty-coffee/chiyoda/"/>
+    
   </url>
   
   <url>
@@ -1947,6 +1966,9 @@
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/hotel-lounge/chiyoda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/hotel-lounge/chiyoda/"/>
     
   </url>
   

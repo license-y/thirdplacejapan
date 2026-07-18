@@ -10,6 +10,7 @@ category_slug: cafe-specialty-coffee
 thumbnail: /assets/images/articles/cafe-chiyoda-intellectual-culture-tokyo.webp
 area_name: 千代田区
 permalink: /stories/cafe-specialty-coffee/chiyoda/
+hreflang_en: /en/stories/cafe-specialty-coffee/chiyoda/
 ---
 
 千代田区のカフェという括りで思い浮かぶイメージは、人によって全く異なる。丸の内の高層ビルに入ったラグジュアリーなコーヒーバーを想像する人もいれば、神保町の古書街に溶け込んだ静かな喫茶を想像する人もいる。秋葉原のホビー特化コミュニティカフェが真っ先に浮かぶ人もいるだろう。この「イメージが定まらない」という事実が、千代田区のカフェ文化の本質をあらわしている。この区は、格式・知の蓄積・趣味の専門性という互いに全く異なる三種類の居場所文化を、同じ行政区の境界の内側に併存させている東京で最も多面的な区のひとつだ。

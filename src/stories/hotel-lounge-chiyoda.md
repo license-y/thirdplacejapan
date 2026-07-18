@@ -10,6 +10,7 @@ category_slug: hotel-lounge
 thumbnail: /assets/images/articles/hotel-lounge-chiyoda-ku-tokyo.webp
 area_name: 千代田区
 permalink: /stories/hotel-lounge/chiyoda/
+hreflang_en: /en/stories/hotel-lounge/chiyoda/
 ---
 
 千代田区のホテルラウンジで過ごすとき、場所が帯びる格式の種類が他のエリアと根本的に異なる。皇居は千代田区の中心に位置し、外務省・財務省・内閣府を含む中央官庁街は徒歩圏に集積する。「日本の国家機能の中枢に隣接している」という事実が、ここでのホテルラウンジ体験に固有の意味を与える。銀座の老舗商業地が積み上げた格式とも、港区の外資系ブランドが持ち込んだ国際的な格式とも異なる——千代田区の格式は、明治政府が首都の象徴として計画的に形成した第三の格式軸として存在している。

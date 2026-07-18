@@ -103,4 +103,4 @@ Chuo-ku's bar culture stands on a foundation the Edo-period merchant city built 
 
 ---
 
-Related reading: [Chuo-ku as a Third Place: Three Layers of Time on One Table](/en/stories/restaurant-dining/chuo/) covers the same ward's dining culture, built on the same merchant-city continuity. For a contrasting take on nightlife built around international capital, see [Minato-ku as a Third Place: How Embassies and International Finance Built Five Distinct Bar Cultures](/en/stories/bar-whiskey/minato/).
+Related reading: [Chuo-ku as a Third Place: Three Layers of Time on One Table](/en/stories/restaurant-dining/chuo/) covers the same ward's dining culture, built on the same merchant-city continuity, and [Chuo-ku as a Third Place: Belonging Built on a Merchant City's Trust](/en/stories/members-lounge/chuo/) covers the closed-door version of the same trust. For a contrasting take on nightlife built around international capital, see [Minato-ku as a Third Place: How Embassies and International Finance Built Five Distinct Bar Cultures](/en/stories/bar-whiskey/minato/).
