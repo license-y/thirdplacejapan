@@ -42,7 +42,7 @@ eleventyComputed:
     {% for post in catArticles | head(10) %}
     {
       "@type": "Article",
-      "headline": "{{ post.data.title | replace('"', '\\"') }}",
+      "headline": {{ post.data.title | dump | safe }},
       "url": "{{ site.url }}{{ post.url }}"
     }{% if not loop.last %},{% endif %}
     {% endfor %}

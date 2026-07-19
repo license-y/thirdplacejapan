@@ -9,7 +9,7 @@ lang: "en"
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "{{ venue.name_en }}",
-  "description": "{{ venue.citation_en | replace('"', '\\"') }}",
+  "description": {{ venue.citation_en | dump | safe }},
   "image": "{{ site.url }}{{ venue.image }}",
   "url": "{{ site.url }}/en/stories/select/{{ venue.slug }}/",
   "address": {

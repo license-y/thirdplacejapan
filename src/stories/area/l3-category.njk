@@ -77,7 +77,7 @@ layout: area.njk
       "position": {{ loop.index }},
       "name": "{{ v.name }}",
       "url": "{{ site.url }}/stories/select/{{ v.slug }}/",
-      "description": "{{ v.citation | replace('"', '\\"') | truncate(120) }}"
+      "description": {{ v.citation | truncate(120) | dump | safe }}
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

@@ -7,8 +7,8 @@ og_type: "article"
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "{{ title | replace('"', '\\"') }}",
-  "description": "{{ description | replace('"', '\\"') }}",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
   "image": {
     "@type": "ImageObject",
     "url": "{{ site.url }}{{ thumbnail or '' }}",
@@ -57,7 +57,7 @@ og_type: "article"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "{{ title | replace('"', '\\"') }}", "item": "{{ site.url }}{{ page.url }}" }
+    { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "{{ site.url }}{{ page.url }}" }
   ]
 }
 </script>
@@ -73,10 +73,10 @@ og_type: "article"
     {% for item in faqItems %}
     {
       "@type": "Question",
-      "name": "{{ item.q | replace('"', '\\"') }}",
+      "name": {{ item.q | dump | safe }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.a | replace('"', '\\"') }}"
+        "text": {{ item.a | dump | safe }}
       }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
