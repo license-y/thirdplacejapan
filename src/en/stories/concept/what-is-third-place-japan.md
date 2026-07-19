@@ -9,7 +9,7 @@ category_slug: about
 area_name: 東京
 lang: en
 hreflang_ja: /stories/about/what-is-third-place/
-thumbnail: /assets/images/articles/what-is-third-place-japan-interior.webp
+thumbnail: /assets/images/articles/third-place-quiet-reading-window-en.webp
 ---
 
 **A third place is any space beyond home and work where people gather informally, regularly, and freely. The concept was coined by sociologist Ray Oldenburg in his 1989 book *The Great Good Place*. Third Place Japan (TPJ) evaluates and certifies spaces across Japan that fulfill this function — and adapts Oldenburg's framework to Japan's distinct cultural context, including the concept of *ibasho*.**
@@ -94,3 +94,5 @@ A TPJ-certified space has been evaluated against our seven-axis framework and fo
 
 **Q. How is Japan's ibasho different from a Western third place?**<br>
 *Ibasho* emphasizes the individual's sense of being accepted — of not needing to perform or justify one's presence. A Western third place is more explicitly social. In practice, the best spaces satisfy both: they welcome solo visitors and create the conditions for organic social connection, without requiring either.
+
+To see this framework applied to a specific space, [Meiji Jingu as a Third Place: Finding Silence in Central Tokyo](/en/stories/concept/meiji-jingu-third-place-tokyo/) walks through the seven axes in detail. Travelers looking to put the concept into practice across the city can start with [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/). For a quieter, more intellectual reading of *ibasho*, [Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes](/en/stories/retreat-zen/bunkyo/) explores the theme through a single ward.

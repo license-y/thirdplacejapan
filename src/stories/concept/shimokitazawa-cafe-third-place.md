@@ -84,7 +84,7 @@ thumbnail: /assets/images/articles/shimokitazawa-cafe-culture-tokyo.webp
 
 ## 下北沢から足を伸ばす
 
-下北沢から電車で10〜20分圏内には、[渋谷のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/shibuya/)エリアや、[文化・スポーツ・レジャー施設カテゴリ](/stories/culture-sports-leisure/)で評価している空間があります。[TPJセレクト一覧](/stories/select/)も、下北沢周辺エリアの選択肢として参照ください。
+下北沢から電車で10〜20分圏内には、[渋谷のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/shibuya/)エリアや、渋谷区の[文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)で評価している空間があります。[TPJセレクト一覧](/stories/select/)も、下北沢周辺エリアの選択肢として参照ください。古着・サブカルチャーとカフェが共存する街という文脈では、中央線沿線の[高円寺でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-koenji/)も共通点の多いエリアだ。
 
 ---
 

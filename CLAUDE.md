@@ -1890,7 +1890,7 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 | `meiji-jingu-third-place`・`what-is-third-place`のJA/ENサムネイル共有 | 🟠未修正 | 実装ログには2026-07-01に修正済みと記載があったが、実際のソースは未修正のまま残っていた。次回対応 |
 | `retreat-zen/yanaka.md`の`area_slug: yanaka`が`src/_data/areas.json`に未登録 | 🟠未修正 | エリア階層チップ非表示・L3エリアページ未生成の状態。areas.jsonへの登録が必要 |
 | `concept/`配下23記事の`description`が115字未満 | ✅修正済み（同日中） | ルールを110〜120字に改訂した上で24記事すべて書き直し済み。詳細は本セクション下部「`concept/`配下24記事のdescription一括改稿」を参照 |
-| 内部リンク1本のみの記事17本・被リンクゼロの孤立記事9本 | 🟡未修正 | 内部リンク施策の追加が必要 |
+| 内部リンク1本のみの記事17本・被リンクゼロの孤立記事9本 | ✅修正済み（同日中） | 再計測の結果、実数は孤立記事2本・被リンク1本の記事16本だった（一部は本監査以前に別作業で解消済み）。全18記事に内部リンクを追加済み。詳細は本セクション下部「記事間の内部リンク不足（被リンク1本・孤立記事）の解消」を参照 |
 | `base.njk`と`article.njk`でhreflangタグが重複出力 | 🟢軽微 | 実害小。テンプレート整理は次回検討 |
 
 **検証方法**：修正前後で`/stories/culture-sports-leisure/koto/`等の実際のビルド済みHTMLを確認。修正前は日本語記事の「前の記事」「次の記事」「関連記事」に英語タイトルが表示されていたが、修正後は同言語の記事のみに統一されたことを確認。全91記事に対応するJA155ページ・EN22ページを機械的に再チェックし、関連記事・前後記事ブロックでの他言語混入はゼロ件になったことを確認済み。
@@ -1919,6 +1919,24 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 **対応内容**：全24記事のdescriptionを110〜120字に書き直した。結論先出し（一文目で要点を完結）・TPJのブランド表記ルール（Third Place Japan／サードプレイスジャパン／TPJの使い分け）・誇大表現禁止を維持しつつ、既存の文意はできる限り保持して文字数のみを調整した。
 
 **検証方法**：Node.jsスクリプトで全24記事の文字数を機械的にカウントし、110〜120字の範囲に収まることを確認してからfrontmatterに反映（目視カウントは誤差が出やすいため使わない）。ビルド後、`public/`配下の`<meta name="description">`タグに反映されていることを実際のHTMLで確認済み。
+
+---
+
+### 記事間の内部リンク不足（被リンク1本・孤立記事）の解消
+
+**背景**：本セクション上部の監査では「内部リンク1本のみの記事17本・被リンクゼロの孤立記事9本」と報告していたが、シェルスクリプトで全記事（JA69本・EN22本）の本文中リンクを機械的に再集計したところ、実数は孤立記事（被リンク0本）2本、被リンク1本のみの記事16本（JA12本・EN4本）だった。ユーザー指摘のbar-whiskey-chuo⇔ginzaペアも実際には既に3〜4本ずつ他カテゴリへ発リンクしており、閉じたペアではなくなっていた（別作業で既に解消済みだったと推定）。
+
+**対象記事（計18本）**
+
+孤立記事2本：`concept/shinjuku-coworking-third-place.md`（新宿コワーキング）、`concept/aoyama-spa-third-place.md`（青山スパ）
+
+被リンク1本のみ・JA12本：`concept/ray-oldenburg-third-place.md`、`concept/third-place-accessibility.md`、`concept/third-place-ibasho-difference.md`、`bar-whiskey-roppongi.md`、`concept/green-beans-coffee-review.md`、`cafe-specialty-coffee-jimbocho.md`、`concept/shimokitazawa-cafe-third-place.md`、`members-lounge-chuo.md`、`members-lounge-ginza.md`、`restaurant-dining-azabujuban.md`、`retreat-zen/bunkyo.md`、`shrine-temple/bunkyo.md`
+
+被リンク1本のみ・EN4本：`en/cafe-specialty-coffee/chiyoda.md`、`en/hotel-lounge/chiyoda.md`、`en/members-lounge/chuo.md`、`en/shrine-temple/bunkyo.md`
+
+**対応内容**：上記18記事それぞれについて、テーマ・エリアが近い既存記事（JA14ファイル・EN6ファイル）本文中に自然な文脈でのリンクを1〜2本追加し、全対象記事を被リンク2本以上にした。店名を出さない・誇大表現をしないというピラー記事の原則は維持し、既存の文章に1文を追加する形で挿入（新規セクションの追加はしていない）。
+
+**検証方法**：シェルスクリプトでJA69本・EN22本全記事の被リンク数を修正前後で再計測し、修正後は全記事が被リンク2本以上になったことを確認。あわせて`npm run build`を実行し、追加した18記事分のURLが実際に`public/`配下に生成されていること（リンク切れがないこと）を確認済み。
 
 ---
 

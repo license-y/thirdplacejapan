@@ -83,6 +83,9 @@ Third Place Japanでは、東京の文化施設を「文化・スポーツ・レ
 - 仕事とひとり時間を両立する場所については[コワーキング・シェアオフィス](/stories/coworking/)カテゴリで詳しく解説している
 - 空間の質にこだわるひとり時間の使い方は[ホテルラウンジ](/stories/hotel-lounge/)カテゴリも参照
 - TPJが評価・認証した施設の一覧は[TPJセレクト一覧](/stories/select/)で確認できる
+- 公園という器が育む文化複合サードプレイスについては[上野を一日かけて過ごす](/stories/culture-sports-leisure/ueno/)も参考になる
+- 参加する文化という視点では[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)も参照
+- サードプレイスの具体的なイメージを広げたい場合は[サードプレイスの具体例10選](/stories/about/third-place-examples/)も参考になる
 
 ---
 

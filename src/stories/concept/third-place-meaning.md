@@ -159,6 +159,8 @@ Third Place Japan（サードプレイスジャパン）は、日本全国のサ
 - [ファースト・セカンド・サードプレイスの違いとは？3つの場所を整理する](/stories/about/first-second-third-place-difference/)
 - [サードプレイスの8つの条件：オルデンバーグの定義をTPJが再解釈](/stories/about/third-place-8-conditions/)
 - [サードプレイスとは何か：TPJによる完全ガイド](/stories/about/what-is-third-place/)
+- [サードプレイスの具体例10選：どんな場所が当てはまるか](/stories/about/third-place-examples/)
+- [サードプレイスと「居場所」「行きつけ」の正確な使い分け](/stories/about/third-place-ibasho-difference/)
 
 ---
 

@@ -134,6 +134,7 @@ Third Place Japan（サードプレイスジャパン）は、日本全国の優
 - [サードプレイスとは何か：TPJによる完全ガイド](/stories/about/what-is-third-place/)
 - [サードプレイスの意味をわかりやすく解説](/stories/about/third-place-meaning/)
 - [サードプレイスの8つの条件：オルデンバーグの定義をTPJが再解釈](/stories/about/third-place-8-conditions/)
+- [『The Great Good Place』が示したサードプレイス理論の核心](/stories/about/great-good-place-book/)
 
 ---
 

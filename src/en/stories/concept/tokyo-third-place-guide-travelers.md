@@ -109,3 +109,5 @@ Third Place Japan evaluates spaces across seven axes — comfort, silence, speci
 
 **Q. What are the best neighborhoods for third places in Tokyo?**<br>
 For cafés: Shimokitazawa, Kiyosumi-Shirakawa, Sendagaya, Daikanyama. For hotel lounges: Ginza, Shinjuku West, Roppongi. For shrines and nature: Harajuku (Meiji Jingu), Shinjuku (Shinjuku Gyoen), Asakusa (Senso-ji). For coworking: Shibuya, Shinjuku, Omotesando. Each neighborhood has a distinct character — choose based on the pace and mood you are looking for.
+
+For the theory behind this guide, [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) explains the framework in depth. If Harajuku is on your list, [Meiji Jingu as a Third Place: Finding Silence in Central Tokyo](/en/stories/concept/meiji-jingu-third-place-tokyo/) covers Tokyo's most complete example of shrine-as-third-place. And for a deeper regional dive beyond the city center, [Taito-ku as a Third Place](/en/stories/inbound-experience/taito/) profiles Asakusa, Ueno, and Yanaka.

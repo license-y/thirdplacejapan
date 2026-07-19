@@ -700,6 +700,12 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/yanaka/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/koto-ku/</loc>

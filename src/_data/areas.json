@@ -459,6 +459,11 @@
             "slug": "okachimachi",
             "name": "御徒町",
             "name_en": "Okachimachi"
+          },
+          {
+            "slug": "yanaka",
+            "name": "谷中",
+            "name_en": "Yanaka"
           }
         ]
       },

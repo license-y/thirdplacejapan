@@ -10,7 +10,7 @@ area_slug: harajuku
 area_name: 原宿
 lang: en
 hreflang_ja: /stories/shrine-temple/meiji-jingu-third-place/
-thumbnail: /assets/images/articles/meiji-jingu-shrine-tokyo-third-place.webp
+thumbnail: /assets/images/articles/meiji-jingu-torii-forest-path-tokyo-en.webp
 ---
 
 **Meiji Jingu is one of the most remarkable third places in Tokyo. One minute from Harajuku Station — in the middle of a city of 14 million — 700,000 square meters of ancient forest create genuine silence. Third Place Japan evaluates Meiji Jingu highly on silence, story, and inbound accessibility: three of the seven axes in its certification framework.**
@@ -90,3 +90,5 @@ Yes. The shrine provides multilingual signage and the main ritual (two bows, two
 
 **Q. What is Third Place Japan's certification, and how does Meiji Jingu fit?**<br>
 Third Place Japan evaluates spaces across seven axes: comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Meiji Jingu scores exceptionally on silence, story, and inbound axes — making it a natural reference point for understanding what a third place can be in Japan. See [TPJ certified venues](/stories/select/) for spaces that meet the full certification standard.
+
+For a broader look at the concept behind this evaluation, [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) lays out the framework in full. Travelers planning a wider itinerary may also find [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/) useful, and [Shibuya-ku as a Third Place](/en/stories/inbound-experience/shibuya/) covers the ward that surrounds Meiji Jingu in more depth.

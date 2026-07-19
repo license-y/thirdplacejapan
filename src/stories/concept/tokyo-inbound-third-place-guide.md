@@ -93,6 +93,8 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 東京の神社のサードプレイス体験については[明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)
 - スペシャルティコーヒーのインバウンド体験については[カフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/)カテゴリを参照
 - TPJが評価・認証した施設の一覧は[TPJセレクト一覧](/stories/select/)で確認できる
+- 東京の下町が旅行者の居場所になる理由については[浅草でインバウンド体験をサードプレイスにする](/stories/inbound-experience/asakusa/)
+- 江戸文化・職人の街という視点では[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)
 
 ---
 

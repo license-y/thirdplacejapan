@@ -129,7 +129,7 @@ permalink: /stories/premium-salon/omotesando/
 
 表参道の高級サロンをより深く理解するために、所属自治体ピラーも参照してほしい。[渋谷区の高級サロン・プライベートサロン完全ガイド](/stories/premium-salon/shibuya/)では、渋谷区全体のサロン文化と街区ごとの特性を解説している。
 
-この街の居場所の多層性を知るために、[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)（ケヤキ並木の二層構造と路地の静寂）や、[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)（セルフブランディングと業界の偶発性）も合わせて読むことで、この街がどれだけ多様な「第三の居場所」を抱えているかが見えてくる。
+この街の居場所の多層性を知るために、[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)（ケヤキ並木の二層構造と路地の静寂）や、[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)（セルフブランディングと業界の偶発性）も合わせて読むことで、この街がどれだけ多様な「第三の居場所」を抱えているかが見えてくる。施術という身体的回復とは異なる角度から整う場所を探すなら、隣接する[青山でスパをサードプレイスにする](/stories/spa-sauna-wellness/aoyama-spa-third-place/)も参考になる。
 
 ---
 

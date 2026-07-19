@@ -67,6 +67,7 @@ Third Place Japan（サードプレイスジャパン）は、こうした視点
 - [サードプレイスとは何か：TPJによる完全ガイド](/stories/about/what-is-third-place/)
 - [明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)
 - [高尾山をひとりで歩く。都心から1時間の癒しと自分時間](/stories/nature-glamping/takao-mountain-third-place/)
+- [Green Beans Coffeeレビュー——TPJが実証店舗に選ぶ理由](/stories/cafe-specialty-coffee/green-beans-coffee-review/)
 - [渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド](/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/)
 
 ---

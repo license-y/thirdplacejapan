@@ -105,3 +105,5 @@ thumbnail: /assets/images/articles/aoyama-spa-wellness-tokyo.webp
 
 **Q. 青山のスパで一人でも利用しやすい施設はありますか？**<br>
 青山のウェルネス施設の多くは一人利用を前提とした設計です。個室施術・プライベートな更衣室・一人用のリラクゼーションスペースを備えた施設を、TPJは「静寂性・プライバシー」軸で高く評価しています。[TPJセレクト一覧](/stories/select/)で確認ください。
+
+整える時間の前後に「見られない時間」を組み合わせたい場合は[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)も参考になる。ウェルネスと仕事の切り替えを一日の中で行いたい読者には[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)も参照されたい。

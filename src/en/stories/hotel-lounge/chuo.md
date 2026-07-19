@@ -103,4 +103,4 @@ A stay in a Chuo-ku hotel lounge carries weight because the meaning of the place
 
 ---
 
-Related reading: [Chuo-ku as a Third Place: The Merchant City That Built Japan's Bar Tradition](/en/stories/bar-whiskey/chuo/) and [Chuo-ku as a Third Place: Three Layers of Time on One Table](/en/stories/restaurant-dining/chuo/) cover the same ward's other third-place layers, both built on the same historical continuity.
+Related reading: [Chuo-ku as a Third Place: The Merchant City That Built Japan's Bar Tradition](/en/stories/bar-whiskey/chuo/) and [Chuo-ku as a Third Place: Three Layers of Time on One Table](/en/stories/restaurant-dining/chuo/) cover the same ward's other third-place layers, both built on the same historical continuity. For the neighboring ward's take on a lounge stay, see [Chiyoda-ku as a Third Place: Hotel Lounges at the Palace's Edge](/en/stories/hotel-lounge/chiyoda/).

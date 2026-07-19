@@ -89,6 +89,8 @@ Third Place Japan（サードプレイスジャパン）は、この概念を日
 - [ファースト・セカンド・サードプレイスの違いとは？](/stories/about/first-second-third-place-difference/)
 - [サードプレイスの8つの条件：オルデンバーグの定義をTPJが再解釈](/stories/about/third-place-8-conditions/)
 - [東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)
+- [サードプレイスの提唱者レイ・オルデンバーグとは何者か](/stories/about/ray-oldenburg-third-place/)
+- [サードプレイスとは"気軽に立ち寄れる場所"である：アクセス性の意味](/stories/about/third-place-accessibility/)
 
 ---
 
