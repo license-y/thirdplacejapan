@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: サードプレイスと「居場所」「行きつけ」の正確な使い分け
-description: 「サードプレイス」「居場所」「行きつけ」の違いを正確に解説。それぞれが指す意味の違いと重なりを、Third Place Japanが社会学・日本語的文脈から整理します。
+description: 「サードプレイス」「居場所」「行きつけ」という3つの似た言葉の違いを、丁寧な言葉で正確に解説します。それぞれが指す意味の違いと重なりを、Third Place Japan編集部が社会学と日本語の文脈の両方から整理します。
 date: 2026-06-09
 category_slug: about
 area_name: 東京

@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "サードプレイスの8つの条件とは？オルデンバーグの定義をTPJが再解釈"
-description: "サードプレイスの8つの条件を解説。レイ・オルデンバーグが提唱した定義と、Third Place Japanが現代日本向けに再解釈した7軸評価基準を比較します。"
+description: サードプレイスの8つの条件を、身近な具体例とともに体系的かつ丁寧に解説します。レイ・オルデンバーグが提唱した原典の定義と、Third Place Japanが現代日本向けに再解釈した7軸評価基準を比較しながら整理します。
 date: 2026-06-04
 category_slug: about
 area_name: 東京

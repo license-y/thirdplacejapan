@@ -1,7 +1,7 @@
 ---
 layout: article-certified.njk
 title: 【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する
-description: TPJがFlagshipグレードを認証したGreen Beans Coffee渋谷店の評価レポート。7軸スコア・アクセス情報・サードプレイスとしての特徴を詳解します。
+description: TPJがFlagshipグレードを認証したGreen Beans Coffee渋谷店の評価レポートです。7軸スコア・アクセス情報・サードプレイスとしての特徴を、Third Place Japan編集部が詳しく解説します。
 date: 2026-06-21
 category_slug: cafe-specialty-coffee
 area_slug: sendagaya
