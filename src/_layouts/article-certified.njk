@@ -386,8 +386,8 @@ og_type: "article"
           </ul>
         </div>
 
-        {# 最新記事 #}
-        {% set latestPosts = collections.articles | head(4) %}
+        {# 最新記事（現在のページと同じ言語のみ） #}
+        {% set latestPosts = collections.articles | selectLang(lang or "ja") | head(4) %}
         {% if latestPosts and latestPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="text-xs font-medium text-dark tracking-widest uppercase mb-4">最新記事</p>
@@ -415,8 +415,8 @@ og_type: "article"
 
   </div>
 
-  {# 関連記事 #}
-  {% set relatedArticles = collections.articles | relatedPostsByCat(page.url, category_slug, 3) %}
+  {# 関連記事（現在のページと同じ言語のみ） #}
+  {% set relatedArticles = collections.articles | selectLang(lang or "ja") | relatedPostsByCat(page.url, category_slug, 3) %}
   {% if relatedArticles and relatedArticles.length %}
   <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
     <div class="flex items-center gap-2 mb-8">
@@ -451,9 +451,10 @@ og_type: "article"
   </div>
   {% endif %}
 
-  {# 前の記事・次の記事 #}
-  {% set prevArticle = collections.articles | prevPost(page.url) %}
-  {% set nextArticle = collections.articles | nextPost(page.url) %}
+  {# 前の記事・次の記事（現在のページと同じ言語のみ） #}
+  {% set langArticles = collections.articles | selectLang(lang or "ja") %}
+  {% set prevArticle = langArticles | prevPost(page.url) %}
+  {% set nextArticle = langArticles | nextPost(page.url) %}
   {% if prevArticle or nextArticle %}
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4" style="opacity:1;visibility:visible;">
     <div>

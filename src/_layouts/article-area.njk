@@ -203,8 +203,8 @@ og_type: "article"
           </ul>
         </div>
 
-        {# 最新記事 #}
-        {% set latestPosts = collections.articles | head(5) %}
+        {# 最新記事（現在のページと同じ言語のみ） #}
+        {% set latestPosts = collections.articles | selectLang(lang or "ja") | head(5) %}
         {% if latestPosts and latestPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">最新記事</p>

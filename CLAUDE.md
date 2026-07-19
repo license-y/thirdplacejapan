@@ -1364,6 +1364,25 @@ eleventyConfig.addFilter("selectLang", (array, lang) =>
 - `src/_layouts/article.njk` のサイドバー「最新記事」は `collections.articles | selectLang(lang or "ja")` でページ自身の言語に絞り込み済み。ラベル・カテゴリ名も `lang == "en"` の場合は英語表記（`postCat.name_en`）に切り替わる
 - **新しく「記事一覧」「最新記事」「関連記事」等の一覧系UIを追加する場合は、必ず対象ページの言語で `selectLang` / `rejectLang` によるフィルタリングを行うこと。** `collections.articles` を言語フィルタなしでそのまま使うと同じ不具合が再発する
 
+**🚨 `relatedPostsByCat`・`prevPost`・`nextPost` フィルターも対象（2026-07-19追加・重要）🚨**
+
+上記の「一覧系UI」ルールは `head()` を使う単純な一覧だけでなく、**`relatedPostsByCat`（関連記事）・`prevPost`／`nextPost`（前の記事・次の記事）フィルターにも同様に適用される。** これらは一見「一覧」に見えないため見落としやすく、実際に2026-07-19の監査で `src/_layouts/article.njk`・`article-certified.njk`・`article-area.njk` の計5箇所が未対応のまま放置されており、日本語記事の「関連記事」「前の記事・次の記事」に英語記事が混入する不具合が本番で発生していた（例：`/stories/culture-sports-leisure/koto/` の前後記事・関連記事が英語タイトルで表示される）。
+
+**正しい実装パターン**：
+```njk
+{# 関連記事 #}
+{% set relatedArticles = collections.articles | selectLang(lang or "ja") | relatedPostsByCat(page.url, category_slug, 3) %}
+
+{# 前の記事・次の記事 #}
+{% set langArticles = collections.articles | selectLang(lang or "ja") %}
+{% set prevArticle = langArticles | prevPost(page.url) %}
+{% set nextArticle = langArticles | nextPost(page.url) %}
+```
+
+**理由**：`collections.articles` は日英混在の全記事を日付降順でソートしたコレクション（`.eleventy.js` の `addCollection("articles")`）。`prevPost`/`nextPost` はこの配列上の位置（インデックス）で前後を決めるため、日本語記事の直前直後にたまたま英語記事が公開されていると、そのまま前後記事リンクとして表示されてしまう。`relatedPostsByCat` も `category_slug` 一致のみで絞り込み、言語は見ないため、同カテゴリに英語記事があれば関連記事に混入する。
+
+**チェック方法**：新しいレイアウト・テンプレートを追加/編集する際は、`collections.articles` を直接（`selectLang`/`rejectLang` を挟まずに）参照している箇所がないか `grep -n "collections\.articles" src/_layouts/ src/stories/ src/en/` で確認する。`sitemap.njk`（全言語を含めるべきサイトマップ）のような例外を除き、原則すべて言語フィルタを挟むこと。
+
 ---
 
 ## ✅ LocalBusiness @type のカテゴリ別マッピング（venue.njk・2026-07-09追加）
@@ -1845,6 +1864,31 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 ---
 
 # 実装ログ
+
+## 2026-07-19
+
+### /stories/ 全体のSEO・AEO監査、関連記事・前後記事の言語混入バグ修正
+
+**対象ファイル**
+- `src/_layouts/article.njk` — 関連記事・前の記事/次の記事に `selectLang(lang or "ja")` を追加
+- `src/_layouts/article-certified.njk` — 同上（最新記事・関連記事・前の記事/次の記事の計3箇所）
+- `src/_layouts/article-area.njk` — 最新記事に `selectLang(lang or "ja")` を追加
+- ビルドにより `public/` 配下91ファイル・`public/pagefind/` を再生成
+
+**監査で発見した問題と対応状況**
+
+| 問題 | 深刻度 | 対応 |
+|---|---|---|
+| 関連記事・前後記事ナビが言語フィルタなしで`collections.articles`を参照 | 🔴重大・修正済み | 全5箇所に`selectLang`追加。詳細は本セクション上部の「`relatedPostsByCat`・`prevPost`・`nextPost` フィルターも対象」を参照 |
+| `meiji-jingu-third-place`・`what-is-third-place`のJA/ENサムネイル共有 | 🟠未修正 | 実装ログには2026-07-01に修正済みと記載があったが、実際のソースは未修正のまま残っていた。次回対応 |
+| `retreat-zen/yanaka.md`の`area_slug: yanaka`が`src/_data/areas.json`に未登録 | 🟠未修正 | エリア階層チップ非表示・L3エリアページ未生成の状態。areas.jsonへの登録が必要 |
+| `concept/`配下23記事の`description`が115字未満 | 🟡未修正 | 規定は115〜160字。既存記事の書き直しが必要なため次回対応 |
+| 内部リンク1本のみの記事17本・被リンクゼロの孤立記事9本 | 🟡未修正 | 内部リンク施策の追加が必要 |
+| `base.njk`と`article.njk`でhreflangタグが重複出力 | 🟢軽微 | 実害小。テンプレート整理は次回検討 |
+
+**検証方法**：修正前後で`/stories/culture-sports-leisure/koto/`等の実際のビルド済みHTMLを確認。修正前は日本語記事の「前の記事」「次の記事」「関連記事」に英語タイトルが表示されていたが、修正後は同言語の記事のみに統一されたことを確認。全91記事に対応するJA155ページ・EN22ページを機械的に再チェックし、関連記事・前後記事ブロックでの他言語混入はゼロ件になったことを確認済み。
+
+---
 
 ## 2026-07-13
 
