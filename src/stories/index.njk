@@ -186,9 +186,11 @@ hreflang_en: "/en/stories/"
         {% endif %}
         <div class="p-4">
           <div class="flex items-center flex-wrap gap-2 mb-2">
-            <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">
-              {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
-            </span>
+            {% if postCat %}
+            <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">{{ postCat.name_ja }}</span>
+            {% elif post.data.category_slug != "about" %}
+            <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">ガイド</span>
+            {% endif %}
             {% if post.data.area_name %}
             <span class="text-xs text-muted font-medium">{{ post.data.area_name }}</span>
             {% endif %}
@@ -220,9 +222,11 @@ hreflang_en: "/en/stories/"
         </div>
         <div class="min-w-0 flex-1">
           <div class="flex items-center gap-1.5 mb-1 flex-wrap">
-            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">
-              {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
-            </span>
+            {% if postCat %}
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">{{ postCat.name_ja }}</span>
+            {% elif post.data.category_slug != "about" %}
+            <span class="text-[10px] text-gold border border-gold/60 rounded-full px-2 py-0.5 leading-tight">ガイド</span>
+            {% endif %}
             {% if post.data.area_name %}<span class="text-[10px] text-muted">{{ post.data.area_name }}</span>{% endif %}
           </div>
           <h3 class="font-serif text-xs font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ post.data.title }}</h3>

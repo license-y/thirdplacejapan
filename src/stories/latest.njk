@@ -56,9 +56,11 @@ permalink: "/stories/latest/"
       {% endif %}
       <div class="p-4">
         <div class="flex items-center gap-2 mb-2">
-          <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">
-            {% if postCat %}{{ postCat.name_ja }}{% elif post.data.category_slug == "about" %}サードプレイスとは{% else %}ガイド{% endif %}
-          </span>
+          {% if postCat %}
+          <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">{{ postCat.name_ja }}</span>
+          {% elif post.data.category_slug != "about" %}
+          <span class="inline-block text-xs text-gold border border-gold rounded-full px-2.5 py-0.5">ガイド</span>
+          {% endif %}
         </div>
         <h2 class="font-serif text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug mb-2"
             style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
