@@ -1618,6 +1618,18 @@ https://maps.google.com/?q=35.6775167,139.7078346
 | **サードプレイスジャパン** | 日本語検索ヒット用。本文中に自然な形で数回使う（1記事あたり3〜5回を目安） |
 | **TPJ** | 同一段落内での2回目以降の言及など、繰り返しを避けたい箇所に使う |
 
+## サイト内の呼称ルール（検索されない造語を避ける・2026-07-20追加）
+
+**禁止**：「TPJガイド」「TPJ Guide」のように、TPJの略称と一般語を組み合わせただけの独自呼称を、ナビ・フッター・見出し・パンくずなど**サイト全体で繰り返し使う固有の呼び名**として採用すること。
+
+**理由**：日本人ユーザーは「サードプレイス」（カタカナ）で検索し、外国人ユーザーは「third place」（英語）で検索する。「TPJガイド」はどちらの検索行動にも一致しない、認知度ゼロの造語であり、SEO・AEOの両方で機会損失になる。
+
+**ルール**：サイト内の呼称・カテゴリ名・セクション見出しには、検索される語（日本語なら「サードプレイス」、英語なら「Third Place」）を必ず含める。TPJという略称自体を使うこと自体は問題ないが、それ単独・それを核とした造語を検索導線になる呼称の主役にしない。
+
+**適用例（2026-07-20修正）**：`/stories/about/`（サードプレイスの定義・8条件・TPJ7軸評価基準などを扱うピラー記事群）の呼称を「TPJガイド」から「サードプレイスガイド」に統一。対象：グローバルナビ・フッター・パンくず（画面表示＋JSON-LD）・ページtitle/H1・メインサイトのFAQリンク。英語文脈で同種のラベルを使う場合は「TPJ Guide」ではなく「Third Place Guide」とする。
+
+**注意**：既存記事本文中で個別記事のタイトルの一部として「TPJ Guide」を含むもの（例：英語記事タイトル "What Is a Third Place? The TPJ Guide to..."）は対象外。タイトル冒頭に "Third Place" が既にあり検索語を満たしているため、無理に置き換えない。このルールが対象とするのは、検索語を一切含まない呼称がサイト全体の導線・見出しとして使われているケースである。
+
 ## タイトル作成のルール
 
 記事タイトルはSEO対策の中で最も重要な要素。以下の3つのキーワードグループを**必ず自然な形でタイトルに含める**こと。
@@ -1908,6 +1920,24 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 # 実装ログ
 
 ## 2026-07-20
+
+### 「TPJガイド」呼称を「サードプレイスガイド」に統一＋新記事2本の逆リンク整備
+
+**対象ファイル**
+- `src/_includes/nav-stories.njk`・`src/_includes/footer-stories.njk`・`src/sitemap.njk`（コメントのみ）・`src/stories/index.njk`・`src/stories/about/index.njk`・`src/stories/about/certification-grades/index.njk`・`src/stories/concept/ginza-third-place-guide.md`・`public/index.html`（メインサイト直接編集）
+- `src/stories/about/tpj-7-axis-evaluation-guide.md`・`src/stories/about/tpj-certification-and-select-difference.md`（前セッションで作成済みの新記事2本）と、既存about記事4本（`third-place-8-conditions`・`what-is-third-place`・`third-place-examples`・`third-place-ibasho-difference`）・`certification-grades/index.njk`に逆リンクを追加
+
+**背景**：`/stories/about/`のサイト内呼称「TPJガイド」（英語文脈では「TPJ Guide」）は認知度ゼロの造語で、日本人の検索語「サードプレイス」にも外国人の検索語「third place」にも一致しないとユーザーから指摘があった。
+
+**変更内容**：ナビ・フッター・パンくず（画面表示＋JSON-LD）・ハブページのtitle/H1・メインサイトFAQリンクなど、サイト全体で繰り返し使われる呼称を「サードプレイスガイド」（英語ラベルは「Third Place Guide」）に統一。個別記事タイトルの一部として使われている「TPJ Guide」（例：英語記事 "What Is a Third Place? The TPJ Guide to..."）は対象外とした（タイトル冒頭に検索語 "Third Place" が既にあるため）。
+
+あわせて、前セッションで作成済みだった新記事2本（TPJ7軸評価基準の完全ガイド／TPJ認証とTPJセレクトの違い）について、CLAUDE.mdの内部リンク必須ルール（新記事→既存3〜4本／既存→新記事2〜3本の逆リンク）のうち未着手だった逆リンク側を実施した。
+
+**副産物として発見した問題**：`public/stories/area/tokyo/shibuya-ku/daikanyama/luxury-hotel-lounge/index.html`が現行の`npm run build`で再生成されない孤立ページと判明（ナビラベルが「TPJガイド」よりさらに古い「読み物」表記のまま残っていた）。該当箇所のテキストのみ修正したが、根本原因（現在のデータ・テンプレートの組み合わせがこのURLを生成しなくなった）は未調査。同様の孤立ページが他にも残っている可能性があり、別途棚卸しが必要。
+
+**ルール化**：「メディア名の表記ルール（SEO対策・必須）」の直後に「サイト内の呼称ルール（検索されない造語を避ける）」を新規セクションとして追加済み。
+
+---
 
 ### TPJセレクトのカテゴリ目標比率改訂（カフェ40%→30%）＋施設6件追加
 
