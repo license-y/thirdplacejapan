@@ -188,79 +188,241 @@
   
 </head>
 <body>
-  <header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <style>
+  #pf-input {
+    width: 100%;
+    border: 1px solid rgba(184,150,12,0.5);
+    border-radius: 9999px;
+    background: #fff;
+    color: #2D2A26;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: inherit;
+  }
+  #pf-input:focus { border-color: #B8960C; }
+  #pf-input::placeholder { color: #9B9490; }
+  #pf-input-wrap { position: relative; }
+  #pf-input-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #pf-results { margin-top: 0.5rem; max-height: 22rem; overflow-y: auto; }
+  #pf-results a {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #E5E2DC;
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+  #pf-results a:last-child { border-bottom: none; }
+  #pf-results a:hover { background: #F8F6F1; }
+  #pf-results .pf-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+  #pf-results .pf-excerpt { font-size: 0.72rem; color: #9B9490; margin-top: 0.2rem; line-height: 1.5; }
+  #pf-msg { font-size: 0.8rem; color: #9B9490; padding: 0.75rem 0; }
+</style>
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="メインナビゲーション">
 
     
-    <a href="/journal/" class="font-serif text-sm tracking-widest transition-colors duration-300" id="nav-logo">
-      TPJ Journal
+    <a href="/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.webp" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
     </a>
 
     
     <ul class="hidden lg:flex items-center gap-8" role="list">
-      <li><a href="/journal/feature/" class="nav-link text-xs tracking-widest transition-colors duration-200">読み物</a></li>
-      <li><a href="/journal/area/" class="nav-link text-xs tracking-widest transition-colors duration-200">場所をめぐる</a></li>
-      <li><a href="/journal/certified/" class="nav-link text-xs tracking-widest transition-colors duration-200">セレクト店舗</a></li>
-      <li><a href="/en/journal/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
+      <li><a href="/stories/latest/" class="nav-link text-xs tracking-widest transition-colors duration-200">記事一覧</a></li>
+      <li><a href="/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">サードプレイスガイド</a></li>
+      <li><a href="/stories/select/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJセレクト</a></li>
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">English</a></li>
       <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJとは</a></li>
+      <li>
+        <button id="search-open-btn" aria-label="記事を検索" class="nav-link p-1 transition-colors duration-200">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+      </li>
     </ul>
 
     
-    <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
-            class="lg:hidden p-2 transition-colors duration-300" id="menu-btn">
-      <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
-      <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
-    </button>
+    <div class="lg:hidden flex items-center gap-2">
+      <button id="search-open-btn-mobile" aria-label="記事を検索" class="p-2 transition-colors duration-300">
+        <i data-lucide="search" class="w-5 h-5"></i>
+      </button>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"
+              class="p-2 transition-colors duration-300" id="menu-btn">
+        <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
   </nav>
 
   
   <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
-    <ul class="max-w-6xl mx-auto px-6 py-6 space-y-4" role="list">
-      <li><a href="/journal/feature/" class="block text-sm text-text hover:text-gold transition-colors py-1">読み物</a></li>
-      <li><a href="/journal/area/" class="block text-sm text-text hover:text-gold transition-colors py-1">場所をめぐる</a></li>
-      <li><a href="/journal/certified/" class="block text-sm text-text hover:text-gold transition-colors py-1">セレクト店舗</a></li>
-      <li><a href="/en/journal/" class="block text-sm text-text hover:text-gold transition-colors py-1">English</a></li>
-      <li><a href="/" class="block text-sm text-text hover:text-gold transition-colors py-1">TPJとは</a></li>
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-x-3 gap-y-2" role="list">
+      <li class="whitespace-nowrap"><a href="/stories/latest/" class="text-xs text-text hover:text-gold transition-colors">記事一覧</a></li>
+      <li class="whitespace-nowrap"><a href="/stories/about/" class="text-xs text-text hover:text-gold transition-colors">サードプレイスガイド</a></li>
+      <li class="whitespace-nowrap"><a href="/stories/select/" class="text-xs text-text hover:text-gold transition-colors">TPJセレクト</a></li>
+      <li class="whitespace-nowrap"><a href="/en/stories/" class="text-xs text-text hover:text-gold transition-colors">English</a></li>
+      <li class="whitespace-nowrap"><a href="/" class="text-xs text-text hover:text-gold transition-colors">TPJとは</a></li>
     </ul>
   </div>
 </header>
 
+
+<div id="search-overlay" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-label="記事検索">
+  <div class="bg-ivory w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+    <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
+      <p class="font-serif text-base font-light text-dark">記事を検索</p>
+      <button id="search-close-btn" aria-label="閉じる" class="p-1 text-muted hover:text-dark transition-colors" style="line-height:1">✕</button>
+    </div>
+    <div class="px-6 py-4">
+      <div id="pf-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B9490" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="pf-input" placeholder="記事・エリア・カテゴリを検索..." autocomplete="off" spellcheck="false">
+      </div>
+      <div id="pf-results"></div>
+      <div id="pf-msg"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function() {
+  /* ── ナビ色制御 ── */
   const nav = document.getElementById('nav');
-  const logo = document.getElementById('nav-logo');
   const links = nav.querySelectorAll('.nav-link');
   const btn = document.getElementById('menu-toggle');
+  const mobileSearchBtn = document.getElementById('search-open-btn-mobile');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
   let ticking = false;
 
   function updateNav() {
-    const scrolled = window.scrollY > 50;
-    nav.style.backgroundColor = scrolled ? 'rgba(248,246,241,0.92)' : 'transparent';
-    nav.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
-    nav.style.borderBottom = scrolled ? '1px solid #E4DDD6' : '1px solid transparent';
-    const color = scrolled ? '#2D2A26' : '#F8F6F1';
-    if (logo) logo.style.color = color;
+    nav.style.backgroundColor = '#2D2A26';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(184,150,12,0.25)';
+    const color = '#F8F6F1';
     links.forEach(l => l.style.color = color);
     if (btn) btn.style.color = color;
+    if (mobileSearchBtn) mobileSearchBtn.style.color = color;
     ticking = false;
   }
-
   window.addEventListener('scroll', () => {
     if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
   }, { passive: true });
-
   updateNav();
 
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    menu.classList.toggle('hidden');
-    iconOpen.classList.toggle('hidden');
-    iconClose.classList.toggle('hidden');
-  });
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+
+  /* ── 検索（Pagefind JS API）── */
+  const overlay  = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-close-btn');
+  const input    = document.getElementById('pf-input');
+  const results  = document.getElementById('pf-results');
+  const msg      = document.getElementById('pf-msg');
+  const openBtns = [
+    document.getElementById('search-open-btn'),
+    document.getElementById('search-open-btn-mobile')
+  ].filter(Boolean);
+
+  let pf = null;
+  let timer = null;
+
+  async function loadPF() {
+    if (pf) return pf;
+    pf = await import('/pagefind/pagefind.js');
+    await pf.init();
+    return pf;
+  }
+
+  function openSearch() {
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function() { if (input) input.focus(); }, 80);
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  const PAGE_SIZE = 25;
+  let allResults = [];
+  let shownCount = 0;
+
+  function renderItem(item) {
+    var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+    return '<a href="' + item.url + '">'
+      + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+      + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+      + '</a>';
+  }
+
+  function updateMoreBtn() {
+    var existing = document.getElementById('pf-more-btn');
+    if (existing) existing.remove();
+    if (shownCount < allResults.length) {
+      var remaining = allResults.length - shownCount;
+      var btn = document.createElement('button');
+      btn.id = 'pf-more-btn';
+      btn.textContent = 'さらに' + Math.min(remaining, PAGE_SIZE) + '件を表示（残り' + remaining + '件）';
+      btn.style.cssText = 'display:block;width:100%;margin-top:0.5rem;padding:0.6rem;font-size:0.75rem;color:#B8960C;border:1px solid rgba(184,150,12,0.4);border-radius:0.5rem;background:#fff;cursor:pointer;';
+      btn.addEventListener('click', async function() {
+        var next = allResults.slice(shownCount, shownCount + PAGE_SIZE);
+        var items = await Promise.all(next.map(function(r) { return r.data(); }));
+        items.forEach(function(item) {
+          var div = document.createElement('div');
+          div.innerHTML = renderItem(item);
+          results.insertBefore(div.firstChild, btn);
+        });
+        shownCount += items.length;
+        updateMoreBtn();
+      });
+      results.appendChild(btn);
+    }
+  }
+
+  if (input) {
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      const q = this.value.trim();
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; allResults = []; shownCount = 0; return; }
+      timer = setTimeout(async function() {
+        try {
+          const pagefind = await loadPF();
+          const res = await pagefind.search(q);
+          allResults = res.results;
+          shownCount = 0;
+          if (!allResults.length) {
+            results.innerHTML = '';
+            msg.textContent = '「' + q + '」の検索結果はありませんでした';
+            return;
+          }
+          msg.textContent = allResults.length + '件ヒット';
+          var first = allResults.slice(0, PAGE_SIZE);
+          var items = await Promise.all(first.map(function(r) { return r.data(); }));
+          shownCount = items.length;
+          results.innerHTML = items.map(renderItem).join('');
+          updateMoreBtn();
+        } catch(e) {
+          msg.textContent = '検索を読み込めませんでした';
+        }
+      }, 250);
+    });
+  }
+
+  openBtns.forEach(function(b) { b.addEventListener('click', openSearch); });
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
 })();
 </script>
 
@@ -423,7 +585,7 @@
   <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
     <p class="text-sm text-muted">
       This venue holds Third Place Japan certification.<br>
-      <a href="https://thirdplacejapan.com/certification/" class="text-gold hover:underline">Learn about the certification</a>
+      <a href="/stories/about/certification-grades/" class="text-gold hover:underline">Learn about the certification</a>
     </p>
   </div>
 
@@ -440,9 +602,27 @@
   <div class="max-w-6xl mx-auto px-6 py-12">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
 
-      <!-- ① Latest Articles -->
+      <!-- ① 最新記事 -->
       <div class="col-span-2 md:col-span-1">
-        <p class="label mb-4">Latest Articles</p>
+        <p class="label mb-4">最新記事</p>
+        <ul class="space-y-2 text-xs text-muted">
+          
+          
+          <li><a href="/stories/culture-sports-leisure/koto/" class="hover:text-gold transition-colors line-clamp-1">江東区のサードプレイスガイド：文化・スポーツ・レジャー編。運河が結ぶ、倉庫アートと臨海レジャーの二つの顔</a></li>
+          
+          <li><a href="/stories/retreat-zen/bunkyo/" class="hover:text-gold transition-colors line-clamp-1">文京区のサードプレイスガイド：禅体験・リトリート編。学者町の坂と庭園が育む、知的孤独という静寂</a></li>
+          
+          <li><a href="/stories/shrine-temple/bunkyo/" class="hover:text-gold transition-colors line-clamp-1">文京区のサードプレイスガイド：神社・寺院編。学問の神と格式高い社が支える、東京の学業成就の聖域</a></li>
+          
+          <li><a href="/stories/inbound-experience/shibuya/" class="hover:text-gold transition-colors line-clamp-1">渋谷区のサードプレイスガイド：インバウンド体験編。スクランブル交差点と原宿が生む「今」という日本体験</a></li>
+          
+        </ul>
+        <a href="/stories/latest/" class="inline-block mt-3 text-xs text-gold hover:underline">記事一覧 →</a>
+      </div>
+
+      <!-- ② サードプレイスガイド -->
+      <div>
+        <p class="label mb-4">サードプレイスガイド</p>
         <ul class="space-y-2 text-xs text-muted">
           
           
@@ -450,27 +630,17 @@
           
           <li><a href="/stories/about/tpj-certification-and-select-difference/" class="hover:text-gold transition-colors line-clamp-1">サードプレイスの認証制度、TPJ認証とTPJセレクトになぜ2つあるのか？</a></li>
           
-          <li><a href="/en/stories/cafe-specialty-coffee/chiyoda/" class="hover:text-gold transition-colors line-clamp-1">Chiyoda-ku as a Third Place: One Ward, Three Kinds of Room</a></li>
+          <li><a href="/stories/about/certification-grades/" class="hover:text-gold transition-colors line-clamp-1">TPJ認証グレード</a></li>
           
-          <li><a href="/en/stories/hotel-lounge/chiyoda/" class="hover:text-gold transition-colors line-clamp-1">Chiyoda-ku as a Third Place: Staying Next to the Nation Itself</a></li>
+          <li><a href="/en/stories/concept/what-is-third-place-japan/" class="hover:text-gold transition-colors line-clamp-1">What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho</a></li>
           
         </ul>
-        <a href="/en/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">All Articles →</a>
-      </div>
-
-      <!-- ② What is Third Place -->
-      <div>
-        <p class="label mb-4">Third Place</p>
-        <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/en/stories/about/" class="hover:text-gold transition-colors">Essays & Columns</a></li>
-          <li><a href="/" class="hover:text-gold transition-colors">Third Place Japan</a></li>
-          <li><a href="/certification/" class="hover:text-gold transition-colors">Certification</a></li>
-        </ul>
+        <a href="/stories/about/" class="inline-block mt-3 text-xs text-gold hover:underline">サードプレイスガイド一覧 →</a>
       </div>
 
       <!-- ③ カテゴリ -->
       <div class="col-span-2 md:col-span-1">
-        <p class="label mb-4">Category</p>
+        <p class="label mb-4">カテゴリ</p>
         <ul class="space-y-2 text-xs text-muted grid grid-cols-2 md:grid-cols-1 gap-x-4">
           
           <li><a href="/stories/hotel-lounge/" class="hover:text-gold transition-colors">高級ホテル・ホテルラウンジ</a></li>
@@ -508,28 +678,37 @@
 
       <!-- ④ エリア -->
       <div>
-        <p class="label mb-4">Area</p>
-        <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/stories/area/tokyo/" class="hover:text-gold transition-colors">東京都</a></li>
-          <li><a href="/stories/area/" class="hover:text-gold transition-colors mt-1 block">Explore Areas →</a></li>
+        <p class="label mb-4">エリア</p>
+        <ul class="text-xs text-muted grid grid-cols-2 gap-x-3 gap-y-2">
+          <li><a href="/stories/area/tokyo/shibuya-ku/" class="hover:text-gold transition-colors">渋谷区</a></li>
+          <li><a href="/stories/area/tokyo/minato-ku/" class="hover:text-gold transition-colors">港区</a></li>
+          <li><a href="/stories/area/tokyo/shinjuku-ku/" class="hover:text-gold transition-colors">新宿区</a></li>
+          <li><a href="/stories/area/tokyo/chuo-ku/" class="hover:text-gold transition-colors">中央区</a></li>
+          <li><a href="/stories/area/tokyo/meguro-ku/" class="hover:text-gold transition-colors">目黒区</a></li>
+          <li><a href="/stories/area/tokyo/setagaya-ku/" class="hover:text-gold transition-colors">世田谷区</a></li>
+          <li><a href="/stories/area/tokyo/chiyoda-ku/" class="hover:text-gold transition-colors">千代田区</a></li>
+          <li><a href="/stories/area/tokyo/toshima-ku/" class="hover:text-gold transition-colors">豊島区</a></li>
+          <li><a href="/stories/area/tokyo/taito-ku/" class="hover:text-gold transition-colors">台東区</a></li>
+          <li><a href="/stories/area/tokyo/koto-ku/" class="hover:text-gold transition-colors">江東区</a></li>
+          <li class="opacity-50 col-span-2 mt-1">エリア拡大中</li>
         </ul>
-        <p class="mt-3 text-xs text-muted opacity-60">More areas coming soon</p>
+        <a href="/stories/area/" class="inline-block mt-3 text-xs text-gold hover:underline">場所をめぐる →</a>
       </div>
 
-      <!-- ⑤ セレクト店舗 -->
+      <!-- ⑤ TPJセレクト -->
       <div>
-        <p class="label mb-4">Certified</p>
+        <p class="label mb-4">TPJセレクト</p>
         <ul class="space-y-2 text-xs text-muted">
-          <li><a href="/stories/select/" class="hover:text-gold transition-colors">Certified Venues</a></li>
+          <li><a href="/stories/select/" class="hover:text-gold transition-colors">TPJセレクト一覧</a></li>
         </ul>
       </div>
 
     </div>
     <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
-      <a href="/stories/" class="inline-flex items-center gap-1.5 text-xs border border-gold/40 text-muted rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-all">
+      <a href="/en/stories/" class="inline-flex items-center gap-1.5 text-xs border border-gold/40 text-muted rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-all">
         <i data-lucide="globe" class="w-3 h-3"></i>
-        日本語
+        English
       </a>
       <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
     </div>
