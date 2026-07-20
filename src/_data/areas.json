@@ -763,6 +763,11 @@
             "slug": "ryogoku",
             "name": "両国",
             "name_en": "Ryogoku"
+          },
+          {
+            "slug": "higashi-komagata",
+            "name": "東駒形",
+            "name_en": "Higashi-Komagata"
           }
         ]
       },
