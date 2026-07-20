@@ -1025,6 +1025,11 @@ thumbnail: /assets/images/articles/xxx.jpg
   - gitignore対象から外してあるため、`git add public/pagefind/` でステージングされる
   - コミットしないと Cloudflare Pages に検索インデックスが届かず、検索窓が表示されない
 
+**`public/pagefind/pagefind-entry.json` の非決定的な差分について（2026-07-20確認）：**
+- コミット・プッシュ後に確認のため`npm run build`を再実行すると、内容が同一でも`pagefind-entry.json`内の`languages`オブジェクトのキー順（`en`/`ja`の並び順）だけが入れ替わり、`git status`に差分として表示されることがある
+- これはPagefindのビルド処理がキー順を保証しないために起きる**非本質的な差分**。`hash`値・`page_count`が変わっていなければ実害はない
+- コミット後の検証ビルドでこの差分だけが出た場合は、`git checkout -- public/pagefind/pagefind-entry.json`で元に戻してよい（実質的な変更ではないため再コミット不要）
+
 ---
 
 # ピラー記事生成プロンプト（AEO対応・定義ハブ型）
@@ -1925,6 +1930,46 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 **変更内容**：H1・パンくずを「TPJガイド」に統一。本文を8セクション構成のピラー記事（結論先出し・FAQ5問・まとめ）に改稿し、既存12記事へのハブ＆スポーク型リンクと、certification-gradesページへの新規導線を設置。本文下に既存12記事を4テーマ別カード一覧として再掲。
 
 **ルール化**：「TPJガイド記事の取得」の直後に「『TPJガイド』ピラー記事ルール」を新規セクションとして追加済み。
+
+---
+
+### TPJガイドページのSEO/AEO追加強化＋既存記事からの逆リンク
+
+**対象ファイル**
+- `src/stories/about/index.njk` — Article JSON-LD新規追加・答えリードボックス化・`data-pagefind-body`付与・DefinedTermSet誤字修正
+- `src/stories/concept/ginza-third-place-guide.md`／`shibuya-cafe-third-place.md`／`tokyo-museum-art-third-place.md` — 本文から`/stories/about/`への逆リンクを追加
+
+**発見した問題と対応**
+
+| 問題 | 対応 |
+|---|---|
+| DefinedTermSet「TPJ認証グレード」の説明文が「Certified・**Standard**・Silver・Gold・Flagship」と誤記（正しくは`Standard`ではなく`Platinum`） | 修正済み |
+| 冒頭リード文が太字の「答えリード」になっていない（CLAUDE.mdの既存ルール違反） | 既存記事と同じ`.answer-lead`クラス（金の左ボーダー・強調背景）で実装 |
+| Article/WebPage系JSON-LDが皆無（datePublished・author・publisher・wordCountなし） | `Article`スキーマを新規追加。`content`変数が使えない`.njk`直書きページのため、本文を`{% set pillarBodyHtml %}...{% endset %}`でキャプチャし`wordCount`フィルタに渡す方式を採用 |
+| `data-pagefind-body`がなく、サイト内検索に本文が一切インデックスされていない | 本文ラップdivに付与。ビルド後のインデックス対象が90→91ページに増加したことを確認 |
+| 全91記事中、本文からこのハブページへの逆リンクが0本 | 銀座・渋谷カフェ・東京美術館の3記事本文に自然な文脈でリンクを追加 |
+
+**`content`変数が使えないページでのwordCount計算パターン（今後の同様ページで再利用）：**
+```njk
+{% set pillarBodyHtml %}
+  ...本文HTML...
+{% endset %}
+{# JSON-LD内 #}
+"wordCount": {{ pillarBodyHtml | wordCount }},
+{# 表示側 #}
+{{ pillarBodyHtml | safe }}
+```
+`article.njk`のようにMarkdownファイルをレイアウトが受け取る構造とは異なり、`.njk`ページ自身に本文を直書きする場合は`content`変数が存在しないため、この capture パターンで代替する。
+
+**検証方法**：`npm run build`後、JSON-LD 5ブロック（Organization/Article/BreadcrumbList/DefinedTermSet/FAQPage）すべてをNode.jsで`JSON.parse`し構文エラーがないことを確認。Pagefindのインデックスページ数が91に増えたことを確認。3記事の逆リンクがビルド後のHTMLに実際に出力されていることを確認。
+
+---
+
+### コミット後の検証ビルドで発見：`pagefind-entry.json`の非決定的差分
+
+コミット・プッシュ後に確認のため`npm run build`を再実行したところ、内容は同一だが`public/pagefind/pagefind-entry.json`内の`languages`オブジェクトのキー順（`en`/`ja`）だけが入れ替わり、`git status`に差分として表示された。`hash`・`page_count`は変化していないため実害のない非決定的な差分と判断し、`git checkout --`で元に戻した。
+
+**ルール化**：「自動生成されるファイル」セクションに注記を追加済み。今後同様の差分が出た場合は`hash`/`page_count`が同一か確認したうえで、実質的な変更でなければ`git checkout -- public/pagefind/pagefind-entry.json`で戻してよい。
 
 ---
 
