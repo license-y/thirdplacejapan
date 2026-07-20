@@ -299,7 +299,7 @@ og_type: "article"
         </div>
 
         {# 最新記事（現在のページと同じ言語のみ） #}
-        {% set latestPosts = collections.articles | selectLang(lang or "ja") | head(5) %}
+        {% set latestPosts = collections.articles | selectLang(lang or "ja") | rejectCategory("about") | head(5) %}
         {% if latestPosts and latestPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">{{ "Latest Articles" if lang == "en" else "最新記事" }}</p>

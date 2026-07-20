@@ -40,9 +40,10 @@ permalink: "/stories/latest/"
   </div>
 
   {# 記事一覧（全件・新着順）#}
-  {% if collections.articles and collections.articles.length %}
+  {% set nonAboutArticles = collections.articles | rejectCategory("about") %}
+  {% if nonAboutArticles and nonAboutArticles.length %}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="article-grid" data-aos="fade-up">
-    {% for post in collections.articles %}
+    {% for post in nonAboutArticles %}
     {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
     <a href="{{ post.url }}" class="article-card group rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all border border-border hover:border-gold">
       {% if post.data.thumbnail %}

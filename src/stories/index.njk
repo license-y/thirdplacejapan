@@ -51,7 +51,7 @@ hreflang_en: "/en/stories/"
   "name": "Third Place Japan Stories — 最新記事",
   "url": "{{ site.url }}/stories/",
   "itemListElement": [
-    {% set recentPosts = collections.articles | rejectLang("en") | head(8) %}
+    {% set recentPosts = collections.articles | rejectLang("en") | rejectCategory("about") | head(8) %}
     {% for post in recentPosts %}
     {
       "@type": "ListItem",
@@ -160,7 +160,7 @@ hreflang_en: "/en/stories/"
   </div>
 
   {# 最新記事 #}
-  {% set latestArticles = collections.articles | head(20) %}
+  {% set latestArticles = collections.articles | rejectCategory("about") | head(20) %}
   {% if latestArticles and latestArticles.length %}
   <div class="mb-20" data-aos="fade-up">
     <div class="flex items-center gap-3 mb-6">
