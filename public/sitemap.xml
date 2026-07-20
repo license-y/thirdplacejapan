@@ -547,6 +547,12 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/daizawa/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/</loc>
@@ -1686,6 +1692,30 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/select/morioka-shoten-ginza/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/dotema-daizawa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/tatamiworks-chitosefunabashi/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/citan-nihonbashi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
