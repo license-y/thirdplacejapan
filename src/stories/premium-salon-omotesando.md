@@ -13,6 +13,8 @@ thumbnail: /assets/images/articles/luxury-salon-interior-omotesando-tokyo.webp
 permalink: /stories/premium-salon/omotesando/
 ---
 
+**表参道の高級サロンは、ハイブランドが連なる「見られる街」の逆説として機能する、完全個室のサードプレイスである。**
+
 表参道の高級サロンは、ハイブランドが密集する「見られる街」の逆説として機能する完全個室の居場所だ。ショーウィンドウを眺め、SNSに自分を晒し続けるこの街で、施術台の上だけが「見られない時間」になる。仕事でも消費でもない、受動的な身体の回復——それがこの街の高級サロンをサードプレイスたらしめる核心だ。
 
 ---

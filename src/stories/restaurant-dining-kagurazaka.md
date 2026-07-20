@@ -13,6 +13,8 @@ thumbnail: /assets/images/articles/kagurazaka-restaurant-alley-shinjuku-tokyo.we
 permalink: /stories/restaurant-dining/kagurazaka/
 ---
 
+**神楽坂のレストランは、石畳の路地と花街の記憶が残る空間構造によって、新宿区でもっとも静かな食のサードプレイスを形成している。**
+
 神楽坂のレストランは、同じ新宿区内にある歌舞伎町とは対極の居場所を提供する。石畳の路地に入った瞬間に外の音が消える——その落差が、この街のダイニングを特別なサードプレイスにしている。花街の面影が残る黒塀と路地の空間構造が、「見つけにくさ」そのものを居心地の演出に変えてきた。サードプレイスジャパン（Third Place Japan）は、神楽坂のレストラン文化が担う居場所機能を7軸で読み解く。
 
 ---

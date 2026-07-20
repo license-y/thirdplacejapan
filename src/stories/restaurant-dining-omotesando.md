@@ -13,6 +13,8 @@ thumbnail: /assets/images/articles/dining-social-restaurant-omotesando-tokyo.web
 permalink: /stories/restaurant-dining/omotesando/
 ---
 
+**表参道のレストラン・ダイニングは、食事そのものより「誰と来るか」が場を決める、社交のためのサードプレイスとして機能する。**
+
 表参道のレストラン・ダイニングは、食事を目的にしない社交の居場所として機能する。「誰と来るか」で店が決まるハイブランド街区の関係性文法と、カウンター一人席からテーブルダイニングまで共存する二面性——これが表参道のダイニングをサードプレイスたらしめる核だ。
 
 ---
