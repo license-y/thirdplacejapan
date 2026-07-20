@@ -9,11 +9,12 @@ og_type: "article"
   "@type": "Article",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
+  {% set imgDim = thumbnail | imageDimensions %}
   "image": {
     "@type": "ImageObject",
     "url": "{{ site.url }}{{ thumbnail or '' }}",
-    "width": 800,
-    "height": 450
+    "width": {{ imgDim.width }},
+    "height": {{ imgDim.height }}
   },
   "datePublished": "{{ date | dateISO }}",
   "dateModified": "{{ date | dateISO }}",

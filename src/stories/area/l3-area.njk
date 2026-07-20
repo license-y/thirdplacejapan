@@ -85,7 +85,7 @@ layout: area.njk
     {% set parts = [] %}
     {% for post in areaArts | head(5) %}{% set parts = parts.concat([{"@type":"Article","headline":post.data.title,"url":site.url + post.url}]) %}{% endfor %}
     {% for v in areaVenues | head(5) %}{% set parts = parts.concat([{"@type":"LocalBusiness","name":v.name,"url":site.url + "/stories/select/" + v.slug + "/"}]) %}{% endfor %}
-    {% for p in parts %}{ "@type": {{ p["@type"] | dump }}, {% if p.headline %}"headline": {{ p.headline | dump }}{% else %}"name": {{ p.name | dump }}{% endif %}, "url": {{ p.url | dump }} }{% if not loop.last %},{% endif %}
+    {% for p in parts %}{ "@type": {{ p["@type"] | dump | safe }}, {% if p.headline %}"headline": {{ p.headline | dump | safe }}{% else %}"name": {{ p.name | dump | safe }}{% endif %}, "url": {{ p.url | dump | safe }} }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]{% endif %}
 }

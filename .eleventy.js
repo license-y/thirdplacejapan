@@ -216,6 +216,36 @@ export default function (eleventyConfig) {
     (array || []).filter(item => item.data && item.data.category_slug !== categorySlug)
   );
 
+  eleventyConfig.addFilter("imageDimensions", (thumbnailPath) => {
+    const fallback = { width: 800, height: 450 };
+    if (!thumbnailPath) return fallback;
+    try {
+      const filePath = join(__dirname, "public", thumbnailPath.replace(/^\//, ""));
+      const buf = readFileSync(filePath);
+      if (buf.toString("ascii", 0, 4) !== "RIFF" || buf.toString("ascii", 8, 12) !== "WEBP") return fallback;
+      const fourcc = buf.toString("ascii", 12, 16);
+      if (fourcc === "VP8 ") {
+        return { width: buf.readUInt16LE(26) & 0x3FFF, height: buf.readUInt16LE(28) & 0x3FFF };
+      }
+      if (fourcc === "VP8L") {
+        const b0 = buf[21], b1 = buf[22], b2 = buf[23], b3 = buf[24];
+        return {
+          width: 1 + (((b1 & 0x3F) << 8) | b0),
+          height: 1 + (((b3 & 0xF) << 10) | (b2 << 2) | ((b1 & 0xC0) >> 6)),
+        };
+      }
+      if (fourcc === "VP8X") {
+        return {
+          width: 1 + (buf[24] | (buf[25] << 8) | (buf[26] << 16)),
+          height: 1 + (buf[27] | (buf[28] << 8) | (buf[29] << 16)),
+        };
+      }
+      return fallback;
+    } catch (e) {
+      return fallback;
+    }
+  });
+
   eleventyConfig.addFilter("extractFAQ", (content) => {
     if (!content) return [];
     const items = [];
