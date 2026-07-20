@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: The Merchant City That Built Japan's Bar Tradition"
-description: "Chuo-ku's bars run on craftsmanship and continuity rather than trend or international scale — Ginza's veteran counters, Nihonbashi's finance-district gravity, and Ningyocho's downtown ease, read through TPJ's seven axes."
+description: "Chuo-ku's bars run on craftsmanship, not trend — Ginza's veteran counters, Nihonbashi's finance gravity, Ningyocho's ease — read through TPJ's seven axes."
 date: 2026-07-17
 tags:
   - articles

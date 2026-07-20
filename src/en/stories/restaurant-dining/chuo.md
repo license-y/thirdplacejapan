@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: Three Layers of Time on One Table"
-description: "Chuo-ku's restaurants stack Edo-period ryotei tradition, Tsukiji's seafood-supply history, and Ginza's century of formal entertaining onto a single table — read through TPJ's seven axes."
+description: "Chuo-ku's restaurants stack Edo-period ryotei tradition, Tsukiji's seafood history, and Ginza's formal entertaining onto one table — TPJ's seven axes."
 date: 2026-07-17
 tags:
   - articles

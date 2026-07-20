@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho"
-description: "Third Place Japan explains the concept of 'third place' — the space beyond home and work where you can simply be yourself. How Ray Oldenburg's theory applies to modern Japan and ibasho culture."
+description: "Third Place Japan explains the 'third place' — space beyond home and work where you can be yourself — and how Oldenburg's theory applies to Japan's ibasho."
 date: 2026-07-01
 tags:
   - articles

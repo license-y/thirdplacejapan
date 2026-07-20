@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chiyoda-ku as a Third Place: Staying Next to the Nation Itself"
-description: "Chiyoda-ku's hotel lounges sit beside the Imperial Palace and the ministries that run the country — a third axis of prestige built by state planning, not commerce, read through TPJ's seven axes."
+description: "Chiyoda-ku's hotel lounges sit beside the Imperial Palace and the ministries that run Japan — prestige built by state planning, not commerce — TPJ's seven axes."
 date: 2026-07-18
 tags:
   - articles

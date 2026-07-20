@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan"
-description: "Third Place Japan's guide to the best third places in Tokyo for travelers — specialty coffee, hotel lounges, shrines, coworking spaces — curated by TPJ's 7-axis evaluation framework."
+description: "Third Place Japan's guide to Tokyo's best third places for travelers — coffee shops, hotel lounges, shrines, coworking — curated by TPJ's seven-axis framework."
 date: 2026-07-01
 tags:
   - articles

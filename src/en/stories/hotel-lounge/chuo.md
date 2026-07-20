@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: Staying at the Geographic Center of Tokyo"
-description: "Chuo-ku's hotel lounges sit where Japan's road network begins and the Imperial Palace is a two-kilometer walk away — a sense of place unmatched elsewhere in Tokyo, read through TPJ's seven axes."
+description: "Chuo-ku's hotel lounges sit where Japan's roads begin, a two-kilometer walk from the Imperial Palace — a sense of place unmatched elsewhere — TPJ's seven axes."
 date: 2026-07-17
 tags:
   - articles

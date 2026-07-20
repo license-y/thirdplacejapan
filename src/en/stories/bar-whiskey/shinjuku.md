@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Shinjuku-ku as a Third Place: Where Tokyo's Nightlife Chaos Turns Quiet"
-description: "Shinjuku-ku packs Tokyo's loudest entertainment district and its quietest back alleys into the same few blocks. Read through TPJ's seven axes, its bars show what a third place born of chaos looks like."
+description: "Shinjuku-ku packs Tokyo's loudest nightlife and its quietest back alleys into a few blocks. TPJ's seven axes show what a third place born of chaos looks like."
 date: 2026-07-15
 tags:
   - articles

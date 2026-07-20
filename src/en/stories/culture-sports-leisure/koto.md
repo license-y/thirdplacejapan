@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Koto-ku as a Third Place: A Canal Divides Old Warehouses From New Waterfront Leisure"
-description: "Koto-ku splits along a canal: Kiyosumi-Shirakawa's converted warehouses hold a quiet, independent culture, while Toyosu and Odaiba's reclaimed land opens onto large-scale waterfront leisure."
+description: "Koto-ku splits along a canal: Kiyosumi-Shirakawa's warehouses hold a quiet culture, while Toyosu and Odaiba's reclaimed land opens onto waterfront leisure."
 date: 2026-07-15
 tags:
   - articles

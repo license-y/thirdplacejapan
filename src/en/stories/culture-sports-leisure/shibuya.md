@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Shibuya-ku as a Third Place: Where Culture Means Joining In, Not Just Watching"
-description: "Shibuya-ku's culture and leisure scene favors participation — sport at National Yoyogi Gymnasium, skating in Yoyogi Park, joining in over watching."
+description: "Shibuya-ku's culture and leisure favors participation over observation — sport at Yoyogi Gymnasium, skating in Yoyogi Park, joining in rather than watching."
 date: 2026-07-13
 tags:
   - articles

@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Minato-ku as a Third Place: How Embassies and International Finance Built Five Distinct Bar Cultures"
-description: "Minato-ku's bars run on international capital rather than a single drinking tradition — Roppongi's multinational counters, Akasaka's political hospitality, and three other registers, read through TPJ's seven axes."
+description: "Minato-ku's bars run on international capital, not one tradition — Roppongi's multinational counters, Akasaka's political hospitality — TPJ's seven axes."
 date: 2026-07-16
 tags:
   - articles

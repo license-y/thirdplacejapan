@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Meiji Jingu as a Third Place: Finding Silence in Central Tokyo"
-description: "Meiji Jingu, 1 minute from Harajuku Station, offers 700,000 square meters of ancient forest silence in central Tokyo — a rare third place for solo reflection, evaluated by Third Place Japan."
+description: "Meiji Jingu, a minute from Harajuku Station, offers 700,000 square meters of forest silence in Tokyo — a rare third place evaluated by Third Place Japan."
 date: 2026-07-01
 tags:
   - articles

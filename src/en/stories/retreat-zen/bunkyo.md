@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes"
-description: "Bunkyo-ku offers a retreat built on scholarship, not faith or nature — Hongo's university slopes, two formal daimyo gardens, and a writers' quarter, read through TPJ's seven axes."
+description: "Bunkyo-ku offers a retreat built on scholarship, not faith or nature — Hongo's university slopes, two daimyo gardens, and a writers' quarter — TPJ's seven axes."
 date: 2026-07-11
 tags:
   - articles

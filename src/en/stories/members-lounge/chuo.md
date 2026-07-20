@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: Belonging Built on a Merchant City's Trust"
-description: "Chuo-ku's members lounges channel three centuries of merchant credibility into three distinct forms of belonging — Ginza's status, Nihonbashi's old-line trust, Ningyocho's local ties — read through TPJ's seven axes."
+description: "Chuo-ku's members lounges channel centuries of merchant credibility into belonging — Ginza's status, Nihonbashi's trust, Ningyocho's ties — TPJ's seven axes."
 date: 2026-07-18
 tags:
   - articles

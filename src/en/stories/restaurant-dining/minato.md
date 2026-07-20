@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Minato-ku as a Third Place: Six Neighborhoods, Six Different Meanings of a Meal"
-description: "Minato-ku's restaurants split by purpose, not just cuisine — Azabujuban's neighborhood table, Akasaka's political dining, Roppongi's international crossroads — read through TPJ's seven axes."
+description: "Minato-ku's restaurants split by purpose, not cuisine — Azabujuban's neighborhood table, Akasaka's political dining, Roppongi's crossroads — TPJ's seven axes."
 date: 2026-07-16
 tags:
   - articles

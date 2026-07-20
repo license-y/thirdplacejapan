@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chiyoda-ku as a Third Place: One Ward, Three Kinds of Room"
-description: "Chiyoda-ku's cafés split into three unrelated worlds — Marunouchi's corporate prestige, Jimbocho's secondhand-book stillness, Akihabara's fan-community intensity — read through TPJ's seven axes."
+description: "Chiyoda-ku's cafés split into three worlds — Marunouchi's prestige, Jimbocho's book stillness, Akihabara's fan intensity — read through TPJ's seven axes."
 date: 2026-07-18
 tags:
   - articles
