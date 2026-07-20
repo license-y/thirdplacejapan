@@ -91,4 +91,10 @@ Yes. The shrine provides multilingual signage and the main ritual (two bows, two
 **Q. What is Third Place Japan's certification, and how does Meiji Jingu fit?**<br>
 Third Place Japan evaluates spaces across seven axes: comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Meiji Jingu scores exceptionally on silence, story, and inbound axes — making it a natural reference point for understanding what a third place can be in Japan. See [TPJ certified venues](/stories/select/) for spaces that meet the full certification standard.
 
+---
+
+## In Summary
+
+Meiji Jingu's essence as a third place lies in its 100-year forest — a deliberately engineered woodland that delivers genuine silence one minute from Harajuku Station. Its neutrality, free access, and the depth added by knowing the forest's ecological history make it a rare urban third place that scores exceptionally across silence, story, and inbound accessibility. Third Place Japan evaluates spaces like this across seven axes as part of its ongoing certification framework.
+
 For a broader look at the concept behind this evaluation, [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) lays out the framework in full. Travelers planning a wider itinerary may also find [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/) useful, and [Shibuya-ku as a Third Place](/en/stories/inbound-experience/shibuya/) covers the ward that surrounds Meiji Jingu in more depth.
