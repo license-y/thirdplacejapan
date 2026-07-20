@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-title: "TPJ認証とTPJセレクト、なぜ2つあるのか？2トラック設計の理由"
+title: "サードプレイスの認証制度、TPJ認証とTPJセレクトになぜ2つあるのか？"
 description: Third Place Japanが「TPJセレクト」と「認証グレード」という2つの仕組みを持つ理由を解説します。編集部発掘の招待制枠と、施設からの申請・審査を経る正式認証、それぞれの役割と設計思想の違いを丁寧に紹介します。
 date: 2026-07-20
 category_slug: about
