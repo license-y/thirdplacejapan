@@ -103,7 +103,7 @@ Third Place Japan（サードプレイスジャパン）が「サードプレイ
 
 自分が「サードプレイスを求めている」のか「居場所を求めている」のか「行きつけを作りたい」のかを意識することで、何を探せばよいかが明確になる。
 
-サードプレイスの定義を体系的に学びたい方は「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」を、アクセス性については「[サードプレイスとは"気軽に立ち寄れる場所"である](/stories/about/third-place-accessibility/)」をご覧ください。
+サードプレイスの定義を体系的に学びたい方は「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」を、アクセス性については「[サードプレイスとは"気軽に立ち寄れる場所"である](/stories/about/third-place-accessibility/)」をご覧ください。似て非なる概念の使い分けという観点では、[TPJ認証とTPJセレクト、なぜ2つあるのか](/stories/about/tpj-certification-and-select-difference/)も参考になります。
 
 ---
 

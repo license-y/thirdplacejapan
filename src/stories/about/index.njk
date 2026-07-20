@@ -40,7 +40,7 @@ og_type: "article"
         この7軸は、TPJが認証する施設（<a href="/stories/select/" class="text-gold hover:underline">TPJセレクト</a>・Certified〜Flagship）すべてに共通する評価言語として機能し、業種を横断してサードプレイスとしての価値を比較できる仕組みになっている。
       </p>
       <p class="text-sm text-muted leading-relaxed">
-        7軸はさらに「場の質（居心地・静けさ）」「心の核（特別感・ストーリー）」「広がり（再訪・記録性・インバウンド）」の3グループに整理される。中から外へと価値が連なるこの構造により、施設ごとの得意分野がひと目で分かる評価言語になっている。
+        7軸はさらに「場の質（居心地・静けさ）」「心の核（特別感・ストーリー）」「広がり（再訪・記録性・インバウンド）」の3グループに整理される。中から外へと価値が連なるこの構造により、施設ごとの得意分野がひと目で分かる評価言語になっている。7軸それぞれの判定の目安は<a href="/stories/about/tpj-7-axis-evaluation-guide/" class="text-gold hover:underline">TPJ7軸評価基準の完全ガイド</a>で個別に解説している。
       </p>
     </section>
 
@@ -90,7 +90,7 @@ og_type: "article"
         Third Place Japanは、この理論的な土台の上に、実際の場所を評価・認証する仕組みを持っている。編集部が独自に発掘・紹介する「TPJセレクト」と、施設からの申請・審査を経て発行される5段階の認証グレード（Certified・Silver・Gold・Platinum・Flagship）の2軸で構成される。
       </p>
       <p class="text-sm text-muted leading-relaxed">
-        認証グレードの詳しい違いは、<a href="/stories/about/certification-grades/" class="text-gold hover:underline">TPJ認証グレード</a>のページで確認できる。
+        認証グレードの詳しい違いは<a href="/stories/about/certification-grades/" class="text-gold hover:underline">TPJ認証グレード</a>のページ、なぜこの2軸に分けているのかという設計思想は<a href="/stories/about/tpj-certification-and-select-difference/" class="text-gold hover:underline">TPJ認証とTPJセレクト、なぜ2つあるのか</a>で解説している。
       </p>
     </section>
 {% endset %}
@@ -440,20 +440,48 @@ og_type: "article"
     {{ renderGroup("使い分けと実例", group3, aboutPosts) }}
     {{ renderGroup("理論の源流", group4, aboutPosts) }}
 
-    {# TPJの認証を知る（カードリンク） #}
+    {% set group5 = ["tpj-7-axis-evaluation-guide", "tpj-certification-and-select-difference"] %}
+
+    {# TPJの仕組みを知る（記事2件＋認証グレードページのカードリンク） #}
     <div class="mb-4">
-      <p class="label mb-4">TPJの認証を知る</p>
-      <a href="/stories/about/certification-grades/"
-         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
-        <div class="shrink-0 w-32 md:w-40 bg-ivory flex items-center justify-center">
-          <span class="text-muted text-xs tracking-wider">TPJ Guide</span>
-        </div>
-        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
-          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug">
-            TPJ認証グレード：TPJセレクトと5段階認証の違い
-          </h3>
-        </div>
-      </a>
+      <p class="label mb-4">TPJの仕組みを知る</p>
+      <div class="space-y-3">
+        {% for post in aboutPosts %}
+        {% if post.fileSlug in group5 %}
+        <a href="{{ post.url }}"
+           class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+          {% if post.data.thumbnail %}
+          <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+            <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy" decoding="async">
+          </div>
+          {% else %}
+          <div class="shrink-0 w-32 md:w-40 bg-ivory flex items-center justify-center">
+            <span class="text-muted text-xs tracking-wider">TPJ Stories</span>
+          </div>
+          {% endif %}
+          <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+            <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+                style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+              {{ post.data.title }}
+            </h3>
+          </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+        <a href="/stories/about/certification-grades/"
+           class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+          <div class="shrink-0 w-32 md:w-40 bg-ivory flex items-center justify-center">
+            <span class="text-muted text-xs tracking-wider">TPJ Guide</span>
+          </div>
+          <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+            <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug">
+              TPJ認証グレード：TPJセレクトと5段階認証の違い
+            </h3>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 

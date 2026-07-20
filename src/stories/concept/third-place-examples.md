@@ -121,7 +121,7 @@ Third Place Japanが評価するホテルラウンジは、「宿泊客専用」
 
 Third Place Japan（サードプレイスジャパン）は、そうした場所を発見し、7軸基準で評価し、記録することを使命としている。
 
-サードプレイスの定義と条件を深く理解したい方は「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」を、評価の7軸については「[サードプレイスの8つの条件：オルデンバーグの定義を読む](/stories/about/third-place-8-conditions/)」をご覧ください。
+サードプレイスの定義と条件を深く理解したい方は「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」を、評価の7軸そのものについては「[TPJ7軸評価基準の完全ガイド](/stories/about/tpj-7-axis-evaluation-guide/)」を、オルデンバーグの原典条件については「[サードプレイスの8つの条件：オルデンバーグの定義を読む](/stories/about/third-place-8-conditions/)」をご覧ください。
 
 ---
 
