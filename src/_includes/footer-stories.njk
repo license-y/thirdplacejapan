@@ -14,16 +14,16 @@
         <a href="/stories/latest/" class="inline-block mt-3 text-xs text-gold hover:underline">記事一覧 →</a>
       </div>
 
-      <!-- ② TPJガイド -->
+      <!-- ② サードプレイスガイド -->
       <div>
-        <p class="label mb-4">TPJガイド</p>
+        <p class="label mb-4">サードプレイスガイド</p>
         <ul class="space-y-2 text-xs text-muted">
           {% set guidePosts = collections.aboutArticles | head(4) %}
           {% for post in guidePosts %}
           <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
           {% endfor %}
         </ul>
-        <a href="/stories/about/" class="inline-block mt-3 text-xs text-gold hover:underline">TPJガイド一覧 →</a>
+        <a href="/stories/about/" class="inline-block mt-3 text-xs text-gold hover:underline">サードプレイスガイド一覧 →</a>
       </div>
 
       <!-- ③ カテゴリ -->
