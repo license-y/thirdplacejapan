@@ -1,7 +1,11 @@
 ---
 layout: base.njk
 ---
+{% if lang == "en" %}
+{% include "nav-stories-en.njk" %}
+{% else %}
 {% include "nav-stories.njk" %}
+{% endif %}
 <main class="pt-16">
   {{ content | safe }}
 </main>

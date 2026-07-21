@@ -1,0 +1,237 @@
+<style>
+  #pf-input {
+    width: 100%;
+    border: 1px solid rgba(184,150,12,0.5);
+    border-radius: 9999px;
+    background: #fff;
+    color: #2D2A26;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: inherit;
+  }
+  #pf-input:focus { border-color: #B8960C; }
+  #pf-input::placeholder { color: #9B9490; }
+  #pf-input-wrap { position: relative; }
+  #pf-input-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #pf-results { margin-top: 0.5rem; max-height: 22rem; overflow-y: auto; }
+  #pf-results a {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #E5E2DC;
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+  #pf-results a:last-child { border-bottom: none; }
+  #pf-results a:hover { background: #F8F6F1; }
+  #pf-results .pf-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+  #pf-results .pf-excerpt { font-size: 0.72rem; color: #9B9490; margin-top: 0.2rem; line-height: 1.5; }
+  #pf-msg { font-size: 0.8rem; color: #9B9490; padding: 0.75rem 0; }
+</style>
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+
+    {# ロゴ #}
+    <a href="/en/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.webp" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
+    </a>
+
+    {# デスクトップナビ #}
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">Articles</a></li>
+      <li><a href="/en/stories/concept/what-is-third-place-japan/" class="nav-link text-xs tracking-widest transition-colors duration-200">Third Place Guide</a></li>
+      <li><a href="/en/stories/select/green-beans-coffee-shibuya/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJ Select</a></li>
+      <li><a href="/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">日本語</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">About TPJ</a></li>
+      <li>
+        <button id="search-open-btn" aria-label="Search articles" class="nav-link p-1 transition-colors duration-200">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+      </li>
+    </ul>
+
+    {# モバイル右側：検索＋メニュー #}
+    <div class="lg:hidden flex items-center gap-2">
+      <button id="search-open-btn-mobile" aria-label="Search articles" class="p-2 transition-colors duration-300">
+        <i data-lucide="search" class="w-5 h-5"></i>
+      </button>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"
+              class="p-2 transition-colors duration-300" id="menu-btn">
+        <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </nav>
+
+  {# モバイルメニュー #}
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-x-3 gap-y-2" role="list">
+      <li class="whitespace-nowrap"><a href="/en/stories/" class="text-xs text-text hover:text-gold transition-colors">Articles</a></li>
+      <li class="whitespace-nowrap"><a href="/en/stories/concept/what-is-third-place-japan/" class="text-xs text-text hover:text-gold transition-colors">Third Place Guide</a></li>
+      <li class="whitespace-nowrap"><a href="/en/stories/select/green-beans-coffee-shibuya/" class="text-xs text-text hover:text-gold transition-colors">TPJ Select</a></li>
+      <li class="whitespace-nowrap"><a href="/stories/" class="text-xs text-text hover:text-gold transition-colors">日本語</a></li>
+      <li class="whitespace-nowrap"><a href="/" class="text-xs text-text hover:text-gold transition-colors">About TPJ</a></li>
+    </ul>
+  </div>
+</header>
+
+{# 検索オーバーレイ（全ページ共通） #}
+<div id="search-overlay" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-label="Article search">
+  <div class="bg-ivory w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+    <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
+      <p class="font-serif text-base font-light text-dark">Search Articles</p>
+      <button id="search-close-btn" aria-label="Close" class="p-1 text-muted hover:text-dark transition-colors" style="line-height:1">✕</button>
+    </div>
+    <div class="px-6 py-4">
+      <div id="pf-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B9490" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="pf-input" placeholder="Search articles, areas, categories..." autocomplete="off" spellcheck="false">
+      </div>
+      <div id="pf-results"></div>
+      <div id="pf-msg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  /* ── ナビ色制御 ── */
+  const nav = document.getElementById('nav');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const mobileSearchBtn = document.getElementById('search-open-btn-mobile');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#2D2A26';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(184,150,12,0.25)';
+    const color = '#F8F6F1';
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    if (mobileSearchBtn) mobileSearchBtn.style.color = color;
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+  updateNav();
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+
+  /* ── 検索（Pagefind JS API）── */
+  const overlay  = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-close-btn');
+  const input    = document.getElementById('pf-input');
+  const results  = document.getElementById('pf-results');
+  const msg      = document.getElementById('pf-msg');
+  const openBtns = [
+    document.getElementById('search-open-btn'),
+    document.getElementById('search-open-btn-mobile')
+  ].filter(Boolean);
+
+  let pf = null;
+  let timer = null;
+
+  async function loadPF() {
+    if (pf) return pf;
+    pf = await import('/pagefind/pagefind.js');
+    await pf.init();
+    return pf;
+  }
+
+  function openSearch() {
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function() { if (input) input.focus(); }, 80);
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  const PAGE_SIZE = 25;
+  let allResults = [];
+  let shownCount = 0;
+
+  function renderItem(item) {
+    var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+    return '<a href="' + item.url + '">'
+      + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+      + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+      + '</a>';
+  }
+
+  function updateMoreBtn() {
+    var existing = document.getElementById('pf-more-btn');
+    if (existing) existing.remove();
+    if (shownCount < allResults.length) {
+      var remaining = allResults.length - shownCount;
+      var btn = document.createElement('button');
+      btn.id = 'pf-more-btn';
+      btn.textContent = 'Show ' + Math.min(remaining, PAGE_SIZE) + ' more (' + remaining + ' remaining)';
+      btn.style.cssText = 'display:block;width:100%;margin-top:0.5rem;padding:0.6rem;font-size:0.75rem;color:#B8960C;border:1px solid rgba(184,150,12,0.4);border-radius:0.5rem;background:#fff;cursor:pointer;';
+      btn.addEventListener('click', async function() {
+        var next = allResults.slice(shownCount, shownCount + PAGE_SIZE);
+        var items = await Promise.all(next.map(function(r) { return r.data(); }));
+        items.forEach(function(item) {
+          var div = document.createElement('div');
+          div.innerHTML = renderItem(item);
+          results.insertBefore(div.firstChild, btn);
+        });
+        shownCount += items.length;
+        updateMoreBtn();
+      });
+      results.appendChild(btn);
+    }
+  }
+
+  if (input) {
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      const q = this.value.trim();
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; allResults = []; shownCount = 0; return; }
+      timer = setTimeout(async function() {
+        try {
+          const pagefind = await loadPF();
+          const res = await pagefind.search(q);
+          allResults = res.results;
+          shownCount = 0;
+          if (!allResults.length) {
+            results.innerHTML = '';
+            msg.textContent = 'No results found for "' + q + '"';
+            return;
+          }
+          msg.textContent = allResults.length + ' results found';
+          var first = allResults.slice(0, PAGE_SIZE);
+          var items = await Promise.all(first.map(function(r) { return r.data(); }));
+          shownCount = items.length;
+          results.innerHTML = items.map(renderItem).join('');
+          updateMoreBtn();
+        } catch(e) {
+          msg.textContent = 'Failed to load search';
+        }
+      }, 250);
+    });
+  }
+
+  openBtns.forEach(function(b) { b.addEventListener('click', openSearch); });
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+})();
+</script>
