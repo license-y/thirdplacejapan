@@ -237,9 +237,12 @@ og_type: "article"
 
       {# サムネイル #}
       {% if thumbnail %}
-      <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
-        <img src="{{ thumbnail }}" alt="{{ title }} | Third Place Japan"
-             class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      <div class="mb-12" data-aos="fade-up">
+        <div class="rounded-xl overflow-hidden">
+          <img src="{{ thumbnail }}" alt="{{ title }} | Third Place Japan"
+               class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+        </div>
+        <p class="text-xs text-muted text-center mt-2">※写真はイメージです</p>
       </div>
       {% endif %}
 
