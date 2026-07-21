@@ -1,7 +1,7 @@
 ---
 layout: article-certified.njk
 title: 【TPJ Flagship認証】Green Beans Coffee 渋谷：東京のスペシャルティコーヒー最高峰のサードプレイスを評価する
-description: TPJがFlagshipグレードを認証したGreen Beans Coffee（グリーンビーンズコーヒー）渋谷店の評価レポートです。7軸スコアやアクセス情報を、Third Place Japan編集部が詳しく解説します。
+description: TPJがFlagshipグレードを認証したGreen Beans Coffee（グリーンビーンズコーヒー）渋谷店の評価レポートです。東京有数のサードプレイスとして、7軸スコアやアクセス情報をTPJ編集部が詳しく解説します。
 date: 2026-06-21
 category_slug: cafe-specialty-coffee
 area_slug: sendagaya
@@ -12,7 +12,7 @@ tags:
 thumbnail: /assets/images/articles/specialty-coffee-interior-tokyo.webp
 ---
 
-**Green Beans Coffee（グリーンビーンズコーヒー）渋谷は、Third Place Japan（TPJ）がFlagshipグレードを認証した東京屈指のスペシャルティコーヒー専門店である。居心地・空間品質（第1軸）と静寂性・プライバシー（第2軸）の両軸において最高水準のスコアを記録した。**
+**Green Beans Coffee（グリーンビーンズコーヒー）渋谷は、Third Place Japan（TPJ）がFlagshipグレードを認証した東京屈指のスペシャルティコーヒー専門店である。居心地・空間品質（第1軸）と静寂性・プライバシー（第2軸）の両軸において最高水準のスコアを記録した。東京有数のサードプレイスとして、渋谷エリアで最高評価を得ている店舗だ。**
 
 東京・渋谷区に位置するGreen Beans Coffeeは、スペシャルティコーヒーの専門性と、空間そのものへの徹底した投資が評価されている。TPJ編集部は複数回の実地調査を経て、本施設をサードプレイスとしての最高評価グレード「Flagship」として認証した。
 
@@ -79,4 +79,4 @@ Third Place JapanのFlagshipグレードは、5段階認証（Certified・Silver
 
 ## まとめ
 
-Green Beans Coffee（グリーンビーンズコーヒー）渋谷は、居心地・静寂性・ストーリー・再訪価値のいずれもが高水準にあり、TPJの最高評価グレード「Flagship」に値する空間であることが実地調査で確認された。「一人でいることへの敬意」を設計の哲学として徹底している点が、渋谷区の他のカフェとの決定的な違いだ。サードプレイスジャパン（Third Place Japan）は、こうした空間を7軸で継続的に評価・認証している。
+Green Beans Coffee（グリーンビーンズコーヒー）渋谷は、居心地・静寂性・ストーリー・再訪価値のいずれもが高水準にあり、TPJの最高評価グレード「Flagship」に値する空間であることが実地調査で確認された。「一人でいることへの敬意」を設計の哲学として徹底している点が、渋谷区の他のカフェとの決定的な違いだ。この設計思想こそが、渋谷が持つサードプレイスとしての最高峰をかたち作っている。サードプレイスジャパン（Third Place Japan）は、こうした空間を7軸で継続的に評価・認証している。
