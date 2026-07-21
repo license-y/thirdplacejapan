@@ -18,7 +18,7 @@
       <div>
         <p class="label mb-4">サードプレイスガイド</p>
         <ul class="space-y-2 text-xs text-muted">
-          {% set guidePosts = collections.aboutArticles | head(4) %}
+          {% set guidePosts = collections.aboutArticles | rejectLang("en") | head(4) %}
           {% for post in guidePosts %}
           <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
           {% endfor %}

@@ -1,0 +1,43 @@
+<footer class="mt-14 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+
+      <!-- ① Latest Articles -->
+      <div>
+        <p class="label mb-4">Latest Articles</p>
+        <ul class="space-y-2 text-xs text-muted">
+          {% set latestPosts = collections.articles | selectLang("en") | head(4) %}
+          {% for post in latestPosts %}
+          <li><a href="{{ post.url }}" class="hover:text-gold transition-colors line-clamp-1">{{ post.data.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <a href="/en/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">All Articles →</a>
+      </div>
+
+      <!-- ② Third Place Guide -->
+      <div>
+        <p class="label mb-4">Third Place Guide</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/en/stories/concept/what-is-third-place-japan/" class="hover:text-gold transition-colors line-clamp-1">What Is a Third Place? The TPJ Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- ③ TPJ Select -->
+      <div>
+        <p class="label mb-4">TPJ Select</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/en/stories/select/green-beans-coffee-shibuya/" class="hover:text-gold transition-colors line-clamp-1">Green Beans Coffee</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <a href="/stories/" class="inline-flex items-center gap-1.5 text-xs border border-gold/40 text-muted rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-all">
+        <i data-lucide="globe" class="w-3 h-3"></i>
+        日本語
+      </a>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

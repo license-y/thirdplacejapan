@@ -5,4 +5,8 @@ layout: base.njk
 <main class="pt-16">
   {{ content | safe }}
 </main>
+{% if lang == "en" %}
+{% include "footer-stories-en.njk" %}
+{% else %}
 {% include "footer-stories.njk" %}
+{% endif %}
