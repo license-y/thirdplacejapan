@@ -110,6 +110,8 @@ For Business / 運営会社 / プライバシー / お問い合わせ
 /en/stories/...                                   英語版（同構造のミラー再編集）
 ```
 
+> **注記（2026-07-21追記）**：`/stories/area/{prefecture}/{city}/{area}/{category}` は、掲載枠・施設一覧を集約する「エリア×カテゴリハブ」のURLである。個別記事（区×カテゴリのピラー記事等）のURL構造は `/stories/{category}/{area}/` の形式を取り、これは `STORIES-SITE-SPEC.md` を正本とする。本IA文書は個別記事のURL階層を定義するものではない。
+
 **例（東京・渋谷・カフェの場合）**
 ```
 /stories/area/tokyo                  東京都（進出初期のインデックス）
