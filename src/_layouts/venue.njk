@@ -596,6 +596,35 @@ og_type: "article"
   </section>
   {% endif %}
 
+  {# エリアの関連記事 #}
+  {% set venueAreaArticles = collections.articles | rejectLang("en") | articlesByArea(venue.area_primary.area_slug) | head(3) %}
+  {% if venueAreaArticles.length %}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="flex items-center justify-between mb-6">
+      <p class="label">{{ venue.area_primary.area }}の関連記事</p>
+      <a href="/stories/area/{{ venue.area_primary.prefecture_slug }}/{{ venue.area_primary.city_slug }}/{{ venue.area_primary.area_slug }}/"
+         class="text-xs text-muted hover:text-gold transition-colors">
+        {{ venue.area_primary.area }}のエリアページを見る →
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {% for post in venueAreaArticles %}
+      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+          <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {# 認証制度への還流導線 #}
   <div class="mt-16 pt-8 border-t border-border" data-aos="fade-up">
     {% if venue.grade_slug == "flagship" %}
