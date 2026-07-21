@@ -55,7 +55,7 @@ layout: area.njk
 
 {# Place + CollectionPage JSON-LD（全 L3 エリアに適用）#}
 {% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
-{% set areaArts = collections.articles | articlesByArea(item.area.slug) %}
+{% set areaArts = collections.articles | rejectLang("en") | articlesByArea(item.area.slug) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,7 +108,7 @@ layout: area.njk
     <div class="gold-rule mb-6"></div>
     <p class="text-sm text-muted">{{ item.area.name }}エリアで Third Place Japan が認証した場所。</p>
   </div>
-  {% set areaArticles = collections.articles | articlesByArea(item.area.slug) %}
+  {% set areaArticles = collections.articles | rejectLang("en") | articlesByArea(item.area.slug) %}
   {% if areaArticles.length %}
   <section class="mb-12" data-aos="fade-up">
     <p class="label mb-6">{{ item.area.name }}の関連記事</p>

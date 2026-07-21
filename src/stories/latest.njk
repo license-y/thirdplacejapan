@@ -40,7 +40,7 @@ permalink: "/stories/latest/"
   </div>
 
   {# 記事一覧（全件・新着順）#}
-  {% set nonAboutArticles = collections.articles | rejectCategory("about") %}
+  {% set nonAboutArticles = collections.articles | rejectLang("en") | rejectCategory("about") %}
   {% if nonAboutArticles and nonAboutArticles.length %}
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="article-grid" data-aos="fade-up">
     {% for post in nonAboutArticles %}

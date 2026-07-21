@@ -97,7 +97,7 @@ layout: area.njk
   </div>
 
   {# ──── 関連記事 ──── #}
-  {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) | articlesByCategory(item.category.slug) %}
+  {% set cityArticles = collections.articles | rejectLang("en") | articlesByCity(item.prefecture.slug, item.city.slug) | articlesByCategory(item.category.slug) %}
   {% if cityArticles and cityArticles.length %}
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-6">関連記事 — {{ cityArticles.length }}件</p>

@@ -24,7 +24,7 @@ eleventyComputed:
 </script>
 
 {# CollectionPage JSON-LD #}
-{% set catArticles = collections.articles | articlesByCategory(cat.slug) %}
+{% set catArticles = collections.articles | rejectLang("en") | articlesByCategory(cat.slug) %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,7 +107,7 @@ eleventyComputed:
       </div>
 
       {# 記事一覧 #}
-      {% set catArticles = collections.articles | articlesByCategory(cat.slug) %}
+      {% set catArticles = collections.articles | rejectLang("en") | articlesByCategory(cat.slug) %}
       {% if catArticles and catArticles.length %}
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
         {% for post in catArticles %}
@@ -230,7 +230,7 @@ eleventyComputed:
         </div>
 
         {# 最新記事 #}
-        {% set latestPosts = collections.articles | head(5) %}
+        {% set latestPosts = collections.articles | rejectLang("en") | head(5) %}
         {% if latestPosts and latestPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">最新記事</p>

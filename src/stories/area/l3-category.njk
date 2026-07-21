@@ -158,7 +158,7 @@ layout: area.njk
   </section>
 
   {# ──── 関連記事 ──── #}
-  {% set areaArticles = collections.articles | articlesByArea(item.area.slug) | articlesByCategory(item.category.slug) %}
+  {% set areaArticles = collections.articles | rejectLang("en") | articlesByArea(item.area.slug) | articlesByCategory(item.category.slug) %}
   {% if areaArticles and areaArticles.length %}
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-6">関連記事 — {{ areaArticles.length }}件</p>

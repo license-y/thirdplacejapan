@@ -122,7 +122,7 @@ layout: area.njk
           {% endfor %}
         </div>
       </section>
-      {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
+      {% set cityArticles = collections.articles | rejectLang("en") | articlesByCity(item.prefecture.slug, item.city.slug) %}
       {% if cityArticles.length %}
       <section class="mb-12" data-aos="fade-up">
         <p class="label mb-6">{{ item.city.name }}の関連記事</p>
@@ -242,7 +242,7 @@ layout: area.njk
       {% endfor %}
     </div>
   </section>
-  {% set cityArticles = collections.articles | articlesByCity(item.prefecture.slug, item.city.slug) %}
+  {% set cityArticles = collections.articles | rejectLang("en") | articlesByCity(item.prefecture.slug, item.city.slug) %}
   {% if cityArticles.length %}
   <section class="mb-16" data-aos="fade-up">
     <p class="label mb-6">{{ item.city.name }}の関連記事</p>

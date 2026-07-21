@@ -106,7 +106,7 @@ layout: area.njk
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="city-grid">
       {% for city in prefecture.cities %}
       {% set cityVenues = venues | venuesByArea(prefecture.slug, city.slug) %}
-      {% set cityArticles = collections.articles | articlesByCity(prefecture.slug, city.slug) %}
+      {% set cityArticles = collections.articles | rejectLang("en") | articlesByCity(prefecture.slug, city.slug) %}
       {% set hasContent = cityVenues.length or cityArticles.length %}
       <div class="city-card p-4 transition-colors border border-gold"
            data-city-name="{{ city.name }}"
@@ -143,7 +143,7 @@ layout: area.njk
   </section>
 
   {# この都道府県の関連記事（最新6件） #}
-  {% set prefArticles = collections.articles | articlesByPrefecture(prefecture.slug, 6) %}
+  {% set prefArticles = collections.articles | rejectLang("en") | articlesByPrefecture(prefecture.slug, 6) %}
   {% if prefArticles.length %}
   <section class="mb-16" data-aos="fade-up">
     <p class="label mb-6">{{ prefecture.name }}の関連記事</p>
