@@ -1602,6 +1602,22 @@ eleventyConfig.addFilter("selectLang", (array, lang) =>
 - `true` / `false` のBoolean値で指定。文字列 `"false"` は不可
 - 禁煙・喫煙可の条件検索に対応する
 
+### geo（グレード非依存・`venue.lat and venue.lng` があれば全グレード出力）
+
+**`geo`（GeoCoordinates）はこのセクションの他プロパティ（openingHours・sameAs・amenityFeature等）と異なり、グレード（`thisLevel`）に関わらず`venue.lat`・`venue.lng`が設定されていれば全施設で出力する。** TPJセレクト（`grade_slug: "select"`、`thisLevel = 0`）も対象に含まれる。
+
+```njk
+{% if venue.lat and venue.lng %},
+"geo": {
+  "@type": "GeoCoordinates",
+  "latitude": {{ venue.lat }},
+  "longitude": {{ venue.lng }}
+}
+{% endif %}
+```
+
+**理由（2026-07-21修正）**：位置情報は「掲載グレードが上がるほど開示される拡張プロパティ」ではなく、施設を一意に識別するための基本情報。以前は他のグレード限定プロパティと同じ`{% if thisLevel >= 1 %}`条件を流用していたため、TPJセレクト19件（当時）のJSON-LDから`geo`が一律で欠落していた。地図・位置情報を伴うAI検索・AEOにおいて`geo`は重要度が高く、グレードで出し分ける対象から除外する。
+
 ### geo（lat / lng）座標の取得ルール（必須・絶対厳守）
 
 `venues.json` の `lat` / `lng` は **店舗の住所そのものの座標** を設定すること。
@@ -1991,6 +2007,21 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 # 実装ログ
 
 ## 2026-07-21
+
+### TPJセレクト施設（19件）のJSON-LDに`geo`が出力されていない不具合を修正
+
+**対象ファイル**
+- `src/_layouts/venue.njk` — LocalBusiness JSON-LDの`geo`出力条件を変更
+
+**背景**：`geo`（GeoCoordinates）の出力条件が、sameAs・openingHours等と同じ`{% if thisLevel >= 1 %}`（グレードレベル制御）を流用していた。TPJセレクト（`grade_slug: "select"`）は`gradeLevels`に該当キーがなく`thisLevel = 0`になるため、`lat`/`lng`を保持しているにもかかわらず全施設で`geo`がJSON-LDから欠落していた。
+
+**対応**：出力条件を`{% if thisLevel >= 1 %}` → `{% if venue.lat and venue.lng %}`に変更。位置情報はグレードで段階的に開示する拡張プロパティではなく施設を一意に識別する基本情報のため、グレード条件から独立させた。
+
+**検証方法**：`npm run build`後、公開中の全23施設ページ（TPJセレクト22件＋認証施設）・計115個のJSON-LDブロックをNode.jsで`JSON.parse`し、パースエラー0件かつTPJセレクト22件全件に`geo`ブロックが出力されていることを確認済み。
+
+**ルール化**：「LocalBusiness の検索最適化プロパティ」セクションに「geo（グレード非依存）」を新規追加し、`geo`のみグレード条件の対象外であることを明記した。
+
+---
 
 ### SEO/MEO/AEO追加監査：TPJセレクト施設ページのキーワード欠落・関連記事導線の欠如を修正
 
