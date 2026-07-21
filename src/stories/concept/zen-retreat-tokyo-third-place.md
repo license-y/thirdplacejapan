@@ -84,6 +84,7 @@ Third Place Japan（サードプレイスジャパン）は、こうした禅体
 - 東京の神社での静寂体験については[明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)
 - 心身の回復とサードプレイスの関係は[スパ・サウナ・ウェルネス施設](/stories/spa-sauna-wellness/)カテゴリでも解説している
 - 住宅街の生活動線に溶け込んだ静けさについては[杉並区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/suginami/)も参照いただきたい
+- 広域公園と大学の杜が育む静けさについては[三鷹市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/mitaka/)も参照いただきたい
 
 ---
 
