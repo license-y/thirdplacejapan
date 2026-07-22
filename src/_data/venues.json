@@ -45,6 +45,7 @@
     "certified_date": "2026-06-15",
     "has_en": true,
     "tags": ["自分時間", "一人時間", "居心地", "落ち着く", "静か", "快適", "リラックス", "読書", "ラウンジ", "リフレッシュ", "体験", "自家焙煎機", "一人カフェ", "一人ランチ", "デート", "女子会", "隠れ家", "フルサービス", "おもてなし", "イベント", "交流", "グルテンフリー", "ペット同伴", "店内ペット同伴可", "商談"],
+    "tags_en": ["Me Time", "Solo Time", "Comfort", "Calm", "Quiet", "Comfortable", "Relaxing", "Reading", "Lounge", "Refresh", "Experience", "In-House Roastery", "Solo Cafe", "Solo Lunch", "Date Spot", "Girls' Day Out", "Hidden Gem", "Full Service", "Hospitality", "Events", "Community", "Gluten-Free", "Pet-Friendly", "Pets Welcome Inside", "Business Meetings"],
     "instagram_url": "https://www.instagram.com/green.beanscoffee",
     "amenity_features": ["Wi-Fi", "電源", "禁煙"],
     "smoking_allowed": false,

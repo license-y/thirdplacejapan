@@ -5,6 +5,8 @@ lang: "en"
 ---
 
 {%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
+{%- set gradeLevels = {"certified": 1, "silver": 2, "gold": 3, "platinum": 4, "flagship": 5} -%}
+{%- set thisLevel = gradeLevels[venue.grade_slug] or 0 -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,10 +126,85 @@ lang: "en"
     {{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan
   </p>
 
+  {# Venue photo (only shown when a dedicated image is set — no shared default image reuse) #}
+  {% set hasDedicatedImage = venue.image and venue.image != "/assets/images/main/japan-cafe-interior-hero.webp" %}
+  {% if hasDedicatedImage %}
+  <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
+    <img src="{{ venue.image }}" alt="{{ venue.name_en }} | Third Place Japan" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+  </div>
+  {% endif %}
+
   {# Lead quote (English) #}
   <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
     <p class="font-serif text-base leading-relaxed text-dark"><strong>{{ venue.citation_en }}</strong></p>
   </div>
+
+  {# Venue info card (hours / price / phone + amenity badges) — hidden for TPJ Select #}
+  {% if (venue.opening_hours_display or venue.price_range or venue.telephone) and venue.grade_slug != "select" %}
+  {% set hasRoast = venue.tags and "自家焙煎機" in venue.tags %}
+  {% set hasBeanVarieties = venue.bean_varieties_count %}
+  {% set hasWifiPower = venue.amenity_features and "Wi-Fi" in venue.amenity_features and "電源" in venue.amenity_features %}
+  {% set hasGlutenFree = venue.tags and "グルテンフリー" in venue.tags %}
+  {% set hasPetFriendly = venue.tags and "店内ペット同伴可" in venue.tags %}
+  {% set showNonSmoking = venue.smoking_allowed == false %}
+  {% set hasAmenityBadge = hasRoast or hasBeanVarieties or hasWifiPower or hasGlutenFree or hasPetFriendly or showNonSmoking %}
+  <div class="mb-12 bg-stone-50 rounded-xl px-5 py-4" data-aos="fade-up">
+    <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+      {% if venue.opening_hours_display %}
+      <div class="flex items-center gap-2" style="color:#3D2B1F;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>{{ venue.opening_hours_display }}</span>
+      </div>
+      {% endif %}
+      {% if venue.price_range %}
+      <div class="flex items-center gap-2" style="color:#3D2B1F;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>{{ venue.price_range }}</span>
+      </div>
+      {% endif %}
+      {% if venue.telephone %}
+      <div class="flex items-center gap-2" style="color:#3D2B1F;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12.35 19.79 19.79 0 0 1 1.71 3.72 2 2 0 0 1 3.7 1.54h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:{{ venue.telephone }}" class="hover:text-gold transition-colors">{{ venue.telephone }}</a>
+      </div>
+      {% endif %}
+    </div>
+    {% if hasAmenityBadge %}
+    <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-stone-200">
+      {% if hasRoast %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="coffee" class="w-3.5 h-3.5 shrink-0"></i>In-House Coffee Roaster
+      </span>
+      {% endif %}
+      {% if hasBeanVarieties %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="bean" class="w-3.5 h-3.5 shrink-0"></i>{{ venue.bean_varieties_count }} Bean Varieties
+      </span>
+      {% endif %}
+      {% if hasWifiPower %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="wifi" class="w-3.5 h-3.5 shrink-0"></i>Wi-Fi &amp; Power Outlets
+      </span>
+      {% endif %}
+      {% if hasGlutenFree %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="wheat-off" class="w-3.5 h-3.5 shrink-0"></i>Gluten-Free Options
+      </span>
+      {% endif %}
+      {% if hasPetFriendly %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="paw-print" class="w-3.5 h-3.5 shrink-0"></i>Pets Welcome Inside
+      </span>
+      {% endif %}
+      {% if showNonSmoking %}
+      <span class="flex items-center justify-center gap-1.5 text-xs px-3 py-2 rounded-full bg-white border border-gold/50" style="color:#3D2B1F;">
+        <i data-lucide="cigarette-off" class="w-3.5 h-3.5 shrink-0"></i>Non-Smoking
+      </span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
 
   {# 7-axis scores #}
   <section class="mb-14" data-aos="fade-up">
@@ -153,6 +230,92 @@ lang: "en"
       {% endfor %}
     </div>
   </section>
+
+  {# Radar chart (Platinum and above) #}
+  {% if thisLevel >= 4 %}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-6">7-Axis Radar Chart</p>
+    <div class="flex flex-col items-center gap-4">
+      <div id="radar-chart-container-en" style="width:220px;height:220px;" aria-hidden="true"></div>
+      <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
+        <span class="text-xs text-muted">Comfort <strong class="text-gold">{{ venue.scores.comfort }}</strong></span>
+        <span class="text-xs text-muted">Silence <strong class="text-gold">{{ venue.scores.silence }}</strong></span>
+        <span class="text-xs text-muted">Special <strong class="text-gold">{{ venue.scores.special }}</strong></span>
+        <span class="text-xs text-muted">Story <strong class="text-gold">{{ venue.scores.story }}</strong></span>
+        <span class="text-xs text-muted">Revisit <strong class="text-gold">{{ venue.scores.revisit }}</strong></span>
+        <span class="text-xs text-muted">Record <strong class="text-gold">{{ venue.scores.record }}</strong></span>
+        <span class="text-xs text-muted">Inbound <strong class="text-gold">{{ venue.scores.inbound }}</strong></span>
+      </div>
+    </div>
+    <script>
+    (function() {
+      var scores = [{{ venue.scores.comfort }}, {{ venue.scores.silence }}, {{ venue.scores.special }}, {{ venue.scores.story }}, {{ venue.scores.revisit }}, {{ venue.scores.record }}, {{ venue.scores.inbound }}];
+      var labels = ["Comfort", "Silence", "Special", "Story", "Revisit", "Record", "Inbound"];
+      var cx = 110, cy = 110, r = 80, n = 7;
+      var ns = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", "0 0 220 220");
+      svg.setAttribute("width", "220");
+      svg.setAttribute("height", "220");
+      svg.setAttribute("aria-hidden", "true");
+      [2,4,6,8,10].forEach(function(lv) {
+        var c = document.createElementNS(ns, "circle");
+        c.setAttribute("cx", cx); c.setAttribute("cy", cy);
+        c.setAttribute("r", r * lv / 10);
+        c.setAttribute("fill", "none"); c.setAttribute("stroke", "#e5e0d8"); c.setAttribute("stroke-width", "0.5");
+        svg.appendChild(c);
+      });
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var ln = document.createElementNS(ns, "line");
+        ln.setAttribute("x1", cx); ln.setAttribute("y1", cy);
+        ln.setAttribute("x2", (cx + r * Math.cos(ang)).toFixed(1));
+        ln.setAttribute("y2", (cy + r * Math.sin(ang)).toFixed(1));
+        ln.setAttribute("stroke", "#e5e0d8"); ln.setAttribute("stroke-width", "0.5");
+        svg.appendChild(ln);
+      }
+      var pts = [];
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var sr = r * scores[i] / 10;
+        pts.push((cx + sr * Math.cos(ang)).toFixed(1) + "," + (cy + sr * Math.sin(ang)).toFixed(1));
+      }
+      var poly = document.createElementNS(ns, "polygon");
+      poly.setAttribute("points", pts.join(" "));
+      poly.setAttribute("fill", "rgba(184,150,12,0.15)");
+      poly.setAttribute("stroke", "#B8960C"); poly.setAttribute("stroke-width", "1.5");
+      svg.appendChild(poly);
+      for (var i = 0; i < n; i++) {
+        var ang = (Math.PI * 2 * i / n) - Math.PI / 2;
+        var tx = cx + (r + 20) * Math.cos(ang);
+        var ty = cy + (r + 20) * Math.sin(ang);
+        var txt = document.createElementNS(ns, "text");
+        txt.setAttribute("x", tx.toFixed(1)); txt.setAttribute("y", ty.toFixed(1));
+        txt.setAttribute("text-anchor", "middle"); txt.setAttribute("dominant-baseline", "middle");
+        txt.setAttribute("font-size", "8"); txt.setAttribute("fill", "#888");
+        txt.textContent = labels[i];
+        svg.appendChild(txt);
+      }
+      var container = document.getElementById("radar-chart-container-en");
+      if (container) container.appendChild(svg);
+    })();
+    </script>
+  </section>
+  {% endif %}
+
+  {# Tags (grade-based limit) #}
+  {% if venue.tags_en and venue.tags_en.length %}
+  {%- set maxTagsMap = {"certified": 5, "silver": 10, "gold": 15, "platinum": 20, "flagship": 25} -%}
+  {%- set tagLimit = maxTagsMap[venue.grade_slug] or 5 -%}
+  <section class="mb-14" data-aos="fade-up">
+    <p class="label mb-4">Third Place Tags</p>
+    <div class="flex flex-wrap gap-2">
+      {% for tag in venue.tags_en | head(tagLimit) %}
+      <span class="text-xs px-3 py-1 border border-gold/30 rounded-full text-muted bg-white">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   {% if venue.body_en %}
   <div class="prose" data-aos="fade-up">
