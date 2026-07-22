@@ -1,10 +1,20 @@
 ---
-title: "TPJセレクト ― 気になる居場所たち"
-description: "Third Place Japan編集部がセレクトした、日本全国のサードプレイス。有名・無名を問わず、居場所としての価値で選んでいます。"
+title: "TPJセレクト ― サードプレイス（third place）として気になる居場所たち"
+description: "Third Place Japan編集部が、カフェ・ホテル・スパ・コワーキングなど15業種を問わず選んだ、日本全国のサードプレイス（third place）一覧です。有名・無名を問わず、居場所としての価値だけで選定しています。"
 canonical: "/stories/select/"
 ---
 
-{# BreadcrumbList JSON-LD #}
+{% set published = venues | publishedVenues %}
+{% set flagshipVenues = venues | venuesByGrade('flagship') %}
+{% set selectCount = published.length - flagshipVenues.length %}
+{% set selectFaq = [
+  { q: "TPJセレクトとはどのような施設ですか？", a: "TPJセレクトとは、Third Place Japan（サードプレイスジャパン）編集部が独自の視点で見つけた「いま気になる居場所」です。料理の味やコスパではなく、家でも職場でもない「第三の居場所」＝サードプレイス（third place）としての価値を軸に、カフェ・ホテル・スパ・コワーキングなど業種横断で紹介しています。" },
+  { q: "サードプレイス（third place）とは何ですか？", a: "サードプレイスとは、社会学者レイ・オルデンバーグが提唱した、家（第一の場所）でも職場（第二の場所）でもない、心地よい第三の居場所を指す概念です。Third Place Japanは、この考え方を現代日本の空間に当てはめ、独自の7軸基準で評価・認証しています。" },
+  { q: "TPJセレクトのグレードにはどんな種類がありますか？", a: "TPJセレクトは編集部が申請不要で選ぶ掲載枠で、正式な認証グレードはCertified・Silver・Gold・Platinum・Flagshipの5段階です。Flagshipが最高グレードで、7つの空間基準すべてにおいて卓越したサードプレイス体験を提供する施設に与えられます。" },
+  { q: "TPJセレクトにはどんな業種の施設が掲載されていますか？", a: "カフェ・スペシャルティコーヒー、高級ホテル・ホテルラウンジ、温泉旅館、レストラン、バー、スパ・サウナ、高級サロン、コワーキング、会員制ラウンジ、神社・寺院、リトリート・禅体験、自然・グランピングなど、15業種を横断して掲載しています。業種を問わず「居場所としての価値」があるかどうかで選定しています。" },
+  { q: "TPJセレクトをエリアや業種で絞り込めますか？", a: "はい。掲載施設は都道府県・市区町村・エリアの3階層と、15業種で絞り込んで探せます。" + site.url + "/stories/area/からエリア検索、" + site.url + "/stories/から業種別に閲覧できます。" }
+] %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -17,27 +27,22 @@ canonical: "/stories/select/"
 }
 </script>
 
-{# JSON-LD: ItemList #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Third Place Japan TPJセレクト一覧",
-  "description": "Third Place Japan編集部がセレクトした居場所リスト",
+  "description": "Third Place Japan編集部がサードプレイス（third place）として選出した居場所リスト",
   "url": "{{ site.url }}/stories/select/",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ site.url }}/stories/select/"
-  },
-  "numberOfItems": {{ venues | publishedVenues | length }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}/stories/select/" },
+  "numberOfItems": {{ published.length }},
   "itemListElement": [
-    {% set published = venues | publishedVenues %}
     {% for v in published %}
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
       "name": {{ v.name | dump | safe }},
-      "description": "{{ v.grade }} / {{ v.category }} / {{ v.area_primary.prefecture }}{{ v.area_primary.area }}",
+      "description": {{ (v.grade + " / " + v.category + " / " + v.area_primary.prefecture + v.area_primary.area) | dump | safe }},
       "url": "{{ site.url }}/stories/select/{{ v.slug }}/"
     }{% if not loop.last %},{% endif %}
     {% endfor %}
@@ -45,45 +50,23 @@ canonical: "/stories/select/"
 }
 </script>
 
-{# FAQPage JSON-LD #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {% for item in selectFaq %}
     {
       "@type": "Question",
-      "name": "TPJセレクトとはどのような施設ですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TPJセレクトとは、Third Place Japan（サードプレイスジャパン）編集部が独自の視点で見つけた「いま気になる居場所」です。料理ではなく「いる体験・居場所としての価値」を軸に、カフェ・ホテル・スパ・コワーキングなど業種横断で紹介しています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "TPJセレクトのグレードにはどんな種類がありますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TPJセレクトはCertified・Standard・Silver・Gold・Flagshipの5段階グレード制です。Flagshipが最高グレードで、7つの空間基準すべてにおいて卓越した体験を提供する施設に与えられます。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "TPJセレクトをエリアや業種で絞り込めますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。掲載施設は都道府県・市区町村・エリアの3階層と、15業種（カフェ・ホテル・スパ・コワーキング等）で絞り込んで探せます。{{ site.url }}/stories/area/からエリア検索、{{ site.url }}/stories/から業種別に閲覧できます。"
-      }
-    }
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
   ]
 }
 </script>
 
-{% set published = venues | publishedVenues %}
-{% set flagshipVenues = venues | venuesByGrade('flagship') %}
-{% set selectCount = published.length - flagshipVenues.length %}
-
-<div class="max-w-6xl mx-auto px-6 py-24">
+<div class="max-w-6xl mx-auto px-6 py-24" data-pagefind-body>
 
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
@@ -93,27 +76,26 @@ canonical: "/stories/select/"
 
   <div class="mb-16" data-aos="fade-up">
     <p class="label mb-4">TPJ Select</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4">TPJセレクト ― 気になる居場所たち</h1>
+    <h1 class="font-serif text-4xl font-light text-dark mb-6">TPJセレクト ― サードプレイス（third place）として気になる居場所たち</h1>
     <div class="gold-rule mb-6"></div>
-    <p class="text-sm text-muted max-w-xl text-left md:text-center md:mx-auto">
-      TPJ編集部が、いまいたいと思う場所。<br class="hidden md:block">
-      有名・無名を問わず、居場所としての価値で選んでいます。
+    <p class="text-base leading-relaxed max-w-2xl text-left md:text-center md:mx-auto" style="color:#3D2B1F;">
+      <strong>TPJセレクトは、Third Place Japan（サードプレイスジャパン）編集部が全国から見つけた、家でも職場でもない「第三の居場所」＝サードプレイス（third place）の記録だ。</strong><br class="hidden md:block">
+      カフェ・ホテル・スパ・コワーキングなど15業種を問わず、有名・無名にかかわらず「いる体験・居場所としての価値」だけで選んでいる。
     </p>
   </div>
 
-  {# ── Flagship セクション（GBC単独・最上部固定枠） ── #}
   {% if flagshipVenues.length %}
   <section id="flagship" class="mb-20 scroll-mt-24" data-aos="fade-up">
     <div class="flex items-center gap-3 mb-2 pb-4 border-b border-gold/40">
       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
       <p class="label">Flagship</p>
     </div>
-    <p class="text-xs text-muted mb-8">Third Place Japanが提唱する理想の空間を体現する旗艦店</p>
+    <p class="text-xs text-muted mb-8">Third Place Japanが提唱する理想の空間を体現する、サードプレイス（third place）の旗艦店</p>
     {% for v in flagshipVenues %}
     <a href="/stories/select/{{ v.slug }}/"
        class="flex flex-col md:flex-row bg-white border-2 border-gold/60 hover:border-gold rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
       <div class="w-full h-32 md:w-56 md:h-auto shrink-0 overflow-hidden">
-        <img src="{{ v.image }}" alt="{{ v.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+        <img src="{{ v.image }}" alt="{{ v.name }} | Third Place Japan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
       </div>
       <div class="flex-1 min-w-0 p-4 md:p-6">
         <div class="flex items-center gap-2 mb-2 md:mb-3">
@@ -143,7 +125,6 @@ canonical: "/stories/select/"
   </section>
   {% endif %}
 
-  {# ── TPJセレクト セクション（その他実店舗一覧） ── #}
   {% if selectCount > 0 %}
   <section class="mb-16" data-aos="fade-up">
     <div class="flex items-center justify-between mb-2 pb-4 border-b border-border">
@@ -153,7 +134,7 @@ canonical: "/stories/select/"
       </div>
       <span class="text-xs text-muted border border-border rounded-full px-3 py-1">随時追加中：現在{{ selectCount }}件</span>
     </div>
-    <p class="text-xs text-muted mb-8">TPJ編集部が、いまいたいと思う場所。</p>
+    <p class="text-xs text-muted mb-8">TPJ編集部が、いまいたいと思うサードプレイス（third place）。</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for v in published | reverse %}
       {% if v.grade_slug != 'flagship' %}
@@ -183,17 +164,52 @@ canonical: "/stories/select/"
       {% endif %}
       {% endfor %}
     </div>
-    {# グレード凡例（下部） #}
+
     <div class="flex flex-wrap gap-2 items-center mt-10 pt-6 border-t border-border">
       <span class="text-xs text-muted mr-1">認証グレード：</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
-      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
       <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#1C1C1C;border-color:#1C1C1C;">Flagship</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
+      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
       <a href="/stories/about/certification-grades/" class="text-xs text-muted hover:text-gold transition-colors ml-auto underline underline-offset-2">グレードの違いを見る →</a>
     </div>
   </section>
   {% endif %}
+
+  <section class="mb-16" data-aos="fade-up">
+    <p class="label mb-2">全15業種から探す</p>
+    <p class="text-xs text-muted mb-8">カフェ・ホテル・スパ・コワーキングなど、業種を問わずサードプレイス（third place）としての価値で選定しています。</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {% for cat in categories %}
+      <a href="/stories/{{ cat.slug }}/" class="flex items-center justify-between gap-2 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold transition-colors group">
+        <span class="text-dark group-hover:text-gold transition-colors">{{ cat.name_short }}</span>
+        <span class="text-xs text-muted shrink-0">{{ cat.name_en }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="mb-16 max-w-2xl mx-auto" data-aos="fade-up">
+    <p class="label mb-6">よくある質問</p>
+    <div class="space-y-3">
+      {% for item in selectFaq %}
+      <details class="bg-white rounded-xl shadow-sm border border-border">
+        <summary class="px-5 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between gap-3" style="color:#3D2B1F;">
+          <span>{{ item.q }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">{{ item.a }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="max-w-2xl mx-auto text-center" data-aos="fade-up">
+    <p class="label mb-4">まとめ</p>
+    <p class="text-sm leading-relaxed" style="color:#3D2B1F;">
+      TPJセレクトの核心は、業種や知名度ではなく「そこにいる体験」だけでサードプレイス（third place）を選ぶ、という一点にある。カフェ・ホテル・スパ・コワーキングなど15業種を横断し、都道府県・市区町村・エリア単位でも探せる。もっと厳格な基準を知りたい方は<a href="/stories/about/certification-grades/" class="text-gold hover:underline">TPJ認証グレードの違い</a>、サードプレイスという概念そのものを学びたい方は<a href="/stories/about/what-is-third-place/" class="text-gold hover:underline">サードプレイスとは何か</a>も参照してほしい。Third Place Japan（サードプレイスジャパン）は、この一覧を7軸評価基準に基づいて継続的に更新している。
+    </p>
+  </section>
 
 </div>
