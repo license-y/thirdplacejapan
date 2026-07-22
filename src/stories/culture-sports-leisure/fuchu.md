@@ -2,7 +2,7 @@
 layout: article.njk
 title: "府中市のサードプレイスガイド：文化・スポーツ・レジャー編。競馬場と門前町と学びの杜が同居する、「観る」文化の府"
 description: "府中市は、競馬場の観戦文化・神社の門前町・研究機関が同じ市域に同居する多摩地域随一の要衝だ。自ら参加する渋谷区とは異なる、「観る」サードプレイス（third place）としての文化・レジャー体験をTPJが7軸で読み解く。"
-date: 2026-07-22
+date: 2026-07-21
 tags:
   - articles
 category_slug: culture-sports-leisure

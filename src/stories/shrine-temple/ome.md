@@ -2,7 +2,7 @@
 layout: article.njk
 title: "青梅市のサードプレイスガイド：神社・寺院編。山そのものを拝む、修験の系譜が息づく信仰の峰"
 description: "青梅市の神社仏閣は、生活密着型の台東区とも学業成就の文京区とも異なり、山そのものを信仰対象とする山岳信仰・修験道の系譜に連なる。峰を登ることが祈りになる、サードプレイス（third place）としての神社仏閣を7軸で読み解く。"
-date: 2026-07-22
+date: 2026-07-19
 tags:
   - articles
 category_slug: shrine-temple
