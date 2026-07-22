@@ -17,8 +17,8 @@ lang: "en"
   "url": "{{ site.url }}/en/stories/select/{{ venue.slug }}/",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "{{ venue.area_primary.area }}",
-    "addressRegion": "{{ venue.area_primary.prefecture }}",
+    "addressLocality": "{{ venue.area_primary.area_en or venue.area_primary.area }}",
+    "addressRegion": "{{ venue.area_primary.prefecture_en or venue.area_primary.prefecture }}",
     "addressCountry": "JP"
   },
   "geo": {
@@ -50,8 +50,8 @@ lang: "en"
     "name": {{ venue.name_en | dump | safe }},
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": {{ venue.area_primary.area | dump | safe }},
-      "addressRegion": {{ venue.area_primary.prefecture | dump | safe }},
+      "addressLocality": {{ (venue.area_primary.area_en or venue.area_primary.area) | dump | safe }},
+      "addressRegion": {{ (venue.area_primary.prefecture_en or venue.area_primary.prefecture) | dump | safe }},
       "addressCountry": "JP"
     }
   },
@@ -115,7 +115,7 @@ lang: "en"
 
   <div class="flex items-center gap-4 mb-6" data-aos="fade-up">
     <span class="grade-badge">{{ venue.grade }}</span>
-    <span class="label">{{ venue.category }}</span>
+    <span class="label">{{ venue.category_en or venue.category }}</span>
   </div>
 
   <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-4 leading-tight" data-aos="fade-up">
@@ -123,7 +123,7 @@ lang: "en"
   </h1>
 
   <p class="text-sm text-muted mb-10" data-aos="fade-up">
-    {{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan
+    {{ venue.area_primary.area_en or venue.area_primary.area }}, {{ venue.area_primary.prefecture_en or venue.area_primary.prefecture }}, Japan
   </p>
 
   {# Venue photo (only shown when a dedicated image is set — no shared default image reuse) #}
@@ -344,8 +344,10 @@ lang: "en"
   {% endif %}
 
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
-    <p>{{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan</p>
-    {% if venue.nearest_stations and venue.nearest_stations.length %}
+    <p>{{ venue.area_primary.area_en or venue.area_primary.area }}, {{ venue.area_primary.prefecture_en or venue.area_primary.prefecture }}, Japan</p>
+    {% if venue.nearest_stations_en and venue.nearest_stations_en.length %}
+    <p>Nearest Station: {{ venue.nearest_stations_en | join(" / ") }}</p>
+    {% elif venue.nearest_stations and venue.nearest_stations.length %}
     <p>Nearest Station: {{ venue.nearest_stations | join(" / ") }}</p>
     {% endif %}
     {% if venue.opening_hours_display %}

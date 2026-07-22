@@ -11,17 +11,21 @@
     "grade": "Flagship",
     "grade_slug": "flagship",
     "category": "カフェ・スペシャルティコーヒー",
+    "category_en": "Café & Specialty Coffee",
     "category_slug": "cafe-specialty-coffee",
     "area_primary": {
       "prefecture_slug": "tokyo",
       "prefecture": "東京都",
+      "prefecture_en": "Tokyo",
       "city_slug": "shibuya-ku",
       "city": "渋谷区",
       "area_slug": "sendagaya",
-      "area": "千駄ヶ谷"
+      "area": "千駄ヶ谷",
+      "area_en": "Sendagaya"
     },
     "area_secondary": [],
     "nearest_stations": ["北参道駅", "千駄ヶ谷駅"],
+    "nearest_stations_en": ["Kitasando Station", "Sendagaya Station"],
     "axes_primary": "五感品質・素材",
     "axes_primary_slug": "comfort",
     "axes_secondary": ["静けさの再現", "ストーリー継承"],
