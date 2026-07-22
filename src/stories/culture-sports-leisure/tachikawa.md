@@ -122,3 +122,4 @@ lang: ja
 - 渋谷区の参加型文化との対比は[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)も合わせて参照
 - 江東区の新旧の同居との対比は[江東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/koto/)も参考になる
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
+- 基地跡地の単一の巨大再開発とは異なる、暮らしの延長にあるレジャーの隣接市は[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)で解説している
