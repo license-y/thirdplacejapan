@@ -7,7 +7,7 @@ pagination:
 permalink: "/stories/select/{{ venue.slug }}/"
 layout: venue.njk
 eleventyComputed:
-  title: "{{ venue.name }}（{{ venue.area_primary.prefecture | replace('都','') | replace('道','') | replace('府','') | replace('県','') }}・{{ venue.area_primary.city | replace('区','') | replace('市','') | replace('町','') | replace('村','') }}）| {{ venue.category }}"
+  title: "{% if venue.title_override %}{{ venue.title_override }}{% else %}{{ venue.name }}（{{ venue.area_primary.prefecture | replace('都','') | replace('道','') | replace('府','') | replace('県','') }}・{{ venue.area_primary.city | replace('区','') | replace('市','') | replace('町','') | replace('村','') }}）| {{ venue.category }}{% endif %}"
   title_suffix: "Third Place Japan"
   description: "{{ venue.citation }}"
   hreflang_ja: "/stories/select/{{ venue.slug }}/"
