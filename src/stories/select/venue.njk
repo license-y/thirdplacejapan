@@ -7,9 +7,9 @@ pagination:
 permalink: "/stories/select/{{ venue.slug }}/"
 layout: venue.njk
 eleventyComputed:
-  title: "{% if venue.title_override %}{{ venue.title_override }}{% else %}{{ venue.name }}（{{ venue.area_primary.prefecture | replace('都','') | replace('道','') | replace('府','') | replace('県','') }}・{{ venue.area_primary.city | replace('区','') | replace('市','') | replace('町','') | replace('村','') }}）| {{ venue.category }}{% endif %}"
+  title: "{% if venue.title_override %}{{ venue.title_override | safe }}{% else %}{{ venue.name | safe }}（{{ venue.area_primary.prefecture | replace('都','') | replace('道','') | replace('府','') | replace('県','') }}・{{ venue.area_primary.city | replace('区','') | replace('市','') | replace('町','') | replace('村','') }}）| {{ venue.category | safe }}{% endif %}"
   title_suffix: "Third Place Japan"
-  description: "{{ venue.citation }}"
+  description: "{{ venue.citation | safe }}"
   hreflang_ja: "/stories/select/{{ venue.slug }}/"
   hreflang_en: "{% if venue.has_en %}/en/stories/select/{{ venue.slug }}/{% endif %}"
   og_image: "{{ venue.image }}"

@@ -4,6 +4,7 @@ og_type: "article"
 lang: "en"
 ---
 
+{%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,6 +38,56 @@ lang: "en"
 }
 </script>
 
+{# Review + reviewRating JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": {{ venue.name_en | dump | safe }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ venue.area_primary.area | dump | safe }},
+      "addressRegion": {{ venue.area_primary.prefecture | dump | safe }},
+      "addressCountry": "JP"
+    }
+  },
+  "author": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": {{ gradeNums[venue.grade] or 1 }},
+    "bestRating": 5,
+    "worstRating": 1,
+    "description": "TPJ Certification Grade: {{ venue.grade }}"
+  },
+  "reviewBody": {{ venue.citation_en | dump | safe }}
+}
+</script>
+
+{# FAQPage JSON-LD (venue.faq_en) #}
+{% if venue.faq_en and venue.faq_en.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in venue.faq_en %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +95,7 @@ lang: "en"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/en/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "TPJ Select", "item": "{{ site.url }}/en/stories/select/" },
+    { "@type": "ListItem", "position": 3, "name": "TPJ Select", "item": "{{ site.url }}/stories/select/" },
     { "@type": "ListItem", "position": 4, "name": "{{ venue.name_en }}", "item": "{{ site.url }}/en/stories/select/{{ venue.slug }}/" }
   ]
 }
@@ -55,7 +106,7 @@ lang: "en"
   <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="Breadcrumb">
     <a href="/en/stories/" class="hover:text-gold transition-colors">Stories</a>
     <span class="text-border">／</span>
-    <a href="/en/stories/select/" class="hover:text-gold transition-colors">TPJ Select</a>
+    <a href="/stories/select/" class="hover:text-gold transition-colors">TPJ Select</a>
     <span class="text-border">／</span>
     <span>{{ venue.name_en }}</span>
   </nav>
@@ -73,9 +124,9 @@ lang: "en"
     {{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan
   </p>
 
-  {# 引用用一文（英語）#}
+  {# Lead quote (English) #}
   <div class="border-l-2 border-gold pl-6 mb-12 py-1" data-aos="fade-up">
-    <p class="font-serif text-base leading-relaxed text-dark">{{ venue.citation_en }}</p>
+    <p class="font-serif text-base leading-relaxed text-dark"><strong>{{ venue.citation_en }}</strong></p>
   </div>
 
   {# 7-axis scores #}
@@ -103,24 +154,58 @@ lang: "en"
     </div>
   </section>
 
+  {% if venue.body_en %}
   <div class="prose" data-aos="fade-up">
-    {{ content | safe }}
+    {{ venue.body_en | safe }}
   </div>
+  {% endif %}
+
+  {# FAQ (venue.faq_en) #}
+  {% if venue.faq_en and venue.faq_en.length %}
+  <section class="mt-14 mb-2" data-aos="fade-up">
+    <p class="label mb-6">Frequently Asked Questions</p>
+    <div class="space-y-3">
+      {% for item in venue.faq_en %}
+      <details class="bg-white rounded-xl shadow-sm border border-border">
+        <summary class="px-5 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between gap-3" style="color:#3D2B1F;">
+          <span>{{ item.q }}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">
+          {{ item.a }}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
     <p>{{ venue.area_primary.area }}, {{ venue.area_primary.prefecture }}, Japan</p>
     {% if venue.nearest_stations and venue.nearest_stations.length %}
     <p>Nearest Station: {{ venue.nearest_stations | join(" / ") }}</p>
     {% endif %}
+    {% if venue.opening_hours_display %}
+    <p>Hours: {{ venue.opening_hours_display }}</p>
+    {% endif %}
+    {% if venue.price_range %}
+    <p>Price Range: {{ venue.price_range }}</p>
+    {% endif %}
+    {% if venue.telephone %}
+    <p>Tel: {{ venue.telephone }}</p>
+    {% endif %}
     {% if venue.url %}
     <p><a href="{{ venue.url }}" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Official Website ↗</a></p>
+    {% endif %}
+    {% if venue.maps_url %}
+    <p><a href="{{ venue.maps_url }}" target="_blank" rel="noopener" class="hover:text-gold transition-colors">View on Map ↗</a></p>
     {% endif %}
     <p class="pt-2 text-xs">Third Place Japan Certified: {{ venue.certified_date }}</p>
   </aside>
 
   <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
     <p class="text-sm text-muted">
-      This venue holds Third Place Japan certification.<br>
+      This venue is certified by Third Place Japan as a {{ venue.grade }}-grade third place.<br>
       <a href="/stories/about/certification-grades/" class="text-gold hover:underline">Learn about the certification</a>
     </p>
   </div>

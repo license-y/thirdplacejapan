@@ -8,8 +8,9 @@ permalink: "/en/stories/select/{{ venue.slug }}/"
 layout: venue-en.njk
 lang: "en"
 eleventyComputed:
-  title: "{{ venue.name_en }}"
-  description: "{{ venue.citation_en }}"
+  title: "{% if venue.title_override_en %}{{ venue.title_override_en | safe }}{% else %}{{ venue.name_en | safe }}{% endif %}"
+  title_suffix: "Third Place Japan"
+  description: "{{ venue.citation_en | safe }}"
   hreflang_ja: "/stories/select/{{ venue.slug }}/"
   hreflang_en: "/en/stories/select/{{ venue.slug }}/"
   og_image: "{{ venue.image }}"
