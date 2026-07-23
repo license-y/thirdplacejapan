@@ -10,6 +10,16 @@ og_type: "article"
 {# LocalBusiness @type（servesCuisineはFoodEstablishment系のみが持てるプロパティのため業種で分岐。venue.njkと同じマッピング） #}
 {%- set foodEstablishmentTypes = {"cafe-specialty-coffee": "CafeOrCoffeeShop", "bar-whisky-cocktail": "BarOrPub"} -%}
 {%- set businessType = (foodEstablishmentTypes[v.category_slug] if v else none) or "LocalBusiness" -%}
+{# 取材根拠（venue.njkと同じgrade_slug別マッピング。TPJセレクトは現地訪問を主張しない） #}
+{%- set sourcingBasisText = {
+  "select": "編集部が発掘した、行ってみたいサードプレイス",
+  "certified": "公開情報に基づく編集部の基礎確認",
+  "silver": "公式情報・資料・ヒアリングに基づく評価",
+  "gold": "覆面調査員による複数回の現地訪問に基づく評価",
+  "platinum": "複数チームによる覆面調査・現地訪問に基づく評価",
+  "flagship": "覆面調査員の現地訪問と編集部の最終審査に基づく評価"
+} -%}
+{%- set articleSourcingBasis = (sourcingBasisText[v.grade_slug] if v else none) or sourcingBasisText["select"] -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -242,6 +252,7 @@ og_type: "article"
         {% if date %}<time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>{% endif %}
         {% if v %}<span class="ml-3">認証取得：{{ v.certified_date }}</span>{% endif %}
         <a href="/about-company/#editorial-team" class="ml-3 hover:text-gold transition-colors">サードプレイスジャパン編集部</a>
+        <span class="ml-3">{{ articleSourcingBasis }}</span>
       </p>
 
       {# サムネイル #}

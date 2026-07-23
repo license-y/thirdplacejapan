@@ -7,6 +7,17 @@ lang: "en"
 {%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
 {%- set gradeLevels = {"certified": 1, "silver": 2, "gold": 3, "platinum": 4, "flagship": 5} -%}
 {%- set thisLevel = gradeLevels[venue.grade_slug] or 0 -%}
+
+{# Sourcing basis by grade_slug - TPJ Select does not claim an on-site visit #}
+{%- set sourcingBasisText = {
+  "select": "Discovered by our editorial team as a place worth visiting",
+  "certified": "Based on the editorial team's review of publicly available information",
+  "silver": "Based on official materials, documents, and interviews",
+  "gold": "Based on multiple in-person visits by an incognito inspector",
+  "platinum": "Based on incognito inspections and in-person visits by multiple teams",
+  "flagship": "Based on incognito in-person visits and final editorial review"
+} -%}
+{%- set venueSourcingBasis = sourcingBasisText[venue.grade_slug] or sourcingBasisText["select"] -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -366,7 +377,7 @@ lang: "en"
     {% if venue.maps_url %}
     <p><a href="{{ venue.maps_url }}" target="_blank" rel="noopener" class="hover:text-gold transition-colors">View on Map ↗</a></p>
     {% endif %}
-    <p class="pt-2 text-xs">Third Place Japan Certified: {{ venue.certified_date }} | <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">Third Place Japan Editorial Team</a></p>
+    <p class="pt-2 text-xs">Third Place Japan Certified: {{ venue.certified_date }} | <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">Third Place Japan Editorial Team</a> | {{ venueSourcingBasis }}</p>
   </aside>
 
   <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
