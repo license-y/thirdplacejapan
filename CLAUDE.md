@@ -1564,6 +1564,53 @@ eleventyConfig.addFilter("selectLang", (array, lang) =>
 - 新しい食・飲料系カテゴリを追加する場合（レストラン等）は `foodEstablishmentTypes` にマッピングを追加する（例：`"restaurant-dining": "Restaurant"`）。追加前に対象の型がSchema.orgで現行有効か（廃止されていないか）を確認すること
 - `hasMenu`・`servesCuisine` 以外の食関連プロパティを追加する場合も、必ず対象の `@type` がそのプロパティをサポートするか事前に確認する
 
+## ✅ author/editor（E-E-A-T）と取材根拠の表示ルール（2026-07-23追加）
+
+記事・施設ページのJSON-LD `author` と、可視のbyline行（「サードプレイスジャパン編集部」表記）には、以下を必ずセットで実装する。
+
+**JSON-LD（Article/BlogPosting/Review 共通）**
+```json
+"author": {
+  "@type": "Organization",
+  "name": "サードプレイスジャパン編集部",
+  "url": "{{ site.url }}/about-company/#editorial-team",
+  "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。"
+},
+"editor": {
+  "@type": "Person",
+  "name": "加瀬俊幸",
+  "jobTitle": "Third Place Japan編集長",
+  "url": "{{ site.url }}/about-company/#editor"
+}
+```
+- `author`は引き続き`Organization`（実態が編集チームによる制作のため）。個人が単独執筆したかのような`Person`型authorへの変更は行わない
+- `editor`（Person）を新設し、実在する編集責任者（加瀬俊幸）をGoogleが認識できるようにする。プロフィール（実名・経歴・取材方針）は`/about-company/`に既存
+- 対象テンプレート：`article.njk`・`article-certified.njk`・`article-area.njk`・`venue.njk`・`venue-en.njk`
+
+**可視byline（記事・施設ページ本文）**
+- 「サードプレイスジャパン編集部」の表記は必ず`/about-company/#editorial-team`へのリンクにする（プレーンテキストのまま放置しない）
+- `category_slug: about`記事（サードプレイスガイド）は既存ルール通り**日付は表示しない**が、編集部リンクは表示する（evergreenな見せ方を維持しつつ著者帰属だけ明示する設計）
+
+**取材根拠（sourcing basis）の grade_slug 別文言（venue.njk・venue-en.njk・article-certified.njk）**
+
+Googleおよび読者に「何を根拠にこの評価を書いたか」を正確に伝えるため、byline行の末尾に`grade_slug`別の一文を追加する。**誇大表現禁止ルールと同様、現地訪問を伴わないグレードに「覆面調査員」等の訪問を示唆する文言を使わない。**
+
+| grade_slug | 文言 |
+|---|---|
+| `select`（TPJセレクト） | 「編集部が発掘した、行ってみたいサードプレイス」 |
+| `certified` | 「公開情報に基づく編集部の基礎確認」 |
+| `silver` | 「公式情報・資料・ヒアリングに基づく評価」 |
+| `gold` | 「覆面調査員による複数回の現地訪問に基づく評価」 |
+| `platinum` | 「複数チームによる覆面調査・現地訪問に基づく評価」 |
+| `flagship` | 「実証店舗として、開業時から店舗と伴走した継続的な検証に基づく評価」 |
+
+**🚨 `flagship`の文言は「実証店舗」を前提にした特別な表現である点に注意（絶対厳守）🚨**
+
+CLAUDE.mdの用語定義上、**実証店舗はFlagshipの部分集合であり、すべてのFlagshipが実証店舗とは限らない**（「『実証店舗』と『TPJ認証』の関係」セクション参照）。2026-07-23時点ではFlagship施設がGreen Beans Coffee（実証店舗）1件のみのため上記の文言で正確だが、**将来「実証店舗ではないFlagship施設」を追加する場合は、この文言をそのまま流用せず、Gold/Platinumと同様の「覆面調査員による複数回の現地訪問」系の文言に個別で差し替えること**。新しいFlagship施設を追加する際は、`venue.njk`・`venue-en.njk`・`article-certified.njk`の`sourcingBasisText`辞書（`flagship`キー）を必ず確認し、対象施設が実際に実証店舗としての伴走関係にあるかを判断してから文言を決定する。
+
+**ピラー記事・エリア記事（`article.njk`・`article-area.njk`）**
+- 店名を出さない条件描写型の記事（CLAUDE.md「TPJ ピラー記事 制作ルール」参照）のため、「編集部による地域情報の調査・編集に基づく記事」を固定文言として使う。個別施設への現地取材を主張する文言は使わない
+
 ## ✅ 認証施設の Review + reviewRating（venue.njk 必須）
 
 認証店舗詳細ページには `Review` JSON-LD が必要（Google リッチリザルト対象）。
@@ -2088,6 +2135,40 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 ---
 
 # 実装ログ
+
+## 2026-07-23
+
+### TPJセレクト一覧FAQのリンク切れ修正・内部リンク/AEO強化、titleタグ・hreflang・E-E-A-Tの外部指摘対応
+
+**背景**：外部レビューから4点の指摘（①構造化データの実装状況確認、②トップページtitleタグの検索意図との乖離、③hreflangの未確認、④著者・E-E-A-T情報の薄さ）を受け、順に検証・対応した。すべて「指摘の言葉を鵜呑みにせず、実際のソース・ビルド結果で裏取りしてから対応する」方針で進めた。
+
+**① 構造化データの実装状況確認・強化**
+- FAQPage・BreadcrumbList・Article・LocalBusiness/Review/AggregateRatingは全テンプレートで実装済みと確認
+- ただし`article-certified.njk`の`itemReviewed.@type`が常に固定`"LocalBusiness"`のまま`servesCuisine`（FoodEstablishment系専用プロパティ）を出力しており、Schema.org警告の原因になっていた（`venue.njk`側は2026-07-09に同種の問題を修正済みだったが、記事側テンプレートには未反映だった）。`venue.njk`と同じ`foodEstablishmentTypes`／`businessType`マッピングを追加して解消
+- `dateModified`が実質機能していない問題を発見：`modified`frontmatterフィールドが1記事も設定されておらず、全記事の`dateModified`が常に`datePublished`と同値になっていた。`modified`フィールドの運用ルールを新設し、`article-area.njk`にも同フィールドのフォールバックを追加（既存は`article.njk`・`article-certified.njk`のみ対応済みだった）
+
+**② トップページ（`/stories/`）のtitleタグ修正**
+- title「場所について、読む。」がH1「日本のサードプレイスを知る」・meta descriptionの「日本のサードプレイスを探す」と乖離していたため、「日本のサードプレイスを探す」に統一
+
+**③ hreflangの自己参照バグ修正**
+- JA/EN双方に存在する記事21ペア全件で、自己参照タグ（`hreflang="ja"`が自分自身を指すタグ等）が欠落し、相手言語への一方向ポインタのみになっていた（Googleのhreflang仕様違反）
+- 加えて`article.njk`が同内容のタグを`<body>`内に重複出力しており、`<head>`外のため無効な記述だった
+- `base.njk`側のロジックを自己参照込みに統一し、`article.njk`側の重複ブロックを削除
+
+**④ 著者・E-E-A-T情報の強化**（複数ラウンドに分けて対応）
+1. JSON-LD `author`（Organization）に加えて`editor`（Person: 加瀬俊幸／編集長）を新設。`author.url`もサイトトップから編集部プロフィール（`/about-company/#editorial-team`）に変更。対象：`article.njk`・`article-certified.njk`・`article-area.njk`・`venue.njk`・`venue-en.njk`
+2. 記事本文・施設ページの可視byline「サードプレイスジャパン編集部」をプロフィールページへのリンクに変更。フッターへの同種リンク新設は一度実施したが、ユーザー判断で撤回・削除
+3. `category_slug: about`記事14本（サードプレイスガイド）は日付・著者行自体が非表示という既存設計だったため著者情報が皆無だった。「evergreenな見せ方」を維持するため**日付は表示せず**、編集部リンクのみの行を新設
+4. 施設ページ（`venue.njk`/`venue-en.njk`）は元々「編集部」の可視テキストが一切存在しなかった（JSON-LDのみ）。掲載日表示の行にbylineリンクを追加
+5. **取材根拠（sourcing basis）をgrade_slug別に明示**：当初「TPJセレクト・認証施設は一律で覆面調査員による現地取材」という文言案を提示したが、ユーザーから「TPJセレクトは行ってみたい施設であり訪問実績ではない」と事実訂正を受け、根本的に設計し直した。CLAUDE.mdの既存ルール（`#grades`テーブルの審査プロセス表現ルール：Certified/Silverは覆面調査を行わない）とも整合させ、grade_slug別の6パターンに整理
+6. **さらにユーザーから「GBCは実証店舗であり、Flagship向け文言『覆面調査員の現地訪問』は実態と異なるのでは」と再度の事実確認**を受け、Flagship（＝現状GBCのみ）向けの文言を「実証店舗として、開業時から店舗と伴走した継続的な検証に基づく評価」に修正。この経緯から、`flagship`の文言が「実証店舗」を前提にした特別なものであり、将来的に非・実証店舗のFlagship施設が追加された場合は再修正が必要という注意点が判明した
+7. 「執筆者が実質1名体制であること」はGoogleのE-E-A-Tが問うのは人数ではなく実在の専門性・経験の有無であるため、実名プロフィール・経歴・取材根拠の明示により対応済みと判断しクローズ。「プロフィールに顔写真・外部実績（登壇・寄稿・資格等）がない」点は実データが必要なため未着手のまま残す
+
+**検証方法**：全ラウンドで`npm run build`後、サイト全体（`public/stories/`・`public/en/stories/`配下）のJSON-LDを機械的に`JSON.parse`し、最終的に2,091ブロック・エラー0件を確認。hreflang修正後は21ペア全件で自己参照＋相互リンク＋x-defaultが`<head>`内に揃うことを確認。
+
+**ルール化**：「JSON-LD実装ルール」セクションに「author/editor（E-E-A-T）と取材根拠の表示ルール」を新規追加し、grade_slug別文言表と、flagship文言が実証店舗を前提にしている旨の注意書きを明記した。「フロントマターのテンプレート」に`modified`フィールドのルールを追加済み（本ログの③より前の対応、詳細は該当セクション参照）。
+
+---
 
 ## 2026-07-22
 
