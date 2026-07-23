@@ -22,10 +22,17 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ site.url }}{% if canonical %}{{ canonical }}{% else %}{{ page.url }}{% endif %}">
 
-  <!-- hreflang -->
-  {% if hreflang_ja %}<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ hreflang_ja }}">{% endif %}
-  {% if hreflang_en %}<link rel="alternate" hreflang="en" href="{{ site.url }}{{ hreflang_en }}">{% endif %}
-  {% if hreflang_ja and hreflang_en %}<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ hreflang_ja }}">{% endif %}
+  <!-- hreflang: 自己参照＋対訳版への相互リンク（langフロントマターに応じて自己言語を判定） -->
+  {% if hreflang_ja or hreflang_en %}
+  <link rel="alternate" hreflang="{{ lang or 'ja' }}" href="{{ site.url }}{{ page.url }}">
+  {% if lang == "en" %}
+  {% if hreflang_ja %}<link rel="alternate" hreflang="ja" href="{{ site.url }}{{ hreflang_ja }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ hreflang_ja }}">{% endif %}
+  {% else %}
+  {% if hreflang_en %}<link rel="alternate" hreflang="en" href="{{ site.url }}{{ hreflang_en }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">{% endif %}
+  {% endif %}
+  {% endif %}
 
   <!-- OGP -->
   <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ title_suffix or "Third Place Japan Stories" }}">
