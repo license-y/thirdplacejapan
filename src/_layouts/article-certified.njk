@@ -7,6 +7,9 @@ og_type: "article"
 
 {# Article + LocalBusiness JSON-LD #}
 {%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
+{# LocalBusiness @type（servesCuisineはFoodEstablishment系のみが持てるプロパティのため業種で分岐。venue.njkと同じマッピング） #}
+{%- set foodEstablishmentTypes = {"cafe-specialty-coffee": "CafeOrCoffeeShop", "bar-whisky-cocktail": "BarOrPub"} -%}
+{%- set businessType = (foodEstablishmentTypes[v.category_slug] if v else none) or "LocalBusiness" -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +52,7 @@ og_type: "article"
     "name": "サードプレイス"
   }{% if v %},
   "itemReviewed": {
-    "@type": "LocalBusiness",
+    "@type": {{ businessType | dump | safe }},
     "name": {{ v.name | dump | safe }},
     "description": {{ v.citation | dump | safe }},
     "address": {
@@ -63,8 +66,8 @@ og_type: "article"
       "@type": "GeoCoordinates",
       "latitude": {{ v.lat }},
       "longitude": {{ v.lng }}
-    },
-    "servesCuisine": "{{ v.category }}",
+    }{% if businessType != "LocalBusiness" %},
+    "servesCuisine": {{ v.category | dump | safe }}{% endif %},
     "additionalProperty": [
       {% if v.scores.comfort is defined %}{
         "@type": "PropertyValue",

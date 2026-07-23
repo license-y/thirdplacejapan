@@ -949,6 +949,19 @@ thumbnail: /assets/images/articles/xxx.jpg
 - 上限160字：Google SERPで途切れずに表示される一般的な上限の目安
 - 150〜160字に収まらない場合は、地名・固有名詞は残しつつ形容表現（“a single”“three distinct”等の冗長な修飾）を削って調整する
 
+**📌 `modified`（更新日）フィールドのルール（2026-07-23新設）**
+
+既存記事の本文・FAQ・内部リンク等を編集した際は、frontmatterに`modified: YYYY-MM-DD`（編集日）を追記・更新すること。
+
+```markdown
+modified: 2026-07-23
+```
+
+- 任意フィールド。設定しない場合、JSON-LDの`dateModified`は`date`（公開日）と同じ値のまま出力され続ける
+- `article.njk`・`article-certified.njk`・`article-area.njk`のJSON-LDで`"dateModified": "{{ modified | dateISO if modified else date | dateISO }}"`として自動反映される（テンプレート変更不要）
+- 誤字修正など軽微な変更では不要。本文の追記・内部リンクの追加・FAQの追加など、内容に実質的な変更があった場合に設定する
+- **発見の経緯**：2026-07-23時点で`modified`を設定している記事が0件だったため、全記事の`dateModified`が常に`datePublished`と同じ値で出力されており、検索エンジン・AIに「一度も更新されていない記事」と認識される状態が続いていた
+
 **🚨 `category_slug` は必須フィールド（絶対に省略しない）🚨**
 
 - カテゴリページ（`/stories/{slug}/`）への記事表示は `category_slug` で制御される

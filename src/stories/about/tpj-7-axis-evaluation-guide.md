@@ -3,6 +3,7 @@ layout: article.njk
 title: "TPJ7軸評価基準とは？サードプレイスを見極める7つの視点【完全ガイド】"
 description: TPJ独自の7軸評価基準——居心地・静けさ・特別感・ストーリー・再訪価値・記録性・インバウンド適性を、判定の目安と具体例つきで解説します。日本各地のサードプレイスを評価する、TPJ認証とセレクトに共通する土台となる仕組みを紹介します。
 date: 2026-07-20
+modified: 2026-07-23
 category_slug: about
 area_name: 東京
 thumbnail: "/assets/images/articles/traditional-japanese-shoji-entrance-symmetry.webp"
