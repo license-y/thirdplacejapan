@@ -21,7 +21,13 @@ og_type: "article"
   "author": {
     "@type": "Organization",
     "name": "サードプレイスジャパン編集部",
-    "url": "{{ site.url }}"
+    "url": "{{ site.url }}/about-company/#editorial-team"
+  },
+  "editor": {
+    "@type": "Person",
+    "name": "加瀬俊幸",
+    "jobTitle": "Third Place Japan編集長",
+    "url": "{{ site.url }}/about-company/#editor"
   },
   "publisher": {
     "@type": "Organization",
@@ -121,7 +127,7 @@ og_type: "article"
       {% if date %}
       <p class="text-xs text-muted mb-10" data-aos="fade-up">
         <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
-        <span class="ml-3">サードプレイスジャパン編集部</span>
+        <a href="/about-company/#editorial-team" class="ml-3 hover:text-gold transition-colors">サードプレイスジャパン編集部</a>
       </p>
       {% endif %}
 

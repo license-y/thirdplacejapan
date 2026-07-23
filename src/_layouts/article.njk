@@ -23,8 +23,14 @@ og_type: "article"
   "author": {
     "@type": "Organization",
     "name": "サードプレイスジャパン編集部",
-    "url": "{{ site.url }}",
+    "url": "{{ site.url }}/about-company/#editorial-team",
     "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。"
+  },
+  "editor": {
+    "@type": "Person",
+    "name": "加瀬俊幸",
+    "jobTitle": "Third Place Japan編集長",
+    "url": "{{ site.url }}/about-company/#editor"
   },
   "publisher": {
     "@type": "Organization",
@@ -183,7 +189,7 @@ og_type: "article"
       {% if date and category_slug != "about" %}
       <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-12 text-xs text-muted" data-aos="fade-up">
         <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
-        <span>サードプレイスジャパン編集部</span>
+        <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">サードプレイスジャパン編集部</a>
         {% if area_slug %}
         {% set aInfo = area_slug | areaInfo %}
         {% if aInfo %}
