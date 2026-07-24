@@ -25,10 +25,10 @@ layout: area.njk
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "{{ item.city.name }}でサードプレイスとして認証された場所はどこですか？",
+      "name": "{{ item.city.name }}でThird Place Japanがセレクトした場所はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}のThird Place Japanセレクト店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）で認証された施設を掲載しています。"
+        "text": "{{ item.city.name }}のThird Place Japanセレクト店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）でセレクトした施設を掲載しています。"
       }
     },
     {
@@ -49,7 +49,7 @@ layout: area.njk
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "{{ item.city.name }}のサードプレイス | Third Place Japan",
-  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanが認証したサードプレイス。エリア別・カテゴリ別に7軸評価基準で認証した場所を掲載。",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanがセレクトしたサードプレイス。エリア別・カテゴリ別に7軸評価基準でセレクトした場所を掲載。",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/",
   "inLanguage": "ja",
   "about": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" } },
@@ -68,7 +68,7 @@ layout: area.njk
   "@context": "https://schema.org",
   "@type": "AdministrativeArea",
   "name": "{{ item.city.name }}",
-  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）のサードプレイス認証エリア。Third Place Japanが7軸基準で認証したカフェ・ホテル・スパ・コワーキングなどを掲載。",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）のサードプレイスエリア。Third Place Japanが7軸基準でセレクトしたカフェ・ホテル・スパ・コワーキングなどを掲載。",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/",
   "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" },
   "hasMap": "https://www.google.com/maps/search/{{ item.city.name }}+{{ item.prefecture.name }}"

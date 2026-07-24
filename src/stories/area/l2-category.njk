@@ -14,10 +14,10 @@ layout: area.njk
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "{{ item.city.name }}でサードプレイスとして認証された{{ item.category.name_ja }}はどこですか？",
+      "name": "{{ item.city.name }}でThird Place Japanがセレクトした{{ item.category.name_ja }}はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Third Place Japanが{{ item.city.name }}で認証した{{ item.category.name_ja }}の情報は、{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/から確認できます。独自の7軸評価基準（居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応）に基づき認証されています。"
+        "text": "Third Place Japanが{{ item.city.name }}でセレクトした{{ item.category.name_ja }}の情報は、{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/から確認できます。独自の7軸評価基準（居心地・静寂性・特別感・ストーリー・再訪価値・記録体験・インバウンド対応）に基づきセレクトしています。"
       }
     },
     {
@@ -25,7 +25,7 @@ layout: area.njk
       "name": "{{ item.city.name }}で静かに過ごせる{{ item.category.name_ja }}は？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}の{{ item.category.name_ja }}の中で静寂性に優れた場所については、Third Place Japanのエリア別カテゴリページから各エリアの詳細をご確認ください。7軸評価の「静寂性・プライバシー」スコアをもとに認証しています。"
+        "text": "{{ item.city.name }}の{{ item.category.name_ja }}の中で静寂性に優れた場所については、Third Place Japanのエリア別カテゴリページから各エリアの詳細をご確認ください。7軸評価の「静寂性・プライバシー」スコアをもとにセレクトしています。"
       }
     },
     {
@@ -33,7 +33,7 @@ layout: area.njk
       "name": "{{ item.city.name }}の{{ item.category.name_ja }}の特徴は何ですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}（{{ item.prefecture.name }}）の{{ item.category.name_ja }}は、街の性格を反映した多様な居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所を認証しています。"
+        "text": "{{ item.city.name }}（{{ item.prefecture.name }}）の{{ item.category.name_ja }}は、街の性格を反映した多様な居場所文化を持っています。Third Place Japanでは居心地・静寂性・特別感など7軸で評価し、「ただいる」ことができる場所をセレクトしています。"
       }
     }
   ]
@@ -61,7 +61,7 @@ layout: area.njk
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "{{ item.city.name }}の{{ item.category.name_ja }} | Third Place Japan",
-  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanが認証した{{ item.category.name_ja }}。7軸評価基準で認証した場所の一覧。",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanがセレクトした{{ item.category.name_ja }}。7軸評価基準でセレクトした場所の一覧。",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/",
   "inLanguage": "ja",
   "about": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" } },
@@ -90,7 +90,7 @@ layout: area.njk
     </h1>
     <div class="gold-rule mb-8"></div>
     <p class="text-base text-text leading-relaxed max-w-xl">
-      Third Place Japanが独自の7軸評価基準で認証した、<br class="hidden md:block">
+      Third Place Japanが独自の7軸評価基準でセレクトした、<br class="hidden md:block">
       {{ item.city.name }}の{{ item.category.name_ja }}。<br class="hidden md:block">
       それぞれの場所が持つ固有の価値を、静かに記録しています。
     </p>
