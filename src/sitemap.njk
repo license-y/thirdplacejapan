@@ -99,6 +99,24 @@ eleventyExcludeFromCollections: true
   {% endfor %}
   {% endfor %}
 
+  {# ── L2 市区町村×カテゴリページ ── #}
+  {% for item in areaL2Cat %}
+  <url>
+    <loc>{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+
+  {# ── L3 エリア×カテゴリページ ── #}
+  {% for item in areaL3Cat %}
+  <url>
+    <loc>{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% endfor %}
+
   {# ── TPJセレクト 施設詳細ページ ── #}
   {% set publishedVenueList = venues | publishedVenues %}
   {% for venue in publishedVenueList %}
