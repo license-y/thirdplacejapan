@@ -80,14 +80,21 @@ lang: "en"
 }
 </script>
 
-{# FAQPage JSON-LD (venue.faq_en) #}
-{% if venue.faq_en and venue.faq_en.length %}
+{# FAQPage JSON-LD (venue.faq_en or venue.faq_groups_en) #}
+{% set faqFlatEn = venue.faq_en %}
+{% if venue.faq_groups_en and venue.faq_groups_en.length %}
+  {% set faqFlatEn = [] %}
+  {% for group in venue.faq_groups_en %}
+    {% set faqFlatEn = faqFlatEn.concat(group.items) %}
+  {% endfor %}
+{% endif %}
+{% if faqFlatEn and faqFlatEn.length %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {% for item in venue.faq_en %}
+    {% for item in faqFlatEn %}
     {
       "@type": "Question",
       "name": {{ item.q | dump | safe }},
@@ -160,7 +167,7 @@ lang: "en"
   {% set hasPetFriendly = venue.tags and "店内ペット同伴可" in venue.tags %}
   {% set showNonSmoking = venue.smoking_allowed == false %}
   {% set hasAmenityBadge = hasRoast or hasBeanVarieties or hasWifiPower or hasGlutenFree or hasPetFriendly or showNonSmoking %}
-  <div class="mb-12 bg-stone-50 rounded-xl px-5 py-4" data-aos="fade-up">
+  <div class="mb-12 bg-stone-50 border border-gold/30 rounded-xl px-5 py-4" data-aos="fade-up">
     <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
       {% if venue.opening_hours_display %}
       <div class="flex items-center gap-2" style="color:#3D2B1F;">
@@ -335,8 +342,30 @@ lang: "en"
   </div>
   {% endif %}
 
-  {# FAQ (venue.faq_en) #}
-  {% if venue.faq_en and venue.faq_en.length %}
+  {# FAQ (venue.faq_groups_en shows labeled sections; falls back to flat venue.faq_en) #}
+  {% if venue.faq_groups_en and venue.faq_groups_en.length %}
+  <section class="mt-14 mb-2" data-aos="fade-up">
+    <p class="label mb-6">Frequently Asked Questions</p>
+    {% for group in venue.faq_groups_en %}
+    <div class="{% if not loop.first %}mt-8 {% endif %}mb-3">
+      <p class="text-xs font-medium text-gold mb-3">{{ group.label }}</p>
+      <div class="space-y-3">
+        {% for item in group.items %}
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-5 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between gap-3" style="color:#3D2B1F;">
+            <span>{{ item.q }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-muted leading-relaxed border-t border-border pt-3">
+            {{ item.a }}
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% elif venue.faq_en and venue.faq_en.length %}
   <section class="mt-14 mb-2" data-aos="fade-up">
     <p class="label mb-6">Frequently Asked Questions</p>
     <div class="space-y-3">

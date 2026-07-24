@@ -85,14 +85,32 @@
         ]
       }
     ],
-    "faq_en": [
-      { "q": "Is Green Beans Coffee certified as a third place?", "a": "Yes. Third Place Japan awarded Green Beans Coffee its highest certification grade, Flagship, following a seven-axis evaluation. It scores among the highest in the country for comfort and silence, embodying the idea of a genuine third place — neither home nor work." },
-      { "q": "What is a third place?", "a": "A third place is a concept coined by sociologist Ray Oldenburg to describe a space that is neither home (the first place) nor work (the second place) — somewhere comfortable, neutral, and welcoming in its own right. Green Beans Coffee is one of the clearest examples of this idea in Tokyo." },
-      { "q": "Who is Green Beans Coffee good for?", "a": "It suits people who want to focus on solo work, enjoy high-quality coffee in a quiet setting, or are simply looking for a quiet third place to feel like themselves in Shibuya. It scores among the highest of TPJ-evaluated venues for both silence and comfort." },
-      { "q": "What does TPJ Flagship grade mean?", "a": "Flagship is the top tier of Third Place Japan's five-level certification (Certified, Silver, Gold, Platinum, Flagship). It is reserved for venues that perform at the highest level across all seven axes and represent an exceptional example of a Japanese third place." },
-      { "q": "Is Green Beans Coffee suitable for international visitors?", "a": "Yes. English-speaking staff and clear menu signage are in place, and the venue scores 8/10 on TPJ's Inbound & Multilingual axis. Its location near Meiji Jingu and Harajuku also makes it convenient for travelers exploring central Tokyo." },
-      { "q": "Do I need a reservation?", "a": "No reservation is required for regular visits, though you may occasionally wait during busy periods. Calling ahead is recommended if you are visiting at a specific time." },
-      { "q": "Is Wi-Fi or a power outlet available?", "a": "Yes, both Wi-Fi and power outlets are available, making the space suitable for laptop work or extended reading sessions." }
+    "faq_groups_en": [
+      {
+        "label": "About Green Beans Coffee",
+        "items": [
+          { "q": "Who is Green Beans Coffee good for?", "a": "It suits people who want to focus on solo work, enjoy high-quality coffee in a quiet setting, or are simply looking for a quiet third place to feel like themselves in Shibuya. It scores among the highest of TPJ-evaluated venues for both silence and comfort." },
+          { "q": "Is Wi-Fi or a power outlet available?", "a": "Yes, both Wi-Fi and power outlets are available, making the space suitable for laptop work or extended reading sessions." },
+          { "q": "Do I need a reservation?", "a": "No reservation is required for regular visits, though you may occasionally wait during busy periods. Calling ahead is recommended if you are visiting at a specific time." },
+          { "q": "Is Green Beans Coffee suitable for international visitors?", "a": "Yes. English-speaking staff and clear menu signage are in place, and the venue scores 8/10 on TPJ's Inbound & Multilingual axis. Its location near Meiji Jingu and Harajuku also makes it convenient for travelers exploring central Tokyo." },
+          { "q": "Can I still visit as a regular customer, even though it's Third Place Japan's verification venue?", "a": "Yes. Being a verification venue doesn't change the day-to-day experience — Green Beans Coffee operates as a normal café, and anyone can walk in and enjoy it exactly as they would any other third place." }
+        ]
+      },
+      {
+        "label": "About Third Place Japan's Certification",
+        "items": [
+          { "q": "What is a third place?", "a": "A third place is a concept coined by sociologist Ray Oldenburg to describe a space that is neither home (the first place) nor work (the second place) — somewhere comfortable, neutral, and welcoming in its own right. Green Beans Coffee is one of the clearest examples of this idea in Tokyo." },
+          { "q": "Is Green Beans Coffee certified as a third place?", "a": "Yes. Third Place Japan awarded Green Beans Coffee its highest certification grade, Flagship, following a seven-axis evaluation. It scores among the highest in the country for comfort and silence, embodying the idea of a genuine third place — neither home nor work." },
+          { "q": "How is Green Beans Coffee different from a TPJ Select venue?", "a": "TPJ Select venues are discovered and introduced by the editorial team without a formal application process. Green Beans Coffee goes a step further as a Flagship-certified verification venue — a place where Third Place Japan itself continuously tests and refines its evaluation standards." },
+          { "q": "What does TPJ's Flagship grade mean?", "a": "Flagship is the top tier of Third Place Japan's five-level certification (Certified, Silver, Gold, Platinum, Flagship). It is reserved for venues that perform at the highest level across all seven axes and represent an exceptional example of a Japanese third place." },
+          { "q": "What does it mean to be Third Place Japan's verification venue?", "a": "A verification venue is where Third Place Japan puts its own idea of an ideal third place into practice and tests it continuously in a real, operating space. Insights gathered at Green Beans Coffee feed directly back into TPJ's evaluation criteria and certification standards." },
+          { "q": "Why was Green Beans Coffee chosen as Third Place Japan's verification venue?", "a": "Third Place Japan has worked alongside the café since it opened, shaping the space together around the idea of a third place. Its near-perfect scores across all seven axes reflect that ongoing collaboration, and its design philosophy matches TPJ's evaluation criteria closely." },
+          { "q": "What exactly does Third Place Japan verify at this venue?", "a": "Third Place Japan continuously observes how seating layout and flow support quiet focus, how lighting, acoustics and materials shape the sensory experience, and how an unhurried style of service affects overall comfort — testing how each of the seven evaluation axes plays out in a real space." },
+          { "q": "How is the seven-axis evaluation carried out over time?", "a": "TPJ's editorial team visits regularly to re-assess comfort, silence, distinctiveness, story, revisit value, shareability and inbound readiness through direct experience. The evaluation isn't fixed — it accounts for how the space changes across seasons and times of day." },
+          { "q": "Does what Third Place Japan learns here benefit other venues?", "a": "Yes. The design principles refined at Green Beans Coffee — seating distance, lighting, sound levels and flow — inform Third Place Japan's broader work helping other venues design spaces with genuine third-place value." },
+          { "q": "Can I apply this approach to my own venue?", "a": "Third Place Japan works with venue owners who want to bring the same thinking to their own spaces, drawing on what has been learned at Green Beans Coffee. This applies across industries and venue types, wherever the goal is to create genuine third-place value." }
+        ]
+      }
     ],
     "published": true
   },
