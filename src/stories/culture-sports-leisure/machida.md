@@ -2,7 +2,7 @@
 layout: article.njk
 title: "町田市のサードプレイスガイド：文化・スポーツ・レジャー編。神奈川県境に独立した、都心に頼らない街の顔"
 description: "町田市は、神奈川県相模原市・横浜市と境を接しながら、都心への依存度が低い独立した商業拠点を持つ東京の行政区だ。多摩丘陵の起伏地形が育む、独自のサードプレイス（third place）体験を、TPJ独自の7軸評価基準で案内する。"
-date: 2026-07-23
+date: 2026-07-24
 tags:
   - articles
 category_slug: culture-sports-leisure
