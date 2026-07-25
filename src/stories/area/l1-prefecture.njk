@@ -5,6 +5,9 @@ pagination:
   alias: prefecture
 permalink: "/stories/area/{{ prefecture.slug }}/"
 layout: area.njk
+eleventyComputed:
+  title: "{{ prefecture.name }}のサードプレイス"
+  description: "{{ prefecture.name }}でThird Place Japanがセレクトしたサードプレイス。市区町村・エリア・業種横断で7軸評価基準によりセレクトした場所を掲載。"
 ---
 {# L1: 都道府県インデックス #}
 <script type="application/ld+json">
