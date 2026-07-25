@@ -2165,7 +2165,103 @@ TPJセレクトおよびTPJ認証グレード関連ページ（施設詳細・FA
 
 ---
 
+## TPJ公式ガイドライン（/guidelines/）ページ管理ルール（2026-07-25追加）
+
+`public/guidelines/` 配下は `public/index.html` と同じ静的HTML管理（11tyビルド対象外）。ページ追加・編集後は `npm run build` 不要、そのままコミット・プッシュすればCloudflare Pagesに反映される。
+
+### ページ構成（2026-07-25時点・全15ページ）
+
+| チャプター | ページ（`guidelines/index.html`の掲載順） |
+|---|---|
+| 第1章 基本方針 | mission / editorial-policy / privacy-policy / terms-of-service |
+| 第2章 認証制度 | certification-policy / investigation-guidelines / certification-mark-guidelines |
+| 第3章 AI・デジタル | ai-usage-policy / ai-search-disclosure-policy |
+| 第4章 利用者・事業者向け | advertising-policy / correction-deletion-policy |
+| その他 | faq / contact / sitemap |
+
+### 新規ページ作成時の必須テンプレート要素
+
+既存ページ（例：`public/guidelines/ai-usage-policy/index.html`）をコピーして作成する。以下を必ず含める：
+- JSON-LD：`WebPage` + `isPartOf`（`/guidelines/`を指す）+ `publisher`（Organization）+ `about`。FAQを含むページは`FAQPage`も追加
+- `<title>`・meta description・og:description・JSON-LD `about` に「サードプレイス」を自然に含める（詳細は「必須キーワード」セクション参照）。titleへの追加は表示幅（全角2・半角1換算で64以内目安）を超えない場合のみ行う
+- `guidelines/index.html` の該当カードを `<div class="policy-card">` → `<a class="policy-card is-published" href="...">` に変更し、更新履歴（`meta-table`）に日付行を追加
+- `src/sitemap.njk` の `guidelinePages` 配列にslugを追加（`npm run build`で`public/sitemap.xml`に反映）
+
+### フッター「ガイドライン・ポリシー」列（第1〜4章の11ページのみ対象）
+
+第1〜4章の11ページ（mission〜terms-of-service）は、フッターに4列目「ガイドライン・ポリシー」（11ページ全リンク）を持つ。`.footer-cols`は`grid-template-columns: repeat(4, 1fr)`（モバイルは`1fr 1fr`の2カラム）。**その他チャプター（faq/contact/sitemap）はこの4列目フッターの対象外**（元々3列のまま）。
+
+新しく第1〜4章にページを追加する場合：
+1. 11ページ全ての`<h3>ガイドライン・ポリシー</h3>`直下の`<ul>`に新規ページへのリンクを追加（12ページ相互リンクになる）
+2. 新規ページ自身のフッターにも同じ4列目を追加
+
+### 前のガイドライン／次のガイドラインナビゲーション（第1〜4章の11ページのみ対象）
+
+本文末尾（「← TPJ公式ガイドライン一覧へ戻る」の直前）に、上表の掲載順で前後ページへの`.guide-pagination`ブロックを設置する。先頭（mission）は「次のガイドライン」のみ、末尾（terms-of-service）は「前のガイドライン」のみを表示する（`flex; justify-content: space-between`で片側のみでも自然に配置される設計）。
+
+新しく第1〜4章にページを追加する場合、挿入位置の前後2ページの`.guide-pagination`リンク先を新規ページに向けて張り替える必要がある（チェーンの連結を維持するため）。
+
+---
+
 # 実装ログ
+
+## 2026-07-25
+
+### TPJ公式ガイドライン「その他」セクション新規公開（AI検索ポリシー・広告ポリシー・削除ポリシー・FAQ・お問い合わせ・サイトマップ）
+
+**対象ファイル**
+- 新規：`public/guidelines/ai-search-disclosure-policy/`・`advertising-policy/`・`correction-deletion-policy/`・`faq/`・`contact/`・`sitemap/`
+- `public/guidelines/index.html`（該当カードのリンク化、更新履歴追記、「口コミ・レビュー掲載ポリシー」の未公開カード削除）
+
+**背景**：ユーザーからテキストで提供された3ポリシー文書を`/guidelines/`に公開する依頼を受け、既存ページ（`ai-usage-policy`等）と同一テンプレートで新規作成。続けて「その他」チャプターのFAQ・お問い合わせ・サイトマップも同様に依頼された。
+
+**サイトマップページ制作時の事実確認**：ユーザー提供のサイトマップ原文に「※認証施設一覧、15カテゴリ一覧、エリア一覧は順次公開予定です」という記述があったが、実際には`/stories/select/`・`/stories/area/`は公開済みと判明。ユーザーに確認のうえ、実ページへの直リンクに修正し「準備中」表記を削除した。「15カテゴリ一覧」は単独ページがないため、`src/stories/index.njk`のカテゴリセクションに`id="categories"`を新設し`/stories/#categories`にリンク（要`npm run build`）。「認証施設一覧」は後日ユーザー指示で「セレクト施設一覧」に訂正。
+
+**FAQページ制作後の修正**：Q2「TPJ認証とは何ですか？」の内容が`/stories/about/certification-grades/`の説明と重複・粒度不一致だったため、「セレクトと認証の違いは何ですか？」に変更し同ページへのリンクを追加（可視部・FAQPage JSON-LD両方）。
+
+**検証方法**：各ページ作成・修正のたびにJSON-LDをNode.jsで`JSON.parse`しパースエラー0件を確認。
+
+**ルール化**：本セクション上部「TPJ公式ガイドライン（/guidelines/）ページ管理ルール」を新規追加した。
+
+---
+
+### ガイドライン全15ページのSEO/AEO監査・強化
+
+**対象ファイル**：`public/guidelines/`配下 全15ページ、`src/sitemap.njk`・`public/sitemap.xml`
+
+**背景**：「その他」3ページ（faq/contact/sitemap）の制作完了後、ユーザーから①CLAUDE.mdルールへの準拠監査、②「TPJ」だけでなく「サードプレイス」「Third Place」を自然に含めるSEO/AEO強化、の2段階で依頼を受けた。
+
+**監査で判明した点**：
+- JSON-LD構成（WebPage+isPartOf+publisher+about）は15ページ全て既存パターンと一致し違反なし
+- FAQページの単一カテゴリ見出し「TPJについて」が冗長と判断し削除（未使用化したCSS `.chapter-title`も削除）
+- `public/sitemap.xml`に`/guidelines/`配下の個別ページが1件も登録されていなかった（トップページのみ）ため、`src/sitemap.njk`に`guidelinePages`配列を追加し14ページ分を機械的に列挙する形で追加
+- 新規6ページのmeta description等に「サードプレイス」が一切含まれていない、既存8ページのうち`privacy-policy`は0回、複数ページがog:description/JSON-LD `about`のみ未対応、という状態を発見。全15ページのmeta description・og:description・JSON-LD `about`・本文冒頭に「日本初のサードプレイス認証Third Place Japan」パターン（既存ページの確立済み表現）を追加し、全ページ3回以上に是正
+- titleタグは表示幅（全角2・半角1換算）を計算し、64幅以内に収まる12ページのみ「サードプレイス認証」を追加。長すぎる3ページ（ai-search-disclosure-policy・certification-mark-guidelines・mission）はSERP見切れを避けるため現状維持
+- ページ間の内部リンクが「その他」2ページ以外すべて0本だったため、内容的に関連する12ページ間（広告掲載⇄編集ポリシー、AI利用⇄AI検索ポリシー、認証・評価→調査→認証マークの三角関係、プライバシー⇄利用規約 等）に自然な文中リンクを追加し、全15ページが最低1本の相互リンクを持つ状態にした
+
+**検証方法**：Node.jsスクリプトで全15ページのJSON-LDパースエラー0件、「サードプレイス」出現数（全ページ3回以上）、titleタグ表示幅（64幅超過なし）を機械的に確認。
+
+**スコープ外として保留**：`data-pagefind-body`未付与によりサイト内検索の索引対象外である点（`/guidelines/`全体・メインサイト・about-companyに共通する既存設計）はユーザーに確認のうえ、今回は対応せず保留とした。
+
+---
+
+### ガイドライン・ポリシー11ページへのフッター相互リンク・前後ナビゲーション追加
+
+**対象ファイル**：`public/guidelines/`配下 第1〜4章11ページ（mission・editorial-policy・certification-policy・investigation-guidelines・certification-mark-guidelines・ai-usage-policy・ai-search-disclosure-policy・advertising-policy・correction-deletion-policy・privacy-policy・terms-of-service）
+
+**背景**：ユーザーから、記事ページの「前の記事／次の記事」カードUIを参考に、ガイドライン・ポリシー11ページにも同様の相互リンク導線を求められた。
+
+**対応**：
+1. フッターを3列→4列に拡張し「ガイドライン・ポリシー」列（11ページ全リンク）を新設。モバイルは`1fr 1fr`の2カラム
+2. 本文末尾に`.guide-pagination`ブロックを新設。`guidelines/index.html`の掲載順で前後ページへリンクするチェーンを構成（先頭・末尾は片側のみ表示）
+
+**実装上の注意点**：対象ファイルがCRLF改行だったため、Node.jsでの一括置換スクリプトが当初LF前提でマッチせず失敗した。読み込み時に`\r\n`→`\n`に正規化して置換処理を行い、書き込み時に`\n`→`\r\n`へ戻すことで解決した。今後同様の一括編集スクリプトをこのリポジトリの`public/`配下HTMLに対して書く場合は、CRLF正規化が必要になる可能性を考慮すること。
+
+**検証方法**：11ページ全てでJSON-LDパースエラー0件、`<div>`/`</div>`タグ数の一致、前後リンクチェーンが順序どおり接続されていること（mission→editorial-policy→…→terms-of-service）をNode.js/grepで確認済み。
+
+**ルール化**：本セクション上部「TPJ公式ガイドライン（/guidelines/）ページ管理ルール」のフッター・ページネーションに関する項目として反映済み。
+
+---
 
 ## 2026-07-24
 
