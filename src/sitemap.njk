@@ -26,6 +26,14 @@ eleventyExcludeFromCollections: true
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  {% set guidelinePages = ["mission", "editorial-policy", "privacy-policy", "terms-of-service", "certification-policy", "investigation-guidelines", "certification-mark-guidelines", "ai-usage-policy", "ai-search-disclosure-policy", "advertising-policy", "correction-deletion-policy", "faq", "contact", "sitemap"] %}
+  {% for slug in guidelinePages %}
+  <url>
+    <loc>{{ site.url }}/guidelines/{{ slug }}/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  {% endfor %}
 
   {# ── 記事サイトトップ ── #}
   <url>
