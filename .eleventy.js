@@ -88,6 +88,30 @@ export default function (eleventyConfig) {
     (venues || []).filter(v => v.category_slug === categorySlug && v.published !== false)
   );
 
+  // 全15カテゴリについて、そのエリアで最も具体的に存在するページへのURLを解決する
+  // （L3エリア×カテゴリ → L2市区町村×カテゴリ → カテゴリ一覧の順でフォールバック。存在しないページへのリンクは作らない）
+  eleventyConfig.addFilter("categoryLinksForArea", (categories, item, areaL3Cat, areaL2Cat) => {
+    const prefSlug = item.prefecture.slug;
+    const citySlug = item.city.slug;
+    const areaSlug = item.area.slug;
+    return (categories || []).map(cat => {
+      const hasL3 = (areaL3Cat || []).some(e =>
+        e.prefecture.slug === prefSlug && e.city.slug === citySlug &&
+        e.area.slug === areaSlug && e.category.slug === cat.slug
+      );
+      if (hasL3) {
+        return { slug: cat.slug, name_ja: cat.name_ja, name_short: cat.name_short, name_en: cat.name_en, url: `/stories/area/${prefSlug}/${citySlug}/${areaSlug}/${cat.slug}/` };
+      }
+      const hasL2 = (areaL2Cat || []).some(e =>
+        e.prefecture.slug === prefSlug && e.city.slug === citySlug && e.category.slug === cat.slug
+      );
+      if (hasL2) {
+        return { slug: cat.slug, name_ja: cat.name_ja, name_short: cat.name_short, name_en: cat.name_en, url: `/stories/area/${prefSlug}/${citySlug}/${cat.slug}/` };
+      }
+      return { slug: cat.slug, name_ja: cat.name_ja, name_short: cat.name_short, name_en: cat.name_en, url: `/stories/${cat.slug}/` };
+    });
+  });
+
   eleventyConfig.addFilter("venuesByGrade", (venues, gradeSlug) =>
     (venues || []).filter(v => v.grade_slug === gradeSlug && v.published !== false)
   );

@@ -38,6 +38,14 @@ eleventyComputed:
         "@type": "Answer",
         "text": "{{ item.area.name }}ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・セレクトしています。"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "サードプレイス（第三の居場所）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サードプレイスとは、家（ファーストプレイス）でも職場（セカンドプレイス）でもない、心地よく過ごせる第三の居場所を指す概念です。社会学者レイ・オルデンバーグが提唱し、Third Place Japanはこの考え方をもとに、カフェ・ホテル・スパなど業種を横断して場所の価値を独自の7軸基準で評価しています。"
+      }
     }
   ]
 }
@@ -83,6 +91,7 @@ eleventyComputed:
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/",
   "inLanguage": "ja",
   "about": { "@type": "Place", "name": "{{ item.area.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}" } },
+  "mentions": { "@type": "DefinedTerm", "name": "サードプレイス", "alternateName": "Third Place", "url": "{{ site.url }}/stories/about/what-is-third-place/", "description": "家でも職場でもない、心地よく過ごせる第三の居場所という概念。" },
   "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" }{% if areaArts.length or areaVenues.length %},
   "hasPart": [
     {% set parts = [] %}
@@ -132,21 +141,18 @@ eleventyComputed:
     </div>
   </section>
   {% endif %}
-  {% if areaL3Cat %}
   <section class="mb-12" data-aos="fade-up">
-    <p class="label mb-4">業種から探す</p>
-    <div class="flex flex-wrap gap-3">
-      {% for cat in areaL3Cat %}
-      {% if cat.area.slug == item.area.slug and cat.prefecture.slug == item.prefecture.slug %}
-      <a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ cat.category.slug }}/"
-         class="text-xs border border-border px-4 py-2 hover:border-gold hover:text-gold transition-colors">
-        {{ cat.category.name_ja }}
+    <p class="label mb-2">全15業種から探す</p>
+    <p class="text-xs text-muted mb-6">カフェ・ホテル・スパ・コワーキングなど、業種を問わず{{ item.area.name }}のサードプレイス（third place）としての価値で探せます。</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {% for cat in categories | categoryLinksForArea(item, areaL3Cat, areaL2Cat) %}
+      <a href="{{ cat.url }}" class="flex flex-col gap-1 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold transition-colors group">
+        <span class="text-dark group-hover:text-gold transition-colors">{{ cat.name_short }}</span>
+        <span class="text-xs text-muted">{{ cat.name_en }}</span>
       </a>
-      {% endif %}
       {% endfor %}
     </div>
   </section>
-  {% endif %}
   {% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
   {% if areaVenues.length %}
   <section data-aos="fade-up">
@@ -158,7 +164,10 @@ eleventyComputed:
     </div>
   </section>
   {% else %}
-  <p class="text-sm text-muted" data-aos="fade-up">このエリアのセレクト店舗は準備中です。</p>
+  <div class="bg-white rounded-xl border border-gold/30 p-6" data-aos="fade-up">
+    <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは、家でも職場でもない「第三の居場所（サードプレイス）」を独自の7軸基準で評価・発掘しており、掲載エリアを順次拡大しています。</p>
+    <p class="text-sm text-muted mt-3"><a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="text-gold hover:underline">{{ item.city.name }}の他のエリアを見る →</a></p>
+  </div>
   {% endif %}
 
   {# FAQ セクション #}
@@ -179,7 +188,7 @@ eleventyComputed:
           {% if av.length %}
           <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in av %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
           {% else %}
-          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。</p>
+          <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは、家でも職場でもない「第三の居場所（サードプレイス）」を独自の7軸基準で評価・発掘しており、掲載エリアを順次拡大しています。<a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="text-gold hover:underline">{{ item.city.name }}の他のエリア</a>もあわせてご覧ください。</p>
           {% endif %}
         </div>
       </div>
@@ -201,6 +210,16 @@ eleventyComputed:
         <div class="area-faq-body px-6 pb-5">
           <div class="gold-rule mb-4"></div>
           <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}ではカフェ・スペシャルティコーヒー、ホテルラウンジ、コワーキングスペース、神社・寺院など複数の業種にわたるサードプレイスが存在します。Third Place Japanは業種横断で「居場所としての価値」を評価・セレクトしています。</p>
+        </div>
+      </div>
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">サードプレイス（第三の居場所）とは何ですか？</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">サードプレイスとは、家（ファーストプレイス）でも職場（セカンドプレイス）でもない、心地よく過ごせる第三の居場所を指す概念です。社会学者レイ・オルデンバーグが提唱し、Third Place Japanはこの考え方をもとに、カフェ・ホテル・スパなど業種を横断して場所の価値を独自の7軸基準で評価しています。詳しくは<a href="/stories/about/what-is-third-place/" class="text-gold hover:underline">サードプレイスとは何か</a>をご覧ください。</p>
         </div>
       </div>
     </div>
