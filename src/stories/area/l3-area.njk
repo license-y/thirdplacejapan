@@ -20,7 +20,7 @@ eleventyComputed:
       "name": "{{ item.area.name }}でThird Place Japanがセレクトした場所はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}{% for v in av %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。"
+        "text": "{% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}{% if av.length %}Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in av %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。{% else %}{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。{% endif %}"
       }
     },
     {
