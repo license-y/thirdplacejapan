@@ -263,6 +263,47 @@
       margin-bottom: 36px;
     }
 
+    .guide-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 56px;
+      max-width: 720px;
+    }
+    .guide-pagination-item {
+      flex: 1 1 300px;
+      max-width: calc(50% - 7px);
+      display: block;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(45,42,38,0.06);
+      padding: 18px 20px;
+      text-decoration: none;
+      transition: box-shadow 0.3s ease;
+    }
+    .guide-pagination-item:hover { box-shadow: 0 4px 16px rgba(45,42,38,0.12); }
+    .guide-pagination-next { margin-left: auto; text-align: right; }
+    .guide-pagination-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--c-accent);
+      margin-bottom: 8px;
+    }
+    .guide-pagination-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-text);
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .guide-pagination-item { max-width: 100%; }
+      .guide-pagination-next { margin-left: 0; text-align: left; }
+    }
+
     .back-link {
       display: inline-block;
       margin-top: 56px;
@@ -296,8 +337,8 @@
     }
     .footer-cols {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 36px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
       margin-bottom: 36px;
     }
     .footer-col h3 {
@@ -343,7 +384,7 @@
 
     @media (max-width: 640px) {
       main { padding: 128px 24px 80px; }
-      .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+      .footer-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
     }
   </style>
 </head>
@@ -433,6 +474,17 @@
         <p class="body-text">TPJは、認証マークの適正な運用を通じて、公平性・透明性・信頼性の維持に努めます。</p>
       </div>
 
+      <div class="guide-pagination" data-aos="fade-up">
+        <a href="/guidelines/investigation-guidelines/" class="guide-pagination-item guide-pagination-prev">
+          <span class="guide-pagination-label">‹ 前のガイドライン</span>
+          <span class="guide-pagination-title">調査・認証ガイドライン</span>
+        </a>
+        <a href="/guidelines/ai-usage-policy/" class="guide-pagination-item guide-pagination-next">
+          <span class="guide-pagination-label">次のガイドライン ›</span>
+          <span class="guide-pagination-title">AI利用ポリシー</span>
+        </a>
+      </div>
+
       <a href="/guidelines/" class="back-link">← TPJ公式ガイドライン一覧へ戻る</a>
     </div>
   </main>
@@ -451,6 +503,22 @@
             <li><a href="/#services">サービス</a></li>
             <li><a href="/#gbc">実証店舗</a></li>
             <li><a href="/stories/" class="footer-link-highlight">Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>ガイドライン・ポリシー</h3>
+          <ul>
+            <li><a href="/guidelines/mission/">運営理念</a></li>
+            <li><a href="/guidelines/editorial-policy/">編集ポリシー</a></li>
+            <li><a href="/guidelines/certification-policy/">認証・評価ポリシー</a></li>
+            <li><a href="/guidelines/investigation-guidelines/">調査・認証ガイドライン</a></li>
+            <li><a href="/guidelines/certification-mark-guidelines/">認証マーク利用ガイドライン</a></li>
+            <li><a href="/guidelines/ai-usage-policy/">AI利用ポリシー</a></li>
+            <li><a href="/guidelines/ai-search-disclosure-policy/">AI・検索エンジン向け情報公開ポリシー</a></li>
+            <li><a href="/guidelines/advertising-policy/">広告掲載ポリシー</a></li>
+            <li><a href="/guidelines/correction-deletion-policy/">情報訂正・削除依頼ポリシー</a></li>
+            <li><a href="/guidelines/privacy-policy/">プライバシーポリシー</a></li>
+            <li><a href="/guidelines/terms-of-service/">利用規約</a></li>
           </ul>
         </div>
         <div class="footer-col">
