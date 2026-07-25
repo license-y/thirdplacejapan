@@ -311,8 +311,8 @@
     }
     .footer-cols {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 36px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
       margin-bottom: 36px;
     }
     .footer-col h3 {
@@ -358,7 +358,7 @@
 
     @media (max-width: 640px) {
       main { padding: 128px 24px 80px; }
-      .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+      .footer-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
       .sitemap-grid { grid-template-columns: 1fr; gap: 36px; }
     }
   </style>
@@ -462,7 +462,7 @@
   <footer>
     <div class="footer-inner">
       <a href="/" class="footer-logo"><img src="/assets/images/main/tpj-logo.png" alt="Third Place Japan" loading="lazy" decoding="async"></a>
-      <div class="footer-cols">
+            <div class="footer-cols">
         <div class="footer-col">
           <h3>Third Place Japan</h3>
           <ul>
@@ -471,7 +471,15 @@
             <li><a href="/#grades">認証グレード</a></li>
             <li><a href="/#services">サービス</a></li>
             <li><a href="/#gbc">実証店舗</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>コンテンツ</h3>
+          <ul>
             <li><a href="/stories/" class="footer-link-highlight">Stories</a></li>
+            <li><a href="/stories/select/">セレクト施設一覧</a></li>
+            <li><a href="/stories/#categories">15カテゴリ一覧</a></li>
+            <li><a href="/stories/area/">エリア一覧</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -480,14 +488,16 @@
             <li><a href="/about-company/#editor">TPJ編集長</a></li>
             <li><a href="/about-company/#editorial-team">TPJ編集部</a></li>
             <li><a href="/guidelines/">TPJ公式ガイドライン</a></li>
+            <li><a href="/about-company/">運営会社</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>運営情報</h3>
+          <h3>サポート</h3>
           <ul>
-            <li><a href="/#for-business">For Business</a></li>
-            <li><a href="/about-company/">運営会社</a></li>
+            <li><a href="/guidelines/faq/">よくある質問（FAQ）</a></li>
             <li><a href="/#for-business">お問い合わせ</a></li>
+            <li><a href="/guidelines/sitemap/">サイトマップ</a></li>
+            <li><a href="/#for-business">For Business</a></li>
           </ul>
         </div>
       </div>
