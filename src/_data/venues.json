@@ -651,7 +651,7 @@
     "grade": "TPJセレクト",
     "grade_slug": "select",
     "category": "高級ホテル・ホテルラウンジ",
-    "category_slug": "luxury-hotel-lounge",
+    "category_slug": "hotel-lounge",
     "area_primary": {
       "prefecture_slug": "tokyo",
       "prefecture": "東京都",
@@ -698,7 +698,7 @@
     "grade": "TPJセレクト",
     "grade_slug": "select",
     "category": "高級ホテル・ホテルラウンジ",
-    "category_slug": "luxury-hotel-lounge",
+    "category_slug": "hotel-lounge",
     "area_primary": {
       "prefecture_slug": "tokyo",
       "prefecture": "東京都",

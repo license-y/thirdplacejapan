@@ -1672,7 +1672,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/luxury-hotel-lounge/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1690,19 +1690,13 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/luxury-hotel-lounge/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/culture-sports-leisure/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2023,7 +2017,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/harajuku/luxury-hotel-lounge/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/harajuku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2042,12 +2036,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/culture-sports-leisure/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/nihonbashi/luxury-hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

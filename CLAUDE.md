@@ -505,6 +505,19 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 - **施設を追加する際は必ず `project-docs/TPJセレクト掲載基準ルールブック.md` の7基準・カテゴリ配分・大手禁止ルールを確認すること**
 - **一覧ページ（`src/stories/select/index.njk`）のTPJセレクトグリッドは新着順（新しい施設が上部）に表示する**（2026-07-07確定）。実装は `{% for v in published | reverse %}`。`venues.json` には末尾に追記していくため、`reverse` で新着が先頭に来る
 
+### `category_slug` は必ず `src/_data/categories.json` の正式15スラッグから選ぶこと（2026-07-27追加）
+
+`venues.json` の `category_slug` に、`categories.json` に存在しない架空のslugを設定しないこと。`category`（表示名）だけを正しく設定していても、`category_slug` が誤っていると以下の問題が静かに発生する：
+
+- その施設が正式カテゴリページ（`/stories/{正しいcategory_slug}/`）に表示されない
+- `src/_data/areaL2Cat.js`・`areaL3Cat.js`が`venue.category_slug`をそのままカテゴリ名として使い回すため（`categories.json`との照合を行わない）、誤ったslugでも「それらしい」カテゴリページが並行生成されてしまい、正規ページと表示名が重複する「幽霊カテゴリ」が発生する
+
+**発見の経緯**：2026-07-27のSEO/AEO監査（サイト全体のtitle重複チェック）で、TRUNK(HOTEL)・BnA_WALLの2施設が`category_slug: "luxury-hotel-lounge"`（`categories.json`に存在しない架空のslug。正式には`hotel-lounge`）のまま登録されていたことが判明した。この2件が原因で`/stories/area/tokyo/chuo-ku/luxury-hotel-lounge/`等4つの幽霊ページが生成され、正規の`hotel-lounge`ページと完全に同じtitleを持つ重複ページになっていた。`npm run build`はエラーを出さないため、サイト全体のtitle重複を機械的にチェックするまで気づかれなかった。
+
+**対応**：2施設の`category_slug`を`hotel-lounge`に修正し、不要になった4つの静的ファイル（`public/`配下、11tyは生成対象外になった旧ファイルを自動削除しないため手動削除が必要）を削除した。
+
+**チェック方法**：施設を追加・編集する際は、`category_slug`が`categories.json`の15スラッグのいずれかと完全一致しているかを確認する。定期監査として、`node -e "..."`でサイト全体の`<title>`重複を検出するスクリプト（本ファイル内の各種検証で使用しているNode.jsワンライナーと同様の手法）を実行し、想定外の重複が出ていないかを確認するとよい。
+
 ## TPJセレクト 掲載仕様（2026-07-06確定・2026-07-07更新）
 
 TPJセレクトは、認証グレードとは別軸の「編集部招待制」枠。施設からのお申し込み不要。
@@ -2318,6 +2331,24 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 **検証方法**：`npm run build`後、修正対象ページのtitle/descriptionに「サードプレイス」が反映されていることを確認。サイト全体のJSON-LD 2,089ブロックのパースエラー0件、内部リンク453本のリンク切れ0件を確認済み。
 
 **ルール化**：「エリア紐付けデータの`area_slug`/`area_name`フォールバックを統一するルール」の直後に「エリア関連ページテンプレートは全種類でtitle/descriptionに『サードプレイス』を含めること」を新規セクションとして追加した。
+
+---
+
+### venues.jsonの誤ったcategory_slugによる幽霊カテゴリページを発見・修正
+
+**対象ファイル**
+- `src/_data/venues.json`（TRUNK(HOTEL)・BnA_WALLの2件）
+- 削除：`public/stories/area/tokyo/chuo-ku/luxury-hotel-lounge/`・`chuo-ku/nihonbashi/luxury-hotel-lounge/`・`shibuya-ku/harajuku/luxury-hotel-lounge/`・`shibuya-ku/luxury-hotel-lounge/`
+
+**背景**：L2×業種・L3×業種ページのキーワード修正に続けて、サイト全体の`<title>`重複を機械的にチェックしたところ、5組の重複タイトルが見つかった。このうち2組（`中央区のサードプレイス：高級ホテル・ホテルラウンジ`・`日本橋のサードプレイス：高級ホテル・ホテルラウンジ`）を調査したところ、`categories.json`に存在しない`luxury-hotel-lounge`という架空の`category_slug`が原因と判明した。`venues.json`のTRUNK(HOTEL)・BnA_WALLの2施設がこの誤slugのまま登録されており、`areaL2Cat.js`が`venue.category_slug`を`categories.json`と照合せずそのままカテゴリ名として使い回す実装だったため、正規の`hotel-lounge`ページと並行して「幽霊カテゴリ」ページが4件生成されていた。この2施設は正式カテゴリページ（`/stories/hotel-lounge/`）からも欠落していた。
+
+残る3組の重複タイトル（日暮里・武蔵小山・中目黒）は区境をまたいで実在する地名が`areas.json`に区ごとの別エントリとして正しく登録されているために生じたもので、データ不整合ではなくL3エリアページのtitle設計（区名を含めるかどうか）に関わる別種の論点のため、今回は対応せず報告に留めた。
+
+**対応**：2施設の`category_slug`を`hotel-lounge`に修正し、`npm run build`後に不要になった4つの静的ファイルを手動削除した（11tyは生成対象外になった旧ファイルを自動削除しないため）。
+
+**検証方法**：修正後、`/stories/hotel-lounge/`に2施設が反映されたことを確認。サイト全体の重複タイトルが5組→3組に減少したことを確認。JSON-LD（2,081ブロック）のパースエラー0件、内部リンク（453本）のリンク切れ0件を確認済み。
+
+**ルール化**：「venues.json 施設データ管理ルール」に「`category_slug`は必ず`categories.json`の正式15スラッグから選ぶこと」を新規セクションとして追加した。
 
 ---
 
