@@ -133,3 +133,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 住宅街の生活動線に溶け込んだ静けさとの違いは[杉並区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/suginami/)も参考になる
 - 青梅市の山岳信仰・神社仏閣については[青梅市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/ome/)で解説している
 - 東京のカフェでひとり時間を過ごす視点は[ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)で解説している
+- 山里への距離ではなく、人の手が入り続ける里山という静けさは[東村山市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/higashimurayama/)も参考になる
