@@ -2,7 +2,7 @@
 layout: article.njk
 title: "小金井市のサードプレイスガイド：禅体験・リトリート編。玉川上水という一本の水路が育む、歩く静けさ"
 description: "小金井市は、江戸時代に開削された玉川上水が街を東西に貫き、名勝に指定された桜並木と武蔵野の雑木林が遊歩道沿いに連なる東京の行政区だ。歩くこと自体が静けさになる第三の居場所（third place）を、TPJ7軸評価基準で案内する。"
-date: 2026-07-27
+date: 2026-07-24
 tags:
   - articles
 category_slug: retreat-zen

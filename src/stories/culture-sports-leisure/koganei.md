@@ -2,7 +2,7 @@
 layout: article.njk
 title: "小金井市のサードプレイスガイド：文化・スポーツ・レジャー編。移築された30棟の建物が刻む、時間の集積地"
 description: "小金井市は、江戸から昭和の建物30棟を移築復元した江戸東京たてもの園と、広大な芝生・スポーツ施設を持つ都立小金井公園が同居する行政区だ。中へ入り時間を歩く第三の居場所（third place）としての文化・レジャーをTPJ7軸で読み解く。"
-date: 2026-07-27
+date: 2026-07-25
 tags:
   - articles
 category_slug: culture-sports-leisure

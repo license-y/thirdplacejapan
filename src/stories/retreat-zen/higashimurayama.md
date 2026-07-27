@@ -2,7 +2,7 @@
 layout: article.njk
 title: "東村山市のサードプレイスガイド：禅体験・リトリート編。狭山丘陵という、人と里山が共生してきた静けさ"
 description: "東村山市は、狭山丘陵の里山と、菖蒲田が広がる北山公園、室町期建立の国宝建築が同じ市域に集まる東京の行政区だ。人の手が入りながら守られてきた里山の静けさを、第三の居場所（third place）としてTPJ7軸評価基準で案内する。"
-date: 2026-07-27
+date: 2026-07-26
 tags:
   - articles
 category_slug: retreat-zen
