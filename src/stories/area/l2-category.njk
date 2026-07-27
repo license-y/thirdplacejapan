@@ -6,8 +6,8 @@ pagination:
 permalink: "/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/"
 layout: area.njk
 eleventyComputed:
-  title: "{{ item.city.name }}の{{ item.category.name_ja }}"
-  description: "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanがセレクトした{{ item.category.name_ja }}。7軸評価基準でセレクトした場所の一覧。"
+  title: "{{ item.city.name }}のサードプレイス：{{ item.category.name_ja }}"
+  description: "{{ item.city.name }}（{{ item.prefecture.name }}）の{{ item.category.name_ja }}を、Third Place Japanがサードプレイスとして7軸評価基準でセレクト。セレクトした場所の一覧をご覧いただけます。"
 ---
 {# ──── FAQPage JSON-LD ──── #}
 <script type="application/ld+json">
@@ -71,8 +71,8 @@ eleventyComputed:
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "{{ item.city.name }}の{{ item.category.name_ja }} | Third Place Japan",
-  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）でThird Place Japanがセレクトした{{ item.category.name_ja }}。7軸評価基準でセレクトした場所の一覧。",
+  "name": "{{ item.city.name }}のサードプレイス：{{ item.category.name_ja }} | Third Place Japan",
+  "description": "{{ item.city.name }}（{{ item.prefecture.name }}）の{{ item.category.name_ja }}を、Third Place Japanがサードプレイスとして7軸評価基準でセレクト。セレクトした場所の一覧をご覧いただけます。",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.category.slug }}/",
   "inLanguage": "ja",
   "about": { "@type": "AdministrativeArea", "name": "{{ item.city.name }}", "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ item.prefecture.name }}" } },
@@ -97,7 +97,7 @@ eleventyComputed:
   <div class="mb-14" data-aos="fade-up">
     <p class="label mb-4">{{ item.city.name }} × {{ item.category.name_ja }}</p>
     <h1 class="font-serif text-4xl md:text-5xl font-light text-dark mb-4 leading-tight">
-      {{ item.city.name }}の<br>{{ item.category.name_ja }}
+      {{ item.city.name }}のサードプレイス：<br>{{ item.category.name_ja }}
     </h1>
     <div class="gold-rule mb-8"></div>
     <p class="text-base text-text leading-relaxed max-w-xl">
