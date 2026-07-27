@@ -85,6 +85,13 @@ Third Place Japanでは、東京の文化施設を「文化・スポーツ・レ
 - TPJが評価・認証した施設の一覧は[TPJセレクト一覧](/stories/select/)で確認できる
 - 公園という器が育む文化複合サードプレイスについては[上野を一日かけて過ごす](/stories/culture-sports-leisure/ueno/)も参考になる
 - 参加する文化という視点では[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)も参照
+- 鑑賞型の文化複合地区から演芸・クラフトまでの重層性については[台東区のサードプレイスガイド：文化・レジャー編](/stories/culture-sports-leisure/taito/)も参照
+- 移築建造物群が刻む「時間の集積地」については[小金井市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koganei/)も参照
+- 観戦・門前・学術が同居する文化のあり方については[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)も参照
+- 基地跡地の広さが育む郊外型の複合施設については[立川市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/tachikawa/)も参照
+- 運河が結ぶ倉庫アートと臨海レジャーについては[江東区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koto/)も参照
+- 暮らしの延長にあるレジャーについては[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)も参照
+- 都心に頼らない独立した街の文化については[町田市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/machida/)も参照
 - サードプレイスの具体的なイメージを広げたい場合は[サードプレイスの具体例10選](/stories/about/third-place-examples/)も参考になる
 
 ---
