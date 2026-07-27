@@ -12,8 +12,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // エリア情報の逆引きマップを構築（area_slug → { prefecture, city }）
 const areaMap = new Map();
+// 市区町村名の逆引きマップを構築（city.name → { prefecture, city }）
+// area_slugを持たない自治体ピラー記事（area_nameのみ設定）を拾うためのフォールバック
+const cityNameMap = new Map();
 for (const prefecture of areas) {
   for (const city of (prefecture.cities || [])) {
+    cityNameMap.set(city.name, { prefecture, city });
     for (const area of (city.areas || [])) {
       areaMap.set(area.slug, { prefecture, city });
     }
@@ -46,8 +50,9 @@ const articleCombos = new Map(); // key: "pref_slug::city_slug::cat_slug"
 for (const filePath of mdFiles) {
   try {
     const { data } = matter(readFileSync(filePath, "utf-8"));
-    if (data.area_slug && data.category_slug && data.category_slug !== "about") {
-      const info = areaMap.get(data.area_slug);
+    if (data.category_slug && data.category_slug !== "about" && (data.area_slug || data.area_name)) {
+      // area_slugを優先し、なければarea_name（市区町村名との完全一致）でフォールバック
+      const info = (data.area_slug && areaMap.get(data.area_slug)) || (data.area_name && cityNameMap.get(data.area_name));
       if (!info) continue;
       const key = `${info.prefecture.slug}::${info.city.slug}::${data.category_slug}`;
       if (!articleCombos.has(key)) {
