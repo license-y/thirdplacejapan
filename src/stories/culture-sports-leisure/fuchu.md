@@ -128,3 +128,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 江東区の新旧の同居との対比は[江東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/koto/)も合わせて参照
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
 - 観戦・門前・学術の3層構造とは異なる、多摩川と採石場跡地が育む暮らしの延長のレジャーは[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)も参考になる
+- 「観る」府中市とは異なる、移築建造物群を実際に歩いて時間をたどる小金井市の文化・レジャーは[小金井市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koganei/)も参考になる

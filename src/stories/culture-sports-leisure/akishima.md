@@ -127,3 +127,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 渋谷区の参加型文化との対比は[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)も合わせて参照
 - 台東区の鑑賞型文化との対比は[台東区の文化・レジャーガイド](/stories/culture-sports-leisure/taito/)も参考になる
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
+- 生活密着型の昭島市と対照的な、移築建造物群が刻む時間の集積地としての小金井市の文化・レジャーは[小金井市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koganei/)も参考になる

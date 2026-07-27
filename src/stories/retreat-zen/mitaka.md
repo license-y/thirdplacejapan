@@ -143,3 +143,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 大学町が育む知的孤独との違いは[文京区でリトリート・禅体験をサードプレイスにする](/stories/retreat-zen/bunkyo/)も参考になる
 - 東京のカフェでひとり時間を過ごす視点は[ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)で解説している
 - 23区から離れた渓谷・宿場町の静けさとの違いは[青梅市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/ome/)も参考になる
+- 一つの大きな器ではなく、一本の水路が線として貫く静けさとの違いは[小金井市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/koganei/)も参考になる
