@@ -287,7 +287,8 @@ og_type: "article"
     <aside class="hidden lg:block">
       <div class="sticky top-24 space-y-8">
 
-        {# カテゴリ #}
+        {# カテゴリ（日本語版のみ。英語版はカテゴリ一覧ページが存在しないため非表示） #}
+        {% if lang != "en" %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
           <p class="label mb-4">カテゴリ</p>
           <ul class="space-y-0">
@@ -302,6 +303,7 @@ og_type: "article"
             {% endfor %}
           </ul>
         </div>
+        {% endif %}
 
         {# 最新記事（現在のページと同じ言語のみ） #}
         {% set latestPosts = collections.articles | selectLang(lang or "ja") | rejectCategory("about") | head(5) %}
