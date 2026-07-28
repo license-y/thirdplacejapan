@@ -9,6 +9,7 @@ area_name: 東京
 thumbnail: "/assets/images/articles/japanese-tea-ceremony-curated-setting.webp"
 tags:
   - articles
+hreflang_en: /en/stories/concept/tpj-certification-and-select-difference/
 ---
 
 **Third Place Japanには「TPJセレクト」と「認証グレード」という2つの仕組みがあります。TPJセレクトは編集部が独自に発掘・紹介する招待制枠で施設からの申請は不要です。認証グレード（Certified・Silver・Gold・Platinum・Flagship）は施設側の申請と審査を経て発行される正式な仕組みです。役割が異なる2軸だからこそ、両方が必要とされています。いずれも、日本各地のサードプレイスを見つけ出し、価値を伝えるための仕組みだ。**

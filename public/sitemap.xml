@@ -2496,6 +2496,14 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/tpj-certification-and-select-difference/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/kiyose/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -2575,6 +2583,9 @@
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/about/tpj-certification-and-select-difference/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/tpj-certification-and-select-difference/"/>
     
   </url>
   

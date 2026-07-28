@@ -108,7 +108,7 @@ TPJ Select — the unpaid, editorially curated tier — doesn't require a high s
 
 ## How the Axes Get Used: TPJ Select and Certification Grades
 
-The seven axes function as a shared evaluation language across both [TPJ Select](/stories/select/) (unpaid, editorially curated) and the five paid and unpaid certification grades, from Certified through Flagship *(both tracks explained in [TPJ's certification grades](/stories/about/certification-grades/) and [why TPJ runs two separate tracks](/stories/about/tpj-certification-and-select-difference/), Japanese articles; English versions are in progress)*. Every certified venue publishes its score out of 10 on all seven axes; Platinum grade and above additionally displays a radar chart. Using the same seven axes from the free tier through full certification means the value of "being there" is judged on one consistent standard, regardless of how a venue entered the system.
+The seven axes function as a shared evaluation language across both [TPJ Select](/stories/select/) (unpaid, editorially curated) and the five paid and unpaid certification grades, from Certified through Flagship — [why TPJ runs two separate tracks](/en/stories/concept/tpj-certification-and-select-difference/) explains the reasoning, and [TPJ's certification grades](/stories/about/certification-grades/) *(Japanese article; an English version is in progress)* breaks down the distinctions between grades. Every certified venue publishes its score out of 10 on all seven axes; Platinum grade and above additionally displays a radar chart. Using the same seven axes from the free tier through full certification means the value of "being there" is judged on one consistent standard, regardless of how a venue entered the system.
 
 ---
 
