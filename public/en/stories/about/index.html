@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37RDY9RX09"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-37RDY9RX09');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third Place Guide: What a Third Place Is, and How TPJ Reads One | Third Place Japan Stories</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="description" content="Third Place Japan&#39;s guide to the third place concept — the definition, Oldenburg&#39;s eight conditions, and the seven-axis framework TPJ uses to evaluate a space.">
+  <meta name="keywords" content="サードプレイス,第三の居場所,Third Place Japan,TPJ,TPJセレクト,空間評価,カフェ,ホテル,日本">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thirdplacejapan.com/en/stories/about/">
+
+  <!-- hreflang: 自己参照＋対訳版への相互リンク（langフロントマターに応じて自己言語を判定） -->
+  
+  <link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/about/">
+  
+  <link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/about/">
+  <link rel="alternate" hreflang="x-default" href="https://thirdplacejapan.com/stories/about/">
+  
+  
+
+  <!-- OGP -->
+  <meta property="og:title" content="Third Place Guide: What a Third Place Is, and How TPJ Reads One | Third Place Japan Stories">
+  <meta property="og:description" content="Third Place Japan&#39;s guide to the third place concept — the definition, Oldenburg&#39;s eight conditions, and the seven-axis framework TPJ uses to evaluate a space.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thirdplacejapan.com/en/stories/about/">
+  <meta property="og:image" content="https://thirdplacejapan.com/assets/images/articles/third-place-guide-hub-quiet-study-en.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Third Place Japan Stories">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Third Place Guide: What a Third Place Is, and How TPJ Reads One | Third Place Japan Stories">
+  <meta name="twitter:description" content="Third Place Japan&#39;s guide to the third place concept — the definition, Oldenburg&#39;s eight conditions, and the seven-axis framework TPJ uses to evaluate a space.">
+  <meta name="twitter:image" content="https://thirdplacejapan.com/assets/images/articles/third-place-guide-hub-quiet-study-en.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ivory: #F8F6F1;
+      --color-dark: #1C1C1C;
+      --color-dark2: #4A4A4A;
+      --color-gold: #B8960C;
+      --color-text: #2D2A26;
+      --color-muted: #6B5C52;
+      --color-border: #E4DDD6;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-sans: 'Noto Sans JP', sans-serif;
+    }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-ivory);
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .gold-rule {
+      width: 2rem;
+      height: 1px;
+      background: var(--color-gold);
+    }
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      font-family: var(--font-sans);
+    }
+    .grade-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+    }
+    .axis-score-bar {
+      height: 2px;
+      background: var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .axis-score-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: var(--color-gold);
+      transition: width 0.8s ease;
+    }
+    .venue-card {
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s ease;
+    }
+    .venue-card:hover {
+      box-shadow: 0 6px 20px rgba(184,150,12,0.14);
+    }
+    .prose p { margin-bottom: 1.5em; line-height: 1.9; color: #3D2B1F; }
+    .prose h2 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .prose h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+    }
+    .prose a { color: var(--c-accent); text-decoration: underline; text-underline-offset: 3px; }
+    .prose a:hover { opacity: 0.75; }
+    .prose ul { margin-bottom: 1.5em; padding-left: 1.5em; list-style: disc; }
+    .prose ol { margin-bottom: 1.5em; padding-left: 1.5em; list-style: decimal; }
+    .prose li { margin-bottom: 0.5em; line-height: 1.8; }
+    .prose hr { margin: 2.5em 0; border: none; border-top: 1px solid var(--color-border); }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.75em 0; font-size: 0.875rem; }
+    .prose table th {
+      background-color: #F0EDE6;
+      font-weight: 500;
+      text-align: left;
+      padding: 0.6em 1em;
+      border: 1px solid var(--color-border);
+      font-family: var(--font-serif);
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+    .prose table td {
+      padding: 0.6em 1em;
+      border: 1px solid var(--color-border);
+      line-height: 1.7;
+      vertical-align: top;
+    }
+    .prose table tr:nth-child(even) td { background-color: #FAFAF8; }
+  </style>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "alternateName": ["TPJ", "サードプレイスジャパン"],
+    "url": "https://thirdplacejapan.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/tpj-logo.png",
+      "width": 900,
+      "height": 275
+    },
+    "description": "日本全国の第三の居場所を7軸基準で評価・認証するサードプレイス専門メディア",
+    "foundingDate": "2025",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Japan"
+    }
+  }
+  </script>
+
+  
+</head>
+<body>
+  
+<style>
+  #pf-input {
+    width: 100%;
+    border: 1px solid rgba(184,150,12,0.5);
+    border-radius: 9999px;
+    background: #fff;
+    color: #2D2A26;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: inherit;
+  }
+  #pf-input:focus { border-color: #B8960C; }
+  #pf-input::placeholder { color: #9B9490; }
+  #pf-input-wrap { position: relative; }
+  #pf-input-wrap svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); pointer-events: none; }
+  #pf-results { margin-top: 0.5rem; max-height: 22rem; overflow-y: auto; }
+  #pf-results a {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid #E5E2DC;
+    text-decoration: none;
+    transition: background 0.12s;
+  }
+  #pf-results a:last-child { border-bottom: none; }
+  #pf-results a:hover { background: #F8F6F1; }
+  #pf-results .pf-title { font-family: serif; font-size: 0.875rem; color: #2D2A26; font-weight: 300; }
+  #pf-results .pf-excerpt { font-size: 0.72rem; color: #9B9490; margin-top: 0.2rem; line-height: 1.5; }
+  #pf-msg { font-size: 0.8rem; color: #9B9490; padding: 0.75rem 0; }
+</style>
+
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
+
+    
+    <a href="/en/stories/" class="inline-block leading-none" id="nav-logo">
+      <img src="/assets/images/main/tpj-logo-banner-white.webp" alt="Third Place Japan Stories" loading="eager" decoding="async" style="height:36px;width:auto;display:block;">
+    </a>
+
+    
+    <ul class="hidden lg:flex items-center gap-8" role="list">
+      <li><a href="/en/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">Articles</a></li>
+      <li><a href="/en/stories/about/" class="nav-link text-xs tracking-widest transition-colors duration-200">Third Place Guide</a></li>
+      <li><a href="/en/stories/select/green-beans-coffee-shibuya/" class="nav-link text-xs tracking-widest transition-colors duration-200">TPJ Select</a></li>
+      <li><a href="/stories/" class="nav-link text-xs tracking-widest transition-colors duration-200">日本語</a></li>
+      <li><a href="/" class="nav-link text-xs tracking-widest transition-colors duration-200">About TPJ</a></li>
+      <li>
+        <button id="search-open-btn" aria-label="Search articles" class="nav-link p-1 transition-colors duration-200">
+          <i data-lucide="search" class="w-4 h-4"></i>
+        </button>
+      </li>
+    </ul>
+
+    
+    <div class="lg:hidden flex items-center gap-2">
+      <button id="search-open-btn-mobile" aria-label="Search articles" class="p-2 transition-colors duration-300">
+        <i data-lucide="search" class="w-5 h-5"></i>
+      </button>
+      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"
+              class="p-2 transition-colors duration-300" id="menu-btn">
+        <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </nav>
+
+  
+  <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-border">
+    <ul class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-x-3 gap-y-2" role="list">
+      <li class="whitespace-nowrap"><a href="/en/stories/" class="text-xs text-text hover:text-gold transition-colors">Articles</a></li>
+      <li class="whitespace-nowrap"><a href="/en/stories/about/" class="text-xs text-text hover:text-gold transition-colors">Third Place Guide</a></li>
+      <li class="whitespace-nowrap"><a href="/en/stories/select/green-beans-coffee-shibuya/" class="text-xs text-text hover:text-gold transition-colors">TPJ Select</a></li>
+      <li class="whitespace-nowrap"><a href="/stories/" class="text-xs text-text hover:text-gold transition-colors">日本語</a></li>
+      <li class="whitespace-nowrap"><a href="/" class="text-xs text-text hover:text-gold transition-colors">About TPJ</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<div id="search-overlay" class="hidden fixed inset-0 z-[200] flex items-start justify-center pt-20 px-4" style="background:rgba(28,28,28,0.7);backdrop-filter:blur(4px);" role="dialog" aria-modal="true" aria-label="Article search">
+  <div class="bg-ivory w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden">
+    <div class="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
+      <p class="font-serif text-base font-light text-dark">Search Articles</p>
+      <button id="search-close-btn" aria-label="Close" class="p-1 text-muted hover:text-dark transition-colors" style="line-height:1">✕</button>
+    </div>
+    <div class="px-6 py-4">
+      <div id="pf-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B9490" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="pf-input" placeholder="Search articles, areas, categories..." autocomplete="off" spellcheck="false">
+      </div>
+      <div id="pf-results"></div>
+      <div id="pf-msg"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  /* ── ナビ色制御 ── */
+  const nav = document.getElementById('nav');
+  const links = nav.querySelectorAll('.nav-link');
+  const btn = document.getElementById('menu-toggle');
+  const mobileSearchBtn = document.getElementById('search-open-btn-mobile');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let ticking = false;
+
+  function updateNav() {
+    nav.style.backgroundColor = '#2D2A26';
+    nav.style.backdropFilter = 'none';
+    nav.style.borderBottom = '1px solid rgba(184,150,12,0.25)';
+    const color = '#F8F6F1';
+    links.forEach(l => l.style.color = color);
+    if (btn) btn.style.color = color;
+    if (mobileSearchBtn) mobileSearchBtn.style.color = color;
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+  updateNav();
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+
+  /* ── 検索（Pagefind JS API）── */
+  const overlay  = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-close-btn');
+  const input    = document.getElementById('pf-input');
+  const results  = document.getElementById('pf-results');
+  const msg      = document.getElementById('pf-msg');
+  const openBtns = [
+    document.getElementById('search-open-btn'),
+    document.getElementById('search-open-btn-mobile')
+  ].filter(Boolean);
+
+  let pf = null;
+  let timer = null;
+
+  async function loadPF() {
+    if (pf) return pf;
+    pf = await import('/pagefind/pagefind.js');
+    await pf.init();
+    return pf;
+  }
+
+  function openSearch() {
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function() { if (input) input.focus(); }, 80);
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  const PAGE_SIZE = 25;
+  let allResults = [];
+  let shownCount = 0;
+
+  function renderItem(item) {
+    var excerpt = item.excerpt ? item.excerpt.replace(/<mark>/g,'<b style="color:#B8960C;font-weight:500">').replace(/<\/mark>/g,'</b>') : '';
+    return '<a href="' + item.url + '">'
+      + '<div class="pf-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</div>'
+      + (excerpt ? '<div class="pf-excerpt">' + excerpt + '</div>' : '')
+      + '</a>';
+  }
+
+  function updateMoreBtn() {
+    var existing = document.getElementById('pf-more-btn');
+    if (existing) existing.remove();
+    if (shownCount < allResults.length) {
+      var remaining = allResults.length - shownCount;
+      var btn = document.createElement('button');
+      btn.id = 'pf-more-btn';
+      btn.textContent = 'Show ' + Math.min(remaining, PAGE_SIZE) + ' more (' + remaining + ' remaining)';
+      btn.style.cssText = 'display:block;width:100%;margin-top:0.5rem;padding:0.6rem;font-size:0.75rem;color:#B8960C;border:1px solid rgba(184,150,12,0.4);border-radius:0.5rem;background:#fff;cursor:pointer;';
+      btn.addEventListener('click', async function() {
+        var next = allResults.slice(shownCount, shownCount + PAGE_SIZE);
+        var items = await Promise.all(next.map(function(r) { return r.data(); }));
+        items.forEach(function(item) {
+          var div = document.createElement('div');
+          div.innerHTML = renderItem(item);
+          results.insertBefore(div.firstChild, btn);
+        });
+        shownCount += items.length;
+        updateMoreBtn();
+      });
+      results.appendChild(btn);
+    }
+  }
+
+  if (input) {
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      const q = this.value.trim();
+      if (!q) { results.innerHTML = ''; msg.textContent = ''; allResults = []; shownCount = 0; return; }
+      timer = setTimeout(async function() {
+        try {
+          const pagefind = await loadPF();
+          const res = await pagefind.search(q);
+          allResults = res.results;
+          shownCount = 0;
+          if (!allResults.length) {
+            results.innerHTML = '';
+            msg.textContent = 'No results found for "' + q + '"';
+            return;
+          }
+          msg.textContent = allResults.length + ' results found';
+          var first = allResults.slice(0, PAGE_SIZE);
+          var items = await Promise.all(first.map(function(r) { return r.data(); }));
+          shownCount = items.length;
+          results.innerHTML = items.map(renderItem).join('');
+          updateMoreBtn();
+        } catch(e) {
+          msg.textContent = 'Failed to load search';
+        }
+      }, 250);
+    });
+  }
+
+  openBtns.forEach(function(b) { b.addEventListener('click', openSearch); });
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeSearch(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+})();
+</script>
+
+
+<main class="pt-16">
+  
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Third Place Guide: What a Third Place Is, and How TPJ Reads One",
+  "description": "Third Place Japan's guide to the third place concept — the definition, Oldenburg's eight conditions, and the seven-axis framework TPJ uses to evaluate a space.",
+  
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://thirdplacejapan.com/assets/images/articles/third-place-guide-hub-quiet-study-en.webp",
+    "width": 800,
+    "height": 533
+  },
+  "datePublished": "2026-07-28",
+  "dateModified": "2026-07-28",
+  "author": {
+    "@type": "Organization",
+    "name": "サードプレイスジャパン編集部",
+    "url": "https://thirdplacejapan.com/about-company/#editorial-team",
+    "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Third Place Japan",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thirdplacejapan.com/assets/images/main/tpj-logo.png",
+      "width": 900,
+      "height": 275
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thirdplacejapan.com/en/stories/about/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Third Place Japan Stories",
+    "url": "https://thirdplacejapan.com/stories/"
+  },
+  "inLanguage": "en",
+  "about": {
+    "@type": "Thing",
+    "name": "Third Place"
+  },
+  "wordCount": 417,
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".answer-lead", ".faq-body p"]
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "https://thirdplacejapan.com" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://thirdplacejapan.com/en/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "Third Place Guide", "item": "https://thirdplacejapan.com/en/stories/about/" }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Third Place Japan Glossary",
+  "url": "https://thirdplacejapan.com/en/stories/about/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2"]
+  },
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Third Place",
+      "alternateName": ["Ibasho", "サードプレイス"],
+      "description": "A space beyond home (first place) and work or school (second place) where a person can be themselves, freely and without obligation. Coined by sociologist Ray Oldenburg.",
+      "url": "https://thirdplacejapan.com/en/stories/concept/what-is-third-place-japan/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "TPJ Seven-Axis Evaluation",
+      "alternateName": ["Seven-Axis Framework"],
+      "description": "Third Place Japan's own seven evaluation axes: Comfort & Sensory Quality, Quietness & Privacy, Specialness & Non-daily Experience, Story & Empathy for Background, Revisit & Continuity Value, Record & Share Experience, and Inbound & Multilingual Compatibility. Each axis is scored out of 10.",
+      "url": "https://thirdplacejapan.com/en/stories/concept/tpj-7-axis-evaluation-guide/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "TPJ Certification Grade",
+      "alternateName": ["Certification Grade"],
+      "description": "TPJ's formal certification runs Certified, Silver, Gold, Platinum, and Flagship. Flagship is the top grade, awarded to spaces that perform exceptionally across all seven axes.",
+      "url": "https://thirdplacejapan.com/stories/select/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Comfort & Sensory Quality",
+      "alternateName": "TPJ Axis 1",
+      "description": "TPJ's first evaluation axis. Materials, lighting, scent, temperature, and sound — comfort felt through the senses.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Quietness & Privacy",
+      "alternateName": "TPJ Axis 2",
+      "description": "TPJ's second evaluation axis. Noise level, seat spacing, and visual separation — the degree to which quiet and privacy are protected.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Specialness & Non-daily Experience",
+      "alternateName": "TPJ Axis 3",
+      "description": "TPJ's third evaluation axis. The sense of departure from the ordinary — a quality unique to the experience of being there.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Story & Empathy for Background",
+      "alternateName": "TPJ Axis 4",
+      "description": "TPJ's fourth evaluation axis. How much depth a visitor's experience gains from knowing a space's history, intention, and background.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Revisit & Continuity Value",
+      "alternateName": "TPJ Axis 5",
+      "description": "TPJ's fifth evaluation axis. The pull toward returning — whether a space gives someone a real reason to come back.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Record & Share Experience",
+      "alternateName": "TPJ Axis 6",
+      "description": "TPJ's sixth evaluation axis. Whether the experience of a space is genuinely worth documenting or recommending to others.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Inbound & Multilingual Compatibility",
+      "alternateName": "TPJ Axis 7",
+      "description": "TPJ's seventh evaluation axis. Foreign-language support and how easily an international visitor can use a space without friction.",
+      "url": "https://thirdplacejapan.com/en/stories/about/"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a third place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A third place is a space beyond home and work where you can simply be yourself, free of obligation. The concept was coined by sociologist Ray Oldenburg, and Third Place Japan reads it through its own seven-axis framework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Oldenburg's eight conditions of a third place?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neutral ground, leveling, conversation as the main activity, accessibility, regulars, a low profile, a playful mood, and a home away from home. They function as a description of what strong third places tend to share, not a strict checklist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a third place the same thing as your favorite spot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not quite. A favorite spot describes personal habit; a third place is a more specific concept describing a structure — neutral, accessible, and free of obligation — that a space either has or doesn't, regardless of whether any one person has a habit of visiting it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is TPJ's seven-axis evaluation framework?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comfort & Sensory Quality, Quietness & Privacy, Specialness & Non-daily Experience, Story & Empathy for Background, Revisit & Continuity Value, Record & Share Experience, and Inbound & Multilingual Compatibility — the shared evaluation language behind every space TPJ certifies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who came up with the third place concept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "American sociologist Ray Oldenburg, in his 1989 book The Great Good Place. The book remains the foundational text on the subject more than three decades later."
+      }
+    }
+  ]
+}
+</script>
+
+<div class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="Breadcrumb">
+    <a href="/en/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span class="text-border">／</span>
+    <span>Third Place Guide</span>
+  </nav>
+
+  <div class="mb-14" data-aos="fade-up">
+    <p class="label mb-4">Third Place Guide</p>
+    <h1 class="font-serif text-3xl md:text-4xl font-light text-dark mb-4 leading-tight">Third Place Guide</h1>
+    <div class="gold-rule mb-6"></div>
+  </div>
+
+  <div data-pagefind-body>
+
+    
+    <div class="answer-lead mb-10 px-5 py-4 rounded-xl" style="background-color: rgba(184,150,12,0.06); border-left: 2px solid #B8960C;" data-aos="fade-up">
+      <p class="text-sm font-medium text-dark leading-relaxed">
+        A third place is a space beyond home and work where you can simply be yourself. Sociologist Ray Oldenburg proposed the concept; Third Place Japan (TPJ) reads it through a seven-axis framework built for how space and belonging function in contemporary Japan.
+      </p>
+    </div>
+
+    
+    <div class="space-y-12 mb-16">
+      
+    <section data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">The Definition</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">
+        A third place is a space beyond home (the first place) and work or school (the second place) — somewhere you can simply be yourself. The term comes from sociologist Ray Oldenburg's 1989 book <em>The Great Good Place</em>, which described the informal, freely-entered spaces that give community its texture.
+      </p>
+      <p class="text-sm text-muted leading-relaxed">
+        Third Place Japan (TPJ) builds on that theory with a seven-axis framework of its own, adapted for how space, silence, and belonging actually function in contemporary Japan — including the concept of <em>ibasho</em> (居場所), a place where one is simply allowed to be. See <a href="/en/stories/concept/what-is-third-place-japan/" class="text-gold hover:underline">What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho</a> for the full theory.
+      </p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">The Eight Conditions</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">
+        Oldenburg identified eight conditions that tend to appear together in a genuine third place: neutral ground, leveling, conversation as the main activity, accessibility, regulars, a low profile, a playful mood, and a home away from home. None of these describe what a space sells — they describe how it behaves toward the people who return to it.
+      </p>
+      <p class="text-sm text-muted leading-relaxed">
+        Each condition is examined individually, with examples from contemporary Japan, in <a href="/en/stories/concept/third-place-8-conditions/" class="text-gold hover:underline">The Eight Conditions of a Third Place</a>.
+      </p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">TPJ's Seven-Axis Framework</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">
+        TPJ scores every space it evaluates across seven axes: Comfort & Sensory Quality, Quietness & Privacy, Specialness & Non-daily Experience, Story & Empathy for Background, Revisit & Continuity Value, Record & Share Experience, and Inbound & Multilingual Compatibility.
+      </p>
+      <p class="text-sm text-muted leading-relaxed">
+        The seven axes fall into three groups — the quality of the space, its emotional core, and its wider reach — and function as one evaluation language across every category TPJ certifies. Each axis is broken down individually in <a href="/en/stories/concept/tpj-7-axis-evaluation-guide/" class="text-gold hover:underline">TPJ's Seven-Axis Evaluation Guide</a>.
+      </p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">Where the Framework Shows Up</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">
+        A third place isn't limited to one kind of venue. A specialty coffee shop, a sento, a public library, a shrine forecourt, a coworking space, a suburban canal path — different as they are, each can satisfy the same underlying conditions.
+      </p>
+      <p class="text-sm text-muted leading-relaxed">
+        <a href="/en/stories/concept/third-place-examples/" class="text-gold hover:underline">Ten Kinds of Third Place</a> surveys how the concept plays out across ten distinct categories of space in Japan.
+      </p>
+    </section>
+
+    <section data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">TPJ Select and Certification</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">
+        TPJ runs two separate systems on top of this framework. TPJ Select is an unpaid editorial pick — spaces our team finds and features, with no application involved. Certification (Certified, Silver, Gold, Platinum, Flagship) is a formal five-grade system a venue applies for and is assessed against.
+      </p>
+      <p class="text-sm text-muted leading-relaxed">
+        <a href="/en/stories/concept/tpj-certification-and-select-difference/" class="text-gold hover:underline">TPJ Select vs. TPJ Certification</a> explains why the two tracks stay separate, and how a space can move from one into the other.
+      </p>
+    </section>
+
+    </div>
+
+    
+    <section class="mb-16 faq-body" data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-6 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between" style="color:#3D2B1F;">
+            What is a third place?
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-border pt-4">
+            A space beyond home and work where you can simply be yourself, free of obligation. The concept was coined by sociologist Ray Oldenburg, and Third Place Japan reads it through its own seven-axis framework.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-6 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between" style="color:#3D2B1F;">
+            What are Oldenburg's eight conditions of a third place?
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-border pt-4">
+            Neutral ground, leveling, conversation as the main activity, accessibility, regulars, a low profile, a playful mood, and a home away from home. They describe what strong third places tend to share, not a strict checklist.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-6 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between" style="color:#3D2B1F;">
+            Is a third place the same thing as your favorite spot?
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-border pt-4">
+            Not quite. A favorite spot describes personal habit; a third place describes a structure — neutral, accessible, free of obligation — that a space either has or doesn't, regardless of any one person's habits.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-6 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between" style="color:#3D2B1F;">
+            What is TPJ's seven-axis evaluation framework?
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-border pt-4">
+            Comfort & Sensory Quality, Quietness & Privacy, Specialness & Non-daily Experience, Story & Empathy for Background, Revisit & Continuity Value, Record & Share Experience, and Inbound & Multilingual Compatibility — the shared evaluation language behind every space TPJ certifies.
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-sm border border-border">
+          <summary class="px-6 py-4 cursor-pointer text-sm font-normal list-none flex items-center justify-between" style="color:#3D2B1F;">
+            Who came up with the third place concept?
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-muted leading-relaxed border-t border-border pt-4">
+            American sociologist Ray Oldenburg, in his 1989 book The Great Good Place — still the foundational text on the subject more than three decades later.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    
+    <section class="mb-16" data-aos="fade-up">
+      <h2 class="font-serif text-xl font-light text-dark mb-4">In Summary</h2>
+      <p class="text-sm text-muted leading-relaxed">
+        A third place is a space beyond home and work where someone can simply be themselves. Oldenburg's eight conditions and TPJ's seven-axis framework are two ways of reading the same underlying idea — one theoretical, one built for evaluating real spaces across Japan. Third Place Japan applies this framework to certify and document genuine third places, in both Japanese and English.
+      </p>
+    </section>
+
+  </div>
+
+  
+  
+  
+  <div data-aos="fade-up">
+    <h2 class="font-serif text-xl font-light text-dark mb-8">Go Deeper</h2>
+    <div class="space-y-3">
+      
+      <a href="/en/stories/concept/third-place-8-conditions/"
+         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+          <img src="/assets/images/articles/third-place-8-conditions-neighborhood-counter-en.webp" alt="The Eight Conditions of a Third Place: Oldenburg&#39;s Checklist, Reconsidered by TPJ"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+              style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            The Eight Conditions of a Third Place: Oldenburg&#39;s Checklist, Reconsidered by TPJ
+          </h3>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/third-place-examples/"
+         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+          <img src="/assets/images/articles/third-place-examples-park-bench-en.webp" alt="Ten Kinds of Third Place: What Actually Counts as One in Japan"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+              style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            Ten Kinds of Third Place: What Actually Counts as One in Japan
+          </h3>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/tpj-7-axis-evaluation-guide/"
+         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+          <img src="/assets/images/articles/tpj-7-axis-evaluation-guide-geometry-en.webp" alt="TPJ&#39;s Seven-Axis Evaluation Guide: How Third Place Japan Scores a Space"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+              style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            TPJ&#39;s Seven-Axis Evaluation Guide: How Third Place Japan Scores a Space
+          </h3>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/tpj-certification-and-select-difference/"
+         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+          <img src="/assets/images/articles/tpj-certification-select-two-tracks-en.webp" alt="TPJ Select vs. TPJ Certification: Why Third Place Japan Runs Two Separate Tracks"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+              style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            TPJ Select vs. TPJ Certification: Why Third Place Japan Runs Two Separate Tracks
+          </h3>
+        </div>
+      </a>
+      
+      <a href="/en/stories/concept/what-is-third-place-japan/"
+         class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="shrink-0 w-32 md:w-40 overflow-hidden">
+          <img src="/assets/images/articles/third-place-quiet-reading-window-en.webp" alt="What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4 md:p-5 flex flex-col justify-center min-w-0">
+          <h3 class="font-serif text-sm md:text-base font-light text-dark group-hover:text-gold transition-colors leading-snug"
+              style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho
+          </h3>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+  
+
+</div>
+
+</main>
+
+<footer class="mt-14 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+
+      <!-- ① Latest Articles -->
+      <div>
+        <p class="label mb-4">Latest Articles</p>
+        <ul class="space-y-2 text-xs text-muted">
+          
+          
+          <li><a href="/en/stories/concept/third-place-8-conditions/" class="hover:text-gold transition-colors line-clamp-1">The Eight Conditions of a Third Place: Oldenburg&#39;s Checklist, Reconsidered by TPJ</a></li>
+          
+          <li><a href="/en/stories/concept/third-place-examples/" class="hover:text-gold transition-colors line-clamp-1">Ten Kinds of Third Place: What Actually Counts as One in Japan</a></li>
+          
+          <li><a href="/en/stories/concept/tpj-7-axis-evaluation-guide/" class="hover:text-gold transition-colors line-clamp-1">TPJ&#39;s Seven-Axis Evaluation Guide: How Third Place Japan Scores a Space</a></li>
+          
+          <li><a href="/en/stories/concept/tpj-certification-and-select-difference/" class="hover:text-gold transition-colors line-clamp-1">TPJ Select vs. TPJ Certification: Why Third Place Japan Runs Two Separate Tracks</a></li>
+          
+        </ul>
+        <a href="/en/stories/" class="inline-block mt-3 text-xs text-gold hover:underline">All Articles →</a>
+      </div>
+
+      <!-- ② Third Place Guide -->
+      <div>
+        <p class="label mb-4">Third Place Guide</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/en/stories/concept/what-is-third-place-japan/" class="hover:text-gold transition-colors line-clamp-1">What Is a Third Place? The TPJ Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- ③ TPJ Select -->
+      <div>
+        <p class="label mb-4">TPJ Select</p>
+        <ul class="space-y-2 text-xs text-muted">
+          <li><a href="/en/stories/select/green-beans-coffee-shibuya/" class="hover:text-gold transition-colors line-clamp-1">Green Beans Coffee</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="font-serif text-xs text-muted tracking-wider">Third Place Japan</p>
+      <a href="/stories/" class="inline-flex items-center gap-1.5 text-xs border border-gold/40 text-muted rounded-full px-3 py-1 hover:border-gold hover:text-gold transition-all">
+        <i data-lucide="globe" class="w-3 h-3"></i>
+        日本語
+      </a>
+      <p class="text-xs text-muted">© Third Place Japan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 40 });
+  </script>
+  <script>lucide.createIcons();</script>
+  
+</body>
+</html>

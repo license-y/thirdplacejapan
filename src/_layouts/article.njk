@@ -88,7 +88,7 @@ og_type: "article"
       "@type": "ListItem",
       "position": 3,
       "name": "{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}",
-      "item": "{{ site.url }}{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}"
+      "item": "{{ site.url }}{{ '/en/stories/about/' if lang == 'en' else '/stories/about/' }}"
     },
     {
       "@type": "ListItem",
@@ -153,7 +153,7 @@ og_type: "article"
         <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
         {% if category_slug == "about" %}
         <span class="text-border">／</span>
-        <a href="{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}" class="hover:text-gold transition-colors">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</a>
+        <a href="{{ '/en/stories/about/' if lang == 'en' else '/stories/about/' }}" class="hover:text-gold transition-colors">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</a>
         {% elif catObj %}
         <span class="text-border">／</span>
         <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
@@ -347,7 +347,7 @@ og_type: "article"
             </li>
             {% endfor %}
           </ul>
-          <a href="{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">{{ "See all →" if lang == "en" else "すべて見る →" }}</a>
+          <a href="{{ '/en/stories/about/' if lang == 'en' else '/stories/about/' }}" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">{{ "See all →" if lang == "en" else "すべて見る →" }}</a>
         </div>
         {% endif %}
 
