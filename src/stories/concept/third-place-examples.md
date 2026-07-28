@@ -9,6 +9,7 @@ thumbnail: "/assets/images/articles/third-place-examples-variety-spaces.webp"
 snippet: カフェ・銭湯・書店・公園・コワーキングなど、中立性と居心地を備えた場所が該当する。
 tags:
   - articles
+hreflang_en: /en/stories/concept/third-place-examples/
 ---
 
 **サードプレイスの定義は抽象的だが、具体例を見ればその本質が見えてくる。「家でも職場でもない、義務から解放された第三の居場所」——この条件を満たす場所は、私たちの日常に意外なほど多く存在している。**

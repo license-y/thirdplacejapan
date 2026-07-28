@@ -398,7 +398,7 @@ og_type: "article"
   </div>
 
   {# 記事一覧（テーマ別） #}
-  {% set aboutPosts = collections.aboutArticles %}
+  {% set aboutPosts = collections.aboutArticles | rejectLang("en") %}
   <div data-aos="fade-up">
     <h2 class="font-serif text-xl font-light text-dark mb-8">さらに詳しく知る</h2>
 

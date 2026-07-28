@@ -154,6 +154,8 @@ Neither Oldenburg's eight conditions nor TPJ's seven axes include food quality, 
 
 **Suburban canal paths and satoyama woodland** answer the same conditions through a different mechanism: not untouched wilderness, but landscape kept alive by continuous, small-scale human care — what Japanese planners call "secondary nature." [Koganei](/stories/retreat-zen/koganei/) *(Japanese article; English version in progress)*, where a single Edo-era canal cuts the city into a walkable line of quiet, and [Higashimurayama](/stories/retreat-zen/higashimurayama/) *(Japanese article; English version in progress)*, where a satoyama hillside is shared across several municipalities rather than owned by one, both function this way — a stillness produced by a linear or shared structure, distinct from the single large park or mountain trailhead.
 
+These five are far from exhaustive. [Ten Kinds of Third Place: What Actually Counts as One in Japan](/en/stories/concept/third-place-examples/) runs through the full list, including specialty coffee shops, libraries, bookstores, coworking spaces, and hotel lounges alongside the categories above.
+
 ---
 
 ## Frequently Asked Questions

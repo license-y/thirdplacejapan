@@ -261,7 +261,8 @@ hreflang_en: "/en/stories/"
   </script>
 
   {# ピラー記事（サードプレイスガイド）#}
-  {% if collections.aboutArticles and collections.aboutArticles.length %}
+  {% set jaAboutArticles = collections.aboutArticles | rejectLang("en") %}
+  {% if jaAboutArticles and jaAboutArticles.length %}
   <div class="mb-20" data-aos="fade-up">
 
     {# セクションヘッダー #}
@@ -273,7 +274,7 @@ hreflang_en: "/en/stories/"
 
     {# 記事グリッド #}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="pillar-grid">
-      {% for post in collections.aboutArticles %}
+      {% for post in jaAboutArticles %}
       <a href="{{ post.url }}"
          class="group flex items-stretch bg-white rounded-2xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all overflow-hidden{% if loop.index > 9 %} pillar-extra hidden{% elif loop.index > 6 %} pillar-extra hidden md:flex{% endif %}">
         {% if post.data.thumbnail %}
