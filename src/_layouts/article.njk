@@ -87,8 +87,8 @@ og_type: "article"
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "サードプレイスとは",
-      "item": "{{ site.url }}/stories/about/"
+      "name": "{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}",
+      "item": "{{ site.url }}{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}"
     },
     {
       "@type": "ListItem",
@@ -153,7 +153,7 @@ og_type: "article"
         <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
         {% if category_slug == "about" %}
         <span class="text-border">／</span>
-        <a href="/stories/about/" class="hover:text-gold transition-colors">サードプレイスとは</a>
+        <a href="{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}" class="hover:text-gold transition-colors">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</a>
         {% elif catObj %}
         <span class="text-border">／</span>
         <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
@@ -168,7 +168,7 @@ og_type: "article"
       {# カテゴリラベル #}
       <div class="flex flex-wrap gap-2 mb-6" data-aos="fade-up">
         {% if category_slug == "about" %}
-        <span class="label">サードプレイスとは</span>
+        <span class="label">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</span>
         {% elif catObj %}
         <span class="label">{{ catObj.name_ja }}</span>
         {% else %}
@@ -327,12 +327,17 @@ og_type: "article"
         </div>
         {% endif %}
 
-        {# サードプレイスとは #}
-        {% if collections.aboutArticles and collections.aboutArticles.length %}
+        {# サードプレイスガイド #}
+        {% if lang == "en" %}
+        {% set aboutSidebarPosts = collections.aboutArticles | selectLang("en") %}
+        {% else %}
+        {% set aboutSidebarPosts = collections.aboutArticles | rejectLang("en") %}
+        {% endif %}
+        {% if aboutSidebarPosts and aboutSidebarPosts.length %}
         <div class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-color:#ffffff;">
-          <p class="label mb-4">サードプレイスとは</p>
+          <p class="label mb-4">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</p>
           <ul class="space-y-0">
-            {% for post in collections.aboutArticles | head(5) %}
+            {% for post in aboutSidebarPosts | head(5) %}
             <li class="border-b border-border last:border-0">
               <a href="{{ post.url }}" class="text-xs text-muted hover:text-gold transition-colors leading-snug block py-1.5">
                 {{ post.data.title }}
@@ -340,7 +345,7 @@ og_type: "article"
             </li>
             {% endfor %}
           </ul>
-          <a href="/stories/about/" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">すべて見る →</a>
+          <a href="{{ '/en/stories/concept/what-is-third-place-japan/' if lang == 'en' else '/stories/about/' }}" class="text-xs text-muted hover:text-gold transition-colors mt-3 block">{{ "See all →" if lang == "en" else "すべて見る →" }}</a>
         </div>
         {% endif %}
 
@@ -371,7 +376,7 @@ og_type: "article"
         {% endif %}
         <div class="p-4">
           {% if post.data.category_slug == "about" %}
-          <p class="text-xs text-muted mb-1">サードプレイスとは</p>
+          <p class="text-xs text-muted mb-1">{{ "Third Place Guide" if post.data.lang == "en" else "サードプレイスガイド" }}</p>
           {% else %}
           {% set relCat = categories | findCategoryBySlug(post.data.category_slug) %}
           {% if relCat %}<p class="text-xs text-muted mb-1">{{ relCat.name_ja }}</p>{% endif %}

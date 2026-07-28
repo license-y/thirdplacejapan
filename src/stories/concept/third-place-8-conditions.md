@@ -8,6 +8,7 @@ area_name: 東京
 thumbnail: "/assets/images/articles/third-place-conditions-cafe-japan.webp"
 tags:
   - articles
+hreflang_en: /en/stories/concept/third-place-8-conditions/
 ---
 
 **サードプレイスの8つの条件とは、社会学者レイ・オルデンバーグが1989年に定義した、第三の居場所が持つべき性質のことです。「中立の地」「平等性」「会話」など8項目からなり、現代のサードプレイス評価の原点となっています。**
