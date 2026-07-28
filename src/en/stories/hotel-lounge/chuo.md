@@ -99,7 +99,7 @@ Hotels near Tsukiji and Hamarikyu sit close to Tokyo Bay and Hamarikyu Gardens, 
 
 ## In Summary
 
-A stay in a Chuo-ku hotel lounge carries weight because the meaning of the place, not just the quality of the room, shapes the value of the experience. Nihonbashi's historical fact as the road network's origin point, the coexistence of water and city, the range running from Ginza through Nihonbashi to Tsukiji — all of it produces something that stands apart from a hotel anywhere else in Tokyo. Not Shibuya's view, not Minato's international polish, but the sense of being at the center of Tokyo — that's the most essential reason to choose a Chuo-ku hotel lounge as a third place. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
+A stay in a Chuo-ku hotel lounge carries weight because the meaning of the place, not just the quality of the room, shapes the value of the experience. Nihonbashi's historical fact as the road network's origin point, the coexistence of water and city, the range running from Ginza through Nihonbashi to Tsukiji — all of it produces something that stands apart from a hotel anywhere else in Tokyo. Not Shibuya's view, not Minato's international polish, but the sense of being at the center of Tokyo — that's the most essential reason to choose a Chuo-ku hotel lounge as a third place. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

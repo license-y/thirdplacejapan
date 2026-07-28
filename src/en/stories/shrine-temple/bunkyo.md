@@ -109,7 +109,7 @@ It's a Jodo-shu temple traditionally regarded as the site of her grave. Its devo
 
 ## In Summary
 
-Bunkyo-ku's shrines and temples work as a third place because they share a single devotion running underneath all of them — academic success — inherited from a scholarly plateau where Edo-period academies and a modern university now stand on the same ground. Third Place Japan evaluates spaces like these across seven axes, and Bunkyo-ku's shrine and temple experience is a clear case of faith organized around purpose rather than routine.
+Bunkyo-ku's shrines and temples work as a third place because they share a single devotion running underneath all of them — academic success — inherited from a scholarly plateau where Edo-period academies and a modern university now stand on the same ground. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Bunkyo-ku's shrine and temple experience is a clear case of faith organized around purpose rather than routine.
 
 ---
 

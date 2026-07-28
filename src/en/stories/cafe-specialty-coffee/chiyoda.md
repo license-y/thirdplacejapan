@@ -99,7 +99,7 @@ It varies sharply by neighborhood. Marunouchi and Otemachi's tower cafés carry 
 
 ## In Summary
 
-Chiyoda-ku's café culture resists a single description because the ward never converged on one identity — it holds three genuinely unrelated cultural registers side by side: Marunouchi's prestige, Jimbocho's accumulated knowledge, and Akihabara's fan-community intensity. Which neighborhood you step into changes the entire meaning of sitting down for a cup of coffee. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chiyoda-ku's neighborhoods as a distinct third place in its own right.
+Chiyoda-ku's café culture resists a single description because the ward never converged on one identity — it holds three genuinely unrelated cultural registers side by side: Marunouchi's prestige, Jimbocho's accumulated knowledge, and Akihabara's fan-community intensity. Which neighborhood you step into changes the entire meaning of sitting down for a cup of coffee. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chiyoda-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

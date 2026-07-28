@@ -93,7 +93,7 @@ In most cases, introduction from an existing member is a prerequisite for admiss
 
 ## In Summary
 
-Chuo-ku's members lounges stand on a long timeline traced back to Edo-period merchant culture, developing three distinct layers of belonging: status in Ginza, old-line trust in Nihonbashi, and neighborhood ties in Ningyocho. A merchant culture that treated who you meet, and where, as proof of trust connects naturally to the modern members-lounge format, and the fact of belonging becomes the value of the place itself. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
+Chuo-ku's members lounges stand on a long timeline traced back to Edo-period merchant culture, developing three distinct layers of belonging: status in Ginza, old-line trust in Nihonbashi, and neighborhood ties in Ningyocho. A merchant culture that treated who you meet, and where, as proof of trust connects naturally to the modern members-lounge format, and the fact of belonging becomes the value of the place itself. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

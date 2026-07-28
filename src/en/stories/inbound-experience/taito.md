@@ -103,7 +103,7 @@ Not really. Asakusa and Ueno's major sites have English signage and staff accust
 
 ## In Summary
 
-Taito-ku is the one Tokyo ward where Edo-period culture still runs as daily life rather than as a display for visitors. Asakusa, Ueno, Yanaka, and Kuramae each offer a different register of that same continuity, from compressed ritual to open-air museum to quiet residential temple town. Third Place Japan evaluates spaces like these across seven axes, and Taito-ku's inbound experience is a clear example of what a genuine third place can look like inside a major city.
+Taito-ku is the one Tokyo ward where Edo-period culture still runs as daily life rather than as a display for visitors. Asakusa, Ueno, Yanaka, and Kuramae each offer a different register of that same continuity, from compressed ritual to open-air museum to quiet residential temple town. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Taito-ku's inbound experience is a clear example of what a genuine third place can look like inside a major city.
 
 ---
 

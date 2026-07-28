@@ -105,7 +105,7 @@ It's one of the strongest options in Tokyo for it. Roppongi in particular holds 
 
 ## In Summary
 
-Minato-ku's bar scene resists a single description because it was never built around one thing — it grew out of five separate international conditions sitting inside the same ward boundary: Roppongi's multinational density, Azabujuban's local continuity, Akasaka's political proximity, Toranomon and Shinbashi's office rhythm, and Shirokanedai-Hiroo's residential quiet. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Minato-ku's neighborhoods as a distinct third place in its own right.
+Minato-ku's bar scene resists a single description because it was never built around one thing — it grew out of five separate international conditions sitting inside the same ward boundary: Roppongi's multinational density, Azabujuban's local continuity, Akasaka's political proximity, Toranomon and Shinbashi's office rhythm, and Shirokanedai-Hiroo's residential quiet. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Minato-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

@@ -103,7 +103,7 @@ It depends on the venue — some sell same-day tickets, others operate on a rese
 
 ## In Summary
 
-Taito-ku turns culture into something you stay with rather than something you simply view — Ueno's museums inside a park, Asakusa's living performance and craft traditions, Kuramae's maker culture, and Yanaka's alley galleries each embed a cultural facility inside a larger place you can continue to occupy. Third Place Japan evaluates spaces like these across seven axes, and Taito-ku's culture and leisure experience shows what it looks like when a cultural visit becomes a genuine third place instead of an item on a list.
+Taito-ku turns culture into something you stay with rather than something you simply view — Ueno's museums inside a park, Asakusa's living performance and craft traditions, Kuramae's maker culture, and Yanaka's alley galleries each embed a cultural facility inside a larger place you can continue to occupy. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Taito-ku's culture and leisure experience shows what it looks like when a cultural visit becomes a genuine third place instead of an item on a list.
 
 ---
 

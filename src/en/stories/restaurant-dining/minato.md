@@ -107,7 +107,7 @@ Choose a small, independent restaurant — twenty seats or fewer — and return 
 
 ## In Summary
 
-Minato-ku's restaurants resist a single description because the ward never converged on one purpose for food — it holds six parallel answers side by side: Azabujuban's neighborhood habit, Akasaka's political and business currency, Roppongi's international crossroads, Shirokanedai-Hiroo's quiet residential meal, Toranomon-Hamamatsucho's efficient business dining, and Shinagawa's hotel dining tied to Haneda. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Minato-ku's neighborhoods as a distinct dining third place in its own right.
+Minato-ku's restaurants resist a single description because the ward never converged on one purpose for food — it holds six parallel answers side by side: Azabujuban's neighborhood habit, Akasaka's political and business currency, Roppongi's international crossroads, Shirokanedai-Hiroo's quiet residential meal, Toranomon-Hamamatsucho's efficient business dining, and Shinagawa's hotel dining tied to Haneda. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Minato-ku's neighborhoods as a distinct dining third place in its own right.
 
 ---
 

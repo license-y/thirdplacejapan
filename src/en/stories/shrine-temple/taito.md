@@ -111,7 +111,7 @@ A large-scale shrine like Meiji Jingu tends to function primarily around silence
 
 ## In Summary
 
-Taito-ku's shrines and temples work as a third place because faith here was never separated from daily life — Sensoji's founding predates the city that grew around it, Ueno Park is built on what was once sacred ground, and Yanaka's temple registration system still connects the same families to the same graves across generations. Third Place Japan evaluates spaces like these across seven axes, and Taito-ku's shrine and temple experience is a clear example of what it looks like when faith remains a routine rather than an event.
+Taito-ku's shrines and temples work as a third place because faith here was never separated from daily life — Sensoji's founding predates the city that grew around it, Ueno Park is built on what was once sacred ground, and Yanaka's temple registration system still connects the same families to the same graves across generations. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Taito-ku's shrine and temple experience is a clear example of what it looks like when faith remains a routine rather than an event.
 
 ---
 

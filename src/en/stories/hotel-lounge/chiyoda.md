@@ -103,7 +103,7 @@ Mornings fill with guest breakfast service, so late morning — roughly 10 a.m. 
 
 ## In Summary
 
-A Chiyoda-ku hotel lounge derives its value from a location adjacent to the Imperial Palace and the ministry district — the seat of national function. Not the merchant prestige of Ginza, not the international polish of Minato-ku, but a third axis of prestige built by deliberate capital-planning since the Meiji era: that's the core of what this ward offers. The sense of being, right now, next to the center of Japan's national functions belongs to Chiyoda-ku alone. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chiyoda-ku's neighborhoods as a distinct third place in its own right.
+A Chiyoda-ku hotel lounge derives its value from a location adjacent to the Imperial Palace and the ministry district — the seat of national function. Not the merchant prestige of Ginza, not the international polish of Minato-ku, but a third axis of prestige built by deliberate capital-planning since the Meiji era: that's the core of what this ward offers. The sense of being, right now, next to the center of Japan's national functions belongs to Chiyoda-ku alone. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chiyoda-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

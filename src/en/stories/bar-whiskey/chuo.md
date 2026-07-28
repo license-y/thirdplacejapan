@@ -99,7 +99,7 @@ Being honest with the bartender about your taste and what you want that evening 
 
 ## In Summary
 
-Chuo-ku's bar culture stands on a foundation the Edo-period merchant city built and never abandoned: respect for craft, and respect for staying open. The diversity packed into a single ward — Ginza's artisan lineage, Nihonbashi's formality, Ningyocho's downtown ease, Tsukiji's food-paired drinking — is rare anywhere in Tokyo's 23 wards. Not trend, not international scale, but the depth of time itself is the reason to choose a Chuo-ku bar as a third place. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
+Chuo-ku's bar culture stands on a foundation the Edo-period merchant city built and never abandoned: respect for craft, and respect for staying open. The diversity packed into a single ward — Ginza's artisan lineage, Nihonbashi's formality, Ningyocho's downtown ease, Tsukiji's food-paired drinking — is rare anywhere in Tokyo's 23 wards. Not trend, not international scale, but the depth of time itself is the reason to choose a Chuo-ku bar as a third place. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chuo-ku's neighborhoods as a distinct third place in its own right.
 
 ---
 

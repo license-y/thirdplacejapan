@@ -70,7 +70,7 @@ Three things are worth starting from: who you're with, the time of day, and the 
 
 Koto-ku's waterside changes face with the seasons. Summer brings a regular fireworks display over the bay, and watching it reflected on the water is a distinctly Koto-ku way to spend an evening. In Fukagawa, a summer parish festival moves through the back streets, and the district's old sense of a town built on water transport comes through most strongly then. A riverside promenade along the Sumida and a walking route through Kiba Park both connect the ward's culture and leisure scene naturally into a longer walk.
 
-Kiyosumi-Shirakawa's hand-picked spots also turn up on [TPJ Select](/stories/select/), a listing built on the same quiet, warehouse-grounded character.
+Kiyosumi-Shirakawa's hand-picked spots also turn up on [TPJ Select](/stories/select/), a listing built on the same quiet, warehouse-grounded character — see [TPJ Select vs. TPJ Certification](/en/stories/concept/tpj-certification-and-select-difference/) for how that unpaid editorial pick relates to formal certification.
 
 ## For International Visitors
 
@@ -95,7 +95,7 @@ Yes. Toyosu and Odaiba offer strong multilingual support and easy public transit
 
 ## In Summary
 
-Koto-ku's culture, sports, and leisure scene holds its value in the coexistence of two opposing timeframes inside one ward: Kiyosumi-Shirakawa's warehouse-art culture, carrying forward the memory of Kiba's water transport, and Toyosu and Odaiba's large-scale waterfront leisure, born from reclaimed land. A district that stacks culture densely into narrow lanes and a district that spreads experience across open blocks, connected by a single canal — few other wards in Japan share this structure. Third Place Japan tracks the range of places this old-and-new coexistence produces, across its seven axes.
+Koto-ku's culture, sports, and leisure scene holds its value in the coexistence of two opposing timeframes inside one ward: Kiyosumi-Shirakawa's warehouse-art culture, carrying forward the memory of Kiba's water transport, and Toyosu and Odaiba's large-scale waterfront leisure, born from reclaimed land. A district that stacks culture densely into narrow lanes and a district that spreads experience across open blocks, connected by a single canal — few other wards in Japan share this structure. Third Place Japan tracks the range of places this old-and-new coexistence produces, across its [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/).
 
 ---
 

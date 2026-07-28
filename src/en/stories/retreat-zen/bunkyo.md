@@ -111,7 +111,7 @@ Aside from paid entry to the gardens, no reservation is needed anywhere in the w
 
 ## In Summary
 
-Bunkyo-ku shows that retreat doesn't require a temple or a mountain — it can be built from a university plateau, two formally designated daimyo gardens, and the quiet residential streets where writers once lived. Third Place Japan evaluates spaces like these across seven axes, and Bunkyo-ku's retreat and zen experience stands as a clear case of intellectual solitude functioning as a genuine third place inside the city.
+Bunkyo-ku shows that retreat doesn't require a temple or a mountain — it can be built from a university plateau, two formally designated daimyo gardens, and the quiet residential streets where writers once lived. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Bunkyo-ku's retreat and zen experience stands as a clear case of intellectual solitude functioning as a genuine third place inside the city.
 
 ---
 

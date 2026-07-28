@@ -107,7 +107,7 @@ Not much of one. Major facilities around Shibuya Station, Harajuku, and Omotesan
 
 ## In Summary
 
-Shibuya-ku's inbound experience runs on the opposite axis from Taito-ku's continuity with the past: this is a ward built around contemporaneity itself, from the Scramble Crossing's raw motion to Harajuku's street trials to Omotesando's refinement to Ura-Harajuku's insider quiet. Third Place Japan evaluates spaces like these across seven axes, and continues to track this ward's fast-moving culture as it evolves.
+Shibuya-ku's inbound experience runs on the opposite axis from Taito-ku's continuity with the past: this is a ward built around contemporaneity itself, from the Scramble Crossing's raw motion to Harajuku's street trials to Omotesando's refinement to Ura-Harajuku's insider quiet. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues to track this ward's fast-moving culture as it evolves.
 
 ---
 

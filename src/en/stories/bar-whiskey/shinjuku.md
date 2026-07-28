@@ -101,7 +101,7 @@ Nearly every pocket of nightlife sits within walking distance of a Shinjuku Stat
 
 ## In Summary
 
-Shinjuku-ku's bars carry a value no other Tokyo ward quite matches: a two-layer contrast between street-level chaos and alley-level stillness, several genuinely distinct versions of "night" coexisting within one administrative boundary, and a neutrality that comes from sitting at the center of the world's busiest station. Third Place Japan evaluates spaces like these across seven axes, and Shinjuku-ku's bar scene stands as a clear case of a third place built directly out of chaos rather than in spite of it.
+Shinjuku-ku's bars carry a value no other Tokyo ward quite matches: a two-layer contrast between street-level chaos and alley-level stillness, several genuinely distinct versions of "night" coexisting within one administrative boundary, and a neutrality that comes from sitting at the center of the world's busiest station. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Shinjuku-ku's bar scene stands as a clear case of a third place built directly out of chaos rather than in spite of it.
 
 ---
 

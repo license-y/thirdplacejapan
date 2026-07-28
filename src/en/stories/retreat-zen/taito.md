@@ -109,7 +109,7 @@ It depends on your purpose and the time of day. Yanaka suits alley walking, quie
 
 ## In Summary
 
-Taito-ku proves that retreat doesn't require distance — it requires the right conditions inside a city that already has them. Yanaka's temple alleys, Ueno's park margin, and Asakusa's early-morning stillness are three different registers of a quiet that has been built into this ward since the Edo period and the Meiji era alike. Third Place Japan evaluates spaces like these across seven axes, and Taito-ku's retreat and zen experience is a clear demonstration of what genuine stillness can look like without ever leaving Tokyo.
+Taito-ku proves that retreat doesn't require distance — it requires the right conditions inside a city that already has them. Yanaka's temple alleys, Ueno's park margin, and Asakusa's early-morning stillness are three different registers of a quiet that has been built into this ward since the Edo period and the Meiji era alike. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and Taito-ku's retreat and zen experience is a clear demonstration of what genuine stillness can look like without ever leaving Tokyo.
 
 ---
 

@@ -105,7 +105,7 @@ Kagurazaka is a five-minute walk from Iidabashi Station on the JR and Tokyo Metr
 
 ## In Summary
 
-Shinjuku-ku's value as a restaurant third place comes down to three things: the coexistence of two opposite food cultures — a geisha district's quiet alleys and a migrant neighborhood's multiculturalism — a food scene shaped by present-tense daily life rather than history or status, and a ward-wide neutrality that welcomes essentially anyone. Neither Chuo-ku's historical weight nor Minato-ku's international prestige describes it; what defines Shinjuku-ku instead is food culture built directly out of how people actually live here. Third Place Japan weighs revisit value, story, and inbound multilingual range especially heavily in evaluating this ward's restaurants.
+Shinjuku-ku's value as a restaurant third place comes down to three things: the coexistence of two opposite food cultures — a geisha district's quiet alleys and a migrant neighborhood's multiculturalism — a food scene shaped by present-tense daily life rather than history or status, and a ward-wide neutrality that welcomes essentially anyone. Neither Chuo-ku's historical weight nor Minato-ku's international prestige describes it; what defines Shinjuku-ku instead is food culture built directly out of how people actually live here. Third Place Japan weighs revisit value, story, and inbound multilingual range especially heavily in evaluating this ward's restaurants, under the same [seven-axis framework](/en/stories/concept/tpj-7-axis-evaluation-guide/) applied across every category it certifies.
 
 ---
 

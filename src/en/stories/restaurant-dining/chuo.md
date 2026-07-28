@@ -101,7 +101,7 @@ Timing visits to the seasons is the most natural route — spring bamboo shoots,
 
 ## In Summary
 
-Chuo-ku's food culture compresses three layers of history — Edo-period ryotei tradition, Tsukiji's ingredient-supply legacy, and Ginza's culture of entertaining — into a single administrative ward, forming the deepest layer of time in Japanese dining found anywhere in Tokyo. Ginza, Nihonbashi, Ningyocho, and Tsukiji-Tsukishima each hold an entirely different version of a dining third place: formal entertaining, old-line continuity, downtown ease, and ingredient provenance. Third Place Japan evaluates spaces like these across seven axes, and continues documenting each of Chuo-ku's neighborhoods as a distinct dining third place in its own right.
+Chuo-ku's food culture compresses three layers of history — Edo-period ryotei tradition, Tsukiji's ingredient-supply legacy, and Ginza's culture of entertaining — into a single administrative ward, forming the deepest layer of time in Japanese dining found anywhere in Tokyo. Ginza, Nihonbashi, Ningyocho, and Tsukiji-Tsukishima each hold an entirely different version of a dining third place: formal entertaining, old-line continuity, downtown ease, and ingredient provenance. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues documenting each of Chuo-ku's neighborhoods as a distinct dining third place in its own right.
 
 ---
 

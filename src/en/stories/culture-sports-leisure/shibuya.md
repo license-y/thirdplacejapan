@@ -107,7 +107,7 @@ A common route is Yoyogi Park in the morning for a walk or some street culture, 
 
 ## In Summary
 
-Shibuya-ku's culture and leisure scene runs on a different axis than Ueno's viewing-first model: National Yoyogi Gymnasium's live spectating, Yoyogi Park's do-it-yourself street culture, and Dogenzaka's genre-crossing venues each ask visitors to join in rather than watch from a distance. Third Place Japan evaluates spaces like these across seven axes, and continues to track this participatory side of the ward as it evolves.
+Shibuya-ku's culture and leisure scene runs on a different axis than Ueno's viewing-first model: National Yoyogi Gymnasium's live spectating, Yoyogi Park's do-it-yourself street culture, and Dogenzaka's genre-crossing venues each ask visitors to join in rather than watch from a distance. Third Place Japan evaluates spaces like these across [seven axes](/en/stories/concept/tpj-7-axis-evaluation-guide/), and continues to track this participatory side of the ward as it evolves.
 
 ---
 
