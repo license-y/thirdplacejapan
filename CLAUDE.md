@@ -3784,3 +3784,26 @@ TPJ（Third Place Japan）の「地域 × 15分野」ピラー記事を制作す
 ### このセクションの優先順位
 TPJ記事制作に関しては、このルールと `docs/TPJ制作憲法.md` を最優先で参照する。
 矛盾を感じたら制作憲法（docs）の記述に従う。
+
+---
+
+## 英語版サードプレイスガイド（about系）運用ルール（2026-07-28追加）
+
+`category_slug: about` の英語記事群（`src/en/stories/concept/` 配下）を追加・拡張する際の必須ルール。2026-07-28に`/en/stories/about/`ハブページを新設した際に確定した。
+
+### ハブページと個別記事は別ファイルにする（日本語版と同じ構造）
+日本語版は「独立したハブページ」（`/stories/about/`、`src/stories/about/index.njk`）と、`what-is-third-place.md`をはじめとする個別記事14本が別ファイルとして存在する構造になっている。英語版も同じ構造にすること。**「Third Place Guide」ナビ・パンくずのリンク先を、個別記事（例：`what-is-third-place-japan.md`）に直接向けてはいけない**。必ず専用のハブページ（`/en/stories/about/`、`src/en/stories/about/index.njk`）を経由させる。ハブページ自体には`category_slug`・`tags`を設定しない（`collections.aboutArticles`に自分自身が混入しないようにするため。日本語版`src/stories/about/index.njk`も同様に未設定）。
+
+### `src/en/stories/` にはディレクトリ既定レイアウトが存在しない（重要な技術的注意）
+日本語版は`src/stories/stories.json`（`{"layout": "stories.njk"}`）がディレクトリ全体に既定レイアウトを適用するため、個別ファイルで`layout:`を省略できる（実際`src/stories/about/index.njk`も省略している）。**`src/en/stories/`配下には対応する`.json`/`.11tydata.js`が存在しない**ため、英語版で新規に`.njk`ページ（特にハブページのような`index.njk`）を作る際は、**必ずfrontmatterに`layout: stories.njk`を明記すること**。省略するとヘッダー・ナビ・フッター・CSSを一切持たない生のページが出力される（2026-07-28の`/en/stories/about/`新設時に一度この書き忘れが発生し、ビルド後に気づいて修正した実績あり）。
+
+### 「Third Place Guide」の遷移先は5箇所にハードコードされている
+ハブページのURLを変更する場合、以下5箇所を同時に更新する必要がある（自動導出されていないため、1箇所でも直し忘れると新旧URLが混在する）：
+- `src/_layouts/article.njk`：JSON-LD BreadcrumbListの`item`（1箇所）、可視パンくずのリンク（1箇所）、サイドバー「Third Place Guide」ウィジェットの「See all →」リンク（1箇所）
+- `src/_includes/nav-stories-en.njk`：デスクトップナビ・モバイルメニューの各1箇所（計2箇所）
+
+### 英語版「カテゴリ」サイドバーウィジェットは非表示（2026-07-28確定）
+`article.njk`のサイドバー「カテゴリ」ウィジェット（15業種一覧）は`{% if lang != "en" %}`で英語ページでは非表示にしている。英語版にはカテゴリ一覧ページ（`/en/stories/{category}/`）自体がまだ存在せず、英語ラベル・英語カテゴリ名を用意しても遷移先が日本語版ページになってしまうため、ユーザー確認の上で非表示を選択した。**将来英語版カテゴリ一覧ページを作る場合は、この`{% if %}`分岐を解除し、`cat.name_en`とリンク先を英語化すること。**
+
+### 新しいEN about記事を追加したら、ハブページの「Go Deeper」に自動反映される
+`src/en/stories/about/index.njk`の記事一覧は`collections.aboutArticles | selectLang("en")`で動的に取得しているため、新しい英語about記事を追加しても本ファイルを手動編集する必要はない（日本語版`about/index.njk`のようにfileSlugをハードコードした配列で管理する方式は取っていない）。
