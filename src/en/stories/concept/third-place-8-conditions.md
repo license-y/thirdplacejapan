@@ -134,7 +134,7 @@ Oldenburg wrote from 1989 America. Third Place Japan built its own seven-axis fr
 | Record & Share Experience | Playful mood | Whether the experience is worth documenting |
 | Story & Empathy for Background | Neutral ground, regulars | The history and intention a visitor can learn and connect with |
 
-The three axes TPJ added — inbound compatibility, record-and-share value, and story — have no direct Oldenburg equivalent. They exist because an AI-mediated, internationally visited Japan asks questions Oldenburg's 1989 framework never had to answer. Each axis is broken down further, with scoring examples, in [TPJ's Seven-Axis Evaluation Guide](/stories/about/tpj-7-axis-evaluation-guide/) *(Japanese article; an English version is in progress)*.
+The three axes TPJ added — inbound compatibility, record-and-share value, and story — have no direct Oldenburg equivalent. They exist because an AI-mediated, internationally visited Japan asks questions Oldenburg's 1989 framework never had to answer. Each axis is broken down further, with scoring examples, in [TPJ's Seven-Axis Evaluation Guide](/en/stories/concept/tpj-7-axis-evaluation-guide/).
 
 ### What TPJ Does Not Evaluate
 

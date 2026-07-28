@@ -31,7 +31,7 @@ Oldenburg identified eight characteristics shared by great third places:
 7. **Playful mood** — Wit and banter; the atmosphere is warm, not solemn
 8. **A home away from home** — Psychological comfort, warmth, belonging
 
-No single space scores perfectly on all eight. But the best third places score well enough on enough of them to create something qualitatively different from a mere commercial transaction.
+No single space scores perfectly on all eight. But the best third places score well enough on enough of them to create something qualitatively different from a mere commercial transaction. Each condition is examined individually, with examples from contemporary Japan, in [The Eight Conditions of a Third Place: Oldenburg's Checklist, Reconsidered by TPJ](/en/stories/concept/third-place-8-conditions/).
 
 ---
 
@@ -53,15 +53,15 @@ Third Place Japan evaluates spaces across seven axes, each scored out of 10:
 
 | Axis | What It Measures |
 |---|---|
-| **Comfort & Space Quality** | Materials, lighting, acoustics, temperature — the physical conditions of ease |
-| **Silence & Privacy** | Noise level, seat spacing, visual separation — conditions for individual focus |
-| **Specialness & Non-Everyday Quality** | The degree to which the space creates a sense of departure from the ordinary |
-| **Story & Heritage** | The depth added to experience by knowing the space's history and intention |
-| **Revisit Value** | The pull toward returning — consistency, evolution, the rhythm of regular use |
+| **Comfort & Sensory Quality** | Materials, lighting, acoustics, temperature — the physical conditions of ease |
+| **Quietness & Privacy** | Noise level, seat spacing, visual separation — conditions for individual focus |
+| **Specialness & Non-daily Experience** | The degree to which the space creates a sense of departure from the ordinary |
+| **Story & Empathy for Background** | The depth added to experience by knowing the space's history and intention |
+| **Revisit & Continuity Value** | The pull toward returning — consistency, evolution, the rhythm of regular use |
 | **Record & Share Experience** | The quality of the space as something worth documenting and recommending |
-| **Inbound & Multilingual Access** | The degree to which the space is navigable and welcoming to international visitors |
+| **Inbound & Multilingual Compatibility** | The degree to which the space is navigable and welcoming to international visitors |
 
-These axes are not equally weighted in all contexts. A contemplative shrine may score low on social axes and high on silence and story. A neighborhood café may score low on specialness and high on revisit value and regulars. The certification framework takes the full profile into account.
+These axes are not equally weighted in all contexts. A contemplative shrine may score low on social axes and high on silence and story. A neighborhood café may score low on specialness and high on revisit value and regulars. The certification framework takes the full profile into account. Each axis is broken down in detail, with scoring examples, in [TPJ's Seven-Axis Evaluation Guide](/en/stories/concept/tpj-7-axis-evaluation-guide/).
 
 ---
 
@@ -101,4 +101,4 @@ A TPJ-certified space has been evaluated against our seven-axis framework and fo
 
 A third place is defined less by what it sells than by the relationship it builds with the people who return to it — a distinction Oldenburg's eight characteristics and Japan's concept of *ibasho* both point toward from different directions. Third Place Japan's seven-axis framework bridges these two traditions, weighing both the social conditions Oldenburg described and the individual sense of belonging that *ibasho* captures. As remote work, post-pandemic recalibration, and rising concern about loneliness reshape daily life, the question of where people belong outside home and work has only become more consequential.
 
-To see this framework applied to a specific space, [Meiji Jingu as a Third Place: Finding Silence in Central Tokyo](/en/stories/concept/meiji-jingu-third-place-tokyo/) walks through the seven axes in detail. Travelers looking to put the concept into practice across the city can start with [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/). For a quieter, more intellectual reading of *ibasho*, [Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes](/en/stories/retreat-zen/bunkyo/) explores the theme through a single ward.
+To see this framework applied to a specific space, [Meiji Jingu as a Third Place: Finding Silence in Central Tokyo](/en/stories/concept/meiji-jingu-third-place-tokyo/) walks through the seven axes in detail, and [Ten Kinds of Third Place: What Actually Counts as One in Japan](/en/stories/concept/third-place-examples/) surveys the concept across ten categories of space. Travelers looking to put the concept into practice across the city can start with [Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan](/en/stories/concept/tokyo-third-place-guide-travelers/). For a quieter, more intellectual reading of *ibasho*, [Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes](/en/stories/retreat-zen/bunkyo/) explores the theme through a single ward.

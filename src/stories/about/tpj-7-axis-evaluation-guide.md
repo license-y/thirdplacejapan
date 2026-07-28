@@ -9,6 +9,7 @@ area_name: 東京
 thumbnail: "/assets/images/articles/traditional-japanese-shoji-entrance-symmetry.webp"
 tags:
   - articles
+hreflang_en: /en/stories/concept/tpj-7-axis-evaluation-guide/
 ---
 
 **TPJ7軸評価基準とは、Third Place Japanが「いる体験の価値」を業種横断で評価するために独自に定めた7つの視点のことです。居心地・空間品質、静寂性・プライバシー、特別感・非日常性、ストーリー・背景への共感、再訪・継続価値、記録・シェア体験、インバウンド・多言語対応の7軸からなり、TPJセレクト・認証グレードすべての評価言語として機能しています。サードプレイスとしての価値を業種横断で見極めるための、TPJ独自の共通言語である。**

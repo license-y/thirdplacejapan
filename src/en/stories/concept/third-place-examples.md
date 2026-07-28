@@ -122,7 +122,7 @@ The hotel lounges TPJ evaluates highly tend to share this trait: designed less a
 
 Looked at across all ten, a third place turns out not to be a special category of destination but a quality that ordinary spaces either have or don't: whether they let someone be there with no obligation, no assigned role, no need to justify staying. Third Place Japan exists to find spaces like these, evaluate them against its seven-axis framework, and document what makes them work.
 
-For the underlying theory, [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) lays out the full framework, and [The Eight Conditions of a Third Place: Oldenburg's Checklist, Reconsidered by TPJ](/en/stories/concept/third-place-8-conditions/) breaks down the structural conditions each of these ten categories draws on.
+For the underlying theory, [What Is a Third Place? The TPJ Guide to Japan's Concept of Ibasho](/en/stories/concept/what-is-third-place-japan/) lays out the full framework, and [The Eight Conditions of a Third Place: Oldenburg's Checklist, Reconsidered by TPJ](/en/stories/concept/third-place-8-conditions/) breaks down the structural conditions each of these ten categories draws on. For how TPJ scores a space once it's identified as a third place, see [TPJ's Seven-Axis Evaluation Guide](/en/stories/concept/tpj-7-axis-evaluation-guide/).
 
 ---
 
