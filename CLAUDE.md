@@ -595,12 +595,14 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 - **本文冒頭（答えリード）**：初出の施設名に「英語表記（カタカナ読み）」の形で1回挿入する
 - **まとめ**：本文冒頭と重複してよいので、まとめの中の施設名にも1回挿入する（本文とは独立して抽出・引用される可能性があるため）
 - **FAQ**：最低1問（質問文または回答文）にカタカナ読みを含める
+- **title・H1（2026-07-30追加）**：施設ページの`title_override`／記事の`title`frontmatter、およびその見出し（H1）にもカタカナ読みを含める。施設ページのH1は`venues.json`に`name_reading`フィールド（任意）を設定すると`venue.njk`が自動的に`{{venue.name}}（{{name_reading}}）`の形でH1に表示する（「venues.json 任意フィールド一覧」参照）
+- **LocalBusiness/Review JSON-LDの`alternateName`（2026-07-30追加）**：`name_reading`を設定すると、LocalBusiness本体・Review内`itemReviewed`の両方に`alternateName`として自動出力される（テンプレート側で自動処理・個別記述不要）
 
 **実装パターン**：`Green Beans Coffee（グリーンビーンズコーヒー）` のように英語表記を先に置き、直後の括弧にカタカナ読みを添える。venues.jsonの`citation`/`body`/`faq`フィールド、および関連記事（`src/stories/`配下のMarkdown）の`description`・本文・FAQの両方が対象。2回目以降の言及では英語表記のみに戻してよい（毎回併記すると冗長になるため、初出１回で十分）。
 
 **description/meta descriptionの文字数ルールとの整合**：カタカナ読みを追加すると文字数が増えるため、既存の110〜120字ルール（日本語記事）を超過しないよう、他の表現を削って調整すること。
 
-**2026-07-21対応事例**：Green Beans Coffee（施設ページ`/stories/select/green-beans-coffee-shibuya/`および関連記事`/stories/cafe-specialty-coffee/green-beans-coffee-review/`）の両ページに適用済み。今後、英語表記の施設（TPJセレクト・認証施設問わず）を新規追加・既存記事を編集する際は、このルールに沿ってカタカナ読みの併記を確認すること。
+**2026-07-21対応事例**：Green Beans Coffee（施設ページ`/stories/select/green-beans-coffee-shibuya/`および関連記事`/stories/cafe-specialty-coffee/green-beans-coffee-review/`）の両ページに適用済み。今後、英語表記の施設（TPJセレクト・認証施設問わず）を新規追加・既存記事を編集する際は、このルールに沿ってカタカナ読みの併記を確認すること。**2026-07-30にtitle・H1・JSON-LD alternateNameの3箇所が漏れていたことが判明し、上記の追加ルールで対応済み（詳細は実装ログ参照）。**
 
 ## カテゴリ配分ガイドライン（次回30件到達時）
 
@@ -756,6 +758,7 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 | `category_en` | カテゴリバッジ・パンくず表示用の英語カテゴリ名（`src/_data/categories.json`の`name_en`と揃える） | `src/_layouts/venue-en.njk` |
 | `area_primary.area_en` / `area_primary.prefecture_en` | エリア・都道府県の英語表記（`src/_data/areas.json`の`name_en`と揃える）。件名下のサブタイトル・aside・JSON-LD住所（LocalBusiness/Review）に使われる | `src/_layouts/venue-en.njk` |
 | `nearest_stations_en` | 最寄駅の英語表記（`nearest_stations`の英訳） | `src/_layouts/venue-en.njk` |
+| `name_reading` | 施設名（英語表記）のカタカナ読み。設定するとH1に`{{venue.name}}（{{name_reading}}）`の形で併記され、LocalBusiness/Review JSON-LDの`alternateName`にも出力される（2026-07-30追加） | `src/_layouts/venue.njk` |
 
 **英語版施設ページ（`has_en: true`）を新規に設定する場合のルール（2026-07-22確立）**：
 - `has_en: true`にするだけでは、英語版ページは店名・7軸スコア・引用文のみの簡易ページにしかならない。**日本語版と同等のコンテンツ量にするには、`body_en`（本文6〜7段落程度）と`faq_en`（5〜7問）を必ずセットで用意すること**
@@ -2308,6 +2311,36 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 # 実装ログ
 
 ## 2026-07-30
+
+### Green Beans Coffee施設ページが「グリーンビーンズコーヒー」「Green Beans Coffee」検索で上位表示されない件の診断
+
+**背景**：ユーザーから、施設名でのブランド名検索で`/stories/select/green-beans-coffee-shibuya/`が上位表示にならないとの相談を受け、原因診断とSEO/AEO強化を行った。
+
+**診断結果（技術的な問題は「ほぼ無い」ことを確認）**：
+- 実URLをcurlで取得（Googlebot UA・通常ブラウザUAの両方）し200を確認。`meta robots`は`index, follow`、canonicalは正しく自己参照、hreflang（ja/en/x-default）も正常。noindexやクロールブロックは存在しない
+- JSON-LD 5ブロック（LocalBusiness/Review/BreadcrumbList等）は既存ルール通り実装済み。sameAs（公式サイト・Instagram）も出力済み
+- titleタグは`title_override`により「Green Beans Coffee（グリーンビーンズコーヒー）｜東京・渋谷のサードプレイス Flagship認証店」と、英語表記・カタカナ読み・地名・業種すべてを含む良好な状態
+
+**発見した実際のギャップ（2件・修正済み）**：
+1. **H1にカタカナ読みが欠落**：`venue.njk`のH1は`{{ venue.name }}`のみを出力しており、「グリーンビーンズコーヒー」という完全一致の検索クエリに対応する最重要オンページ要素（H1）に該当語が一度も出現していなかった。2026-07-21の「英語表記の施設名にはカタカナ読みを併記するルール」はcitation・本文・まとめ・FAQの4箇所を対象にしていたが、title・H1・JSON-LD alternateNameは対象外だった
+2. **レビュー記事のtitle/H1にもカタカナ読みが欠落**：`/stories/cafe-specialty-coffee/green-beans-coffee-review/`のtitleは「Green Beans Coffee 渋谷」のみで、本文の答えリードには「グリーンビーンズコーヒー」があるにもかかわらずtitle/H1（`article.njk`はtitleをそのままH1として出力）には反映されていなかった
+
+**対応**：
+- `venues.json`に`name_reading`（任意フィールド）を新設し、GBCに`"グリーンビーンズコーヒー"`を設定
+- `venue.njk`のH1を`{{ venue.name }}{% if venue.name_reading %}（{{ venue.name_reading }}）{% endif %}`に変更（他施設は`name_reading`未設定のため表示に変化なし、後方互換）
+- LocalBusiness・Review（`itemReviewed`）の両JSON-LDに`alternateName`（`name_reading`使用時のみ出力）を追加
+- レビュー記事のtitleを「【TPJ Flagship認証】Green Beans Coffee（グリーンビーンズコーヒー）渋谷：東京のサードプレイスを評価する」に変更し、`modified: 2026-07-30`を追記
+
+**根本原因（コードの問題ではなく构造的な要因）**：WebSearchで実際の検索結果を確認したところ、「グリーンビーンズコーヒー 渋谷」「Green Beans Coffee Shibuya」いずれも上位10件はGBC公式サイト（greenbeanscoffeeambassador.com）・Instagram・Facebook・Tabelog・Retty・HotPepper・Yahoo!マップ・Tripadvisor等、**施設の公式チャネルか国内最大級のグルメ/地図ディレクトリ**で占められており、thirdplacejapan.comは影も形もなかった。さらに`site:thirdplacejapan.com`（ドメイン全体を対象にした検索）ですら結果が0件で、サイト自体の検索エンジンでの可視性が極めて低いことを確認した。当リポジトリの初回コミットは2026-06-23で、診断時点（2026-07-30）でサイト開設から約5週間しか経っておらず、新規ドメインには外部被リンク・ドメインの実績（トラスト）がほぼ無い。Googleは特にブランド名検索において、公式チャネルおよび既存の高権威サイトを優先して表示する傾向が強く、オンページの最適化だけでは短期間で追い抜くことが構造的に難しい状態にある。
+
+**ユーザーへの推奨事項（コード修正の範囲外）**：
+- Google Search Consoleでのプロパティ確認・インデックス登録状況の確認（URL検査ツールでこのページが実際にインデックスされているか）
+- 施設側（Green Beans Coffee公式サイト・Instagram等）からTPJ施設ページへのリンク・言及を依頼する（実証店舗という関係性がある施設のため、最も効果が見込める被リンク獲得手段）
+- 新規ドメインは数ヶ月単位で信頼を積み上げる必要があるため、継続的なコンテンツ追加・内部リンク・（可能であれば）外部からの被リンク獲得を並行して行う
+
+**検証方法**：`npm run build`後、JSON-LD 2,226ブロックのパースエラー0件、内部リンク切れ0件、title重複0件を確認済み。
+
+**ルール化**：「英語表記の施設名にはカタカナ読みを併記するルール」にtitle・H1・JSON-LD alternateNameの対象箇所を追加。「venues.json 任意フィールド一覧」に`name_reading`を追加。
 
 ### `/stories/select/`とその周辺ページのSEO/AEO監査・幽霊リンク/幽霊カテゴリページの発見と修正
 
