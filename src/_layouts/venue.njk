@@ -217,7 +217,7 @@ og_type: "article"
 
   {# カテゴリ+グレードバッジ #}
   <div class="flex items-center gap-3 flex-wrap mb-6" data-aos="fade-up">
-    <span class="label">{{ venue.category }}</span>
+    <a href="/stories/{{ venue.category_slug }}/" class="label hover:text-gold transition-colors">{{ venue.category }}</a>
     {# グレードバッジ #}
     {% if venue.grade_slug == "flagship" %}
       <span class="inline-flex items-center gap-1 text-xs font-light tracking-widest px-2.5 py-0.5 rounded-full border border-stone-300 text-stone-400">

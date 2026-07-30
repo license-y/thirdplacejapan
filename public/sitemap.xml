@@ -1660,13 +1660,13 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/bar-whisky-cocktail/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/bar-whiskey/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1714,7 +1714,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1738,7 +1738,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1981,13 +1981,13 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shibuya/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shibuya/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shibuya/bar-whisky-cocktail/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shibuya/bar-whiskey/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2053,6 +2053,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/meguro-ku/naka-meguro/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/chitose-funabashi/coworking/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2065,7 +2071,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/kanda/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/kanda/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2083,7 +2089,13 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/koenji/spa-sauna/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/koto-ku/kiyosumi-shirakawa/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/koenji/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

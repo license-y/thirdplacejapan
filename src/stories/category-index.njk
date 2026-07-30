@@ -5,7 +5,7 @@ pagination:
   alias: cat
 permalink: "/stories/{{ cat.slug }}/"
 eleventyComputed:
-  title: "{{ cat.name_ja }}"
+  title: "{{ cat.name_ja }}のサードプレイス"
   description: "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。"
   canonical: "/stories/{{ cat.slug }}/"
 ---
@@ -29,10 +29,12 @@ eleventyComputed:
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "{{ cat.name_ja }} | Third Place Japan Stories",
+  "name": "{{ cat.name_ja }}のサードプレイス | Third Place Japan",
   "description": "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。",
   "url": "{{ site.url }}/stories/{{ cat.slug }}/",
   "inLanguage": "ja",
+  "about": { "@type": "Thing", "name": "{{ cat.name_ja }}" },
+  "mentions": { "@type": "DefinedTerm", "name": "サードプレイス", "alternateName": "Third Place", "url": "{{ site.url }}/stories/about/what-is-third-place/", "description": "家でも職場でもない、心地よく過ごせる第三の居場所という概念。" },
   "publisher": {
     "@type": "Organization",
     "name": "Third Place Japan",
@@ -99,7 +101,7 @@ eleventyComputed:
 
       <div class="mb-16" data-aos="fade-up">
         <p class="label mb-4">{{ cat.name_ja }}</p>
-        <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ cat.name_ja }}</h1>
+        <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ cat.name_ja }}のサードプレイス</h1>
         <div class="gold-rule mb-6"></div>
         <p class="text-sm text-muted leading-relaxed">
           サードプレイスとしての視点から見る、{{ cat.name_ja }}の記事一覧。

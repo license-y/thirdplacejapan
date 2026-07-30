@@ -109,4 +109,19 @@ for (const [key, { areaSlug, catSlug }] of articleCombos) {
   });
 }
 
-export default [...venueEntries, ...articleEntries];
+const allEntries = [...venueEntries, ...articleEntries];
+
+// 区境をまたいで同名のエリアが複数存在する場合、title/H1で区名を併記して重複を避けるためのフラグ
+const nameCounts = {};
+for (const prefecture of areas) {
+  for (const city of (prefecture.cities || [])) {
+    for (const area of (city.areas || [])) {
+      nameCounts[area.name] = (nameCounts[area.name] || 0) + 1;
+    }
+  }
+}
+
+export default allEntries.map(entry => ({
+  ...entry,
+  areaNameDuplicate: nameCounts[entry.area.name] > 1,
+}));

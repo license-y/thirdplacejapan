@@ -6,7 +6,7 @@ pagination:
 permalink: "/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/"
 layout: area.njk
 eleventyComputed:
-  title: "{{ item.area.name }}のサードプレイス"
+  title: "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}"
   description: "{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）でThird Place Japanがセレクトしたサードプレイス。カフェ・ホテル・スパなど業種横断で7軸評価した場所の一覧。"
 ---
 {# FAQPage JSON-LD #}
@@ -86,7 +86,7 @@ eleventyComputed:
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "{{ item.area.name }}のサードプレイス | Third Place Japan",
+  "name": "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %} | Third Place Japan",
   "description": "{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）でThird Place Japanがセレクトしたサードプレイス。カフェ・ホテル・スパなど業種横断で7軸評価した場所の一覧。",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/",
   "inLanguage": "ja",
@@ -116,7 +116,7 @@ eleventyComputed:
   </nav>
   <div class="mb-16" data-aos="fade-up">
     <p class="label mb-4">{{ item.prefecture.name }} {{ item.city.name }}</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ item.area.name }}のサードプレイス</h1>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}</h1>
     <div class="gold-rule mb-6"></div>
     <p class="text-sm text-muted">{{ item.area.name }}エリアで Third Place Japan がセレクトした場所。</p>
   </div>

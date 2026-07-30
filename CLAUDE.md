@@ -518,6 +518,8 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 
 **チェック方法**：施設を追加・編集する際は、`category_slug`が`categories.json`の15スラッグのいずれかと完全一致しているかを確認する。定期監査として、`node -e "..."`でサイト全体の`<title>`重複を検出するスクリプト（本ファイル内の各種検証で使用しているNode.jsワンライナーと同様の手法）を実行し、想定外の重複が出ていないかを確認するとよい。
 
+**2026-07-30追記：`area_slug`にも同じ注意が必要**：`category_slug`だけでなく`area_primary.area_slug`（および`city_slug`）も、必ず`src/_data/areas.json`に実在する組み合わせと完全一致させること。2026-07-30の監査で、`onibus-coffee-nakameguro`（住所は目黒区なのに渋谷区側の`nakameguro`スラッグを使用）・`arise-coffee-roasters-kiyosumishirakawa`（`kiyosumishirakawa`というハイフン抜けの誤スラッグ）の2件が、存在しないエリアページへの「幽霊リンク」を生成していたことが判明した。`category_slug`の誤りは幽霊“ページ”を生むが、`area_slug`の誤りは幽霊“リンク”（リンク切れ）を生む点が違うだけで、発生構造は同じ（表示名は正しいのでビルドエラーにならず気づかれにくい）。同時に、`category_slug`が`categories.json`の15スラッグと一致していても正式スラッグと微妙に異なる別名（例：`spa-sauna`と`spa-sauna-wellness`、`bar-whisky-cocktail`と`bar-whiskey`）を使っているケースが4施設で追加発覚し、同様に修正した。施設を追加・編集する際は、`category_slug`・`area_slug`・`city_slug`の3つすべてを対応するマスタデータ（`categories.json`／`areas.json`）とのコピー&ペースト、または既存の同エリア・同カテゴリ施設からの値の流用で設定し、手打ちでの新規入力を避けること。
+
 ## TPJセレクト 掲載仕様（2026-07-06確定・2026-07-07更新）
 
 TPJセレクトは、認証グレードとは別軸の「編集部招待制」枠。施設からのお申し込み不要。
@@ -527,8 +529,8 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 |---|---|
 | `grade` | `"TPJセレクト"` |
 | `grade_slug` | `"select"`（certified/silver/gold/platinum/flagship のいずれでもない値） |
-| citation | 100〜150字。編集部視点の一言紹介 |
-| FAQ | 2〜3問。「どんな場所か」「アクセス」など基礎情報のみ。**営業時間・価格帯は不確定要素のためNG** |
+| citation | 100〜150字。編集部視点の一言紹介。**「サードプレイス」「third place」の併記必須（2026-07-21ルール）** |
+| FAQ | 2〜3問。「どんな場所か」「アクセス」など基礎情報のみ。**営業時間・価格帯は不確定要素のためNG**。**最低1問（回答内）に「サードプレイス」または「third place」を含めること（2026-07-30追加）** |
 | FAQ順序 | 自然な流れで配置する。例：①どんな場所か → ②施設の特徴 → ③アクセス |
 | tags | **なし（設定しない）** |
 | 表示ボタン | **「関連サイト」「地図を見る」のみ**。Instagram・電話・メニュー等は表示しない |
@@ -537,6 +539,8 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 | 底部テキスト | 「この場所は Third Place Japan セレクト店舗です」＋「TPJについて知る」「グレードとは？」の2リンク（グレー表示） |
 | 写真 | 専用写真なし（デフォルト画像 `/assets/images/main/japan-cafe-interior-hero.webp` のまま） |
 | JSON-LD | geo・sameAs・openingHours 等のグレード別拡張プロパティは出力されない（thisLevel=0） |
+
+**FAQキーワードルールの発見経緯（2026-07-30）**：`citation`には2026-07-21のルールで「サードプレイス」「third place」併記が徹底されていたが、`faq`側は誰もチェックしておらず、2026-07-30の監査時点で公開23施設中20施設のFAQに概念語が一問も含まれていないことが判明した。FAQPage JSON-LDはAI回答エンジンが直接引用しうる箇所であり、citationと同様に必須キーワードの対象とする。新規施設追加時・既存施設のFAQ編集時は、この4文字チェック（citation・FAQ・title・meta description、いずれもブランド名「サードプレイスジャパン」の部分文字列としての出現はカウントしない）を必ず行うこと。
 
 **バッジ・ロゴの表示ルール（TPJセレクト専用）：**
 - **5段階認証グレード（Flagship / Platinum / Gold / Silver / Certified）のバッジ・ロゴは一切表示しない**
@@ -839,6 +843,18 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 - 全グレード共通のテンプレート（`src/_layouts/venue.njk`）のため、TPJセレクト・認証施設（Certified〜Flagship）の両方に自動適用される
 - 新しい施設・エリアを追加する際、このセクションのためにテンプレートを変更する必要はない（`area_slug`が一致すれば自動的に表示される）
 - **背景**：2026-07-21の監査で、L3エリアページ→施設一覧（既存）の片方向リンクしか機能しておらず、施設ページ→エリア記事への逆方向の内部リンク導線が一切存在しないことが判明し、追加した
+
+## 施設ページ→カテゴリハブページへの親子リンク（2026-07-30追加）
+
+施設詳細ページ（`venue.njk`）冒頭のカテゴリバッジ（`{{ venue.category }}`）は、業種の親ページ（`/stories/{{ venue.category_slug }}/`）へのリンクとして実装する。
+
+```njk
+<a href="/stories/{{ venue.category_slug }}/" class="label hover:text-gold transition-colors">{{ venue.category }}</a>
+```
+
+**背景**：カテゴリ一覧ページ（`category-index.njk`）は元々「このカテゴリのセレクト店舗」セクションで施設ページへリンクしていた（親→子）が、逆方向（施設ページ→カテゴリ一覧、子→親）のリンクが一切存在しなかった。2026-07-30の監査で発覚し追加した。エリア×業種の掛け合わせページ（`/stories/area/{pref}/{city}/{area}/{category}/`）へのリンクは既存だったが、それとは別に単体のカテゴリハブへの導線が必要だった。
+
+**注意**：英語版（`venue-en.njk`）には対応する`/en/stories/{category}/`ページ自体が存在しない（「英語版サードプレイスガイド運用ルール」の「英語版『カテゴリ』サイドバーウィジェットは非表示」と同じ理由）ため、同様のリンクを追加しないこと。英語版カテゴリ一覧ページを新設した場合にあわせて対応する。
 
 ## 7基準レーダーチャートのアクセシビリティ（2026-07-09追加）
 
@@ -2146,6 +2162,20 @@ FAQPage構造化データを実装する際は、**必ず同じ内容を画面�
 
 **チェック方法**：新しくエリア関連ページテンプレートを追加・複製する場合は、既存5テンプレートのtitle/H1パターン（`{{ 地域名 }}のサードプレイス`、または掛け合わせ型の`{{ 地域名 }}のサードプレイス：{{ 業種名 }}`）を踏襲し、`grep -o "<title>[^<]*</title>"`でビルド後に「サードプレイス」の有無を機械的に確認する。
 
+**2026-07-30追記：業種カテゴリハブページ（`/stories/{category}/`）も同じ対象**：エリア軸のハブページ群だけでなく、業種軸のハブページ（`src/stories/category-index.njk`、15業種共通）でも同種の欠落が見つかった。titleが`{{ cat.name_ja }}`のみで「サードプレイス」を含んでいなかったため、エリアページと同じ命名規則に倣い「{{ cat.name_ja }}のサードプレイス」に統一し、CollectionPage JSON-LDにも`mentions`（DefinedTerm）を追加した。**「一覧・ハブ系ページ」を新規作成する際は、対象がエリア軸・業種軸のどちらであっても、このtitle/description/H1/JSON-LDへのキーワード含有チェックを行うこと。**
+
+## 区境をまたぐ同名エリアの重複タイトル自動解消（2026-07-30追加）
+
+日暮里（荒川区・台東区西日暮里）・武蔵小山（目黒区・品川区）・中目黒（目黒区・渋谷区）のように、同じエリア名が複数の区にまたがって`areas.json`に登録されているケースがある。これらはL3エリアページ（`l3-area.njk`）・L3×業種ページ（`l3-category.njk`）のtitleが`{{ item.area.name }}のサードプレイス`という共通フォーマットのため、区が違うだけでtitleが完全一致してしまう（2026-07-27時点では「データ不整合ではなく実在の地名重複」として対応を見送っていたが、2026-07-30にユーザー判断で解消した）。
+
+**実装**：`src/_data/areaL3.js`・`areaL3Cat.js`の両方に、そのエリア名が`areas.json`内で複数回出現するかを判定する`areaNameDuplicate`（boolean）フラグを追加した。`l3-area.njk`・`l3-category.njk`のtitle・可視H1・JSON-LD（CollectionPage/ItemListのname）で、`item.areaNameDuplicate`が`true`の場合のみ区名を「（目黒区）」のように末尾に併記する。
+
+```njk
+title: "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}"
+```
+
+**ルール**：このフラグはデータ駆動で自動計算されるため、`areas.json`に新しいエリアを追加した際に個別のテンプレート変更や手動チェックは不要（同名エリアが増えれば自動的に区名併記が有効になる）。ただし`description`は元々`{{ item.area.name }}（{{ item.city.name }}・{{ item.prefecture.name }}）でThird Place Japanが...`という形で常に区名・都道府県名を含む実装だったため、重複問題は発生していなかった（今回対応したのはtitle・H1・JSON-LD nameのみ）。新しく同種のエリア一覧ページを追加する場合、descriptionのように常時フル表記にするか、titleのように重複時のみ出し分けるかは、文字数制約とのバランスで判断する。
+
 ---
 
 # メインサイト（index.html）管理ルール
@@ -2276,6 +2306,40 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-07-30
+
+### `/stories/select/`とその周辺ページのSEO/AEO監査・幽霊リンク/幽霊カテゴリページの発見と修正
+
+**背景**：`/stories/select/`（TPJセレクト一覧）のSEO/AEO強化依頼を受け、ハブページ単体だけでなく、そこから展開する23施設ページ・15業種カテゴリページ・エリアページとの間のtitle/description/太字リード/重複タイトル/幽霊リンク/パンくず/まとめ/FAQ/内部リンクを横断的に機械監査した。`npm run build`後の`public/`配下を対象に、Node.jsスクリプトでtitle重複・description重複・JSON-LD構文・内部リンク（ハードコードだけでなく動的生成されたリンクも含む）を全件チェックする方式を用いた。
+
+**発見①：ゴーストリンク2件（`venue.area_slug`と`areas.json`の不一致）**
+
+`onibus-coffee-nakameguro`は住所（`目黒区上目黒2-14-1`）が目黒区にもかかわらず、`area_slug`が渋谷区側のスラッグ`nakameguro`のままになっており、存在しない`/stories/area/tokyo/meguro-ku/nakameguro/`へのリンクが生成されていた（正しくは目黒区側の`naka-meguro`）。`arise-coffee-roasters-kiyosumishirakawa`も同様に`area_slug: "kiyosumishirakawa"`（ハイフンなし）が`areas.json`の正式スラッグ`kiyosumi-shirakawa`と不一致だった。両者とも`area_slug`を修正して解消した。
+
+**発見②：ゴーストカテゴリページ8件（`venue.category_slug`の架空値）——2026-07-27に発見した`luxury-hotel-lounge`バグと同一パターン**
+
+渋谷SAUNAS・saunalab神田・小杉湯（3件）が`category_slug: "spa-sauna"`（`categories.json`に存在しない架空のslug。正式には`spa-sauna-wellness`）、THE SG CLUBが`category_slug: "bar-whisky-cocktail"`（正式には`bar-whiskey`）のまま登録されていた。この結果、4施設が正規のカテゴリページ（`/stories/spa-sauna-wellness/`・`/stories/bar-whiskey/`）から漏れており、代わりに8つの幽霊ページ（`/stories/area/.../spa-sauna/`・`/stories/area/.../bar-whisky-cocktail/`）が並行生成されていた。2026-07-27のTRUNK/BnA_WALLの事例と全く同じ発生パターンであり、`category_slug`の入力ミスがビルドエラーにならず静かに幽霊ページを生む構造的リスクが再確認された。4施設の`category_slug`を修正し、`npm run build`後に不要になった8つの静的ファイルを手動削除した。
+
+**発見③：TPJセレクト施設23件中20件のFAQに必須キーワードが皆無**
+
+`citation`には既に「サードプレイス」「third place」併記ルール（2026-07-21）が適用済みで全件クリアだったが、`faq`（FAQPage JSON-LD兼可視アコーディオン）側は誰もチェックしておらず、20施設で一問も概念語を含んでいなかった。各施設のFAQ1問目（「どんな場所か」を問う質問）に、その施設固有の文脈（コーヒーの産地対話、まちやどの実践、古民家改装など）を踏まえた一文を個別に追記して解消した。
+
+**発見④：カテゴリ一覧ページ（`/stories/{category}/`、15業種共通テンプレート）のtitle/H1/JSON-LDに「サードプレイス」が皆無**
+
+`src/stories/category-index.njk`のtitleは`{{ cat.name_ja }}`のみで、2026-07-27に確立した「エリア関連ページテンプレートは全種類でtitle/descriptionに『サードプレイス』を含めること」と同種の欠落が、エリア軸ではなく業種軸のハブページに残っていた。既存のエリアページ命名規則（`{{地域名}}のサードプレイス`）に倣い「{{業種名}}のサードプレイス」に統一し、CollectionPage JSON-LDに`mentions`（DefinedTerm）も追加した。
+
+**発見⑤：施設ページからカテゴリ一覧への親子リンクが存在しなかった**
+
+`venue.njk`のカテゴリバッジ（`<span class="label">{{ venue.category }}</span>`）はただのテキストで、業種の親ページ（`/stories/{category_slug}/`）へのリンクが一切なかった（エリア×業種の掛け合わせページへのリンクは別途存在していたが、単体のカテゴリハブへは繋がっていなかった）。バッジをリンク化し、23施設ページ全件から親カテゴリページへの導線を確保した。英語版（`venue-en.njk`）は対応する`/en/stories/{category}/`ページ自体が存在しないため対象外とした。
+
+**発見⑥：区境をまたぐ同名エリアによる重複タイトル3組の解消**
+
+`/stories/area/`配下のL3エリアページ・エリア×業種ページで、日暮里（荒川区・台東区西日暮里）・武蔵小山（目黒区・品川区）・中目黒（目黒区・渋谷区）の3組がtitleタグ完全一致という状態が2026-07-27時点から継続していた（当時は「データ不整合ではなく実在の地名重複」として対応を見送っていた）。今回ユーザー判断で解消することになり、`src/_data/areaL3.js`・`areaL3Cat.js`に、エリア名が`areas.json`内で複数回出現するかどうかを判定する`areaNameDuplicate`フラグを追加。`l3-area.njk`・`l3-category.njk`のtitle・H1・JSON-LD（CollectionPage/ItemList）で、このフラグが立っている場合のみ区名を「（目黒区）」のように併記するようにした。データ駆動のため、今後同名エリアが新たに`areas.json`に追加された場合も自動的に区名併記が適用される。
+
+**検証方法**：全修正を通じて`npm run build`後に、①サイト全体のtitle重複チェック（Node.jsで全`index.html`の`<title>`を集計）、②動的生成リンクを含むリンク切れチェック（`public/`配下の実レンダリング済みHTMLから`href`を全件抽出し実在ファイルと突き合わせ）、③JSON-LD構文チェック（全`<script type="application/ld+json">`を`JSON.parse`）を実施。最終状態でtitle重複0件・リンク切れ0件・JSON-LDパースエラー0件（2,226ブロック）を確認済み。
+
+**ルール化**：「venues.json 施設データ管理ルール」の`category_slug`ルールに`area_slug`の同種チェックを追記。「TPJセレクト 掲載仕様」のFAQルールに概念語必須の注記を追記。「エリア関連ページテンプレートは全種類でtitle/descriptionに『サードプレイス』を含めること」の直後に、業種カテゴリハブページも対象である旨を追記。「エリアページのレイアウトルール」に「区境をまたぐ同名エリアの重複タイトル自動解消」を新規セクションとして追加。詳細は各セクション参照。
 
 ## 2026-07-27
 

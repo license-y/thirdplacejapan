@@ -6,7 +6,7 @@ pagination:
 permalink: "/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/"
 layout: area.njk
 eleventyComputed:
-  title: "{{ item.area.name }}のサードプレイス：{{ item.category.name_ja }}"
+  title: "{{ item.area.name }}{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}のサードプレイス：{{ item.category.name_ja }}"
   description: "{{ item.area.name }}の{{ item.category.name_ja }}を、Third Place Japanがサードプレイスとして7軸評価基準でセレクト。セレクトした場所の一覧をご覧いただけます。"
 ---
 {# ──── FAQPage JSON-LD（5クエリ対応）──── #}
@@ -77,7 +77,7 @@ eleventyComputed:
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "{{ item.area.name }}のサードプレイス：{{ item.category.name_ja }} — Third Place Japan セレクト一覧",
+  "name": "{{ item.area.name }}{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}のサードプレイス：{{ item.category.name_ja }} — Third Place Japan セレクト一覧",
   "description": "{{ item.area.name }}の{{ item.category.name_ja }}を、Third Place Japanがサードプレイスとして7軸評価基準でセレクトした場所の一覧",
   "url": "{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/{{ item.area.slug }}/{{ item.category.slug }}/",
   "numberOfItems": {{ item.venues | length }},
@@ -129,7 +129,7 @@ eleventyComputed:
   <div class="mb-14" data-aos="fade-up">
     <p class="label mb-4">{{ item.area.name }} × {{ item.category.name_ja }}</p>
     <h1 class="font-serif text-4xl md:text-5xl font-light text-dark mb-4 leading-tight">
-      {{ item.area.name }}のサードプレイス：<br>{{ item.category.name_ja }}
+      {{ item.area.name }}{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}のサードプレイス：<br>{{ item.category.name_ja }}
     </h1>
     <div class="gold-rule mb-8"></div>
     <p class="text-base text-text leading-relaxed max-w-xl">
