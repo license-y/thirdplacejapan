@@ -1972,6 +1972,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2552,6 +2558,14 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/setagaya/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -2601,7 +2615,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/kiyose/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2609,7 +2623,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/higashimurayama/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2633,7 +2647,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/koganei/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2641,7 +2655,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/kokubunji/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2759,7 +2773,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/mitaka/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3163,7 +3177,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/taito/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

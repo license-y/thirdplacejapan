@@ -3,6 +3,7 @@ layout: article.njk
 title: "国分寺市のサードプレイスガイド：禅体験・リトリート編。崖線が生む段差と湧水が育む、地形の静けさ"
 description: "国分寺市は、国分寺崖線という地形の段差の下に、お鷹の道の湧水と武蔵国分寺跡、谷戸地形の庭園が集まる東京の行政区だ。地形そのものが静けさを生むリトリート体験を、第三の居場所（third place）としてTPJ7軸評価基準で案内する。"
 date: 2026-07-23
+modified: 2026-07-31
 tags:
   - articles
 category_slug: retreat-zen
@@ -122,3 +123,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 大学町が育む知的孤独との違いは[文京区でリトリート・禅体験をサードプレイスにする](/stories/retreat-zen/bunkyo/)も参考になる
 - 23区から離れた渓谷・宿場町の静けさとの違いは[青梅市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/ome/)も参考になる
 - 東京のカフェでひとり時間を過ごす視点は[ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)で解説している
+- 単一の崖線とは異なる、複数の静けさが並立する世田谷区については[世田谷区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/setagaya/)も参考になる
