@@ -2,7 +2,7 @@
 layout: article.njk
 title: "千代田区のサードプレイスガイド：インバウンド体験編。国家という舞台そのものを見学できる場所"
 description: "千代田区は、皇居外苑・国会議事堂・皇室の美術品を収蔵する施設が徒歩圏に集まる、日本の統治機構を見学できる唯一の行政区だ。象徴・立法・文化財という窓口から、第三の居場所（third place）としてのインバウンド体験を7軸で読み解く。"
-date: 2026-07-31
+date: 2026-07-28
 tags:
   - articles
 category_slug: inbound-experience

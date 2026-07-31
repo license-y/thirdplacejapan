@@ -2526,38 +2526,6 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/chiyoda/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/chiyoda/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/sumida/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/retreat-zen/chiyoda/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/setagaya/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -2566,8 +2534,16 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/sumida/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/chiyoda/</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2575,7 +2551,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/sumida/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2614,8 +2590,32 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/chiyoda/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/kiyose/</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/chiyoda/</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

@@ -2,7 +2,7 @@
 layout: article.njk
 title: "墨田区のサードプレイスガイド：インバウンド体験編。超高層タワーの足元に広がる昭和の路地"
 description: "墨田区は、634mの東京スカイツリーという現代の垂直ランドマークと、戦災を免れた京島・向島の木造長屋街が徒歩圏に同居する行政区だ。第三の居場所（third place）としての墨田区のインバウンド体験を7軸で読み解いていく。"
-date: 2026-07-31
+date: 2026-07-30
 tags:
   - articles
 category_slug: inbound-experience

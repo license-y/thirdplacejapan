@@ -2,7 +2,7 @@
 layout: article.njk
 title: "千代田区のサードプレイスガイド：神社・寺院編。国家の祈りと、町人の氏神が同じ区に同居する"
 description: "千代田区の神社は、国家的な祭祀を担う社と、江戸の町人文化が育てた氏神が、同じ行政区の中に併存する特異な構造を持つ。第三の居場所（third place）としての神社・寺院を、権威と庶民信仰という二つの軸から7軸で読み解く。"
-date: 2026-07-31
+date: 2026-07-27
 tags:
   - articles
 category_slug: shrine-temple

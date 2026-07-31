@@ -2,7 +2,7 @@
 layout: article.njk
 title: "千代田区のサードプレイスガイド：文化・スポーツ・レジャー編。国家のための建物が、市民の舞台になった"
 description: "千代田区の文化・スポーツ・レジャーは、国家的な行事のために建てられた施設が、今は市民のコンサートや卒業式の舞台に転用されている点が個性だ。北の丸公園に集まる施設群を、サードプレイス（third place）として7軸で読み解く。"
-date: 2026-07-31
+date: 2026-07-29
 tags:
   - articles
 category_slug: culture-sports-leisure

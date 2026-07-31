@@ -2,7 +2,7 @@
 layout: article.njk
 title: "墨田区のサードプレイスガイド：神社・寺院編。花街の芸事文化が育てた信仰"
 description: "墨田区の神社仏閣は、向島花街の芸妓が信仰した撫牛の社と、三越の守護神として崇敬された商人の神が、隅田川沿いに並ぶ独特の信仰圏を持つ。第三の居場所（third place）としての墨田区の神社・寺院を7軸で読み解いていく。"
-date: 2026-07-31
+date: 2026-07-29
 tags:
   - articles
 category_slug: shrine-temple
