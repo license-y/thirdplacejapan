@@ -3,6 +3,7 @@ layout: article.njk
 title: "文京区のサードプレイスガイド：神社・寺院編。学問の神と格式高い社が支える、東京の学業成就の聖域"
 description: "文京区は、学問の神を祀る古社、儒学の総本山だった聖堂、東京十社に数えられる格式高い神社、将軍家の生母ゆかりの寺院が集まる「学業成就」の信仰圏である。受験生の祈りが息づく、学びのサードプレイスとしての神社・寺院を7軸で読み解く。"
 date: 2026-07-10
+modified: 2026-07-31
 tags:
   - articles
 category_slug: shrine-temple
@@ -144,3 +145,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 都内の神社仏閣とサードプレイスの関係全体は[明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)で解説している
 - 東京の禅体験・リトリート全体像は[座禅・リトリートで「無」になる。東京近郊の禅体験とサードプレイス](/stories/retreat-zen/zen-retreat-tokyo-third-place/)を参照
 - 山そのものを拝む修験道の信仰との違いは[青梅市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/ome/)も参考になる
+- 学業成就という目的意識とは異なる、花街の芸事文化が育てた墨田区の信仰については[墨田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/sumida/)も参考になる

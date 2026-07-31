@@ -123,3 +123,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 台東区の文化施設体験は[台東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/taito/)
 - 台東区の神社・寺院体験は[台東区の神社・寺院ガイド](/stories/shrine-temple/taito/)を合わせて参照いただきたい
 - 江戸文化の継承とは対照的な、国家機構そのものを見学できる千代田区のインバウンド体験は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)も参照いただきたい
+- 同じ下町でも、超高層タワーの足元に昭和の路地が広がる墨田区のインバウンド体験は[墨田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/sumida/)も参照いただきたい

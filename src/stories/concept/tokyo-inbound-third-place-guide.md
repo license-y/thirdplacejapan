@@ -98,6 +98,7 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 江戸文化・職人の街という視点では[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)
 - 同時代性がそのまま目的地になる渋谷区の詳細は[渋谷区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/shibuya/)を参照
 - 国家機構そのものを見学できる千代田区の詳細は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)を参照
+- 超高層タワーの足元に昭和の路地が広がる墨田区の詳細は[墨田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/sumida/)を参照
 
 ---
 

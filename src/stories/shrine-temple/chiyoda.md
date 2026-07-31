@@ -130,3 +130,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 皇居という不可侵の中心が生む静けさとの関係は[千代田区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/chiyoda/)で解説している
 - 千代田区の多面的なカフェ文化との接続は[千代田区×カフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/chiyoda/)も参考になる
 - 都内の神社仏閣とサードプレイスの関係全体は[明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)で解説している
+- 国家・町人・将軍家の三層とは異なる、花街の芸事文化が育てた墨田区の信仰については[墨田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/sumida/)も参考になる
