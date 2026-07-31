@@ -5,6 +5,7 @@ date: 2026-06-01
 category_slug: about
 area_name: 東京
 thumbnail: "/assets/images/articles/what-is-third-place-japan-interior.webp"
+hreflang_en: /en/stories/concept/what-is-third-place-japan/
 ---
 
 **サードプレイスとは、家（ファーストプレイス）でも職場（セカンドプレイス）でもない、第三の居場所のこと。社会学者レイ・オルデンバーグが提唱したこの概念が、AI時代の日本でいまあらためて問われています。**

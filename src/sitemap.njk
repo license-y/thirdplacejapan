@@ -74,6 +74,13 @@ eleventyExcludeFromCollections: true
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>{{ site.url }}/en/stories/about/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/about/"/>
+  </url>
 
   {# ── 15カテゴリページ ── #}
   {% for cat in categories %}
@@ -132,18 +139,18 @@ eleventyExcludeFromCollections: true
     <loc>{{ site.url }}/stories/select/{{ venue.slug }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    {% if venue.slug_en %}
+    {% if venue.has_en %}
     <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/select/{{ venue.slug }}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug_en }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug }}/"/>
     {% endif %}
   </url>
-  {% if venue.slug_en %}
+  {% if venue.has_en %}
   <url>
-    <loc>{{ site.url }}/en/stories/select/{{ venue.slug_en }}/</loc>
+    <loc>{{ site.url }}/en/stories/select/{{ venue.slug }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ja" href="{{ site.url }}/stories/select/{{ venue.slug }}/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug_en }}/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/stories/select/{{ venue.slug }}/"/>
   </url>
   {% endif %}
   {% endfor %}

@@ -9,6 +9,7 @@ tags:
 category_slug: inbound-experience
 area_name: 東京
 thumbnail: /assets/images/articles/tokyo-inbound-visitor-cafe-experience.webp
+hreflang_en: /en/stories/concept/tokyo-third-place-guide-travelers/
 ---
 
 **東京には、言語に依存しない「第三の居場所」が多数存在します。神社・公園・美術館・スペシャルティコーヒーのカフェは、外国人旅行者でも言葉の壁なく「ただいられる」場所として機能します。Third Place Japan（サードプレイスジャパン）がインバウンド軸で評価したガイドです。**

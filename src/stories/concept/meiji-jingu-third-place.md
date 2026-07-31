@@ -9,6 +9,7 @@ area_name: 原宿
 thumbnail: "/assets/images/articles/meiji-jingu-shrine-tokyo-third-place.webp"
 tags:
   - articles
+hreflang_en: /en/stories/concept/meiji-jingu-third-place-tokyo/
 ---
 
 <script type="application/ld+json">

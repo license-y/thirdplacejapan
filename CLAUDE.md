@@ -768,6 +768,12 @@ TPJセレクトは、認証グレードとは別軸の「編集部招待制」�
 - **`venue.category`・`venue.area_primary.area`・`venue.area_primary.prefecture`・`venue.nearest_stations`（すべて日本語専用フィールド）を英語版テンプレートで直接使い回さないこと**。`_en`サフィックス付きの英語フィールドが存在すればそちらを使う（`{{ venue.category_en or venue.category }}`のように、未設定時は日本語にフォールバックする書き方にする）。2026-07-22に、カテゴリバッジ・エリア表記・最寄駅名が英語版ページに日本語のまま表示されていた不具合が発覚し、この4フィールドを新設して解消した
 - **写真・7基準レーダーチャート・タグは日本語版と共通の仕組みで英語版にも表示できる**。`venue.image`は言語共通フィールドのためそのまま使い回してよい（`hasDedicatedImage`判定も日本語版と同一ロジック）。レーダーチャートは`gradeLevels`/`thisLevel`の算出を英語版テンプレートにも追加すれば同じ条件（Platinum以上）で表示される。タグは`tags_en`を用意すれば表示される（日本語版と同じグレード別上限数を適用）
 
+**英語版施設ページを`sitemap.xml`に載せる際は`venue.has_en`で判定する（2026-07-31追加・重大バグ修正）**：
+`src/sitemap.njk`の施設ページループが、英語版URLを出力するかどうかを`{% if venue.slug_en %}`という**実際には存在しないフィールド**で判定していた。実際の英語版施設ページ（`src/stories/select/venue-en.njk`）は`permalink: "/en/stories/select/{{ venue.slug }}/"`のように日本語版と同じ`venue.slug`をそのまま使ってURLを組み立てており、`slug_en`という個別フィールドは一度も使われていなかった。この結果、`has_en: true`の施設（2026-07-31時点でGreen Beans Coffee 1件）の英語版ページ自体は正しくビルド・公開されているにもかかわらず、`sitemap.xml`には**日本語版・英語版のどちらのURLにもhreflang alternateタグが出力されず、英語版ページ単体の`<url>`エントリも一切生成されない**という状態が続いていた。`npm run build`はエラーを出さないため、`public/`配下の実ファイルとsitemap.xmlの記載URLを突き合わせるまで気づかれなかった。`{% if venue.slug_en %}` → `{% if venue.has_en %}`、URL生成も`venue.slug_en` → `venue.slug`に修正して解消した。**新しく`venues.json`にフィールドを追加してsitemap等の条件分岐に使う場合は、そのフィールドが実際に他のテンプレート（`venue.njk`・`venue-en.njk`等）で使われているものと一致しているか、命名だけで判断せず実装を確認すること。**
+
+**日本語記事に英語版を追加したら、必ず`hreflang_en`を設定する（2026-07-31追加）**：
+英語版記事（`src/en/stories/`配下）を新規作成・過去に作成した際、対応する日本語記事側のfrontmatterに`hreflang_en`を追記し忘れるケースがある。`hreflang_en`が未設定のままだと、英語版は`hreflang_ja`で日本語版を正しく参照しているのに、日本語版から英語版への`<link rel="alternate" hreflang="en">`タグが一切出力されず、Googleのhreflang仕様（相互参照必須）に違反する片方向リンクになる。2026-07-31の監査で`meiji-jingu-third-place.md`・`tokyo-inbound-third-place-guide.md`・`what-is-third-place.md`の3本がこの状態だったことが判明し、`hreflang_en`を追加して解消した。**チェック方法**：英語版記事`src/en/stories/**/*.md`のfrontmatターから`hreflang_ja`の値を取得し、そのURLが指す日本語版ページのビルド済みHTMLに`hreflang="en"`の`<link>`タグが存在するかをNode.jsスクリプトで機械的に確認する（片方向のみのチェックでは自己参照バグ（2026-07-23対応済み）とは別種のこの抜け漏れを検出できないため、双方向を必ず確認すること）。
+
 **FAQをグループ分割したい場合のルール（2026-07-24追加）**：
 - FAQ件数が多い施設（実証店舗など、利用案内と制度解説など話題が複数にまたがる場合）は、`faq`（日本語）・`faq_en`（英語）をフラット配列のまま増やすのではなく、`faq_groups`／`faq_groups_en`に置き換えて話題ごとに小見出しで分割することを検討する
 - `faq_groups`を設定した施設は`faq`フィールド自体を削除してよい（`faq_groups`が優先され、テンプレート側でJSON-LD用にフラット化されるため、両方保持する必要はない）。英語版も同様に`faq_en`→`faq_groups_en`で完全に置き換える
@@ -2339,6 +2345,32 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 **検証方法**：`npm run build`後、`public/stories/`配下468ファイルを対象にNode.jsスクリプトでJSON-LD（2,121ブロック）のパースエラー0件、内部リンク（20,830件）のリンク切れ0件、title/description重複0件を確認。H1がtitleと完全一致すること、パンくず（可視UI・JSON-LD BreadcrumbList）が3階層で一致すること、まとめ・FAQ（各5問・自動抽出）の設置、画像altテキストの自動生成、`千代田区`31〜39回・`東京`3〜5回・`サードプレイス/third place`計13〜17回という自然なキーワード密度も確認済み。
 
 **ルール化**：「都ピラー→自治体ピラーの分岐リンク必須化」を「都ピラー→自治体ピラーの分岐リンク必須化・自治体ピラー間の相互リンク必須化」に改題・拡張し、新規自治体ピラー追加時は都ピラーへの逆リンクだけでなく**既存の兄弟自治体ピラー2〜3本への逆リンクも必須**である旨を明記した。対象カテゴリに`inbound-experience`（都ピラーあり）を追加し、`shrine-temple`（都ピラーなし）も兄弟間相互リンクの対象である旨を明記した。
+
+---
+
+### 英語版フッターの誤リンク修正＋sitemap.xmlの重大な欠落2件・hreflang片方向リンク3件を発見・修正
+
+**対象ファイル**
+- `src/_includes/footer-stories-en.njk`（「Third Place Guide」リンク修正）
+- `src/sitemap.njk`（英語版施設ページの判定条件バグ修正、`/en/stories/about/`のURL追加）
+- `src/en/stories/index.njk`（title強化）
+- `src/stories/concept/meiji-jingu-third-place.md`・`tokyo-inbound-third-place-guide.md`・`what-is-third-place.md`（`hreflang_en`追加）
+
+**背景**：ユーザーから「フッターの英語版セクションで『Third Place Guide』が個別記事にリンクしている」と画像付きで指摘を受け修正した後、続けて英語版サイト全体のSEO/AEO監査を行った。
+
+**発見①：フッターの誤リンク**：`footer-stories-en.njk`の「Third Place Guide」列が、ハブページ`/en/stories/about/`ではなく個別記事`/en/stories/concept/what-is-third-place-japan/`に直接リンクしていた。ナビ（`nav-stories-en.njk`）・記事サイドバー（`article.njk`）は既に正しくハブページを指しており、フッターだけが「6箇所目のハードコード地点」として既存ルールの記載から漏れていた。
+
+**発見②：sitemap.xmlの英語版施設ページが1件も登録されていなかった（重大）**：`sitemap.njk`が英語版URLの出力可否を`{% if venue.slug_en %}`という**実際のテンプレートでは一度も使われていないフィールド**で判定していた。実装（`venue-en.njk`）は`permalink: "/en/stories/select/{{ venue.slug }}/"`のように日本語版と同じ`venue.slug`をそのまま使っており、`slug_en`は存在しないため条件が常にfalseになり、`has_en: true`の施設（Green Beans Coffee）の英語版ページ・hreflang alternateタグの両方がsitemapから欠落し続けていた。`npm run build`はエラーを出さないため、実ファイルとsitemap記載URLを突き合わせるまで気づかれなかった。
+
+**発見③：`/en/stories/about/`（英語版ハブページ）自体もsitemapに未登録**：日本語版`/stories/about/`は個別`<url>`ブロックがあったが、英語版に対応するブロックが存在しなかった。
+
+**発見④：日本語記事3本が英語版と片方向リンクだった**：`meiji-jingu-third-place.md`・`tokyo-inbound-third-place-guide.md`・`what-is-third-place.md`は、対応する英語版が既に公開されているにもかかわらず`hreflang_en`フロントマターが未設定で、英語版→日本語版の`hreflang="ja"`は出力される一方、日本語版→英語版の`hreflang="en"`が一切出力されない片方向リンクになっていた。2026-07-23の「hreflangの自己参照バグ修正」とは別種の不具合（あちらは自己参照の欠落、今回はフィールド未設定による相手言語参照そのものの欠落）。
+
+**発見⑤（軽微）**：`/en/stories/`トップのtitleが`"English"`のみで検索キーワードを含まず、日本語版の`"日本のサードプレイスを探す"`と比べて著しく弱かったため、`"Discover Japan's Third Places"`に変更した。
+
+**検証方法**：`npm run build`後、`public/stories/`・`public/en/stories/`配下503ファイルを対象にJSON-LD 2,260ブロックのパースエラー0件、内部リンク24,664件のリンク切れ0件、title重複0件を確認。EN記事26本のdescription文字数（150〜160字ルール）・太字リード／まとめ／FAQ設置・画像サイズ（200KB以下）・category_slugの正規性を個別に再検証し全件クリアを確認。sitemap.xmlは英語版29ページ全件が登録されたことを、hreflangは日英3本の相互参照が揃ったことをそれぞれNode.jsスクリプトで確認済み。
+
+**ルール化**：「『Third Place Guide』の遷移先は5箇所にハードコードされている」を6箇所に改訂し`footer-stories-en.njk`を追加。「venues.json 任意フィールド一覧」の直後（英語版施設ページのルール群）に「英語版施設ページを`sitemap.xml`に載せる際は`venue.has_en`で判定する」を新規セクションとして追加。同箇所に「日本語記事に英語版を追加したら、必ず`hreflang_en`を設定する」チェック方法を新規追加した。
 
 ---
 
@@ -3926,10 +3958,13 @@ TPJ記事制作に関しては、このルールと `docs/TPJ制作憲法.md` �
 ### `src/en/stories/` にはディレクトリ既定レイアウトが存在しない（重要な技術的注意）
 日本語版は`src/stories/stories.json`（`{"layout": "stories.njk"}`）がディレクトリ全体に既定レイアウトを適用するため、個別ファイルで`layout:`を省略できる（実際`src/stories/about/index.njk`も省略している）。**`src/en/stories/`配下には対応する`.json`/`.11tydata.js`が存在しない**ため、英語版で新規に`.njk`ページ（特にハブページのような`index.njk`）を作る際は、**必ずfrontmatterに`layout: stories.njk`を明記すること**。省略するとヘッダー・ナビ・フッター・CSSを一切持たない生のページが出力される（2026-07-28の`/en/stories/about/`新設時に一度この書き忘れが発生し、ビルド後に気づいて修正した実績あり）。
 
-### 「Third Place Guide」の遷移先は5箇所にハードコードされている
-ハブページのURLを変更する場合、以下5箇所を同時に更新する必要がある（自動導出されていないため、1箇所でも直し忘れると新旧URLが混在する）：
+### 「Third Place Guide」の遷移先は6箇所にハードコードされている（2026-07-31修正・1箇所追加）
+ハブページのURLを変更する場合、以下6箇所を同時に更新する必要がある（自動導出されていないため、1箇所でも直し忘れると新旧URLが混在する）：
 - `src/_layouts/article.njk`：JSON-LD BreadcrumbListの`item`（1箇所）、可視パンくずのリンク（1箇所）、サイドバー「Third Place Guide」ウィジェットの「See all →」リンク（1箇所）
 - `src/_includes/nav-stories-en.njk`：デスクトップナビ・モバイルメニューの各1箇所（計2箇所）
+- `src/_includes/footer-stories-en.njk`：フッター「Third Place Guide」列の記事リンク（1箇所）
+
+**発見の経緯**：2026-07-31のSEO/AEO監査で、`footer-stories-en.njk`の「Third Place Guide」列が`/en/stories/about/`（ハブページ）ではなく`/en/stories/concept/what-is-third-place-japan/`（個別記事）に直接リンクしていたことが判明した。この6箇所目はこれまでのルール記載から漏れていた。新しくハブ系リンクをハードコードする箇所を追加する場合は、必ずこのリストに追記すること。
 
 ### 英語版「カテゴリ」サイドバーウィジェットは非表示（2026-07-28確定）
 `article.njk`のサイドバー「カテゴリ」ウィジェット（15業種一覧）は`{% if lang != "en" %}`で英語ページでは非表示にしている。英語版にはカテゴリ一覧ページ（`/en/stories/{category}/`）自体がまだ存在せず、英語ラベル・英語カテゴリ名を用意しても遷移先が日本語版ページになってしまうため、ユーザー確認の上で非表示を選択した。**将来英語版カテゴリ一覧ページを作る場合は、この`{% if %}`分岐を解除し、`cat.name_en`とリンク先を英語化すること。**

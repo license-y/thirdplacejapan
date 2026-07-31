@@ -148,6 +148,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/about/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/about/"/>
+  </url>
 
   
   
@@ -2343,6 +2350,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/select/green-beans-coffee-shibuya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/select/green-beans-coffee-shibuya/"/>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/select/green-beans-coffee-shibuya/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/select/green-beans-coffee-shibuya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/select/green-beans-coffee-shibuya/"/>
   </url>
   
   
@@ -3119,6 +3137,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/"/>
+    
   </url>
   
   <url>
@@ -3434,6 +3455,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/shrine-temple/meiji-jingu-third-place/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/meiji-jingu-third-place-tokyo/"/>
+    
   </url>
   
   <url>
@@ -3535,6 +3559,9 @@
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/about/what-is-third-place/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/what-is-third-place-japan/"/>
     
   </url>
   
