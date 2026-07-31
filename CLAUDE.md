@@ -2008,15 +2008,25 @@ Green Beans Coffee（東京・渋谷）| カフェ・スペシャルティコー
 
 **このルールが直接埋めた未対応事項**：2026-07-09の実装ログに残っていた「同様の孤立ページが他にも残っている可能性があり、別途棚卸しが必要」という未対応メモは、2026-07-20のフェーズ4監査（内部リンク再点検）で棚卸しを実施し消化済み。今後は特定の一度きりの棚卸しではなく、構造変更のたびに行う定常運用として位置づける。
 
-## 都ピラー→自治体ピラーの分岐リンク必須化（2026-07-27追加）
+## 都ピラー→自治体ピラーの分岐リンク必須化・自治体ピラー間の相互リンク必須化（2026-07-27追加・2026-07-31拡張）
 
-**新しく自治体ピラー（面）記事を追加した際は、必ずその分野の都ピラー（幹）記事の関連記事リストに、その新記事へのリンクを追加すること。** 子記事側（新しい自治体ピラー）が都ピラーへ逆リンクを張るだけでは、立体構造（都ピラー→自治体ピラー→密集エリアピラー）の片側しか機能しない。
+**新しく自治体ピラー（面）記事を追加した際は、以下の両方を行うこと。片方だけでは立体構造（都ピラー→自治体ピラー→密集エリアピラー）・平面構造（自治体ピラー同士）のどちらか一方しか機能しない。**
 
-**発見の経緯**：2026-07-27、小金井市・東村山市・清瀬市の自治体ピラー4本を追加した際の監査で、`retreat-zen`の都ピラー（`src/stories/concept/zen-retreat-tokyo-third-place.md`）が自治体ピラー9本中2本（杉並区・三鷹市）にしかリンクしておらず、7本（国分寺市・小金井市・東村山市・清瀬市・青梅市・文京区・台東区）への分岐が欠落していたことが判明した。同様に`culture-sports-leisure`の都ピラー（`src/stories/concept/tokyo-museum-art-third-place.md`）も9本中2本（上野・渋谷区）にしかリンクしておらず7本が欠落していた。原因は、自治体ピラーを追加するたびに新記事側から都ピラーへの逆リンクは律儀に追加してきた一方、都ピラー側の関連記事リストを都度更新する運用が確立されていなかったこと。`npm run build`はこの種の欠落をエラーとして検出しないため、機械的なチェック工程がない限り気づかれない。
+1. **都ピラー（幹）記事の関連記事リストに、新記事へのリンクを追加する**（都ピラーが存在するカテゴリのみ）
+2. **同カテゴリの既存自治体ピラー記事（兄弟記事）2〜3本の関連記事リストにも、新記事への逆リンクを追加する**（2026-07-31追加。都ピラーの有無に関わらず全カテゴリ対象）
 
-**チェック方法**：新しい自治体ピラーを追加した際、対応する都ピラー記事（`retreat-zen`は`zen-retreat-tokyo-third-place.md`、`culture-sports-leisure`は`tokyo-museum-art-third-place.md`）の関連記事リストに、同カテゴリの自治体ピラー全記事へのリンクが揃っているかを`grep -o 'href="/stories/{category_slug}/[a-z-]*/"' public/stories/{category_slug}/{都ピラーのslug}/index.html | sort -u`（ビルド後）で機械的に確認する。密集エリアピラー（点、例：谷中・上野）は自治体ピラーの子として既に参照されているため、都ピラーから直接リンクする必要はない（都→自治体→密集エリアの順で委譲する）。
+新記事側（新しい自治体ピラー）から都ピラー・既存記事への発リンクを律儀に追加するだけでは不十分で、**既存側からの逆リンクは別途手動で追加しない限り発生しない**という点が繰り返し見落とされてきた。
 
-**対象範囲**：現在この構造を持つのは`retreat-zen`と`culture-sports-leisure`の2カテゴリのみ。他カテゴリで都ピラー記事が新設された場合も同じ運用を適用する。
+**発見の経緯（2026-07-27）**：小金井市・東村山市・清瀬市の自治体ピラー4本を追加した際の監査で、`retreat-zen`の都ピラー（`zen-retreat-tokyo-third-place.md`）が自治体ピラー9本中2本にしかリンクしておらず7本の分岐が欠落、`culture-sports-leisure`の都ピラー（`tokyo-museum-art-third-place.md`）も9本中2本にしかリンクしておらず7本が欠落していたことが判明した。
+
+**発見の経緯・追加分（2026-07-31）**：千代田区の自治体ピラー4本（retreat-zen/shrine-temple/inbound-experience/culture-sports-leisure）を追加した直後の内部リンク監査で、①都ピラー3本（`zen-retreat-tokyo-third-place.md`・`tokyo-museum-art-third-place.md`・`tokyo-inbound-third-place-guide.md`）が3本とも千代田区に未リンクだった、②それとは別に**都ピラーへの逆リンクとは独立して、既存の兄弟自治体ピラー8本（`retreat-zen/bunkyo・suginami`、`shrine-temple/taito・ome`、`culture-sports-leisure/koto・shibuya`、`inbound-experience/shibuya・taito`）が誰も千代田区にリンクしていなかった**、という2種類の欠落が同時に発覚した。②は`shrine-temple`（都ピラーが存在しないカテゴリ）でも発生しており、「都ピラーへの逆リンク」だけをルール化していた旧版のチェック方法では検出できない盲点だった。あわせて`tokyo-inbound-third-place-guide.md`が渋谷区の自治体ピラーにも未リンクという、今回の新規追加とは無関係の既存の欠落も発見・修正した。
+
+**チェック方法**：新しい自治体ピラーを追加した際、以下の2点を機械的に確認する。
+- 都ピラーが存在するカテゴリ（`retreat-zen`＝`zen-retreat-tokyo-third-place.md`、`culture-sports-leisure`＝`tokyo-museum-art-third-place.md`、`inbound-experience`＝`tokyo-inbound-third-place-guide.md`）は、都ピラーの関連記事リストに同カテゴリの自治体ピラー全記事へのリンクが揃っているかを`grep -o 'href="/stories/{category_slug}/[a-z-]*/"' public/stories/{category_slug}/{都ピラーのslug}/index.html | sort -u`（ビルド後）で確認する
+- 都ピラーの有無に関わらず、`grep -l "{category_slug}/{新記事slug}" src/stories/{category_slug}/*.md`で、新記事以外の既存兄弟ファイルが新記事にリンクしているか確認する。0件（自分自身の新記事ファイルのみヒット）であれば逆リンクが1本も存在しないことを意味する
+- 密集エリアピラー（点、例：谷中・上野）は自治体ピラーの子として既に参照されているため、都ピラーから直接リンクする必要はない（都→自治体→密集エリアの順で委譲する）
+
+**対象範囲**：都ピラーが存在するのは`retreat-zen`・`culture-sports-leisure`・`inbound-experience`の3カテゴリ（2026-07-31時点）。`shrine-temple`は都ピラーが存在しないため上記1は対象外だが、2の兄弟間相互リンクは全カテゴリ共通で必須。他カテゴリで都ピラー記事が新設された場合も同じ運用を適用する。
 
 ---
 
@@ -2309,6 +2319,28 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-07-31
+
+### 千代田区の親ピラー4本を新規公開＋都ピラー・兄弟ピラー間の逆リンク欠落を発見・修正
+
+**対象ファイル**
+- 新規：`src/stories/retreat-zen/chiyoda.md`・`shrine-temple/chiyoda.md`・`inbound-experience/chiyoda.md`・`culture-sports-leisure/chiyoda.md`
+- 既存5本（`hotel-lounge-chiyoda.md`・`cafe-specialty-coffee-chiyoda.md`・`hotel-lounge-marunouchi.md`・`cafe-specialty-coffee-akihabara.md`・`cafe-specialty-coffee-jimbocho.md`）に新4本への逆リンク追加
+- 都ピラー3本（`zen-retreat-tokyo-third-place.md`・`tokyo-museum-art-third-place.md`・`tokyo-inbound-third-place-guide.md`）・既存自治体ピラー8本（`retreat-zen/bunkyo・suginami`、`shrine-temple/taito・ome`、`culture-sports-leisure/koto・shibuya`、`inbound-experience/shibuya・taito`）に千代田区への逆リンク追加
+- 画像4枚新規（皇居の堀・屋根ディテール・二重橋・千鳥ヶ淵、いずれもUnsplash取得・200KB以下）
+
+**優先度Bの千代田区×4分野を追加**。既存5本（丸の内・秋葉原・神保町・hotel-lounge・cafe-specialty-coffee）が確立した「皇居・官庁街の権威」と「秋葉原・神保町の異端（サブカルチャー・古書街）」という二面性の文脈と矛盾しないよう、新4本も権威側の新しい切り口（皇居の不可侵性／国家的祭祀と町人の氏神の併存／国家機構の見学／国家的建造物の市民転用）で固有の核を設計した。
+
+**画像選定時の注意点**：Unsplashの検索結果は地名キーワードを含めても関連性が低いことが多く、「shinto shrine torii gate tokyo」等の検索で浅草寺（台東区）・伏見稲荷（京都）・明治神宮（渋谷区）といった**別の場所の写真が上位に出る**ことが複数回あった。目視確認せずに機械的に1枚目を採用すると、記事の地域と無関係な画像を使ってしまうリスクがあるため、候補は必ずダウンロード後にRead toolで目視確認してから確定させること。「国立競技場（新宿区）」が「japanese arena dome roof tokyo」の検索でヒットしたケースもあり、建築物系のキーワードは特に誤爆が多い。
+
+**公開後の内部リンク監査で発見した問題（重大）**：新4本は既存記事へ発リンクしていたが、**逆方向（既存記事→新4本）がほぼ全滅**していた。具体的には、①都ピラー3本が3本とも千代田区に一切言及していなかった、②それとは別に、都ピラーへの逆リンクとは独立して、既存の兄弟自治体ピラー8本も誰一人千代田区にリンクしていなかった。②は都ピラーが存在しない`shrine-temple`カテゴリでも同様に発生しており、「都ピラー→自治体ピラー」のみを対象にしていた2026-07-27のルールでは検出できない範囲だった。あわせて`tokyo-inbound-third-place-guide.md`が渋谷区の自治体ピラーにも未リンクという、今回の追加作業とは無関係の既存の欠落も発見し、あわせて修正した。自分自身が書いた`shrine-temple/chiyoda.md`が文京区（学業成就の信仰）にリンクし忘れていた漏れも1件あった。
+
+**検証方法**：`npm run build`後、`public/stories/`配下468ファイルを対象にNode.jsスクリプトでJSON-LD（2,121ブロック）のパースエラー0件、内部リンク（20,830件）のリンク切れ0件、title/description重複0件を確認。H1がtitleと完全一致すること、パンくず（可視UI・JSON-LD BreadcrumbList）が3階層で一致すること、まとめ・FAQ（各5問・自動抽出）の設置、画像altテキストの自動生成、`千代田区`31〜39回・`東京`3〜5回・`サードプレイス/third place`計13〜17回という自然なキーワード密度も確認済み。
+
+**ルール化**：「都ピラー→自治体ピラーの分岐リンク必須化」を「都ピラー→自治体ピラーの分岐リンク必須化・自治体ピラー間の相互リンク必須化」に改題・拡張し、新規自治体ピラー追加時は都ピラーへの逆リンクだけでなく**既存の兄弟自治体ピラー2〜3本への逆リンクも必須**である旨を明記した。対象カテゴリに`inbound-experience`（都ピラーあり）を追加し、`shrine-temple`（都ピラーなし）も兄弟間相互リンクの対象である旨を明記した。
+
+---
 
 ## 2026-07-30
 
