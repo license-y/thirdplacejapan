@@ -1816,6 +1816,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/fuchu/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1870,6 +1876,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1907,6 +1919,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1961,6 +1979,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2484,6 +2508,38 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/chiyoda/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/chiyoda/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/chiyoda/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/concept/third-place-8-conditions/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -2888,7 +2944,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/akihabara/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2896,7 +2952,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/chiyoda/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2907,7 +2963,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/jimbocho/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2915,7 +2971,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/hotel-lounge/chiyoda/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2926,7 +2982,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/hotel-lounge/marunouchi/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
