@@ -3,6 +3,7 @@ layout: article.njk
 title: "渋谷区のサードプレイスガイド：インバウンド体験編。スクランブル交差点と原宿が生む「今」という日本体験"
 description: "渋谷区は、世界的に知られるスクランブル交差点と原宿・竹下通りを擁し、日本の「今」がそのままインバウンド体験になる行政区だ。台東区とは対極の、サードプレイスとしての同時代性をThird Place Japanが7軸で読み解く。"
 date: 2026-07-09
+modified: 2026-07-31
 tags:
   - articles
 category_slug: inbound-experience
@@ -134,3 +135,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 渋谷区の高級サロン文化は[渋谷区で高級サロンをサードプレイスにする](/stories/premium-salon/shibuya/)も参照
 - 渋谷区の文化・スポーツ・レジャー体験は[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)で解説している
 - 台東区のインバウンド体験との対比は[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)を参照いただきたい
+- 同時代性とは対照的な、国家機構そのものを見学できる千代田区のインバウンド体験は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)も参照いただきたい

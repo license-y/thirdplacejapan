@@ -3,6 +3,7 @@ layout: article.njk
 title: "美術館をサードプレイスとして使う。東京の現代アートと静かなひとり時間"
 description: 東京の美術館や文化施設を、サードプレイスとして評価します。静寂・特別感・ストーリーという3軸が高い施設は、ひとりで過ごす第三の居場所として機能することを、Third Place Japanが7軸評価基準で詳しく解説します。
 date: 2026-07-01
+modified: 2026-07-31
 tags:
   - articles
 category_slug: culture-sports-leisure
@@ -93,6 +94,7 @@ Third Place Japanでは、東京の文化施設を「文化・スポーツ・レ
 - 暮らしの延長にあるレジャーについては[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)も参照
 - 都心に頼らない独立した街の文化については[町田市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/machida/)も参照
 - サードプレイスの具体的なイメージを広げたい場合は[サードプレイスの具体例10選](/stories/about/third-place-examples/)も参考になる
+- 国家的な建造物が市民のイベント空間に転用された北の丸公園一帯については[千代田区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/chiyoda/)も参照
 
 ---
 

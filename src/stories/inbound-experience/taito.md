@@ -3,6 +3,7 @@ layout: article.njk
 title: "台東区のサードプレイスガイド：インバウンド体験編。江戸文化・下町・職人が生きる東京の原点"
 description: "台東区は、江戸文化・職人文化・下町の日常がひとつの行政区に共存する、東京インバウンド体験の原点となる街だ。渋谷や港区とは異なる、「日本の伝統文化が今も生きている」体験を求める旅行者のサードプレイス（第三の居場所）である。"
 date: 2026-07-01
+modified: 2026-07-31
 tags:
   - articles
 category_slug: inbound-experience
@@ -121,3 +122,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 台東区のリトリート・禅体験は[台東区のリトリート・禅体験ガイド](/stories/retreat-zen/taito/)
 - 台東区の文化施設体験は[台東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/taito/)
 - 台東区の神社・寺院体験は[台東区の神社・寺院ガイド](/stories/shrine-temple/taito/)を合わせて参照いただきたい
+- 江戸文化の継承とは対照的な、国家機構そのものを見学できる千代田区のインバウンド体験は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)も参照いただきたい

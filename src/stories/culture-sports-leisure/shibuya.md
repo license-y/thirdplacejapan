@@ -3,6 +3,7 @@ layout: article.njk
 title: "渋谷区のサードプレイスガイド：文化・スポーツ・レジャー編。代々木競技場と公園群が育む「参加する文化」"
 description: "渋谷区は、国立代々木競技場や道玄坂の複合文化施設、ストリートスポーツが根づく代々木公園や屋上公園が共存する行政区だ。鑑賞型の上野とは異なる、体を動かし参加するサードプレイスを、Third Place Japanが7軸で読み解く。"
 date: 2026-07-08
+modified: 2026-07-31
 tags:
   - articles
 category_slug: culture-sports-leisure
@@ -133,3 +134,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 台東区の文化・レジャー体験との対比は[台東区の文化・レジャーガイド](/stories/culture-sports-leisure/taito/)を参照いただきたい
 - 参加型の渋谷区と対照的な、運河と埋立地が育む江東区の文化・レジャーは[江東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/koto/)も参照いただきたい
 - 自ら参加する渋谷区とは対照的な、競馬場の観戦文化・門前町・研究機関が同居する府中市の文化・レジャーは[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)で解説している
+- 参加型とは異なる、国家的建造物が市民のイベント空間に転用された千代田区の文化・レジャーは[千代田区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/chiyoda/)も参照

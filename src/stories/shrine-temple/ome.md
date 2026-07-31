@@ -3,6 +3,7 @@ layout: article.njk
 title: "青梅市のサードプレイスガイド：神社・寺院編。山そのものを拝む、修験の系譜が息づく信仰の峰"
 description: "青梅市の神社仏閣は、生活密着型の台東区とも学業成就の文京区とも異なり、山そのものを信仰対象とする山岳信仰・修験道の系譜に連なる。峰を登ることが祈りになる、サードプレイス（third place）としての神社仏閣を7軸で読み解く。"
 date: 2026-07-19
+modified: 2026-07-31
 tags:
   - articles
 category_slug: shrine-temple
@@ -133,3 +134,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 青梅市の渓谷・宿場町を中心としたリトリート体験は[青梅市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/ome/)で解説している
 - 都内の神社仏閣とサードプレイスの関係全体は[明治神宮で静かな一人時間。東京のど真ん中にある、静寂のサードプレイス](/stories/shrine-temple/meiji-jingu-third-place/)で解説している
 - 東京の禅体験・リトリート全体像は[座禅・リトリートで「無」になる。東京近郊の禅体験とサードプレイス](/stories/retreat-zen/zen-retreat-tokyo-third-place/)を参照
+- 国家的祭祀と町人の氏神が併存する千代田区の信仰の地図については[千代田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/chiyoda/)も参考になる

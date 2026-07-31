@@ -3,6 +3,7 @@ layout: article.njk
 title: "外国人旅行者のための東京サードプレイスガイド。言葉の壁を超えた居場所"
 description: インバウンド旅行者が東京でサードプレイスを見つけるための実践ガイドです。神社・公園・美術館・スペシャルティカフェなど、言葉の壁を超えて「ただいられる」第三の居場所を、Third Place Japanが厳選して紹介します。
 date: 2026-07-01
+modified: 2026-07-31
 tags:
   - articles
 category_slug: inbound-experience
@@ -95,6 +96,8 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - TPJが評価・認証した施設の一覧は[TPJセレクト一覧](/stories/select/)で確認できる
 - 東京の下町が旅行者の居場所になる理由については[浅草でインバウンド体験をサードプレイスにする](/stories/inbound-experience/asakusa/)
 - 江戸文化・職人の街という視点では[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)
+- 同時代性がそのまま目的地になる渋谷区の詳細は[渋谷区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/shibuya/)を参照
+- 国家機構そのものを見学できる千代田区の詳細は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)を参照
 
 ---
 

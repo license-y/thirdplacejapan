@@ -3,6 +3,7 @@ layout: article.njk
 title: "台東区のサードプレイスガイド：神社・寺院編。信仰が観光地ではなく日常であり続ける東京の下町"
 description: "台東区は、浅草寺・上野の寺社・谷中の30以上の寺院が、観光名所である以前に住民の生活に組み込まれた信仰の場として機能し続ける東京有数のエリアだ。祈りが日常であり続ける、生活に根ざしたサードプレイスとしての神社・寺院を7軸で読み解く。"
 date: 2026-07-03
+modified: 2026-07-31
 tags:
   - articles
 category_slug: shrine-temple
@@ -141,3 +142,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 都内の神社仏閣とサードプレイスの関係全体は[明治神宮をサードプレイスとして訪れる](/stories/shrine-temple/meiji-jingu-third-place/)で解説している
 - 隣接する文京区の学業成就の信仰については[文京区の神社・寺院ガイド](/stories/shrine-temple/bunkyo/)も参照されたい
 - 山そのものを拝む修験道の信仰との違いは[青梅市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/ome/)も参考になる
+- 国家的祭祀と町人の氏神が併存する千代田区の信仰の地図については[千代田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/chiyoda/)も参考になる

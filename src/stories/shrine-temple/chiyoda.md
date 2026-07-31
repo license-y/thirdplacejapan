@@ -125,6 +125,7 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 関連記事：
 
 - 生活密着型の信仰との違いは[台東区の神社・寺院ガイド](/stories/shrine-temple/taito/)で解説している
+- 学業成就という目的意識が核の文京区の信仰との違いは[文京区の神社・寺院ガイド](/stories/shrine-temple/bunkyo/)も参考になる
 - 山そのものを拝む信仰との違いは[青梅市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/ome/)も参考になる
 - 皇居という不可侵の中心が生む静けさとの関係は[千代田区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/chiyoda/)で解説している
 - 千代田区の多面的なカフェ文化との接続は[千代田区×カフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee/chiyoda/)も参考になる

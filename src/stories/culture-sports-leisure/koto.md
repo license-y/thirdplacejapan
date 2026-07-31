@@ -3,6 +3,7 @@ layout: article.njk
 title: "江東区のサードプレイスガイド：文化・スポーツ・レジャー編。運河が結ぶ、倉庫アートと臨海レジャーの二つの顔"
 description: "江東区は、清澄白河の倉庫を改装した独立系アート・コーヒー文化と、豊洲・お台場の大型レジャー施設群が運河一本を挟んで共存する行政区だ。新旧が並ぶこのサードプレイスとしての体験を、Third Place Japanが7軸で読み解く。"
 date: 2026-07-14
+modified: 2026-07-31
 tags:
   - articles
 category_slug: culture-sports-leisure
@@ -120,3 +121,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
 - 基地跡地の広さが生む郊外型のスケール感との違いは[立川市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/tachikawa/)も参考になる
 - 新旧の同居とは異なる、競馬場の観戦文化・門前町・研究機関が同居する府中市の文化・レジャーは[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)も参考になる
+- 地理的な新旧の同居とは異なる、同じ建物・土地の用途そのものが時代とともに置き換わってきた千代田区の文化・レジャーは[千代田区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/chiyoda/)も参考になる
