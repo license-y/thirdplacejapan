@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Shinjuku-ku as a Third Place: Where Daily Life Shapes What Tokyo Eats"
-description: "Shinjuku-ku holds two food cultures in one ward — a former geisha district's hushed alleys and a migrant neighborhood's food streets — TPJ's seven axes."
+description: "Shinjuku-ku holds two food cultures functioning as a third place — a former geisha district's hushed alleys and a migrant neighborhood's food streets."
 date: 2026-07-16
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/restaurant-dining/shinjuku/
 thumbnail: /assets/images/articles/shinjuku-izakaya-alley-dining-en.webp
 ---
 
-**Shinjuku-ku holds two opposite food cultures inside a single administrative boundary: Kagurazaka's quiet, stone-paved alleys carrying the memory of a former geisha district, and Shin-Okubo's street-level multiculturalism, built by decades of immigrant communities feeding themselves. Neither Chuo-ku's centuries of merchant history nor Minato-ku's international polish quite describes what's happening here. Shinjuku-ku's restaurants run on something more immediate — daily life converting directly into food culture.**
+**Shinjuku-ku holds two opposite food cultures inside a single administrative boundary: Kagurazaka's quiet, stone-paved alleys carrying the memory of a former geisha district, and Shin-Okubo's street-level multiculturalism, built by decades of immigrant communities feeding themselves. Neither Chuo-ku's centuries of merchant history nor Minato-ku's international polish quite describes what's happening here. Shinjuku-ku's restaurants run on something more immediate — daily life converting directly into food culture, each one a third place shaped by whoever walks in that day.**
 
 ## Why Shinjuku-ku's Food Scene Resists a Single Description
 

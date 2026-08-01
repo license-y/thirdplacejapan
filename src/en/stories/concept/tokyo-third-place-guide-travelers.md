@@ -6,7 +6,7 @@ date: 2026-07-01
 tags:
   - articles
 category_slug: inbound-experience
-area_name: 東京
+area_name: Tokyo
 lang: en
 hreflang_ja: /stories/inbound-experience/tokyo-inbound-third-place-guide/
 thumbnail: /assets/images/articles/tokyo-third-place-guide-travelers-en.webp

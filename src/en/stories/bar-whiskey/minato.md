@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Minato-ku as a Third Place: How Embassies and International Finance Built Five Distinct Bar Cultures"
-description: "Minato-ku's bars run on international capital, not one tradition — Roppongi's multinational counters, Akasaka's political hospitality — TPJ's seven axes."
+description: "Minato-ku's bars function as a third place shaped by international capital — Roppongi's multinational counters, Akasaka's political hospitality — seven axes."
 date: 2026-07-16
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/bar-whiskey/minato/
 thumbnail: /assets/images/articles/minato-embassy-district-skyline-en.webp
 ---
 
-**Minato-ku packs five distinct versions of Tokyo's night into a single ward, and every one of them traces back to the same source: the ward hosts more foreign embassies, multinational finance offices, and international arts institutions than any other part of the city. A bar counter in Roppongi where three languages cross in one order, a family-run bar in Azabujuban where the owner has known a customer's drink for a decade, an old-guard room in Akasaka built for political conversation — Minato-ku's bars aren't one culture wearing five faces. They're five separate answers to the same international condition.**
+**Minato-ku packs five distinct versions of Tokyo's night into a single ward, and every one of them traces back to the same source: the ward hosts more foreign embassies, multinational finance offices, and international arts institutions than any other part of the city. A bar counter in Roppongi where three languages cross in one order, a family-run bar in Azabujuban where the owner has known a customer's drink for a decade, an old-guard room in Akasaka built for political conversation — Minato-ku's bars aren't one culture wearing five faces. They're five separate answers to the same international condition, each one a third place built for a different kind of belonging.**
 
 ## Why Minato-ku's Bars Don't Run on One Logic
 

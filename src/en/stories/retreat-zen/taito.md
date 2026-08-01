@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Taito-ku as a Third Place: Finding Retreat and Zen Stillness Without Leaving Tokyo"
-description: "Taito-ku offers genuine retreat inside Tokyo — Yanaka's temple alleys, Ueno's park stillness, and Asakusa's early mornings, read through TPJ's seven axes."
+description: "Taito-ku offers a third place for genuine retreat inside Tokyo — Yanaka's temple alleys, Ueno's park stillness, and Asakusa's early mornings — seven axes."
 date: 2026-07-06
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/retreat-zen/taito/
 thumbnail: /assets/images/articles/taito-ku-zen-retreat-tokyo-en.webp
 ---
 
-**Taito-ku makes retreat possible without leaving Tokyo. Built around Yanaka, a temple town of more than 30 temples, and layered with the early-morning stillness of temple grounds and the open margin of riverside paths, this ward offers one of the few places in the city where genuine quiet coexists with daily urban life. For residents and travelers alike looking for a kind of stillness that doesn't require a train out of the city, Taito-ku is where that search tends to end.**
+**Taito-ku makes retreat possible without leaving Tokyo. Built around Yanaka, a temple town of more than 30 temples, and layered with the early-morning stillness of temple grounds and the open margin of riverside paths, this ward offers one of the few places in the city where genuine quiet coexists with daily urban life. For residents and travelers alike looking for a kind of stillness that doesn't require a train out of the city, Taito-ku is where that search for a third place tends to end.**
 
 ## Why Retreat Doesn't Require Leaving Tokyo
 

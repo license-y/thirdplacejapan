@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: The Merchant City That Built Japan's Bar Tradition"
-description: "Chuo-ku's bars run on craftsmanship, not trend — Ginza's veteran counters, Nihonbashi's finance gravity, Ningyocho's ease — read through TPJ's seven axes."
+description: "Chuo-ku's bars work as a third place built on craftsmanship, not trend — Ginza's counters, Nihonbashi's finance crowd, Ningyocho's ease — TPJ's seven axes."
 date: 2026-07-17
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/bar-whiskey/chuo/
 thumbnail: /assets/images/articles/chuo-whiskey-on-rocks-dark-wood-bar-en.webp
 ---
 
-**Chuo-ku's bars answer to a different clock than the rest of Tokyo. This is the ward where Edo-period currency traders and textile merchants first built a culture of meeting people in places that could be trusted, and that instinct never left. A bar that has run for thirty, fifty, or seventy years under the same craft, in the same seat, is not an exception here — it's closer to the norm. Across Ginza, Nihonbashi, Ningyocho, and Tsukiji, four very different neighborhoods share one throughline: respect for a skill practiced over time.**
+**Chuo-ku's bars answer to a different clock than the rest of Tokyo. This is the ward where Edo-period currency traders and textile merchants first built a culture of meeting people in places that could be trusted, and that instinct never left. A bar that has run for thirty, fifty, or seventy years under the same craft, in the same seat, is not an exception here — it's closer to the norm. Across Ginza, Nihonbashi, Ningyocho, and Tsukiji, four very different neighborhoods share one throughline: respect for a skill practiced over time — the reason each one still functions as a third place today.**
 
 ## Why Chuo-ku's Bars Run on Continuity, Not Trend
 

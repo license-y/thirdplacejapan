@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Shibuya-ku as a Third Place: Where Culture Means Joining In, Not Just Watching"
-description: "Shibuya-ku's culture and leisure favors participation over observation — sport at Yoyogi Gymnasium, skating in Yoyogi Park, joining in rather than watching."
+description: "Shibuya-ku's culture scene functions as a third place built on participation — sport at Yoyogi Gymnasium, skating in Yoyogi Park, joining in over watching."
 date: 2026-07-13
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/culture-sports-leisure/shibuya/
 thumbnail: /assets/images/articles/yoyogi-park-shibuya-culture-en.webp
 ---
 
-**Shibuya-ku's culture and leisure scene isn't built around watching from a distance — it's built around joining in. National Yoyogi Gymnasium draws spectators who become part of the crowd, Yoyogi Park draws people who came to move rather than to look, and a cluster of multi-genre venues around Dogenzaka lets a single visit cross several art forms in one building.**
+**Shibuya-ku's culture and leisure scene isn't built around watching from a distance — it's built around joining in. National Yoyogi Gymnasium draws spectators who become part of the crowd, Yoyogi Park draws people who came to move rather than to look, and a cluster of multi-genre venues around Dogenzaka lets a single visit cross several art forms in one building — culture functioning here as a third place, not a destination to check off.**
 
 ## Why Shibuya-ku's Culture Scene Runs on Participation
 
@@ -91,7 +91,7 @@ National Yoyogi Gymnasium and Dogenzaka's major cultural venues offer strong mul
 ## Frequently Asked Questions
 
 **Q. How is Shibuya-ku's culture and leisure scene different from Ueno's?**<br>
-Ueno centers on walking between separate cultural institutions inside a park, each offering something authentic to view. Shibuya-ku centers on participation — spectating, joining in, and moving through the neighborhood. Which one suits you depends on whether you're after something to view or something to do.
+Ueno centers on walking between separate cultural institutions inside a park, each offering something authentic to view. Shibuya-ku centers on participation — spectating, joining in, and moving through the neighborhood. Which one suits you depends on whether you're after something to view or something to do — both function as a third place, just built on opposite principles.
 
 **Q. What's the architectural background of National Yoyogi Gymnasium?**<br>
 It was built for the 1964 Tokyo Olympics and is known for its suspended-roof design by architect Kenzo Tange. More than sixty years later, it still hosts international sporting events and concerts, carrying the memory of that Olympics into active daily use.

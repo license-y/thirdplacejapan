@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Taito-ku as a Third Place: Where Faith Is Daily Life, Not a Sightseeing Stop"
-description: "Taito-ku's shrines and temples — Sensoji, Ueno's shrines, Yanaka's 30-plus temples — remain living faith woven into daily life, not sightseeing stops."
+description: "Taito-ku's shrines and temples work as a third place woven into daily life — Sensoji, Ueno's shrines, Yanaka's 30-plus temples — not sightseeing stops."
 date: 2026-07-07
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/shrine-temple/taito/
 thumbnail: /assets/images/articles/taito-ku-shrine-temple-tokyo-en.webp
 ---
 
-**Taito-ku's shrines and temples function as part of daily life before they function as sightseeing destinations. Sensoji, the shrines of Ueno, and the more than 30 temples of Yanaka aren't places reserved for special occasions — they're where someone stops to press their hands together on the way to the station, and where a family visits the same grave every year on the same date.**
+**Taito-ku's shrines and temples function as part of daily life before they function as sightseeing destinations. Sensoji, the shrines of Ueno, and the more than 30 temples of Yanaka aren't places reserved for special occasions — they're where someone stops to press their hands together on the way to the station, and where a family visits the same grave every year on the same date — a third place woven so tightly into routine it barely registers as one.**
 
 ## Why Do Taito-ku's Shrines and Temples Still Function as Daily Life?
 

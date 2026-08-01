@@ -22,14 +22,14 @@ og_type: "article"
   "dateModified": "{{ modified | dateISO if modified else date | dateISO }}",
   "author": {
     "@type": "Organization",
-    "name": "サードプレイスジャパン編集部",
+    "name": "{{ "Third Place Japan Editorial Team" if lang == "en" else "サードプレイスジャパン編集部" }}",
     "url": "{{ site.url }}/about-company/#editorial-team",
-    "description": "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。"
+    "description": "{{ "The Third Place Japan editorial team evaluates and certifies third places across Japan using a proprietary seven-axis framework." if lang == "en" else "日本全国のサードプレイスを独自の7軸基準で評価・認証するThird Place Japan編集部。" }}"
   },
   "editor": {
     "@type": "Person",
     "name": "加瀬俊幸",
-    "jobTitle": "Third Place Japan編集長",
+    "jobTitle": "{{ "Editor-in-Chief, Third Place Japan" if lang == "en" else "Third Place Japan編集長" }}",
     "url": "{{ site.url }}/about-company/#editor"
   },
   "publisher": {
@@ -54,7 +54,7 @@ og_type: "article"
   "inLanguage": "{{ lang or 'ja' }}",
   "about": {
     "@type": "Thing",
-    "name": "サードプレイス"
+    "name": "{{ "Third Place" if lang == "en" else "サードプレイス" }}"
   }{% set cleanKw = tags | cleanKeywords %}{% if cleanKw %},
   "keywords": "{{ cleanKw }}"{% endif %},
   "wordCount": {{ content | wordCount }},
@@ -82,7 +82,7 @@ og_type: "article"
       "@type": "ListItem",
       "position": 2,
       "name": "Stories",
-      "item": "{{ site.url }}/stories/"
+      "item": "{{ site.url }}{{ '/en/stories/' if lang == 'en' else '/stories/' }}"
     }{% if category_slug == "about" %},
     {
       "@type": "ListItem",
@@ -99,7 +99,7 @@ og_type: "article"
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "{{ catObj.name_ja }}",
+      "name": "{{ catObj.name_en if lang == "en" else catObj.name_ja }}",
       "item": "{{ site.url }}/stories/{{ category_slug }}/"
     },
     {
@@ -149,14 +149,14 @@ og_type: "article"
 
       {# パンくず #}
       {% set catObj = categories | findCategoryBySlug(category_slug) %}
-      <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="パンくず">
-        <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+      <nav class="flex items-center gap-2 text-xs text-muted mb-12" aria-label="{{ 'Breadcrumb' if lang == 'en' else 'パンくず' }}">
+        <a href="{{ '/en/stories/' if lang == 'en' else '/stories/' }}" class="hover:text-gold transition-colors">Stories</a>
         {% if category_slug == "about" %}
         <span class="text-border">／</span>
         <a href="{{ '/en/stories/about/' if lang == 'en' else '/stories/about/' }}" class="hover:text-gold transition-colors">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</a>
         {% elif catObj %}
         <span class="text-border">／</span>
-        <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_ja }}</a>
+        <a href="/stories/{{ category_slug }}/" class="hover:text-gold transition-colors">{{ catObj.name_en if lang == "en" else catObj.name_ja }}</a>
         {% elif articleType == "feature" %}
         <span class="text-border">／</span>
         <a href="/stories/about/" class="hover:text-gold transition-colors">読み物</a>
@@ -170,7 +170,7 @@ og_type: "article"
         {% if category_slug == "about" %}
         <span class="label">{{ "Third Place Guide" if lang == "en" else "サードプレイスガイド" }}</span>
         {% elif catObj %}
-        <span class="label">{{ catObj.name_ja }}</span>
+        <span class="label">{{ catObj.name_en if lang == "en" else catObj.name_ja }}</span>
         {% else %}
         {% for tag in tags %}
         {% if tag != "articles" and tag != "feature" and tag != "story" %}
@@ -187,22 +187,24 @@ og_type: "article"
 
       {# 日付・著者・エリア（ピラー記事=aboutカテゴリは非表示）#}
       {# 取材根拠：店名を出さない条件描写型の記事のため、現地取材ではなく地域情報の調査・編集である旨を明示 #}
-      {% set articleSourcingBasis = "編集部による地域情報の調査・編集に基づく記事" %}
+      {# lang=enの場合、日付表記・編集部名・取材根拠・エリア階層ラベルをすべて英語表記に切り替える（article.njkはJA/EN共通レイアウトのため） #}
+      {% set articleSourcingBasis = "編集部による地域情報の調査・編集に基づく記事" if lang != "en" else "Based on the editorial team's research into local information" %}
+      {% set editorialTeamLabel = "サードプレイスジャパン編集部" if lang != "en" else "Third Place Japan Editorial Team" %}
       {% if date and category_slug != "about" %}
       <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-12 text-xs text-muted" data-aos="fade-up">
-        <time datetime="{{ date | dateISO }}">{{ date | dateJa }}</time>
-        <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">サードプレイスジャパン編集部</a>
+        <time datetime="{{ date | dateISO }}">{{ date | dateEn if lang == "en" else date | dateJa }}</time>
+        <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">{{ editorialTeamLabel }}</a>
         <span>{{ articleSourcingBasis }}</span>
         {% if area_slug %}
         {% set aInfo = area_slug | areaInfo %}
         {% if aInfo %}
         <span class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <a href="{{ aInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ aInfo.prefName }}</a>
+          <a href="{{ aInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ aInfo.prefNameEn if lang == "en" else aInfo.prefName }}</a>
           <span class="opacity-40">/</span>
-          <a href="{{ aInfo.cityUrl }}" class="hover:text-gold transition-colors">{{ aInfo.cityName }}</a>
+          <a href="{{ aInfo.cityUrl }}" class="hover:text-gold transition-colors">{{ aInfo.cityNameEn if lang == "en" else aInfo.cityName }}</a>
           <span class="opacity-40">/</span>
-          <a href="{{ aInfo.areaUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ aInfo.areaName }}</a>
+          <a href="{{ aInfo.areaUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ aInfo.areaNameEn if lang == "en" else aInfo.areaName }}</a>
         </span>
         {% endif %}
         {% elif area_name %}
@@ -210,9 +212,9 @@ og_type: "article"
         {% if cInfo %}
         <span class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block opacity-60"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <a href="{{ cInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ cInfo.prefName }}</a>
+          <a href="{{ cInfo.prefUrl }}" class="hover:text-gold transition-colors">{{ cInfo.prefNameEn if lang == "en" else cInfo.prefName }}</a>
           <span class="opacity-40">/</span>
-          <a href="{{ cInfo.cityUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ cInfo.cityName }}</a>
+          <a href="{{ cInfo.cityUrl }}" class="hover:text-gold transition-colors font-medium text-dark">{{ cInfo.cityNameEn if lang == "en" else cInfo.cityName }}</a>
         </span>
         {% else %}
         <span class="flex items-center gap-1">
@@ -224,7 +226,7 @@ og_type: "article"
       </div>
       {% elif category_slug == "about" %}
       <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-12 text-xs text-muted" data-aos="fade-up">
-        <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">サードプレイスジャパン編集部</a>
+        <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">{{ editorialTeamLabel }}</a>
         <span>{{ articleSourcingBasis }}</span>
       </div>
       {% endif %}
@@ -239,7 +241,7 @@ og_type: "article"
       {# サムネイル #}
       {% if thumbnail %}
       <div class="mb-12 rounded-xl overflow-hidden" data-aos="fade-up">
-        <img src="{{ thumbnail }}" alt="{{ title }} | サードプレイスジャパン編集部" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+        <img src="{{ thumbnail }}" alt="{{ title }} | {{ editorialTeamLabel }}" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
       </div>
       {% endif %}
 
@@ -258,13 +260,13 @@ og_type: "article"
       {# シェアボタン #}
       {% set shareUrl = site.url + page.url %}
       <div class="mt-14 pt-10 border-t border-border" style="opacity:1;visibility:visible;">
-        <p class="text-xs text-muted text-center mb-5">この記事をシェア</p>
+        <p class="text-xs text-muted text-center mb-5">{{ "Share This Article" if lang == "en" else "この記事をシェア" }}</p>
         <div class="flex items-center justify-center gap-3 flex-wrap">
           <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ shareUrl | urlencode }}"
              target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 border border-gold/30 px-5 py-2.5 text-xs text-text hover:border-gold hover:text-gold transition-all rounded-full bg-white shadow-sm hover:shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X ポスト
+            {{ "Post to X" if lang == "en" else "X ポスト" }}
           </a>
           <a href="https://line.me/R/msg/text/?{{ title | urlencode }}%0D%0A{{ shareUrl | urlencode }}"
              target="_blank" rel="noopener noreferrer"
@@ -321,7 +323,7 @@ og_type: "article"
                 <p class="text-xs text-gold mb-0.5">{{ "What Is a Third Place" if lang == "en" else "サードプレイスとは" }}</p>
                 {% endif %}
                 <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">{{ post.data.title }}</p>
-                <p class="text-xs text-muted mt-1">{{ post.date | dateJa }}</p>
+                <p class="text-xs text-muted mt-1">{{ post.date | dateEn if lang == "en" else post.date | dateJa }}</p>
               </a>
             </li>
             {% endfor %}
@@ -362,7 +364,7 @@ og_type: "article"
   <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
     <div class="flex items-center gap-2 mb-8">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      <p class="label">関連記事</p>
+      <p class="label">{{ "Related Articles" if lang == "en" else "関連記事" }}</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {% for post in relatedArticles %}
@@ -381,10 +383,10 @@ og_type: "article"
           <p class="text-xs text-muted mb-1">{{ "Third Place Guide" if post.data.lang == "en" else "サードプレイスガイド" }}</p>
           {% else %}
           {% set relCat = categories | findCategoryBySlug(post.data.category_slug) %}
-          {% if relCat %}<p class="text-xs text-muted mb-1">{{ relCat.name_ja }}</p>{% endif %}
+          {% if relCat %}<p class="text-xs text-muted mb-1">{{ relCat.name_en if post.data.lang == "en" else relCat.name_ja }}</p>{% endif %}
           {% endif %}
           <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{ post.data.title }}</h3>
-          <p class="text-xs text-muted mt-2">{{ post.date | dateJa }}</p>
+          <p class="text-xs text-muted mt-2">{{ post.date | dateEn if post.data.lang == "en" else post.date | dateJa }}</p>
         </div>
       </a>
       {% endfor %}
@@ -409,7 +411,7 @@ og_type: "article"
         </div>
         {% endif %}
         <div class="min-w-0">
-          <p class="text-xs text-muted mb-1">‹ 前の記事</p>
+          <p class="text-xs text-muted mb-1">{{ "‹ Previous" if lang == "en" else "‹ 前の記事" }}</p>
           <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ prevArticle.data.title }}</p>
         </div>
       </a>
@@ -419,7 +421,7 @@ og_type: "article"
       {% if nextArticle %}
       <a href="{{ nextArticle.url }}" class="group flex items-center gap-3 rounded-xl p-4 h-full border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all bg-white">
         <div class="min-w-0 flex-1 text-right">
-          <p class="text-xs text-muted mb-1">次の記事 ›</p>
+          <p class="text-xs text-muted mb-1">{{ "Next ›" if lang == "en" else "次の記事 ›" }}</p>
           <p class="text-sm text-dark group-hover:text-gold transition-colors leading-snug" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ nextArticle.data.title }}</p>
         </div>
         {% if nextArticle.data.thumbnail %}

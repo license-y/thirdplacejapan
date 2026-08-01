@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes"
-description: "Bunkyo-ku offers a retreat built on scholarship, not faith or nature — Hongo's university slopes, two daimyo gardens, and a writers' quarter — TPJ's seven axes."
+description: "Bunkyo-ku offers a third place for retreat built on scholarship, not faith or nature — Hongo's university slopes, two daimyo gardens, a writers' quarter."
 date: 2026-07-11
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/retreat-zen/bunkyo/
 thumbnail: /assets/images/articles/hongo-hilly-stone-steps-bunkyo-en.webp
 ---
 
-**Bunkyo-ku builds retreat out of scholarship rather than faith or nature. Around the University of Tokyo's Hongo campus, a grid of named slopes climbs a plateau that once belonged to a feudal lord, while two gardens holding Japan's highest landscape designation sit within the same small ward. For anyone seeking solitude for the sake of thinking rather than praying or unplugging, Bunkyo-ku offers a version of retreat that few other parts of Tokyo can.**
+**Bunkyo-ku builds retreat out of scholarship rather than faith or nature. Around the University of Tokyo's Hongo campus, a grid of named slopes climbs a plateau that once belonged to a feudal lord, while two gardens holding Japan's highest landscape designation sit within the same small ward. For anyone seeking solitude for the sake of thinking rather than praying or unplugging, Bunkyo-ku offers a version of retreat — a third place for the mind rather than the body — that few other parts of Tokyo can.**
 
 ## Why Retreat in Bunkyo-ku Looks Different
 
@@ -98,7 +98,7 @@ Each May, the university opens its Hongo campus to the public for its annual fes
 Before 8 a.m., ahead of the university's first lectures, and right after a garden's opening are when Bunkyo-ku is at its quietest. Weekday mornings during the academic term tend to reveal the ward's true rhythm more than weekends do.
 
 **Q. How is a Bunkyo-ku retreat different from Taito-ku's Yanaka?**<br>
-Yanaka's quiet is rooted in a temple town — stillness woven into everyday life. Bunkyo-ku's quiet comes from its university and daimyo gardens — a solitude adjacent to scholarship rather than faith. The two wards sit next to each other geographically, but the source of their stillness is entirely different. [Taito-ku's own retreat and zen guide](/en/stories/retreat-zen/taito/) covers that Yanaka-centered version of Tokyo quiet in full.
+Yanaka's quiet is rooted in a temple town — stillness woven into everyday life. Bunkyo-ku's quiet comes from its university and daimyo gardens — a solitude adjacent to scholarship rather than faith. The two wards sit next to each other geographically, but the source of their stillness is entirely different — both function as a third place for solitude, just built on different foundations. [Taito-ku's own retreat and zen guide](/en/stories/retreat-zen/taito/) covers that Yanaka-centered version of Tokyo quiet in full.
 
 **Q. Can Bunkyo-ku's gardens and slopes be covered in a single day?**<br>
 Yes. Both Koishikawa Korakuen and Rikugien sit centrally enough to cover in half a day, and pairing either with a walk through Hongo's slopes makes for a full day that crosses all three of the ward's distinct layers of quiet.

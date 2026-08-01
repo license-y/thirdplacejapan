@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chiyoda-ku as a Third Place: One Ward, Three Kinds of Room"
-description: "Chiyoda-ku's cafés split into three worlds — Marunouchi's prestige, Jimbocho's book stillness, Akihabara's fan intensity — read through TPJ's seven axes."
+description: "Chiyoda-ku's cafés work as a third place in three forms — Marunouchi's prestige, Jimbocho's book stillness, Akihabara's fan intensity — TPJ's seven axes."
 date: 2026-07-18
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/cafe-specialty-coffee/chiyoda/
 thumbnail: /assets/images/articles/chiyoda-books-coffee-window-light-en.webp
 ---
 
-**Ask ten different people to picture "a café in Chiyoda-ku," and you'll likely get ten different images. Some picture a polished coffee bar inside a Marunouchi tower. Others picture a quiet café tucked into Jimbocho's secondhand-book district. Still others think first of a hobby-focused community café in Akihabara. That inability to settle on one image is the point — this ward holds three genuinely unrelated café cultures inside a single administrative boundary, more than almost anywhere else in Tokyo.**
+**Ask ten different people to picture "a café in Chiyoda-ku," and you'll likely get ten different images. Some picture a polished coffee bar inside a Marunouchi tower. Others picture a quiet café tucked into Jimbocho's secondhand-book district. Still others think first of a hobby-focused community café in Akihabara. That inability to settle on one image is the point — this ward holds three genuinely unrelated café cultures inside a single administrative boundary — three different ways a café can work as a third place, more concentrated than almost anywhere else in Tokyo.**
 
 ## Why Chiyoda-ku's Cafés Split Into Three Unrelated Worlds
 

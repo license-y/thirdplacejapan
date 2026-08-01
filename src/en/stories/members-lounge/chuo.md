@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: Belonging Built on a Merchant City's Trust"
-description: "Chuo-ku's members lounges channel centuries of merchant credibility into belonging — Ginza's status, Nihonbashi's trust, Ningyocho's ties — TPJ's seven axes."
+description: "Chuo-ku's members lounges work as a third place channeling merchant history into belonging — Ginza's status, Nihonbashi's trust, Ningyocho's ties — seven axes."
 date: 2026-07-18
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/members-lounge/chuo/
 thumbnail: /assets/images/articles/chuo-private-members-library-lounge-en.webp
 ---
 
-**Chuo-ku's members lounges stand on the same long timeline as its merchant history. Ginza offers a sense of belonging built on status; Nihonbashi, one built on old-line trust between finance and commerce; Ningyocho, one built on a neighborhood's own web of ties. Few wards in Tokyo carry this many distinct forms of belonging inside a single administrative boundary.**
+**Chuo-ku's members lounges stand on the same long timeline as its merchant history. Ginza offers a sense of belonging built on status; Nihonbashi, one built on old-line trust between finance and commerce; Ningyocho, one built on a neighborhood's own web of ties. Few wards in Tokyo carry this many distinct forms of belonging inside a single administrative boundary, each lounge working as a third place built on its own kind of trust.**
 
 ## Why Chuo-ku Developed So Many Forms of Belonging
 

@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Minato-ku as a Third Place: Six Neighborhoods, Six Different Meanings of a Meal"
-description: "Minato-ku's restaurants split by purpose, not cuisine — Azabujuban's neighborhood table, Akasaka's political dining, Roppongi's crossroads — TPJ's seven axes."
+description: "Minato-ku's restaurants work as a third place that splits by purpose, not cuisine — Azabujuban's table, Akasaka's political dining, Roppongi's crossroads."
 date: 2026-07-16
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/restaurant-dining/minato/
 thumbnail: /assets/images/articles/minato-elegant-dining-interior-en.webp
 ---
 
-**In Minato-ku, what a meal means changes by neighborhood more than in almost any other part of Tokyo. In Azabujuban, dinner is a weekly habit tied to a four-century-old shopping street. In Akasaka, it's a venue for political and business conversation with a long-standing tradition of formal hospitality. In Roppongi, it's the point where several nationalities share a table without anyone treating that as unusual. Six neighborhoods, six distinct answers to the same question: what is food actually for here?**
+**In Minato-ku, what a meal means changes by neighborhood more than in almost any other part of Tokyo. In Azabujuban, dinner is a weekly habit tied to a four-century-old shopping street. In Akasaka, it's a venue for political and business conversation with a long-standing tradition of formal hospitality. In Roppongi, it's the point where several nationalities share a table without anyone treating that as unusual. Six neighborhoods, six distinct answers to the same question: what is food actually for here? Each answer describes a different kind of third place.**
 
 ## Why Minato-ku's Restaurants Split by Purpose
 

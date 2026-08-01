@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Koto-ku as a Third Place: A Canal Divides Old Warehouses From New Waterfront Leisure"
-description: "Koto-ku splits along a canal: Kiyosumi-Shirakawa's warehouses hold a quiet culture, while Toyosu and Odaiba's reclaimed land opens onto waterfront leisure."
+description: "Koto-ku's culture venues work as a third place split by a canal: Kiyosumi-Shirakawa's quiet warehouses, Toyosu and Odaiba's reclaimed waterfront leisure."
 date: 2026-07-15
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/culture-sports-leisure/koto/
 thumbnail: /assets/images/articles/tokyo-bay-bridge-waterfront-koto-en.webp
 ---
 
-**Koto-ku holds two different eras of Tokyo inside one ward, split by a canal. Kiyosumi-Shirakawa's timber-district warehouses now hold a quiet, independent culture of roasters and small galleries; Toyosu and Odaiba, built from scratch on reclaimed land, hold large-scale waterfront leisure with room to spare. Neither reads like the other, and that gap is the ward's defining feature.**
+**Koto-ku holds two different eras of Tokyo inside one ward, split by a canal. Kiyosumi-Shirakawa's timber-district warehouses now hold a quiet, independent culture of roasters and small galleries; Toyosu and Odaiba, built from scratch on reclaimed land, hold large-scale waterfront leisure with room to spare. Neither reads like the other, and that gap between two kinds of third place is the ward's defining feature.**
 
 ## Why Koto-ku Runs on the Coexistence of Old and New
 

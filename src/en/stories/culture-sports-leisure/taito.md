@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Taito-ku as a Third Place: Where Culture Becomes a Place to Stay, Not Just Visit"
-description: "Taito-ku's museums, theaters, and craft studios sit inside parks, streets, and neighborhoods — turning culture from something you watch into somewhere you stay."
+description: "Taito-ku's museums and craft studios sit inside parks and streets, turning culture into a third place you stay in rather than something you just watch."
 date: 2026-07-04
 tags:
   - articles

@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Bunkyo-ku as a Third Place: Shrines and Temples Behind Tokyo's Scholar-Town Faith"
-description: "Bunkyo-ku's shrines and temples center on one devotion — academic success — Yushima Tenmangu, the Confucian Yushima Seido, and Nezu Shrine — TPJ's seven axes."
+description: "Bunkyo-ku's shrines and temples work as a third place centered on one devotion — academic success — at Yushima Tenmangu, Yushima Seido, and Nezu Shrine."
 date: 2026-07-12
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/shrine-temple/bunkyo/
 thumbnail: /assets/images/articles/vermillion-shrine-hall-bunkyo-en.webp
 ---
 
-**Bunkyo-ku's shrines and temples converge on a single devotion more than those of any other part of Tokyo: academic success. A shrine dedicated to the god of learning, a former Confucian academy, a shrine ranked among Tokyo's ten great shrines — all of it sits on the same plateau where students have prayed for exam results for generations, and still do.**
+**Bunkyo-ku's shrines and temples converge on a single devotion more than those of any other part of Tokyo: academic success. A shrine dedicated to the god of learning, a former Confucian academy, a shrine ranked among Tokyo's ten great shrines — all of it sits on the same plateau where students have prayed for exam results for generations, and still do — a third place built entirely around one form of hope.**
 
 ## Why Do Bunkyo-ku's Shrines and Temples Center on Scholarship?
 

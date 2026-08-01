@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chiyoda-ku as a Third Place: Staying Next to the Nation Itself"
-description: "Chiyoda-ku's hotel lounges sit beside the Imperial Palace and the ministries that run Japan — prestige built by state planning, not commerce — TPJ's seven axes."
+description: "Chiyoda-ku's hotel lounges work as a third place beside the Imperial Palace and the ministries that run Japan — prestige built by planning, not commerce."
 date: 2026-07-18
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/hotel-lounge/chiyoda/
 thumbnail: /assets/images/articles/chiyoda-palace-garden-hotel-window-en.webp
 ---
 
-**A stay in a Chiyoda-ku hotel lounge carries a kind of prestige found nowhere else in Tokyo. The Imperial Palace sits at the ward's center, and the ministries that run the country — foreign affairs, finance, the cabinet office — cluster within walking distance. This isn't the prestige commerce built over centuries, or the polish international capital brings. It's a third kind entirely: a capital's symbolic weight, deliberately planned into being by the Meiji government.**
+**A stay in a Chiyoda-ku hotel lounge carries a kind of prestige found nowhere else in Tokyo. The Imperial Palace sits at the ward's center, and the ministries that run the country — foreign affairs, finance, the cabinet office — cluster within walking distance. This isn't the prestige commerce built over centuries, or the polish international capital brings. It's a third kind entirely — a third place built from state authority rather than trade, its weight deliberately planned into being by the Meiji government.**
 
 ## Why Chiyoda-ku's Hotel Lounges Carry a Different Kind of Weight
 
@@ -87,7 +87,7 @@ For international visitors, a Chiyoda-ku hotel lounge naturally overlaps with th
 ## Frequently Asked Questions
 
 **Q. How do Chiyoda-ku's hotel lounges differ from Chuo-ku or Minato-ku's?**<br>
-Chuo-ku carries prestige built by centuries of merchant history; Minato-ku's core is international capital and corporate polish. Chiyoda-ku's core is a capital's symbolic prestige, built from proximity to the Imperial Palace and the ministry district — a fundamentally different origin than the market-driven prestige of other wards.
+Chuo-ku carries prestige built by centuries of merchant history; Minato-ku's core is international capital and corporate polish. Chiyoda-ku's core is a capital's symbolic prestige, built from proximity to the Imperial Palace and the ministry district — a fundamentally different origin than the market-driven prestige of other wards — each ward's lounges work as a third place shaped by a different kind of authority.
 
 **Q. Are Chiyoda-ku's hotel lounges suited to business use?**<br>
 Yes. With one of Japan's largest concentrations of corporate headquarters in Otemachi and Marunouchi, and the central ministries close by in Kasumigaseki, these lounges function readily as spaces for confidential business conversation, and many hotels here carry space designs built to match that demand for privacy.

@@ -215,6 +215,13 @@ export default function (eleventyConfig) {
     return `${jst.getFullYear()}年${jst.getMonth() + 1}月${jst.getDate()}日`;
   });
 
+  eleventyConfig.addFilter("dateEn", (date) => {
+    const d = new Date(date);
+    const jst = new Date(d.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return `${months[jst.getMonth()]} ${jst.getDate()}, ${jst.getFullYear()}`;
+  });
+
   eleventyConfig.addFilter("dateISO", (date) => {
     const d = new Date(date);
     const jst = new Date(d.toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
@@ -303,9 +310,9 @@ export default function (eleventyConfig) {
         const area = city.areas.find(a => a.slug === areaSlug);
         if (area) {
           return {
-            prefSlug: pref.slug, prefName: pref.name,
-            citySlug: city.slug, cityName: city.name,
-            areaSlug: area.slug, areaName: area.name,
+            prefSlug: pref.slug, prefName: pref.name, prefNameEn: pref.name_en,
+            citySlug: city.slug, cityName: city.name, cityNameEn: city.name_en,
+            areaSlug: area.slug, areaName: area.name, areaNameEn: area.name_en,
             prefUrl: `/stories/area/${pref.slug}/`,
             cityUrl: `/stories/area/${pref.slug}/${city.slug}/`,
             areaUrl: `/stories/area/${pref.slug}/${city.slug}/${area.slug}/`,
@@ -320,11 +327,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("cityInfo", (cityName) => {
     if (!cityName) return null;
     for (const pref of areasData) {
-      const city = pref.cities.find(c => c.name === cityName);
+      const city = pref.cities.find(c => c.name === cityName || c.name_en === cityName);
       if (city) {
         return {
-          prefSlug: pref.slug, prefName: pref.name,
-          citySlug: city.slug, cityName: city.name,
+          prefSlug: pref.slug, prefName: pref.name, prefNameEn: pref.name_en,
+          citySlug: city.slug, cityName: city.name, cityNameEn: city.name_en,
           prefUrl: `/stories/area/${pref.slug}/`,
           cityUrl: `/stories/area/${pref.slug}/${city.slug}/`,
         };

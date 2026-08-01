@@ -1,7 +1,7 @@
 ---
 layout: article.njk
 title: "Chuo-ku as a Third Place: Three Layers of Time on One Table"
-description: "Chuo-ku's restaurants stack Edo-period ryotei tradition, Tsukiji's seafood history, and Ginza's formal entertaining onto one table — TPJ's seven axes."
+description: "Chuo-ku's restaurants work as a third place, stacking Edo-period ryotei tradition, Tsukiji's seafood history, and Ginza's formal entertaining onto one table."
 date: 2026-07-17
 tags:
   - articles
@@ -12,7 +12,7 @@ hreflang_ja: /stories/restaurant-dining/chuo/
 thumbnail: /assets/images/articles/chuo-kaiseki-lacquerware-matcha-tray-en.webp
 ---
 
-**No other Tokyo ward stacks quite this much culinary history onto a single table. Chuo-ku holds three layers at once: the ryotei tradition that flowered in Edo-period Nihonbashi and Ningyocho, Tsukiji's century as the city's seafood supply hub, and Ginza's long run as the stage for Japan's most formal entertaining. Choosing where to eat here means choosing which part of that history to sit inside.**
+**No other Tokyo ward stacks quite this much culinary history onto a single table. Chuo-ku holds three layers at once: the ryotei tradition that flowered in Edo-period Nihonbashi and Ningyocho, Tsukiji's century as the city's seafood supply hub, and Ginza's long run as the stage for Japan's most formal entertaining. Choosing where to eat here means choosing which part of that history — and which version of a third place — to sit inside.**
 
 ## Why Chuo-ku's Restaurants Carry Three Kinds of Time
 
