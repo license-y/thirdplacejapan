@@ -1598,6 +1598,8 @@ eleventyConfig.addFilter("selectLang", (array, lang) =>
 
 **チェック方法**：新しいレイアウト・テンプレートを追加/編集する際は、`collections.articles` を直接（`selectLang`/`rejectLang` を挟まずに）参照している箇所がないか `grep -n "collections\.articles" src/_layouts/ src/stories/ src/en/` で確認する。`sitemap.njk`（全言語を含めるべきサイトマップ）のような例外を除き、原則すべて言語フィルタを挟むこと。
 
+**「最新記事」系ウィジェットは `selectLang`/`rejectLang` だけでなく `rejectCategory("about")` も必ずペアで付けること（2026-08-01追加）**：`selectLang`/`rejectLang` は言語混入を防ぐが、`about`カテゴリ（サードプレイスガイド記事）の混入は別途`rejectCategory("about")`を明示的に挟まないと防げない。日本語版の同種ウィジェット（`footer-stories.njk`・`stories/index.njk`・`stories/latest.njk`・`article.njk`等）は2026-07-20に`rejectCategory("about")`を追加済みだったが、`footer-stories-en.njk`の「Latest Articles」列だけこの対応から漏れており、`about`記事4本が2026-07-28に一括公開された直後、英語版フッターの「Latest Articles」欄が通常記事ではなくガイド記事4本で埋まってしまう不具合が本番で発生していた（ユーザーからのスクリーンショット指摘で発覚）。「最新記事」「Latest Articles」を名乗るウィジェットを新規追加・複製する場合は、`selectLang`/`rejectLang`と`rejectCategory("about")`の両方が付いているか確認すること。
+
 ---
 
 ## ✅ LocalBusiness @type のカテゴリ別マッピング（venue.njk・2026-07-09追加）
@@ -2325,6 +2327,25 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-08-01
+
+### 英語版ナビ・フッターから未完成のTPJ Selectセクションを削除、フッター「Third Place Guide」列を日本語版とパリティ化
+
+**対象ファイル**
+- `src/_includes/nav-stories-en.njk`（デスクトップナビ・ハンバーガーメニューの両方から「TPJ Select」リンクを削除）
+- `src/_includes/footer-stories-en.njk`（「TPJ Select」列を削除しグリッドを3列→2列に、「Latest Articles」に`rejectCategory("about")`を追加、「Third Place Guide」列を動的リスト化）
+- `src/en/stories/concept/meiji-jingu-third-place-tokyo.md`・`tokyo-third-place-guide-travelers.md`・`src/en/stories/culture-sports-leisure/koto.md`（日本語版限定のTPJセレクト一覧へのリンクに注記追加）
+
+**背景①（ナビ・フッターのTPJ Select削除）**：ユーザーからスクリーンショットで、英語版フッターの「TPJ SELECT」列がGreen Beans Coffee 1件のみのリンクになっており不自然だと指摘を受けた。原因は英語版施設ページ（`has_en: true`）がGBC 1件しか存在しないため。英語版の施設一覧ページ（`/en/stories/select/`）自体も未実装（個別施設ページのみ存在）。ユーザー判断で「一覧ページを新設し複数施設を英語化する」ではなく「不自然な単独リンクを削除する」を選択。デスクトップナビ・ハンバーガーメニュー・フッターの3箇所から「TPJ Select」リンクを撤去し、英語記事本文から日本語版TPJセレクト一覧（`/stories/select/`）にリンクしていた3箇所には、`tpj-certification-and-select-difference.md`で既に使われていた「*(Japanese-language listing; an English version is not yet available)*」という注記を統一して追加した。
+
+**背景②（フッター「Third Place Guide」列のパリティ化）**：続けてユーザーから、英語版フッターの「Latest Articles」列に本来表示されるべき通常記事ではなく`about`カテゴリのガイド記事4本（2026-07-28公開）が表示されている問題を指摘された。調査の結果、`footer-stories-en.njk`の「Latest Articles」クエリ（`collections.articles | selectLang("en") | head(4)`）に`rejectCategory("about")`が付いておらず、直近公開の`about`記事4本がそのまま「最新記事」枠を占拠していたことが判明した。日本語版フッター（`footer-stories.njk`）は2026-07-20の対応で`rejectCategory("about")`が付いていたが、英語版フッターはその対応漏れだった。あわせて「Third Place Guide」列も日本語版「サードプレイスガイド」列（`collections.aboutArticles`から動的に最新4本＋一覧リンク）と異なり、固定リンク1件のみの実装になっていたため、日本語版と同じ動的パターンに揃えた。
+
+**検証方法**：`npm run build`後、サイト全体のJSON-LD 2,282ブロックのパースエラー0件、内部リンク37,676件のリンク切れ0件をNode.jsスクリプトで確認済み。英語版フッターの「Latest Articles」に通常記事4本、「Third Place Guide」に`about`記事4本が正しく分離されて表示されることを実際のビルド済みHTMLで確認した。
+
+**ルール化**：「✅ ItemList の言語フィルタリング（日英混在環境）」セクション内、`relatedPostsByCat`・`prevPost`・`nextPost`に関する既存ルールの直後に、「最新記事」系ウィジェットは`selectLang`/`rejectLang`だけでなく`rejectCategory("about")`も必ずペアで付ける旨を追記した。
+
+---
 
 ## 2026-07-31
 
