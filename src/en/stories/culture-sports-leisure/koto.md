@@ -70,7 +70,7 @@ Three things are worth starting from: who you're with, the time of day, and the 
 
 Koto-ku's waterside changes face with the seasons. Summer brings a regular fireworks display over the bay, and watching it reflected on the water is a distinctly Koto-ku way to spend an evening. In Fukagawa, a summer parish festival moves through the back streets, and the district's old sense of a town built on water transport comes through most strongly then. A riverside promenade along the Sumida and a walking route through Kiba Park both connect the ward's culture and leisure scene naturally into a longer walk.
 
-Kiyosumi-Shirakawa's hand-picked spots also turn up on [TPJ Select](/stories/select/), a listing built on the same quiet, warehouse-grounded character — see [TPJ Select vs. TPJ Certification](/en/stories/concept/tpj-certification-and-select-difference/) for how that unpaid editorial pick relates to formal certification.
+Kiyosumi-Shirakawa's hand-picked spots also turn up on [TPJ Select](/stories/select/) *(Japanese-language listing; an English version is not yet available)*, built on the same quiet, warehouse-grounded character — see [TPJ Select vs. TPJ Certification](/en/stories/concept/tpj-certification-and-select-difference/) for how that unpaid editorial pick relates to formal certification.
 
 ## For International Visitors
 
