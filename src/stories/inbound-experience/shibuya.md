@@ -137,3 +137,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 台東区のインバウンド体験との対比は[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)を参照いただきたい
 - 同時代性とは対照的な、国家機構そのものを見学できる千代田区のインバウンド体験は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)も参照いただきたい
 - 同じく現代性を持つ墨田区でも、超高層タワーの足元に昭和の路地が広がる対比構造については[墨田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/sumida/)も参照いただきたい
+- 渋谷区内でも竹下通りの喧騒から一本外れた静かなエリアの実例としては[千駄ヶ谷・北参道のサードプレイスガイド：インバウンド利用編](/stories/inbound-experience/sendagaya-kitasando-cafe/)を参照されたい

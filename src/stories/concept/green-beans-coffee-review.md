@@ -61,7 +61,7 @@ Green Beans Coffeeは、社会学者レイ・オルデンバーグが定義す�
 
 特に注目すべきは、「一人でいることへの敬意」がこの空間に貫かれている点だ。日本のカフェ文化において、一人客への配慮は珍しくないが、Green Beans Coffeeはそれを設計の哲学として徹底している。席に座れば、隣に誰がいようと「自分の時間」が守られる。これがTPJの評価において最高グレード「Flagship」を授与した最大の理由だ。
 
-渋谷のサードプレイス全体を理解したい方は「[渋谷のカフェがサードプレイスになる理由](/stories/cafe-specialty-coffee/shibuya-cafe-third-place/)」も合わせてご覧ください。また、サードプレイスの概念を学びたい方には「[サードプレイスとは何か？](/stories/about/what-is-third-place/)」をおすすめします。
+渋谷のサードプレイス全体を理解したい方は「[渋谷のカフェがサードプレイスになる理由](/stories/cafe-specialty-coffee/shibuya-cafe-third-place/)」も合わせてご覧ください。また、サードプレイスの概念を学びたい方には「[サードプレイスとは何か？](/stories/about/what-is-third-place/)」をおすすめします。ハンドドリップの提供シーンが「また来たくなる」愛着にどう接続しているかは、[「また来たくなる」はどう設計されるか：参加型体験と再訪価値のサードプレイス評価](/stories/cafe-specialty-coffee/experience-revisit-value-gbc/)で詳しく解説している。
 
 ---
 

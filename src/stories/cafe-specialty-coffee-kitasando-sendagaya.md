@@ -3,6 +3,7 @@ layout: article.njk
 title: 北参道・千駄ヶ谷でカフェをサードプレイスにする — ダガヤサンドの第三の居場所案内
 description: 将棋の長考文化と神宮外苑への動線が重なる北参道・千駄ヶ谷（ダガヤサンド）は、急がない時間を前提としたサードプレイスとしてカフェが機能する街だ。日本将棋連盟の本拠地を持つ千駄ヶ谷の固有性をThird Place Japanが7軸で読む。
 date: 2026-06-27
+modified: 2026-08-02
 tags:
   - articles
   - カフェ・スペシャルティコーヒー
@@ -42,7 +43,7 @@ thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 
 北参道・千駄ヶ谷のカフェにおいて、静寂性の軸が他エリアと異なる意味を持つのは、静寂が「背景」ではなく「目的」として来訪者に求められているからだ。将棋関係者にとって、思考を途切れさせない環境は実用的な要件だ。ランニング後に神宮外苑から流れ込む来訪者は、身体が落ち着くまでの静かな時間を必要としている。
 
-この街のカフェが持つ静寂性は、単なる「音が少ない」ではなく、「他者の時間の流れに合わせなくていい」という空間的な許可に近い。
+この街のカフェが持つ静寂性は、単なる「音が少ない」ではなく、「他者の時間の流れに合わせなくていい」という空間的な許可に近い。この条件を体現する実例として、[渋谷区千駄ヶ谷のFlagship認証店](/stories/select/green-beans-coffee-shibuya/)は、静寂性・プライバシーの軸でTPJ評価の中でも国内最高水準の9/10というスコアを記録している。
 
 ### ストーリー・背景への共感 — 将棋と神宮外苑という二つの時間軸
 
@@ -117,3 +118,12 @@ thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 ## まとめ
 
 北参道・千駄ヶ谷のカフェのサードプレイスとしての本質は、急がない時間を前提とした居場所機能にある。将棋の長考文化と神宮外苑への動線が交差するダガヤサンドでしか成立しない「静息の密度」は、観光地型のカフェとは根本的に異なる価値を持つ。サードプレイスジャパン（Third Place Japan）では、こうした空間を静寂性・再訪価値・ストーリーなど7軸で評価・認証している。渋谷区全体のカフェ・スペシャルティコーヒー文化については[北参道・千駄ヶ谷を含む渋谷区のカフェ完全ガイド](/stories/cafe-specialty-coffee/shibuya/)を合わせて参照いただきたい。同エリアで実際にTPJがFlagship認証したカフェの評価事例は[Green Beans Coffeeの評価レポート](/stories/cafe-specialty-coffee/green-beans-coffee-review/)、施設の7軸スコア・アクセス情報は[認証プロフィールページ](/stories/select/green-beans-coffee-shibuya/)、隣接する原宿・渋谷全体の視点は[渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー完全ガイド](/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/)でも詳しく解説している。
+
+---
+
+関連記事：
+
+- 商談・リモートワークでの利用に特化した視点は[千駄ヶ谷・北参道でカフェを仕事場にする：ビジネス利用のサードプレイスガイド](/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/)で解説している
+- Green Beans Coffeeで継続的に検証されてきた空間設計の知見は[実証店舗の空間設計知見から読む、サードプレイスをつくる7軸の条件](/stories/about/space-design-insights-gbc/)を参照
+- 訪日外国人にとってのこのエリアの価値は[千駄ヶ谷・北参道のサードプレイスガイド：インバウンド利用編](/stories/inbound-experience/sendagaya-kitasando-cafe/)で詳しく解説している
+- ハンドドリップ・焙煎といった参加型体験が再訪価値にどう接続するかは[「また来たくなる」はどう設計されるか：参加型体験と再訪価値のサードプレイス評価](/stories/cafe-specialty-coffee/experience-revisit-value-gbc/)も参照されたい

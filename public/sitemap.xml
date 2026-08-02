@@ -2276,6 +2276,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/sendagaya/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shibuya/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2542,6 +2548,38 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/about/space-design-insights-gbc/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/experience-revisit-value-gbc/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/sendagaya-kitasando-cafe/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/setagaya/</loc>
@@ -3379,7 +3417,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee-kitasando-sendagaya/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
