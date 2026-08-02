@@ -2558,14 +2558,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/experience-revisit-value-gbc/</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -2575,7 +2567,15 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/sendagaya-kitasando-cafe/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

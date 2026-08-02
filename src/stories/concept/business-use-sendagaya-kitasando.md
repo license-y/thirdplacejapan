@@ -2,7 +2,7 @@
 layout: article.njk
 title: 千駄ヶ谷・北参道でカフェを仕事場にする：ビジネス利用のサードプレイスガイド
 description: 千駄ヶ谷・北参道は静寂性と居心地を軸に、商談やリモートワークに適したサードプレイスが点在する東京の街区だ。TPJがFlagship認証したカフェの7軸スコアを手がかりに、ビジネス利用に向くカフェの見分け方を丁寧に解説する。
-date: 2026-08-02
+date: 2026-07-31
 tags:
   - articles
 category_slug: cafe-specialty-coffee
