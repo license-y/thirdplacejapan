@@ -1889,6 +1889,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/kita-ku/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2004,6 +2010,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/kita-ku/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2548,6 +2560,22 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/kita/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/kita/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/about/space-design-insights-gbc/</loc>
