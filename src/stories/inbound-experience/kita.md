@@ -2,7 +2,7 @@
 layout: article.njk
 title: "北区のサードプレイスガイド：インバウンド体験編。一人の実業家の足跡から、近代日本の産業史を歩く"
 description: "北区は、近代日本の資本主義を築いた実業家の邸宅跡・製紙産業発祥の記念館・治水の近代化遺産が同じ川沿いに集まる、産業史を歩いて確かめられる行政区だ。第三の居場所（third place）としてのインバウンド体験を7軸で読み解く。"
-date: 2026-08-04
+date: 2026-08-02
 tags:
   - articles
 category_slug: inbound-experience

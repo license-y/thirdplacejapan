@@ -2575,22 +2575,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/arakawa/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/arakawa/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/kita/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2598,7 +2582,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/kita/</loc>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/arakawa/</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2622,7 +2606,23 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/kita/</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/sendagaya-kitasando-cafe/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/kita/</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

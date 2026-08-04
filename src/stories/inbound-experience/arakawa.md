@@ -2,7 +2,7 @@
 layout: article.njk
 title: "荒川区のサードプレイスガイド：インバウンド体験編。今も現役で走る、東京でただ一つの路面電車"
 description: "荒川区は、明治から続く路面電車が今も現役で走り、町工場の匠の技が今も生きている「生きた昭和」を体感できる行政区だ。建物で近代化を見せる北区とは異なる、移動そのものが体験になるサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-06
+date: 2026-08-04
 tags:
   - articles
 category_slug: inbound-experience

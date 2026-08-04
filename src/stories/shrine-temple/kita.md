@@ -2,7 +2,7 @@
 layout: article.njk
 title: "北区のサードプレイスガイド：神社・寺院編。行楽地の空気をまとった、庶民の稲荷信仰"
 description: "北区の神社仏閣は、花見や滝見物と参拝が地続きだった「行楽地の信仰」という性格を持つ。生活密着型の台東区、国家・町人・将軍家の三層構造を持つ千代田区とも異なる、遊びと祈りが重なるサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-03
+date: 2026-08-01
 tags:
   - articles
 category_slug: shrine-temple

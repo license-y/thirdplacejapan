@@ -2,7 +2,7 @@
 layout: article.njk
 title: "荒川区のサードプレイスガイド：神社・寺院編。都市が周縁に追いやった記憶を、今も弔い続ける場所"
 description: "荒川区南千住の寺社は、都市の刑場の記憶を今も弔い続けるという、他区にはない役割を担ってきた。行楽地の北区、花街の墨田区、生活密着の台東区とも異なる、都市の記憶を弔うサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-05
+date: 2026-08-03
 tags:
   - articles
 category_slug: shrine-temple
