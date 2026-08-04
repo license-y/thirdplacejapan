@@ -101,6 +101,7 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 国家機構そのものを見学できる千代田区の詳細は[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)を参照
 - 超高層タワーの足元に昭和の路地が広がる墨田区の詳細は[墨田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/sumida/)を参照
 - 実業家の足跡から近代日本の産業史を歩ける北区の詳細は[北区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kita/)を参照
+- 今も現役で走る路面電車と町工場の匠の技が体験できる荒川区の詳細は[荒川区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/arakawa/)を参照
 
 ---
 
