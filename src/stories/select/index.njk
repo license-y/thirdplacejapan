@@ -8,8 +8,10 @@ canonical: "/stories/select/"
 {% set flagshipVenues = venues | venuesByGrade('flagship') %}
 {% set selectVenues = venues | venuesByGrade('select') %}
 {% set selectCount = published.length - flagshipVenues.length %}
-{% set selectCatFacets = selectVenues | venueCategoryFacets %}
-{% set selectAreaFacets = selectVenues | venueAreaFacets %}
+{# カテゴリ・エリアページ側（/stories/{category}/・/stories/area/...）はグレードを問わず掲載施設全件を表示するため、
+   件数表示もそれに合わせて published（TPJセレクト＋Flagship）基準で集計する #}
+{% set selectCatFacets = published | venueCategoryFacets %}
+{% set selectAreaFacets = published | venueAreaFacets %}
 {% set selectFaq = [
   { q: "TPJセレクトとはどのような施設ですか？", a: "TPJセレクトとは、Third Place Japan（サードプレイスジャパン）編集部が独自の視点で見つけた「いま気になる居場所」です。料理の味やコスパではなく、家でも職場でもない「第三の居場所」＝サードプレイス（third place）としての価値を軸に、カフェ・ホテル・スパ・コワーキングなど業種横断で紹介しています。施設からのお申し込みが必要な<a href=\"/stories/about/tpj-certification-and-select-difference/\" class=\"text-gold hover:underline\">正式な認証グレードとの違い</a>もあわせてご覧ください。" },
   { q: "サードプレイス（third place）とは何ですか？", a: "サードプレイスとは、社会学者レイ・オルデンバーグが提唱した、家（第一の場所）でも職場（第二の場所）でもない、心地よい第三の居場所を指す概念です。Third Place Japanは、この考え方を現代日本の空間に当てはめ、独自の7軸基準で評価・認証しています。詳しくは<a href=\"/stories/about/what-is-third-place/\" class=\"text-gold hover:underline\">サードプレイスとは何か：TPJによる完全ガイド</a>で解説しています。" },
