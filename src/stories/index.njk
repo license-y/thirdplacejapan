@@ -399,7 +399,7 @@ hreflang_en: "/en/stories/"
   {% set flagshipVenues = venues | venuesByGrade("flagship") %}
   {% set selectVenues = venues | venuesByGrade("select") %}
   {% set selectCount = published.length - flagshipVenues.length %}
-  {% set featuredSelectVenues = selectVenues | reverse | head(3) %}
+  {% set featuredSelectVenues = selectVenues | reverse | head(6) %}
   {% if published.length %}
   <div class="mb-20" data-aos="fade-up">
     <div class="flex items-center gap-3 mb-6">
