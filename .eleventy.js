@@ -7,6 +7,8 @@ const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const areasData = JSON.parse(readFileSync(join(__dirname, "src/_data/areas.json"), "utf-8"));
+const categoriesData = JSON.parse(readFileSync(join(__dirname, "src/_data/categories.json"), "utf-8"));
+const categoriesBySlug = Object.fromEntries(categoriesData.map((c) => [c.slug, c]));
 
 // 15業種スラッグ（AEO-PLAYBOOK 正本）
 const CATEGORY_SLUGS = {
@@ -134,6 +136,52 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("rejectSlug", (venues, slug) =>
     (venues || []).filter(v => v.slug !== slug)
   );
+
+  // 施設リストから「登録されているカテゴリ」を件数付きで集計（categories.jsonを正本に名称解決）
+  eleventyConfig.addFilter("venueCategoryFacets", (venues) => {
+    const counts = {};
+    (venues || []).forEach((v) => {
+      if (v.published === false || !v.category_slug) return;
+      counts[v.category_slug] = (counts[v.category_slug] || 0) + 1;
+    });
+    return Object.keys(counts)
+      .map((slug) => {
+        const cat = categoriesBySlug[slug];
+        return {
+          slug,
+          name_ja: cat ? cat.name_ja : slug,
+          name_short: cat ? cat.name_short : slug,
+          name_en: cat ? cat.name_en : "",
+          count: counts[slug],
+          url: `/stories/${slug}/`,
+        };
+      })
+      .sort((a, b) => b.count - a.count || a.name_ja.localeCompare(b.name_ja, "ja"));
+  });
+
+  // 施設リストから「登録されているエリア（市区町村単位）」を件数付きで集計
+  eleventyConfig.addFilter("venueAreaFacets", (venues) => {
+    const counts = {};
+    (venues || []).forEach((v) => {
+      if (v.published === false) return;
+      const a = v.area_primary;
+      if (!a || !a.city_slug || !a.prefecture_slug) return;
+      const key = `${a.prefecture_slug}/${a.city_slug}`;
+      if (!counts[key]) {
+        counts[key] = {
+          prefecture_slug: a.prefecture_slug,
+          city_slug: a.city_slug,
+          prefecture: a.prefecture,
+          city: a.city,
+          count: 0,
+        };
+      }
+      counts[key].count += 1;
+    });
+    return Object.values(counts)
+      .sort((a, b) => b.count - a.count || a.city.localeCompare(b.city, "ja"))
+      .map((item) => ({ ...item, url: `/stories/area/${item.prefecture_slug}/${item.city_slug}/` }));
+  });
 
   // 配列から指定プロパティの値を取り出す
   eleventyConfig.addFilter("mapProp", (array, prop) =>

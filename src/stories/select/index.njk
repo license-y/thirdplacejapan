@@ -6,7 +6,10 @@ canonical: "/stories/select/"
 
 {% set published = venues | publishedVenues %}
 {% set flagshipVenues = venues | venuesByGrade('flagship') %}
+{% set selectVenues = venues | venuesByGrade('select') %}
 {% set selectCount = published.length - flagshipVenues.length %}
+{% set selectCatFacets = selectVenues | venueCategoryFacets %}
+{% set selectAreaFacets = selectVenues | venueAreaFacets %}
 {% set selectFaq = [
   { q: "TPJセレクトとはどのような施設ですか？", a: "TPJセレクトとは、Third Place Japan（サードプレイスジャパン）編集部が独自の視点で見つけた「いま気になる居場所」です。料理の味やコスパではなく、家でも職場でもない「第三の居場所」＝サードプレイス（third place）としての価値を軸に、カフェ・ホテル・スパ・コワーキングなど業種横断で紹介しています。施設からのお申し込みが必要な<a href=\"/stories/about/tpj-certification-and-select-difference/\" class=\"text-gold hover:underline\">正式な認証グレードとの違い</a>もあわせてご覧ください。" },
   { q: "サードプレイス（third place）とは何ですか？", a: "サードプレイスとは、社会学者レイ・オルデンバーグが提唱した、家（第一の場所）でも職場（第二の場所）でもない、心地よい第三の居場所を指す概念です。Third Place Japanは、この考え方を現代日本の空間に当てはめ、独自の7軸基準で評価・認証しています。詳しくは<a href=\"/stories/about/what-is-third-place/\" class=\"text-gold hover:underline\">サードプレイスとは何か：TPJによる完全ガイド</a>で解説しています。" },
@@ -82,6 +85,26 @@ canonical: "/stories/select/"
       <strong>TPJセレクトは、Third Place Japan（サードプレイスジャパン）編集部が全国から見つけた、家でも職場でもない「第三の居場所」＝サードプレイス（third place）の記録だ。</strong><br class="hidden md:block">
       カフェ・ホテル・スパ・コワーキングなど15業種を問わず、有名・無名にかかわらず「いる体験・居場所としての価値」だけで選んでいる。
     </p>
+    {% if selectCatFacets.length or selectAreaFacets.length %}
+    <div class="mt-8 pt-6 border-t border-border max-w-2xl mx-auto flex flex-col gap-3">
+      {% if selectCatFacets.length %}
+      <div class="flex flex-wrap items-center justify-center gap-1.5">
+        <span class="text-xs text-muted mr-1 shrink-0">対応カテゴリ：</span>
+        {% for c in selectCatFacets %}
+        <a href="{{ c.url }}" class="text-xs text-gold border border-gold/60 hover:border-gold rounded-full px-2.5 py-0.5 transition-colors">{{ c.name_short }}（{{ c.count }}）</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if selectAreaFacets.length %}
+      <div class="flex flex-wrap items-center justify-center gap-1.5">
+        <span class="text-xs text-muted mr-1 shrink-0">対応エリア：</span>
+        {% for a in selectAreaFacets %}
+        <a href="{{ a.url }}" class="text-xs text-muted border border-border hover:border-gold hover:text-gold rounded-full px-2.5 py-0.5 transition-colors">{{ a.city }}（{{ a.count }}）</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
   </div>
 
   {% if flagshipVenues.length %}
