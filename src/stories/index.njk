@@ -397,10 +397,7 @@ hreflang_en: "/en/stories/"
   {# セレクト店舗リンク #}
   {% set published = venues | publishedVenues %}
   {% set flagshipVenues = venues | venuesByGrade("flagship") %}
-  {% set selectVenues = venues | venuesByGrade("select") %}
   {% set selectCount = published.length - flagshipVenues.length %}
-  {% set selectCatFacets = selectVenues | venueCategoryFacets %}
-  {% set selectAreaFacets = selectVenues | venueAreaFacets %}
   {% if published.length %}
   <div class="mb-20" data-aos="fade-up">
     <div class="flex items-center gap-3 mb-6">
@@ -408,32 +405,10 @@ hreflang_en: "/en/stories/"
       <h2 class="font-serif text-xl font-light text-dark">TPJセレクト</h2>
       <span class="text-sm text-muted hidden md:inline">— 編集部が選ぶ居場所</span>
     </div>
-    <div class="bg-white border border-gold/30 rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:border-gold transition-all">
-      <a href="/stories/select/" class="flex items-center justify-between group">
-        <p class="text-sm text-muted">随時追加中：現在{{ selectCount }}件を編集部が調査・ご紹介しています</p>
-        <span class="text-xs text-gold font-medium shrink-0 ml-4">すべて見る →</span>
-      </a>
-      {% if selectCatFacets.length or selectAreaFacets.length %}
-      <div class="mt-4 pt-4 border-t border-border flex flex-col gap-2.5">
-        {% if selectCatFacets.length %}
-        <div class="flex flex-wrap items-center gap-1.5">
-          <span class="text-xs text-muted mr-1 shrink-0">カテゴリ：</span>
-          {% for c in selectCatFacets %}
-          <a href="{{ c.url }}" class="text-xs text-gold border border-gold/60 hover:border-gold rounded-full px-2.5 py-0.5 transition-colors">{{ c.name_short }}（{{ c.count }}）</a>
-          {% endfor %}
-        </div>
-        {% endif %}
-        {% if selectAreaFacets.length %}
-        <div class="flex flex-wrap items-center gap-1.5">
-          <span class="text-xs text-muted mr-1 shrink-0">エリア：</span>
-          {% for a in selectAreaFacets %}
-          <a href="{{ a.url }}" class="text-xs text-muted border border-border hover:border-gold hover:text-gold rounded-full px-2.5 py-0.5 transition-colors">{{ a.city }}（{{ a.count }}）</a>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
-      {% endif %}
-    </div>
+    <a href="/stories/select/" class="flex items-center justify-between bg-white border border-gold/30 rounded-xl px-6 py-4 shadow-sm hover:shadow-md hover:border-gold transition-all group">
+      <p class="text-sm text-muted">随時追加中：現在{{ selectCount }}件を編集部が調査・ご紹介しています</p>
+      <span class="text-xs text-gold font-medium shrink-0 ml-4">すべて見る →</span>
+    </a>
   </div>
   {% endif %}
 
