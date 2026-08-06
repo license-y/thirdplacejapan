@@ -397,7 +397,9 @@ hreflang_en: "/en/stories/"
   {# セレクト店舗リンク #}
   {% set published = venues | publishedVenues %}
   {% set flagshipVenues = venues | venuesByGrade("flagship") %}
+  {% set selectVenues = venues | venuesByGrade("select") %}
   {% set selectCount = published.length - flagshipVenues.length %}
+  {% set featuredSelectVenues = selectVenues | reverse | head(3) %}
   {% if published.length %}
   <div class="mb-20" data-aos="fade-up">
     <div class="flex items-center gap-3 mb-6">
@@ -405,10 +407,26 @@ hreflang_en: "/en/stories/"
       <h2 class="font-serif text-xl font-light text-dark">TPJセレクト</h2>
       <span class="text-sm text-muted hidden md:inline">— 編集部が選ぶ居場所</span>
     </div>
-    <a href="/stories/select/" class="flex items-center justify-between bg-white border border-gold/30 rounded-xl px-6 py-4 shadow-sm hover:shadow-md hover:border-gold transition-all group">
-      <p class="text-sm text-muted">随時追加中：現在{{ selectCount }}件を編集部が調査・ご紹介しています</p>
-      <span class="text-xs text-gold font-medium shrink-0 ml-4">すべて見る →</span>
-    </a>
+    <p class="text-xs text-muted mb-5">随時追加中：現在{{ selectCount }}件を編集部が調査・ご紹介しています</p>
+
+    {% if featuredSelectVenues.length %}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-7">
+      {% for v in featuredSelectVenues %}
+      <a href="/stories/select/{{ v.slug }}/" class="block p-4 md:p-5 bg-white rounded-xl border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all group">
+        <span class="inline-block text-xs text-gold border border-gold/60 rounded-full px-2.5 py-0.5 mb-2.5">{{ v.category }}</span>
+        <h3 class="font-serif text-base font-light text-dark mb-1 group-hover:text-gold transition-colors">{{ v.name }}</h3>
+        <p class="text-xs text-muted mb-2">{{ v.area_primary.prefecture }} {{ v.area_primary.area }}</p>
+        <p class="text-xs text-text leading-relaxed line-clamp-2 md:line-clamp-3">{{ v.citation }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="text-center">
+      <a href="/stories/select/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+        TPJセレクト一覧はこちら（{{ selectCount }}件）→
+      </a>
+    </div>
   </div>
   {% endif %}
 
