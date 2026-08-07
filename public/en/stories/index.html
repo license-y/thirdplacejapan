@@ -445,8 +445,9 @@
   </div>
 
   
+  
 
-  <div class="space-y-6" data-aos="fade-up">
+  <div class="space-y-6" data-aos="fade-up" id="en-article-list">
     
     
     <a href="/en/stories/concept/third-place-8-conditions/"
@@ -954,7 +955,7 @@
     
     
     <a href="/en/stories/inbound-experience/taito/"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all article-extra hidden">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="/assets/images/articles/taito-ku-tokyo-traditional-culture-en.webp"
              alt="Taito-ku as a Third Place: Where Asakusa, Ueno, and Yanaka Keep Edo Culture Alive"
@@ -978,7 +979,7 @@
     
     
     <a href="/en/stories/culture-sports-leisure/taito/"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all article-extra hidden">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="/assets/images/articles/taito-ku-culture-leisure-tokyo-en.webp"
              alt="Taito-ku as a Third Place: Where Culture Becomes a Place to Stay, Not Just Visit"
@@ -1002,7 +1003,7 @@
     
     
     <a href="/en/stories/concept/meiji-jingu-third-place-tokyo/"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all article-extra hidden">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="/assets/images/articles/meiji-jingu-torii-forest-path-tokyo-en.webp"
              alt="Meiji Jingu as a Third Place: Finding Silence in Central Tokyo"
@@ -1026,7 +1027,7 @@
     
     
     <a href="/en/stories/concept/tokyo-third-place-guide-travelers/"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all article-extra hidden">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="/assets/images/articles/tokyo-third-place-guide-travelers-en.webp"
              alt="Tokyo Third Places: A Traveler&#39;s Guide to Finding Your Space in Japan"
@@ -1050,7 +1051,7 @@
     
     
     <a href="/en/stories/concept/what-is-third-place-japan/"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all article-extra hidden">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="/assets/images/articles/third-place-quiet-reading-window-en.webp"
              alt="What Is a Third Place? The TPJ Guide to Japan&#39;s Concept of Ibasho"
@@ -1073,6 +1074,27 @@
     </a>
     
   </div>
+
+  
+  <div class="text-center mt-8">
+    <button type="button" id="en-article-more-btn"
+            class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+      Show more (5 remaining)
+    </button>
+  </div>
+  <script>
+  (function() {
+    var btn = document.getElementById('en-article-more-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#en-article-list .article-extra').forEach(function(el) {
+        el.classList.remove('hidden');
+      });
+      btn.remove();
+    });
+  })();
+  </script>
+  
 
   <div class="mt-14 pt-10 border-t border-border text-center" data-aos="fade-up">
     <a href="/stories/" class="text-sm text-muted hover:text-gold transition-colors">← 日本語版 TPJ Stories</a>

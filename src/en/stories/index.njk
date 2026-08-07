@@ -21,12 +21,13 @@ hreflang_en: "/en/stories/"
   </div>
 
   {% set enArticles = collections.articles | selectLang("en") %}
+  {% set articleVisibleCount = 21 %}
 
-  <div class="space-y-6" data-aos="fade-up">
+  <div class="space-y-6" data-aos="fade-up" id="en-article-list">
     {% for post in enArticles %}
     {% set postCat = categories | findCategoryBySlug(post.data.category_slug) %}
     <a href="{{ post.url }}"
-       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all">
+       class="group flex items-stretch bg-white rounded-2xl overflow-hidden border border-border hover:border-gold shadow-sm hover:shadow-md transition-all{% if loop.index > articleVisibleCount %} article-extra hidden{% endif %}">
       <div class="shrink-0 w-40 md:w-52 overflow-hidden">
         <img src="{{ post.data.thumbnail }}"
              alt="{{ post.data.title }}"
@@ -49,6 +50,27 @@ hreflang_en: "/en/stories/"
     </a>
     {% endfor %}
   </div>
+
+  {% if enArticles.length > articleVisibleCount %}
+  <div class="text-center mt-8">
+    <button type="button" id="en-article-more-btn"
+            class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+      Show more ({{ enArticles.length - articleVisibleCount }} remaining)
+    </button>
+  </div>
+  <script>
+  (function() {
+    var btn = document.getElementById('en-article-more-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#en-article-list .article-extra').forEach(function(el) {
+        el.classList.remove('hidden');
+      });
+      btn.remove();
+    });
+  })();
+  </script>
+  {% endif %}
 
   <div class="mt-14 pt-10 border-t border-border text-center" data-aos="fade-up">
     <a href="/stories/" class="text-sm text-muted hover:text-gold transition-colors">← 日本語版 TPJ Stories</a>
