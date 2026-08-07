@@ -132,3 +132,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 国家・町人・将軍家という三層構造との違いは[千代田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/chiyoda/)も参考になる
 - 山そのものを拝む信仰との違いは[青梅市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/ome/)も参考になる
 - 千住宿という往来の記憶については[足立区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/adachi/)で解説している
+- 参道の商店街ごと信仰になっている葛飾区の門前町との違いは[葛飾区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/katsushika/)も参考になる

@@ -1901,6 +1901,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/katsushika-ku/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/kita-ku/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2034,6 +2040,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/katsushika-ku/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2584,6 +2596,22 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/katsushika/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/katsushika/</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/adachi/</loc>
