@@ -215,6 +215,15 @@ export default function (eleventyConfig) {
     )
   );
 
+  // 市区町村単位で絞り込む（venuesByHubが0件のときのフォールバック。エリア・業種は問わない）
+  eleventyConfig.addFilter("venuesByCity", (venues, prefSlug, citySlug) =>
+    (venues || []).filter(v =>
+      v.published !== false &&
+      v.area_primary.prefecture_slug === prefSlug &&
+      v.area_primary.city_slug === citySlug
+    )
+  );
+
   // スコア軸の最低値でフィルタ（FAQの軸別回答生成用）
   eleventyConfig.addFilter("venuesByMinScore", (venues, axis, minScore) =>
     (venues || []).filter(v => v.scores && v.scores[axis] >= minScore)
