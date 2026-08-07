@@ -95,6 +95,9 @@ Third Place Japanでは、東京の文化施設を「文化・スポーツ・レ
 - 都心に頼らない独立した街の文化については[町田市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/machida/)も参照
 - サードプレイスの具体的なイメージを広げたい場合は[サードプレイスの具体例10選](/stories/about/third-place-examples/)も参考になる
 - 国家的な建造物が市民のイベント空間に転用された北の丸公園一帯については[千代田区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/chiyoda/)も参照
+- アニメ産業と都市農業という異業種が同じ通りに同居する練馬区については[練馬区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/nerima/)も参照
+- 軍需産業から印刷・出版産業へ区全体の構造が転換した板橋区については[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参照
+- 水という単一の条件が治水・養殖・レジャーの歴史を規定してきた江戸川区については[江戸川区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/edogawa/)も参照
 
 ---
 

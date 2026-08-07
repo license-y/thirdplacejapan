@@ -2,7 +2,7 @@
 layout: article.njk
 title: "足立区のサードプレイスガイド：神社・寺院編。関東三大師が担う、願掛けという実利の信仰"
 description: "足立区の西新井大師は、川崎大師と並ぶ関東三大師の一つとして厄除け祈願を担ってきた実利の信仰の場だ。生活密着の台東区、行楽と信仰が未分化な北区とも異なる、足立区ならではのサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-07
+date: 2026-08-03
 tags:
   - articles
 category_slug: shrine-temple

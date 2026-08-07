@@ -2,7 +2,7 @@
 layout: article.njk
 title: "葛飾区のサードプレイスガイド：神社・寺院編。参道の商店街ごと信仰になった、帝釈天の門前町"
 description: "葛飾区の柴又帝釈天は、参道の商店街そのものが寺院と一体になって信仰を支える門前町を持つ。厄除けが主目的の足立区、行楽と信仰が未分化な北区とも異なる、葛飾区ならではのサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-09
+date: 2026-08-04
 tags:
   - articles
 category_slug: shrine-temple

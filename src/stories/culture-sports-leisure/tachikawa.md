@@ -123,3 +123,6 @@ lang: ja
 - 江東区の新旧の同居との対比は[江東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/koto/)も参考になる
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
 - 基地跡地の単一の巨大再開発とは異なる、暮らしの延長にあるレジャーの隣接市は[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)で解説している
+- 基地跡地の郊外型スケール感とは異なる、アニメ産業と都市農業が同じ通りに同居する練馬区の文化・レジャーは[練馬区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/nerima/)も参考になる
+- 基地跡地の郊外型スケール感とは異なる、軍需産業から印刷・出版産業へ丸ごと転換した板橋区の文化・レジャーは[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参考になる
+- 基地跡地の郊外型スケール感とは異なる、水という単一の条件が生活文化を規定してきた江戸川区の文化・レジャーは[江戸川区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/edogawa/)も参考になる

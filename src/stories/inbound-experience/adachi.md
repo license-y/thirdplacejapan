@@ -2,7 +2,7 @@
 layout: article.njk
 title: "足立区のサードプレイスガイド：インバウンド体験編。日光街道最初の宿場が刻んだ、往来の記憶"
 description: "足立区の千住宿は、日光街道最初の宿場として往来と商業の記憶を今に伝える。江戸文化が生きる台東区、近代化の足跡を歩く北区とも異なる、足立区ならではのサードプレイス（third place）としてのインバウンド体験を7軸で読み解く。"
-date: 2026-08-08
+date: 2026-08-03
 tags:
   - articles
 category_slug: inbound-experience

@@ -1829,7 +1829,19 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/edogawa-ku/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/fuchu/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1848,6 +1860,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/machida/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2598,32 +2616,24 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/katsushika/</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/katsushika/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/adachi/</loc>
-    <lastmod>2026-08-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/adachi/</loc>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/edogawa/</loc>
     <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/itabashi/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/nerima/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -2632,6 +2642,38 @@
   <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/arakawa/</loc>
     <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/katsushika/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/katsushika/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/adachi/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/adachi/</loc>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

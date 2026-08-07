@@ -2,7 +2,7 @@
 layout: article.njk
 title: "葛飾区のサードプレイスガイド：インバウンド体験編。物語の舞台になった下町を、渡し船とともに歩く"
 description: "葛飾区は、長年愛された映画シリーズの舞台として、架空の物語を実際に歩ける下町だ。実在の宿場の記憶を持つ足立区、今も現役の路面電車が走る荒川区とも異なる、葛飾区ならではのサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-10
+date: 2026-08-04
 tags:
   - articles
 category_slug: inbound-experience

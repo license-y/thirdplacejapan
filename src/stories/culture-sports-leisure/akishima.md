@@ -128,3 +128,6 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 台東区の鑑賞型文化との対比は[台東区の文化・レジャーガイド](/stories/culture-sports-leisure/taito/)も参考になる
 - 東京の美術館・文化施設をサードプレイスとして使う視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で詳しく解説している
 - 生活密着型の昭島市と対照的な、移築建造物群が刻む時間の集積地としての小金井市の文化・レジャーは[小金井市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koganei/)も参考になる
+- 暮らしの延長にあるレジャーとは異なる、アニメ産業と都市農業が同じ通りに同居する練馬区の文化・レジャーは[練馬区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/nerima/)も参考になる
+- 暮らしの延長にあるレジャーとは異なる、軍需産業から印刷・出版産業へ丸ごと転換した板橋区の文化・レジャーは[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参考になる
+- 暮らしの延長にあるレジャーとは異なる、水という単一の条件が生活文化を規定してきた江戸川区の文化・レジャーは[江戸川区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/edogawa/)も参考になる
