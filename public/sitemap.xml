@@ -1751,6 +1751,42 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/nature-glamping/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/adachi-ku/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/edogawa-ku/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/katsushika-ku/villa-rental/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/coworking/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2216,6 +2252,42 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/nerima/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/nerima/nature-glamping/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/itabashi/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/adachi-ku/nishi-arai/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/edogawa-ku/koiwa/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/katsushika-ku/shibamata/villa-rental/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/higashi-komagata/coworking/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2606,6 +2678,54 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/select/kagurazaka-waraku/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/hottayu-nishiarai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/wamare-shibamata-hotel/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/shareoffice-nerima/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/miyamoto-farm-nerima/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/tokyo-guesthouse-itabashi-juku/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/eastland-nishishinozaki/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
