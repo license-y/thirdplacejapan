@@ -160,11 +160,12 @@ canonical: "/stories/select/"
       <span class="text-xs text-muted border border-border rounded-full px-3 py-1">随時追加中：現在{{ selectCount }}件</span>
     </div>
     <p class="text-xs text-muted mb-8">TPJ編集部が、いまいたいと思うサードプレイス（third place）。</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in published | reverse %}
-      {% if v.grade_slug != 'flagship' %}
+    {% set displaySelectVenues = selectVenues | reverse %}
+    {% set selectVisibleCount = 21 %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="select-grid">
+      {% for v in displaySelectVenues %}
       <a href="/stories/select/{{ v.slug }}/"
-         class="venue-card block p-3 md:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all group">
+         class="venue-card block p-3 md:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all group{% if loop.index > selectVisibleCount %} select-extra hidden{% endif %}">
         <div class="flex items-start justify-between mb-2 md:mb-3">
           <div class="flex items-center gap-1.5 text-xs text-muted border border-border rounded-full px-2.5 py-0.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -186,9 +187,29 @@ canonical: "/stories/select/"
           {% endfor %}
         </div>
       </a>
-      {% endif %}
       {% endfor %}
     </div>
+
+    {% if displaySelectVenues.length > selectVisibleCount %}
+    <div class="text-center mt-8">
+      <button type="button" id="select-more-btn"
+              class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+        もっと見る（残り{{ displaySelectVenues.length - selectVisibleCount }}件）
+      </button>
+    </div>
+    <script>
+    (function() {
+      var btn = document.getElementById('select-more-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#select-grid .select-extra').forEach(function(el) {
+          el.classList.remove('hidden');
+        });
+        btn.remove();
+      });
+    })();
+    </script>
+    {% endif %}
 
     <div class="flex flex-wrap gap-2 items-center mt-10 pt-6 border-t border-border">
       <span class="text-xs text-muted mr-1">認証グレード：</span>
