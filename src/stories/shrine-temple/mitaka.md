@@ -2,7 +2,7 @@
 layout: article.njk
 title: "三鷹市のサードプレイスガイド：神社・寺院編。江戸の水源に祈りを重ねてきた、水神信仰の杜"
 description: "三鷹市の神社仏閣は、江戸の飲料水の起点となった池のほとりに祀られた水神信仰を核に持つ。学業成就でも山岳信仰でもない、水そのものへの祈りが息づく三鷹市ならではのサードプレイス（third place）を、TPJ7軸で読み解く。"
-date: 2026-08-10
+date: 2026-08-05
 tags:
   - articles
 category_slug: shrine-temple

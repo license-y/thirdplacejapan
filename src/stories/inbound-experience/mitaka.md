@@ -2,7 +2,7 @@
 layout: article.njk
 title: "三鷹市のサードプレイスガイド：インバウンド体験編。物語の舞台ではなく、創作の現場そのものを訪ねる街"
 description: "三鷹市は、アニメーションが生まれる過程そのものを展示する私設美術館と、文豪が実際に暮らし旅立った文学ゆかりの地を併せ持つ。物語の舞台ではなく創作の現場を訪ねる、三鷹市ならではのサードプレイス（third place）を7軸で読み解く。"
-date: 2026-08-10
+date: 2026-08-06
 tags:
   - articles
 category_slug: inbound-experience
@@ -133,3 +133,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 物語の舞台を歩くという異なる構造を持つ葛飾区の観光・体験施設については[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)で解説している
 - 伝統文化を核に持つ台東区のインバウンド体験との違いは[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)も参考になる
 - 東京全体のインバウンド視点でのサードプレイス案内は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)を参照
+- 創作の現場ではなく、街の衰退と手描き看板によるまちおこしの記憶を核に持つ青梅市のインバウンド体験については[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)も参考になる

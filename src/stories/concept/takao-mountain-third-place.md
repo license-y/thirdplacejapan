@@ -137,6 +137,7 @@ Third Place Japan（サードプレイスジャパン）は、高尾山を「静
 - [サードプレイスの8つの条件：オルデンバーグの定義をTPJが再解釈](/stories/about/third-place-8-conditions/)
 - [サードプレイスとは何か：TPJによる完全ガイド](/stories/about/what-is-third-place/)
 - [東京・カフェでひとり時間。渋谷・新宿近辺のサードプレイス探訪](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)
+- 山を歩くだけでなく、清流を漕ぎ岩を登る体験型の自然を求めるなら[青梅市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/ome/)も参考になる
 
 ---
 
