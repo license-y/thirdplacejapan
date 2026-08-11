@@ -124,3 +124,6 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 23区から離れた渓谷・宿場町の静けさとの違いは[青梅市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/ome/)も参考になる
 - 東京のカフェでひとり時間を過ごす視点は[ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)で解説している
 - 単一の崖線とは異なる、複数の静けさが並立する世田谷区については[世田谷区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/setagaya/)も参考になる
+- 崖線の地形ではなく、国家プロジェクトとしての信仰の継承という切り口は[国分寺市のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/kokubunji/)で解説している
+- 地形の静けさではなく、住宅地に埋め込まれた古代の記憶を歩く視点は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)も参考になる
+- 地形の静けさではなく、市民が守り続ける文化的景観という視点は[国分寺市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/kokubunji/)も参考になる

@@ -104,6 +104,7 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 今も現役で走る路面電車と町工場の匠の技が体験できる荒川区の詳細は[荒川区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/arakawa/)を参照
 - 日光街道最初の宿場が刻んだ往来の記憶を持つ足立区の詳細は[足立区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/adachi/)を参照
 - 長年愛された物語の舞台を歩ける葛飾区の詳細は[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)を参照
+- 住宅地の足元に古代の国道跡が眠る国分寺市の詳細は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)を参照
 
 ---
 

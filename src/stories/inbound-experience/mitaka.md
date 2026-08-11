@@ -134,3 +134,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 伝統文化を核に持つ台東区のインバウンド体験との違いは[台東区のインバウンド体験ガイド](/stories/inbound-experience/taito/)も参考になる
 - 東京全体のインバウンド視点でのサードプレイス案内は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)を参照
 - 創作の現場ではなく、街の衰退と手描き看板によるまちおこしの記憶を核に持つ青梅市のインバウンド体験については[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)も参考になる
+- 制作の現場を訪ねる体験とは異なる、住宅地の足元に眠る古代の国道跡を歩く国分寺市のインバウンド体験については[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)も参考になる
