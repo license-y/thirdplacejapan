@@ -116,3 +116,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 物語の舞台ではなく創作の現場を訪ねる視点との違いは[三鷹市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/mitaka/)も参考になる
 - 衰退からのまちおこしという異なる文脈は[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)も参考になる
 - 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)で解説している
+- 古代の記憶を歩く体験とは異なる、一年のうち数日しか完成しない桜並木を市民が育て継ぐ小金井市のインバウンド体験は[小金井市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/koganei/)も参考になる

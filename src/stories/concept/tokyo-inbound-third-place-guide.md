@@ -105,6 +105,7 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 日光街道最初の宿場が刻んだ往来の記憶を持つ足立区の詳細は[足立区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/adachi/)を参照
 - 長年愛された物語の舞台を歩ける葛飾区の詳細は[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)を参照
 - 住宅地の足元に古代の国道跡が眠る国分寺市の詳細は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)を参照
+- 一年のうち数日しか完成しない桜並木を市民が育て継ぐ小金井市の詳細は[小金井市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/koganei/)を参照
 
 ---
 
