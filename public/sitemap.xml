@@ -2201,6 +2201,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/higashimurayama/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/katsushika-ku/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2938,6 +2944,14 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/higashimurayama/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/inbound-experience/machida/</loc>
