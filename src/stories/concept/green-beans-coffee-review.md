@@ -1,7 +1,7 @@
 ---
 layout: article-certified.njk
 title: 【TPJ Flagship認証】Green Beans Coffee（グリーンビーンズコーヒー）渋谷：東京のサードプレイスを評価する
-description: TPJがFlagshipグレードを認証したGreen Beans Coffee（グリーンビーンズコーヒー）の評価レポートです。東京有数のサードプレイスとして、7軸スコアやアクセス情報をTPJ編集部が詳しく解説します。
+description: TPJがFlagshipグレードを認証した渋谷区千駄ヶ谷のGreen Beans Coffee（グリーンビーンズコーヒー）の評価レポートです。東京有数のサードプレイスとして、7軸スコアやアクセス情報をTPJ編集部が詳しく解説します。
 date: 2026-06-21
 modified: 2026-07-30
 category_slug: cafe-specialty-coffee

@@ -39,13 +39,15 @@
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:type" content="{{ og_type or 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% elif thumbnail %}{{ thumbnail }}{% else %}/assets/images/main/japan-cafe-interior-hero.webp{% endif %}">
+  {% set ogImageResolved = og_image or thumbnail or '/assets/images/main/japan-cafe-interior-hero.webp' %}
+  {% set ogImageAbsolute = (ogImageResolved.indexOf('http://') == 0 or ogImageResolved.indexOf('https://') == 0) %}
+  <meta property="og:image" content="{% if ogImageAbsolute %}{{ ogImageResolved }}{% else %}{{ site.url }}{{ ogImageResolved }}{% endif %}">
   <meta property="og:locale" content="{{ 'en_US' if lang == 'en' else 'ja_JP' }}">
   <meta property="og:site_name" content="Third Place Japan Stories">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ title_suffix or "Third Place Japan Stories" }}">
   <meta name="twitter:description" content="{{ description or site.description }}">
-  <meta name="twitter:image" content="{{ site.url }}{% if og_image %}{{ og_image }}{% elif thumbnail %}{{ thumbnail }}{% else %}/assets/images/main/japan-cafe-interior-hero.webp{% endif %}">
+  <meta name="twitter:image" content="{% if ogImageAbsolute %}{{ ogImageResolved }}{% else %}{{ site.url }}{{ ogImageResolved }}{% endif %}">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

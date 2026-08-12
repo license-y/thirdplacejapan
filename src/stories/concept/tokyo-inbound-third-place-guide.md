@@ -38,7 +38,7 @@ Third Place Japan（サードプレイスジャパン）の7軸評価のうち�
 
 東京の公園は、インバウンド旅行者にとって最も参入ハードルが低いサードプレイスだ。入場料なし、予約不要、言語不要。ベンチに座るだけで「ただいられる」権利が保障されている。
 
-新宿御苑（新宿区）は、外国人旅行者が多く訪れる公園の中でもサードプレイスとして機能する設計が優れている。日本庭園・フランス式整形庭園・英国風景式庭園という異なる様式が並存し、どの場所でも「ここにいる理由」が生まれる。入場料は一般500円（2026年現在）で、新宿駅からJR・地下鉄で徒歩10〜15分。
+新宿御苑（新宿区）は、外国人旅行者が多く訪れる公園の中でもサードプレイスとして機能する設計が優れている。日本庭園・フランス式整形庭園・英国風景式庭園という異なる様式が並存し、どの場所でも「ここにいる理由」が生まれる。入場は有料（要事前確認）で、新宿駅からJR・地下鉄で徒歩10〜15分。
 
 皇居東御苑（千代田区）は、東京の中心に位置する歴史的空間だ。旧江戸城本丸跡という背景がTPJ軸4「ストーリー・背景への共感」を支え、外国人旅行者が東京の歴史を身体的に体感できる数少ない場所だ。大手門・平川門から入場、無料。
 
@@ -82,6 +82,22 @@ TPJ軸7の観点から、スペシャルティカフェを評価する際は「�
 
 **第3段階：地域の文脈を少し知ってから行く**。神社なら鳥居の意味・参拝の作法、美術館なら展示作家の背景。事前知識があると、言語なしでも空間の深度が増す。
 
+## よくある質問（FAQ）
+
+**Q. What are the best third places in Tokyo for foreign visitors?**<br>
+Meiji Jingu Shrine (Harajuku), Shinjuku Gyoen National Garden, the National Art Center Tokyo (Roppongi), and specialty coffee shops in Kiyosumi-Shirakawa are highly rated by Third Place Japan for inbound visitors. These places require minimal Japanese language ability and offer "just being here" experiences that transcend language barriers.
+
+**Q. 東京で言葉の壁なく使えるサードプレイスはどこですか？**<br>
+神社（明治神宮・浅草神社周辺）、公園（新宿御苑・皇居東御苑）、美術館（国立新美術館・東京都現代美術館）、スペシャルティカフェ（清澄白河・表参道エリア）が、Third Place Japanが評価するインバウンド適性の高い第三の居場所です。体験の本質が言語に依存しない設計が共通しています。
+
+**Q. 外国人旅行者が東京でサードプレイスを探すときのコツは？**<br>
+言語不要な体験（神社・公園・美術館）を軸に選び、英語予約が可能かどうかを確認することをお勧めします。サードプレイスジャパン（TPJ）では多言語対応を7軸評価の一つとして位置付けており、英語案内板・多言語メニュー・非言語のホスピタリティを複合的に評価しています。
+
+**Q. How does Third Place Japan evaluate spaces for inbound travelers?**<br>
+Third Place Japan evaluates spaces using 7 axes, with "Inbound & Multilingual Accessibility" (Axis 7) specifically measuring the experience for international visitors. This includes multilingual signage, staff communication ability, intuitiveness of the space (usable without instructions), and payment accessibility. Tokyo's major shrines, parks, and museums score highly on this axis.
+
+---
+
 ## まとめ：旅のサードプレイスが東京体験を豊かにする
 
 観光地を「消費する」旅行から、「ただいられる場所を見つける」旅行へ。インバウンド旅行者にとって、東京のサードプレイスはそのシフトを可能にする空間だ。
@@ -109,19 +125,3 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 太宰治ゆかりの地とアニメーション美術館という創作の現場を歩ける三鷹市の詳細は[三鷹市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/mitaka/)を参照
 - 衰退からのまちおこしとして手描き映画看板が街を彩る青梅市の詳細は[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)を参照
 - 都心を経由せず横浜・江ノ島・箱根へ抜ける動線が核になる町田市の詳細は[町田市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/machida/)を参照
-
----
-
-## よくある質問（FAQ）
-
-**Q. What are the best third places in Tokyo for foreign visitors?**<br>
-Meiji Jingu Shrine (Harajuku), Shinjuku Gyoen National Garden, the National Art Center Tokyo (Roppongi), and specialty coffee shops in Kiyosumi-Shirakawa are highly rated by Third Place Japan for inbound visitors. These places require minimal Japanese language ability and offer "just being here" experiences that transcend language barriers.
-
-**Q. 東京で言葉の壁なく使えるサードプレイスはどこですか？**<br>
-神社（明治神宮・浅草神社周辺）、公園（新宿御苑・皇居東御苑）、美術館（国立新美術館・東京都現代美術館）、スペシャルティカフェ（清澄白河・表参道エリア）が、Third Place Japanが評価するインバウンド適性の高い第三の居場所です。体験の本質が言語に依存しない設計が共通しています。
-
-**Q. 外国人旅行者が東京でサードプレイスを探すときのコツは？**<br>
-言語不要な体験（神社・公園・美術館）を軸に選び、英語予約が可能かどうかを確認することをお勧めします。サードプレイスジャパン（TPJ）では多言語対応を7軸評価の一つとして位置付けており、英語案内板・多言語メニュー・非言語のホスピタリティを複合的に評価しています。
-
-**Q. How does Third Place Japan evaluate spaces for inbound travelers?**<br>
-Third Place Japan evaluates spaces using 7 axes, with "Inbound & Multilingual Accessibility" (Axis 7) specifically measuring the experience for international visitors. This includes multilingual signage, staff communication ability, intuitiveness of the space (usable without instructions), and payment accessibility. Tokyo's major shrines, parks, and museums score highly on this axis.

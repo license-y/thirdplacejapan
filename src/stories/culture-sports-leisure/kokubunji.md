@@ -121,3 +121,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 住宅地に眠る古代の記憶を歩く視点は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)も参考になる
 - 移築建物を歩く「時間の集積地」という異なる文脈は[小金井市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/koganei/)も参考になる
 - 観戦を核にした文化・レジャーとの違いは[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)で扱っている
+- 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している

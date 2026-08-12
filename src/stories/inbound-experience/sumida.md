@@ -128,3 +128,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 花街の芸事文化が育てた墨田区の信仰については[墨田区のサードプレイスガイド：神社・寺院編](/stories/shrine-temple/sumida/)も参考になる
 - 現代と下町の落差とは異なる、実業家の足跡から近代日本の産業史を歩ける北区のインバウンド体験は[北区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kita/)も参考になる
 - 現代と下町の落差とは異なる、今も現役で走る路面電車と町工場の匠の技が体験できる荒川区のインバウンド体験は[荒川区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/arakawa/)も参考になる
+- 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)で解説している

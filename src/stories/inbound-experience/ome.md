@@ -133,3 +133,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 青梅市の山・自然体験は[青梅市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/ome/)で、渓谷でのアクティビティの観点から解説している
 - 物語の舞台を歩くという異なる構造を持つ葛飾区の観光・体験施設については[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)も参考になる
 - 創作の現場そのものを訪ねる三鷹市のインバウンド体験との違いは[三鷹市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/mitaka/)も参考になる
+- 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)で解説している

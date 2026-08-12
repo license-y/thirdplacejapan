@@ -134,3 +134,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 青梅市のインバウンド体験は[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)で、手描きの映画看板とまちおこしの観点から解説している
 - 現役の天文台が「究める」文化の核である三鷹市との違いは[三鷹市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/mitaka/)も参考になる
 - 農学系の大学が「究める」文化の担い手である府中市との違いは[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)も参考になる
+- 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している

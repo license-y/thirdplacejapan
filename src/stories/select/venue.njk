@@ -12,5 +12,5 @@ eleventyComputed:
   description: "{{ venue.citation | safe }}"
   hreflang_ja: "/stories/select/{{ venue.slug }}/"
   hreflang_en: "{% if venue.has_en %}/en/stories/select/{{ venue.slug }}/{% endif %}"
-  og_image: "{{ venue.image }}"
+  og_image: "{% set defaultVenueImg = '/assets/images/main/japan-cafe-interior-hero.webp' %}{% if venue.image and venue.image != defaultVenueImg %}{{ venue.image | safe }}{% else %}{% set venueCat = categories | findCategoryBySlug(venue.category_slug) %}{% if venueCat and venueCat.image %}{{ venueCat.image | safe }}{% else %}{{ defaultVenueImg | safe }}{% endif %}{% endif %}"
 ---

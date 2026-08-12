@@ -8,6 +8,18 @@ hreflang_ja: "/stories/"
 hreflang_en: "/en/stories/"
 ---
 
+{# BreadcrumbList JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}/"},
+    {"@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/en/stories/"}
+  ]
+}
+</script>
+
 <div class="max-w-4xl mx-auto px-6 py-20">
 
   <div class="mb-14" data-aos="fade-up">

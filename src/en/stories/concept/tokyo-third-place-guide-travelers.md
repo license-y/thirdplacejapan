@@ -102,7 +102,7 @@ Tokyo's sento (public bathhouse) culture is undergoing a revival. Modern version
 No. Most specialty coffee shops and hotel lounges have English menus or visual menus. Shrines and gardens require no Japanese at all. The physical experience of a third place — sitting, drinking, observing — crosses language barriers naturally.
 
 **Q. What is the average cost of using a Tokyo third place?**<br>
-A coffee in a specialty café runs ¥600–1,000. Hotel lounge drinks start around ¥1,500. Shrines and public gardens are free or ¥500. Coworking day passes range from ¥1,500–3,000. The quality of experience is rarely correlated with price at the higher end.
+A coffee in a specialty café is modestly priced, hotel lounge drinks cost more, and shrines are usually free while public gardens may charge a small entry fee. Coworking day passes vary by provider — confirm current rates before visiting. The quality of experience is rarely correlated with price at the higher end.
 
 **Q. What is Third Place Japan's certification, and how can I use it?**<br>
 Third Place Japan evaluates spaces across seven axes — comfort, silence, specialness, story, revisit value, record experience, and inbound accessibility. Certified venues have met a documented quality standard. See the [TPJ certified venue list](/stories/select/) *(Japanese-language listing; an English version is not yet available)* for options across Tokyo neighborhoods, or visit [Green Beans Coffee](/en/stories/select/green-beans-coffee-shibuya/) in Sendagaya, one of the few venues to hold our highest Flagship grade.

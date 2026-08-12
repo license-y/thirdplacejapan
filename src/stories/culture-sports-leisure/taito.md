@@ -131,3 +131,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 鑑賞型の台東区と対照的な、アニメ産業と都市農業が同じ通りに同居する練馬区の文化・レジャーは[練馬区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/nerima/)も参考になる
 - 鑑賞型の台東区と対照的な、軍需産業から印刷・出版産業へ丸ごと転換した板橋区の文化・レジャーは[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参考になる
 - 鑑賞型の台東区と対照的な、水という単一の条件が生活文化を規定してきた江戸川区の文化・レジャーは[江戸川区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/edogawa/)も参考になる
+- 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している
