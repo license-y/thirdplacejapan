@@ -106,6 +106,9 @@ Third Place Japan（サードプレイスジャパン）は、東京のインバ
 - 長年愛された物語の舞台を歩ける葛飾区の詳細は[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)を参照
 - 住宅地の足元に古代の国道跡が眠る国分寺市の詳細は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)を参照
 - 一年のうち数日しか完成しない桜並木を市民が育て継ぐ小金井市の詳細は[小金井市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/koganei/)を参照
+- 太宰治ゆかりの地とアニメーション美術館という創作の現場を歩ける三鷹市の詳細は[三鷹市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/mitaka/)を参照
+- 衰退からのまちおこしとして手描き映画看板が街を彩る青梅市の詳細は[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)を参照
+- 都心を経由せず横浜・江ノ島・箱根へ抜ける動線が核になる町田市の詳細は[町田市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/machida/)を参照
 
 ---
 

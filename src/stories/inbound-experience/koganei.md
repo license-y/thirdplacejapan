@@ -114,3 +114,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 国家機構の見学とは異なるインバウンド体験については[千代田区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/chiyoda/)で扱っている
 - 住宅地に眠る古代の記憶を歩く視点は[国分寺市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/kokubunji/)も参考になる
 - 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)で解説している
+- 一年限りの育てられた景観とは異なる、都心を経由しない神奈川方面への動線が核になる町田市のインバウンド体験は[町田市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/machida/)も参考になる
