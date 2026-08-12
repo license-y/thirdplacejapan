@@ -135,3 +135,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 東京のカフェでひとり時間を過ごす視点は[ひとり時間を大切に。東京カフェをサードプレイスにする3つの方法](/stories/cafe-specialty-coffee/tokyo-cafe-solo-third-place/)で解説している
 - 山里への距離ではなく、人の手が入り続ける里山という静けさは[東村山市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/higashimurayama/)も参考になる
 - 単一の山里とは異なる、複数の静けさが並立する世田谷区については[世田谷区のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/setagaya/)も参考になる
+- 距離ではなく神奈川県境という境界そのものが静けさを生む町田市との違いは[町田市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/machida/)も参考になる
