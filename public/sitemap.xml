@@ -1913,6 +1913,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2004,6 +2010,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2111,6 +2123,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/higashimurayama/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2196,6 +2214,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/fuchu/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2944,6 +2968,38 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/hachioji/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/hachioji/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/hachioji/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/hachioji/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/higashimurayama/</loc>
