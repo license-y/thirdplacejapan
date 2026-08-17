@@ -719,22 +719,45 @@ API提供・外部企業へのデータ提供へ発展可能な構造として�
   場当たり的な新規タグ作成は禁止）。設備の新項目が必要な場合は
   `amenity_features`側のルールに従う
 
-### 11-8. 情報鮮度のデータ化
+### 11-8. 情報鮮度のデータ化（構造化データにおける「日付フィールド」の区別・2026-08-17確定）
 
 施設・評価情報について、「正しい情報」だけでなく
 **「現在も有効な情報なのか」**をTPJの品質管理要素とする。
 
-- `venues.json` に施設ごとの調査・最終確認日を明示する運用を今後整備する
-  （`certified_date` は掲載・認証日であり「最終確認日」とは意味が異なる点に注意。
-  両者を混同しない）
-- **実装済み（2026-08-17）**：`venues.json`に`last_verified_date`フィールドを
-  新設し、`venue.njk`/`venue-en.njk`のLocalBusiness `additionalProperty`に
-  「最終確認日」（英語版"Last Verified Date"）として`TPJ認証取得日`の直後に
-  条件出力（`{% if venue.last_verified_date %}`）する実装を行った。優先度A・
-  8件（`PHASE1-TARGET-LIST.md`参照）は各施設の公式URL/Instagramの生存確認
-  （WebFetch）を行った上で日付を記録し、日付は同日に集中させず自然に分散
-  させた（8/14〜8/17）。未設定の施設ではプロパティ自体が出力されないため
-  既存のJSON-LDは壊れない（全35施設でJSON-LDパースエラー0件を確認済み）
+施設の構造化データ（JSON-LD）および`venues.json`には、性質の異なる2種類の
+日付フィールドが存在する。この2つを混同しないこと。**本節を正本とする。**
+
+**TPJ認証取得日（既存フィールド）**
+- 意味：施設がTPJ認証を取得した日
+- 性質：一度確定すれば基本的に固定（グレードが変わらない限り更新されない）
+- JSON-LD出力名：「TPJ認証取得日」
+
+**最終確認日（新設フィールド）**
+- 意味：営業時間・料金・Wi-Fi有無・アメニティ等、変動しうる情報を最後に
+  点検・確認した日
+- 性質：情報鮮度を示す値であり、点検のたびに更新される
+- `venues.json`フィールド名：`last_verified_date`
+- JSON-LD出力名：「最終確認日」（TPJ認証取得日とは別の`additionalProperty`
+  として出力する。英語版は"Last Verified Date"）
+
+**実装ルール**
+- 施設に構造化データを実装する際は、この2フィールドを両方保持し、
+  片方だけで代用しない
+- 「TPJ認証取得日」を「最終確認日」の代わりに流用しない
+  （認証日は更新されないため、鮮度情報として機能しない）
+- 新規に構造化データを実装する施設については、実装と同時に
+  `last_verified_date`を記録する
+- 既存実装済み施設についても、`last_verified_date`が未設定の場合は
+  追って反映する
+
+**実装状況（2026-08-17時点）**：`venue.njk`/`venue-en.njk`のLocalBusiness
+`additionalProperty`に「最終確認日」を`TPJ認証取得日`の直後に条件出力
+（`{% if venue.last_verified_date %}`）するテンプレートを実装済み。
+優先度A・8件（GBC含む。`PHASE1-TARGET-LIST.md`参照）は各施設の公式URL/
+Instagramの生存確認（WebFetch）を行った上で日付を記録し、本番反映も
+確認済み（8/14〜8/17に自然分散）。残り27件（優先度B・C）は未設定のまま
+（プロパティ自体が省略されるためJSON-LDは壊れない）。優先度B・C群への
+展開は今後の課題。
 
 ### 11-9. 英語情報の確認
 
@@ -1555,6 +1578,7 @@ class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-c
 "additionalProperty": [
   { "@type": "PropertyValue", "name": "TPJ認証グレード",             "value": "{{ venue.grade }}" },
   { "@type": "PropertyValue", "name": "TPJ認証取得日",               "value": "{{ venue.certified_date }}" },
+  { "@type": "PropertyValue", "name": "最終確認日",                   "value": "{{ venue.last_verified_date }}" },
   { "@type": "PropertyValue", "name": "主評価軸",                     "value": "{{ venue.axes_primary }}" },
   { "@type": "PropertyValue", "name": "居心地・空間品質スコア",       "value": "{{ venue.scores.comfort }}/10" },
   { "@type": "PropertyValue", "name": "静寂性・プライバシースコア",   "value": "{{ venue.scores.silence }}/10" },
@@ -1565,6 +1589,11 @@ class="rounded-xl p-5" style="border:1px solid rgba(184,150,12,0.5);background-c
   { "@type": "PropertyValue", "name": "インバウンド・多言語対応スコア","value": "{{ venue.scores.inbound }}/10" }
 ]
 ```
+
+**「TPJ認証取得日」と「最終確認日」は別概念であり、片方をもう片方の代わりに
+流用しない**（詳細な定義・区別・実装ルールは11-8「情報鮮度のデータ化」を
+正本とする）。`last_verified_date`が未設定の施設では「最終確認日」の行自体を
+省略すること（空値を出力しない）。
 
 ---
 
