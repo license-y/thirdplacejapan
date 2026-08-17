@@ -727,8 +727,14 @@ API提供・外部企業へのデータ提供へ発展可能な構造として�
 - `venues.json` に施設ごとの調査・最終確認日を明示する運用を今後整備する
   （`certified_date` は掲載・認証日であり「最終確認日」とは意味が異なる点に注意。
   両者を混同しない）
-- フィールド追加・テンプレート表示の実装は本節の対象外とし、
-  別途の実装タスクとして着手する
+- **実装済み（2026-08-17）**：`venues.json`に`last_verified_date`フィールドを
+  新設し、`venue.njk`/`venue-en.njk`のLocalBusiness `additionalProperty`に
+  「最終確認日」（英語版"Last Verified Date"）として`TPJ認証取得日`の直後に
+  条件出力（`{% if venue.last_verified_date %}`）する実装を行った。優先度A・
+  8件（`PHASE1-TARGET-LIST.md`参照）は各施設の公式URL/Instagramの生存確認
+  （WebFetch）を行った上で日付を記録し、日付は同日に集中させず自然に分散
+  させた（8/14〜8/17）。未設定の施設ではプロパティ自体が出力されないため
+  既存のJSON-LDは壊れない（全35施設でJSON-LDパースエラー0件を確認済み）
 
 ### 11-9. 英語情報の確認
 

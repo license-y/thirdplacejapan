@@ -40,7 +40,8 @@ lang: "en"
   "additionalProperty": [
     { "@type": "PropertyValue", "name": "TPJ Certification Grade", "value": "{{ venue.grade }}" },
     { "@type": "PropertyValue", "name": "TPJ Certified Date", "value": "{{ venue.certified_date }}" },
-    { "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": {{ venue.scores.comfort }} },
+    {% if venue.last_verified_date %}{ "@type": "PropertyValue", "name": "Last Verified Date", "value": "{{ venue.last_verified_date }}" },
+    {% endif %}{ "@type": "PropertyValue", "name": "TPJ Score: Comfort", "value": {{ venue.scores.comfort }} },
     { "@type": "PropertyValue", "name": "TPJ Score: Silence", "value": {{ venue.scores.silence }} },
     { "@type": "PropertyValue", "name": "TPJ Score: Special", "value": {{ venue.scores.special }} },
     { "@type": "PropertyValue", "name": "TPJ Score: Story", "value": {{ venue.scores.story }} },

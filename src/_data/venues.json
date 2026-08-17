@@ -48,6 +48,7 @@
     "url": "https://greenbeanscoffeeambassador.com/",
     "image": "/assets/images/venues/green-beans-coffee-shibuya-storefront-entrance.webp",
     "certified_date": "2026-06-15",
+    "last_verified_date": "2026-08-14",
     "has_en": true,
     "tags": ["自分時間", "一人時間", "居心地", "落ち着く", "静か", "快適", "リラックス", "読書", "ラウンジ", "リフレッシュ", "体験", "自家焙煎機", "一人カフェ", "一人ランチ", "デート", "女子会", "隠れ家", "フルサービス", "おもてなし", "イベント", "交流", "グルテンフリー", "ペット同伴", "店内ペット同伴可", "商談"],
     "tags_en": ["Me Time", "Solo Time", "Comfort", "Calm", "Quiet", "Comfortable", "Relaxing", "Reading", "Lounge", "Refresh", "Experience", "In-House Roastery", "Solo Cafe", "Solo Lunch", "Date Spot", "Girls' Day Out", "Hidden Gem", "Full Service", "Hospitality", "Events", "Community", "Gluten-Free", "Pet-Friendly", "Pets Welcome Inside", "Business Meetings"],
@@ -225,6 +226,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-15",
     "has_en": false,
     "published": true
   },
@@ -417,6 +419,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-14",
     "has_en": false,
     "published": true
   },
@@ -513,6 +516,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-17",
     "has_en": false,
     "published": true
   },
@@ -702,6 +706,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-16",
     "has_en": false,
     "published": true
   },
@@ -750,6 +755,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-17",
     "has_en": false,
     "published": true
   },
@@ -844,6 +850,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-16",
     "has_en": false,
     "published": true
   },
@@ -891,6 +898,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-15",
     "has_en": false,
     "published": true
   },
