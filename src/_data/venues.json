@@ -178,6 +178,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-16",
     "has_en": false,
     "published": true
   },
@@ -275,6 +276,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-17",
     "has_en": false,
     "published": true
   },
@@ -323,6 +325,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-16",
     "has_en": false,
     "published": true
   },
@@ -371,6 +374,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-01",
+    "last_verified_date": "2026-08-15",
     "has_en": false,
     "published": true
   },
@@ -565,6 +569,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-15",
     "has_en": false,
     "published": true
   },
@@ -612,6 +617,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-17",
     "has_en": false,
     "published": true
   },
@@ -803,6 +809,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-05",
+    "last_verified_date": "2026-08-15",
     "has_en": false,
     "published": true
   },
@@ -995,6 +1002,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-20",
+    "last_verified_date": "2026-08-17",
     "has_en": false,
     "published": true
   },
@@ -1131,7 +1139,7 @@
     "lat": 35.726383,
     "lng": 139.766105,
     "maps_url": "https://maps.google.com/?q=HAGISO+東京都台東区谷中3-10-25",
-    "url": "https://hagiso.com/hagiso/",
+    "url": "https://hagiso.com/hanare/",
     "faq": [
       { "q": "hanareはどのような場所ですか？", "a": "台東区谷中にある、まち全体を一つの宿に見立てた分散型の宿泊施設です。近所の銭湯や飲食店を宿の設備として案内する「まちやど」の実践が、谷中の街そのものをサードプレイス（third place）として体験させています。" },
       { "q": "館内にはどのような設備がありますか？", "a": "拠点となるHAGISO内にカフェ・ギャラリー・受付を備えていますが、入浴や食事は谷中の街中にある銭湯や店舗を利用する仕組みになっています。" },
@@ -1139,6 +1147,7 @@
     ],
     "image": "/assets/images/main/japan-cafe-interior-hero.webp",
     "certified_date": "2026-07-20",
+    "last_verified_date": "2026-08-16",
     "has_en": false,
     "published": true
   },
