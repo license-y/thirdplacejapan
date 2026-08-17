@@ -49,6 +49,11 @@ lang: "en"
     { "@type": "PropertyValue", "name": "TPJ Score: Record", "value": {{ venue.scores.record }} },
     { "@type": "PropertyValue", "name": "TPJ Score: Inbound", "value": {{ venue.scores.inbound }} }
   ]
+  {% if venue.tags_en and venue.tags_en.length %},
+  "keywords": {{ venue.tags_en | dump | safe }}
+  {% elif venue.tags and venue.tags.length %},
+  "keywords": {{ venue.tags | dump | safe }}
+  {% endif %}
 }
 </script>
 

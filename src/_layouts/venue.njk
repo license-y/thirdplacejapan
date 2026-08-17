@@ -64,6 +64,9 @@ og_type: "article"
     { "@type": "PropertyValue", "name": "シェア・記録性スコア", "value": {{ venue.scores.record }} },
     { "@type": "PropertyValue", "name": "インバウンド適性スコア", "value": {{ venue.scores.inbound }} }
   ]
+  {% if venue.tags and venue.tags.length %},
+  "keywords": {{ venue.tags | dump | safe }}
+  {% endif %}
   {% if venue.lat and venue.lng %},
   "geo": {
     "@type": "GeoCoordinates",
