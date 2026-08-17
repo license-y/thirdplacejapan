@@ -325,7 +325,7 @@ lang: "en"
 
   {# Tags (grade-based limit) #}
   {% if venue.tags_en and venue.tags_en.length %}
-  {%- set maxTagsMap = {"certified": 5, "silver": 10, "gold": 15, "platinum": 20, "flagship": 25} -%}
+  {%- set maxTagsMap = {"select": 5, "certified": 10, "silver": 15, "gold": 20, "platinum": 25, "flagship": 30} -%}
   {%- set tagLimit = maxTagsMap[venue.grade_slug] or 5 -%}
   <section class="mb-14" data-aos="fade-up">
     <p class="label mb-4">Third Place Tags</p>
