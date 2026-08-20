@@ -2,7 +2,7 @@
 layout: article.njk
 title: "八王子市のサードプレイスガイド：文化・スポーツ・レジャー編。21の学びが交わる、学生の街の密度"
 description: "八王子市には21もの大学・短期大学が集まり、約9万人の学生が今も暮らしている。単一の研究機関ではなく、無数の若い文化が同時多発的に生まれる密度こそが、八王子市ならではのサードプレイス（third place）だとTPJは評価する。"
-date: 2026-08-17
+date: 2026-08-19
 tags:
   - articles
 category_slug: culture-sports-leisure

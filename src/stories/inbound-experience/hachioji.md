@@ -2,7 +2,7 @@
 layout: article.njk
 title: "八王子市のサードプレイスガイド：インバウンド体験編。生糸が世界と結ばれた、絹の道の記憶"
 description: "八王子は古くから「桑都」と呼ばれ、幕末の横浜開港とともに生糸を輸出する街道の起点になった。日本の近代化を支えた「絹の道」の記憶を歩く、八王子市ならではのサードプレイス（third place）を、TPJが7軸で読み解いていく。"
-date: 2026-08-16
+date: 2026-08-17
 tags:
   - articles
 category_slug: inbound-experience
