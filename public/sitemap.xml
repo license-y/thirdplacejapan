@@ -1955,6 +1955,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/musashino/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/nerima-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2165,6 +2171,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/musashino/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/ome/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2256,6 +2268,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/mitaka/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/musashino/shrine-temple/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2968,6 +2986,30 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/musashino/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/musashino/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/musashino/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/hachioji/</loc>

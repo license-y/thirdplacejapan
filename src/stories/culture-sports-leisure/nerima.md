@@ -132,3 +132,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 都心に頼らない独立した経済圏を持つ町田市との違いは[町田市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/machida/)も参考になる
 - 軍需産業から印刷・出版産業へ丸ごと転換した板橋区との違いは[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参考になる
 - 水という単一の条件が生活文化を規定してきた江戸川区との違いは[江戸川区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/edogawa/)も参考になる
+- アニメ産業と都市農業の同居ではなく、大型店の間を商店街が埋める街区設計が核である武蔵野市との違いは[武蔵野市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/musashino/)も参考になる
