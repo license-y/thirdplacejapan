@@ -1919,6 +1919,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hino/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2087,6 +2093,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hino/nature-glamping/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/ome/nature-glamping/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2136,6 +2148,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/higashimurayama/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hino/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2986,6 +3004,30 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/hino/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/hino/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/nature-glamping/hino/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/musashino/</loc>
