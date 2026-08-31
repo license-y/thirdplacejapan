@@ -7,6 +7,9 @@ lang: "en"
 {%- set gradeNums = {"Certified": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Flagship": 5} -%}
 {%- set gradeLevels = {"certified": 1, "silver": 2, "gold": 3, "platinum": 4, "flagship": 5} -%}
 {%- set thisLevel = gradeLevels[venue.grade_slug] or 0 -%}
+{%- set foodEstablishmentTypes = {"cafe-specialty-coffee": "CafeOrCoffeeShop", "bar-whisky-cocktail": "BarOrPub"} -%}
+{%- set businessType = foodEstablishmentTypes[venue.category_slug] or "LocalBusiness" -%}
+{%- set amenityFeatureNamesEn = {"Wi-Fi": "Wi-Fi", "電源": "Power Outlets", "禁煙": "Non-Smoking"} -%}
 
 {# Sourcing basis by grade_slug - TPJ Select does not claim an on-site visit #}
 {%- set sourcingBasisText = {
@@ -21,7 +24,7 @@ lang: "en"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": {{ businessType | dump | safe }},
   "name": "{{ venue.name_en }}",
   "description": {{ venue.citation_en | dump | safe }},
   "image": "{{ site.url }}{{ venue.image }}",
@@ -54,6 +57,34 @@ lang: "en"
   {% elif venue.tags and venue.tags.length %},
   "keywords": {{ venue.tags | dump | safe }}
   {% endif %}
+  {% if thisLevel >= 2 and (venue.url or venue.instagram_url) %},
+  "sameAs": [{% if venue.url %}{{ venue.url | dump | safe }}{% endif %}{% if venue.url and venue.instagram_url %},{% endif %}{% if venue.instagram_url %}{{ venue.instagram_url | dump | safe }}{% endif %}]
+  {% endif %}
+  {% if thisLevel >= 2 and venue.opening_hours %},
+  "openingHours": {{ venue.opening_hours | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 2 and venue.price_range %},
+  "priceRange": {{ venue.price_range | replace("〜", "–") | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.telephone %},
+  "telephone": {{ venue.telephone | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.menu_url %},
+  "hasMenu": {{ venue.menu_url | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 3 and venue.serves_cuisine %},
+  "servesCuisine": {{ venue.serves_cuisine | dump | safe }}
+  {% endif %}
+  {% if thisLevel >= 4 and venue.amenity_features %},
+  "amenityFeature": [
+    {% for f in venue.amenity_features %}
+    { "@type": "LocationFeatureSpecification", "name": {{ (amenityFeatureNamesEn[f] or f) | dump | safe }}, "value": true }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+  {% endif %}
+  {% if thisLevel >= 4 and venue.smoking_allowed !== undefined %},
+  "smokingAllowed": {{ venue.smoking_allowed }}
+  {% endif %}
 }
 </script>
 
@@ -63,7 +94,7 @@ lang: "en"
   "@context": "https://schema.org",
   "@type": "Review",
   "itemReviewed": {
-    "@type": "LocalBusiness",
+    "@type": {{ businessType | dump | safe }},
     "name": {{ venue.name_en | dump | safe }},
     "address": {
       "@type": "PostalAddress",

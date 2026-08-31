@@ -2543,6 +2543,32 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 
 # 実装ログ
 
+## 2026-08-31
+
+### GBC営業時間の訂正、英語版施設ページJSON-LDのJA/EN構造パリティを是正
+
+**対象ファイル**
+- `src/_data/venues.json`（GBCの`opening_hours`・`opening_hours_display`・`last_verified_date`更新）
+- `src/_layouts/venue-en.njk`（`businessType`・`sameAs`・`priceRange`・`telephone`・`hasMenu`・`servesCuisine`・`amenityFeature`・`smokingAllowed`の出力を追加、LocalBusiness/Review両方の`@type`をカテゴリ別マッピングに変更）
+
+**発端**：ユーザーからGBCの営業時間訂正依頼（`10:30〜20:00（L.O. 19:30）`→`10:30〜18:30（L.O. 18:00）`）を受けて`venues.json`を修正し、日英ページの整合性を確認したところ、英語版施設ページ（`venue-en.njk`）のLocalBusiness JSON-LDが日本語版（`venue.njk`）と比べて`openingHours`を含む複数のプロパティを一切出力していないことが判明した。
+
+**発見した欠落（日本語版には実装済みだった項目）**
+- `sameAs`・`openingHours`・`priceRange`（Silver以上）
+- `telephone`・`hasMenu`・`servesCuisine`（Gold以上）
+- `amenityFeature`・`smokingAllowed`（Platinum以上）
+- `@type`のカテゴリ別マッピング（`foodEstablishmentTypes`。LocalBusiness本体・Review内`itemReviewed`とも常に`"LocalBusiness"`固定だった）
+
+**対応**：日本語版と同じグレード別条件出力ロジックをそのまま移植した。あわせて2点、英語版特有の対応を行った。
+- `priceRange`：`venue.price_range`（例：`¥1,000〜¥2,000`）の全角波ダッシュ「〜」を、英語表記として不自然にならないよう`replace`フィルターでエンダッシュ「–」に変換してから出力する
+- `amenityFeature`：`venue.amenity_features`は`["Wi-Fi","電源","禁煙"]`のように日本語混じりの値のため、そのまま英語ページのJSON-LDに出力すると`name`フィールドに日本語が残ってしまう。サイト全体で使われている値が3種類のみと少ないため、`amenityFeatureNamesEn`という小さな翻訳マップ（`{"Wi-Fi":"Wi-Fi","電源":"Power Outlets","禁煙":"Non-Smoking"}`）をテンプレート内に追加して変換した
+
+**現状での影響範囲**：本セッション時点でSilver以上の条件（`thisLevel >= 2`）を満たす施設はGBC（Flagship）1件のみ（他34件はすべてTPJセレクト）のため、実際にレンダリング内容が変わったのはGBCの英語版ページのみ。他施設への影響はない。
+
+**検証方法**：`npm run build`後、GBC英語版ページのJSON-LD（`CafeOrCoffeeShop`・`sameAs`2件・`openingHours`・`priceRange`（エンダッシュ表記）・`telephone`・`hasMenu`・`amenityFeature`3件（英訳済み）・`smokingAllowed: false`）が意図通り出力されていることを確認。サイト全体（`public/stories/`・`public/en/stories/`配下587ファイル）のJSON-LD再検証で2,610ブロック中エラー0件、内部リンク37,695件中リンク切れ0件を確認し、既存施設への回帰がないことを確認した。
+
+**ルール化**：この対応は「LocalBusiness @type のカテゴリ別マッピング」「LocalBusiness の検索最適化プロパティ」の各ルールを英語版テンプレートにも適用したものであり、新しいルールの追加ではない。今後`venue.njk`側にグレード別JSON-LDプロパティを追加した場合は、`venue-en.njk`側にも同時に反映することを徹底する（この2ファイルの実装が乖離しないよう、変更時は必ず両方をセットで確認する）。
+
 ## 2026-08-17
 
 ### Phase 1優先度A・8施設に「最終確認日」フィールドを新設・実装、構造化データの本番相当出力を確認
