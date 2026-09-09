@@ -2027,6 +2027,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chofu/inbound-experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/inbound-experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -3016,6 +3022,14 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/chofu/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/chofu/</loc>
