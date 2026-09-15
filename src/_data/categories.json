@@ -6,7 +6,8 @@
     "name_en": "Luxury Hotel & Hotel Lounge",
     "group": "宿泊系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1677129667171-92abd8740fa3?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1677129667171-92abd8740fa3?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "格式あるロビーやラウンジは、宿泊者以外にも開かれた、日常から切り離された滞在の場になる。Third Place Japanが評価した高級ホテル・ホテルラウンジを、サードプレイス（third place）の視点で紹介する記事一覧。"
   },
   {
     "slug": "onsen-ryokan",
@@ -15,7 +16,8 @@
     "name_en": "Onsen Ryokan & Luxury Inn",
     "group": "宿泊系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1644413638617-02369c89c156?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1644413638617-02369c89c156?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "湯とともに流れる時間そのものを味わう、旅先だからこそ許される非日常の滞在という価値を持つ。Third Place Japanが評価した温泉旅館・高級旅館を、サードプレイス（third place）の視点で紹介する記事一覧。"
   },
   {
     "slug": "villa-rental",
@@ -24,7 +26,8 @@
     "name_en": "Private Villa & Exclusive Inn",
     "group": "宿泊系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1753552502151-93914d36ecf2?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcml2YXRlJTIwdmlsbGElMjByZW50YWwlMjBqYXBhbnxlbnwwfDB8fHwxNzgxOTM4NTg1fDA&ixlib=rb-4.1.0&w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1753552502151-93914d36ecf2?ixid=M3w4OTE4NjZ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBwcml2YXRlJTIwdmlsbGElMjByZW50YWwlMjBqYXBhbnxlbnwwfDB8fHwxNzgxOTM4NTg1fDA&ixlib=rb-4.1.0&w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "他者の視線や時間割から離れて過ごせる、一棟を独り占めできる空間という贅沢な価値を紹介する。Third Place Japanが評価した貸切ヴィラ・一棟貸しの宿を、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "restaurant-dining",
@@ -33,7 +36,8 @@
     "name_en": "Fine Restaurant & Private Dining",
     "group": "飲食系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1709548145082-04d0cde481d4?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1709548145082-04d0cde481d4?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "一皿と静かに向き合う時間そのものが、特別な体験として記憶に残る食の場所という価値がある。Third Place Japanが評価したレストラン・ダイニングを、サードプレイス（third place）の視点で紹介する記事一覧。"
   },
   {
     "slug": "cafe-specialty-coffee",
@@ -42,7 +46,8 @@
     "name_en": "Café & Specialty Coffee",
     "group": "飲食系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1633073490205-27c0ad419a84?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1633073490205-27c0ad419a84?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "一杯のコーヒーとともに過ごす、ひとり時間の質そのものを問う日常の第三の場所を紹介する。Third Place Japanが評価したカフェ・スペシャルティコーヒーを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "bar-whiskey",
@@ -51,7 +56,8 @@
     "name_en": "Bar, Whiskey Bar & Craft Cocktail",
     "group": "飲食系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1777791375148-5d568498cec2?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1777791375148-5d568498cec2?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "静かな夜に自分自身とゆっくり向き合うための、止まり木のような小さな一角を紹介する。Third Place Japanが評価したバー・ウイスキー・カクテルを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "spa-sauna-wellness",
@@ -60,7 +66,8 @@
     "name_en": "Spa, Sauna & Wellness",
     "group": "癒し・美容系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1764057145780-3ba9929822ba?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1764057145780-3ba9929822ba?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "心身を整えるために集中する、ひとりだけの時間という価値を持つ回復の場所を紹介する。Third Place Japanが評価したスパ・サウナ・ウェルネス施設を、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "premium-salon",
@@ -69,7 +76,8 @@
     "name_en": "Premium Salon & Private Salon",
     "group": "癒し・美容系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1778085263211-9c5034edf839?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1778085263211-9c5034edf839?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "施術を通じて自分の身体と静かに向き合う、個室という小さくて濃密な居場所を紹介する。Third Place Japanが評価した高級サロン・プライベートサロンを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "coworking",
@@ -78,7 +86,8 @@
     "name_en": "Coworking & Share Office",
     "group": "仕事系",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1761818645928-47e5dad8ec76?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1761818645928-47e5dad8ec76?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "自宅でも会社でもない、集中と偶発的な交流の両方が両立する第三の作業拠点を紹介する。Third Place Japanが評価したコワーキング・シェアオフィスを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "members-lounge",
@@ -87,7 +96,8 @@
     "name_en": "Members' Lounge & Private Club",
     "group": "会員制",
     "revenue": true,
-    "image": "https://images.unsplash.com/photo-1730367019960-9906d9cbbf05?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1730367019960-9906d9cbbf05?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "同じ関心を持つ人だけが自然と集まる、会員という条件がじっくりと育てる閉じた社交空間を紹介する。Third Place Japanが評価した会員制ラウンジ・クラブを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "nature-glamping",
@@ -96,7 +106,8 @@
     "name_en": "Nature, Outdoor & Glamping",
     "group": "自然・精神系",
     "revenue": false,
-    "image": "https://images.unsplash.com/photo-1595270470419-863bd4e1c78c?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1595270470419-863bd4e1c78c?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "自然の中に身を置き、日常から距離を取る、身体を伴う非日常の滞在という体験を紹介する。Third Place Japanが評価した山・自然体験・グランピングを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "retreat-zen",
@@ -105,7 +116,8 @@
     "name_en": "Retreat, Zen & Spiritual Experience",
     "group": "自然・精神系",
     "revenue": false,
-    "image": "https://images.unsplash.com/photo-1596429584705-6edf06d84e08?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1596429584705-6edf06d84e08?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "静けさの中で呼吸を整え、思考をゆっくりと鎮めるための、内省という居場所の価値を紹介する。Third Place Japanが評価したリトリート・禅体験を、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "shrine-temple",
@@ -114,7 +126,8 @@
     "name_en": "Shrine, Temple & Power Spot",
     "group": "自然・精神系",
     "revenue": false,
-    "image": "https://images.unsplash.com/photo-1610333902236-075d788f9071?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1610333902236-075d788f9071?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "祈りとともに静けさに触れる、日本人が古くから持ち続けてきた居場所という文化を紹介する。Third Place Japanが評価した神社・寺院・パワースポットを、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "inbound-experience",
@@ -123,7 +136,8 @@
     "name_en": "Inbound Tourism & Experience",
     "group": "観光・集客施設系",
     "revenue": false,
-    "image": "https://images.unsplash.com/photo-1656425379571-48aff9008422?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1656425379571-48aff9008422?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "日本文化を肌で体感できる、旅行者にとっての異文化への開かれた小さな窓口を紹介する。Third Place Japanが評価したインバウンド観光・体験施設を、サードプレイス（third place）の視点で読み解く記事一覧。"
   },
   {
     "slug": "culture-sports-leisure",
@@ -132,6 +146,7 @@
     "name_en": "Culture, Sports & Leisure",
     "group": "観光・集客施設系",
     "revenue": false,
-    "image": "https://images.unsplash.com/photo-1553134230-64a44a322d59?w=800&q=80&fm=webp&fit=crop"
+    "image": "https://images.unsplash.com/photo-1553134230-64a44a322d59?w=800&q=80&fm=webp&fit=crop",
+    "hub_description": "観る・参加するという能動的な楽しさが自然に生まれる、街に開かれた公共の場を紹介する。Third Place Japanが評価した文化・スポーツ・レジャー施設を、サードプレイス（third place）の視点で読み解く記事一覧。"
   }
 ]

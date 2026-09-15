@@ -6,7 +6,7 @@ pagination:
 permalink: "/stories/{{ cat.slug }}/"
 eleventyComputed:
   title: "{{ cat.name_ja }}のサードプレイス"
-  description: "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。"
+  description: "{{ cat.hub_description | safe }}"
   canonical: "/stories/{{ cat.slug }}/"
 ---
 
@@ -30,7 +30,7 @@ eleventyComputed:
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "{{ cat.name_ja }}のサードプレイス | Third Place Japan",
-  "description": "Third Place Japanが評価した{{ cat.name_ja }}の記事一覧。サードプレイスとしての視点から、日本各地の{{ cat.name_ja }}を紹介します。",
+  "description": {{ cat.hub_description | dump | safe }},
   "url": "{{ site.url }}/stories/{{ cat.slug }}/",
   "inLanguage": "ja",
   "about": { "@type": "Thing", "name": "{{ cat.name_ja }}" },
@@ -104,7 +104,7 @@ eleventyComputed:
         <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ cat.name_ja }}のサードプレイス</h1>
         <div class="gold-rule mb-6"></div>
         <p class="text-sm text-muted leading-relaxed">
-          サードプレイスとしての視点から見る、{{ cat.name_ja }}の記事一覧。
+          {{ cat.hub_description | safe }}
         </p>
       </div>
 
