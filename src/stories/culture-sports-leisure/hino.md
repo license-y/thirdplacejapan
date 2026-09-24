@@ -132,3 +132,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 東京の文化・美術施設全体像は[東京の美術館・文化施設をサードプレイスにする](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している
 - 同じ日野市の開けた合流点と隠れた谷という地形の自然体験は[日野市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/hino/)で解説している
 - 江戸期からの用水路網が育む生活に根差した静けさは[日野市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/hino/)も参考になる
+- 幕末史と動物公園という二つの時代とは異なる、旧石器時代から続く小平市の時間の重なりは[小平市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/kodaira/)も参考になる
