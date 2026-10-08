@@ -136,3 +136,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 現役の天文台が「究める」文化の核である三鷹市との違いは[三鷹市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/mitaka/)も参考になる
 - 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している
 - 大学の数が生む若い文化とは異なる、鉄道が通っていないという交通条件が地域完結型のレジャーを育てた武蔵村山市の文化・レジャーは[武蔵村山市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/musashimurayama/)も参考になる
+- 21大学という積み上がった密度とは異なる、丘陵を切り拓く開発が今も進む「完成していない街」としての稲城市の文化・レジャーは[稲城市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/inagi/)も参考になる

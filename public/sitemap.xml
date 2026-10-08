@@ -1937,6 +1937,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/inagi/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/itabashi-ku/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2190,6 +2196,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/hino/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/inagi/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3058,6 +3070,22 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/inagi/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/inagi/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/musashimurayama/</loc>
