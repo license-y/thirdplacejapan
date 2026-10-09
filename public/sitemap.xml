@@ -1697,6 +1697,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shinjuku-ku/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1817,13 +1823,37 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nakano-ku/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/coworking/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/arakawa-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2165,12 +2195,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/retreat-zen/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2438,6 +2462,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/shinjuku-ku/kagurazaka/shrine-temple/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/culture-sports-leisure/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2570,6 +2600,18 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/nakano-ku/nakano/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/oshiage/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/sumida-ku/higashi-komagata/coworking/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2577,6 +2619,18 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/nezu/coworking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/bunkyo-ku/yushima/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/arakawa-ku/mikawashima/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3062,6 +3116,46 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/select/idea-box-share-office/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/akino-coffee-mikawashima/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/fromscratch-works-nakano/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/akagi-cafe-kagurazaka/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/rinshoin-yushima/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/crea-base-oshiage/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
