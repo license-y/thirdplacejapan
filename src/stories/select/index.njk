@@ -46,9 +46,12 @@ canonical: "/stories/select/"
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "name": {{ v.name | dump | safe }},
-      "description": {{ (v.grade + " / " + v.category + " / " + v.area_primary.prefecture + v.area_primary.area) | dump | safe }},
-      "url": "{{ site.url }}/stories/select/{{ v.slug }}/"
+      "item": {
+        "@id": "{{ site.url }}/stories/select/{{ v.slug }}/",
+        "name": {{ v.name | dump | safe }},
+        "url": "{{ site.url }}/stories/select/{{ v.slug }}/",
+        "description": {{ (v.grade + " / " + v.category + " / " + v.area_primary.prefecture + v.area_primary.area) | dump | safe }}
+      }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

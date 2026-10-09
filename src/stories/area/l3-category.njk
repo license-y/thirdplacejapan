@@ -86,9 +86,12 @@ eleventyComputed:
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "name": "{{ v.name }}",
-      "url": "{{ site.url }}/stories/select/{{ v.slug }}/",
-      "description": {{ v.citation | truncate(120) | dump | safe }}
+      "item": {
+        "@id": "{{ site.url }}/stories/select/{{ v.slug }}/",
+        "name": "{{ v.name }}",
+        "url": "{{ site.url }}/stories/select/{{ v.slug }}/",
+        "description": {{ v.citation | truncate(120) | dump | safe }}
+      }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

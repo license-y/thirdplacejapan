@@ -128,6 +128,7 @@
   {
     "slug": "onibus-coffee-nakameguro",
     "name": "ONIBUS COFFEE 中目黒",
+    "name_reading": "オニバスコーヒー中目黒",
     "name_en": "ONIBUS COFFEE Nakameguro",
     "citation": "ONIBUS COFFEEは、中目黒の住宅街に根ざした独立系スペシャルティコーヒーロースター。農園との直接取引から生まれるコーヒーの物語と、路地裏の静かな空間が、家でも職場でもないサードプレイス（third place）としての時間をつくりだしている。TPJ編集部が選出しました。",
     "tags": ["自家焙煎機","コーヒー","一人カフェ","作業","居心地"],
@@ -182,6 +183,7 @@
   {
     "slug": "koffee-mameya-omotesando",
     "name": "KOFFEE MAMEYA",
+    "name_reading": "コーヒーマメヤ",
     "name_en": "KOFFEE MAMEYA",
     "citation": "KOFFEE MAMEYAは、表参道の隠れ路地に佇むスペシャルティコーヒーの専門店。豆の産地・精製・焙煎を対話形式で伝えるスタイルが、コーヒーという飲み物を「体験」へと変換する。一杯の選択から始まる、特別感の高いサードプレイス（third place）です。TPJ編集部が選出しました。",
     "tags": ["上質","非日常","コーヒー","一人カフェ","体験"],
@@ -284,6 +286,7 @@
   {
     "slug": "saunalab-kanda",
     "name": "SaunaLab Kanda",
+    "name_reading": "サウナラボ神田",
     "name_en": "SaunaLab Kanda",
     "citation": "SaunaLab Kandaは、千代田区神田に位置する都市型サウナ施設。薄暗い照明と静音設計が生む没入感は高く、サウナという空間を「整い」の場から「思考の場」へと昇華させている。一人でも訪れやすい静けさが、サードプレイスとしての機能を高める。TPJセレクトに選ばれた場所です。",
     "tags": ["静か","癒やし","リフレッシュ","商談","ビジネスパーソン"],
@@ -335,6 +338,7 @@
   {
     "slug": "shibuya-saunas",
     "name": "渋谷SAUNAS",
+    "name_reading": "渋谷サウナズ",
     "name_en": "Shibuya SAUNAS",
     "citation": "渋谷SAUNASは、渋谷区に位置する都市型複合サウナ施設。複数のサウナ室と屋外水風呂・休憩スペースを備え、それぞれの「整い方」に応じた滞在設計が特徴。渋谷という喧騒の中心に生まれた、非日常のサードプレイス（third place）として、TPJ編集部が注目しています。",
     "tags": ["非日常","リフレッシュ","癒やし","ビジネスパーソン","ウェルビーイング"],
@@ -386,6 +390,7 @@
   {
     "slug": "the-sg-club-shibuya",
     "name": "The SG Club",
+    "name_reading": "ザ・エスジー・クラブ",
     "name_en": "The SG Club",
     "citation": "The SG Clubは、渋谷区神南に佇むクラフトカクテルバー。日本を代表するバーテンダーが手がけるカウンター越しの対話と、厳選されたスピリッツが生む一杯は、夜の居場所としての特別感を高次元で実現している。Third Place Japan編集部が選出した、夜のサードプレイス。",
     "tags": ["非日常","上質","贅沢","一人時間","隠れ家"],
@@ -437,6 +442,7 @@
   {
     "slug": "switch-coffee-tokyo-meguro",
     "name": "Switch Coffee Tokyo",
+    "name_reading": "スイッチコーヒートーキョー",
     "name_en": "Switch Coffee Tokyo",
     "citation": "Switch Coffee Tokyoは、目黒区目黒に位置する小規模なスペシャルティコーヒーショップ。無駄のない空間設計がコーヒーそのものに集中させる。地域に根ざした常連との関係が、静かなサードプレイス（third place）としての感覚を醸成している。TPJ編集部が選出しました。",
     "tags": ["自家焙煎機","コーヒー","朝活","一人カフェ","落ち着く"],
@@ -488,6 +494,7 @@
   {
     "slug": "glitch-coffee-kanda",
     "name": "Glitch Coffee & Roasters",
+    "name_reading": "グリッチコーヒー＆ロースターズ",
     "name_en": "Glitch Coffee & Roasters",
     "citation": "Glitch Coffee & Roastersは、千代田区神田に本拠を置くスペシャルティコーヒーロースター。自社焙煎の豆とバリスタとの対話が、コーヒー体験を知的な居場所に変える。一人カウンターの時間が、静かなサードプレイス（third place）としての充実感を与える。",
     "grade": "TPJセレクト",
@@ -537,6 +544,7 @@
   {
     "slug": "the-roastery-nozy-coffee-harajuku",
     "name": "The Roastery by Nozy Coffee",
+    "name_reading": "ザ・ロースタリー・バイ・ノージーコーヒー",
     "name_en": "The Roastery by Nozy Coffee",
     "citation": "The Roastery by Nozy Coffeeは、渋谷区神宮前に位置するスペシャルティコーヒーの焙煎所兼カフェ。焙煎機が見える開放的な空間と農園直送のコーヒーが「原点」に触れる体験を届ける。コーヒー好きのサードプレイス（third place）として、TPJセレクトに選ばれました。",
     "tags": ["自家焙煎機","コーヒー","上質","一人カフェ","落ち着く"],
@@ -588,6 +596,7 @@
   {
     "slug": "arise-coffee-roasters-kiyosumishirakawa",
     "name": "ARiSE COFFEE ROASTERS",
+    "name_reading": "アライズコーヒーロースターズ",
     "name_en": "ARiSE COFFEE ROASTERS",
     "citation": "清澄白河のコーヒーストリートを象徴する独立系ロースター、ARiSE COFFEE ROASTERSをTPJセレクトに加えます。倉庫街の静けさの中で積み上げられたコーヒーの物語と、農園の背景を深く掘り下げる姿勢が、この場所を単なるカフェ以上のサードプレイス（third place）にしています。",
     "tags": ["自家焙煎機","コーヒー","一人カフェ","落ち着く","居心地"],
@@ -638,6 +647,7 @@
   {
     "slug": "streamer-coffee-company-harajuku",
     "name": "Streamer Coffee Company 原宿",
+    "name_reading": "ストリーマーコーヒーカンパニー原宿",
     "name_en": "Streamer Coffee Company Harajuku",
     "citation": "日本のラテアート文化を牽引してきた独立系コーヒーショップ、Streamer Coffee Companyをその原宿旗艦店でTPJセレクトに選出しました。バリスタの技術を間近で体感できる開放的な空間は、コーヒーを「飲む体験」から「見る体験」へと昇華させるサードプレイス（third place）です。",
     "tags": ["コーヒー","体験","一人カフェ","非日常","居心地"],
@@ -688,6 +698,7 @@
   {
     "slug": "trunk-hotel-harajuku",
     "name": "TRUNK(HOTEL)",
+    "name_reading": "トランク(ホテル)",
     "name_en": "TRUNK(HOTEL)",
     "citation": "「ソーシャライジングホテル」を掲げ、地域と旅行者をつなぐ独自の文化的磁場をつくり続けるTRUNK(HOTEL)をTPJセレクトに加えます。神宮前の路地に佇むこのホテルは、宿泊という行為をコミュニティへの参加として再定義したサードプレイス（third place）です。",
     "grade": "TPJセレクト",
@@ -736,6 +747,7 @@
   {
     "slug": "bna-wall-nihonbashi",
     "name": "BnA_WALL",
+    "name_reading": "ビーエヌエーウォール",
     "name_en": "BnA_WALL",
     "citation": "BnA_WALLは、中央区日本橋のアート×ホテルコンセプト施設。アーティストが客室を丸ごとインスタレーションとして制作し、宿泊という行為を「サードプレイス（third place）の再定義」へと転換させる、独自性の高い空間として選出しました。",
     "grade": "TPJセレクト",
@@ -931,6 +943,7 @@
   {
     "slug": "dotema-daizawa",
     "name": "DOTEMA",
+    "name_reading": "ドテマ",
     "name_en": "DOTEMA",
     "citation": "建築設計事務所が世田谷区代沢の土手沿いに構えるDOTEMAは、間取りも家具も自ら手がけた空間で仕事と対話が交わる場所。お座敷とテーブル席が混在する開放感、キッチンやDJブースまで備えた多層的な佇まいが、肩肘張らないサードプレイス（third place）としての集中を生んでいる。",
     "tags": ["作業","テレワーク","コミュニティ","集中","交流"],
@@ -982,6 +995,7 @@
   {
     "slug": "tatamiworks-chitosefunabashi",
     "name": "TatamiWorks 和風コワーキングスペース",
+    "name_reading": "タタミワークス",
     "name_en": "TatamiWorks",
     "citation": "元パイロットが世田谷区船橋の築50年の民家を一人で改装したTatamiWorksは、1階のこたつと2階の座卓が迎える和風コワーキングスペース。効率よりも腰を据える感覚を大切にする、住宅街の中の隠れ家的なサードプレイス（third place）を、TPJセレクトに加えます。",
     "tags": ["集中","作業","静か","テレワーク","落ち着く"],
@@ -1033,6 +1047,7 @@
   {
     "slug": "citan-nihonbashi",
     "name": "CITAN",
+    "name_reading": "シータン",
     "name_en": "CITAN",
     "citation": "職人の手仕事による内装とコーヒースタンド、夜はバーへと表情を変えるCITANは、旅人と地元客が同じ椅子に座る中央区東日本橋のホステル。国境も肩書きも越えて人が交わるこのサードプレイス（third place）を、TPJ編集部は静かに見つけました。",
     "tags": ["交流","商談","コーヒー","居心地","非日常"],
@@ -1084,6 +1099,7 @@
   {
     "slug": "studioai-higashikomagata",
     "name": "studio ai architects",
+    "name_reading": "スタジオ・アイ・アーキテクツ",
     "name_en": "studio ai architects",
     "citation": "建築士たちが「ものづくりの下町」墨田で切磋琢磨する場を目指し、studio ai architectsが自社内に開いたシェアオフィス。建築専門書を読み放題で過ごせる書棚と、一級建築士に暮らしの相談ができる距離感が、他にはないサードプレイス（third place）をつくっている。",
     "tags": ["集中","作業","上質","静か","体験"],
@@ -1135,6 +1151,7 @@
   {
     "slug": "hanare-yanaka",
     "name": "hanare（HAGISO）",
+    "name_reading": "ハナレ（ハギソウ）",
     "name_en": "hanare (HAGISO)",
     "citation": "築70年の木造アパートを再生した拠点から始まり、まちそのものを一つの宿に見立てるhanareは、銭湯で湯を浴び近所の店で食事をする谷中の暮らし方そのものを宿泊体験に変えた。建築家が10年以上かけて育ててきた、まちごとサードプレイス（third place）になったホテルの物語。",
     "tags": ["非日常","隠れ家","自然","落ち着く","上質"],
@@ -1288,6 +1305,7 @@
   {
     "slug": "wamare-shibamata-hotel",
     "name": "WAMARE柴又HOTEL",
+    "name_reading": "ワマーレ柴又ホテル",
     "name_en": "WAMARE Shibamata Hotel",
     "citation": "葛飾区柴又の下町情緒あふれる路地に佇むWAMARE柴又HOTELは、古い日本家屋を和モダンにフルリフォームした一棟貸しの宿だ。白と黒のツートン、ルーバー格子の外観が、柴又でサードプレイス（third place）と呼べる静かな滞在の時間を作り出している。",
     "tags": ["非日常","隠れ家","デート","落ち着く","自然"],
@@ -1543,6 +1561,7 @@
   {
     "slug": "tokyo-guesthouse-oji-music-lounge",
     "name": "Tokyo Guest House Oji Music Lounge",
+    "name_reading": "トーキョーゲストハウス王子ミュージックラウンジ",
     "name_en": "Tokyo Guest House Oji Music Lounge",
     "citation": "北区滝野川、飛鳥山公園にほど近いTokyo Guest House Oji Music Loungeは、ホストのミュージシャンと世界中の旅人が音楽を通じて言葉を交わす宿だ。国境を越えた対話が生まれるこの一軒は、北区でサードプレイス（third place）と呼べる出会いの場になっている。",
     "tags": ["交流","非日常","体験","隠れ家","出会い"],
@@ -1645,6 +1664,7 @@
   {
     "slug": "mukuroji-studio-sendagi",
     "name": "muku*roji studio",
+    "name_reading": "ムクロジスタジオ",
     "name_en": "muku*roji studio",
     "citation": "文京区千駄木、谷根千の路地裏に佇む築70年の古民家を改装したmuku*roji studioは、1階を隠れ家レストラン、2階をコワーキングスタジオとして開く。運営者自身が「職場でも自宅でもない」と語るこの一軒は、文京区でサードプレイス（third place）を体現している。",
     "tags": ["集中","静か","作業","テレワーク","落ち着く"],
@@ -1798,6 +1818,7 @@
   {
     "slug": "idea-box-share-office",
     "name": "IDEA BOX SHARE OFFICE",
+    "name_reading": "アイデアボックスシェアオフィス",
     "name_en": "IDEA BOX SHARE OFFICE",
     "citation": "品川区西大井のIDEA BOX SHARE OFFICEは、イングリッシュガーデンやプライベートサウナ、映画音響を備えたシアタールームを併設するシェアオフィスだ。働く場を超えた体験が広がるこの一軒は、品川区でサードプレイス（third place）としての時間を作り出している。",
     "tags": ["作業","非日常","体験","テレワーク","集中"],
@@ -1900,6 +1921,7 @@
   {
     "slug": "fromscratch-works-nakano",
     "name": "FromScratch Works 中野",
+    "name_reading": "フロムスクラッチワークス中野",
     "name_en": "FromScratch Works Nakano",
     "citation": "中野駅近く、早稲田通り沿いのビル7階にあるFromScratch Worksは、掘りごたつ席も備える会員制のワークスペース。落ち着いた平日の空気の中、中野でサードプレイス（third place）としての集中時間を生み出している。",
     "tags": ["集中","作業","テレワーク","ノマドワーク","静か"],
@@ -2053,6 +2075,7 @@
   {
     "slug": "crea-base-oshiage",
     "name": "CREA BASE 押上店",
+    "name_reading": "クレアベース押上店",
     "name_en": "CREA BASE Oshiage",
     "citation": "東京スカイツリー至近、墨田区押上のCREA BASEは、陶芸や絵画の創作体験を提供するアート＆クラフト拠点。手を動かす非日常のひとときが、このエリアのサードプレイス（third place）になっている。",
     "tags": ["体験","非日常","気分転換","デート","女子会"],
