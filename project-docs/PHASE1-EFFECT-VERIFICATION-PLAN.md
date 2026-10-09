@@ -903,7 +903,9 @@ KOFFEE MAMEYA 707字で執筆した。`PRIMARY-INFO-ENRICHMENT-PLAN.md`6節が
   「THE WORLD'S 50 BEST BARS 2023」36位・「日本最高位」の文言を原文で確認、
   [公式Instagram（@the_sg_club）](https://www.instagram.com/the_sg_club/)の
   プロフィール欄で「Asia's 50 Best 2019-2024」「World's 50 Best 2019-2024」の
-  継続選出を確認した。本文は、WikipediaのみにあったThe SG Club自体の2021年3位・
+  継続選出を確認した。**うちAsia's側の2024年はPR Times公式リリース（上記）で
+  個別に裏取りできているが、World's側の2024年は公式Instagram bioの自己記載のみが
+  根拠で、対応する個別プレスリリースは見つかっていない。** 本文は、WikipediaのみにあったThe SG Club自体の2021年3位・
   2020年10位という数値（公式発表での裏取りが取れなかった）を使うのをやめ、
   **公式リリースで直接確認できた2023年36位（日本最高位）・2019年以降の継続選出・
   後閑信吾氏の2019年受賞のみを採用する形に差し替えた**
