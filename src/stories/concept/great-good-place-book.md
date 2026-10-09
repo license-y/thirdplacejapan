@@ -5,7 +5,7 @@ description: レイ・オルデンバーグの著書『The Great Good Place』�
 date: 2026-06-12
 category_slug: about
 area_name: 東京
-thumbnail: "/assets/images/articles/great-good-place-book-library-reading.webp"
+thumbnail: "/assets/images/articles/great-good-place-open-book-pages.webp"
 snippet: 1989年刊の同書は、地域社会を支える非公式な集いの場の価値を体系化した。
 tags:
   - articles

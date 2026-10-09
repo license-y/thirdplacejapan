@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-title: "TPJ Select vs. TPJ Certification: Why Third Place Japan Runs Two Separate Tracks"
+title: "TPJ Select vs. TPJ Certification: Why Two Separate Tracks Exist"
 description: "Third Place Japan runs two systems: TPJ Select, an unpaid editorial pick, and a five-grade certification venues apply for. Here's why the two stay separate."
 date: 2026-07-28
 tags:

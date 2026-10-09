@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-title: "TPJ's Seven-Axis Evaluation Guide: How Third Place Japan Scores a Space"
+title: "TPJ's Seven-Axis Evaluation Guide: How We Score a Space"
 description: "Third Place Japan scores every space it certifies on seven axes, from comfort to inbound access. This guide breaks down what each axis measures and why."
 date: 2026-07-28
 tags:
