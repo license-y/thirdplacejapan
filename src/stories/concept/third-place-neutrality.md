@@ -83,7 +83,7 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 
 3つすべてに「はい」と答えられる場所が、中立性を持つサードプレイスだ。
 
-中立性の概念を深めたい方は、「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」と「[サードプレイスの8つの条件：オルデンバーグの定義を読む](/stories/about/third-place-8-conditions/)」も合わせてご覧ください。
+中立性の概念を深めたい方は、「[サードプレイスとは何か？定義・特徴・具体例の完全ガイド](/stories/about/what-is-third-place/)」と「[サードプレイスの8つの条件：オルデンバーグの定義を読む](/stories/about/third-place-8-conditions/)」も合わせてご覧ください。中立性が保たれた場所に生まれる軽口や笑いについては「[サードプレイスとは"遊び心のある雰囲気"である：Playful Moodの意味](/stories/about/third-place-playful-mood/)」で詳しく解説している。
 
 ---
 

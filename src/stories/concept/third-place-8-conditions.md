@@ -107,6 +107,8 @@ hreflang_en: /en/stories/concept/third-place-8-conditions/
 
 現代日本の例：常連客が冗談を言い合える居酒屋、バリスタとの雑談が楽しいカフェ
 
+この条件だけを掘り下げた解説は「[サードプレイスとは"遊び心のある雰囲気"である：Playful Moodの意味](/stories/about/third-place-playful-mood/)」で詳しく扱っている。
+
 ---
 
 ### 条件8：もうひとつの家（A Home Away from Home）
