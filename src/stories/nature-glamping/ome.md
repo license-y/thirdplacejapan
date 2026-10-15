@@ -141,3 +141,4 @@ JR青梅線の駅から徒歩圏内に渓谷の入口があり、都心から1�
 - 東京の禅体験・リトリート全体像は[東京で禅体験・リトリートをサードプレイスにする](/stories/retreat-zen/zen-retreat-tokyo-third-place/)を参照
 - 高尾山の自然体験との違いは[高尾山をサードプレイスとして訪れる](/stories/nature-glamping/takao-mountain-third-place/)も参考になる
 - 渓谷の急流ではなく、開けた川の合流点と丘陵の隠れた谷という対照的な地形で自然体験を読み解く[日野市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/hino/)も参考になる
+- 体を動かす激しさではなく、動物・花・水辺に歩いて気軽に会いに行ける羽村市の自然体験は[羽村市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/hamura/)も参考になる

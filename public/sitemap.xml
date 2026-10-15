@@ -2159,6 +2159,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hamura/nature-glamping/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/hino/nature-glamping/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2208,6 +2214,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/hachioji/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/hamura/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3164,6 +3176,22 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/hamura/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/nature-glamping/hamura/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/about/third-place-playful-mood/</loc>

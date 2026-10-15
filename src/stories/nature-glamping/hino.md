@@ -130,3 +130,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 都心から1時間で行ける山の自然体験の定番は[高尾山をサードプレイスとしてひとりで歩く](/stories/nature-glamping/takao-mountain-third-place/)も参考になる
 - 同じ日野市の用水路網が育んだ「生活に根差した水の静けさ」は[日野市のサードプレイスガイド：リトリート・禅体験編](/stories/retreat-zen/hino/)で解説している
 - 程久保の谷筋に広がる大規模な動物公園については[日野市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/hino/)で詳しく取り上げている
+- 開閉二つの地形ではなく、動物・花・水辺を歩いてはしごできる羽村市の自然体験は[羽村市のサードプレイスガイド：山・自然体験編](/stories/nature-glamping/hamura/)も参考になる
