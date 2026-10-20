@@ -1727,6 +1727,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1757,6 +1763,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/koto-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1764,6 +1776,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1883,12 +1901,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/cafe-specialty-coffee/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1902,12 +1914,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/shrine-temple/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2528,6 +2534,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/setagaya-ku/daizawa/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/kanda/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2546,7 +2558,25 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/kuramae/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/kuramae/hotel-lounge/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/iriya/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/iriya/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2565,6 +2595,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/koenji/spa-sauna-wellness/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/suginami-ku/nishi-ogikubo/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3180,6 +3216,46 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/select/crea-base-oshiage/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/coffea-exlibris-shimokitazawa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/coffee-nova-kuramae/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/typica-nishiogikubo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/nui-hostel-kuramae/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/select/toco-guesthouse-iriya/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     
