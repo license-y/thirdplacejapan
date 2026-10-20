@@ -129,3 +129,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している
 - 大正末期の学園都市構想という別の時代の顔については[小平市のサードプレイスガイド：カフェ・スペシャルティコーヒー編](/stories/cafe-specialty-coffee/kodaira/)で解説している
 - 江戸期から積み重なる複数の水路が一つの環をなす小平市の静けさについては[小平市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/kodaira/)で取り上げている
+- 旧石器から続く時間の積層とは異なる、戦争・占領・返還という20世紀の記憶が積み重なった東大和市の文化・レジャーは[東大和市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/higashiyamato/)も参考になる

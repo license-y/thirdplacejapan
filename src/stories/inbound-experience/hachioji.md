@@ -135,4 +135,5 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 昭和レトロな映画看板とまちおこしの記憶を持つ青梅市との違いは[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)も参考になる
 - 物語の舞台を歩くという異なる構造を持つ葛飾区の観光・体験施設については[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)も参考になる
 - 宿場町としての往来の記憶を核に持つ足立区との違いは[足立区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/adachi/)も参考になる
+- 貿易という経済史とは異なる、基地という実在の存在が街の輪郭を決めた福生市のインバウンド体験については[福生市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/fussa/)も参考になる
 - 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)で解説している

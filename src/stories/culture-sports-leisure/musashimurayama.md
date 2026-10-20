@@ -125,3 +125,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 暮らしの延長としての緑と商業施設が同居するレジャーとの違いは[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)も参考になる
 - 大学の数そのものが生む若い文化との違いは[八王子市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/hachioji/)も参考になる
 - 同じ武蔵村山市の丘陵と織物産業の記憶を、静けさの視点で深掘りする記事は[武蔵村山市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/musashimurayama/)で解説している
+- 鉄道がない代わりに貯水池と基地跡地という二つの土地利用が重なった、隣接する東大和市の文化・レジャーは[東大和市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/higashiyamato/)も参考になる

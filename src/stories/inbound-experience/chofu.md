@@ -131,4 +131,5 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 物語の舞台を歩くという異なる構造を持つ葛飾区の観光・体験施設については[葛飾区のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/katsushika/)で解説している
 - 創作の過程そのものを展示として見せる三鷹市のインバウンド体験との違いは[三鷹市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/mitaka/)も参考になる
 - 衰退から絵師の手仕事によるまちおこしへと転じた青梅市のインバウンド体験については[青梅市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/ome/)も参考になる
+- 現役の産業という連続性とは異なる、基地という実在の存在が街の輪郭を決めた福生市のインバウンド体験については[福生市のサードプレイスガイド：インバウンド体験編](/stories/inbound-experience/fussa/)も参考になる
 - 東京のインバウンド旅行者向けサードプレイス全体像は[東京のインバウンド旅行者向けサードプレイスガイド](/stories/inbound-experience/tokyo-inbound-third-place-guide/)を参照
