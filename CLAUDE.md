@@ -2543,6 +2543,39 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 
 # 実装ログ
 
+## 2026-10-21
+
+### 10/20追加5施設のbody表示崩れ修正＋TPJセレクト全44件のSEO/AEO構造化監査
+
+**対象ファイル**
+- `src/_data/venues.json`
+
+**① body表示崩れの修正（ユーザー報告・5施設）**
+
+`https://thirdplacejapan.com/stories/select/toco-guesthouse-iriya/`で記事が段落分けされず文章の塊として表示されるとユーザーから指摘を受けた（スクリーンショット添付）。調査の結果、2026-10-20に追加した5施設（COFFEA EXLIBRIS・コフィノワ・Typica・Nui. HOSTEL & BAR LOUNGE・東京ゲストハウスtoco.）の`body`フィールドが、他の全40施設で使われている`<p>`タグHTML形式ではなく、プレーンテキスト＋改行2つ（`\n\n`）区切りの形式で保存されていたことが原因と判明した。`venue.njk`は`{{ venue.body | safe }}`とそのまま出力するだけで改行をHTMLタグに変換しないため、ブラウザ上で改行が無視され段落の無い文章の塊になっていた。5施設の`body`を、他施設と同じ形式（冒頭段落は`<p><strong>...</strong></p>`で太字リード化、以降は`<p>...</p>`）に修正して解消した。
+
+**② TPJセレクト全44件の構造化データ横断監査**
+
+①の修正を機に、ユーザーから「TPJセレクトのSEO/AEO強化につながる構造化確認」をTPJセレクト全44件（Flagship=GBCを除く`grade_slug: "select"`全件）について依頼された。Node.jsスクリプトで`venues.json`のデータ構造（category_slug/area_slug/city_slugの`categories.json`・`areas.json`との整合性、citation文字数・必須キーワード、FAQ件数・必須キーワード・禁止表現、tags上限・マスターリスト照合、body文字数・HTML形式、maps_url形式、lat/lng、name_reading、必須フィールド、7軸scores範囲）を機械チェックし、続けて`npm run build`後の実HTML・JSON-LD（LocalBusiness＋geo、AggregateRating ratingCount、Review＋7軸additionalProperty、BreadcrumbList階層数、FAQPage件数、title/description重複、内部リンク切れ）を検証する二段構えで実施した。
+
+**発見した指摘事項（3種類）と対応**
+
+| 種別 | 件数 | 対応 |
+|---|---|---|
+| citationに「third place」併記が欠落 | 3件（saunalab-kanda・the-sg-club-shibuya・bunkitsu-roppongi） | 2026-07-21ルール（サードプレイス／third place併記必須）に沿って追記。いずれも100〜150字の範囲内を維持 |
+| maps_urlが禁止形式（`/maps/place/店舗名/@緯度,経度/...`） | 16件 | `?q=店舗名+住所`形式に統一。日本語のみの施設名は内部の空白を除去する既存慣例（例：「神楽坂 和らく」→「神楽坂和らく」）を踏襲し、住所の`〒`郵便番号部分は除去した |
+| body文字数が800字未満（2026-10-09追加の3件） | 3件（akagi-cafe-kagurazaka・rinshoin-yushima・crea-base-oshiage） | WebSearchで座席数・開業年・施設構成・史跡の由来等の事実を裏取りした上で加筆し、800〜1,200字の目安に収めた（694→839字／614→829字／682→830字） |
+
+**false positiveとして対応不要と判断したもの**：機械チェックの正規表現が「営業時間」「定休日」という語そのものにマッチしたFAQ2件（typica-nishiogikubo・nui-hostel-kuramae）は、実際には「営業時間は公式サイトでご確認ください」という、CLAUDE.mdが推奨する非断定の正しい表現だった。文言パターンだけで機械的に判定すると、正しい運用もヒットしてしまう点を確認した上で目視で除外した。
+
+**それ以外の全項目（JSON-LD構造・7軸scores範囲・category_slug/area_slug整合性・tags・必須フィールド・title/description重複・内部リンク）は44件全件でクリア**であることを確認した。特にTPJセレクト専用のJSON-LD制御（openingHours/sameAs/amenityFeature等のグレード限定プロパティが誤って出力されていないか）も全件で正常だった。
+
+**検証方法**：修正のたびに`npm run build`を実行し、対象ページのJSON-LDパースエラー0件・リンク切れ0件を確認。最終的にサイト全体（644ページ・JSON-LD 2,848ブロック）でエラー0件、`src/_data/venues.json`の差分がcitation・maps_url・bodyの対象22行のみに収まっていることを確認した。citation変更は`select/index.html`・該当エリア/カテゴリ一覧ページ（文喫→六本木、The SG Club→渋谷、SaunaLab Kanda→神田のカード抜粋）にも正しく波及していることを確認済み。
+
+**ルール化**：個別の新規ルール追加はなし。既存の「TPJセレクト 掲載仕様」（citation併記ルール・body文字数目安）、「geo（lat/lng）座標の取得ルール」隣接の「maps_url フィールド（必須・絶対厳守）」に沿った是正であることを確認した運用実例として記録する。
+
+---
+
 ## 2026-10-20
 
 ### 福生市・東大和市の親ピラー2本を追加（インバウンド体験編／文化・スポーツ・レジャー編）
