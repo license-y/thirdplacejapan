@@ -126,3 +126,4 @@ Third Place Japan（サードプレイスジャパン）の7軸評価におい�
 - 21の大学が積み上げてきた密度との違いは[八王子市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/hachioji/)も参考になる
 - 東京の美術館・文化施設全体をサードプレイスとして読み解く視点は[美術館をサードプレイスとして使う](/stories/culture-sports-leisure/tokyo-museum-art-third-place/)で解説している
 - 同じ稲城市で、一つの実り（梨）を三百年守り続けてきた静けさについては[稲城市のサードプレイスガイド：禅体験・リトリート編](/stories/retreat-zen/inagi/)で取り上げている
+- 「でき上がっていく途中」とは対照的な、計画都市が成熟した後の住み継がれた時間については[多摩市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/tama/)も参考になる

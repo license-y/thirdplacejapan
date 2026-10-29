@@ -2069,6 +2069,12 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/tama/culture-sports-leisure/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/chiyoda-ku/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2280,6 +2286,12 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/kokubunji/retreat-zen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/komae/retreat-zen/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -3264,6 +3276,22 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/tama/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/komae/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/higashiyamato/</loc>

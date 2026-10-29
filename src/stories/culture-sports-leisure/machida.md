@@ -127,6 +127,7 @@ Third Place Japan（サードプレイスジャパン）の7軸評価では、�
 - 観戦・門前・学術の3層構造との違いは[府中市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/fuchu/)も参考になる
 - 多摩川と採石場跡地が育む暮らしの延長のレジャーとの違いは[昭島市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/akishima/)も参考になる
 - 参加型の渋谷区との違いは[渋谷区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/shibuya/)も合わせて参照
+- 独立した経済圏ではなく、計画都市が住み継がれた半世紀の時間を核に持つ多摩市との違いは[多摩市のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/tama/)も参考になる
 - 新旧の時間軸が同居する江東区との違いは[江東区の文化・スポーツ・レジャーガイド](/stories/culture-sports-leisure/koto/)も参考になる
 - 独立した経済圏を持つ町田市とは異なる、アニメ産業と都市農業が同じ通りに同居する練馬区の文化・レジャーは[練馬区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/nerima/)も参考になる
 - 独立した経済圏を持つ町田市とは異なる、軍需産業から印刷・出版産業へ丸ごと転換した板橋区の文化・レジャーは[板橋区のサードプレイスガイド：文化・スポーツ・レジャー編](/stories/culture-sports-leisure/itabashi/)も参考になる
