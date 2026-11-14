@@ -132,7 +132,7 @@ eleventyComputed:
     <p>{{ item.name }}には、カフェ・スペシャルティコーヒーをはじめ複数の業種にわたるサードプレイスが存在する。Third Place Japanが定義する15カテゴリから、業種別に関連記事を探すことができる。</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 not-prose my-6">
       {% for cat in categories %}
-      <a href="/stories/{{ cat.slug }}/" class="flex flex-col gap-1 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold transition-colors group">
+      <a href="/stories/{{ cat.slug }}/" class="no-underline! flex flex-col gap-1 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold hover:bg-ivory focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-colors group">
         <span class="text-dark group-hover:text-gold transition-colors">{{ cat.name_short }}</span>
         <span class="text-xs text-muted">{{ cat.name_en }}</span>
       </a>
@@ -143,7 +143,7 @@ eleventyComputed:
     <p>{{ item.name }}のカフェは、同じ業種であっても利用目的によって選ぶべき条件が異なる。Third Place Japanが利用目的別に選び方を個別に解説している。</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
       {% for post in purposeArticles %}
-      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+      <a href="{{ post.url }}" class="no-underline! group block rounded-xl overflow-hidden border border-transparent hover:border-gold shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-all bg-white">
         {% if post.data.thumbnail %}
         <div class="aspect-video overflow-hidden">
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
@@ -171,7 +171,7 @@ eleventyComputed:
     <p>{{ item.name }}の街全体の性格や業種横断の文化については、以下の記事で詳しく紹介している。</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
       {% for post in pillarArticles %}
-      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+      <a href="{{ post.url }}" class="no-underline! group block rounded-xl overflow-hidden border border-transparent hover:border-gold shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-all bg-white">
         {% if post.data.thumbnail %}
         <div class="aspect-video overflow-hidden">
           <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
