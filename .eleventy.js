@@ -284,14 +284,22 @@ export default function (eleventyConfig) {
       .map(({ post }) => post);
   });
 
+  // 未来日付の記事はナビゲーション対象から除外する。current記事が見つからない場合
+  // （idx === -1）は、誤って先頭記事を返さずnullを返す（過去にlang未設定記事で発生した不具合）
   eleventyConfig.addFilter("prevPost", (collection, currentUrl) => {
-    const idx = (collection || []).findIndex(p => p.url === currentUrl);
-    return idx < collection.length - 1 ? collection[idx + 1] : null;
+    const now = new Date();
+    const list = (collection || []).filter(p => p.date <= now);
+    const idx = list.findIndex(p => p.url === currentUrl);
+    if (idx === -1) return null;
+    return idx < list.length - 1 ? list[idx + 1] : null;
   });
 
   eleventyConfig.addFilter("nextPost", (collection, currentUrl) => {
-    const idx = (collection || []).findIndex(p => p.url === currentUrl);
-    return idx > 0 ? collection[idx - 1] : null;
+    const now = new Date();
+    const list = (collection || []).filter(p => p.date <= now);
+    const idx = list.findIndex(p => p.url === currentUrl);
+    if (idx === -1) return null;
+    return idx > 0 ? list[idx - 1] : null;
   });
 
   // ==== 日付フィルター ====
@@ -325,8 +333,11 @@ export default function (eleventyConfig) {
     (array || []).filter(item => item.data && item.data.lang !== lang)
   );
 
+  // lang未設定の記事は「日本語記事」として扱う（サイト全体の暗黙の既定言語。
+  // rejectLang("en")はこの前提で動作済みだが、selectLang("ja")は従来lang厳密一致のみを
+  // 見ており、lang未設定の記事（2026-11-14時点で37本超）を除外してしまっていた）
   eleventyConfig.addFilter("selectLang", (array, lang) =>
-    (array || []).filter(item => item.data && item.data.lang === lang)
+    (array || []).filter(item => item.data && (item.data.lang === lang || (!item.data.lang && lang === "ja")))
   );
 
   eleventyConfig.addFilter("rejectCategory", (array, categorySlug) =>
@@ -439,6 +450,8 @@ export default function (eleventyConfig) {
     return [...new Set(tags || [])].filter(t => !systemTags.includes(t)).join(", ");
   });
 
+  // 旧ロジック（同カテゴリ優先・不足分は無関係記事で件数埋め）。後方互換のため残置するが
+  // article.njk / article-certified.njk は relatedArticlesSmart に移行済み（2026-11-14）
   eleventyConfig.addFilter("relatedPostsByCat", (collection, currentUrl, categorySlug, limit) => {
     const n = limit || 3;
     const sameCat = (collection || [])
@@ -447,6 +460,39 @@ export default function (eleventyConfig) {
     const others = (collection || [])
       .filter(p => p.url !== currentUrl && p.data.category_slug !== categorySlug);
     return [...sameCat, ...others].slice(0, n);
+  });
+
+  // 商業エリア（districts.json）・行政エリア（area_slug/area_name）・カテゴリの関連性で
+  // スコアリングする関連記事フィルター。関連性の低い記事で件数を埋めない（0〜limit件を返す）。
+  // スコア：5=同じ商業エリアの目的別記事同士＋同カテゴリ／4=同じ商業エリア＋同カテゴリ／
+  //        3=同じ行政エリア＋同カテゴリ／2=同カテゴリのみ／1=同じ行政エリアのみ
+  eleventyConfig.addFilter("relatedArticlesSmart", (collection, currentUrl, currentFileSlug, categorySlug, areaSlug, areaName, districts, limit) => {
+    const n = limit || 3;
+    const now = new Date();
+    const dl = districts || [];
+    const memberSlugs = (d) => new Set([...(d.pillar_article_slugs || []), ...(d.purpose_article_slugs || [])]);
+    const myDistricts = dl.filter(d => memberSlugs(d).has(currentFileSlug));
+    const myPurposeDistricts = dl.filter(d => (d.purpose_article_slugs || []).includes(currentFileSlug));
+
+    const scored = (collection || [])
+      .filter(p => p.url !== currentUrl && p.date <= now)
+      .map(p => {
+        const sameCat = !!categorySlug && p.data.category_slug === categorySlug;
+        const sameArea = (!!areaSlug && p.data.area_slug === areaSlug) || (!!areaName && p.data.area_name === areaName);
+        const inSamePurposeDistrict = sameCat && myPurposeDistricts.some(d => (d.purpose_article_slugs || []).includes(p.fileSlug));
+        const inSameDistrict = sameCat && myDistricts.some(d => memberSlugs(d).has(p.fileSlug));
+        let score = 0;
+        if (inSamePurposeDistrict) score = 5;
+        else if (inSameDistrict) score = 4;
+        else if (sameArea && sameCat) score = 3;
+        else if (sameCat) score = 2;
+        else if (sameArea) score = 1;
+        return { post: p, score };
+      })
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score || b.post.date - a.post.date || a.post.fileSlug.localeCompare(b.post.fileSlug));
+
+    return scored.slice(0, n).map(({ post }) => post);
   });
 
   eleventyConfig.addFilter("articlesByCategory", (collection, categorySlug) =>
@@ -507,8 +553,9 @@ export default function (eleventyConfig) {
   });
 
   // ==== Collections ====
+  // 同一date（例：同日まとめて公開した複数記事）は fileSlug 昇順を安定した第2ソートキーとする
   eleventyConfig.addCollection("articles", (api) =>
-    api.getFilteredByTag("articles").sort((a, b) => b.date - a.date)
+    api.getFilteredByTag("articles").sort((a, b) => b.date - a.date || a.fileSlug.localeCompare(b.fileSlug))
   );
 
   eleventyConfig.addCollection("features", (api) =>

@@ -3437,16 +3437,16 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/about/third-place-playful-mood/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/inagi/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/inagi/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <loc>https://thirdplacejapan.com/stories/about/third-place-playful-mood/</loc>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3637,7 +3637,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/retreat-zen/machida/</loc>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/fuchu/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3645,7 +3645,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/fuchu/</loc>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/machida/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3701,7 +3701,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/nature-glamping/ome/</loc>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/kokubunji/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3709,7 +3709,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/kokubunji/</loc>
+    <loc>https://thirdplacejapan.com/stories/nature-glamping/ome/</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3749,16 +3749,16 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/nerima/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/mitaka/</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/mitaka/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/nerima/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3813,14 +3813,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/about/space-design-insights-gbc/</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/experience-revisit-value-gbc/</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -3837,8 +3829,8 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/sendagaya-kitasando-cafe/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://thirdplacejapan.com/stories/about/space-design-insights-gbc/</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3846,6 +3838,14 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/shrine-temple/kita/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/sendagaya-kitasando-cafe/</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3893,6 +3893,14 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/chiyoda/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/concept/third-place-8-conditions/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -3925,8 +3933,8 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/chiyoda/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3935,14 +3943,6 @@
   <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/kiyose/</loc>
     <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/shrine-temple/chiyoda/</loc>
-    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3973,16 +3973,16 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/machida/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/koganei/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/retreat-zen/koganei/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/machida/</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4013,6 +4013,14 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/ome/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/about/tpj-7-axis-evaluation-guide/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -4031,14 +4039,6 @@
     
     <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/about/tpj-certification-and-select-difference/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/tpj-certification-and-select-difference/"/>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/retreat-zen/ome/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     
   </url>
   
@@ -4147,14 +4147,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
-    <lastmod>2026-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/en/stories/culture-sports-leisure/koto/</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -4163,8 +4155,8 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://thirdplacejapan.com/en/stories/bar-whiskey/shinjuku/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4178,6 +4170,14 @@
     
     <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/culture-sports-leisure/koto/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/culture-sports-leisure/koto/"/>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/inbound-experience/shibuya/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     
   </url>
   
@@ -4258,16 +4258,16 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/retreat-zen/taito/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <loc>https://thirdplacejapan.com/stories/about/certification-grades/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/about/certification-grades/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <loc>https://thirdplacejapan.com/en/stories/retreat-zen/taito/</loc>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4393,30 +4393,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/en/stories/concept/meiji-jingu-third-place-tokyo/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/en/stories/concept/what-is-third-place-japan/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/spa-sauna-wellness/aoyama-spa-third-place/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -4425,7 +4401,23 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/asakusa/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/ginza-third-place-guide/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/meiji-jingu-third-place-tokyo/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4449,33 +4441,6 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/"/>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/tokyo-museum-art-third-place/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/retreat-zen/zen-retreat-tokyo-third-place/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/taito/</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -4483,22 +4448,6 @@
     
     <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/culture-sports-leisure/taito/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/culture-sports-leisure/taito/"/>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/ueno/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/inbound-experience/asakusa/</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     
   </url>
   
@@ -4525,8 +4474,59 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/inbound-experience/tokyo-inbound-third-place-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/"/>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/tokyo-museum-art-third-place/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/tokyo-third-place-guide-travelers/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/culture-sports-leisure/ueno/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/what-is-third-place-japan/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/retreat-zen/yanaka/</loc>
     <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/retreat-zen/zen-retreat-tokyo-third-place/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4719,7 +4719,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/</loc>
+    <loc>https://thirdplacejapan.com/stories/coworking/omotesando/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4727,7 +4727,7 @@
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/coworking/omotesando/</loc>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

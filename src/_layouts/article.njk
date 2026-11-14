@@ -358,8 +358,8 @@ og_type: "article"
 
   </div>
 
-  {# 関連記事（現在のページと同じ言語のみ） #}
-  {% set relatedArticles = collections.articles | selectLang(lang or "ja") | relatedPostsByCat(page.url, category_slug, 3) %}
+  {# 関連記事（現在のページと同じ言語のみ。商業エリア→行政エリア→カテゴリの順で関連性スコアリング） #}
+  {% set relatedArticles = collections.articles | selectLang(lang or "ja") | relatedArticlesSmart(page.url, page.fileSlug, category_slug, area_slug, area_name, districts, 3) %}
   {% if relatedArticles and relatedArticles.length %}
   <div class="mt-16 pt-12 border-t border-border" style="opacity:1;visibility:visible;">
     <div class="flex items-center gap-2 mb-8">
