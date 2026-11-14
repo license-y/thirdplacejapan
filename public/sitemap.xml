@@ -1660,6 +1660,25 @@
 
   
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/district/omotesando/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/district/kitasando-sendagaya/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+
+  
+  
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
@@ -3290,8 +3309,40 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/date-cafe-omotesando/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/relaxing-lunch-cafe-omotesando/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3299,7 +3350,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/solo-time-cafe-omotesando/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3803,7 +3854,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4629,7 +4680,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/restaurant-dining/omotesando/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4645,7 +4696,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee-kitasando-sendagaya/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4661,7 +4712,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee-omotesando/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4669,7 +4720,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/specialty-coffee-shibuya-kitasando-sendagaya/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4677,7 +4728,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/coworking/omotesando/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

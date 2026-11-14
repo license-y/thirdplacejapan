@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "omotesando",
+    "name": "表参道",
+    "name_en": "Omotesando",
+    "type": "commercial_area",
+    "summary": "表参道は、渋谷区神宮前のケヤキ並木を中心に、港区北青山・南青山方面まで連続する商業エリアです。行政区分では渋谷区・港区に分かれますが、街としては一体の商業圏として機能しています。",
+    "administrative_refs": [
+      { "prefecture_slug": "tokyo", "city_slug": "shibuya-ku", "area_slug": "omotesando" },
+      { "prefecture_slug": "tokyo", "city_slug": "minato-ku", "area_slug": "aoyama" }
+    ],
+    "pillar_article_slugs": [
+      "cafe-specialty-coffee-omotesando",
+      "coworking-omotesando",
+      "restaurant-dining-omotesando",
+      "premium-salon-omotesando"
+    ],
+    "purpose_article_slugs": [
+      "solo-time-cafe-omotesando",
+      "business-meeting-cafe-omotesando",
+      "relaxing-lunch-cafe-omotesando",
+      "pc-work-cafe-omotesando",
+      "date-cafe-omotesando",
+      "anniversary-cafe-omotesando"
+    ],
+    "venue_slugs": ["koffee-mameya-omotesando"],
+    "thumbnail": "/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp",
+    "related_categories": ["cafe-specialty-coffee", "restaurant-dining", "coworking", "premium-salon"],
+    "neighboring_areas": [
+      { "name": "原宿", "url": "/stories/area/tokyo/shibuya-ku/harajuku/" },
+      { "name": "青山", "url": "/stories/area/tokyo/minato-ku/aoyama/" }
+    ],
+    "neighboring_districts": ["kitasando-sendagaya"],
+    "published": true
+  },
+  {
+    "slug": "kitasando-sendagaya",
+    "name": "北参道・千駄ヶ谷",
+    "name_en": "Kitasando & Sendagaya",
+    "type": "commercial_area",
+    "summary": "北参道・千駄ヶ谷（通称ダガヤサンド）は、渋谷区千駄ヶ谷を中心に、将棋会館と神宮外苑が隣接する商業エリアです。観光動線から外れた、日常に根ざしたサードプレイス文化を持つ街として知られています。",
+    "administrative_refs": [
+      { "prefecture_slug": "tokyo", "city_slug": "shibuya-ku", "area_slug": "sendagaya" }
+    ],
+    "pillar_article_slugs": [
+      "cafe-specialty-coffee-kitasando-sendagaya",
+      "specialty-coffee-shibuya-kitasando-sendagaya",
+      "green-beans-coffee-review",
+      "experience-revisit-value-gbc"
+    ],
+    "purpose_article_slugs": [
+      "quiet-cafe-kitasando-sendagaya",
+      "relaxing-lunch-cafe-kitasando-sendagaya",
+      "business-use-sendagaya-kitasando",
+      "sendagaya-kitasando-cafe"
+    ],
+    "venue_slugs": ["green-beans-coffee-shibuya"],
+    "thumbnail": "/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp",
+    "related_categories": ["cafe-specialty-coffee", "inbound-experience"],
+    "neighboring_areas": [
+      { "name": "原宿", "url": "/stories/area/tokyo/shibuya-ku/harajuku/" },
+      { "name": "渋谷", "url": "/stories/area/tokyo/shibuya-ku/shibuya/" }
+    ],
+    "neighboring_districts": ["omotesando"],
+    "published": true
+  }
+]

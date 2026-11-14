@@ -224,6 +224,35 @@ export default function (eleventyConfig) {
     )
   );
 
+  // ==== 商業エリア（district）フィルター ====
+  // 行政エリア（area_slug）からの自動抽出ではなく、districts.json の明示的な allowlist
+  // （article_slugs / venue_slugs）で掲載対象を管理する（行政所属と掲載対象を分離するため）
+  eleventyConfig.addFilter("articlesBySlugs", (collection, slugs) => {
+    const set = new Set(slugs || []);
+    return (collection || []).filter(p => set.has(p.fileSlug)).sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addFilter("venuesBySlugs", (venues, slugs) => {
+    const set = new Set(slugs || []);
+    return (venues || []).filter(v => set.has(v.slug) && v.published !== false);
+  });
+
+  // 行政エリア（都道府県/市区町村/エリア）から、対応する商業エリア（district）を逆引きする
+  // （行政エリアページ側からの相互リンク表示用。コンテンツの自動集約には使わない）
+  eleventyConfig.addFilter("findDistrictByAdminArea", (districts, prefSlug, citySlug, areaSlug) =>
+    (districts || []).find(d =>
+      d.published !== false &&
+      (d.administrative_refs || []).some(r =>
+        r.prefecture_slug === prefSlug && r.city_slug === citySlug && r.area_slug === areaSlug
+      )
+    ) || null
+  );
+
+  // slug から商業エリア（district）を取得する（周辺商業エリアへの相互リンク表示用）
+  eleventyConfig.addFilter("findDistrictBySlug", (districts, slug) =>
+    (districts || []).find(d => d.slug === slug && d.published !== false) || null
+  );
+
   // スコア軸の最低値でフィルタ（FAQの軸別回答生成用）
   eleventyConfig.addFilter("venuesByMinScore", (venues, axis, minScore) =>
     (venues || []).filter(v => v.scores && v.scores[axis] >= minScore)

@@ -114,6 +114,17 @@ eleventyExcludeFromCollections: true
   {% endfor %}
   {% endfor %}
 
+  {# ── 商業エリア（district）ページ ── #}
+  {% for d in districts %}
+  {% if d.published != false %}
+  <url>
+    <loc>{{ site.url }}/stories/district/{{ d.slug }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
+
   {# ── L2 市区町村×カテゴリページ ── #}
   {% for item in areaL2Cat %}
   <url>

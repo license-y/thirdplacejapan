@@ -1,0 +1,239 @@
+---
+pagination:
+  data: districts
+  size: 1
+  alias: item
+permalink: "/stories/district/{{ item.slug }}/"
+layout: area.njk
+eleventyComputed:
+  title: "{{ item.name }}エリアガイド｜カフェとサードプレイス、目的別の過ごし方"
+  description: "{% if item.slug == 'omotesando' %}表参道は東京都渋谷区神宮前から港区北青山・南青山まで連続する商業エリア。Third Place Japanがカフェ・レストラン等15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% elif item.slug == 'kitasando-sendagaya' %}北参道・千駄ヶ谷（ダガヤサンド）は東京都渋谷区の観光動線から外れたカフェが集まる商業エリア。Third Place Japanが15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% else %}{{ item.summary }}{% endif %}"
+  thumbnail: "{{ item.thumbnail }}"
+---
+{% set pillarArticles = collections.articles | rejectLang("en") | articlesBySlugs(item.pillar_article_slugs) %}
+{% set purposeArticles = collections.articles | rejectLang("en") | articlesBySlugs(item.purpose_article_slugs) %}
+{% set districtVenues = venues | venuesBySlugs(item.venue_slugs) %}
+{% set isCrossWard = item.administrative_refs.length > 1 %}
+
+{# BreadcrumbList JSON-LD（商業エリアは行政階層のパンくずを継承しない独自の浅い階層） #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": {{ (item.name + "エリアガイド") | dump | safe }}, "item": "{{ site.url }}/stories/district/{{ item.slug }}/" }
+  ]
+}
+</script>
+
+{# CollectionPage JSON-LD（行政エリアのAdministrativeArea型コンテナは使わない。商業エリアは行政単位ではないため） #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ (item.name + "エリアガイド | Third Place Japan") | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "url": "{{ site.url }}/stories/district/{{ item.slug }}/",
+  "inLanguage": "ja",
+  "about": { "@type": "Place", "name": {{ item.name | dump | safe }} },
+  "mentions": { "@type": "DefinedTerm", "name": "サードプレイス", "alternateName": "Third Place", "url": "{{ site.url }}/stories/about/what-is-third-place/", "description": "家でも職場でもない、心地よく過ごせる第三の居場所という概念。" },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" }
+}
+</script>
+
+{# FAQPage JSON-LD（可視FAQと完全一致） #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": {{ (item.name + "はどこにありますか？") | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {% if item.slug == 'omotesando' %}"表参道は東京都渋谷区神宮前のケヤキ並木沿いを中心に、港区北青山・南青山方面まで連続する商業エリアで、行政区分としては渋谷区・港区の両方にまたがっています。"{% elif item.slug == 'kitasando-sendagaya' %}"北参道・千駄ヶ谷は東京都渋谷区のエリアで、JR千駄ヶ谷駅と東京メトロ北参道駅の周辺一帯を指す通称（ダガヤサンド）です。行政区分としては渋谷区千駄ヶ谷にあたります。"{% else %}{{ item.summary | dump | safe }}{% endif %}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ (item.name + "でサードプレイスを探すときはどう考えればいいですか？") | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "家でも職場でもない第三の居場所（サードプレイス）として店を探す場合、業種だけでなく一人時間・商談・ランチ・デートといった利用目的から探すと、求める空間に出会いやすくなります。Third Place Japanは独自の7軸評価基準で、こうした居場所の価値を見つめています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ (item.name + "にはどんな目的別の過ごし方がありますか？") | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {% if item.slug == 'omotesando' %}"一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'kitasando-sendagaya' %}"静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% else %}"利用目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% endif %}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ (item.name + "の周辺にはどんなエリアがありますか？") | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ (item.neighboring_areas | mapProp("name") | join("、") + "が" + item.name + "から徒歩圏内の行政エリアです。Third Place Japanでは、それぞれのエリアについてもサードプレイスとしての視点で記事を公開しています。") | dump | safe }}
+      }
+    },
+    {
+      "@type": "Question",
+      "name": {{ (item.name + "のTPJセレクト・認証店舗はどこで確認できますか？") | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ ("Third Place Japanがセレクト・認証した" + item.name + "の店舗一覧は、行政エリアページから確認できます。") | dump | safe }}
+      }
+    }
+  ]
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>/</span>
+    <span>{{ item.name }}エリアガイド</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">商業エリアガイド</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ item.name }}エリアガイド</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted">カフェとサードプレイス、目的別の過ごし方</p>
+  </div>
+
+  <div class="prose max-w-none mb-16" data-aos="fade-up" data-pagefind-body>
+
+    {% if item.slug == 'omotesando' %}
+    <p><strong>表参道は、東京都渋谷区神宮前のケヤキ並木から港区北青山・南青山まで連続する商業エリアだ。行政区分を横断するこの街には、業種を問わず「家でもオフィスでもない」サードプレイスとして機能するカフェ・レストラン・コワーキングスペースが点在しており、目的に応じた過ごし方を知ることで、自分に合った第三の居場所（third place）を見つけやすくなる。</strong></p>
+
+    <h2>表参道という街と第三の居場所</h2>
+    <p>表参道は、1920年の明治神宮造営に伴い整備された参道を起源とする、東京を代表するケヤキ並木の街だ。高度経済成長期を経て海外ブランドが集積し、1990年代には「日本のシャンゼリゼ」とも称されるようになった。</p>
+    <p>この街の特徴は「二層構造」にある。ケヤキ並木の大通り沿いという「表の顔」と、路地や地下、ビル中層階に広がる「裏の奥行き」だ。表通りを歩く人の多くは買い物や観光という明確な目的を持つ一方、路地を入った先の空間は、目的を手放して過ごせる居場所になっている。さらに表参道は、渋谷区神宮前だけでなく港区北青山・南青山方面まで連続した商業圏を形成しており、行政区分をまたいでも街としての連続性を持つ点が特徴だ。</p>
+    {% elif item.slug == 'kitasando-sendagaya' %}
+    <p><strong>北参道・千駄ヶ谷（通称ダガヤサンド）は、東京都渋谷区のJR千駄ヶ谷駅・東京メトロ北参道駅周辺に広がる商業エリアだ。観光動線から外れた立地に、将棋会館の長考文化と神宮外苑への動線が重なる、日常に根ざしたサードプレイス（third place）が点在しており、目的に応じた過ごし方を知ることで自分に合った居場所を見つけやすくなる。</strong></p>
+
+    <h2>北参道・千駄ヶ谷という街と第三の居場所</h2>
+    <p>千駄ヶ谷は日本将棋連盟の将棋会館を擁する渋谷区の文化・住宅エリアで、タイトル戦の「長考」文化が街の時間感覚に根づいている。北参道は明治神宮外苑の緑地帯に接し、国立競技場から徒歩圏に位置する、竹下通りや表参道の観光動線から外れたエリアだ。</p>
+    <p>この二つのエリアが交差する一帯を、不動産やメディアが「ダガヤサンド」と呼ぶようになったのは2010年代のことだ。千駄ヶ谷（Sendagaya）と北参道（Kita-Sando）を組み合わせた通称で、「発見されつつある、しかしまだ観光化されていない東京の日常」を象徴するエリア名として定着した。行政区分としては渋谷区千駄ヶ谷の一帯にあたるが、商業エリアとしては千駄ヶ谷・北参道という二つの街の性格を一体のものとして捉えることができる。</p>
+    {% endif %}
+
+    <h2>{{ item.name }}でサードプレイスを探す際の考え方</h2>
+    <p>{{ item.name }}でサードプレイスを探す際は、業種だけでなく「何のために訪れるか」という利用目的から考えると、求める空間に出会いやすい。</p>
+    <p>社会学者レイ・オルデンバーグが定義したサードプレイスの中立性・常連性・アクセス性といった要件は、業種を問わず当てはまる考え方だ。{% if item.slug == 'omotesando' %}表参道のように多様な業種が密集する街では、同じ「カフェ」であっても、一人で静かに過ごしたいのか、誰かと会話を楽しみたいのかによって、選ぶべき店の条件は大きく変わる。{% elif item.slug == 'kitasando-sendagaya' %}北参道・千駄ヶ谷のようにカフェ文化が中心の街でも、一人で静かに過ごしたいのか、食事そのものを楽しみたいのかによって、選ぶべき店の条件は変わる。{% endif %}Third Place Japanは、居心地・静けさ・特別感・ストーリー・再訪価値・記録性・インバウンド適性という独自の7軸で、こうした場所の価値を評価・認証している。</p>
+
+    <h2>TPJの15カテゴリから探す</h2>
+    <p>{{ item.name }}には、カフェ・スペシャルティコーヒーをはじめ複数の業種にわたるサードプレイスが存在する。Third Place Japanが定義する15カテゴリから、業種別に関連記事を探すことができる。</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 not-prose my-6">
+      {% for cat in categories %}
+      <a href="/stories/{{ cat.slug }}/" class="flex flex-col gap-1 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold transition-colors group">
+        <span class="text-dark group-hover:text-gold transition-colors">{{ cat.name_short }}</span>
+        <span class="text-xs text-muted">{{ cat.name_en }}</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <h2>目的別に探す</h2>
+    <p>{{ item.name }}のカフェは、同じ業種であっても利用目的によって選ぶべき条件が異なる。Third Place Japanが利用目的別に選び方を個別に解説している。</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
+      {% for post in purposeArticles %}
+      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+          <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if districtVenues.length %}
+    <h2>{{ item.name }}のTPJセレクト施設</h2>
+    <p>{{ item.name }}には、Third Place Japanが編集部視点でセレクト・認証した施設もある。</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-6">
+      {% for v in districtVenues | sortByGrade %}
+      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2>{{ item.name }}の既存関連記事</h2>
+    <p>{{ item.name }}の街全体の性格や業種横断の文化については、以下の記事で詳しく紹介している。</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
+      {% for post in pillarArticles %}
+      <a href="{{ post.url }}" class="group block rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        {% if post.data.thumbnail %}
+        <div class="aspect-video overflow-hidden">
+          <img src="{{ post.data.thumbnail }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
+        </div>
+        {% endif %}
+        <div class="p-4">
+          <p class="text-xs text-muted mb-2">{{ post.date | dateJa }}</p>
+          <p class="text-sm font-medium text-dark leading-snug group-hover:text-gold transition-colors">{{ post.data.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <h2>行政エリアとの関連</h2>
+    <p>{{ item.name }}は商業エリアとして{% if isCrossWard %}複数の行政区を横断する{% else %}特定の行政区に属する{% endif %}一方、Third Place Japanの行政エリアページは市区町村・エリア単位で独立して存在する。</p>
+    <p>
+      {% for ref in item.administrative_refs %}
+      {% set ai = ref.area_slug | areaInfo %}
+      {% if ai %}行政エリアページ（<a href="{{ ai.areaUrl }}">{{ ai.areaName }}のサードプレイス（{{ ai.cityName }}）</a>）では、セレクト・認証店舗一覧やエリア固有のFAQを確認できる。{% endif %}
+      {% endfor %}
+      このエリアガイドは、{% if isCrossWard %}それぞれの行政区にまたがる{% else %}この行政区の{% endif %}街全体のガイドとして、行政エリアページへの入口の役割を持つ。
+    </p>
+
+    <h2>周辺エリアへの案内</h2>
+    <p>{{ item.name }}の周辺には、徒歩圏内で性格の異なるエリアが広がっている。</p>
+    <p>
+      {% for na in item.neighboring_areas %}<a href="{{ na.url }}">{{ na.name }}</a>{% if not loop.last %}、{% endif %}{% endfor %}は{{ item.name }}から徒歩圏内にある行政エリアだ。
+      {% for ndSlug in item.neighboring_districts %}
+      {% set nd = districts | findDistrictBySlug(ndSlug) %}
+      {% if nd %}また、<a href="/stories/district/{{ nd.slug }}/">{{ nd.name }}</a>も隣接する商業エリアとして参考になる。{% endif %}
+      {% endfor %}
+    </p>
+
+    <h2>よくある質問</h2>
+    <p><strong>Q. {{ item.name }}はどこにありますか？</strong><br>
+    {% if item.slug == 'omotesando' %}
+    表参道は東京都渋谷区神宮前のケヤキ並木沿いを中心に、港区北青山・南青山方面まで連続する商業エリアで、行政区分としては渋谷区・港区の両方にまたがっています。
+    {% elif item.slug == 'kitasando-sendagaya' %}
+    北参道・千駄ヶ谷は東京都渋谷区のエリアで、JR千駄ヶ谷駅と東京メトロ北参道駅の周辺一帯を指す通称（ダガヤサンド）です。行政区分としては渋谷区千駄ヶ谷にあたります。
+    {% endif %}
+    </p>
+    <p><strong>Q. {{ item.name }}でサードプレイスを探すときはどう考えればいいですか？</strong><br>
+    業種だけでなく、一人時間・商談・ランチ・デートといった利用目的から探すと、求める空間に出会いやすくなります。Third Place Japanは独自の7軸評価基準で、こうした居場所の価値を見つめています。</p>
+    <p><strong>Q. {{ item.name }}にはどんな目的別の過ごし方がありますか？</strong><br>
+    {% if item.slug == 'omotesando' %}
+    一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
+    {% elif item.slug == 'kitasando-sendagaya' %}
+    静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
+    {% endif %}
+    </p>
+    <p><strong>Q. {{ item.name }}の周辺にはどんなエリアがありますか？</strong><br>
+    {% for na in item.neighboring_areas %}{{ na.name }}{% if not loop.last %}、{% endif %}{% endfor %}が{{ item.name }}から徒歩圏内の行政エリアです。</p>
+    <p><strong>Q. {{ item.name }}のTPJセレクト・認証店舗はどこで確認できますか？</strong><br>
+    Third Place Japanがセレクト・認証した{{ item.name }}の店舗一覧は、行政エリアページから確認できます。</p>
+
+    <h2>まとめ</h2>
+    {% if item.slug == 'omotesando' %}
+    <p>表参道は、渋谷区神宮前から港区青山まで連続する商業エリアとして、業種を横断した第三の居場所（サードプレイス）が集まる街だ。カフェ一つを取っても、一人時間・商談・デート・記念日といった目的によって選ぶべき条件は異なり、目的を先に整理することが店選びの近道になる。Third Place Japanは、渋谷区・港区という行政区分を横断しながら、この街全体のサードプレイスとしての価値を7軸評価で継続的に見つめている。</p>
+    {% elif item.slug == 'kitasando-sendagaya' %}
+    <p>北参道・千駄ヶ谷は、将棋会館の長考文化と神宮外苑への動線が交差する、観光化されていない日常のサードプレイス（third place）が根づく街だ。静かに過ごしたいのか、ランチをゆっくり楽しみたいのか、ビジネス利用かによって選ぶべき条件は異なり、目的を先に整理することが店選びの近道になる。Third Place Japanは、渋谷区千駄ヶ谷というエリアの日常性を7軸評価で継続的に見つめている。</p>
+    {% endif %}
+
+  </div>
+
+</div>

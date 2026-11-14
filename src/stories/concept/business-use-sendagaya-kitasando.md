@@ -3,7 +3,7 @@ layout: article.njk
 title: 千駄ヶ谷・北参道でカフェを仕事場にする：ビジネス利用のサードプレイスガイド
 description: 千駄ヶ谷・北参道は静寂性と居心地を軸に、商談やリモートワークに適したサードプレイスが点在する東京の街区だ。TPJがFlagship認証したカフェの7軸スコアを手がかりに、ビジネス利用に向くカフェの見分け方を丁寧に解説する。
 date: 2026-07-31
-modified: 2026-11-09
+modified: 2026-11-14
 tags:
   - articles
 category_slug: cafe-specialty-coffee
@@ -60,4 +60,4 @@ JR千駄ヶ谷駅・東京メトロ北参道駅はいずれも新宿・渋谷か
 
 ## まとめ
 
-千駄ヶ谷・北参道は、静寂性と居心地という2つの評価軸において、商談・リモートワークに適したサードプレイスが育つ土壌を持つ街だ。将棋の長考文化が街全体に共有する「急かされない時間」が、ビジネス利用の下地になっている。Third Place Japan（サードプレイスジャパン）は、こうした空間を7軸評価によって継続的に検証・認証している。エリア全体のカフェ文化については[北参道・千駄ヶ谷のカフェ完全ガイド](/stories/cafe-specialty-coffee-kitasando-sendagaya/)、7軸評価の詳しい仕組みは[TPJ7軸評価基準の完全ガイド](/stories/about/tpj-7-axis-evaluation-guide/)を合わせて参照いただきたい。商談・ランチミーティングを目的に表参道でカフェを選ぶ場合の条件は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)にまとめている。1人でのPC作業に絞った条件は、[表参道でPC作業がしやすいカフェの選び方](/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/)でも解説している。
+千駄ヶ谷・北参道は、静寂性と居心地という2つの評価軸において、商談・リモートワークに適したサードプレイスが育つ土壌を持つ街だ。将棋の長考文化が街全体に共有する「急かされない時間」が、ビジネス利用の下地になっている。Third Place Japan（サードプレイスジャパン）は、こうした空間を7軸評価によって継続的に検証・認証している。エリア全体のカフェ文化については[北参道・千駄ヶ谷のカフェ完全ガイド](/stories/cafe-specialty-coffee-kitasando-sendagaya/)、7軸評価の詳しい仕組みは[TPJ7軸評価基準の完全ガイド](/stories/about/tpj-7-axis-evaluation-guide/)を合わせて参照いただきたい。商談・ランチミーティングを目的に表参道でカフェを選ぶ場合の条件は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)にまとめている。1人でのPC作業に絞った条件は、[表参道でPC作業がしやすいカフェの選び方](/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/)でも解説している。仕事ではなく、同じ千駄ヶ谷・北参道エリアで純粋に静かな時間を求める場合は[北参道・千駄ヶ谷で静かに過ごせるカフェの選び方](/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/)、渋谷区を横断するエリア全体のガイドは[北参道・千駄ヶ谷エリアガイド](/stories/district/kitasando-sendagaya/)で紹介している。

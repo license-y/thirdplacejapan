@@ -120,6 +120,13 @@ eleventyComputed:
     <div class="gold-rule mb-6"></div>
     <p class="text-sm text-muted">{{ item.area.name }}エリアで Third Place Japan がセレクトした場所。</p>
   </div>
+  {% set relatedDistrict = districts | findDistrictByAdminArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+  {% if relatedDistrict %}
+  <div class="mb-12 bg-white border border-gold/30 rounded-xl px-6 py-5 flex items-center justify-between gap-4 flex-wrap" data-aos="fade-up">
+    <p class="text-sm text-muted">{{ item.area.name }}は「{{ relatedDistrict.name }}」という商業エリアの一部です。周辺の行政区を横断したガイドはこちらをご覧ください。</p>
+    <a href="/stories/district/{{ relatedDistrict.slug }}/" class="inline-flex items-center gap-2 text-sm text-gold hover:underline whitespace-nowrap">{{ relatedDistrict.name }}エリアガイドを見る →</a>
+  </div>
+  {% endif %}
   {% set areaArticles = collections.articles | rejectLang("en") | articlesByArea(item.area.slug) %}
   {% if areaArticles.length %}
   <section class="mb-12" data-aos="fade-up">

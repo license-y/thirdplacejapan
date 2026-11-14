@@ -3,6 +3,7 @@ layout: article.njk
 title: 表参道でコワーキングをサードプレイスにする — 業界集積地の第三の仕事場案内
 description: 表参道のコワーキングは仕事場ではなく、セルフブランディングの舞台として機能するサードプレイスである。ファッション・広告・クリエイター業界が密集するこの街区で、どこで働くかが仕事の文脈をつくる。Third Place Japanが7軸で読む。
 date: 2026-06-27
+modified: 2026-11-14
 tags:
   - articles
   - コワーキング・シェアオフィス
@@ -136,4 +137,4 @@ permalink: /stories/coworking/omotesando/
 
 ## 関連記事・親ピラー
 
-[渋谷区のコワーキング・シェアオフィス完全ガイド](/stories/coworking/shibuya/)では、渋谷区全体のクリエイター文化とコワーキングの関係が俯瞰できる。また、[表参道のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee-omotesando/)と組み合わせて読むことで、「過ごす場所」と「仕事を発展させる場所」の使い分けという、表参道ならではのワークスタイルの全体像が見えてくる。仕事の合間に身体を整える居場所としては、隣接する[青山でスパをサードプレイスにする](/stories/spa-sauna-wellness/aoyama-spa-third-place/)も参照されたい。会議室を必要としない一人商談やリモートワークであれば、[千駄ヶ谷・北参道でカフェを仕事場にする](/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/)ガイドも合わせて参考にできる。カフェでの少人数の打ち合わせを検討する場合は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)も参考になる。
+[渋谷区のコワーキング・シェアオフィス完全ガイド](/stories/coworking/shibuya/)では、渋谷区全体のクリエイター文化とコワーキングの関係が俯瞰できる。また、[表参道のカフェ・スペシャルティコーヒー](/stories/cafe-specialty-coffee-omotesando/)と組み合わせて読むことで、「過ごす場所」と「仕事を発展させる場所」の使い分けという、表参道ならではのワークスタイルの全体像が見えてくる。仕事の合間に身体を整える居場所としては、隣接する[青山でスパをサードプレイスにする](/stories/spa-sauna-wellness/aoyama-spa-third-place/)も参照されたい。会議室を必要としない一人商談やリモートワークであれば、[千駄ヶ谷・北参道でカフェを仕事場にする](/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/)ガイドも合わせて参考にできる。カフェでの少人数の打ち合わせを検討する場合は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)も参考になる。渋谷区・港区を横断する表参道エリア全体のガイドは[表参道エリアガイド](/stories/district/omotesando/)で紹介している。

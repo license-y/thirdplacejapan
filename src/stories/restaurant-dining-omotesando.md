@@ -3,6 +3,7 @@ layout: article.njk
 title: 表参道でダイニングをサードプレイスにする — 「誰と来るか」が決める社交の居場所案内
 description: 表参道のレストラン・ダイニングは、食事を目的にしない社交のサードプレイスとして機能する。「誰と来るか」で店が決まる関係性の文法と、カウンター一人席からテーブルダイニングまで共存する二面性を、Third Place Japanが7軸で読む。
 date: 2026-06-28
+modified: 2026-11-14
 tags:
   - articles
   - レストラン・ダイニング
@@ -140,7 +141,7 @@ permalink: /stories/restaurant-dining/omotesando/
 
 表参道のダイニングを理解するために、所属自治体ピラーも参照してほしい。[渋谷区のレストラン・ダイニング完全ガイド](/stories/restaurant-dining/shibuya/)では、渋谷区全体の食の居場所文化と街区ごとの特性を解説している。
 
-この街の居場所の多層性を知るために、[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)（路地の静寂と自律的滞在）、[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)（セルフブランディングと業界の偶発性）、[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)（見られない時間と受動的回復）も合わせて読むことで、同じ街区に4種類の居場所機能が共存している構造が見えてくる。
+この街の居場所の多層性を知るために、[表参道でカフェをサードプレイスにする](/stories/cafe-specialty-coffee-omotesando/)（路地の静寂と自律的滞在）、[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)（セルフブランディングと業界の偶発性）、[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)（見られない時間と受動的回復）も合わせて読むことで、同じ街区に4種類の居場所機能が共存している構造が見えてくる。渋谷区・港区を横断する表参道エリア全体のガイドは[表参道エリアガイド](/stories/district/omotesando/)で紹介している。
 
 ---
 

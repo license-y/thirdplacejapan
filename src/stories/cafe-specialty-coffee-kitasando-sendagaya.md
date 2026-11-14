@@ -3,7 +3,7 @@ layout: article.njk
 title: 北参道・千駄ヶ谷でカフェをサードプレイスにする — ダガヤサンドの第三の居場所案内
 description: 将棋の長考文化と神宮外苑への動線が重なる北参道・千駄ヶ谷（ダガヤサンド）は、急がない時間を前提としたサードプレイスとしてカフェが機能する街だ。日本将棋連盟の本拠地を持つ千駄ヶ谷の固有性をThird Place Japanが7軸で読む。
 date: 2026-06-27
-modified: 2026-08-02
+modified: 2026-11-14
 tags:
   - articles
   - カフェ・スペシャルティコーヒー
@@ -127,3 +127,5 @@ thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 - Green Beans Coffeeで継続的に検証されてきた空間設計の知見は[実証店舗の空間設計知見から読む、サードプレイスをつくる7軸の条件](/stories/about/space-design-insights-gbc/)を参照
 - 訪日外国人にとってのこのエリアの価値は[千駄ヶ谷・北参道のサードプレイスガイド：インバウンド利用編](/stories/inbound-experience/sendagaya-kitasando-cafe/)で詳しく解説している
 - ハンドドリップ・焙煎といった参加型体験が再訪価値にどう接続するかは[「また来たくなる」はどう設計されるか：参加型体験と再訪価値のサードプレイス評価](/stories/cafe-specialty-coffee/experience-revisit-value-gbc/)も参照されたい
+- 一人で静かに過ごす時間を目的にする場合は[北参道・千駄ヶ谷で静かに過ごせるカフェの選び方](/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/)、食事そのものをゆっくり楽しみたい場合は[北参道・千駄ヶ谷でゆっくりランチを楽しめるカフェの選び方](/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/)も参考になる
+- 渋谷区の行政エリアを横断するこの街全体のガイドは[北参道・千駄ヶ谷エリアガイド](/stories/district/kitasando-sendagaya/)で紹介している

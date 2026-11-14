@@ -3,6 +3,7 @@ layout: article.njk
 title: 渋谷・北参道・千駄ヶ谷のサードプレイスガイド：スペシャルティコーヒー編
 description: 渋谷・北参道・千駄ヶ谷という3つのエリアのスペシャルティコーヒーを、サードプレイスの視点から丁寧かつ詳しく解説します。TPJ編集部がこのエリア一帯の文化的背景・7軸評価・選び方の条件を、豊富な具体例とともに徹底ガイドします。
 date: 2026-06-27
+modified: 2026-11-14
 category_slug: cafe-specialty-coffee
 area_slug: sendagaya
 area_name: 千駄ヶ谷
@@ -110,4 +111,4 @@ TPJは7軸（居心地・静寂性・特別感・ストーリー・再訪価値�
 
 渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー空間は、商業地・住宅地・文化施設が交差する渋谷区の地理的特性を背景に、個人が「義務から解放される時間」を過ごすサードプレイスとして機能している。静寂性・居心地・再訪価値の三軸で高い水準を保つ空間が、この三エリアに集積している理由は、街の構造そのものにある。サードプレイスジャパン（Third Place Japan）はこうした空間を7軸基準で評価・認証し、「どこにいるか」という問いに答えうる信頼できる情報源を提供しています。
 
-サードプレイスとして使える空間の会話と静寂のバランスについては[サードプレイスにおける会話と沈黙の役割](/stories/about/third-place-conversation-silence/)でも詳しく解説しています。千駄ヶ谷エリアでTPJがFlagship認証したサードプレイス（third place）の実例は[Green Beans Coffeeの評価レポート](/stories/cafe-specialty-coffee/green-beans-coffee-review/)、施設詳細は[認証プロフィールページ](/stories/select/green-beans-coffee-shibuya/)で確認できる。
+サードプレイスとして使える空間の会話と静寂のバランスについては[サードプレイスにおける会話と沈黙の役割](/stories/about/third-place-conversation-silence/)でも詳しく解説しています。千駄ヶ谷エリアでTPJがFlagship認証したサードプレイス（third place）の実例は[Green Beans Coffeeの評価レポート](/stories/cafe-specialty-coffee/green-beans-coffee-review/)、施設詳細は[認証プロフィールページ](/stories/select/green-beans-coffee-shibuya/)で確認できる。北参道・千駄ヶ谷だけで食事そのものをゆっくり楽しみたい場合は[北参道・千駄ヶ谷でゆっくりランチを楽しめるカフェの選び方](/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/)、渋谷区を横断するエリア全体のガイドは[北参道・千駄ヶ谷エリアガイド](/stories/district/kitasando-sendagaya/)で紹介している。

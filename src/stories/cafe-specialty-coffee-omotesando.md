@@ -3,7 +3,7 @@ layout: article.njk
 title: 表参道でカフェをサードプレイスにする — ケヤキ並木の街の第三の居場所案内
 description: 表参道のスペシャルティコーヒーは、明治神宮参道に由来するケヤキ並木の街の路地と地下に根付いている。大通りから一歩離れたサードプレイスが持つ静寂性と特別感、時間帯で変わる客層の多層性をThird Place Japanが7軸で読む。
 date: 2026-06-27
-modified: 2026-11-12
+modified: 2026-11-14
 tags:
   - articles
   - カフェ・スペシャルティコーヒー
@@ -114,4 +114,4 @@ thumbnail: /assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp
 
 ## まとめ
 
-表参道のカフェは、ハイブランドの街の「裏側」にこそ本質がある。大通りの喧騒から一手間離れた路地や地下に、時間の密度を変える空間が点在する。ケヤキ並木という100年近い時間軸と、世界から人が集まる国際性が交差するこの街でカフェをサードプレイスとして選ぶには、「立地の奥行き」「時間帯の読み方」「静寂性の確保」という3つの視点が実践的な指針になる。サードプレイスジャパン（Third Place Japan）では、こうした空間を居心地・静寂性・特別感など7軸で評価・認証している。表参道を擁する[渋谷区全体のカフェ・スペシャルティコーヒー文化](/stories/cafe-specialty-coffee/shibuya/)も合わせて参照いただきたい。同じ表参道で過ごす時間の選択肢としては[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)、[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)も参考になる。商談やランチミーティングを目的にカフェを選ぶ際の具体的な条件は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)で詳しく解説している。1人でのPC作業・リモートワークを目的に店を探す場合は、[表参道でPC作業がしやすいカフェの選び方](/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/)を参照いただきたい。ひとりでゆっくり読書や休憩を楽しみたい場合は、[表参道で一人でゆっくり過ごせるカフェの選び方](/stories/cafe-specialty-coffee/solo-time-cafe-omotesando/)を参照いただきたい。食事そのものをゆっくり楽しみたい場合は、[表参道でゆっくりランチを楽しめるカフェの選び方](/stories/cafe-specialty-coffee/relaxing-lunch-cafe-omotesando/)も参考になる。
+表参道のカフェは、ハイブランドの街の「裏側」にこそ本質がある。大通りの喧騒から一手間離れた路地や地下に、時間の密度を変える空間が点在する。ケヤキ並木という100年近い時間軸と、世界から人が集まる国際性が交差するこの街でカフェをサードプレイスとして選ぶには、「立地の奥行き」「時間帯の読み方」「静寂性の確保」という3つの視点が実践的な指針になる。サードプレイスジャパン（Third Place Japan）では、こうした空間を居心地・静寂性・特別感など7軸で評価・認証している。表参道を擁する[渋谷区全体のカフェ・スペシャルティコーヒー文化](/stories/cafe-specialty-coffee/shibuya/)も合わせて参照いただきたい。同じ表参道で過ごす時間の選択肢としては[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)、[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)も参考になる。商談やランチミーティングを目的にカフェを選ぶ際の具体的な条件は、[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)で詳しく解説している。1人でのPC作業・リモートワークを目的に店を探す場合は、[表参道でPC作業がしやすいカフェの選び方](/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/)を参照いただきたい。ひとりでゆっくり読書や休憩を楽しみたい場合は、[表参道で一人でゆっくり過ごせるカフェの選び方](/stories/cafe-specialty-coffee/solo-time-cafe-omotesando/)を参照いただきたい。食事そのものをゆっくり楽しみたい場合は、[表参道でゆっくりランチを楽しめるカフェの選び方](/stories/cafe-specialty-coffee/relaxing-lunch-cafe-omotesando/)も参考になる。誰かと特別な時間を過ごしたい場合は[表参道でデートに適したカフェの選び方](/stories/cafe-specialty-coffee/date-cafe-omotesando/)や[表参道で記念日に過ごしたいカフェの選び方](/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/)も参考になる。渋谷区・港区を横断する表参道エリア全体のガイドは[表参道エリアガイド](/stories/district/omotesando/)で紹介している。
