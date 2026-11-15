@@ -1676,6 +1676,22 @@
   </url>
   
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/district/aoyama/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/district/ginza/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  
 
   
   
@@ -1920,13 +1936,19 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/cafe-specialty-coffee/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/cafe-specialty-coffee/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2787,13 +2809,25 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/aoyama/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/cafe-specialty-coffee/</loc>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/aoyama/cafe-specialty-coffee/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2836,12 +2870,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/taito-ku/ueno/culture-sports-leisure/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/hotel-lounge/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3309,8 +3337,40 @@
   
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/hotel-lounge/business-lounge-ginza/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/art-gallery-cafe-aoyama/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/business-meeting-cafe-aoyama/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3350,7 +3410,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/solo-time-cafe-omotesando/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4394,7 +4454,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/spa-sauna-wellness/aoyama-spa-third-place/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4410,7 +4470,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/ginza-third-place-guide/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4599,7 +4659,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/hotel-lounge/ginza/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4618,7 +4678,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/members-lounge/ginza/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -4720,7 +4780,7 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/coworking/omotesando/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     

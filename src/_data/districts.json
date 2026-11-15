@@ -30,7 +30,7 @@
       { "name": "原宿", "url": "/stories/area/tokyo/shibuya-ku/harajuku/" },
       { "name": "青山", "url": "/stories/area/tokyo/minato-ku/aoyama/" }
     ],
-    "neighboring_districts": ["kitasando-sendagaya"],
+    "neighboring_districts": ["kitasando-sendagaya", "aoyama"],
     "published": true
   },
   {
@@ -62,6 +62,62 @@
       { "name": "渋谷", "url": "/stories/area/tokyo/shibuya-ku/shibuya/" }
     ],
     "neighboring_districts": ["omotesando"],
+    "published": true
+  },
+  {
+    "slug": "aoyama",
+    "name": "青山",
+    "name_en": "Aoyama",
+    "type": "commercial_area",
+    "summary": "青山は、港区北青山・南青山を中心に、外苑前・青山一丁目周辺まで広がる商業エリアです。ファッションブランドの旗艦店や現代アートギャラリーが集積する一方、表参道のケヤキ並木とは異なる、落ち着いた大人のサードプレイス文化を持つ街として知られています。",
+    "administrative_refs": [
+      { "prefecture_slug": "tokyo", "city_slug": "minato-ku", "area_slug": "aoyama" }
+    ],
+    "pillar_article_slugs": [
+      "aoyama-spa-third-place"
+    ],
+    "purpose_article_slugs": [
+      "business-meeting-cafe-aoyama",
+      "art-gallery-cafe-aoyama"
+    ],
+    "venue_slugs": [],
+    "thumbnail": "/assets/images/articles/aoyama-spa-wellness-tokyo.webp",
+    "related_categories": ["cafe-specialty-coffee", "spa-sauna-wellness"],
+    "neighboring_areas": [
+      { "name": "表参道", "url": "/stories/area/tokyo/shibuya-ku/omotesando/" },
+      { "name": "六本木", "url": "/stories/area/tokyo/minato-ku/roppongi/" }
+    ],
+    "neighboring_districts": ["omotesando"],
+    "published": true
+  },
+  {
+    "slug": "ginza",
+    "name": "銀座",
+    "name_en": "Ginza",
+    "type": "commercial_area",
+    "summary": "銀座は、中央区を代表する商業エリアで、江戸時代からの商業の中心地としての歴史を持ちます。カフェ・バー・ホテルラウンジ・レストラン・会員制ラウンジなど業種を横断して、老舗文化が育てた静寂と品格を体験できるサードプレイスが点在する街です。",
+    "administrative_refs": [
+      { "prefecture_slug": "tokyo", "city_slug": "chuo-ku", "area_slug": "ginza" }
+    ],
+    "pillar_article_slugs": [
+      "ginza-third-place-guide",
+      "bar-whiskey-ginza",
+      "hotel-lounge-ginza",
+      "members-lounge-ginza",
+      "restaurant-dining-ginza"
+    ],
+    "purpose_article_slugs": [
+      "anniversary-cafe-lounge-ginza",
+      "business-lounge-ginza"
+    ],
+    "venue_slugs": ["morioka-shoten-ginza"],
+    "thumbnail": "/assets/images/articles/ginza-cafe-third-place-tokyo.webp",
+    "related_categories": ["cafe-specialty-coffee", "bar-whiskey", "hotel-lounge", "members-lounge", "restaurant-dining", "culture-sports-leisure"],
+    "neighboring_areas": [
+      { "name": "日本橋", "url": "/stories/area/tokyo/chuo-ku/nihonbashi/" },
+      { "name": "新橋", "url": "/stories/area/tokyo/minato-ku/shinbashi/" }
+    ],
+    "neighboring_districts": [],
     "published": true
   }
 ]

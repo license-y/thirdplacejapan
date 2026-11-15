@@ -239,13 +239,15 @@ export default function (eleventyConfig) {
 
   // 行政エリア（都道府県/市区町村/エリア）から、対応する商業エリア（district）を逆引きする
   // （行政エリアページ側からの相互リンク表示用。コンテンツの自動集約には使わない）
-  eleventyConfig.addFilter("findDistrictByAdminArea", (districts, prefSlug, citySlug, areaSlug) =>
-    (districts || []).find(d =>
+  // 1つの行政エリアが複数の商業エリアに重複して属すことがある（例：港区青山＝表参道・青山の両方）ため、
+  // 一致する公開済み商業エリアを全件返す。特定のスラッグ名には依存しない汎用処理。
+  eleventyConfig.addFilter("findDistrictsByAdminArea", (districts, prefSlug, citySlug, areaSlug) =>
+    (districts || []).filter(d =>
       d.published !== false &&
       (d.administrative_refs || []).some(r =>
         r.prefecture_slug === prefSlug && r.city_slug === citySlug && r.area_slug === areaSlug
       )
-    ) || null
+    )
   );
 
   // slug から商業エリア（district）を取得する（周辺商業エリアへの相互リンク表示用）

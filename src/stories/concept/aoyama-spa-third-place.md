@@ -3,6 +3,7 @@ layout: article.njk
 title: "青山でスパとサードプレイスを重ねる。感度の高い街が生む、静寂とウェルネスの居場所"
 description: 青山のスパ・ウェルネス施設を、サードプレイスの視点で評価します。ファッション・アート・ギャラリーが集積するこの街で、都市生活者の疲れを癒す第三の居場所としての条件を、Third Place Japanが7軸基準で解説します。
 date: 2026-07-01
+modified: 2026-11-15
 tags:
   - articles
   - スパ・サウナ・ウェルネス施設
@@ -113,3 +114,5 @@ thumbnail: /assets/images/articles/aoyama-spa-wellness-tokyo.webp
 青山のスパ・ウェルネス施設のサードプレイスとしての本質は、施術そのものより「施術前後の余白の時間」をどう設計しているかにある。ファッション・アート・ウェルネスが高密度に集積するこの街だからこそ成立する、都市生活者が「自分に戻る」ための空間が根付いている。サードプレイスジャパン（Third Place Japan）は、こうした空間を居心地・静寂性・再訪価値など7軸で評価している。
 
 整える時間の前後に「見られない時間」を組み合わせたい場合は[表参道で高級サロンをサードプレイスにする](/stories/premium-salon/omotesando/)も参考になる。ウェルネスと仕事の切り替えを一日の中で行いたい読者には[表参道でコワーキングをサードプレイスにする](/stories/coworking/omotesando/)も参照されたい。
+
+施術前後の余白とは異なる青山の過ごし方として、ビジネス利用なら[青山で静かに商談・ミーティングできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-aoyama/)、文化的な体験なら[青山でアートとカフェを楽しむ過ごし方](/stories/cafe-specialty-coffee/art-gallery-cafe-aoyama/)も参考になる。青山エリア全体のガイドは[青山エリアガイド](/stories/district/aoyama/)で紹介している。

@@ -3,6 +3,7 @@ layout: article.njk
 title: "銀座でサードプレイスを見つける。老舗の静寂が宿る、東京の第三の居場所"
 description: 銀座はTPJ7軸で見ると、サードプレイスとしての「いる体験」の密度が東京で最も高いエリアの一つです。百年超の老舗文化が育てた静寂と品格を、カフェ・バーなど業種ごとの選び方とともにThird Place Japan編集部が解説します。
 date: 2026-07-01
+modified: 2026-11-15
 tags:
   - articles
   - カフェ・スペシャルティコーヒー
@@ -119,3 +120,5 @@ thumbnail: /assets/images/articles/ginza-cafe-third-place-tokyo.webp
 ## まとめ
 
 銀座のサードプレイスとしての本質は、百年を超える老舗が積み重ねてきた「場への敬意」が、カフェ・バー・ホテルラウンジという業種を横断して息づいている点にある。表通りの喧騒から一本入った路地にこそ、この街本来の静けさと品格が残る。サードプレイスジャパン（Third Place Japan）は、こうした空間を居心地・静寂性・特別感など7軸で評価・認証している。
+
+利用目的から場所を選びたい場合は、[銀座で記念日に過ごしたいカフェ・ラウンジの選び方](/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/)や[銀座で落ち着いて商談できるホテルラウンジの選び方](/stories/hotel-lounge/business-lounge-ginza/)も参考になる。銀座エリア全体のガイドは[銀座エリアガイド](/stories/district/ginza/)で紹介している。
