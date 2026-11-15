@@ -172,14 +172,26 @@ eleventyComputed:
       {% endfor %}
     </div>
 
+    {% set districtSelectVenues = districtVenues | venuesSelectOnly %}
+    {% set districtCertifiedVenues = districtVenues | venuesCertifiedOnly | sortByGrade %}
     {% if districtVenues.length %}
-    <h2>{{ item.name }}のTPJセレクト施設</h2>
     <p>{{ item.name }}には、Third Place Japanが編集部視点でセレクト・認証した施設もある。</p>
+    {% if districtSelectVenues.length %}
+    <h2>{{ item.name }}のTPJセレクト施設</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-6">
-      {% for v in districtVenues | sortByGrade %}
+      {% for v in districtSelectVenues %}
       {% set cardVenue = v %}{% include "venue-card.njk" %}
       {% endfor %}
     </div>
+    {% endif %}
+    {% if districtCertifiedVenues.length %}
+    <h2>{{ item.name }}のTPJ認証施設</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 not-prose my-6">
+      {% for v in districtCertifiedVenues %}
+      {% set cardVenue = v %}{% include "venue-card.njk" %}
+      {% endfor %}
+    </div>
+    {% endif %}
     {% endif %}
 
     <h2>{{ item.name }}の既存関連記事</h2>

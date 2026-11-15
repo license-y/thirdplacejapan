@@ -28,10 +28,10 @@ eleventyComputed:
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "{{ item.city.name }}でThird Place Japanがセレクトした場所はどこですか？",
+      "name": "{{ item.city.name }}でThird Place Japanがセレクト・認証した場所はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{{ item.city.name }}のThird Place Japanセレクト店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）でセレクトした施設を掲載しています。"
+        "text": "{{ item.city.name }}のThird Place Japanセレクト・認証店舗は{{ site.url }}/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/から確認できます。7軸評価（居心地・静寂性・特別感など）でセレクト・認証した施設を掲載しています。"
       }
     },
     {
@@ -163,17 +163,33 @@ eleventyComputed:
       </section>
       {% endif %}
       {% set cityVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug) %}
+      {% set citySelectVenues = cityVenues | venuesSelectOnly %}
+      {% set cityCertifiedVenues = cityVenues | venuesCertifiedOnly | sortByGrade %}
       {% if cityVenues.length %}
       <section data-aos="fade-up">
-        <p class="label mb-6">セレクト店舗</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {% for v in cityVenues | sortByGrade %}
-          {% set cardVenue = v %}{% include "venue-card.njk" %}
-          {% endfor %}
+        {% if citySelectVenues.length %}
+        <div{% if cityCertifiedVenues.length %} class="mb-10"{% endif %}>
+          <p class="label mb-6">TPJセレクト施設</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for v in citySelectVenues %}
+            {% set cardVenue = v %}{% include "venue-card.njk" %}
+            {% endfor %}
+          </div>
         </div>
+        {% endif %}
+        {% if cityCertifiedVenues.length %}
+        <div>
+          <p class="label mb-6">TPJ認証施設</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for v in cityCertifiedVenues %}
+            {% set cardVenue = v %}{% include "venue-card.njk" %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </section>
       {% else %}
-      <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト店舗は準備中です。</p>
+      <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト・認証店舗は準備中です。</p>
       {% endif %}
     </div>
 
@@ -212,7 +228,7 @@ eleventyComputed:
       </div>
       <div class="border-t border-border pt-6">
         <p class="text-xs leading-relaxed" style="color:var(--color-muted)">
-          Third Place Japanは{{ item.city.name }}のセレクト施設情報を独自の7軸基準で評価・掲載しています。
+          Third Place Japanは{{ item.city.name }}のセレクト・認証施設情報を独自の7軸基準で評価・掲載しています。
         </p>
       </div>
     </aside>
@@ -227,12 +243,12 @@ eleventyComputed:
     <div class="space-y-3">
       <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
         <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
-          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.city.name }}でThird Place Japanがセレクトした場所はどこですか？</span>
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.city.name }}でThird Place Japanがセレクト・認証した場所はどこですか？</span>
           <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
         </button>
         <div class="area-faq-body px-6 pb-5">
           <div class="gold-rule mb-4"></div>
-          <p class="text-sm text-muted leading-relaxed">{{ item.city.name }}のThird Place Japanセレクト店舗は本ページから確認できます。7軸評価（居心地・静寂性・特別感など）でセレクトした施設を掲載しています。</p>
+          <p class="text-sm text-muted leading-relaxed">{{ item.city.name }}のThird Place Japanセレクト・認証店舗は本ページから確認できます。7軸評価（居心地・静寂性・特別感など）でセレクト・認証した施設を掲載しています。</p>
         </div>
       </div>
       <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
@@ -345,17 +361,33 @@ eleventyComputed:
   </section>
   {% endif %}
   {% set cityVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug) %}
+  {% set citySelectVenues = cityVenues | venuesSelectOnly %}
+  {% set cityCertifiedVenues = cityVenues | venuesCertifiedOnly | sortByGrade %}
   {% if cityVenues.length %}
   <section data-aos="fade-up">
-    <p class="label mb-6">セレクト店舗</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in cityVenues | sortByGrade %}
-      {% set cardVenue = v %}{% include "venue-card.njk" %}
-      {% endfor %}
+    {% if citySelectVenues.length %}
+    <div{% if cityCertifiedVenues.length %} class="mb-10"{% endif %}>
+      <p class="label mb-6">TPJセレクト施設</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for v in citySelectVenues %}
+        {% set cardVenue = v %}{% include "venue-card.njk" %}
+        {% endfor %}
+      </div>
     </div>
+    {% endif %}
+    {% if cityCertifiedVenues.length %}
+    <div>
+      <p class="label mb-6">TPJ認証施設</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for v in cityCertifiedVenues %}
+        {% set cardVenue = v %}{% include "venue-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </section>
   {% else %}
-  <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト店舗は準備中です。</p>
+  <p class="text-sm text-muted" data-aos="fade-up">この地域のセレクト・認証店舗は準備中です。</p>
   {% endif %}
 
   {# FAQ セクション #}
@@ -367,12 +399,12 @@ eleventyComputed:
     <div class="space-y-3">
       <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
         <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
-          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.city.name }}でThird Place Japanがセレクトした場所はどこですか？</span>
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.city.name }}でThird Place Japanがセレクト・認証した場所はどこですか？</span>
           <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
         </button>
         <div class="area-faq-body px-6 pb-5">
           <div class="gold-rule mb-4"></div>
-          <p class="text-sm text-muted leading-relaxed">{{ item.city.name }}のThird Place Japanセレクト店舗は本ページから確認できます。7軸評価（居心地・静寂性・特別感など）でセレクトした施設を掲載しています。</p>
+          <p class="text-sm text-muted leading-relaxed">{{ item.city.name }}のThird Place Japanセレクト・認証店舗は本ページから確認できます。7軸評価（居心地・静寂性・特別感など）でセレクト・認証した施設を掲載しています。</p>
         </div>
       </div>
       <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">

@@ -515,15 +515,17 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 
 ### 適用箇所（`src/_layouts/venue.njk` 内の条件分岐で制御）
 
-| 箇所 | Flagship | それ以外 |
-|---|---|---|
-| パンくず | Stories / TPJセレクト / **Flagship** / 店舗名（4階層） | Stories / TPJセレクト / 店舗名（3階層） |
-| カテゴリ横バッジ | Flagshipバッジ（ダークブラック枠・盾アイコン） | 各グレードバッジ |
-| 日付ラベル | **Flagship認定：** 日付 | TPJセレクト掲載：日付 |
-| 底部セクション | 実証店舗説明文 ＋ サービスリンク | グレード別テキスト ＋ 2リンク |
-| JSON-LD BreadcrumbList | position 3: `"TPJセレクト"` → position 4: `"Flagship"` → position 5: 店舗名（5階層） | position 3: `"TPJセレクト"` → position 4: 店舗名（4階層） |
+| 箇所 | Flagship | Certified〜Platinum | TPJセレクト |
+|---|---|---|---|
+| パンくず | Stories / **TPJ認証** / **Flagship** / 店舗名（4階層） | Stories / **TPJ認証** / {{グレード名}} / 店舗名（4階層） | Stories / TPJセレクト / 店舗名（3階層） |
+| カテゴリ横バッジ | Flagshipバッジ（ダークブラック枠・盾アイコン） | 各グレードバッジ | TPJセレクトバッジ |
+| 日付ラベル | **Flagship認定：** 日付 | **{{グレード名}}認定：** 日付 | TPJセレクト掲載：日付 |
+| 底部セクション | 実証店舗説明文 ＋ サービスリンク | グレード別テキスト ＋ 2リンク | グレード別テキスト ＋ 2リンク |
+| JSON-LD BreadcrumbList | position 3: `"TPJ認証"` → position 4: `"Flagship"` → position 5: 店舗名（5階層） | position 3: `"TPJ認証"` → position 4: `"{{グレード名}}"` → position 5: 店舗名（5階層） | position 3: `"TPJセレクト"` → position 4: 店舗名（4階層） |
 
 **パンくず4階層化の経緯（2026-07-09）**：以前はFlagship施設のパンくずが「Stories／Flagship／店舗名」の3階層で、ラベルが「Flagship」なのにリンク先URLは`/stories/select/`（TPJセレクト一覧）という表記ゆれがあった。「TPJセレクト」ノードを追加して4階層にし、「Flagship」ノードは`/stories/select/#flagship`（TPJセレクト一覧ページのFlagship枠へのアンカーリンク。`src/stories/select/index.njk`のFlagshipセクションに`id="flagship"`を付与）にリンクすることで、TPJセレクトノードとURLが重複しない形にした。
+
+**ルート名を「TPJセレクト」→「TPJ認証」に改訂（2026-11-15）**：上記2026-07-09時点の設計は、Flagshipを含むすべての正式認証施設（Certified〜Flagship）のパンくずルートが「TPJセレクト」のままだった。これは「TPJセレクトと正式認証は独立した分類である」という既存ルール（本ファイル「『実証店舗』と『TPJ認証』の関係」）と矛盾するため、`grade_slug != "select"`（＝Certified〜Flagshipの5段階すべて）の施設はパンくずルートを「TPJ認証」に変更した。詳細は後述「TPJセレクト・TPJ認証の分類表示ルール」セクション参照。
 
 ### 底部セクションのコピー（Flagship固定）
 
@@ -541,12 +543,90 @@ Flagship以外の場合、grade_slug に応じたコピーを表示：
 {% endif %}
 ```
 
+## TPJセレクト・TPJ認証の分類表示ルール（2026-11-15追加）
+
+TPJセレクト（`grade_slug: "select"`）とTPJ認証（`grade_slug`が`certified`/`silver`/`gold`/`platinum`/`flagship`のいずれか）は**独立した分類**であり、上下関係ではない。Flagshipは「TPJセレクトの上位グレード」ではなく、TPJ認証5段階の最高位にあたる正式認証施設として扱う（詳細は既存ルール「『実証店舗』と『TPJ認証』の関係」参照）。
+
+### 分類の判定フィルター
+
+`.eleventy.js`に以下の2フィルターを新設した（既存の`venuesByGrade`・`sortByGrade`と併用する）。
+
+```js
+eleventyConfig.addFilter("venuesSelectOnly", (venues) =>
+  (venues || []).filter(v => v.grade_slug === "select" && v.published !== false)
+);
+eleventyConfig.addFilter("venuesCertifiedOnly", (venues) =>
+  (venues || []).filter(v => v.grade_slug !== "select" && v.published !== false)
+);
+```
+
+一覧系テンプレートで施設を「①TPJセレクト施設」「②TPJ認証施設」の2グループに分けて表示する際はこの2フィルターを使う。**該当施設が1件以上あるグループのみ見出し・グリッドを表示し、0件のグループは見出しごと非表示にする**（空見出しや「0件です」という不自然な文章を出さない）。
+
+### venue.njk パンくずの出し分け（2026-11-15改訂）
+
+`src/_layouts/venue.njk`冒頭で以下の変数を定義し、可視パンくず・BreadcrumbList JSON-LDの両方がこれを参照する（表示ラベルと構造化データを必ず一致させるため）。
+
+```njk
+{%- set isCertified = venue.grade_slug != "select" -%}
+{%- set gradeDisplayNames = {"certified": "Certified", "silver": "Silver", "gold": "Gold", "platinum": "Platinum", "flagship": "Flagship"} -%}
+{%- set venueGradeName = gradeDisplayNames[venue.grade_slug] or "" -%}
+{%- set gradeCrumbPath = "/stories/select/#flagship" if venue.grade_slug == "flagship" else "/stories/select/" -%}
+```
+
+- `select`：Stories／TPJセレクト／店舗名（3階層、リンク先は従来通り`/stories/select/`）
+- `certified`/`silver`/`gold`/`platinum`/`flagship`：Stories／**TPJ認証**／{{グレード名}}／店舗名（4階層）。「TPJ認証」「{{グレード名}}」ともリンク先は`/stories/select/`（Flagshipのみ既存の`#flagship`アンカー付き）
+
+**既存URL（`/stories/select/{slug}/`）は変更していない**。認証専用の新規一覧URLも作成していない（存在しないURLへのリンクを作らないため、`/stories/select/`を暫定のリンク先として再利用する設計）。パンくずの詳細な出し分け表は上記「Flagship施設の特別表示ルール」のテーブルを参照。
+
+### 一覧系テンプレートでの「セレクト施設／認証施設」分離（2026-11-15追加）
+
+以下7テンプレートで、施設一覧を上記2フィルターにより「①TPJセレクト施設」「②TPJ認証施設」の2グループに分けて表示するよう改修した（該当施設があるグループのみ表示）。あわせて、FAQ（JSON-LD・可視の両方）・サブ見出しの文言も、グレードを問わず一律だった「セレクトした場所」「セレクト店舗」という表現を、実際の分類に応じた表現（セレクトのみ→「セレクトした」、認証のみ→「正式に認証した」、両方あれば両方を文を分けて併記）に改めた。
+
+- `src/stories/area/l1-prefecture.njk`（都道府県の全施設グリッド）
+- `src/stories/area/l2-city.njk`（市区町村の施設グリッド。東京都2カラム版・通常版の両ブロックに適用）
+- `src/stories/area/l3-area.njk`（エリアの施設グリッド）
+- `src/stories/area/l2-category.njk`（市区町村×業種の施設グリッド）
+- `src/stories/area/l3-category.njk`（エリア×業種の施設グリッド）
+- `src/stories/category-index.njk`（15業種カテゴリページの施設グリッド）
+- `src/stories/district/index.njk`（商業エリア詳細の施設グリッド）
+
+**発見の経緯**：上記テンプレートは従来、`venuesByArea`・`venuesByCategory`等のグレードを問わない施設取得フィルターの結果を、一律「セレクトした場所」「セレクト店舗」という見出し・文言で表示していた。GBC（Flagship、正式認証の最高位）が唯一の非select施設として実在するため、千駄ヶ谷エリアページ・カフェカテゴリページ等で「Third Place Japanが千駄ヶ谷でセレクトした場所として、Green Beans Coffee（Flagship）があります。」のように、正式認証施設を「セレクトした」と明言してしまう表記が本番で実際に発生していた（2026-11-15の監査で発見・修正）。新しいエリア・カテゴリ関連ページを追加する際は、施設一覧・FAQを実装する箇所で必ずこの2フィルターによる分離を踏襲すること。
+
+### `venue-card.njk`（共有カードコンポーネント）のグレード対応バッジ（2026-11-15追加）
+
+上記7テンプレートをはじめ、施設カードを表示する多くのページで共通利用される`src/_includes/venue-card.njk`に、グレード別バッジを追加した。
+
+```njk
+{% if cardVenue.grade_slug == "select" %}
+  {# 虫眼鏡アイコン＋「TPJセレクト」バッジ（グレーボーダー） #}
+{% else %}
+  {# {{ cardVenue.grade }}バッジ（ゴールドボーダー。Flagship/Platinum/Gold/Silver/Certifiedの実値をそのまま表示） #}
+{% endif %}
+```
+
+新しく施設一覧カードを追加するページでは`venue-card.njk`をそのまま再利用すれば、このバッジは自動的に正しく付与される（個別実装は不要）。
+
+### `venuesToAnswerText`フィルターの誤表記修正（2026-11-15・重大バグ修正）
+
+`l3-category.njk`のFAQで使われる`venuesToAnswerText`フィルター（`.eleventy.js`）が、全施設に対して無条件で`` `${v.name}（${v.grade}認証）` `` という文字列を生成していた。select施設の`v.grade`フィールドは文字列`"TPJセレクト"`のため、このテンプレートはすべてのselect施設に対して**「店舗名（TPJセレクト認証）」という存在しない制度名を合成して表示していた**（本番で多数のL3×業種ページに実在することを確認済み）。`v.grade_slug === "select"`の場合は「（TPJセレクト）」、それ以外（認証施設）は従来通り「（{{grade}}認証）」を出力するよう修正した。
+
+```js
+eleventyConfig.addFilter("venuesToAnswerText", (venues) =>
+  (venues || []).map(v => v.grade_slug === "select" ? `${v.name}（TPJセレクト）` : `${v.name}（${v.grade}認証）`).join("、")
+);
+```
+
+### TPJセレクト一覧ページ（`/stories/select/`）の改善（2026-11-15追加）
+
+- **認証グレード凡例の実在件数表示**：Flagship・Platinum・Gold・Silver・Certifiedの5バッジに、`venuesByGrade`フィルターで集計した実在件数を「（◯件）」の形で併記する。0件のグレードも「（0件）」と明示し、掲載実績があるように誤認させない（2026-11-15時点：Flagship 1件、他4グレードは0件）
+- **FAQ「TPJセレクトのグレードにはどんな種類がありますか？」を「TPJセレクトとTPJ認証グレードはどう違いますか？」に変更**：旧質問文は「TPJセレクトにグレードがある」という前提を暗示しており、本セクション全体の趣旨（セレクトと認証は独立した分類）と矛盾していた。回答文でも「TPJセレクトとTPJ認証は独立した別の制度」「Flagshipは『TPJセレクトの中の最上位グレード』ではなく、TPJセレクトとは別トラックの正式認証施設」と明記した。`selectFaq`配列を可視アコーディオン・FAQPage JSON-LDの両方が参照する既存のDRY構造のため、この改訂は1箇所の変更で両方に反映される
+
 ## venues.json 施設データ管理ルール
 
 - 施設データは `src/_data/venues.json` に一元管理する
 - `published: true` の施設のみが一覧・詳細ページに表示される（非表示にする場合は `published: false`）
 - `grade_slug: "flagship"` の施設は一覧ページの「Flagship」固定枠に表示される（現在はGBC 1件）
-- `grade_slug` が flagship 以外（certified / silver / gold / platinum）の施設が「TPJセレクト」グリッドに表示される
+- `grade_slug: "select"` の施設のみが「TPJセレクト」グリッドに表示される（`venuesByGrade('select')`で判定）。**`certified` / `silver` / `gold` / `platinum` の施設は「TPJセレクト」グリッドには表示されない**（2026-11-15修正：旧記載では誤ってこの4グレードがTPJセレクトグリッドに表示されるとしていたが、実装・意図ともに誤りだった。TPJセレクトとTPJ認証の分類ルールは後述「TPJセレクト・TPJ認証の分類表示ルール」参照）
 - **施設を追加する際は必ず `project-docs/TPJセレクト掲載基準ルールブック.md` の7基準・カテゴリ配分・大手禁止ルールを確認すること**
 - **一覧ページ（`src/stories/select/index.njk`）のTPJセレクトグリッドは新着順（新しい施設が上部）に表示する**（2026-07-07確定）。実装は `{% for v in published | reverse %}`。`venues.json` には末尾に追記していくため、`reverse` で新着が先頭に来る
 

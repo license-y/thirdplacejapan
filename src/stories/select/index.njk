@@ -8,6 +8,12 @@ canonical: "/stories/select/"
 {% set flagshipVenues = venues | venuesByGrade('flagship') %}
 {% set selectVenues = venues | venuesByGrade('select') %}
 {% set selectCount = published.length - flagshipVenues.length %}
+{# 認証グレード凡例の実在件数（0件のグレードも「0件」と明示し、掲載実績があるように誤認させない） #}
+{% set flagshipCount = flagshipVenues.length %}
+{% set platinumCount = venues | venuesByGrade('platinum') | length %}
+{% set goldCount = venues | venuesByGrade('gold') | length %}
+{% set silverCount = venues | venuesByGrade('silver') | length %}
+{% set certifiedCount = venues | venuesByGrade('certified') | length %}
 {# カテゴリ・エリアページ側（/stories/{category}/・/stories/area/...）はグレードを問わず掲載施設全件を表示するため、
    件数表示もそれに合わせて published（TPJセレクト＋Flagship）基準で集計する #}
 {% set selectCatFacets = published | venueCategoryFacets %}
@@ -15,7 +21,7 @@ canonical: "/stories/select/"
 {% set selectFaq = [
   { q: "TPJセレクトとはどのような施設ですか？", a: "TPJセレクトとは、Third Place Japan（サードプレイスジャパン）編集部が独自の視点で見つけた「いま気になる居場所」です。料理の味やコスパではなく、家でも職場でもない「第三の居場所」＝サードプレイス（third place）としての価値を軸に、カフェ・ホテル・スパ・コワーキングなど業種横断で紹介しています。施設からのお申し込みが必要な<a href=\"/stories/about/tpj-certification-and-select-difference/\" class=\"text-gold hover:underline\">正式な認証グレードとの違い</a>もあわせてご覧ください。" },
   { q: "サードプレイス（third place）とは何ですか？", a: "サードプレイスとは、社会学者レイ・オルデンバーグが提唱した、家（第一の場所）でも職場（第二の場所）でもない、心地よい第三の居場所を指す概念です。Third Place Japanは、この考え方を現代日本の空間に当てはめ、独自の7軸基準で評価・認証しています。詳しくは<a href=\"/stories/about/what-is-third-place/\" class=\"text-gold hover:underline\">サードプレイスとは何か：TPJによる完全ガイド</a>で解説しています。" },
-  { q: "TPJセレクトのグレードにはどんな種類がありますか？", a: "TPJセレクトは編集部が申請不要で選ぶ掲載枠で、正式な認証グレードはCertified・Silver・Gold・Platinum・Flagshipの5段階です。Flagshipが最高グレードで、7つの空間基準すべてにおいて卓越したサードプレイス体験を提供する施設に与えられます。各グレードの違いは<a href=\"/stories/about/certification-grades/\" class=\"text-gold hover:underline\">TPJ認証グレードの解説ページ</a>で詳しく紹介しています。" },
+  { q: "TPJセレクトとTPJ認証グレードはどう違いますか？", a: "TPJセレクトとTPJ認証は独立した別の制度です。TPJセレクトは編集部が申請不要で発掘・紹介する掲載枠で、審査はありません。一方TPJ認証は、施設からの申請を前提とした正式な5段階制度（Certified・Silver・Gold・Platinum・Flagship）で、Flagshipはこの5段階の最高位にあたります。Flagshipは「TPJセレクトの中の最上位グレード」ではなく、TPJセレクトとは別トラックの正式認証施設です。各グレードの違いは<a href=\"/stories/about/certification-grades/\" class=\"text-gold hover:underline\">TPJ認証グレードの解説ページ</a>で詳しく紹介しています。" },
   { q: "TPJセレクトにはどんな業種の施設が掲載されていますか？", a: "カフェ・スペシャルティコーヒー、高級ホテル・ホテルラウンジ、温泉旅館、レストラン、バー、スパ・サウナ、高級サロン、コワーキング、会員制ラウンジ、神社・寺院、リトリート・禅体験、自然・グランピングなど、15業種を横断して掲載しています。業種を問わず「居場所としての価値」があるかどうかで選定しており、たとえば<a href=\"/stories/cafe-specialty-coffee/\" class=\"text-gold hover:underline\">カフェ・スペシャルティコーヒー</a>や<a href=\"/stories/shrine-temple/\" class=\"text-gold hover:underline\">神社・寺院</a>のように、飲食系から観光・集客施設系まで幅広く対象にしています。" },
   { q: "TPJセレクトをエリアや業種で絞り込めますか？", a: "はい。掲載施設は都道府県・市区町村・エリアの3階層と、15業種で絞り込んで探せます。<a href=\"/stories/area/\" class=\"text-gold hover:underline\">エリアから探す</a>ページから地域で検索でき、<a href=\"/stories/\" class=\"text-gold hover:underline\">Third Place Japan Stories</a>からは業種別に一覧できます。" }
 ] %}
@@ -215,12 +221,12 @@ canonical: "/stories/select/"
     {% endif %}
 
     <div class="flex flex-wrap gap-2 items-center mt-10 pt-6 border-t border-border">
-      <span class="text-xs text-muted mr-1">認証グレード：</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#1C1C1C;border-color:#1C1C1C;">Flagship</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum</span>
-      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver</span>
-      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified</span>
+      <span class="text-xs text-muted mr-1">TPJ認証グレード（掲載件数）：</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#1C1C1C;border-color:#1C1C1C;">Flagship（{{ flagshipCount }}件）</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#4A4A4A;border-color:#4A4A4A;">Platinum（{{ platinumCount }}件）</span>
+      <span class="text-xs font-medium tracking-wider text-gold border border-gold px-2.5 py-0.5 rounded-full">Gold（{{ goldCount }}件）</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#9AA0A6;border-color:#9AA0A6;">Silver（{{ silverCount }}件）</span>
+      <span class="text-xs font-medium tracking-wider px-2.5 py-0.5 rounded-full border" style="color:#8B8378;border-color:#8B8378;">Certified（{{ certifiedCount }}件）</span>
       <a href="/stories/about/certification-grades/" class="text-xs text-muted hover:text-gold transition-colors ml-auto underline underline-offset-2">グレードの違いを見る →</a>
     </div>
   </section>

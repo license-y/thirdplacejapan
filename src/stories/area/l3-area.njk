@@ -17,10 +17,10 @@ eleventyComputed:
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "{{ item.area.name }}でThird Place Japanがセレクトした場所はどこですか？",
+      "name": "{{ item.area.name }}でThird Place Japanがセレクト・認証した場所はどこですか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "{% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}{% if av.length %}Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in av %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。{% else %}{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。{% endif %}"
+        "text": "{% set avSelect = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) | venuesSelectOnly %}{% set avCertified = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) | venuesCertifiedOnly %}{% if avSelect.length and avCertified.length %}Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in avSelect %}{{ v.name }}{% if not loop.last %}、{% endif %}{% endfor %}があります。また、正式に認証した場所として、{% for v in avCertified %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。{% elif avSelect.length %}Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in avSelect %}{{ v.name }}{% if not loop.last %}、{% endif %}{% endfor %}があります。{% elif avCertified.length %}Third Place Japanが{{ item.area.name }}で正式に認証した場所として、{% for v in avCertified %}{{ v.name }}（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。{% else %}{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは順次エリアを拡大しています。{% endif %}"
       }
     },
     {
@@ -118,7 +118,7 @@ eleventyComputed:
     <p class="label mb-4">{{ item.prefecture.name }} {{ item.city.name }}</p>
     <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate %}（{{ item.city.name }}）{% endif %}</h1>
     <div class="gold-rule mb-6"></div>
-    <p class="text-sm text-muted">{{ item.area.name }}エリアで Third Place Japan がセレクトした場所。</p>
+    <p class="text-sm text-muted">{{ item.area.name }}エリアで Third Place Japan がセレクト・認証した場所。</p>
   </div>
   {% set relatedDistricts = districts | findDistrictsByAdminArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
   {% if relatedDistricts.length %}
@@ -165,14 +165,30 @@ eleventyComputed:
     </div>
   </section>
   {% set areaVenues = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
+  {% set areaSelectVenues = areaVenues | venuesSelectOnly %}
+  {% set areaCertifiedVenues = areaVenues | venuesCertifiedOnly | sortByGrade %}
   {% if areaVenues.length %}
   <section data-aos="fade-up">
-    <p class="label mb-6">セレクト店舗</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% for v in areaVenues | sortByGrade %}
-      {% set cardVenue = v %}{% include "venue-card.njk" %}
-      {% endfor %}
+    {% if areaSelectVenues.length %}
+    <div{% if areaCertifiedVenues.length %} class="mb-12"{% endif %}>
+      <p class="label mb-6">TPJセレクト施設</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for v in areaSelectVenues %}
+        {% set cardVenue = v %}{% include "venue-card.njk" %}
+        {% endfor %}
+      </div>
     </div>
+    {% endif %}
+    {% if areaCertifiedVenues.length %}
+    <div>
+      <p class="label mb-6">TPJ認証施設</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for v in areaCertifiedVenues %}
+        {% set cardVenue = v %}{% include "venue-card.njk" %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </section>
   {% else %}
   <div class="bg-white rounded-xl border border-gold/30 p-6" data-aos="fade-up">
@@ -190,14 +206,19 @@ eleventyComputed:
     <div class="space-y-3">
       <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
         <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
-          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.area.name }}でThird Place Japanがセレクトした場所はどこですか？</span>
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.area.name }}でThird Place Japanがセレクト・認証した場所はどこですか？</span>
           <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
         </button>
         <div class="area-faq-body px-6 pb-5">
           <div class="gold-rule mb-4"></div>
-          {% set av = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) %}
-          {% if av.length %}
-          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in av %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
+          {% set avSelect = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) | venuesSelectOnly %}
+          {% set avCertified = venues | venuesByArea(item.prefecture.slug, item.city.slug, item.area.slug) | venuesCertifiedOnly %}
+          {% if avSelect.length and avCertified.length %}
+          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in avSelect %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>{% if not loop.last %}、{% endif %}{% endfor %}があります。また、正式に認証した場所として、{% for v in avCertified %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
+          {% elif avSelect.length %}
+          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}でセレクトした場所として、{% for v in avSelect %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
+          {% elif avCertified.length %}
+          <p class="text-sm text-muted leading-relaxed">Third Place Japanが{{ item.area.name }}で正式に認証した場所として、{% for v in avCertified %}<a href="/stories/select/{{ v.slug }}/" class="text-gold hover:underline">{{ v.name }}</a>（{{ v.grade }}）{% if not loop.last %}、{% endif %}{% endfor %}があります。</p>
           {% else %}
           <p class="text-sm text-muted leading-relaxed">{{ item.area.name }}のセレクト店舗は現在準備中です。Third Place Japanは、家でも職場でもない「第三の居場所（サードプレイス）」を独自の7軸基準で評価・発掘しており、掲載エリアを順次拡大しています。<a href="/stories/area/{{ item.prefecture.slug }}/{{ item.city.slug }}/" class="text-gold hover:underline">{{ item.city.name }}の他のエリア</a>もあわせてご覧ください。</p>
           {% endif %}

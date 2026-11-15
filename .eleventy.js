@@ -118,6 +118,16 @@ export default function (eleventyConfig) {
     (venues || []).filter(v => v.grade_slug === gradeSlug && v.published !== false)
   );
 
+  // TPJセレクトとTPJ認証（Certified〜Flagshipの5段階）は独立した分類のため、
+  // 一覧系テンプレートで「①TPJセレクト施設／②TPJ認証施設」に分けて表示する際に使う
+  eleventyConfig.addFilter("venuesSelectOnly", (venues) =>
+    (venues || []).filter(v => v.grade_slug === "select" && v.published !== false)
+  );
+
+  eleventyConfig.addFilter("venuesCertifiedOnly", (venues) =>
+    (venues || []).filter(v => v.grade_slug !== "select" && v.published !== false)
+  );
+
   eleventyConfig.addFilter("publishedVenues", (venues) =>
     (venues || []).filter(v => v.published !== false)
   );
@@ -266,8 +276,10 @@ export default function (eleventyConfig) {
   );
 
   // 「名前（グレード）」形式のカンマ区切り文字列を生成（JSON-LD内テキスト用）
+  // TPJセレクト（grade_slug: select）とTPJ認証（certified〜flagship）は独立した分類のため、
+  // セレクト施設には「認証」を付けず「（TPJセレクト）」、認証施設のみ「（{{grade}}認証）」と表記する
   eleventyConfig.addFilter("venuesToAnswerText", (venues) =>
-    (venues || []).map(v => `${v.name}（${v.grade}認証）`).join("、")
+    (venues || []).map(v => v.grade_slug === "select" ? `${v.name}（TPJセレクト）` : `${v.name}（${v.grade}認証）`).join("、")
   );
 
   // 軸別スコア付き回答テキスト
