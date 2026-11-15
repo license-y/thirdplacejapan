@@ -2427,6 +2427,112 @@ title: "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate
 
 ---
 
+# 商業エリア（district）管理ルール
+
+**2026-11-14新設**（表参道・北参道千駄ヶ谷）、**2026-11-15に青山・銀座を追加**。TPJが推進する「デジタル不動産」構想（商業エリア×15カテゴリ×目的利用×体験×属性）の一環として、SEO/AEO強化とユーザーの目的別導線を目的とする。
+
+## 行政エリアとの違い
+
+| | 行政エリア（area） | 商業エリア（district） |
+|---|---|---|
+| データソース | `src/_data/areas.json` | `src/_data/districts.json` |
+| 単位 | 都道府県・市区町村・エリア（行政区分） | 街として一体の商業圏（行政区分をまたぐことがある） |
+| URL | `/stories/area/{pref}/{city}/{area}/` | `/stories/district/{slug}/` |
+| 目的 | 地理的な網羅性（面を敷き詰める） | 「街の個性」を軸にした横断的なガイド（業種・目的別の深掘り） |
+
+商業エリアの境界は行政区分と必ずしも一致しない（例：表参道は渋谷区神宮前〜港区北青山・南青山まで連続する商業圏として扱う）。この不一致は意図的な設計であり、データ不整合ではない。
+
+## `districts.json` のフィールド
+
+```json
+{
+  "slug": "一意の識別子（英数字・ハイフン）",
+  "name": "表示名（日本語）",
+  "name_en": "英語名",
+  "type": "commercial_area",
+  "summary": "概要文（フォールバック用。本文はdistrict/index.njk側で個別執筆するため通常は表示されない）",
+  "administrative_refs": [
+    { "prefecture_slug": "...", "city_slug": "...", "area_slug": "..." }
+  ],
+  "pillar_article_slugs": ["既存の業種×エリア記事のfileSlugを列挙"],
+  "purpose_article_slugs": ["目的別記事（新規執筆）のfileSlugを列挙"],
+  "venue_slugs": ["venues.jsonに実在する施設のslugのみ。架空・未確認は入れない"],
+  "thumbnail": "/assets/images/articles/....webp",
+  "related_categories": ["category_slugの配列"],
+  "neighboring_areas": [{ "name": "...", "url": "/stories/area/.../" }],
+  "neighboring_districts": ["隣接・関連する他の商業エリアのslug（双方向に設定する）"],
+  "published": true
+}
+```
+
+- `administrative_refs`は複数件設定できる（1つの商業エリアが複数の行政区にまたがる場合）。**逆に、1つの行政エリアが複数の商業エリアから参照されることもある**（例：港区青山は表参道・青山の両方のadministrative_refsに含まれる）。これは次節の「行政エリアとの重複対応」で吸収する設計のため、重複を恐れず実態に即して設定してよい
+- `pillar_article_slugs`／`purpose_article_slugs`は`articlesBySlugs`フィルターで`collections.articles`からfileSlug一致で取得する。該当記事が存在しなければ単に空配列として扱われ、ビルドエラーにはならない
+- `neighboring_districts`は必ず双方向に設定する（新しい商業エリアを追加して既存エリアと隣接・重複する場合、既存エリア側の配列にも追記すること。2026-11-15に青山追加時、表参道側の`neighboring_districts`に`"aoyama"`を追記した）
+
+## テンプレート構成（`src/stories/district/index.njk`）
+
+`pagination`で`districts.json`を1件ずつ展開する共通テンプレートだが、**本文（街の歴史・サードプレイスとの関係・FAQ回答・まとめ等）は`{% if item.slug == 'omotesando' %}...{% elif item.slug == 'kitasando-sendagaya' %}...{% elif item.slug == 'aoyama' %}...{% elif item.slug == 'ginza' %}...{% endif %}`という分岐でテンプレート内に直接記述するハードコード方式**であり、`areas.json`駆動のエリアページのような完全データ駆動ではない。
+
+**新規商業エリアを追加する際は、既存のこの分岐パターンを踏襲して以下の箇所すべてに`elif`ブランチを追記すること**（1箇所でも漏れると、その商業エリアのdescription・FAQ・本文の一部が空欄または汎用文言のままになる）：
+
+1. `eleventyComputed.description`
+2. FAQPage JSON-LD内「〜はどこにありますか？」の回答text
+3. FAQPage JSON-LD内「〜にはどんな目的別の過ごし方がありますか？」の回答text
+4. 本文冒頭（太字リード＋「〇〇という街と第三の居場所」セクション）
+5. 「〇〇でサードプレイスを探す際の考え方」内の比較節
+6. 可視FAQ「Q. 〇〇はどこにありますか？」の回答
+7. 可視FAQ「Q. 〇〇にはどんな目的別の過ごし方がありますか？」の回答
+8. まとめ
+
+この8箇所は`grep -n "item.slug ==" src/stories/district/index.njk`で機械的に洗い出せる（2026-11-15時点で4エリア×8箇所＝32分岐点）。**件数が増えるとファイルが肥大化する既知のトレードオフ**だが、既存ファイルの構成を優先し新しい仕組みは導入しない方針のもと、現時点ではこの方式を維持している。将来的にエリア数が大きく増える場合は、本文をdistricts.json側に`body`フィールドとして持たせる完全データ駆動方式への移行を検討の余地がある（未着手）。
+
+`pillar_article_slugs`・`purpose_article_slugs`・`venue_slugs`・`related_categories`・`neighboring_areas`・`neighboring_districts`を参照する「TPJの15カテゴリから探す」「目的別に探す」「既存関連記事」「TPJセレクト施設」「行政エリアとの関連」「周辺エリアへの案内」の各セクションは**完全データ駆動**で、新しいエリアを追加しても個別のテンプレート変更は不要。
+
+## 行政エリアとの重複対応（`findDistrictsByAdminArea`）
+
+行政エリアページ（`l3-area.njk`）には、そのエリアが属する商業エリアへの相互リンクボックスが表示される。1つの行政エリアが複数の商業エリアに重複して属すケース（前述の港区青山＝表参道・青山）に対応するため、`.eleventy.js`の`findDistrictsByAdminArea`フィルターは一致する**公開済み商業エリアを全件配列で返す**（単一オブジェクトではない）。
+
+```js
+eleventyConfig.addFilter("findDistrictsByAdminArea", (districts, prefSlug, citySlug, areaSlug) =>
+  (districts || []).filter(d =>
+    d.published !== false &&
+    (d.administrative_refs || []).some(r =>
+      r.prefecture_slug === prefSlug && r.city_slug === citySlug && r.area_slug === areaSlug
+    )
+  )
+);
+```
+
+`l3-area.njk`側は`relatedDistricts.length`で0件（非表示）・1件（「『〇〇』という商業エリアの一部です」）・複数件（「複数の商業エリアガイドで紹介されています」＋各エリアへのリンクを横並び表示）を自動的に出し分ける。特定のスラッグ名にはハードコード依存していない汎用処理のため、将来エリア数が増えても個別対応は不要。
+
+**新しい商業エリアを追加する際、その`administrative_refs`が既存の商業エリアと重複する行政エリアを含む場合でも、このフィルターが自動的に両方を表示するため、個別の調整は不要**（2026-11-15に青山追加時、表参道との重複をこの仕組みで吸収した実例）。
+
+## トップページ・一覧への反映
+
+`/stories/`トップの「商業エリアから探す」セクションは`{% for d in districts if d.published != false %}`で`districts.json`をそのまま配列順にループしているだけ（テンプレート変更不要）。**表示順は`districts.json`内の配列の並び順＝追記した順**になるため、意図した表示順がある場合は配列への追記位置で調整する。
+
+## 新規商業エリア追加時の標準フロー
+
+1. 既存記事を調査し、対象エリアの`pillar_article_slugs`（業種×エリア記事）・`venue_slugs`（実在するTPJセレクト/認証施設）の候補を確認する。架空・未確認の施設情報は入れない
+2. 隣接・重複する既存の商業エリア・行政エリアがないか確認し、重複がある場合は内容の差別化ポイント（「〇〇との違い」）を本文に明記する
+3. `districts.json`にエントリを追加（`neighboring_districts`は双方向に設定）
+4. `district/index.njk`の8箇所（前述）に`elif`分岐を追記
+5. 目的別記事（`purpose_article_slugs`）を`src/stories/concept/`に新規執筆。既存の記事制作ルール（答えリード・FAQ書式・内部リンク必須数・価格/施設名の断定禁止・TPJセレクトと正式認証の混同禁止等）をそのまま適用する
+6. 既存記事⇄新規記事の双方向内部リンクを設定する（通常の「内部リンク（AEO対策・毎回必須）」ルールに準拠）
+7. `npm run build`後、JSON-LDパースエラー・内部リンク切れ・title/description重複の機械検証を行う
+8. 画像は`記事サムネイルの管理ルール`に従い新規調達する（商業エリアのピラーページ自体の`thumbnail`は、代表的な既存記事のサムネイルを再利用してよい。2026-11-15時点で表参道・北参道千駄ヶ谷・青山・銀座の4エリアとも、この方式で対応済み）
+
+## 現在の公開済み商業エリア（2026-11-15時点）
+
+| slug | 名称 | 行政エリア | 目的別記事 |
+|---|---|---|---|
+| `omotesando` | 表参道 | 渋谷区神宮前／港区青山 | 一人時間・商談・ランチ・デート・記念日・PC作業（6本） |
+| `kitasando-sendagaya` | 北参道・千駄ヶ谷 | 渋谷区千駄ヶ谷 | 静か・ランチ・ビジネス利用・インバウンド（4本） |
+| `aoyama` | 青山 | 港区青山 | 商談・ミーティング／アート×カフェ（2本） |
+| `ginza` | 銀座 | 中央区銀座 | 記念日／商談ホテルラウンジ（2本） |
+
+---
+
 # メインサイト（index.html）管理ルール
 
 メインサイトは `public/index.html` を直接編集する静的HTMLファイル（11tyビルド対象外）。
@@ -2555,6 +2661,35 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-11-15
+
+### 商業エリアに青山・銀座を追加＋行政エリア重複対応（findDistrictsByAdminArea）
+
+**対象ファイル**
+- `src/_data/districts.json`（青山・銀座エントリ追加、表参道の`neighboring_districts`に`aoyama`追加）
+- `src/stories/district/index.njk`（青山・銀座の本文・FAQ・description分岐を追加）
+- `.eleventy.js`（`findDistrictByAdminArea`→`findDistrictsByAdminArea`、単一返却→複数返却に変更）
+- `src/stories/area/l3-area.njk`（商業エリア相互リンクボックスを複数件表示対応）
+- 新規記事4本：`src/stories/concept/business-meeting-cafe-aoyama.md`・`art-gallery-cafe-aoyama.md`・`anniversary-cafe-lounge-ginza.md`・`business-lounge-ginza.md`
+- 既存記事7本に逆リンク追加（`aoyama-spa-third-place`・`ginza-third-place-guide`・`hotel-lounge-ginza`・`members-lounge-ginza`・`coworking-omotesando`・`solo-time-cafe-omotesando`・`anniversary-cafe-omotesando`）
+- 新規画像4枚（Unsplash取得・200KB以下）
+
+**背景**：2026-11-14に新設した商業エリア機能（表参道・北参道千駄ヶ谷）を、青山・銀座の2エリアに拡張した。事前調査の結果、既存の業種×エリア記事が銀座に5カテゴリ分（カフェ・バー・ホテルラウンジ・会員制ラウンジ・レストラン）、青山に1カテゴリ分（スパ）存在することを確認し、重複記事がないことを確認した上で着手した。
+
+**発見した構造的な問題と対応**：事前調査で、新設する「青山」商業エリアの`administrative_refs`（港区青山）が、既存の「表参道」商業エリアの`administrative_refs`とすでに重複していることが判明した（表参道商業圏が北青山・南青山まで連続するため）。`areas.json`には港区の行政エリアとして「青山」スラッグが1つしかなく、外苑前・青山一丁目専用の別スラッグが存在しないため、この重複は避けられない仕様だった。
+
+当時の`findDistrictByAdminArea`フィルター（`.eleventy.js`）は`.find()`で**最初に一致した1件のみ**を返す実装だったため、このままでは港区青山の行政エリアページが今後も表参道にしかリンクされず、新設する青山商業エリアには自動リンクされない問題があった。ユーザーに実装方針を確認した上で、`.find()`→`.filter()`に変更し、一致する公開済み商業エリアを全件返す`findDistrictsByAdminArea`に拡張した。`l3-area.njk`側も0件・1件・複数件を自動的に出し分けるよう変更し、特定のエリア名に依存しない汎用処理とした（将来的な商業エリア拡張を見据えた設計）。
+
+**検証方法**：`npm run build`後、サイト全体（716 HTMLページ）でJSON-LD 3,104ブロックのパースエラー0件、内部リンク720件（ユニーク）のリンク切れ0件、title重複0件を確認。港区青山の行政エリアページで表参道・青山の2件が表示されること、既存の単一一致エリア（表参道・千駄ヶ谷）が従来通り1件表示のまま回帰していないこと、商業エリア0件のエリアで空欄表示が出ないことを、Node.jsスクリプトとビルド済みHTMLの両方で確認した。
+
+**ブラウザ実機検証（Playwright）**：プロジェクトの`package.json`には追加せず、作業用の一時ディレクトリにPlaywright（Chromium）を単独インストールして実施。新規6ページ＋港区青山の行政エリアページの計7ページ×4幅（PC 1280px、スマホ375/390/430px）＝28通りで、横スクロール発生0件・コンソールエラー0件・カード型リンクの下線0件を機械確認した。あわせて、本文中のインラインテキストリンク（`.prose a`）には従来通り下線が表示されることを確認し、これはサイト全体の既存仕様であり問題ではないと判断した。キーボードのTab操作でカードリンクに実際に到達し、`focus-visible:ring-2`のゴールドリング（box-shadow）が正しく表示されることも確認した。AOSアニメーション（`data-aos="fade-up"`）はスクロールをトリガーしないと内容が非表示のまま撮影されるため、スクリーンショット取得前に自動スクロールするスクリプトを用いた。
+
+**公開後の本番確認**：コミット（`5d26fd65f`）・プッシュ後、本番URL6件すべてでtitle・description文字数（111〜120字）・canonical・JSON-LD（4ブロック・パースエラー0）がローカル検証時と完全一致することを確認した。Pagefind検索インデックスの`page_count`が163→169（+6）に更新され、新規コンテンツが正しく反映されていることも確認した。
+
+**ルール化**：「商業エリア（district）管理ルール」を新規セクションとしてCLAUDE.mdに追加した（本セクション参照）。2026-11-14に商業エリア機能自体は新設されていたが、ルール文書化はこの時点まで未着手だったため、今回あわせて初版として整備した。
+
+---
 
 ## 2026-10-21
 
