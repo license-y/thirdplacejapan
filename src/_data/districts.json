@@ -24,6 +24,7 @@
       "anniversary-cafe-omotesando"
     ],
     "venue_slugs": ["koffee-mameya-omotesando"],
+    "purpose_summary": "一人時間・商談・ランチ・デート・記念日・PC作業",
     "thumbnail": "/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "restaurant-dining", "coworking", "premium-salon"],
     "neighboring_areas": [
@@ -55,6 +56,7 @@
       "sendagaya-kitasando-cafe"
     ],
     "venue_slugs": ["green-beans-coffee-shibuya"],
+    "purpose_summary": "静かな時間・ランチ・ビジネス利用・インバウンド",
     "thumbnail": "/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "inbound-experience"],
     "neighboring_areas": [
@@ -81,6 +83,7 @@
       "art-gallery-cafe-aoyama"
     ],
     "venue_slugs": [],
+    "purpose_summary": "商談・ミーティング・アート巡り",
     "thumbnail": "/assets/images/articles/aoyama-spa-wellness-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "spa-sauna-wellness"],
     "neighboring_areas": [
@@ -111,6 +114,7 @@
       "business-lounge-ginza"
     ],
     "venue_slugs": ["morioka-shoten-ginza"],
+    "purpose_summary": "記念日・商談・ホテルラウンジ利用",
     "thumbnail": "/assets/images/articles/ginza-cafe-third-place-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "bar-whiskey", "hotel-lounge", "members-lounge", "restaurant-dining", "culture-sports-leisure"],
     "neighboring_areas": [

@@ -23,7 +23,8 @@ eleventyComputed:
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": {{ (item.name + "エリアガイド") | dump | safe }}, "item": "{{ site.url }}/stories/district/{{ item.slug }}/" }
+    { "@type": "ListItem", "position": 3, "name": "商業エリアガイド", "item": "{{ site.url }}/stories/district/" },
+    { "@type": "ListItem", "position": 4, "name": {{ (item.name + "エリアガイド") | dump | safe }}, "item": "{{ site.url }}/stories/district/{{ item.slug }}/" }
   ]
 }
 </script>
@@ -97,6 +98,8 @@ eleventyComputed:
 
   <nav class="flex items-center flex-wrap gap-2 text-xs text-muted mb-12">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>/</span>
+    <a href="/stories/district/" class="hover:text-gold transition-colors">商業エリアガイド</a>
     <span>/</span>
     <span>{{ item.name }}エリアガイド</span>
   </nav>

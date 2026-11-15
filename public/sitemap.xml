@@ -149,6 +149,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://thirdplacejapan.com/stories/district/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://thirdplacejapan.com/en/stories/about/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

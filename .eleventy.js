@@ -255,6 +255,11 @@ export default function (eleventyConfig) {
     (districts || []).find(d => d.slug === slug && d.published !== false) || null
   );
 
+  // 公開済みの商業エリア（district）のみを返す（一覧ページ・JSON-LD hasPart生成用）
+  eleventyConfig.addFilter("publishedDistricts", (districts) =>
+    (districts || []).filter(d => d.published !== false)
+  );
+
   // スコア軸の最低値でフィルタ（FAQの軸別回答生成用）
   eleventyConfig.addFilter("venuesByMinScore", (venues, axis, minScore) =>
     (venues || []).filter(v => v.scores && v.scores[axis] >= minScore)

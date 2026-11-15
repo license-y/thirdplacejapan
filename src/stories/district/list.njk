@@ -1,0 +1,127 @@
+---
+permalink: "/stories/district/"
+layout: area.njk
+title: "商業エリアガイド｜街の雰囲気や目的でサードプレイスを探す"
+description: "街の雰囲気や目的から、自分に合ったサードプレイスを見つける。"
+canonical: "/stories/district/"
+---
+{# BreadcrumbList JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
+    { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
+    { "@type": "ListItem", "position": 3, "name": "商業エリアガイド", "item": "{{ site.url }}/stories/district/" }
+  ]
+}
+</script>
+
+{# CollectionPage JSON-LD #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "url": "{{ site.url }}/stories/district/",
+  "inLanguage": "ja",
+  "mentions": { "@type": "DefinedTerm", "name": "サードプレイス", "alternateName": "Third Place", "url": "{{ site.url }}/stories/about/what-is-third-place/", "description": "家でも職場でもない、心地よく過ごせる第三の居場所という概念。" },
+  "publisher": { "@type": "Organization", "name": "Third Place Japan", "url": "{{ site.url }}" },
+  "hasPart": [
+    {% for d in districts | publishedDistricts %}
+    { "@id": "{{ site.url }}/stories/district/{{ d.slug }}/", "name": {{ d.name | dump | safe }}, "url": "{{ site.url }}/stories/district/{{ d.slug }}/" }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{# FAQPage JSON-LD（可視FAQと完全一致） #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "商業エリアと行政エリアはどう違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "行政エリアは都道府県・市区町村・町丁目という行政区分の単位です。一方、商業エリアは街として一体の商業圏を指し、行政区分をまたぐことがあります（例：表参道は渋谷区神宮前から港区北青山・南青山まで連続する商業エリアです）。Third Place Japanでは両方の視点からサードプレイス（third place）を紹介しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "商業エリアガイドでは何がわかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "街の雰囲気や歴史的背景に加え、一人時間・商談・デートといった利用目的別に、その街でのサードプレイスの過ごし方をThird Place Japanが解説しています。業種別ではなく目的別に探せる点が、行政エリア一覧との違いです。"
+      }
+    }
+  ]
+}
+</script>
+
+<div class="max-w-6xl mx-auto px-6 py-24">
+
+  <nav class="flex items-center gap-2 text-xs text-muted mb-12">
+    <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
+    <span>／</span>
+    <span>商業エリアガイド</span>
+  </nav>
+
+  <div class="mb-16" data-aos="fade-up">
+    <p class="label mb-4">商業エリアガイド</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-4">商業エリアから探す</h1>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-2xl" data-pagefind-body>街の雰囲気や目的から、自分に合ったサードプレイスを見つける。行政区分ではなく、街として一体の商業圏ごとに、利用目的別の過ごし方を案内します。</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16" data-aos="fade-up">
+    {% for d in districts | publishedDistricts %}
+    <a href="/stories/district/{{ d.slug }}/"
+       class="group flex flex-col bg-white border border-gold rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/30">
+      {% if d.thumbnail %}
+      <div class="aspect-[16/9] overflow-hidden">
+        <img src="{{ d.thumbnail }}" alt="{{ d.name }} | Third Place Japan"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+             loading="lazy" decoding="async">
+      </div>
+      {% endif %}
+      <div class="p-6 flex flex-col flex-1">
+        <div class="flex items-baseline gap-2 mb-3">
+          <h2 class="font-serif text-xl font-light text-dark group-hover:text-gold transition-colors">{{ d.name }}</h2>
+          {% if d.name_en %}
+          <span class="text-xs text-muted">{{ d.name_en }}</span>
+          {% endif %}
+        </div>
+        {% if d.summary %}
+        <p class="text-sm text-text leading-relaxed mb-4" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">{{ d.summary }}</p>
+        {% endif %}
+        <div class="mt-auto pt-4 border-t border-border">
+          {% if d.purpose_summary %}
+          <p class="text-[11px] text-muted mb-1">主な利用目的</p>
+          <p class="text-sm text-dark mb-4">{{ d.purpose_summary }}</p>
+          {% endif %}
+          <span class="inline-flex items-center gap-1.5 text-sm text-gold group-hover:gap-2.5 transition-all">
+            {{ d.name }}エリアガイドを見る
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="border border-gold/40 rounded-xl px-8 py-6 text-center" data-aos="fade-up">
+    <p class="label mb-3">行政エリアから探す</p>
+    <p class="text-sm text-muted leading-relaxed mb-5">
+      都道府県・市区町村・エリアという行政区分から探したい方は、行政エリア一覧もご覧ください。
+    </p>
+    <a href="/stories/area/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
+      行政エリア一覧はこちら →
+    </a>
+  </div>
+
+</div>

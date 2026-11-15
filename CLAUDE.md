@@ -2461,6 +2461,7 @@ title: "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate
   "related_categories": ["category_slugの配列"],
   "neighboring_areas": [{ "name": "...", "url": "/stories/area/.../" }],
   "neighboring_districts": ["隣接・関連する他の商業エリアのslug（双方向に設定する）"],
+  "purpose_summary": "主な利用目的を短く列挙した任意フィールド（例：「一人時間・商談・ランチ・デート・記念日・PC作業」）",
   "published": true
 }
 ```
@@ -2468,6 +2469,7 @@ title: "{{ item.area.name }}のサードプレイス{% if item.areaNameDuplicate
 - `administrative_refs`は複数件設定できる（1つの商業エリアが複数の行政区にまたがる場合）。**逆に、1つの行政エリアが複数の商業エリアから参照されることもある**（例：港区青山は表参道・青山の両方のadministrative_refsに含まれる）。これは次節の「行政エリアとの重複対応」で吸収する設計のため、重複を恐れず実態に即して設定してよい
 - `pillar_article_slugs`／`purpose_article_slugs`は`articlesBySlugs`フィルターで`collections.articles`からfileSlug一致で取得する。該当記事が存在しなければ単に空配列として扱われ、ビルドエラーにはならない
 - `neighboring_districts`は必ず双方向に設定する（新しい商業エリアを追加して既存エリアと隣接・重複する場合、既存エリア側の配列にも追記すること。2026-11-15に青山追加時、表参道側の`neighboring_districts`に`"aoyama"`を追記した）
+- **`purpose_summary`（2026-11-15新設・任意フィールド）**：商業エリア一覧ページ（`/stories/district/`）のカードに「主な利用目的」として表示する短い編集用テキスト。`purpose_article_slugs`（記事slugの配列）とは異なり、人間が読む要約文そのものを持つ。`related_categories`（業種分類。`categories.json`と対応する既存フィールド）とは意味が異なるため混同しないこと——`related_categories`は「どの業種のページか」、`purpose_summary`は「何の目的で使われる街か」を表す。未設定でも一覧ページのカード表示は崩れない（該当ブロックが`{% if d.purpose_summary %}`で条件出力されるため）。内容は実際に公開済みの目的別記事（`purpose_article_slugs`）の範囲に基づいて作成し、未公開の記事・未確認のサービスを前提にした文言にしないこと
 
 ## テンプレート構成（`src/stories/district/index.njk`）
 
@@ -2510,6 +2512,25 @@ eleventyConfig.addFilter("findDistrictsByAdminArea", (districts, prefSlug, cityS
 ## トップページ・一覧への反映
 
 `/stories/`トップの「商業エリアから探す」セクションは`{% for d in districts if d.published != false %}`で`districts.json`をそのまま配列順にループしているだけ（テンプレート変更不要）。**表示順は`districts.json`内の配列の並び順＝追記した順**になるため、意図した表示順がある場合は配列への追記位置で調整する。
+
+## 商業エリア一覧ページ（`src/stories/district/list.njk`・2026-11-15新設）
+
+行政エリア一覧（`/stories/area/`）と並ぶ、商業エリア専用の一覧ページ。`/stories/district/`に公開。
+
+**ファイル配置の注意**：`src/stories/district/`フォルダには既に`index.njk`（商業エリア**詳細**ページ。`districts.json`を`pagination`で1件ずつ展開し`/stories/district/{slug}/`を生成）が存在する。`select/`フォルダ（`index.njk`=一覧／`venue.njk`=詳細）とは逆の命名になっているため、一覧ページは同フォルダ内に**別ファイル`list.njk`**として追加し、`permalink: "/stories/district/"`を明示指定している。`index.njk`（詳細テンプレート）は変更・リネームしていない。
+
+**データ駆動設計**：`{% for d in districts | publishedDistricts %}`（`.eleventy.js`に新設した`publishedDistricts`フィルターで`published !== false`のみ抽出）でカードを生成する完全データ駆動。**新しい商業エリアを`districts.json`に追加するだけで一覧ページに自動反映され、`list.njk`自体の編集は不要**。
+
+**カード表示内容**：商業エリア名（`name`／`name_en`）・`summary`（3行クランプ）・`purpose_summary`（「主な利用目的」、未設定時は非表示）・詳細ページへのリンク。行政エリア一覧のような区市町村の網羅列挙ではなく、2×2（PC）/1列（モバイル）のカードレイアウトを採用し、行政区分の一覧をそのまま複製しない設計にしている。
+
+**相互リンク**：
+- `/stories/`トップの商業エリアボックスに「商業エリア一覧はこちら →」を追加（`src/stories/index.njk`）
+- `/stories/area/`（行政エリア一覧）のComing Soonバナー直下に「商業エリアガイドはこちら →」を追加（`src/stories/area/index.njk`）
+- 商業エリア詳細ページ（`district/index.njk`）のパンくず・BreadcrumbList JSON-LDを4階層化し、中間ノード「商業エリアガイド」から一覧ページへ戻れるようにした（Third Place Japan／Stories／商業エリアガイド／{{エリア名}}エリアガイド）
+
+**SEO/AEO**：H1「商業エリアから探す」、title「商業エリアガイド｜街の雰囲気や目的でサードプレイスを探す」、canonical自己参照（`/stories/district/`）、BreadcrumbList／CollectionPage（`hasPart`で公開済み商業エリアへの構造化リンクを含む）／FAQPage（可視FAQと完全一致・「商業エリアと行政エリアの違い」を含む2問）を実装。`src/sitemap.njk`に`/stories/district/`の`<url>`エントリを追加済み（詳細4ページの登録は既存のまま）。
+
+**新規商業エリア追加時の手順への追加**：「新規商業エリア追加時の標準フロー」のステップ3（`districts.json`にエントリを追加）の際に、`purpose_summary`も合わせて設定する。一覧ページ（`list.njk`）・sitemap・トップページ・行政エリア一覧への反映はすべて自動のため、このページ自体のための追加作業は発生しない。
 
 ## 新規商業エリア追加時の標準フロー
 
