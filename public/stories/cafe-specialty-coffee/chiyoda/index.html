@@ -662,7 +662,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>千代田区のカフェは、丸の内の国家的格式、秋葉原・神保町の濃密な専門コミュニティという対極の文化が一つの区に共存するサードプレイスの特異な構造を持つ。</strong></p>
 <p>千代田区のカフェという括りで思い浮かぶイメージは、人によって全く異なる。丸の内の高層ビルに入ったラグジュアリーなコーヒーバーを想像する人もいれば、神保町の古書街に溶け込んだ静かな喫茶を想像する人もいる。秋葉原のホビー特化コミュニティカフェが真っ先に浮かぶ人もいるだろう。この「イメージが定まらない」という事実が、千代田区のカフェ文化の本質をあらわしている。この区は、格式・知の蓄積・趣味の専門性という互いに全く異なる三種類の居場所文化を、同じ行政区の境界の内側に併存させている東京で最も多面的な区のひとつだ。</p>
 <h2>千代田区という場所とカフェの関係</h2>
@@ -717,6 +717,41 @@
 <p>サードプレイスジャパンは千代田区のカフェを独自の7軸基準で審査・認証しています。秋葉原エリアの詳細は<a href="/stories/cafe-specialty-coffee/akihabara/">秋葉原×カフェ・スペシャルティコーヒー</a>、神保町エリアの詳細は<a href="/stories/cafe-specialty-coffee/jimbocho/">神保町×カフェ・スペシャルティコーヒー</a>を、千代田区のホテルラウンジ文化については<a href="/stories/hotel-lounge/chiyoda/">千代田区×高級ホテル・ホテルラウンジ</a>をご覧ください。格式・知・趣味に続く千代田区のもう一つの顔として、国家的な祭祀と町人文化の氏神が同居する信仰の地図は<a href="/stories/shrine-temple/chiyoda/">千代田区のサードプレイスガイド：神社・寺院編</a>で解説している。格式・知・趣味とは異なる、大正末期の学園都市構想が育てた「集中するための一杯」という切り口は<a href="/stories/cafe-specialty-coffee/kodaira/">小平市のサードプレイスガイド：カフェ・スペシャルティコーヒー編</a>も参考になる。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       
@@ -888,24 +923,13 @@
           <ul class="space-y-4">
             
             <li>
-              <a href="/stories/hotel-lounge/business-lounge-ginza/" class="group block">
-                
-                
-                <p class="text-xs text-gold mb-0.5">高級ホテル・ホテルラウンジ</p>
-                
-                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">銀座で落ち着いて商談できるホテルラウンジの選び方｜静けさとプライバシー</p>
-                <p class="text-xs text-muted mt-1">2026年11月18日</p>
-              </a>
-            </li>
-            
-            <li>
               <a href="/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/" class="group block">
                 
                 
                 <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
                 
                 <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">銀座で記念日に過ごしたいカフェ・ラウンジの選び方｜特別な時間の条件</p>
-                <p class="text-xs text-muted mt-1">2026年11月17日</p>
+                <p class="text-xs text-muted mt-1">2026年11月16日</p>
               </a>
             </li>
             
@@ -916,6 +940,17 @@
                 <p class="text-xs text-gold mb-0.5">カフェ・スペシャルティコーヒー</p>
                 
                 <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">青山でアートとカフェを楽しむ過ごし方｜ギャラリー巡りと一人時間</p>
+                <p class="text-xs text-muted mt-1">2026年11月16日</p>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/stories/hotel-lounge/business-lounge-ginza/" class="group block">
+                
+                
+                <p class="text-xs text-gold mb-0.5">高級ホテル・ホテルラウンジ</p>
+                
+                <p class="text-xs text-text group-hover:text-gold transition-colors leading-snug">銀座で落ち着いて商談できるホテルラウンジの選び方｜静けさとプライバシー</p>
                 <p class="text-xs text-muted mt-1">2026年11月16日</p>
               </a>
             </li>
@@ -1005,6 +1040,42 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
+      <a href="/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/anniversary-celebration-lounge-ginza.webp" alt="銀座で記念日に過ごしたいカフェ・ラウンジの選び方｜特別な時間の条件"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">銀座で記念日に過ごしたいカフェ・ラウンジの選び方｜特別な時間の条件</h3>
+          <p class="text-xs text-muted mt-2">2026年11月16日</p>
+        </div>
+      </a>
+      
+      <a href="/stories/cafe-specialty-coffee/art-gallery-cafe-aoyama/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
+        
+        <div class="h-28 overflow-hidden">
+          <img src="/assets/images/articles/minimalist-art-gallery-interior-aoyama.webp" alt="青山でアートとカフェを楽しむ過ごし方｜ギャラリー巡りと一人時間"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+               loading="lazy" decoding="async">
+        </div>
+        
+        <div class="p-4">
+          
+          
+          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
+          
+          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">青山でアートとカフェを楽しむ過ごし方｜ギャラリー巡りと一人時間</h3>
+          <p class="text-xs text-muted mt-2">2026年11月16日</p>
+        </div>
+      </a>
+      
       <a href="/stories/cafe-specialty-coffee/business-meeting-cafe-aoyama/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
         
         <div class="h-28 overflow-hidden">
@@ -1020,42 +1091,6 @@
           
           <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">青山で静かに商談・ミーティングできるカフェの選び方｜Wi-Fi・個室感・立地</h3>
           <p class="text-xs text-muted mt-2">2026年11月15日</p>
-        </div>
-      </a>
-      
-      <a href="/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
-        
-        <div class="h-28 overflow-hidden">
-          <img src="/assets/images/articles/anniversary-celebration-cake-cafe-omotesando.webp" alt="表参道で記念日に過ごしたいカフェの選び方｜誕生日・お祝い・特別な時間"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-               loading="lazy" decoding="async">
-        </div>
-        
-        <div class="p-4">
-          
-          
-          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
-          
-          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">表参道で記念日に過ごしたいカフェの選び方｜誕生日・お祝い・特別な時間</h3>
-          <p class="text-xs text-muted mt-2">2026年11月14日</p>
-        </div>
-      </a>
-      
-      <a href="/stories/cafe-specialty-coffee/date-cafe-omotesando/" class="group block bg-white rounded-xl overflow-hidden border border-gold/30 hover:border-gold shadow-sm hover:shadow-md transition-all">
-        
-        <div class="h-28 overflow-hidden">
-          <img src="/assets/images/articles/date-cafe-couple-conversation-omotesando.webp" alt="表参道でデートに適したカフェの選び方｜落ち着いた空間と二人で過ごす時間"
-               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-               loading="lazy" decoding="async">
-        </div>
-        
-        <div class="p-4">
-          
-          
-          <p class="text-xs text-muted mb-1">カフェ・スペシャルティコーヒー</p>
-          
-          <h3 class="text-sm font-light text-dark group-hover:text-gold transition-colors leading-snug" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">表参道でデートに適したカフェの選び方｜落ち着いた空間と二人で過ごす時間</h3>
-          <p class="text-xs text-muted mt-2">2026年11月14日</p>
         </div>
       </a>
       
@@ -1120,11 +1155,11 @@
         <ul class="space-y-2 text-xs text-muted">
           
           
-          <li><a href="/stories/hotel-lounge/business-lounge-ginza/" class="hover:text-gold transition-colors line-clamp-1">銀座で落ち着いて商談できるホテルラウンジの選び方｜静けさとプライバシー</a></li>
-          
           <li><a href="/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/" class="hover:text-gold transition-colors line-clamp-1">銀座で記念日に過ごしたいカフェ・ラウンジの選び方｜特別な時間の条件</a></li>
           
           <li><a href="/stories/cafe-specialty-coffee/art-gallery-cafe-aoyama/" class="hover:text-gold transition-colors line-clamp-1">青山でアートとカフェを楽しむ過ごし方｜ギャラリー巡りと一人時間</a></li>
+          
+          <li><a href="/stories/hotel-lounge/business-lounge-ginza/" class="hover:text-gold transition-colors line-clamp-1">銀座で落ち着いて商談できるホテルラウンジの選び方｜静けさとプライバシー</a></li>
           
           <li><a href="/stories/cafe-specialty-coffee/business-meeting-cafe-aoyama/" class="hover:text-gold transition-colors line-clamp-1">青山で静かに商談・ミーティングできるカフェの選び方｜Wi-Fi・個室感・立地</a></li>
           

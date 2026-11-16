@@ -2,7 +2,7 @@
 layout: article.njk
 title: 銀座で落ち着いて商談できるホテルラウンジの選び方｜静けさとプライバシー
 description: 銀座で商談に向くホテルラウンジを選ぶ条件は、静けさ・座席間隔・プライバシーの3点に集約される。カフェとの違いを踏まえながら、Third Place Japanがサードプレイスとしての視点からビジネス利用の見分け方を解説する。
-date: 2026-11-18
+date: 2026-11-16
 tags:
   - articles
 category_slug: hotel-lounge

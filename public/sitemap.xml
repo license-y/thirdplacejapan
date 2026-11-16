@@ -3342,16 +3342,8 @@
   
   
   <url>
-    <loc>https://thirdplacejapan.com/stories/hotel-lounge/business-lounge-ginza/</loc>
-    <lastmod>2026-11-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    
-  </url>
-  
-  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/anniversary-cafe-lounge-ginza/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     
@@ -3359,6 +3351,14 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/art-gallery-cafe-aoyama/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/hotel-lounge/business-lounge-ginza/</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

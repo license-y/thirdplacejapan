@@ -2,7 +2,7 @@
 layout: article.njk
 title: 銀座で記念日に過ごしたいカフェ・ラウンジの選び方｜特別な時間の条件
 description: 銀座で記念日に過ごすカフェ・ラウンジを選ぶ条件は、空間の特別感・サービスの丁寧さ・予約確認の3点に集約される。老舗文化が根づく街の立地を基準に、Third Place Japanがサードプレイスの視点から見分け方を解説する。
-date: 2026-11-17
+date: 2026-11-16
 tags:
   - articles
 category_slug: cafe-specialty-coffee
