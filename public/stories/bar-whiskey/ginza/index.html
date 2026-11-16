@@ -658,7 +658,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>銀座のバーは、戦後から続く職人文化と老舗の時間の蓄積により、日本のバー文化の技術的な聖地として機能するサードプレイスである。「静かに飲む」カウンター文化が内省的な居場所を生む。</strong></p>
 <p>銀座のバーは、技術の聖地だ。戦後から続くバーテンダーの職人文化と、50年・70年を超える老舗が現役で機能するこの街では、「銀座のバーで修業した」という事実が業界内で意味を持ち続けている。六本木の多国籍な夜とは対極の、一人で静かに向き合う内省的な時間——それがこの街のバーが生む第三の居場所の核だ。</p>
 <h2>銀座という街とバー文化の関係</h2>
@@ -723,6 +723,41 @@ STEP1で言語化した固有の核3点：
 -->
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

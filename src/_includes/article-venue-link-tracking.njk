@@ -1,0 +1,48 @@
+{#
+  記事本文→施設詳細ページへの内部リンクGA4クリック計測（2026-11-16追加）
+
+  article.njk・article-certified.njk・article-area.njkの3レイアウトから共通で呼び出される。
+  呼び出し元は、本文を囲む.prose要素に以下2属性を付与してから、その直後でこのincludeを呼ぶこと：
+    data-ga-article-body        このブロックが計測対象の本文要素であることを示すマーカー
+    data-page-language="ja"/"en" ページ自身の言語（lang変数から呼び出し側で算出）
+
+  記事本文・リンク先URLは一切変更しない。対象は本文（.prose）内の
+  /stories/select/または/en/stories/select/配下の施設詳細ページへのリンクのみ
+  （一覧ページ自身・#アンカーのみのリンクは正規表現で除外）。
+  ナビ・フッターは.proseの外側にあるため対象にならない。
+
+  二重計測防止：[data-ga-article-body]を１つだけ探し、dataset.gaBoundガードで
+  同一要素への複数回のリスナー登録を防ぐ。venue-reservation-cta.njk等、
+  施設ページ側の計測スクリプトとは完全に独立しており、相互に影響しない。
+#}
+<script type="application/json" id="venue-grade-lookup">{{ venues | venueGradeLookup | dump | safe }}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>

@@ -149,9 +149,14 @@ og_type: "article"
       {% endif %}
 
       {# 本文 #}
-      <div class="prose" data-aos="fade-up">
+      <div class="prose" data-ga-article-body data-page-language="{{ 'en' if lang == 'en' else 'ja' }}" data-aos="fade-up">
         {{ content | safe }}
       </div>
+
+      {# 記事本文→施設詳細ページへの内部リンクGA4計測（article.njkと共通のinclude）。
+         直下の「このエリアのセレクト店舗」カードグリッドは.prose外のデータ駆動セクションのため
+         計測対象に含まれない（本文内リンクのみを対象とする設計どおり） #}
+      {% include "article-venue-link-tracking.njk" %}
 
       {# このエリアのセレクト店舗 #}
       {% if area_slug %}

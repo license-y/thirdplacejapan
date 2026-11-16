@@ -655,7 +655,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>調布市を訪れる外国人旅行者が出会うのは、物語の舞台を歩く観光ではなく、今日もどこかで新しい映像が生まれている現役の産業そのものだ。昭和8年の撮影所開設から一度も途切れることなく稼働してきたこの街は、衰退の記憶でも過去の再現でもない「現在進行形の映像産業」を体感できるサードプレイス（third place）として東京郊外に位置づけられる。</strong></p>
 <h2>なぜ調布市のインバウンド体験は「現役の撮影所」を核にするのか？</h2>
 <p>多くの街のインバウンド体験は、物語の舞台になった実在の風景を歩く、あるいは過去の記憶を今に伝えるという構造を持つ。調布市は違う。昭和8年（1933年）に開設された撮影所は、その後の再編を経ながらも稼働を止めることなく、今日まで現役の映像制作拠点であり続けている。</p>
@@ -727,6 +727,41 @@
 </ul>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

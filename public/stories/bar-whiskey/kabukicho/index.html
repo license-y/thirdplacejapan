@@ -658,7 +658,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>歌舞伎町のバーは、表通りの喧騒と路地裏の静けさという二層構造によって、新宿区で最も独自な夜のサードプレイスを形成している。狭小なカウンターが常連との深い関係を育てる。</strong></p>
 <p>歌舞伎町のバーは、東京で最もカオスな街区に存在する、静かな居場所だ。ネオンと呼び込みが交差する表通りから一本路地に入ると、間口1メートル半ほどの小さなバーが密集した別の世界が現れる。この「表の喧騒と裏の静けさ」という二層構造こそが、歌舞伎町を他の繁華街とは根本的に異なるサードプレイスの集積地にしている。サードプレイスジャパン（Third Place Japan）は、この街のバー文化が担う居場所機能を7軸の観点から読み解く。</p>
 <hr>
@@ -721,6 +721,41 @@ JR・地下鉄各線の新宿駅東口・東南口から徒歩7〜10分。靖国
 <p>新宿区のバー・ウイスキー文化の全体像は<a href="/stories/bar-whiskey/shinjuku/">新宿区のバー・サードプレイスガイド</a>で詳しく扱う。銀座・六本木など他エリアのバー記事は<a href="/stories/bar-whiskey/">バー・ウイスキーカテゴリ一覧</a>から参照できる。路地奥のカウンターで生まれる静けさと会話の関係については<a href="/stories/about/third-place-conversation-silence/">サードプレイスにおける会話と沈黙の役割</a>も参考になる。同じ新宿区内の多国籍な食の居場所については<a href="/stories/restaurant-dining/shin-okubo/">新大久保でレストランをサードプレイスにする</a>も参照されたい。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

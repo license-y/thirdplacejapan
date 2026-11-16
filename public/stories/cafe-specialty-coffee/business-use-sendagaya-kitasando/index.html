@@ -648,7 +648,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>千駄ヶ谷・北参道のカフェは、静寂性と居心地という2つの評価軸において、商談やリモートワークに適したサードプレイスとして機能する。オフィスでも自宅でもない「集中できる第三の居場所」を求めるビジネスパーソンにとって、このエリアは東京でも条件が揃った街区だ。</strong></p>
 <p>商談の合間、リモートワークの拠点、あるいは考え事をまとめたい一時間——オフィスと自宅の間に「もう一つの仕事場」を必要とする場面は少なくない。千駄ヶ谷・北参道は、将棋の長考文化と神宮外苑への動線が交差する街として、この需要に応える条件を自然に備えている。</p>
 <h2>なぜ千駄ヶ谷・北参道がビジネス利用に向くのか</h2>
@@ -678,6 +678,41 @@ JR千駄ヶ谷駅・東京メトロ北参道駅はいずれも新宿・渋谷か
 <p>千駄ヶ谷・北参道は、静寂性と居心地という2つの評価軸において、商談・リモートワークに適したサードプレイスが育つ土壌を持つ街だ。将棋の長考文化が街全体に共有する「急かされない時間」が、ビジネス利用の下地になっている。Third Place Japan（サードプレイスジャパン）は、こうした空間を7軸評価によって継続的に検証・認証している。エリア全体のカフェ文化については<a href="/stories/cafe-specialty-coffee-kitasando-sendagaya/">北参道・千駄ヶ谷のカフェ完全ガイド</a>、7軸評価の詳しい仕組みは<a href="/stories/about/tpj-7-axis-evaluation-guide/">TPJ7軸評価基準の完全ガイド</a>を合わせて参照いただきたい。商談・ランチミーティングを目的に表参道でカフェを選ぶ場合の条件は、<a href="/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/">表参道で静かに打ち合わせできるカフェの選び方</a>にまとめている。1人でのPC作業に絞った条件は、<a href="/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/">表参道でPC作業がしやすいカフェの選び方</a>でも解説している。仕事ではなく、同じ千駄ヶ谷・北参道エリアで純粋に静かな時間を求める場合は<a href="/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/">北参道・千駄ヶ谷で静かに過ごせるカフェの選び方</a>、渋谷区を横断するエリア全体のガイドは<a href="/stories/district/kitasando-sendagaya/">北参道・千駄ヶ谷エリアガイド</a>で紹介している。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

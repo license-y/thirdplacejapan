@@ -65,13 +65,13 @@
     <p class="label text-gold mb-2">Third Place Japan</p>
     <p class="text-xs font-medium tracking-widest text-muted mb-6">{{ venue.grade | upper }} CERTIFIED</p>
 
-    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">{{ displayName }}</h2>
+    <p class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">{{ displayName }}</p>
 
     {% if displayTagline %}
     <p class="text-sm text-muted mb-8">{% if isEn %}&ldquo;{{ displayTagline }}&rdquo;{% else %}「{{ displayTagline }}」{% endif %}</p>
     {% endif %}
 
-    <p class="label mb-5">{{ reservationHeading }}</p>
+    <h2 class="label mb-5">{{ reservationHeading }}</h2>
 
     <div class="reservation-cta-grid grid grid-cols-2 items-stretch gap-3 max-w-md mx-auto"
          data-ga-reserve-cta

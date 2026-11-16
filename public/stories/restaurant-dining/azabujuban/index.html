@@ -658,7 +658,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>麻布十番のレストランは、六本木・表参道に隣接しながら観光客が来ない、東京で稀な地元密着型のサードプレイスである。</strong></p>
 <p>麻布十番のレストランは、食事を目的にした居場所だ。表参道のように「誰と来るか」が社交の文法を決めるわけでもなく、六本木のように夜の多国籍な中立地帯として機能するわけでもない。近隣に住む人間が、週に一度、決まった席に座る——その繰り返しがレストランをサードプレイスに変える、東京で最も地に足のついた食の居場所文化がここにある。</p>
 <hr>
@@ -720,6 +720,41 @@
 <p>麻布十番のレストランは、「観光客が来ない」という条件が生む東京最密の常連文化と、400年の商業史が育てた街への接続感が重なって、食の場をサードプレイスに変える稀な構造を持つ。表参道の社交でも六本木の国際的な夜でもない、「生活の定点として通い続ける」という最も地に足のついたサードプレイスの形がここにある。港区全体のレストラン居場所マップは<a href="/stories/restaurant-dining/minato/">港区のレストラン・ダイニングをサードプレイスにする</a>で今後解説予定だ。「行きつけ」という関係性の育ち方については<a href="/stories/about/third-place-regulars/">サードプレイスに「常連」が欠かせない理由</a>、対照的な社交の文脈は<a href="/stories/restaurant-dining/omotesando/">表参道でダイニングをサードプレイスにする</a>も参考になる。Third Place Japan（サードプレイスジャパン）は麻布十番のレストラン空間を7軸評価によって継続的に記録・認証していく。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

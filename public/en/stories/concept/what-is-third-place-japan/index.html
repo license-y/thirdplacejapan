@@ -638,7 +638,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="en" data-aos="fade-up">
         <p><strong>A third place is any space beyond home and work where people gather informally, regularly, and freely. The concept was coined by sociologist Ray Oldenburg in his 1989 book <em>The Great Good Place</em>. Third Place Japan (TPJ) evaluates and certifies spaces across Japan that fulfill this function — and adapts Oldenburg's framework to Japan's distinct cultural context, including the concept of <em>ibasho</em>.</strong></p>
 <p>The question &quot;where do you go to be yourself?&quot; is not merely about geography. It is about the conditions under which people feel at ease — neither performing nor retreating. Third places are the answer to that question, and their presence (or absence) shapes the quality of daily life more than most people recognize.</p>
 <hr>
@@ -727,6 +727,41 @@ A TPJ-certified space has been evaluated against our seven-axis framework and fo
 <p>To see this framework applied to a specific space, <a href="/en/stories/concept/meiji-jingu-third-place-tokyo/">Meiji Jingu as a Third Place: Finding Silence in Central Tokyo</a> walks through the seven axes in detail, and <a href="/en/stories/concept/third-place-examples/">Ten Kinds of Third Place: What Actually Counts as One in Japan</a> surveys the concept across ten categories of space. Travelers looking to put the concept into practice across the city can start with <a href="/en/stories/concept/tokyo-third-place-guide-travelers/">Tokyo Third Places: A Traveler's Guide to Finding Your Space in Japan</a>. For a quieter, more intellectual reading of <em>ibasho</em>, <a href="/en/stories/retreat-zen/bunkyo/">Bunkyo-ku as a Third Place: Intellectual Solitude on Tokyo's Scholar-Town Slopes</a> explores the theme through a single ward.</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

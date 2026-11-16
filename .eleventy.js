@@ -247,6 +247,16 @@ export default function (eleventyConfig) {
     return (venues || []).filter(v => set.has(v.slug) && v.published !== false);
   });
 
+  // 記事本文→施設詳細ページのGA4クリック計測用：施設slugからgrade_slugを引くための
+  // 軽量な辞書（{slug: grade_slug}）をクライアント側JSへ埋め込むためのフィルター
+  eleventyConfig.addFilter("venueGradeLookup", (venues) => {
+    const map = {};
+    (venues || []).forEach(v => {
+      if (v.published !== false) map[v.slug] = v.grade_slug;
+    });
+    return map;
+  });
+
   // 行政エリア（都道府県/市区町村/エリア）から、対応する商業エリア（district）を逆引きする
   // （行政エリアページ側からの相互リンク表示用。コンテンツの自動集約には使わない）
   // 1つの行政エリアが複数の商業エリアに重複して属すことがある（例：港区青山＝表参道・青山の両方）ため、
@@ -525,6 +535,18 @@ export default function (eleventyConfig) {
       .filter(p => p.data.area_slug === areaSlug)
       .sort((a, b) => b.date - a.date)
   );
+
+  // 施設ページの「エリアの関連記事」用：venue.pinned_articles（fileSlug配列）があれば
+  // その記事を先頭に固定し、残り枠を既存の日付降順リストで埋めてlimit件に切り詰める。
+  // pinnedSlugsが未設定の施設は従来通りの日付降順のみ（後方互換）。
+  eleventyConfig.addFilter("prioritizeArticles", (articles, pinnedSlugs, limit) => {
+    const n = limit || 5;
+    const pinnedSet = new Set(pinnedSlugs || []);
+    if (!pinnedSet.size) return (articles || []).slice(0, n);
+    const pinned = (articles || []).filter(p => pinnedSet.has(p.fileSlug));
+    const rest = (articles || []).filter(p => !pinnedSet.has(p.fileSlug));
+    return pinned.concat(rest).slice(0, n);
+  });
 
   // 都道府県レベルの記事取得（都道府県内の全エリアslug・市区町村名に一致する記事を最新順で返す）
   eleventyConfig.addFilter("articlesByPrefecture", (collection, prefSlug, limit) => {

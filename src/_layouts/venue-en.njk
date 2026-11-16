@@ -264,7 +264,7 @@ lang: "en"
 
   {# 7-axis scores #}
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7-Axis Evaluation Scores</p>
+    <h2 class="label mb-6">7-Axis Evaluation Scores</h2>
     <div class="space-y-4">
       {% set axisData = [
         { name: "Comfort & Space Quality", score: venue.scores.comfort },
@@ -290,7 +290,7 @@ lang: "en"
   {# Radar chart (Platinum and above) #}
   {% if thisLevel >= 4 %}
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7-Axis Radar Chart</p>
+    <h2 class="label mb-6">7-Axis Radar Chart</h2>
     <div class="flex flex-col items-center gap-4">
       <div id="radar-chart-container-en" style="width:220px;height:220px;" aria-hidden="true"></div>
       <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
@@ -364,7 +364,7 @@ lang: "en"
   {%- set maxTagsMap = {"select": 5, "certified": 10, "silver": 15, "gold": 20, "platinum": 25, "flagship": 30} -%}
   {%- set tagLimit = maxTagsMap[venue.grade_slug] or 5 -%}
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-4">Third Place Tags</p>
+    <h2 class="label mb-4">Third Place Tags</h2>
     <div class="flex flex-wrap gap-2">
       {% for tag in venue.tags_en | head(tagLimit) %}
       <span class="text-xs px-3 py-1 border border-gold/30 rounded-full text-muted bg-white">{{ tag }}</span>
@@ -379,13 +379,16 @@ lang: "en"
   </div>
   {% endif %}
 
+  {# 利用目的別の「おすすめの過ごし方」セクション（確認済み情報のみ表示。日本語版と共通コンポーネント） #}
+  {% include "venue-purpose-highlights.njk" %}
+
   {# FAQ (venue.faq_groups_en shows labeled sections; falls back to flat venue.faq_en) #}
   {% if venue.faq_groups_en and venue.faq_groups_en.length %}
   <section class="mt-14 mb-2" data-aos="fade-up">
-    <p class="label mb-6">Frequently Asked Questions</p>
+    <h2 class="label mb-6">Frequently Asked Questions</h2>
     {% for group in venue.faq_groups_en %}
     <div class="{% if not loop.first %}mt-8 {% endif %}mb-3">
-      <p class="text-xs font-medium text-gold mb-3">{{ group.label }}</p>
+      <h3 class="text-xs font-medium text-gold mb-3">{{ group.label }}</h3>
       <div class="space-y-3">
         {% for item in group.items %}
         <details class="bg-white rounded-xl shadow-sm border border-border">
@@ -404,7 +407,7 @@ lang: "en"
   </section>
   {% elif venue.faq_en and venue.faq_en.length %}
   <section class="mt-14 mb-2" data-aos="fade-up">
-    <p class="label mb-6">Frequently Asked Questions</p>
+    <h2 class="label mb-6">Frequently Asked Questions</h2>
     <div class="space-y-3">
       {% for item in venue.faq_en %}
       <details class="bg-white rounded-xl shadow-sm border border-border">
@@ -448,6 +451,47 @@ lang: "en"
     {% endif %}
     <p class="pt-2 text-xs">Third Place Japan Certified: {{ venue.certified_date }} | <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">Third Place Japan Editorial Team</a> | {{ venueSourcingBasis }}</p>
   </aside>
+
+  {# 商業エリア（district）への逆リンク。英語版の商業エリアページは未整備のため、既存の慣例に沿ってJA版へリンクし注記を添える #}
+  {% set venueDistricts = districts | findDistrictsByAdminArea(venue.area_primary.prefecture_slug, venue.area_primary.city_slug, venue.area_primary.area_slug) %}
+  {% if venueDistricts.length %}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="bg-white border border-gold/30 rounded-xl px-6 py-5"
+         data-ga-district-link
+         data-venue-slug="{{ venue.slug }}"
+         data-venue-grade="{{ venue.grade_slug }}"
+         data-page-language="en">
+      <p class="text-sm text-muted mb-3">{{ venue.name_en }} is part of the {% for d in venueDistricts %}&ldquo;{{ d.name_en or d.name }}&rdquo;{% if not loop.last %} / {% endif %}{% endfor %} commercial district guide. <em>(Japanese-language page; an English version is not yet available)</em></p>
+      <div class="flex flex-wrap gap-3">
+        {% for d in venueDistricts %}
+        <a href="/stories/district/{{ d.slug }}/" data-ga-event="click_internal_link" data-destination-type="district_guide"
+           class="inline-flex items-center gap-2 text-sm text-gold hover:underline whitespace-nowrap">{{ d.name_en or d.name }} district guide →</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <script>
+  (function() {
+    document.querySelectorAll('[data-ga-district-link]').forEach(function(container) {
+      if (container.dataset.gaBound === "1") return;
+      container.dataset.gaBound = "1";
+      container.addEventListener('click', function(e) {
+        var el = e.target.closest('a[data-ga-event]');
+        if (!el || !container.contains(el)) return;
+        if (typeof gtag === "function") {
+          gtag('event', el.getAttribute('data-ga-event'), {
+            venue_slug: container.getAttribute('data-venue-slug'),
+            venue_grade: container.getAttribute('data-venue-grade'),
+            link_location: 'district_link',
+            destination_type: el.getAttribute('data-destination-type'),
+            page_language: container.getAttribute('data-page-language')
+          });
+        }
+      });
+    });
+  })();
+  </script>
+  {% endif %}
 
   <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
     <p class="text-sm text-muted">

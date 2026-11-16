@@ -662,7 +662,7 @@
 
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">空間の7基準</p>
+    <h2 class="label mb-6">空間の7基準</h2>
     <div class="space-y-6">
 
       
@@ -756,7 +756,7 @@
 
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-4">サードプレイス関連タグ</p>
+    <h2 class="label mb-4">サードプレイス関連タグ</h2>
     <div class="flex flex-wrap gap-2">
       
       <span class="text-xs px-3 py-1 border border-gold/30 rounded-full text-muted bg-white">上質</span>
@@ -787,8 +787,12 @@
 
   
   
+
+
+  
+  
   <section class="mt-14 mb-2" data-aos="fade-up">
-    <p class="label mb-6">よくある質問</p>
+    <h2 class="label mb-6">よくある質問</h2>
     <div class="space-y-3">
       
       <details class="bg-white rounded-xl shadow-sm border border-border">
@@ -866,7 +870,7 @@
   
   <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
     <div class="flex items-center justify-between mb-6">
-      <p class="label">渋谷区の他のTPJセレクト</p>
+      <h2 class="label">渋谷区の他のTPJセレクト</h2>
       
       <a href="/stories/area/tokyo/shibuya-ku/"
          class="text-xs text-muted hover:text-gold transition-colors">
@@ -927,7 +931,7 @@
   
   <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
     <div class="flex items-center justify-between mb-6">
-      <p class="label">表参道の関連記事</p>
+      <h2 class="label">表参道の関連記事</h2>
       
       <a href="/stories/area/tokyo/shibuya-ku/omotesando/"
          class="text-xs text-muted hover:text-gold transition-colors">
@@ -999,6 +1003,47 @@
       
     </div>
   </section>
+  
+
+  
+  
+  
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="bg-white border border-gold/30 rounded-xl px-6 py-5"
+         data-ga-district-link
+         data-venue-slug="koffee-mameya-omotesando"
+         data-venue-grade="select"
+         data-page-language="ja">
+      <p class="text-sm text-muted mb-3">KOFFEE MAMEYAは「表参道」という商業エリアの一部です。</p>
+      <div class="flex flex-wrap gap-3">
+        
+        <a href="/stories/district/omotesando/" data-ga-event="click_internal_link" data-destination-type="district_guide"
+           class="inline-flex items-center gap-2 text-sm text-gold hover:underline whitespace-nowrap">表参道エリアガイドを見る →</a>
+        
+      </div>
+    </div>
+  </section>
+  <script>
+  (function() {
+    document.querySelectorAll('[data-ga-district-link]').forEach(function(container) {
+      if (container.dataset.gaBound === "1") return;
+      container.dataset.gaBound = "1";
+      container.addEventListener('click', function(e) {
+        var el = e.target.closest('a[data-ga-event]');
+        if (!el || !container.contains(el)) return;
+        if (typeof gtag === "function") {
+          gtag('event', el.getAttribute('data-ga-event'), {
+            venue_slug: container.getAttribute('data-venue-slug'),
+            venue_grade: container.getAttribute('data-venue-grade'),
+            link_location: 'district_link',
+            destination_type: el.getAttribute('data-destination-type'),
+            page_language: container.getAttribute('data-page-language')
+          });
+        }
+      });
+    });
+  })();
+  </script>
   
 
   

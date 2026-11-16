@@ -657,7 +657,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>渋谷・北参道・千駄ヶ谷のスペシャルティコーヒー空間は、東京でも有数の「第三の居場所」が集まるエリアだ。商業地・住宅地・文化施設が混在する渋谷区の地理的特性が、業種を超えた多様なサードプレイスを生み出している。</strong></p>
 <p>渋谷駅から徒歩圏にありながら、それぞれが異なる顔を持つ渋谷・北参道・千駄ヶ谷。この三つのエリアにおいて、スペシャルティコーヒーを提供する空間が「いられる場所」として機能する理由を、Third Place Japan（サードプレイスジャパン）の7軸評価基準から解説します。</p>
 <h2>渋谷エリアという街と「第三の居場所」</h2>
@@ -716,6 +716,41 @@ TPJは7軸（居心地・静寂性・特別感・ストーリー・再訪価値�
 <p>サードプレイスとして使える空間の会話と静寂のバランスについては<a href="/stories/about/third-place-conversation-silence/">サードプレイスにおける会話と沈黙の役割</a>でも詳しく解説しています。千駄ヶ谷エリアでTPJがFlagship認証したサードプレイス（third place）の実例は<a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/">Green Beans Coffeeの評価レポート</a>、施設詳細は<a href="/stories/select/green-beans-coffee-shibuya/">認証プロフィールページ</a>で確認できる。北参道・千駄ヶ谷だけで食事そのものをゆっくり楽しみたい場合は<a href="/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/">北参道・千駄ヶ谷でゆっくりランチを楽しめるカフェの選び方</a>、渋谷区を横断するエリア全体のガイドは<a href="/stories/district/kitasando-sendagaya/">北参道・千駄ヶ谷エリアガイド</a>で紹介している。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

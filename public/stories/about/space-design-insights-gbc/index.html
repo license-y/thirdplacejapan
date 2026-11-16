@@ -643,7 +643,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>空間設計がサードプレイスとして機能するかどうかは、素材や照明といった個別の要素ではなく、それらが「居心地・空間品質」「静寂性・プライバシー」という2つの評価軸にどう接続しているかで決まる。TPJが実証店舗として継続的に検証してきたGreen Beans Coffee（グリーンビーンズコーヒー）の知見は、この接続の具体例を示している。</strong></p>
 <p>「いい空間」という感覚は、何によって生まれるのか。照明の色、席の間隔、音の大きさ——個別の要素を並べるだけでは、なぜその空間が居心地よく感じられるのかは説明できない。Third Place Japan（サードプレイスジャパン）は、この問いに答えるためにTPJ7軸評価という共通言語を定め、実証店舗での継続的な検証を通じて、空間設計と評価軸の接続を確かめてきた。</p>
 <h2>なぜ空間設計が「評価軸」の言葉で語られるべきなのか</h2>
@@ -676,6 +676,41 @@ TPJが自ら空間設計の知見を継続的に検証する、Flagship認証の
 <p>空間設計がサードプレイスとして機能するかどうかは、個別の工夫を居心地・空間品質、静寂性・プライバシーという評価軸に接続できているかで決まる。TPJが実証店舗として継続的に検証してきたGreen Beans Coffeeの知見は、この接続を具体的に示す事例だ。Third Place Japan（サードプレイスジャパン）は、こうした空間設計の知見を7軸評価という共通言語に翻訳しながら、日本各地のサードプレイスを継続的に評価・認証している。GBCの評価詳細は<a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/">Green Beans Coffeeの評価レポート</a>、認証とセレクトの違いは<a href="/stories/about/tpj-certification-and-select-difference/">TPJ認証とTPJセレクト、なぜ2つあるのか</a>でそれぞれ詳しく解説している。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

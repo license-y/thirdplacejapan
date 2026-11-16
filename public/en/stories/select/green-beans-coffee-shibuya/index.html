@@ -840,7 +840,7 @@
 
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7-Axis Evaluation Scores</p>
+    <h2 class="label mb-6">7-Axis Evaluation Scores</h2>
     <div class="space-y-4">
       
       
@@ -906,7 +906,7 @@
   
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-6">7-Axis Radar Chart</p>
+    <h2 class="label mb-6">7-Axis Radar Chart</h2>
     <div class="flex flex-col items-center gap-4">
       <div id="radar-chart-container-en" style="width:220px;height:220px;" aria-hidden="true"></div>
       <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
@@ -977,7 +977,7 @@
 
   
   <section class="mb-14" data-aos="fade-up">
-    <p class="label mb-4">Third Place Tags</p>
+    <h2 class="label mb-4">Third Place Tags</h2>
     <div class="flex flex-wrap gap-2">
       
       <span class="text-xs px-3 py-1 border border-gold/30 rounded-full text-muted bg-white">Me Time</span>
@@ -1045,12 +1045,98 @@
   
 
   
+  <section class="mb-14" data-aos="fade-up">
+  <h2 class="label mb-6">Ways to Enjoy This Space</h2>
+  <div class="space-y-5"
+       data-ga-purpose-highlights
+       data-venue-slug="green-beans-coffee-shibuya"
+       data-venue-grade="flagship"
+       data-page-language="en">
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Solo Time</h3>
+      <p class="text-sm text-muted leading-relaxed">Careful spacing between seats and attention to quiet make this a comfortable place to spend time alone.</p>
+      
+      <a href="/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="solo-time"
+         class="inline-block mt-2 text-xs text-gold hover:underline">Read more →</a>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Business Meetings</h3>
+      <p class="text-sm text-muted leading-relaxed">A quiet layout makes it workable for informal business conversations.</p>
+      
+      <a href="/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="business-meeting"
+         class="inline-block mt-2 text-xs text-gold hover:underline">Read more →</a>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Laptop Work</h3>
+      <p class="text-sm text-muted leading-relaxed">Wi-Fi and power outlets are available throughout, supporting extended laptop sessions.</p>
+      
+      <a href="/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="pc-work"
+         class="inline-block mt-2 text-xs text-gold hover:underline">Read more →</a>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Pet-Friendly</h3>
+      <p class="text-sm text-muted leading-relaxed">Pets are welcome inside the café.</p>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Coffee Experience</h3>
+      <p class="text-sm text-muted leading-relaxed">The in-house roastery carries thirty coffee origins, each with its own story of farm and process.</p>
+      
+      <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="coffee-experience"
+         class="inline-block mt-2 text-xs text-gold hover:underline">Read more →</a>
+      
+    </div>
+    
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">Gluten-Free Options</h3>
+      
+      <p class="text-sm text-muted leading-relaxed">A gluten-free one-plate lunch and a rice-flour brownie are available (gluten-free items are limited to specific menu options).</p>
+      
+    </div>
+    
+  </div>
+</section>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-purpose-highlights]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'purpose_highlights',
+          destination_type: el.getAttribute('data-destination-type'),
+          page_language: container.getAttribute('data-page-language')
+        });
+      }
+    });
+  });
+})();
+</script>
+
+
+
+  
   
   <section class="mt-14 mb-2" data-aos="fade-up">
-    <p class="label mb-6">Frequently Asked Questions</p>
+    <h2 class="label mb-6">Frequently Asked Questions</h2>
     
     <div class="mb-3">
-      <p class="text-xs font-medium text-gold mb-3">About Green Beans Coffee</p>
+      <h3 class="text-xs font-medium text-gold mb-3">About Green Beans Coffee</h3>
       <div class="space-y-3">
         
         <details class="bg-white rounded-xl shadow-sm border border-border">
@@ -1147,7 +1233,7 @@
     </div>
     
     <div class="mt-8 mb-3">
-      <p class="text-xs font-medium text-gold mb-3">About Third Place Japan&#39;s Certification</p>
+      <h3 class="text-xs font-medium text-gold mb-3">About Third Place Japan&#39;s Certification</h3>
       <div class="space-y-3">
         
         <details class="bg-white rounded-xl shadow-sm border border-border">
@@ -1262,13 +1348,13 @@
     <p class="label text-gold mb-2">Third Place Japan</p>
     <p class="text-xs font-medium tracking-widest text-muted mb-6">FLAGSHIP CERTIFIED</p>
 
-    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">Green Beans Coffee</h2>
+    <p class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">Green Beans Coffee</p>
 
     
     <p class="text-sm text-muted mb-8">&ldquo;A welcoming space for a memorable moment.&rdquo;</p>
     
 
-    <p class="label mb-5">Reservations &amp; Visit Information</p>
+    <h2 class="label mb-5">Reservations &amp; Visit Information</h2>
 
     <div class="reservation-cta-grid grid grid-cols-2 items-stretch gap-3 max-w-md mx-auto"
          data-ga-reserve-cta
@@ -1374,6 +1460,47 @@
     
     <p class="pt-2 text-xs">Third Place Japan Certified: 2026-06-15 | <a href="/about-company/#editorial-team" class="hover:text-gold transition-colors">Third Place Japan Editorial Team</a> | As a pilot venue, based on ongoing verification alongside the venue since its opening</p>
   </aside>
+
+  
+  
+  
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <div class="bg-white border border-gold/30 rounded-xl px-6 py-5"
+         data-ga-district-link
+         data-venue-slug="green-beans-coffee-shibuya"
+         data-venue-grade="flagship"
+         data-page-language="en">
+      <p class="text-sm text-muted mb-3">Green Beans Coffee is part of the &ldquo;Kitasando &amp; Sendagaya&rdquo; commercial district guide. <em>(Japanese-language page; an English version is not yet available)</em></p>
+      <div class="flex flex-wrap gap-3">
+        
+        <a href="/stories/district/kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="district_guide"
+           class="inline-flex items-center gap-2 text-sm text-gold hover:underline whitespace-nowrap">Kitasando &amp; Sendagaya district guide →</a>
+        
+      </div>
+    </div>
+  </section>
+  <script>
+  (function() {
+    document.querySelectorAll('[data-ga-district-link]').forEach(function(container) {
+      if (container.dataset.gaBound === "1") return;
+      container.dataset.gaBound = "1";
+      container.addEventListener('click', function(e) {
+        var el = e.target.closest('a[data-ga-event]');
+        if (!el || !container.contains(el)) return;
+        if (typeof gtag === "function") {
+          gtag('event', el.getAttribute('data-ga-event'), {
+            venue_slug: container.getAttribute('data-venue-slug'),
+            venue_grade: container.getAttribute('data-venue-grade'),
+            link_location: 'district_link',
+            destination_type: el.getAttribute('data-destination-type'),
+            page_language: container.getAttribute('data-page-language')
+          });
+        }
+      });
+    });
+  })();
+  </script>
+  
 
   <div class="mt-16 pt-8 border-t border-border text-center" data-aos="fade-up">
     <p class="text-sm text-muted">

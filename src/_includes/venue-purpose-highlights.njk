@@ -1,0 +1,92 @@
+{#
+  施設ページ「この場所でおすすめの過ごし方」共通セクション（2026-11-16追加）
+
+  日本語版（venue.njk）・英語版（venue-en.njk）の両方から呼び出される共通コンポーネント。
+  venue-reservation-cta.njkと同じ設計方針：自己完結（lang変数のみで言語判定）・
+  確認済み情報のみ表示・未設定時はセクションごと非表示。
+
+  venue.purpose_highlights（配列・任意）：
+    各項目は { key, title, title_en, description, description_en, related_article } を持つ。
+    related_articleは任意（未設定ならリンク非表示）。すべて施設側で事実確認済みの内容のみを書くこと。
+
+  グルテンフリー・ヴィーガン（食事条件）は上記の汎用配列とは別に、以下の専用フィールドで管理する
+  （この2つは別の食事条件であり、同義として扱わない）：
+    diet_gluten_free_confirmed（boolean）/ diet_gluten_free_text / diet_gluten_free_text_en
+    diet_vegan_confirmed（boolean）/ diet_vegan_text / diet_vegan_text_en
+  表示名は確認済みの組み合わせに応じて自動的に切り替わる：
+    両方confirmed=true → 「グルテンフリー・ヴィーガン」/ "Gluten-Free & Vegan Options"
+    グルテンフリーのみ → 「グルテンフリー対応」/ "Gluten-Free Options"
+    ヴィーガンのみ     → 「ヴィーガン対応」/ "Vegan Options"
+    どちらもfalse      → この食事条件ブロック自体を非表示
+  confirmed=falseの項目の本文（text）は絶対に表示しない（公開前の文言をデータとして保持しておくための設計で、
+  表示の可否は confirmed フラグのみが制御する）。
+#}
+{%- set isEn = (lang == "en") -%}
+{%- set hasGenericHighlights = venue.purpose_highlights and venue.purpose_highlights.length -%}
+{%- set hasDietInfo = venue.diet_gluten_free_confirmed or venue.diet_vegan_confirmed -%}
+{% if hasGenericHighlights or hasDietInfo %}
+{%- set dietTitle = "" -%}
+{%- if venue.diet_gluten_free_confirmed and venue.diet_vegan_confirmed -%}
+  {%- set dietTitle = "Gluten-Free & Vegan Options" if isEn else "グルテンフリー・ヴィーガン" -%}
+{%- elif venue.diet_gluten_free_confirmed -%}
+  {%- set dietTitle = "Gluten-Free Options" if isEn else "グルテンフリー対応" -%}
+{%- elif venue.diet_vegan_confirmed -%}
+  {%- set dietTitle = "Vegan Options" if isEn else "ヴィーガン対応" -%}
+{%- endif -%}
+{%- set dietTextParts = [] -%}
+{%- if venue.diet_gluten_free_confirmed -%}
+  {%- set dietTextParts = dietTextParts.concat([(venue.diet_gluten_free_text_en or venue.diet_gluten_free_text) if isEn else venue.diet_gluten_free_text]) -%}
+{%- endif -%}
+{%- if venue.diet_vegan_confirmed -%}
+  {%- set dietTextParts = dietTextParts.concat([(venue.diet_vegan_text_en or venue.diet_vegan_text) if isEn else venue.diet_vegan_text]) -%}
+{%- endif -%}
+<section class="mb-14" data-aos="fade-up">
+  <h2 class="label mb-6">{% if isEn %}Ways to Enjoy This Space{% else %}この場所でおすすめの過ごし方{% endif %}</h2>
+  <div class="space-y-5"
+       data-ga-purpose-highlights
+       data-venue-slug="{{ venue.slug }}"
+       data-venue-grade="{{ venue.grade_slug }}"
+       data-page-language="{{ 'en' if isEn else 'ja' }}">
+    {% for item in venue.purpose_highlights %}
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">{{ (item.title_en or item.title) if isEn else item.title }}</h3>
+      <p class="text-sm text-muted leading-relaxed">{{ (item.description_en or item.description) if isEn else item.description }}</p>
+      {% if item.related_article %}
+      <a href="{{ item.related_article }}" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="{{ item.key }}"
+         class="inline-block mt-2 text-xs text-gold hover:underline">{% if isEn %}Read more →{% else %}詳しく見る →{% endif %}</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% if hasDietInfo and dietTextParts.length %}
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">{{ dietTitle }}</h3>
+      {% for text in dietTextParts %}
+      <p class="text-sm text-muted leading-relaxed{% if not loop.last %} mb-2{% endif %}">{{ text }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-purpose-highlights]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'purpose_highlights',
+          destination_type: el.getAttribute('data-destination-type'),
+          page_language: container.getAttribute('data-page-language')
+        });
+      }
+    });
+  });
+})();
+</script>
+{% endif %}

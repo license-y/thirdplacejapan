@@ -253,9 +253,12 @@ og_type: "article"
       {% endif %}
 
       {# 本文 #}
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="{{ 'en' if lang == 'en' else 'ja' }}" data-aos="fade-up">
         {{ content | safe }}
       </div>
+
+      {# 記事本文→施設詳細ページへの内部リンクGA4計測（共通include・article-certified.njk/article-area.njkと共通） #}
+      {% include "article-venue-link-tracking.njk" %}
 
       {# シェアボタン #}
       {% set shareUrl = site.url + page.url %}

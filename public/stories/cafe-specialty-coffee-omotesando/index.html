@@ -658,7 +658,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="ja" data-aos="fade-up">
         <p><strong>表参道のスペシャルティコーヒーは、ケヤキ並木の大通りから一歩入った路地・地下に根付き、静寂性と特別感を備えたサードプレイスとして機能する。</strong></p>
 <p>表参道のスペシャルティコーヒーは、通りの顔ではなく路地の奥に宿る。ハイブランドが連なる大通りから一歩入った地下や古ビルの一角に、時間の密度を変える空間が点在している。</p>
 <h2>表参道という街と「第三の居場所」</h2>
@@ -722,6 +722,41 @@
 <p>表参道のカフェは、ハイブランドの街の「裏側」にこそ本質がある。大通りの喧騒から一手間離れた路地や地下に、時間の密度を変える空間が点在する。ケヤキ並木という100年近い時間軸と、世界から人が集まる国際性が交差するこの街でカフェをサードプレイスとして選ぶには、「立地の奥行き」「時間帯の読み方」「静寂性の確保」という3つの視点が実践的な指針になる。サードプレイスジャパン（Third Place Japan）では、こうした空間を居心地・静寂性・特別感など7軸で評価・認証している。表参道を擁する<a href="/stories/cafe-specialty-coffee/shibuya/">渋谷区全体のカフェ・スペシャルティコーヒー文化</a>も合わせて参照いただきたい。同じ表参道で過ごす時間の選択肢としては<a href="/stories/coworking/omotesando/">表参道でコワーキングをサードプレイスにする</a>、<a href="/stories/premium-salon/omotesando/">表参道で高級サロンをサードプレイスにする</a>も参考になる。商談やランチミーティングを目的にカフェを選ぶ際の具体的な条件は、<a href="/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/">表参道で静かに打ち合わせできるカフェの選び方</a>で詳しく解説している。1人でのPC作業・リモートワークを目的に店を探す場合は、<a href="/stories/cafe-specialty-coffee/pc-work-cafe-omotesando/">表参道でPC作業がしやすいカフェの選び方</a>を参照いただきたい。ひとりでゆっくり読書や休憩を楽しみたい場合は、<a href="/stories/cafe-specialty-coffee/solo-time-cafe-omotesando/">表参道で一人でゆっくり過ごせるカフェの選び方</a>を参照いただきたい。食事そのものをゆっくり楽しみたい場合は、<a href="/stories/cafe-specialty-coffee/relaxing-lunch-cafe-omotesando/">表参道でゆっくりランチを楽しめるカフェの選び方</a>も参考になる。誰かと特別な時間を過ごしたい場合は<a href="/stories/cafe-specialty-coffee/date-cafe-omotesando/">表参道でデートに適したカフェの選び方</a>や<a href="/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/">表参道で記念日に過ごしたいカフェの選び方</a>も参考になる。渋谷区・港区を横断する表参道エリア全体のガイドは<a href="/stories/district/omotesando/">表参道エリアガイド</a>で紹介している。</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       

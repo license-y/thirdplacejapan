@@ -659,7 +659,7 @@
       
 
       
-      <div class="prose" data-pagefind-body data-aos="fade-up">
+      <div class="prose" data-pagefind-body data-ga-article-body data-page-language="en" data-aos="fade-up">
         <p><strong>Chuo-ku's bars answer to a different clock than the rest of Tokyo. This is the ward where Edo-period currency traders and textile merchants first built a culture of meeting people in places that could be trusted, and that instinct never left. A bar that has run for thirty, fifty, or seventy years under the same craft, in the same seat, is not an exception here — it's closer to the norm. Across Ginza, Nihonbashi, Ningyocho, and Tsukiji, four very different neighborhoods share one throughline: respect for a skill practiced over time — the reason each one still functions as a third place today.</strong></p>
 <h2>Why Chuo-ku's Bars Run on Continuity, Not Trend</h2>
 <p>Every Tokyo ward develops its own logic for what a night out means. Chuo-ku's comes directly from its history as a merchant city.</p>
@@ -711,6 +711,41 @@ Being honest with the bartender about your taste and what you want that evening 
 <p>Related reading: <a href="/en/stories/restaurant-dining/chuo/">Chuo-ku as a Third Place: Three Layers of Time on One Table</a> covers the same ward's dining culture, built on the same merchant-city continuity, and <a href="/en/stories/members-lounge/chuo/">Chuo-ku as a Third Place: Belonging Built on a Merchant City's Trust</a> covers the closed-door version of the same trust. For a contrasting take on nightlife built around international capital, see <a href="/en/stories/bar-whiskey/minato/">Minato-ku as a Third Place: How Embassies and International Finance Built Five Distinct Bar Cultures</a>. For the neighboring ward's daytime counterpart, see <a href="/en/stories/cafe-specialty-coffee/chiyoda/">Chiyoda-ku as a Third Place: One Ward, Three Kinds of Room</a>.</p>
 
       </div>
+
+      
+      
+<script type="application/json" id="venue-grade-lookup">{"green-beans-coffee-shibuya":"flagship","onibus-coffee-nakameguro":"select","koffee-mameya-omotesando":"select","sarutahiko-coffee-ebisu":"select","saunalab-kanda":"select","shibuya-saunas":"select","the-sg-club-shibuya":"select","switch-coffee-tokyo-meguro":"select","glitch-coffee-kanda":"select","the-roastery-nozy-coffee-harajuku":"select","arise-coffee-roasters-kiyosumishirakawa":"select","streamer-coffee-company-harajuku":"select","trunk-hotel-harajuku":"select","bna-wall-nihonbashi":"select","kosugiyu-koenji":"select","bunkitsu-roppongi":"select","morioka-shoten-ginza":"select","dotema-daizawa":"select","tatamiworks-chitosefunabashi":"select","citan-nihonbashi":"select","studioai-higashikomagata":"select","hanare-yanaka":"select","kagurazaka-waraku":"select","hottayu-nishiarai":"select","wamare-shibamata-hotel":"select","shareoffice-nerima":"select","miyamoto-farm-nerima":"select","tokyo-guesthouse-itabashi-juku":"select","eastland-nishishinozaki":"select","tokyo-guesthouse-oji-music-lounge":"select","yudonburi-sakaeyu-taito":"select","mukuroji-studio-sendagi":"select","kominka-cafe-rengetsu":"select","sheena-to-ippei":"select","idea-box-share-office":"select","akino-coffee-mikawashima":"select","fromscratch-works-nakano":"select","akagi-cafe-kagurazaka":"select","rinshoin-yushima":"select","crea-base-oshiage":"select","coffea-exlibris-shimokitazawa":"select","coffee-nova-kuramae":"select","typica-nishiogikubo":"select","nui-hostel-kuramae":"select","toco-guesthouse-iriya":"select"}</script>
+<script>
+(function() {
+  var proseEl = document.querySelector('[data-ga-article-body]');
+  if (!proseEl || proseEl.dataset.gaBound === "1") return;
+  proseEl.dataset.gaBound = "1";
+  var gradeLookupEl = document.getElementById('venue-grade-lookup');
+  var gradeLookup = {};
+  try { gradeLookup = JSON.parse(gradeLookupEl.textContent); } catch (e) {}
+  var venueLinkPattern = /^\/(?:en\/)?stories\/select\/([a-z0-9-]+)\/?$/;
+  proseEl.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el || !proseEl.contains(el)) return;
+    var href = el.getAttribute('href');
+    if (!href) return;
+    var path = href.split('#')[0].split('?')[0];
+    var m = path.match(venueLinkPattern);
+    if (!m) return;
+    var venueSlug = m[1];
+    if (typeof gtag === "function") {
+      gtag('event', 'click_internal_link', {
+        link_location: 'article_body',
+        venue_slug: venueSlug,
+        venue_grade: gradeLookup[venueSlug] || 'unknown',
+        destination_type: 'venue_profile',
+        page_language: proseEl.getAttribute('data-page-language')
+      });
+    }
+  });
+})();
+</script>
+
 
       
       
