@@ -582,7 +582,7 @@ og_type: "article"
 
   {# 基本情報 #}
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
-    <p>{{ venue.area_primary.prefecture }} {{ venue.address }}</p>
+    <p>{{ venue.address }}</p>
     {% if venue.nearest_stations and venue.nearest_stations.length %}
     <p>最寄駅：{{ venue.nearest_stations | join("・") }}</p>
     {% endif %}

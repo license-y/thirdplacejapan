@@ -40,7 +40,7 @@
       "record": 7,
       "story": 9
     },
-    "address": "東京都渋谷区千駄ヶ谷3-30-1",
+    "address": "東京都渋谷区千駄ヶ谷3-30-1 RC APARTMENT 1階",
     "address_en": "3-30-1 Sendagaya, Shibuya-ku, Tokyo, Japan",
     "lat": 35.6775167,
     "lng": 139.7078346,
@@ -134,7 +134,7 @@
           { "q": "予約は必要ですか？", "a": "予約不要で当日ご利用いただけます。時間帯によっては多少お待ちいただく場合があるため、事前に電話でご確認いただくと安心です。" },
           { "q": "商談や打ち合わせに利用できますか？", "a": "はい、商談・打ち合わせでの利用にも向いています。静けさを保つ空間設計により、ビジネスパーソンが落ち着いて話せるサードプレイスとして機能しています。" },
           { "q": "ペットと一緒に利用できますか？", "a": "はい、店内にペットを同伴して利用できます。渋谷区内でペット同伴可能なサードプレイスを探している方にも適した一軒です。" },
-          { "q": "グルテンフリーのメニューはありますか？", "a": "はい、グルテンフリー対応のメニューを用意しています。食事に制限がある方でも、コーヒーとともに安心して過ごせます。" },
+          { "q": "グルテンフリーのメニューはありますか？", "a": "Green Beans Coffeeでは、グルテンフリー対応メニューをご用意しています。メニューの内容や原材料、アレルギーに関するご不明点は、ご注文前に店舗スタッフへご確認ください。" },
           { "q": "一般のお客様は通常どおり利用できますか？", "a": "はい。実証店舗であっても、通常のカフェとしてそのままご利用いただけます。特別な手続きや制限は一切なく、日常の延長線上で「理想の居場所」を体験できます。" }
         ]
       },
@@ -143,9 +143,9 @@
         "items": [
           { "q": "Green Beans CoffeeはTPJセレクトと何が違うのですか？", "a": "TPJセレクトは編集部が発掘・紹介する、施設からの申請が不要な掲載枠です。Green Beans Coffeeはそれとは別に、正式な認証グレードの中で最高位となる「Flagship」認定を受けた実証店舗であり、TPJの評価基準そのものを体現する場所として別格の位置づけにあります。" },
           { "q": "TPJの認証グレードにはどんな種類がありますか？", "a": "Third Place Japanの認証グレードは、Certified・Silver・Gold・Platinum・Flagshipの5段階です。Green Beans Coffeeはこの中で最高位のFlagshipに認定されています。詳しい基準は<a href=\"/stories/about/certification-grades/\">TPJ認証グレードの解説ページ</a>で確認できます。" },
-          { "q": "Third Place Japanの実証店舗とはどういう意味ですか？また、なぜGreen Beans Coffeeが選ばれたのですか？", "a": "実証店舗とは、TPJが提唱する「理想のサードプレイス（third place）設計」を実際の店舗で体現・継続検証する場所です。開業当初から店舗側と空間づくりに伴走し、7軸評価全項目で8〜9点という高スコアを獲得したことから、Green Beans Coffeeが選ばれました。" },
-          { "q": "サードプレイスとして理想的な空間の条件は何ですか？", "a": "Third Place Japanは、居心地・静けさ・特別感・ストーリー・再訪価値・記録性・インバウンド適性の7軸を、理想的なサードプレイス（third place）空間の基準としています。Green Beans Coffeeは7軸すべてで8〜9点という国内最高水準のスコアを獲得しています。" },
-          { "q": "TPJの7軸評価はどこで詳しく解説されていますか？", "a": "TPJの7軸評価基準の詳細は、<a href=\"/stories/about/tpj-7-axis-evaluation-guide/\">TPJ7軸評価基準の完全ガイド</a>で解説しています。Green Beans Coffeeはこの7軸すべてで8〜9点という、国内でも際立って高いスコアを獲得しています。" },
+          { "q": "Third Place Japanの実証店舗とはどういう意味ですか？また、なぜGreen Beans Coffeeが選ばれたのですか？", "a": "実証店舗とは、TPJが提唱する「理想のサードプレイス（third place）設計」を実際の店舗で体現・継続検証する場所です。開業当初から店舗側と空間づくりに伴走し、7軸評価に基づき空間の快適性や利用目的との適合性などを総合的に高く評価されたことから、Green Beans Coffeeが選ばれました。" },
+          { "q": "サードプレイスとして理想的な空間の条件は何ですか？", "a": "Third Place Japanは、居心地・静けさ・特別感・ストーリー・再訪価値・記録性・インバウンド適性の7軸を、理想的なサードプレイス（third place）空間の基準としています。Green Beans Coffeeは、Third Place Japanの7軸評価に基づき、空間の快適性や利用目的との適合性などを総合的に評価したFlagship認証施設です。各評価項目の詳細は、ページ内の評価スコアをご確認ください。" },
+          { "q": "TPJの7軸評価はどこで詳しく解説されていますか？", "a": "TPJの7軸評価基準の詳細は、<a href=\"/stories/about/tpj-7-axis-evaluation-guide/\">TPJ7軸評価基準の完全ガイド</a>で解説しています。Green Beans Coffeeは、Third Place Japanの7軸評価に基づき、空間の快適性や利用目的との適合性などを総合的に評価したFlagship認証施設です。各評価項目の詳細は、ページ内の評価スコアをご確認ください。" },
           { "q": "Flagship認定と実証店舗の違いは何ですか？他にも実証店舗はありますか？", "a": "Flagshipは7軸評価で最高水準を達成した施設に付与される認証グレードです。実証店舗はそのFlagship施設の中でも、TPJが継続的に検証を行う特別な位置づけを指し、現在はGreen Beans Coffeeが唯一の実証店舗です。" },
           { "q": "実証店舗では具体的に何を検証しているのですか？", "a": "静寂性を保つための席の配置と動線設計、照明・音響・素材による五感品質の再現、「急かさない」接客姿勢が居心地に与える影響など、7軸評価の各基準が実際の空間でどう機能するかを継続的に検証しています。" },
           { "q": "TPJの7軸評価はどのように実証されていますか？", "a": "TPJ編集部が定期的に訪問し、TPJの7軸評価を実際の体験から再評価します。評価は固定ではなく、空間の変化や季節・時間帯も含めた継続的な観察に基づいています。" },
@@ -165,7 +165,7 @@
           { "q": "How many coffee origins does Green Beans Coffee carry?", "a": "The in-house roastery carries thirty different coffee origins at any given time, each roasted on site. Beans rotate regularly, so no two visits offer quite the same cup." },
           { "q": "Is Green Beans Coffee suitable for business meetings?", "a": "Yes. The quiet layout and unhurried service make it a workable spot for informal meetings, not just solo work. Conversation at a normal volume doesn't carry across the room the way it would in a busier café." },
           { "q": "Are pets allowed inside?", "a": "Yes, pets are welcome inside the café. It's one of a limited number of third places in Shibuya-ku where you can bring a dog or cat along rather than leave them outside." },
-          { "q": "Does Green Beans Coffee offer gluten-free options?", "a": "Yes, gluten-free items are available on the menu, so dietary restrictions don't rule out a visit." },
+          { "q": "Does Green Beans Coffee offer gluten-free options?", "a": "Yes, gluten-free options are available on the menu. For questions about ingredients or allergies, please check with staff before ordering." },
           { "q": "Can I still visit as a regular customer, even though it's Third Place Japan's verification venue?", "a": "Yes. Being a verification venue doesn't change the day-to-day experience — Green Beans Coffee operates as a normal café, and anyone can walk in and enjoy it exactly as they would any other third place." }
         ]
       },
@@ -176,11 +176,11 @@
           { "q": "Is Green Beans Coffee certified as a third place?", "a": "Yes. Third Place Japan awarded Green Beans Coffee its highest certification grade, Flagship, following a seven-axis evaluation. It scores among the highest in the country for comfort and silence, embodying the idea of a genuine third place." },
           { "q": "How is Green Beans Coffee different from a TPJ Select venue?", "a": "TPJ Select venues are discovered and introduced by the editorial team without a formal application process. Green Beans Coffee goes a step further as a Flagship-certified verification venue — a place where Third Place Japan itself continuously tests and refines its evaluation standards." },
           { "q": "What are Third Place Japan's certification grades?", "a": "Third Place Japan certifies venues across five grades — Certified, Silver, Gold, Platinum, and Flagship — based on a seven-axis evaluation. Green Beans Coffee holds the top grade, Flagship. <a href=\"/stories/about/certification-grades/\">The full grading system is explained here</a> <em>(Japanese article; English version in progress)</em>." },
-          { "q": "What does it mean to be Third Place Japan's verification venue, and why was Green Beans Coffee chosen?", "a": "A verification venue is where Third Place Japan puts its own idea of an ideal third place into practice and tests it continuously. Third Place Japan has worked alongside the café since it opened, and its near-perfect scores across all seven axes reflect that ongoing collaboration." },
+          { "q": "What does it mean to be Third Place Japan's verification venue, and why was Green Beans Coffee chosen?", "a": "A verification venue is where Third Place Japan puts its own idea of an ideal third place into practice and tests it continuously. Third Place Japan has worked alongside the café since it opened, and its strong scores across the seven-axis evaluation reflect that ongoing collaboration. A full breakdown of each score is shown on this page." },
           { "q": "What does TPJ's Flagship grade mean, and are there other verification venues?", "a": "Flagship is the top tier of Third Place Japan's certification, reserved for venues performing at the highest level across all seven axes. Not every Flagship venue becomes a verification venue — Green Beans Coffee is currently the only one with this ongoing, hands-on status." },
           { "q": "What exactly does Third Place Japan verify at this venue?", "a": "Third Place Japan continuously observes how seating layout and flow support quiet focus, how lighting, acoustics and materials shape the sensory experience, and how an unhurried style of service affects overall comfort." },
           { "q": "How is the seven-axis evaluation carried out over time?", "a": "TPJ's editorial team visits regularly to re-assess the seven axes through direct experience. The evaluation isn't fixed — it accounts for how the space changes across seasons and times of day." },
-          { "q": "Where can I read more about TPJ's seven-axis evaluation?", "a": "A full breakdown of all seven axes is available in <a href=\"/stories/about/tpj-7-axis-evaluation-guide/\">TPJ's seven-axis evaluation guide</a> <em>(Japanese article; English version in progress)</em>. Green Beans Coffee scores 8 or 9 out of 10 on every one of them." },
+          { "q": "Where can I read more about TPJ's seven-axis evaluation?", "a": "A full breakdown of all seven axes is available in <a href=\"/stories/about/tpj-7-axis-evaluation-guide/\">TPJ's seven-axis evaluation guide</a> <em>(Japanese article; English version in progress)</em>. Green Beans Coffee's scores across all seven axes are shown on this page." },
           { "q": "Does what Third Place Japan learns here benefit other venues, and can I apply this to my own?", "a": "Yes. The design principles refined at Green Beans Coffee — seating distance, lighting, sound levels and flow — inform TPJ Select's evaluation criteria and the certification standards now being developed. <a href=\"/stories/about/space-design-insights-gbc/\">This article covers the thinking in more depth</a> <em>(Japanese article; English version in progress)</em>." }
         ]
       }
