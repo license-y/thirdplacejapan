@@ -421,6 +421,9 @@ lang: "en"
   </section>
   {% endif %}
 
+  {# 予約・来店導線（認証施設限定・TPJセレクトには表示しない。日本語版と共通のコンポーネント） #}
+  {% include "venue-reservation-cta.njk" %}
+
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
     <p>{{ venue.area_primary.area_en or venue.area_primary.area }}, {{ venue.area_primary.prefecture_en or venue.area_primary.prefecture }}, Japan</p>
     {% if venue.nearest_stations_en and venue.nearest_stations_en.length %}

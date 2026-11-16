@@ -1,8 +1,15 @@
 {#
-  認証施設向け「予約・来店導線」共通セクション（2026-11-16追加）
+  認証施設向け「予約・来店導線」共通セクション（2026-11-16追加・2026-11-16 日英共通化改訂）
 
-  表示条件：isCertified（grade_slug != "select"）かつ venue.reservation_status が設定されている施設のみ。
-  TPJセレクト施設には絶対に表示しない（isCertifiedはvenue.njk側で算出済みの変数をそのまま利用）。
+  日本語版（venue.njk）・英語版（venue-en.njk）の両方から呼び出される唯一の共通コンポーネント。
+  呼び出し元が lang 変数を設定していない場合（venue.njk）は日本語として描画し、
+  lang == "en"（venue-en.njk で frontmatter 設定済み）の場合のみ英語文言に切り替える。
+
+  自己完結設計：isCertified等の呼び出し元変数には依存せず、venue.grade_slug から都度判定する
+  （venue.njkのisCertifiedと同一ロジックだが、どのテンプレートから呼ばれても安全に動作させるため）。
+
+  表示条件：venue.grade_slug != "select" かつ venue.reservation_status が設定されている施設のみ。
+  TPJセレクト施設には絶対に表示しない。
 
   venue.reservation_status の意味（新規施設追加時は必ずいずれかを設定し、誤表示を防ぐこと）：
     "accepts"      予約可能。reservation_url（外部予約ページ）・phone_reservation（電話予約可否）を案内する。
@@ -12,78 +19,109 @@
                    直接ご来店ください。」等、来店を歓迎する案内文を設定する（必須）。
     "not_accepted" 予約を受け付けていない施設（not_requiredとは異なり、単に予約という手段自体がない/停止している
                    運営方針）。予約ボタンは出さず、reservation_note に施設側が確認した実際の案内文を設定する（必須）。
-    未設定         セクション自体を非表示にする（ダミーURL・推測文言は置かない）。
+    未設定         セクション自体を非表示にする（ダミーURL・推測文言は置かない）。Select施設は
+                   reservation_status を設定しても非表示（grade_slug判定が優先されるため）。
 
   各ボタンは個別のデータが存在する場合のみ表示する（情報未登録時はボタンごと非表示、#リンクは置かない）。
+
+  英語版専用の任意フィールド（すべて未設定時は日本語文言を流用せず、該当行・該当ボタンを非表示にする。
+  日本語の文言を英語ページに誤って出さないため、言語間フォールバックは行わない）：
+    reservation_tagline_en / reservation_note_en / access_note_en / reservation_platform_label_en
+  URL系は英語専用ページが確認できた場合のみ _en を設定し、未設定時は言語共通のURLにフォールバックする
+  （予約自体は同じ外部サービスのため、英語専用URLが無くてもリンク切れにはならない）：
+    reservation_url_en（未設定時は reservation_url を使用）
+    menu_viewer_url_en（未設定時は menu_viewer_url → menu_url の順でフォールバック）
 #}
-{% if isCertified and venue.reservation_status %}
-{%- set reservationHeadings = {
+{%- set isEn = (lang == "en") -%}
+{% if venue.grade_slug != "select" and venue.reservation_status %}
+{%- set reservationHeadingsJa = {
   "accepts": "ご予約・ご来店のご案内",
   "not_required": "ご来店のご案内",
   "not_accepted": "ご来店のご案内"
 } -%}
-{%- set reservationHeading = reservationHeadings[venue.reservation_status] or "ご来店のご案内" -%}
-{%- set menuLinkUrl = venue.menu_viewer_url or venue.menu_url -%}
+{%- set reservationHeadingsEn = {
+  "accepts": "Reservations & Visit Information",
+  "not_required": "Visit Information",
+  "not_accepted": "Visit Information"
+} -%}
+{%- set reservationHeading = (reservationHeadingsEn[venue.reservation_status] or "Visit Information") if isEn else (reservationHeadingsJa[venue.reservation_status] or "ご来店のご案内") -%}
+
+{%- set displayName = (venue.name_en or venue.name) if isEn else venue.name -%}
+{%- set displayTagline = venue.reservation_tagline_en if isEn else venue.reservation_tagline -%}
+{%- set displayNote = venue.reservation_note_en if isEn else venue.reservation_note -%}
+{%- set displayAccessNote = venue.access_note_en if isEn else venue.access_note -%}
+{%- set platformLabel = venue.reservation_platform_label_en if isEn else venue.reservation_platform_label -%}
+{%- set reservationUrl = (venue.reservation_url_en or venue.reservation_url) if isEn else venue.reservation_url -%}
+{%- set menuLinkUrl = (venue.menu_viewer_url_en or venue.menu_viewer_url or venue.menu_url) if isEn else (venue.menu_viewer_url or venue.menu_url) -%}
 {%- set mapLinkUrl = venue.maps_url or ("https://maps.google.com/?q=" + venue.address if venue.address else "") -%}
+{%- set pageLanguage = "en" if isEn else "ja" -%}
+{#- 英語ボタン文言（例："Reserve on Tabelog"）は日本語より長くなりやすいため、
+    英語版のみタップ領域の下限確保・折り返し時の中央揃え・行間調整を適用する。
+    クラスはisEn分岐内でのみ付与するため日本語版の見た目には一切影響しない。 -#}
+{%- set ctaBtnExtra = " min-h-[44px] text-center leading-snug" if isEn else "" -%}
+
 <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
   <div class="rounded-2xl border border-gold/30 bg-white px-6 py-10 md:px-10 md:py-12 text-center">
     <p class="label text-gold mb-2">Third Place Japan</p>
-    <p class="text-xs font-medium tracking-widest text-muted mb-6">{{ venueGradeName | upper }} CERTIFIED</p>
+    <p class="text-xs font-medium tracking-widest text-muted mb-6">{{ venue.grade | upper }} CERTIFIED</p>
 
-    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">{{ venue.name }}</h2>
+    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">{{ displayName }}</h2>
 
-    {% if venue.reservation_tagline %}
-    <p class="text-sm text-muted mb-8">「{{ venue.reservation_tagline }}」</p>
+    {% if displayTagline %}
+    <p class="text-sm text-muted mb-8">{% if isEn %}&ldquo;{{ displayTagline }}&rdquo;{% else %}「{{ displayTagline }}」{% endif %}</p>
     {% endif %}
 
     <p class="label mb-5">{{ reservationHeading }}</p>
 
-    <div class="reservation-cta-grid grid grid-cols-2 gap-3 max-w-md mx-auto"
+    <div class="reservation-cta-grid grid grid-cols-2 items-stretch gap-3 max-w-md mx-auto"
          data-ga-reserve-cta
          data-venue-slug="{{ venue.slug }}"
-         data-venue-grade="{{ venue.grade_slug }}">
+         data-venue-grade="{{ venue.grade_slug }}"
+         data-page-language="{{ pageLanguage }}">
 
-      {% if venue.reservation_status == "accepts" and venue.reservation_url %}
-      <a href="{{ venue.reservation_url }}" target="_blank" rel="noopener"
-         data-ga-event="click_reserve" data-destination-type="{{ venue.reservation_platform_label or 'external_reservation' }}"
-         class="inline-flex items-center justify-center gap-1.5 bg-gold hover:bg-gold/90 text-white text-xs font-medium px-4 py-3 rounded-full transition-colors">
-        {{ venue.reservation_platform_label or "外部サイト" }}で予約
+      {% if venue.reservation_status == "accepts" and reservationUrl %}
+      <a href="{{ reservationUrl }}" target="_blank" rel="noopener"
+         data-ga-event="click_reserve" data-destination-type="{{ platformLabel or 'external_reservation' }}"
+         class="inline-flex items-center justify-center gap-1.5 bg-gold hover:bg-gold/90 text-white text-xs font-medium px-4 py-3 rounded-full transition-colors{{ ctaBtnExtra }}">
+        {% if isEn %}Reserve{% if platformLabel %} on {{ platformLabel }}{% else %} Online{% endif %}{% else %}{{ platformLabel or "外部サイト" }}で予約{% endif %}
       </a>
       {% endif %}
 
       {% if venue.reservation_status == "accepts" and venue.phone_reservation and venue.telephone %}
       <a href="tel:{{ venue.telephone }}"
          data-ga-event="click_call" data-destination-type="tel"
-         class="inline-flex items-center justify-center gap-1.5 border border-gold text-gold text-xs font-medium px-4 py-3 rounded-full hover:bg-gold hover:text-white transition-colors">
-        電話で予約
+         class="inline-flex items-center justify-center gap-1.5 border border-gold text-gold text-xs font-medium px-4 py-3 rounded-full hover:bg-gold hover:text-white transition-colors{{ ctaBtnExtra }}">
+        {% if isEn %}Reserve by Phone{% else %}電話で予約{% endif %}
       </a>
       {% endif %}
 
       {% if menuLinkUrl %}
       <a href="{{ menuLinkUrl }}" target="_blank" rel="noopener"
          data-ga-event="click_menu" data-destination-type="menu"
-         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
-        メニューを見る
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors{{ ctaBtnExtra }}">
+        {% if isEn %}View Menu{% else %}メニューを見る{% endif %}
       </a>
       {% endif %}
 
       {% if mapLinkUrl %}
       <a href="{{ mapLinkUrl }}" target="_blank" rel="noopener"
          data-ga-event="click_map" data-destination-type="google_maps"
-         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
-        Googleマップ
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors{{ ctaBtnExtra }}">
+        {% if isEn %}Google Maps{% else %}Googleマップ{% endif %}
       </a>
       {% endif %}
     </div>
 
-    {% if venue.access_note %}
-    <p class="text-xs text-muted mt-6">{{ venue.access_note }}</p>
+    {% if displayAccessNote %}
+    <p class="text-xs text-muted mt-6">{{ displayAccessNote }}</p>
     {% endif %}
-    {% if venue.reservation_note %}
-    <p class="text-xs mt-1" style="color:#3D2B1F;">{{ venue.reservation_note }}</p>
+    {% if displayNote %}
+    <p class="text-xs mt-1" style="color:#3D2B1F;">{{ displayNote }}</p>
     {% endif %}
 
-    <p class="text-xs text-muted mt-6">Third Place Japan 認証施設｜ご予約の受付・管理は各施設が行います。</p>
+    <p class="text-xs text-muted mt-6">
+      {% if isEn %}Third Place Japan Certified Venue. Reservations are handled directly by each venue.{% else %}Third Place Japan 認証施設｜ご予約の受付・管理は各施設が行います。{% endif %}
+    </p>
   </div>
 </section>
 
@@ -106,7 +144,8 @@
           venue_slug: container.getAttribute('data-venue-slug'),
           venue_grade: container.getAttribute('data-venue-grade'),
           link_location: 'certified_venue_cta',
-          destination_type: el.getAttribute('data-destination-type')
+          destination_type: el.getAttribute('data-destination-type'),
+          page_language: container.getAttribute('data-page-language')
         });
       }
     });
