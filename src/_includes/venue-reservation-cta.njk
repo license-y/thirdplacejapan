@@ -1,0 +1,116 @@
+{#
+  認証施設向け「予約・来店導線」共通セクション（2026-11-16追加）
+
+  表示条件：isCertified（grade_slug != "select"）かつ venue.reservation_status が設定されている施設のみ。
+  TPJセレクト施設には絶対に表示しない（isCertifiedはvenue.njk側で算出済みの変数をそのまま利用）。
+
+  venue.reservation_status の意味（新規施設追加時は必ずいずれかを設定し、誤表示を防ぐこと）：
+    "accepts"      予約可能。reservation_url（外部予約ページ）・phone_reservation（電話予約可否）を案内する。
+                   予約なしでも利用できる場合はその旨を reservation_note に書く（TPJは予約管理を行わないため、
+                   両立する案内文は必ず施設側で確認した内容にする）。
+    "not_required" 予約不要の施設。予約ボタンは出さず、reservation_note に「ご予約は不要です。営業時間内に
+                   直接ご来店ください。」等、来店を歓迎する案内文を設定する（必須）。
+    "not_accepted" 予約を受け付けていない施設（not_requiredとは異なり、単に予約という手段自体がない/停止している
+                   運営方針）。予約ボタンは出さず、reservation_note に施設側が確認した実際の案内文を設定する（必須）。
+    未設定         セクション自体を非表示にする（ダミーURL・推測文言は置かない）。
+
+  各ボタンは個別のデータが存在する場合のみ表示する（情報未登録時はボタンごと非表示、#リンクは置かない）。
+#}
+{% if isCertified and venue.reservation_status %}
+{%- set reservationHeadings = {
+  "accepts": "ご予約・ご来店のご案内",
+  "not_required": "ご来店のご案内",
+  "not_accepted": "ご来店のご案内"
+} -%}
+{%- set reservationHeading = reservationHeadings[venue.reservation_status] or "ご来店のご案内" -%}
+{%- set menuLinkUrl = venue.menu_viewer_url or venue.menu_url -%}
+{%- set mapLinkUrl = venue.maps_url or ("https://maps.google.com/?q=" + venue.address if venue.address else "") -%}
+<section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+  <div class="rounded-2xl border border-gold/30 bg-white px-6 py-10 md:px-10 md:py-12 text-center">
+    <p class="label text-gold mb-2">Third Place Japan</p>
+    <p class="text-xs font-medium tracking-widest text-muted mb-6">{{ venueGradeName | upper }} CERTIFIED</p>
+
+    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">{{ venue.name }}</h2>
+
+    {% if venue.reservation_tagline %}
+    <p class="text-sm text-muted mb-8">「{{ venue.reservation_tagline }}」</p>
+    {% endif %}
+
+    <p class="label mb-5">{{ reservationHeading }}</p>
+
+    <div class="reservation-cta-grid grid grid-cols-2 gap-3 max-w-md mx-auto"
+         data-ga-reserve-cta
+         data-venue-slug="{{ venue.slug }}"
+         data-venue-grade="{{ venue.grade_slug }}">
+
+      {% if venue.reservation_status == "accepts" and venue.reservation_url %}
+      <a href="{{ venue.reservation_url }}" target="_blank" rel="noopener"
+         data-ga-event="click_reserve" data-destination-type="{{ venue.reservation_platform_label or 'external_reservation' }}"
+         class="inline-flex items-center justify-center gap-1.5 bg-gold hover:bg-gold/90 text-white text-xs font-medium px-4 py-3 rounded-full transition-colors">
+        {{ venue.reservation_platform_label or "外部サイト" }}で予約
+      </a>
+      {% endif %}
+
+      {% if venue.reservation_status == "accepts" and venue.phone_reservation and venue.telephone %}
+      <a href="tel:{{ venue.telephone }}"
+         data-ga-event="click_call" data-destination-type="tel"
+         class="inline-flex items-center justify-center gap-1.5 border border-gold text-gold text-xs font-medium px-4 py-3 rounded-full hover:bg-gold hover:text-white transition-colors">
+        電話で予約
+      </a>
+      {% endif %}
+
+      {% if menuLinkUrl %}
+      <a href="{{ menuLinkUrl }}" target="_blank" rel="noopener"
+         data-ga-event="click_menu" data-destination-type="menu"
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
+        メニューを見る
+      </a>
+      {% endif %}
+
+      {% if mapLinkUrl %}
+      <a href="{{ mapLinkUrl }}" target="_blank" rel="noopener"
+         data-ga-event="click_map" data-destination-type="google_maps"
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
+        Googleマップ
+      </a>
+      {% endif %}
+    </div>
+
+    {% if venue.access_note %}
+    <p class="text-xs text-muted mt-6">{{ venue.access_note }}</p>
+    {% endif %}
+    {% if venue.reservation_note %}
+    <p class="text-xs mt-1" style="color:#3D2B1F;">{{ venue.reservation_note }}</p>
+    {% endif %}
+
+    <p class="text-xs text-muted mt-6">Third Place Japan 認証施設｜ご予約の受付・管理は各施設が行います。</p>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 380px) {
+    .reservation-cta-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-reserve-cta]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'certified_venue_cta',
+          destination_type: el.getAttribute('data-destination-type')
+        });
+      }
+    });
+  });
+})();
+</script>
+{% endif %}

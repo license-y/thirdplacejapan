@@ -1347,6 +1347,99 @@
   
 
   
+  
+<section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+  <div class="rounded-2xl border border-gold/30 bg-white px-6 py-10 md:px-10 md:py-12 text-center">
+    <p class="label text-gold mb-2">Third Place Japan</p>
+    <p class="text-xs font-medium tracking-widest text-muted mb-6">FLAGSHIP CERTIFIED</p>
+
+    <h2 class="font-serif text-2xl md:text-3xl font-light text-dark mb-3">Green Beans Coffee</h2>
+
+    
+    <p class="text-sm text-muted mb-8">「心地よい空間で、特別なひとときを。」</p>
+    
+
+    <p class="label mb-5">ご予約・ご来店のご案内</p>
+
+    <div class="reservation-cta-grid grid grid-cols-2 gap-3 max-w-md mx-auto"
+         data-ga-reserve-cta
+         data-venue-slug="green-beans-coffee-shibuya"
+         data-venue-grade="flagship">
+
+      
+      <a href="https://tabelog.com/tokyo/A1309/A130901/13277423/" target="_blank" rel="noopener"
+         data-ga-event="click_reserve" data-destination-type="食べログ"
+         class="inline-flex items-center justify-center gap-1.5 bg-gold hover:bg-gold/90 text-white text-xs font-medium px-4 py-3 rounded-full transition-colors">
+        食べログで予約
+      </a>
+      
+
+      
+      <a href="tel:03-6447-0681"
+         data-ga-event="click_call" data-destination-type="tel"
+         class="inline-flex items-center justify-center gap-1.5 border border-gold text-gold text-xs font-medium px-4 py-3 rounded-full hover:bg-gold hover:text-white transition-colors">
+        電話で予約
+      </a>
+      
+
+      
+      <a href="https://greenbeanscoffeeambassador.com/#menu" target="_blank" rel="noopener"
+         data-ga-event="click_menu" data-destination-type="menu"
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
+        メニューを見る
+      </a>
+      
+
+      
+      <a href="https://maps.google.com/?q=グリーンビーンズコーヒー+東京都渋谷区千駄ヶ谷3-30-1" target="_blank" rel="noopener"
+         data-ga-event="click_map" data-destination-type="google_maps"
+         class="inline-flex items-center justify-center gap-1.5 border border-border text-muted text-xs font-medium px-4 py-3 rounded-full hover:border-gold hover:text-gold transition-colors">
+        Googleマップ
+      </a>
+      
+    </div>
+
+    
+    <p class="text-xs text-muted mt-6">北参道駅から徒歩3分</p>
+    
+    
+    <p class="text-xs mt-1" style="color:#3D2B1F;">ご予約なしでもご利用いただけます。</p>
+    
+
+    <p class="text-xs text-muted mt-6">Third Place Japan 認証施設｜ご予約の受付・管理は各施設が行います。</p>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 380px) {
+    .reservation-cta-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-reserve-cta]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'certified_venue_cta',
+          destination_type: el.getAttribute('data-destination-type')
+        });
+      }
+    });
+  });
+})();
+</script>
+
+
+
+  
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
     <p>東京都 東京都渋谷区千駄ヶ谷3-30-1</p>
     

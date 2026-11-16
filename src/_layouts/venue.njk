@@ -574,6 +574,9 @@ og_type: "article"
   </section>
   {% endif %}
 
+  {# 予約・来店導線（認証施設限定・TPJセレクトには表示しない） #}
+  {% include "venue-reservation-cta.njk" %}
+
   {# 基本情報 #}
   <aside class="mt-16 pt-8 border-t border-border text-sm text-muted space-y-2" data-aos="fade-up">
     <p>{{ venue.area_primary.prefecture }} {{ venue.address }}</p>
