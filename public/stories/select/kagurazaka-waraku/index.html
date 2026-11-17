@@ -784,7 +784,55 @@
   
 
   
-  
+  <section class="mb-14" data-aos="fade-up">
+  <h2 class="label mb-6">この場所でおすすめの過ごし方</h2>
+  <div class="space-y-5"
+       data-ga-purpose-highlights
+       data-venue-slug="kagurazaka-waraku"
+       data-venue-grade="select"
+       data-page-language="ja">
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">記念日・接待</h3>
+      <p class="text-sm text-muted leading-relaxed">蘭・華・舞・雅と名付けられた個室は2名から対応し、座敷大広間では貸切利用も可能。古民家ならではの落ち着いた佇まいが、記念日や接待など特別な機会に向いている。</p>
+      
+      <a href="/stories/restaurant-dining/kagurazaka/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="celebrations"
+         class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">一人・少人数利用</h3>
+      <p class="text-sm text-muted leading-relaxed">個室だけでなくカウンター席も備えており、格式張った料亭とは異なる親しみやすさで、少人数やひとりでの利用にも対応できる。</p>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-purpose-highlights]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'purpose_highlights',
+          destination_type: el.getAttribute('data-destination-type'),
+          page_language: container.getAttribute('data-page-language')
+        });
+      }
+    });
+  });
+})();
+</script>
+
 
 
   

@@ -784,7 +784,55 @@
   
 
   
-  
+  <section class="mb-14" data-aos="fade-up">
+  <h2 class="label mb-6">この場所でおすすめの過ごし方</h2>
+  <div class="space-y-5"
+       data-ga-purpose-highlights
+       data-venue-slug="miyamoto-farm-nerima"
+       data-venue-grade="select"
+       data-page-language="ja">
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">地域交流・都市農業体験</h3>
+      <p class="text-sm text-muted leading-relaxed">農家カフェ（土・日・祝 10:00〜16:00）、直売所（金 10:00〜12:00・13:00〜16:00）、とうふ房（敷地内で週2回製造）を併設。23区最大級の農地が残る練馬区で、都市農業を直接体感できる。</p>
+      
+      <a href="/stories/culture-sports-leisure/nerima/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="local-connection"
+         class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
+      
+    </div>
+    
+    <div class="bg-white border border-border rounded-xl px-5 py-4">
+      <h3 class="text-sm font-medium text-dark mb-1.5">季節の収穫体験（開催期間限定）</h3>
+      <p class="text-sm text-muted leading-relaxed">例年7月上旬〜8月上旬ごろ、火・金・土・日に予約不要でブルーベリー摘み取りを実施（100gあたり300円の量り売り）。開催期間・営業日は変動することがあるため、訪問前に公式サイトでご確認ください。</p>
+      
+    </div>
+    
+    
+  </div>
+</section>
+
+<script>
+(function() {
+  document.querySelectorAll('[data-ga-purpose-highlights]').forEach(function(container) {
+    if (container.dataset.gaBound === "1") return;
+    container.dataset.gaBound = "1";
+    container.addEventListener('click', function(e) {
+      var el = e.target.closest('a[data-ga-event]');
+      if (!el || !container.contains(el)) return;
+      if (typeof gtag === "function") {
+        gtag('event', el.getAttribute('data-ga-event'), {
+          venue_slug: container.getAttribute('data-venue-slug'),
+          venue_grade: container.getAttribute('data-venue-grade'),
+          link_location: 'purpose_highlights',
+          destination_type: el.getAttribute('data-destination-type'),
+          page_language: container.getAttribute('data-page-language')
+        });
+      }
+    });
+  });
+})();
+</script>
+
 
 
   
