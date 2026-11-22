@@ -2623,6 +2623,17 @@ eleventyConfig.addFilter("findDistrictsByAdminArea", (districts, prefSlug, cityS
 7. `npm run build`後、JSON-LDパースエラー・内部リンク切れ・title/description重複の機械検証を行う
 8. 画像は`記事サムネイルの管理ルール`に従い新規調達する（商業エリアのピラーページ自体の`thumbnail`は、代表的な既存記事のサムネイルを再利用してよい。2026-11-15時点で表参道・北参道千駄ヶ谷・青山・銀座の4エリアとも、この方式で対応済み）
 
+## 地域名称の表記統一｜北参道・千駄ヶ谷（2026-11-22追加）
+
+- 北参道・千駄ヶ谷エリアの通称は**「ダガヤサンドウ」**に統一する。
+- **「ダガヤサンド」は誤表記として使用しない。**
+- 記事タイトル、本文、FAQ、meta description、構造化データ（JSON-LD）など、公開情報全体で表記を統一する。
+- 新規記事作成時・既存記事更新時にも、この通称に言及する箇所があれば表記を確認する。
+- URL・slugは、表記訂正だけを理由に変更しない（既存リンクへの影響を避けるため）。画像ファイル名等、既存の命名（例：`dagayasando`を含むファイル名）も同様に変更しない。
+- 英語版のローマ字表記は既存ルールを尊重し、必要な場合のみ別途検討する。
+
+**背景**：`src/_data/districts.json`・`src/stories/district/index.njk`（商業エリアガイド）・`src/stories/cafe-specialty-coffee-kitasando-sendagaya.md`の計3ファイル・15箇所で「ダガヤサンド」という表記揺れが見つかり、「ダガヤサンドウ」に統一した（2026-11-22監査・修正）。`project-docs/AEO-PLAYBOOK.md`・`project-docs/STORIES-SITE-SPEC.md`は監査時点で既に「ダガヤサンドウ」表記だったため変更不要だった。
+
 ## 現在の公開済み商業エリア（2026-11-15時点）
 
 | slug | 名称 | 行政エリア | 目的別記事 |

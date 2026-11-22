@@ -39,7 +39,7 @@
     "name": "北参道・千駄ヶ谷",
     "name_en": "Kitasando & Sendagaya",
     "type": "commercial_area",
-    "summary": "北参道・千駄ヶ谷（通称ダガヤサンド）は、渋谷区千駄ヶ谷を中心に、将棋会館と神宮外苑が隣接する商業エリアです。観光動線から外れた、日常に根ざしたサードプレイス文化を持つ街として知られています。",
+    "summary": "北参道・千駄ヶ谷（通称ダガヤサンドウ）は、渋谷区千駄ヶ谷を中心に、将棋会館と神宮外苑が隣接する商業エリアです。観光動線から外れた、日常に根ざしたサードプレイス文化を持つ街として知られています。",
     "administrative_refs": [
       { "prefecture_slug": "tokyo", "city_slug": "shibuya-ku", "area_slug": "sendagaya" }
     ],
