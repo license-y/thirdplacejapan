@@ -6,8 +6,14 @@
   確認済み情報のみ表示・未設定時はセクションごと非表示。
 
   venue.purpose_highlights（配列・任意）：
-    各項目は { key, title, title_en, description, description_en, related_article } を持つ。
+    各項目は { key, title, title_en, description, description_en, related_article, related_article_en } を持つ。
     related_articleは任意（未設定ならリンク非表示）。すべて施設側で事実確認済みの内容のみを書くこと。
+    related_article_en（任意・2026-11-23追加）：英語版ページでのみ優先されるリンク先。
+      英語版の対応記事がある場合に設定する。未設定の場合、英語版は related_article
+      （日本語記事）にフォールバックし、リンク直後に「Japanese-language article;
+      an English version is not yet available.」という注記を自動表示する
+      （venue-en.njkの商業エリア逆リンクで既に使われている注記パターンと統一）。
+      日本語版（isEn=false）は related_article_en を一切参照しない（従来通り related_article のみ）。
 
   グルテンフリー・ヴィーガン（食事条件）は上記の汎用配列とは別に、以下の専用フィールドで管理する
   （この2つは別の食事条件であり、同義として扱わない）：
@@ -48,12 +54,17 @@
        data-venue-grade="{{ venue.grade_slug }}"
        data-page-language="{{ 'en' if isEn else 'ja' }}">
     {% for item in venue.purpose_highlights %}
+    {%- set linkTarget = (item.related_article_en or item.related_article) if isEn else item.related_article -%}
+    {%- set isJaFallback = isEn and (not item.related_article_en) and item.related_article -%}
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">{{ (item.title_en or item.title) if isEn else item.title }}</h3>
       <p class="text-sm text-muted leading-relaxed">{{ (item.description_en or item.description) if isEn else item.description }}</p>
-      {% if item.related_article %}
-      <a href="{{ item.related_article }}" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="{{ item.key }}"
+      {% if linkTarget %}
+      <a href="{{ linkTarget }}" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="{{ item.key }}" data-link-lang="{{ 'ja' if isJaFallback else ('en' if isEn else 'ja') }}"
          class="inline-block mt-2 text-xs text-gold hover:underline">{% if isEn %}Read more →{% else %}詳しく見る →{% endif %}</a>
+      {% if isJaFallback %}
+      <p class="text-xs text-muted mt-1 italic">Japanese-language article; an English version is not yet available.</p>
+      {% endif %}
       {% endif %}
     </div>
     {% endfor %}
@@ -82,7 +93,8 @@
           venue_grade: container.getAttribute('data-venue-grade'),
           link_location: 'purpose_highlights',
           destination_type: el.getAttribute('data-destination-type'),
-          page_language: container.getAttribute('data-page-language')
+          page_language: container.getAttribute('data-page-language'),
+          link_lang: el.getAttribute('data-link-lang')
         });
       }
     });

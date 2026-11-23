@@ -3,6 +3,7 @@ layout: article.njk
 title: 北参道・千駄ヶ谷でPC作業に適したカフェの選び方｜Wi-Fi・電源・集中できる空間
 description: 北参道・千駄ヶ谷でPC作業に向くカフェを選ぶ条件は、Wi-Fi・電源の有無、座席の快適性、混雑時間帯、周囲への配慮の4点に集約される。Third Place Japanがサードプレイス（third place）の選び方を解説する。
 date: 2026-11-23
+hreflang_en: /en/stories/concept/laptop-work-cafe-kitasando-sendagaya/
 tags:
   - articles
 category_slug: cafe-specialty-coffee

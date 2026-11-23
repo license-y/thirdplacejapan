@@ -1152,49 +1152,49 @@
        data-venue-slug="green-beans-coffee-shibuya"
        data-venue-grade="flagship"
        data-page-language="ja">
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">一人時間</h3>
       <p class="text-sm text-muted leading-relaxed">隣席との距離感や静けさへの配慮により、ひとりでも長居しやすい空間です。</p>
       
-      <a href="/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="solo-time"
+      <a href="/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="solo-time" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
       
+      
     </div>
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">商談・ミーティング</h3>
       <p class="text-sm text-muted leading-relaxed">静けさを保つ空間設計により、落ち着いて話せる環境です。</p>
       
-      <a href="/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="business-meeting"
+      <a href="/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="business-meeting" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
       
+      
     </div>
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">PC作業</h3>
       <p class="text-sm text-muted leading-relaxed">Wi-Fi・電源を備え、落ち着いた空間でPC作業をお楽しみいただけます。</p>
       
-      <a href="/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="pc-work"
+      <a href="/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="pc-work" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
       
+      
     </div>
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">ペット同伴</h3>
       <p class="text-sm text-muted leading-relaxed">店内にペットを同伴して利用できます。</p>
       
-      <a href="/stories/cafe-specialty-coffee/pet-friendly-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="pet-friendly"
+      <a href="/stories/cafe-specialty-coffee/pet-friendly-cafe-kitasando-sendagaya/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="pet-friendly" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
       
+      
     </div>
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">コーヒー体験</h3>
       <p class="text-sm text-muted leading-relaxed">自家焙煎で30種類のコーヒー豆を取り扱い、産地・精製方法まで来歴を体験できます。</p>
       
-      <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="coffee-experience"
+      <a href="/stories/cafe-specialty-coffee/green-beans-coffee-review/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="coffee-experience" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
+      
       
     </div>
     
@@ -1223,7 +1223,8 @@
           venue_grade: container.getAttribute('data-venue-grade'),
           link_location: 'purpose_highlights',
           destination_type: el.getAttribute('data-destination-type'),
-          page_language: container.getAttribute('data-page-language')
+          page_language: container.getAttribute('data-page-language'),
+          link_lang: el.getAttribute('data-link-lang')
         });
       }
     });

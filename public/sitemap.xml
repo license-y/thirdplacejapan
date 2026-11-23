@@ -3350,7 +3350,26 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/laptop-work-cafe-kitasando-sendagaya/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/laptop-work-cafe-kitasando-sendagaya/"/>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/en/stories/concept/pet-friendly-cafe-kitasando-sendagaya/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3362,6 +3381,9 @@
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    
+    <xhtml:link rel="alternate" hreflang="ja" href="https://thirdplacejapan.com/stories/cafe-specialty-coffee/pet-friendly-cafe-kitasando-sendagaya/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thirdplacejapan.com/en/stories/concept/pet-friendly-cafe-kitasando-sendagaya/"/>
     
   </url>
   

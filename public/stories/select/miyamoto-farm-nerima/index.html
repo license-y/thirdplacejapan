@@ -791,16 +791,15 @@
        data-venue-slug="miyamoto-farm-nerima"
        data-venue-grade="select"
        data-page-language="ja">
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">地域交流・都市農業体験</h3>
       <p class="text-sm text-muted leading-relaxed">農家カフェ（土・日・祝 10:00〜16:00）、直売所（金 10:00〜12:00・13:00〜16:00）、とうふ房（敷地内で週2回製造）を併設。23区最大級の農地が残る練馬区で、都市農業を直接体感できる。</p>
       
-      <a href="/stories/culture-sports-leisure/nerima/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="local-connection"
+      <a href="/stories/culture-sports-leisure/nerima/" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="local-connection" data-link-lang="ja"
          class="inline-block mt-2 text-xs text-gold hover:underline">詳しく見る →</a>
       
+      
     </div>
-    
     <div class="bg-white border border-border rounded-xl px-5 py-4">
       <h3 class="text-sm font-medium text-dark mb-1.5">季節の収穫体験（開催期間限定）</h3>
       <p class="text-sm text-muted leading-relaxed">例年7月上旬〜8月上旬ごろ、火・金・土・日に予約不要でブルーベリー摘み取りを実施（100gあたり300円の量り売り）。開催期間・営業日は変動することがあるため、訪問前に公式サイトでご確認ください。</p>
@@ -825,7 +824,8 @@
           venue_grade: container.getAttribute('data-venue-grade'),
           link_location: 'purpose_highlights',
           destination_type: el.getAttribute('data-destination-type'),
-          page_language: container.getAttribute('data-page-language')
+          page_language: container.getAttribute('data-page-language'),
+          link_lang: el.getAttribute('data-link-lang')
         });
       }
     });

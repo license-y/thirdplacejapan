@@ -3,6 +3,7 @@ layout: article.njk
 title: 北参道・千駄ヶ谷でペット同伴できるカフェの選び方｜店内利用・マナー・快適な過ごし方
 description: 北参道・千駄ヶ谷でペット同伴できるカフェを選ぶ条件は、店内利用の可否・周囲への配慮・事前確認の3点に集約される。観光動線から外れた立地を基準に、Third Place Japanがサードプレイス（third place）の選び方を解説する。
 date: 2026-11-23
+hreflang_en: /en/stories/concept/pet-friendly-cafe-kitasando-sendagaya/
 tags:
   - articles
 category_slug: cafe-specialty-coffee
