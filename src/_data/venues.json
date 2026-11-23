@@ -97,16 +97,17 @@
         "key": "pc-work",
         "title": "PC作業",
         "title_en": "Laptop Work",
-        "description": "Wi-Fi・電源を完備し、長時間の作業にも対応しています。",
-        "description_en": "Wi-Fi and power outlets are available throughout, supporting extended laptop sessions.",
-        "related_article": "/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/"
+        "description": "Wi-Fi・電源を備え、落ち着いた空間でPC作業をお楽しみいただけます。",
+        "description_en": "With Wi-Fi and power outlets available, enjoy working on your laptop in a calm and comfortable setting.",
+        "related_article": "/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/"
       },
       {
         "key": "pet-friendly",
         "title": "ペット同伴",
         "title_en": "Pet-Friendly",
         "description": "店内にペットを同伴して利用できます。",
-        "description_en": "Pets are welcome inside the café."
+        "description_en": "Pets are welcome inside the café.",
+        "related_article": "/stories/cafe-specialty-coffee/pet-friendly-cafe-kitasando-sendagaya/"
       },
       {
         "key": "coffee-experience",
