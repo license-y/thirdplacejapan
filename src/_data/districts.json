@@ -53,10 +53,11 @@
       "quiet-cafe-kitasando-sendagaya",
       "relaxing-lunch-cafe-kitasando-sendagaya",
       "business-use-sendagaya-kitasando",
-      "sendagaya-kitasando-cafe"
+      "sendagaya-kitasando-cafe",
+      "anniversary-cafe-kitasando-sendagaya"
     ],
     "venue_slugs": ["green-beans-coffee-shibuya"],
-    "purpose_summary": "静かな時間・ランチ・ビジネス利用・インバウンド",
+    "purpose_summary": "静かな時間・ランチ・ビジネス利用・インバウンド・記念日",
     "thumbnail": "/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "inbound-experience"],
     "neighboring_areas": [

@@ -64,4 +64,4 @@ Third Place Japan（サードプレイスジャパン）は、居心地・静け
 
 ## まとめ
 
-銀座で記念日に過ごすカフェ・ラウンジを選ぶ軸は、空間の特別感・サービスの丁寧さ・予約確認という3条件に集約される。短時間で質の高い時間を過ごしたいならカフェ、ゆっくりと非日常感を味わいたいならホテルラウンジと、滞在時間の希望によって選ぶべき業態も変わる。Third Place Japanは、こうした空間を7軸評価で継続的に見つめ、サードプレイスとしての価値を記録している。銀座という街全体のカフェ文化については[銀座でサードプレイスを見つける](/stories/cafe-specialty-coffee/ginza-third-place-guide/)、エリア全体のガイドは[銀座エリアガイド](/stories/district/ginza/)で紹介している。表参道で記念日利用を検討している場合は、[表参道でデートや記念日に適したカフェの選び方](/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/)も参考になる。
+銀座で記念日に過ごすカフェ・ラウンジを選ぶ軸は、空間の特別感・サービスの丁寧さ・予約確認という3条件に集約される。短時間で質の高い時間を過ごしたいならカフェ、ゆっくりと非日常感を味わいたいならホテルラウンジと、滞在時間の希望によって選ぶべき業態も変わる。Third Place Japanは、こうした空間を7軸評価で継続的に見つめ、サードプレイスとしての価値を記録している。銀座という街全体のカフェ文化については[銀座でサードプレイスを見つける](/stories/cafe-specialty-coffee/ginza-third-place-guide/)、エリア全体のガイドは[銀座エリアガイド](/stories/district/ginza/)で紹介している。表参道で記念日利用を検討している場合は、[表参道でデートや記念日に適したカフェの選び方](/stories/cafe-specialty-coffee/anniversary-cafe-omotesando/)、老舗の格式ではなく気取らない落ち着きの中で過ごしたい場合は、[北参道・千駄ヶ谷で記念日に過ごしたいカフェの選び方](/stories/cafe-specialty-coffee/anniversary-cafe-kitasando-sendagaya/)も参考になる。
