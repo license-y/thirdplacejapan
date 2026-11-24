@@ -2634,12 +2634,12 @@ eleventyConfig.addFilter("findDistrictsByAdminArea", (districts, prefSlug, cityS
 
 **背景**：`src/_data/districts.json`・`src/stories/district/index.njk`（商業エリアガイド）・`src/stories/cafe-specialty-coffee-kitasando-sendagaya.md`の計3ファイル・15箇所で「ダガヤサンド」という表記揺れが見つかり、「ダガヤサンドウ」に統一した（2026-11-22監査・修正）。`project-docs/AEO-PLAYBOOK.md`・`project-docs/STORIES-SITE-SPEC.md`は監査時点で既に「ダガヤサンドウ」表記だったため変更不要だった。
 
-## 現在の公開済み商業エリア（2026-11-15時点）
+## 現在の公開済み商業エリア（2026-11-24時点）
 
 | slug | 名称 | 行政エリア | 目的別記事 |
 |---|---|---|---|
-| `omotesando` | 表参道 | 渋谷区神宮前／港区青山 | 一人時間・商談・ランチ・デート・記念日・PC作業（6本） |
-| `kitasando-sendagaya` | 北参道・千駄ヶ谷 | 渋谷区千駄ヶ谷 | 静か・ランチ・ビジネス利用・インバウンド（4本） |
+| `omotesando` | 表参道 | 渋谷区神宮前／港区青山 | 一人時間・商談・ランチ・PC作業・デート・記念日・予約・女子会（8本） |
+| `kitasando-sendagaya` | 北参道・千駄ヶ谷 | 渋谷区千駄ヶ谷 | 静か・ランチ・ビジネス利用・インバウンド・記念日・PC作業・ペット同伴・女子会/友人・予約・グルテンフリー・ヴィーガン（11本） |
 | `aoyama` | 青山 | 港区青山 | 商談・ミーティング／アート×カフェ（2本） |
 | `ginza` | 銀座 | 中央区銀座 | 記念日／商談ホテルラウンジ（2本） |
 
@@ -2773,6 +2773,30 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-11-24
+
+### 表参道・北参道千駄ヶ谷に目的別記事6本を追加＋既存2記事（PC作業・ペット同伴）の商業エリア連携漏れを解消
+
+**対象ファイル**
+- 新規記事6本：`src/stories/concept/reservation-cafe-omotesando.md`・`girls-gathering-cafe-omotesando.md`・`friends-gathering-cafe-kitasando-sendagaya.md`・`reservation-cafe-kitasando-sendagaya.md`・`gluten-free-lunch-kitasando-sendagaya.md`・`vegan-lunch-kitasando-sendagaya.md`
+- `src/_data/districts.json`（表参道・北参道千駄ヶ谷の`purpose_article_slugs`・`purpose_summary`を更新）
+- `src/stories/district/index.njk`（「目的別にサードプレイスを選ぶ」H3セクションを表参道8件・北参道千駄ヶ谷11件に拡張）
+- 既存記事9本に逆リンク追加（`date-cafe-omotesando`・`anniversary-cafe-omotesando`・`relaxing-lunch-cafe-omotesando`・`quiet-cafe-kitasando-sendagaya`・`relaxing-lunch-cafe-kitasando-sendagaya`・`business-use-sendagaya-kitasando`・`anniversary-cafe-kitasando-sendagaya`・`pet-friendly-cafe-kitasando-sendagaya`・`inbound-experience/sendagaya-kitasando-cafe`）
+- 新規画像6枚（Unsplash取得・200KB以下）
+
+**背景**：表参道・北参道千駄ヶ谷の商業エリアガイドの目的別記事を拡充する依頼を受けた。着手前の調査で、直近（2026-11-23）に公開済みのPC作業・ペット同伴の2記事が、`districts.json`の`purpose_article_slugs`にも`district/index.njk`のH3セクションにも未反映のまま放置されていたことが判明し、今回のバッチで合わせて解消した（施設側`venues.json`の`purpose_highlights`は対応済みだったため、エリアガイド側だけが取り残されていた）。
+
+**6記事の内容**：①②は表参道（予約・女子会）、③〜⑥は北参道・千駄ヶ谷（女子会・友人との集まり／予約／グルテンフリーランチ／ヴィーガンランチ）。同一テーマの表参道版・北参道千駄ヶ谷版（女子会・予約）は、既存の記念日記事等で確立済みの対比軸（表参道＝非日常・買い物との組み合わせ、北参道千駄ヶ谷＝観光動線から外れた日常の延長線上の落ち着き）を踏襲して差別化した。
+
+**ヴィーガン記事でのGBC言及方針**：GBC（Green Beans Coffee、Flagship認証店）の`venues.json`には`diet_vegan_confirmed: false`（ヴィーガンメニューは2026年12月提供予定・現時点では非表示）が既に設定済みだったため、この記事ではGBCをヴィーガン提供施設として紹介せず、`diet_vegan_confirmed`も変更していない。初稿では「エリア内で導入を予定している店舗もある」という婉曲表現を入れていたが、具体的な確認済み情報を名指しできない以上この種の先行き言及は避けるべきと判断し、コミット前の最終確認で削除した（本文・FAQの両方）。グルテンフリー記事ではGBCの`diet_gluten_free_confirmed: true`（確認済み）をそのまま引用した。
+
+**検証方法**：`npm run build`後、サイト全体（729 HTMLファイル）のJSON-LD 3,152ブロック・パースエラー0件、内部リンク57,238件・リンク切れ0件、title/description重複0件を確認。6記事それぞれでFAQ可視テキストとFAQPage JSON-LDの完全一致、`datePublished`＝`dateModified`＝2026-11-24を確認。Playwright実機検証（PC1280px／スマホ375・390・430px×8ページ=32通り）で横スクロール・コンソールエラー0件を確認。`venues.json`は無変更であることを`git diff --stat`で確認済み。コミット後、本番URL10件（新規記事6本＋商業エリア2本＋一覧2本）でHTTP 200・title・canonical・JSON-LD・画像配信を再確認した。
+
+**今後の課題**：
+- 英語版は今回未作成。優先候補はグルテンフリー・ヴィーガン・予約の3本
+- GBCのヴィーガンメニューが2026年12月に実際に提供開始されたことを確認した時点で、`venues.json`の`diet_vegan_confirmed`を`true`に更新し、本記事にもGBCを具体例として追記する
+- `district/index.njk`の「目的別にサードプレイスを選ぶ」H3セクションは北参道・千駄ヶ谷が11件まで増えた。今後さらに目的別記事を追加する場合、この手動H3方式の見出し過多を避けるため、`purpose_article_slugs`から自動生成するデータ駆動方式への移行を検討する余地がある
 
 ## 2026-11-15
 
