@@ -39,7 +39,7 @@ thumbnail: /assets/images/articles/lunch-table-setting-cafe-sendagaya.webp
 
 同じカフェでも、ランチと他の目的では重視すべき条件が異なる。
 
-食事そのものを楽しむランチでは、料理の内容と座席の余裕が優先されるが、一人で静かに読書や考え事をしたい場合は、席の配置や物音の少なさがより重要になる。この違いは[北参道・千駄ヶ谷で静かに過ごせるカフェの選び方](/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/)で詳しく解説している。また、商談やリモートワークを目的とする場合はWi-Fi・電源や席の独立性が優先され、[千駄ヶ谷・北参道でカフェを仕事場にする：ビジネス利用のサードプレイスガイド](/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/)で解説している条件とは異なる。
+食事そのものを楽しむランチでは、料理の内容と座席の余裕が優先されるが、一人で静かに読書や考え事をしたい場合は、席の配置や物音の少なさがより重要になる。この違いは[北参道・千駄ヶ谷で静かに過ごせるカフェの選び方](/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/)で詳しく解説している。また、商談やリモートワークを目的とする場合はWi-Fi・電源や席の独立性が優先され、[千駄ヶ谷・北参道でカフェを仕事場にする：ビジネス利用のサードプレイスガイド](/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/)で解説している条件とは異なる。友人とグループで会話を楽しみたい場合は[北参道・千駄ヶ谷で女子会や友人との集まりに適したカフェの選び方](/stories/cafe-specialty-coffee/friends-gathering-cafe-kitasando-sendagaya/)、グルテンフリーやヴィーガンなど食事条件に合わせて選びたい場合は[北参道・千駄ヶ谷でグルテンフリーランチを楽しむ方法](/stories/cafe-specialty-coffee/gluten-free-lunch-kitasando-sendagaya/)・[北参道・千駄ヶ谷でヴィーガンランチを楽しむ方法](/stories/cafe-specialty-coffee/vegan-lunch-kitasando-sendagaya/)も参考になる。
 
 ## サードプレイスとして考えるランチの価値
 

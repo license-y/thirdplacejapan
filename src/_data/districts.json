@@ -21,10 +21,12 @@
       "relaxing-lunch-cafe-omotesando",
       "pc-work-cafe-omotesando",
       "date-cafe-omotesando",
-      "anniversary-cafe-omotesando"
+      "anniversary-cafe-omotesando",
+      "reservation-cafe-omotesando",
+      "girls-gathering-cafe-omotesando"
     ],
     "venue_slugs": ["koffee-mameya-omotesando"],
-    "purpose_summary": "一人時間・商談・ランチ・デート・記念日・PC作業",
+    "purpose_summary": "一人時間・商談・ランチ・デート・記念日・女子会など",
     "thumbnail": "/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "restaurant-dining", "coworking", "premium-salon"],
     "neighboring_areas": [
@@ -54,10 +56,16 @@
       "relaxing-lunch-cafe-kitasando-sendagaya",
       "business-use-sendagaya-kitasando",
       "sendagaya-kitasando-cafe",
-      "anniversary-cafe-kitasando-sendagaya"
+      "anniversary-cafe-kitasando-sendagaya",
+      "pc-work-cafe-kitasando-sendagaya",
+      "pet-friendly-cafe-kitasando-sendagaya",
+      "friends-gathering-cafe-kitasando-sendagaya",
+      "reservation-cafe-kitasando-sendagaya",
+      "gluten-free-lunch-kitasando-sendagaya",
+      "vegan-lunch-kitasando-sendagaya"
     ],
     "venue_slugs": ["green-beans-coffee-shibuya"],
-    "purpose_summary": "静かな時間・ランチ・ビジネス利用・インバウンド・記念日",
+    "purpose_summary": "静かな時間・ランチ・ビジネス利用・記念日・食事条件など",
     "thumbnail": "/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp",
     "related_categories": ["cafe-specialty-coffee", "inbound-experience"],
     "neighboring_areas": [
