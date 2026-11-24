@@ -242,6 +242,14 @@ export default function (eleventyConfig) {
     return (collection || []).filter(p => set.has(p.fileSlug)).sort((a, b) => b.date - a.date);
   });
 
+  // 商業エリアの「目的別カード」セクション用：1件だけを取得する（articlesBySlugsは日付降順に
+  // 再ソートするため、カードの並び順（districts.json側のpurpose_cards配列順）を保持したい
+  // このユースケースには使えない。見つからない場合はundefinedを返し、呼び出し側で
+  // {% if matchedPost %} による防御的な非表示処理を行う）
+  eleventyConfig.addFilter("findArticleBySlug", (collection, slug) =>
+    (collection || []).find(p => p.fileSlug === slug)
+  );
+
   eleventyConfig.addFilter("venuesBySlugs", (venues, slugs) => {
     const set = new Set(slugs || []);
     return (venues || []).filter(v => set.has(v.slug) && v.published !== false);
