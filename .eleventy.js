@@ -250,6 +250,20 @@ export default function (eleventyConfig) {
     (collection || []).find(p => p.fileSlug === slug)
   );
 
+  // 施設ページ「この場所でおすすめの過ごし方」用：venues.json側はURLパス（related_article /
+  // related_article_en）しか持たないため、パス末尾のslugを抽出してfindArticleBySlugと同じ
+  // ロジックで記事を解決する（関連記事リンクのアンカーテキストを実際の記事タイトルにするため）。
+  // 同じfileSlugをJA/EN両方の記事が使うケースが実在する（例：pet-friendly-cafe-kitasando-sendagaya
+  // はJA版・EN版とも同一slug）。パスが"/en/"始まりかどうかで言語を判定し、fileSlug一致に加えて
+  // 記事側のlangとも一致させることで、同名slugの衝突時に誤った言語の記事を拾わないようにする。
+  eleventyConfig.addFilter("findArticleByPath", (collection, path) => {
+    if (!path) return undefined;
+    const isEnPath = path.startsWith("/en/");
+    const segs = path.split("/").filter(Boolean);
+    const slug = segs[segs.length - 1];
+    return (collection || []).find(p => p.fileSlug === slug && ((p.data.lang === "en") === isEnPath));
+  });
+
   eleventyConfig.addFilter("venuesBySlugs", (venues, slugs) => {
     const set = new Set(slugs || []);
     return (venues || []).filter(v => set.has(v.slug) && v.published !== false);

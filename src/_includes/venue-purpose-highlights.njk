@@ -1,81 +1,141 @@
 {#
-  施設ページ「この場所でおすすめの過ごし方」共通セクション（2026-11-16追加）
+  施設ページ「この場所でおすすめの過ごし方」共通セクション（2026-11-16追加・2026-11-24カードデザイン刷新）
 
   日本語版（venue.njk）・英語版（venue-en.njk）の両方から呼び出される共通コンポーネント。
   venue-reservation-cta.njkと同じ設計方針：自己完結（lang変数のみで言語判定）・
   確認済み情報のみ表示・未設定時はセクションごと非表示。
 
+  商業エリアのpurpose_cards（src/stories/district/index.njk）と視覚的に統一したカードデザイン
+  （ゴールド番号・明朝体見出し・テキスト区切りキーワード・ゴールド細枠）を採用している。
+  番号はvenue.purpose_highlights配列のインデックスから自動生成し、データに番号は持たせない。
+
   venue.purpose_highlights（配列・任意）：
-    各項目は { key, title, title_en, description, description_en, related_article, related_article_en } を持つ。
-    related_articleは任意（未設定ならリンク非表示）。すべて施設側で事実確認済みの内容のみを書くこと。
-    related_article_en（任意・2026-11-23追加）：英語版ページでのみ優先されるリンク先。
+    各項目は { key, title, title_en, keywords, keywords_en, description, description_en,
+    related_article, related_article_en, hide_en } を持つ。
+    - keywords / keywords_en（任意・2026-11-24追加）：3〜5項目程度を目安にしたテキスト配列。
+      未設定の施設（神楽坂 和らく・みやもとファーム等）ではキーワード行自体が非表示になる
+      （後方互換・既存データへの影響なし）。
+    - hide_en（任意・2026-11-24追加）：EN翻訳が未整備の項目を英語版ページでのみ非表示にする。
+      日本語版（isEn=false）には一切影響しない。英語版の番号は非表示にした項目を除いた
+      「実際に表示される項目」だけを数え直して採番するため、欠番は発生しない。
+    - related_articleは任意（未設定ならリンク非表示）。すべて施設側で事実確認済みの内容のみを書くこと。
+    - related_article_en（任意・2026-11-23追加）：英語版ページでのみ優先されるリンク先。
       英語版の対応記事がある場合に設定する。未設定の場合、英語版は related_article
       （日本語記事）にフォールバックし、リンク直後に「Japanese-language article;
-      an English version is not yet available.」という注記を自動表示する
-      （venue-en.njkの商業エリア逆リンクで既に使われている注記パターンと統一）。
+      an English version is not yet available.」という注記を自動表示する。
       日本語版（isEn=false）は related_article_en を一切参照しない（従来通り related_article のみ）。
+    - リンクのアンカーテキストは、related_article（_en）のURLパス末尾のslugから
+      findArticleByPathフィルターで実記事を解決し、その記事タイトルをそのまま使う
+      （「詳しく見る→」のような汎用文言ではなく、内容が分かるアンカーテキストにするため）。
+      解決できない場合のみ「詳しく見る」/「Read more」にフォールバックする。
 
   グルテンフリー・ヴィーガン（食事条件）は上記の汎用配列とは別に、以下の専用フィールドで管理する
   （この2つは別の食事条件であり、同義として扱わない）：
     diet_gluten_free_confirmed（boolean）/ diet_gluten_free_text / diet_gluten_free_text_en
+    diet_gluten_free_keywords / diet_gluten_free_keywords_en（任意・2026-11-24追加）
+    diet_gluten_free_article / diet_gluten_free_article_en（任意・2026-11-24追加・関連記事リンク）
     diet_vegan_confirmed（boolean）/ diet_vegan_text / diet_vegan_text_en
-  表示名は確認済みの組み合わせに応じて自動的に切り替わる：
-    両方confirmed=true → 「グルテンフリー・ヴィーガン」/ "Gluten-Free & Vegan Options"
-    グルテンフリーのみ → 「グルテンフリー対応」/ "Gluten-Free Options"
-    ヴィーガンのみ     → 「ヴィーガン対応」/ "Vegan Options"
-    どちらもfalse      → この食事条件ブロック自体を非表示
-  confirmed=falseの項目の本文（text）は絶対に表示しない（公開前の文言をデータとして保持しておくための設計で、
-  表示の可否は confirmed フラグのみが制御する）。
+    diet_vegan_keywords / diet_vegan_keywords_en（任意）
+    diet_vegan_article / diet_vegan_article_en（任意）
+  confirmed=falseの項目は、キーワード・説明文・リンクを含めて一切レンダリングされない
+  （公開前の文言をデータとして保持しておくための設計で、表示の可否は confirmed フラグのみが制御する）。
+
+  表示順（2026-11-24確定）：venue.purpose_highlights配列の順序（key:"coffee-experience"を除く）
+  → グルテンフリー（confirmed時） → ヴィーガン（confirmed時） → コーヒー体験（key:"coffee-experience"、
+  常に最後）。これは北参道・千駄ヶ谷エリアガイドの目的別カードの並び順と揃えるための設計で、
+  diet項目を配列末尾に単純concatするだけでは実現できないため、key:"coffee-experience"の項目だけを
+  一旦取り出し、diet項目を挟んでから再度末尾に戻す処理を行っている。
 #}
 {%- set isEn = (lang == "en") -%}
-{%- set hasGenericHighlights = venue.purpose_highlights and venue.purpose_highlights.length -%}
-{%- set hasDietInfo = venue.diet_gluten_free_confirmed or venue.diet_vegan_confirmed -%}
-{% if hasGenericHighlights or hasDietInfo %}
-{%- set dietTitle = "" -%}
-{%- if venue.diet_gluten_free_confirmed and venue.diet_vegan_confirmed -%}
-  {%- set dietTitle = "Gluten-Free & Vegan Options" if isEn else "グルテンフリー・ヴィーガン" -%}
-{%- elif venue.diet_gluten_free_confirmed -%}
-  {%- set dietTitle = "Gluten-Free Options" if isEn else "グルテンフリー対応" -%}
-{%- elif venue.diet_vegan_confirmed -%}
-  {%- set dietTitle = "Vegan Options" if isEn else "ヴィーガン対応" -%}
-{%- endif -%}
-{%- set dietTextParts = [] -%}
+
+{# 1. venue.purpose_highlights から coffee-experience を分離（常に最後に表示するため） #}
+{%- set mainItems = [] -%}
+{%- set coffeeItem = none -%}
+{%- for item in (venue.purpose_highlights or []) -%}
+  {%- if item.key == "coffee-experience" -%}
+    {%- set coffeeItem = item -%}
+  {%- else -%}
+    {%- set mainItems = mainItems.concat([item]) -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{# 2. グルテンフリー・ヴィーガンを、確認済みの場合のみ仮想アイテムとして生成 #}
+{%- set dietItems = [] -%}
 {%- if venue.diet_gluten_free_confirmed -%}
-  {%- set dietTextParts = dietTextParts.concat([(venue.diet_gluten_free_text_en or venue.diet_gluten_free_text) if isEn else venue.diet_gluten_free_text]) -%}
+  {%- set dietItems = dietItems.concat([{
+    key: "gluten-free",
+    title: "グルテンフリー対応",
+    title_en: "Gluten-Free Options",
+    keywords: venue.diet_gluten_free_keywords,
+    keywords_en: venue.diet_gluten_free_keywords_en,
+    description: venue.diet_gluten_free_text,
+    description_en: venue.diet_gluten_free_text_en,
+    related_article: venue.diet_gluten_free_article,
+    related_article_en: venue.diet_gluten_free_article_en
+  }]) -%}
 {%- endif -%}
 {%- if venue.diet_vegan_confirmed -%}
-  {%- set dietTextParts = dietTextParts.concat([(venue.diet_vegan_text_en or venue.diet_vegan_text) if isEn else venue.diet_vegan_text]) -%}
+  {%- set dietItems = dietItems.concat([{
+    key: "vegan",
+    title: "ヴィーガン対応",
+    title_en: "Vegan Options",
+    keywords: venue.diet_vegan_keywords,
+    keywords_en: venue.diet_vegan_keywords_en,
+    description: venue.diet_vegan_text,
+    description_en: venue.diet_vegan_text_en,
+    related_article: venue.diet_vegan_article,
+    related_article_en: venue.diet_vegan_article_en
+  }]) -%}
 {%- endif -%}
+
+{# 3. 表示順を確定：mainItems → dietItems（グルテンフリー→ヴィーガン） → coffee-experience #}
+{%- set allItems = mainItems.concat(dietItems) -%}
+{%- if coffeeItem -%}{%- set allItems = allItems.concat([coffeeItem]) -%}{%- endif -%}
+
+{# 4. 英語版のみhide_en項目を除外してから番号を振る（欠番防止のため、採番前にフィルタする） #}
+{%- set visibleItems = [] -%}
+{%- for item in allItems -%}
+  {%- if not (isEn and item.hide_en) -%}
+    {%- set visibleItems = visibleItems.concat([item]) -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if visibleItems.length %}
 <section class="mb-14" data-aos="fade-up">
   <h2 class="label mb-6">{% if isEn %}Ways to Enjoy This Space{% else %}この場所でおすすめの過ごし方{% endif %}</h2>
-  <div class="space-y-5"
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 not-prose items-stretch"
        data-ga-purpose-highlights
        data-venue-slug="{{ venue.slug }}"
        data-venue-grade="{{ venue.grade_slug }}"
        data-page-language="{{ 'en' if isEn else 'ja' }}">
-    {% for item in venue.purpose_highlights %}
+    {% for item in visibleItems %}
     {%- set linkTarget = (item.related_article_en or item.related_article) if isEn else item.related_article -%}
     {%- set isJaFallback = isEn and (not item.related_article_en) and item.related_article -%}
-    <div class="bg-white border border-border rounded-xl px-5 py-4">
-      <h3 class="text-sm font-medium text-dark mb-1.5">{{ (item.title_en or item.title) if isEn else item.title }}</h3>
-      <p class="text-sm text-muted leading-relaxed">{{ (item.description_en or item.description) if isEn else item.description }}</p>
+    {%- set matchedPost = collections.articles | findArticleByPath(linkTarget) -%}
+    {%- set itemKeywords = (item.keywords_en or item.keywords) if isEn else item.keywords -%}
+    <div class="flex flex-col h-full bg-white border border-gold/40 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md hover:border-gold transition-all">
+      <div class="flex items-start gap-3 mb-3">
+        <span class="font-serif text-xl font-light text-gold/80 leading-none shrink-0">{{ "0" if loop.index < 10 else "" }}{{ loop.index }}</span>
+        <h3 class="font-serif text-lg font-light text-dark leading-snug">{{ (item.title_en or item.title) if isEn else item.title }}</h3>
+      </div>
+      {% if itemKeywords and itemKeywords.length %}
+      <p class="text-sm leading-relaxed mb-3 pb-3 border-b border-gold/20" style="color:#8A6D16;">
+        {% for kw in itemKeywords %}{{ kw }}{% if not loop.last %}<span class="text-gold/40 mx-1.5">｜</span>{% endif %}{% endfor %}
+      </p>
+      {% endif %}
+      <p class="text-sm text-text leading-relaxed flex-1">{{ (item.description_en or item.description) if isEn else item.description }}</p>
       {% if linkTarget %}
       <a href="{{ linkTarget }}" data-ga-event="click_internal_link" data-destination-type="article" data-purpose-key="{{ item.key }}" data-link-lang="{{ 'ja' if isJaFallback else ('en' if isEn else 'ja') }}"
-         class="inline-block mt-2 text-xs text-gold hover:underline">{% if isEn %}Read more →{% else %}詳しく見る →{% endif %}</a>
+         class="inline-flex items-center gap-1.5 text-sm text-gold hover:gap-2.5 transition-all mt-4 pt-3 border-t border-border">
+        {% if matchedPost %}{{ matchedPost.data.title }}{% else %}{% if isEn %}Read more{% else %}詳しく見る{% endif %}{% endif %}
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0"></i>
+      </a>
       {% if isJaFallback %}
       <p class="text-xs text-muted mt-1 italic">Japanese-language article; an English version is not yet available.</p>
       {% endif %}
       {% endif %}
     </div>
     {% endfor %}
-    {% if hasDietInfo and dietTextParts.length %}
-    <div class="bg-white border border-border rounded-xl px-5 py-4">
-      <h3 class="text-sm font-medium text-dark mb-1.5">{{ dietTitle }}</h3>
-      {% for text in dietTextParts %}
-      <p class="text-sm text-muted leading-relaxed{% if not loop.last %} mb-2{% endif %}">{{ text }}</p>
-      {% endfor %}
-    </div>
-    {% endif %}
   </div>
 </section>
 

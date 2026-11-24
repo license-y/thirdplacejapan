@@ -79,24 +79,54 @@
     "purpose_highlights": [
       {
         "key": "solo-time",
-        "title": "一人時間",
+        "title": "静かな一人時間",
         "title_en": "Solo Time",
+        "keywords": ["静けさ", "隣席との距離感", "長居のしやすさ"],
+        "keywords_en": ["Seat spacing", "Quiet atmosphere", "Solo-friendly"],
         "description": "隣席との距離感や静けさへの配慮により、ひとりでも長居しやすい空間です。",
         "description_en": "Careful spacing between seats and attention to quiet make this a comfortable place to spend time alone.",
         "related_article": "/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/"
       },
       {
+        "key": "relaxing-lunch",
+        "title": "ゆっくりランチ",
+        "keywords": ["ワンプレートランチ", "予約不要", "混雑を避けて利用可"],
+        "description": "自家焙煎コーヒーとともに、ワンプレートランチなど食事メニューもご用意しています。予約なしでも利用でき、混雑しやすい時間帯を避ければより落ち着いて過ごせます。",
+        "related_article": "/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/",
+        "hide_en": true
+      },
+      {
         "key": "business-meeting",
-        "title": "商談・ミーティング",
+        "title": "仕事・商談",
         "title_en": "Business Meetings",
+        "keywords": ["静かな空間設計", "落ち着いた会話環境", "商談・打ち合わせ利用"],
+        "keywords_en": ["Quiet layout", "Informal meetings"],
         "description": "静けさを保つ空間設計により、落ち着いて話せる環境です。",
         "description_en": "A quiet layout makes it workable for informal business conversations.",
         "related_article": "/stories/cafe-specialty-coffee/business-use-sendagaya-kitasando/"
       },
       {
+        "key": "inbound",
+        "title": "旅行・インバウンド",
+        "keywords": ["英語対応スタッフ在籍", "分かりやすいメニュー表示", "明治神宮・原宿から徒歩圏内"],
+        "description": "英語対応可能なスタッフが在籍しており、メニュー表示も分かりやすく、言葉の壁を感じにくい環境です。明治神宮・原宿からも徒歩圏内に位置しています。",
+        "related_article": "/stories/inbound-experience/sendagaya-kitasando-cafe/",
+        "hide_en": true
+      },
+      {
+        "key": "anniversary",
+        "title": "記念日・特別な日",
+        "keywords": ["誕生日", "大切な人", "特別な時間"],
+        "description": "誕生日や記念日など、大切な人とゆっくり過ごしたい日にも。自家焙煎コーヒーと落ち着いた空間で、会話を楽しみながら特別なひとときを過ごす場所として利用できます。",
+        "related_article": "/stories/cafe-specialty-coffee/anniversary-cafe-kitasando-sendagaya/",
+        "hide_en": true
+      },
+      {
         "key": "pc-work",
         "title": "PC作業",
         "title_en": "Laptop Work",
+        "keywords": ["Wi-Fi", "電源", "落ち着いた空間"],
+        "keywords_en": ["Wi-Fi", "Power outlets", "Calm setting"],
         "description": "Wi-Fi・電源を備え、落ち着いた空間でPC作業をお楽しみいただけます。",
         "description_en": "With Wi-Fi and power outlets available, enjoy working on your laptop in a calm and comfortable setting.",
         "related_article": "/stories/cafe-specialty-coffee/pc-work-cafe-kitasando-sendagaya/",
@@ -106,15 +136,35 @@
         "key": "pet-friendly",
         "title": "ペット同伴",
         "title_en": "Pet-Friendly",
+        "keywords": ["店内同伴可", "ペットと一緒に利用可"],
+        "keywords_en": ["Pets welcome inside"],
         "description": "店内にペットを同伴して利用できます。",
         "description_en": "Pets are welcome inside the café.",
         "related_article": "/stories/cafe-specialty-coffee/pet-friendly-cafe-kitasando-sendagaya/",
         "related_article_en": "/en/stories/concept/pet-friendly-cafe-kitasando-sendagaya/"
       },
       {
+        "key": "friends-gathering",
+        "title": "女子会・友人との集まり",
+        "keywords": ["隣席との距離感", "落ち着いた会話環境", "女子会にも対応"],
+        "description": "隣席との距離感に配慮した座席設計で、友人同士でも落ち着いて会話を楽しめる環境です。",
+        "related_article": "/stories/cafe-specialty-coffee/friends-gathering-cafe-kitasando-sendagaya/",
+        "hide_en": true
+      },
+      {
+        "key": "reservation",
+        "title": "予約できるカフェ",
+        "keywords": ["事前予約", "目的来店", "計画的な利用"],
+        "description": "友人とのランチや大切な人との集まりなど、予定に合わせて利用したい場合には事前予約が可能です。予約なしでも利用できるため、過ごし方や当日の予定に合わせて選択できます。",
+        "related_article": "/stories/cafe-specialty-coffee/reservation-cafe-kitasando-sendagaya/",
+        "hide_en": true
+      },
+      {
         "key": "coffee-experience",
         "title": "コーヒー体験",
         "title_en": "Coffee Experience",
+        "keywords": ["自家焙煎", "厳選30種のコーヒー豆", "ハンドドリップ"],
+        "keywords_en": ["In-house roastery", "Thirty curated origins", "Hand-drip brewing"],
         "description": "自家焙煎で30種類のコーヒー豆を取り扱い、産地・精製方法まで来歴を体験できます。",
         "description_en": "The in-house roastery carries thirty coffee origins, each with its own story of farm and process.",
         "related_article": "/stories/cafe-specialty-coffee/green-beans-coffee-review/"
@@ -123,6 +173,9 @@
     "diet_gluten_free_confirmed": true,
     "diet_gluten_free_text": "グルテンフリー対応のワンプレートランチ・米粉ブラウニーを用意しています（対応メニューは一部品目に限ります）。",
     "diet_gluten_free_text_en": "A gluten-free one-plate lunch and a rice-flour brownie are available (gluten-free items are limited to specific menu options).",
+    "diet_gluten_free_keywords": ["グルテンフリー対応メニュー", "ワンプレートランチ", "米粉ブラウニー"],
+    "diet_gluten_free_keywords_en": ["Gluten-free one-plate lunch", "Rice-flour brownie"],
+    "diet_gluten_free_article": "/stories/cafe-specialty-coffee/gluten-free-lunch-kitasando-sendagaya/",
     "diet_vegan_confirmed": false,
     "diet_vegan_text": "高野豆腐入り大豆ハンバーグの「ヴィーガンワンプレート」、抹茶寒天の「和のヴィーガンスイーツ」を提供しています。",
     "diet_vegan_text_en": "A soy patty with Koya-Dofu (\"Vegan One Plate\") and a matcha-kinako Japanese dessert (\"Vegan Sweets\") are available.",
