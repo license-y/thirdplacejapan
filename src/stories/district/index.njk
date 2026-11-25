@@ -6,7 +6,7 @@ pagination:
 permalink: "/stories/district/{{ item.slug }}/"
 layout: area.njk
 eleventyComputed:
-  title: "{{ item.name }}エリアガイド｜カフェとサードプレイス、目的別の過ごし方"
+  title: "{{ item.name }}エリアガイド｜サードプレイスの選び方・目的別の過ごし方"
   description: "{% if item.slug == 'omotesando' %}表参道は東京都渋谷区神宮前から港区北青山・南青山まで連続する商業エリア。Third Place Japanがカフェ・レストラン等15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% elif item.slug == 'kitasando-sendagaya' %}北参道・千駄ヶ谷（ダガヤサンドウ）は東京都渋谷区の観光動線から外れたカフェが集まる商業エリア。Third Place Japanが15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% elif item.slug == 'aoyama' %}青山は東京都港区北青山・南青山から外苑前・青山一丁目周辺まで広がる商業エリア。Third Place Japanがカフェ・スパ等15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% elif item.slug == 'ginza' %}銀座は東京都中央区を代表する商業エリアで、江戸時代から続く商業の中心地。Third Place Japanがカフェ・バー・ホテルラウンジ等15カテゴリ・目的別にサードプレイス（third place）としての過ごし方を案内するエリアガイド。{% else %}{{ item.summary }}{% endif %}"
   thumbnail: "{{ item.thumbnail }}"
 ---
@@ -14,6 +14,12 @@ eleventyComputed:
 {% set purposeArticles = collections.articles | rejectLang("en") | articlesBySlugs(item.purpose_article_slugs) %}
 {% set districtVenues = venues | venuesBySlugs(item.venue_slugs) %}
 {% set isCrossWard = item.administrative_refs.length > 1 %}
+
+{# FAQ Q2・Q4は可視HTML・JSON-LDの両方が必ずこの変数を参照する単一データソース方式（2026-11-25追加） #}
+{% set q2AnswerText = "家でも職場でもない第三の居場所（サードプレイス）を探すときは、業種だけでなく一人時間・商談・ランチ・デートといった利用目的から考えると、求める場所に出会いやすくなります。Third Place Japanは独自の7軸評価基準で、こうした居場所の価値を見つめています。" %}
+{% set naPublishedCount = item.neighboring_areas | countAreasWithArticles(collections.articles) %}
+{% set naTotalCount = item.neighboring_areas.length %}
+{% set q4AnswerText %}{{ item.neighboring_areas | mapProp("name") | join("、") }}が{{ item.name }}から徒歩圏内の行政エリアです。{% if naTotalCount > 0 and naPublishedCount == naTotalCount %}Third Place Japanでは、それぞれのエリアについてもサードプレイスとしての視点で記事を公開しています。{% elif naPublishedCount > 0 %}Third Place Japanでは、周辺エリアの一部についてもサードプレイスとしての視点で記事を公開しています。{% endif %}{% endset %}
 
 {# BreadcrumbList JSON-LD（商業エリアは行政階層のパンくずを継承しない独自の浅い階層） #}
 <script type="application/ld+json">
@@ -63,7 +69,7 @@ eleventyComputed:
       "name": {{ (item.name + "でサードプレイスを探すときはどう考えればいいですか？") | dump | safe }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "家でも職場でもない第三の居場所（サードプレイス）として店を探す場合、業種だけでなく一人時間・商談・ランチ・デートといった利用目的から探すと、求める空間に出会いやすくなります。Third Place Japanは独自の7軸評価基準で、こうした居場所の価値を見つめています。"
+        "text": {{ q2AnswerText | dump | safe }}
       }
     },
     {
@@ -71,7 +77,7 @@ eleventyComputed:
       "name": {{ (item.name + "にはどんな目的別の過ごし方がありますか？") | dump | safe }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {% if item.slug == 'omotesando' %}"一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'kitasando-sendagaya' %}"静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'aoyama' %}"静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'ginza' %}"記念日に過ごしたいカフェ・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% else %}"利用目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% endif %}
+        "text": {% if item.slug == 'omotesando' %}"一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'kitasando-sendagaya' %}"静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'aoyama' %}"静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'ginza' %}"記念日に過ごしたいカフェ・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% else %}"利用目的に応じたサードプレイスの選び方をThird Place Japanが個別に解説しています。"{% endif %}
       }
     },
     {
@@ -79,7 +85,7 @@ eleventyComputed:
       "name": {{ (item.name + "の周辺にはどんなエリアがありますか？") | dump | safe }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {{ (item.neighboring_areas | mapProp("name") | join("、") + "が" + item.name + "から徒歩圏内の行政エリアです。Third Place Japanでは、それぞれのエリアについてもサードプレイスとしての視点で記事を公開しています。") | dump | safe }}
+        "text": {{ q4AnswerText | trim | dump | safe }}
       }
     },
     {
@@ -108,7 +114,7 @@ eleventyComputed:
     <p class="label mb-4">商業エリアガイド</p>
     <h1 class="font-serif text-4xl font-light text-dark mb-4">{{ item.name }}エリアガイド</h1>
     <div class="gold-rule mb-6"></div>
-    <p class="text-sm text-muted">カフェとサードプレイス、目的別の過ごし方</p>
+    <p class="text-sm text-muted">サードプレイスの選び方・目的別の過ごし方</p>
   </div>
 
   <div class="prose max-w-none mb-16" data-aos="fade-up" data-pagefind-body>
@@ -172,7 +178,7 @@ eleventyComputed:
     {% endif -%}
 
     <h2>TPJの15カテゴリから探す</h2>
-    <p>{{ item.name }}には、カフェ・スペシャルティコーヒーをはじめ複数の業種にわたるサードプレイスが存在する。Third Place Japanが定義する15カテゴリから、業種別に関連記事を探すことができる。</p>
+    <p>Third Place Japanは、サードプレイスを15のカテゴリに分類している。{{ item.name }}の街の特徴や利用目的に合わせて、関連する業種から記事を探すことができる。</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 not-prose my-6">
       {% for cat in categories %}
       <a href="/stories/{{ cat.slug }}/" class="no-underline! flex flex-col gap-1 text-sm px-4 py-3 bg-white rounded-lg border border-border hover:border-gold hover:bg-ivory focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-colors group">
@@ -183,7 +189,7 @@ eleventyComputed:
     </div>
 
     <h2>目的別に探す</h2>
-    <p>{{ item.name }}のカフェは、同じ業種であっても利用目的によって選ぶべき条件が異なる。Third Place Japanが利用目的別に選び方を個別に解説している。</p>
+    <p>サードプレイスは、同じ業種であっても空間の特徴や設備、サービスによって過ごし方が異なる。{{ item.name }}での利用目的に合わせて、自分にふさわしい場所を選ぶための判断基準や関連記事を紹介する。</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
       {% for post in purposeArticles %}
       <a href="{{ post.url }}" class="no-underline! group block rounded-xl overflow-hidden border border-transparent hover:border-gold shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 transition-all bg-white">
@@ -273,7 +279,7 @@ eleventyComputed:
     {% endif %}
     </p>
     <p><strong>Q. {{ item.name }}でサードプレイスを探すときはどう考えればいいですか？</strong><br>
-    業種だけでなく、一人時間・商談・ランチ・デートといった利用目的から探すと、求める空間に出会いやすくなります。Third Place Japanは独自の7軸評価基準で、こうした居場所の価値を見つめています。</p>
+    {{ q2AnswerText }}</p>
     <p><strong>Q. {{ item.name }}にはどんな目的別の過ごし方がありますか？</strong><br>
     {% if item.slug == 'omotesando' %}
     一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
@@ -283,10 +289,12 @@ eleventyComputed:
     静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
     {% elif item.slug == 'ginza' %}
     記念日に過ごしたいカフェ・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
+    {% else %}
+    利用目的に応じたサードプレイスの選び方をThird Place Japanが個別に解説しています。
     {% endif %}
     </p>
     <p><strong>Q. {{ item.name }}の周辺にはどんなエリアがありますか？</strong><br>
-    {% for na in item.neighboring_areas %}{{ na.name }}{% if not loop.last %}、{% endif %}{% endfor %}が{{ item.name }}から徒歩圏内の行政エリアです。</p>
+    {{ q4AnswerText | trim }}</p>
     <p><strong>Q. {{ item.name }}のTPJセレクト・認証店舗はどこで確認できますか？</strong><br>
     Third Place Japanがセレクト・認証した{{ item.name }}の店舗一覧は、行政エリアページから確認できます。</p>
 

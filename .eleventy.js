@@ -198,6 +198,16 @@ export default function (eleventyConfig) {
     (array || []).map(item => item[prop]).filter(Boolean)
   );
 
+  // 商業エリアのneighboring_areas（area_slug付き）のうち、実際に日本語記事が
+  // 1本以上公開されている件数を返す。FAQ「周辺にはどんなエリアがありますか？」の
+  // 補足文（記事公開の有無）を事実に基づいて出し分けるために使用する。
+  eleventyConfig.addFilter("countAreasWithArticles", (neighboringAreas, articlesCollection) => {
+    const jaArticles = (articlesCollection || []).filter(p => p.data && p.data.lang !== "en");
+    return (neighboringAreas || []).filter(na =>
+      na.area_slug && jaArticles.some(p => p.data.area_slug === na.area_slug)
+    ).length;
+  });
+
   // 重複排除
   eleventyConfig.addFilter("uniqueValues", (array) =>
     [...new Set(array || [])]
