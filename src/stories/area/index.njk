@@ -1,8 +1,33 @@
 ---
-title: "場所をめぐる｜日本のサードプレイスを行政エリアから探す"
-description: "都道府県・エリアから日本のサードプレイスを探す。Third Place Japan セレクト店舗の地域別一覧。"
+page_name: "東京地域ガイド"
+title: "東京地域ガイド｜区・市・地域からサードプレイスを探す"
+description: "東京都内の区・市・地域からサードプレイス（third place）を探せる東京地域ガイド。渋谷区、港区、中央区、新宿区など、地域別の記事やTPJセレクト・TPJ認証の施設情報を通じて、日常や特別な時間を過ごす場所をご紹介します。"
 canonical: "/stories/area/"
 ---
+
+{# FAQ：可視アコーディオンとFAQPage JSON-LDの単一データソース（2026-11-26追加） #}
+{% set faqItems = [
+  {
+    "q": "地域別にサードプレイスを探すことはできますか？",
+    "a": "はい。Third Place Japanでは都道府県・市区町村・エリアの3階層でセレクト店舗を探せます。現在は東京を中心に、渋谷・中目黒・青山などエリア単位での絞り込みが可能です。"
+  },
+  {
+    "q": "東京地域ガイドとは何ですか？",
+    "a": "東京地域ガイドは、東京都内の区・市・地域という行政区分から、関連記事やセレクト・認証施設を探せるコンテンツです。渋谷区・港区・新宿区など10区を中心にご紹介しています。"
+  },
+  {
+    "q": "東京都内のどのような地域から探せますか？",
+    "a": "渋谷区・港区・新宿区・中央区・目黒区・世田谷区・千代田区・豊島区・台東区・江東区の10区を中心に、区・市区町村・エリアの階層でさらに絞り込んで探すことができます。"
+  },
+  {
+    "q": "TPJセレクト・TPJ認証の施設情報も確認できますか？",
+    "a": "はい。渋谷・港区・新宿区など区ごとにさらに絞り込み、カフェ・スパ・コワーキングなど業種でのフィルタリングも可能です。TPJセレクト・TPJ認証どちらの施設情報も確認できます。"
+  },
+  {
+    "q": "今後は東京以外の地域にも展開しますか？",
+    "a": "現在は東京を中心に情報を掲載していますが、Third Place Japanは全国展開を前提としたメディアです。今後は全国の主要都市へ順次拡大する予定です。"
+  }
+] %}
 
 {# BreadcrumbList JSON-LD #}
 <script type="application/ld+json">
@@ -12,7 +37,7 @@ canonical: "/stories/area/"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "場所をめぐる", "item": "{{ site.url }}/stories/area/" }
+    { "@type": "ListItem", "position": 3, "name": {{ page_name | dump | safe }}, "item": "{{ site.url }}/stories/area/" }
   ]
 }
 </script>
@@ -22,8 +47,8 @@ canonical: "/stories/area/"
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "行政エリアから探す | Third Place Japan Stories",
-  "description": "都道府県・エリアから日本のサードプレイスを探す。Third Place Japan セレクト店舗の地域別一覧。",
+  "name": {{ page_name | dump | safe }},
+  "description": {{ description | dump | safe }},
   "url": "{{ site.url }}/stories/area/",
   "inLanguage": "ja",
   "publisher": {
@@ -34,28 +59,15 @@ canonical: "/stories/area/"
 }
 </script>
 
-{# FAQPage JSON-LD #}
+{# FAQPage JSON-LD（faqItemsを単一データソースとして可視FAQと完全一致） #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "エリアごとにThird Place Japanがセレクトしたサードプレイスを探せますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。Third Place Japanでは都道府県・市区町村・エリアの3階層でセレクト店舗を探せます。現在は東京都内を中心に、渋谷・中目黒・青山などエリア単位での絞り込みが可能で、今後は他の都市へも順次展開予定です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "東京でThird Place Japanがセレクトしたサードプレイスはどこで探せますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "東京のTPJセレクト店舗は{{ site.url }}/stories/area/tokyo/から探せます。渋谷・港区・新宿区など区ごとにさらに絞り込み、カフェ・スパ・コワーキングなど業種でのフィルタリングも可能です。"
-      }
-    }
+    {% for item in faqItems %}
+    { "@type": "Question", "name": {{ item.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} } }{% if not loop.last %},{% endif %}
+    {% endfor %}
   ]
 }
 </script>
@@ -65,13 +77,15 @@ canonical: "/stories/area/"
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
     <span>／</span>
-    <span>場所をめぐる</span>
+    <span>{{ page_name }}</span>
   </nav>
 
   <div class="mb-16" data-aos="fade-up">
-    <p class="label mb-4">場所をめぐる</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4">行政エリアから探す</h1>
-    <div class="gold-rule"></div>
+    <p class="label mb-4">TOKYO AREA GUIDE</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-2">{{ page_name }}</h1>
+    <p class="text-sm text-muted mb-4">区・市・地域から探す</p>
+    <div class="gold-rule mb-6"></div>
+    <p class="text-sm text-muted max-w-2xl" data-pagefind-body>{{ description }}</p>
   </div>
 
   <div class="space-y-12" data-aos="fade-up">
@@ -115,26 +129,58 @@ canonical: "/stories/area/"
     {% endfor %}
   </div>
 
-  <!-- エリア拡大中バナー -->
+  <!-- 全国展開バナー -->
   <div class="mt-16 border border-gold/40 rounded-xl px-8 py-6 text-center" data-aos="fade-up">
-    <p class="label mb-3">Coming Soon</p>
-    <p class="font-serif text-lg font-light text-dark mb-2">全国エリア順次公開中</p>
+    <p class="label mb-3">FUTURE EXPANSION</p>
+    <p class="font-serif text-lg font-light text-dark mb-2">東京から全国へ</p>
     <p class="text-xs text-muted leading-relaxed">
-      大阪・京都・神奈川・福岡など、主要エリアを順次追加予定です。<br class="hidden md:block">
-      引き続き東京都内エリアの充実を進めながら、全国展開を目指しています。
+      現在は東京を中心に情報を掲載しています。<br class="hidden md:block">
+      今後は全国の主要エリアへ順次展開予定です。
     </p>
   </div>
 
-  <!-- 商業エリアガイドへの相互リンク -->
+  <!-- 東京エリアガイドへの相互リンク -->
   <div class="mt-6 border border-gold/40 rounded-xl px-8 py-6 text-center" data-aos="fade-up">
-    <p class="label mb-3">商業エリアから探す</p>
+    <p class="label mb-3">東京エリアガイド</p>
     <p class="text-xs text-muted leading-relaxed mb-5">
-      行政区分ではなく、街として一体の商業圏や利用目的から探したい方は、商業エリアガイドもご覧ください。
+      行政区分ではなく、街として一体の商業圏や利用目的から探したい方は、東京エリアガイドもご覧ください。
     </p>
     <a href="/stories/district/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
-      商業エリアガイドはこちら →
+      東京エリアガイド一覧はこちら →
     </a>
   </div>
+
+  {# よくあるご質問（可視FAQ・faqItemsと完全一致） #}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <p class="label mb-2">FREQUENTLY ASKED QUESTIONS</p>
+    <h2 class="font-serif text-xl font-light text-dark mb-6">よくあるご質問</h2>
+    <div class="space-y-3">
+      {% for item in faqItems %}
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">{{ item.a }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <script>
+    document.querySelectorAll('.area-faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body = this.nextElementSibling;
+        var icon = this.querySelector('[data-lucide]');
+        var isOpen = this.getAttribute('aria-expanded') === 'true';
+        body.classList.toggle('hidden', isOpen);
+        this.setAttribute('aria-expanded', !isOpen);
+        if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+      });
+    });
+    </script>
+  </section>
 
   {# シェアボタン #}
   {% set shareUrl = site.url + page.url %}

@@ -161,11 +161,13 @@ hreflang_en: "/en/stories/"
   {% if hasPublishedDistrict %}
   <div class="mb-20" data-aos="fade-up">
     <div class="bg-white border border-gold rounded-xl px-6 py-6 md:px-8 md:py-7">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="font-serif text-lg font-light text-dark">商業エリアから探す</h2>
+      <div class="flex items-start justify-between mb-1">
+        <p class="label">TOKYO DISTRICT GUIDE</p>
         <span class="text-[10px] tracking-widest text-gold border border-gold rounded-full px-2 py-0.5 shrink-0">NEW</span>
       </div>
-      <p class="text-sm text-text mb-5">街の雰囲気や目的から、サードプレイス（third place）を見つける。</p>
+      <h2 class="font-serif text-lg font-light text-dark mb-1">東京エリアガイド</h2>
+      <p class="text-xs text-muted mb-3">街の特徴・目的別の過ごし方</p>
+      <p class="text-sm text-text mb-5">東京の街の魅力を知り、利用目的や体験から、自分に合ったサードプレイスを見つける。</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {% for d in districts if d.published != false %}
         <a href="/stories/district/{{ d.slug }}/" class="group flex items-center justify-between gap-3 bg-white border border-gold rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/30">
@@ -181,7 +183,7 @@ hreflang_en: "/en/stories/"
       </div>
       <div class="text-center mt-6">
         <a href="/stories/district/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
-          商業エリア一覧はこちら →
+          東京エリアガイド一覧はこちら →
         </a>
       </div>
     </div>
@@ -375,11 +377,13 @@ hreflang_en: "/en/stories/"
 
   {# エリア #}
   <div class="mb-20" data-aos="fade-up">
-    <div class="flex items-center gap-3 mb-6">
+    <div class="flex items-center gap-3 mb-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted shrink-0" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <h2 class="font-serif text-xl font-light text-dark">行政エリア</h2>
-      <span class="text-sm text-muted hidden md:inline">— 場所から探す</span>
+      <p class="label">TOKYO AREA GUIDE</p>
     </div>
+    <h2 class="font-serif text-xl font-light text-dark mb-1">東京地域ガイド</h2>
+    <p class="text-xs text-muted mb-3">区・市・地域から探す</p>
+    <p class="text-sm text-text mb-6">東京都内の区・市・地域から、日常や特別な時間を過ごすサードプレイスを見つける。</p>
 
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
       <a href="/stories/area/tokyo/shibuya-ku/" class="group flex flex-col items-center justify-center bg-white border border-gold rounded-xl shadow-sm hover:shadow-md transition-all py-5 px-3 text-center">
@@ -426,7 +430,7 @@ hreflang_en: "/en/stories/"
 
     <div class="text-center">
       <a href="/stories/area/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
-        エリア一覧はこちら →
+        東京地域ガイド一覧はこちら →
       </a>
     </div>
   </div>

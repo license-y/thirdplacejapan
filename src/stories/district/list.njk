@@ -1,10 +1,35 @@
 ---
 permalink: "/stories/district/"
 layout: area.njk
-title: "商業エリアガイド｜街の雰囲気や目的でサードプレイスを探す"
-description: "街の雰囲気や目的から、自分に合ったサードプレイスを見つける。"
+page_name: "東京エリアガイド"
+title: "東京エリアガイド｜街の特徴・目的別の過ごし方"
+description: "東京の街をエリア別・目的別に紹介する東京エリアガイド。表参道、北参道・千駄ヶ谷、青山、銀座など、街の特徴やカフェ、レストラン、ホテルラウンジ、バーの選び方を通じて、自分に合ったサードプレイス（third place）の探し方をご紹介します。"
 canonical: "/stories/district/"
 ---
+{# FAQ：可視アコーディオンとFAQPage JSON-LDの単一データソース（2026-11-26追加） #}
+{% set faqItems = [
+  {
+    "q": "東京エリアガイドとは何ですか？",
+    "a": "東京エリアガイドは、街の雰囲気や歴史的背景に加え、一人時間・商談・デートといった利用目的別に、その街でのサードプレイスの過ごし方をThird Place Japanが解説するコンテンツです。業種別ではなく目的別に探せる点が特徴です。"
+  },
+  {
+    "q": "東京エリアガイドと東京地域ガイドはどう違いますか？",
+    "a": "東京エリアガイドは、街として一体の商業圏ごとに利用目的別の過ごし方を紹介するコンテンツです。一方、東京地域ガイドは都道府県・市区町村・エリアという行政区分から探すコンテンツです。例えば表参道は渋谷区神宮前から港区北青山・南青山まで連続する商業圏で、行政区分をまたぐことがあります。"
+  },
+  {
+    "q": "東京ではどのような街の情報を探せますか？",
+    "a": "現在、表参道・北参道千駄ヶ谷・青山・銀座という4つの商業エリアについて、街の歴史的背景や雰囲気、利用目的別の過ごし方をご紹介しています。"
+  },
+  {
+    "q": "利用目的に合わせて場所を探すことはできますか？",
+    "a": "はい。一人時間・商談・ランチ・デート・記念日など、利用目的別に整理したカードから、該当する専門記事を探すことができます。"
+  },
+  {
+    "q": "どのような業種のサードプレイスを紹介していますか？",
+    "a": "カフェ・スペシャルティコーヒー、レストラン・ダイニング、ホテルラウンジ、バー・ウイスキー、コワーキング、スパ・サウナなど、複数の業種にわたるサードプレイスを街ごとにご紹介しています。"
+  }
+] %}
+
 {# BreadcrumbList JSON-LD #}
 <script type="application/ld+json">
 {
@@ -13,7 +38,7 @@ canonical: "/stories/district/"
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Third Place Japan", "item": "{{ site.url }}" },
     { "@type": "ListItem", "position": 2, "name": "Stories", "item": "{{ site.url }}/stories/" },
-    { "@type": "ListItem", "position": 3, "name": "商業エリアガイド", "item": "{{ site.url }}/stories/district/" }
+    { "@type": "ListItem", "position": 3, "name": {{ page_name | dump | safe }}, "item": "{{ site.url }}/stories/district/" }
   ]
 }
 </script>
@@ -23,7 +48,7 @@ canonical: "/stories/district/"
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": {{ title | dump | safe }},
+  "name": {{ page_name | dump | safe }},
   "description": {{ description | dump | safe }},
   "url": "{{ site.url }}/stories/district/",
   "inLanguage": "ja",
@@ -37,28 +62,15 @@ canonical: "/stories/district/"
 }
 </script>
 
-{# FAQPage JSON-LD（可視FAQと完全一致） #}
+{# FAQPage JSON-LD（faqItemsを単一データソースとして可視FAQと完全一致） #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "商業エリアと行政エリアはどう違いますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "行政エリアは都道府県・市区町村・町丁目という行政区分の単位です。一方、商業エリアは街として一体の商業圏を指し、行政区分をまたぐことがあります（例：表参道は渋谷区神宮前から港区北青山・南青山まで連続する商業エリアです）。Third Place Japanでは両方の視点からサードプレイス（third place）を紹介しています。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "商業エリアガイドでは何がわかりますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "街の雰囲気や歴史的背景に加え、一人時間・商談・デートといった利用目的別に、その街でのサードプレイスの過ごし方をThird Place Japanが解説しています。業種別ではなく目的別に探せる点が、行政エリア一覧との違いです。"
-      }
-    }
+    {% for item in faqItems %}
+    { "@type": "Question", "name": {{ item.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} } }{% if not loop.last %},{% endif %}
+    {% endfor %}
   ]
 }
 </script>
@@ -68,14 +80,15 @@ canonical: "/stories/district/"
   <nav class="flex items-center gap-2 text-xs text-muted mb-12">
     <a href="/stories/" class="hover:text-gold transition-colors">Stories</a>
     <span>／</span>
-    <span>商業エリアガイド</span>
+    <span>{{ page_name }}</span>
   </nav>
 
   <div class="mb-16" data-aos="fade-up">
-    <p class="label mb-4">商業エリアガイド</p>
-    <h1 class="font-serif text-4xl font-light text-dark mb-4">商業エリアから探す</h1>
+    <p class="label mb-4">TOKYO DISTRICT GUIDE</p>
+    <h1 class="font-serif text-4xl font-light text-dark mb-2">{{ page_name }}</h1>
+    <p class="text-sm text-muted mb-4">街の特徴・目的別の過ごし方</p>
     <div class="gold-rule mb-6"></div>
-    <p class="text-sm text-muted max-w-2xl" data-pagefind-body>街の雰囲気や目的から、自分に合ったサードプレイスを見つける。行政区分ではなく、街として一体の商業圏ごとに、利用目的別の過ごし方を案内します。</p>
+    <p class="text-sm text-muted max-w-2xl" data-pagefind-body>{{ description }}</p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16" data-aos="fade-up">
@@ -115,13 +128,45 @@ canonical: "/stories/district/"
   </div>
 
   <div class="border border-gold/40 rounded-xl px-8 py-6 text-center" data-aos="fade-up">
-    <p class="label mb-3">行政エリアから探す</p>
+    <p class="label mb-3">東京地域ガイド</p>
     <p class="text-sm text-muted leading-relaxed mb-5">
-      都道府県・市区町村・エリアという行政区分から探したい方は、行政エリア一覧もご覧ください。
+      区・市・地域という行政区分から探したい方は、東京地域ガイドもご覧ください。
     </p>
     <a href="/stories/area/" class="inline-flex items-center gap-2 bg-white hover:bg-ivory border border-gold text-gold rounded-full px-7 py-2.5 text-sm transition-colors shadow-sm">
-      行政エリア一覧はこちら →
+      東京地域ガイド一覧はこちら →
     </a>
   </div>
+
+  {# よくあるご質問（可視FAQ・faqItemsと完全一致） #}
+  <section class="mt-16 pt-10 border-t border-border" data-aos="fade-up">
+    <p class="label mb-2">FREQUENTLY ASKED QUESTIONS</p>
+    <h2 class="font-serif text-xl font-light text-dark mb-6">よくあるご質問</h2>
+    <div class="space-y-3">
+      {% for item in faqItems %}
+      <div class="bg-white border border-gold/30 rounded-xl overflow-hidden shadow-sm">
+        <button class="area-faq-btn w-full flex items-center justify-between px-6 py-4 text-left gap-4" aria-expanded="true">
+          <span class="font-serif text-sm font-light text-dark leading-snug">{{ item.q }}</span>
+          <i data-lucide="chevron-down" class="w-4 h-4 text-muted shrink-0 transition-transform duration-300" style="transform:rotate(180deg)"></i>
+        </button>
+        <div class="area-faq-body px-6 pb-5">
+          <div class="gold-rule mb-4"></div>
+          <p class="text-sm text-muted leading-relaxed">{{ item.a }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <script>
+    document.querySelectorAll('.area-faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body = this.nextElementSibling;
+        var icon = this.querySelector('[data-lucide]');
+        var isOpen = this.getAttribute('aria-expanded') === 'true';
+        body.classList.toggle('hidden', isOpen);
+        this.setAttribute('aria-expanded', !isOpen);
+        if (icon) icon.style.transform = isOpen ? '' : 'rotate(180deg)';
+      });
+    });
+    </script>
+  </section>
 
 </div>
