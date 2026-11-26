@@ -1947,6 +1947,18 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/restaurant-dining/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/restaurant-dining/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2248,18 +2260,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/shibuya-ku/premium-salon/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/restaurant-dining/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/restaurant-dining/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -2820,6 +2820,18 @@
   </url>
   
   <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/aoyama/restaurant-dining/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/restaurant-dining/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/aoyama/spa-sauna-wellness/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2923,12 +2935,6 @@
   
   <url>
     <loc>https://thirdplacejapan.com/stories/area/tokyo/minato-ku/azabujuban/restaurant-dining/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://thirdplacejapan.com/stories/area/tokyo/chuo-ku/ginza/restaurant-dining/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3340,6 +3346,54 @@
   
 
   
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/restaurant-dining/anniversary-restaurant-aoyama/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/restaurant-dining/anniversary-restaurant-ginza/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/coffee-experience-kitasando-sendagaya/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/bar-whiskey/date-bar-ginza/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/pet-friendly-cafe-omotesando/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>https://thirdplacejapan.com/stories/restaurant-dining/relaxing-lunch-restaurant-aoyama/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    
+  </url>
   
   <url>
     <loc>https://thirdplacejapan.com/stories/cafe-specialty-coffee/friends-gathering-cafe-kitasando-sendagaya/</loc>

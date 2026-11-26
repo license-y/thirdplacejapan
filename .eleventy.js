@@ -260,6 +260,25 @@ export default function (eleventyConfig) {
     (collection || []).find(p => p.fileSlug === slug)
   );
 
+  // 商業エリアの目的別カード「1カード複数記事」対応用（2026-11-26追加）：
+  // article_slugsという任意の配列を、見つかった記事のみ・配列の登録順を維持したまま解決する。
+  // 既存のarticlesBySlugsは日付降順に再ソートするため、カード内の意図した表示順を保てず使えない。
+  // 呼び出し側は必ずrejectLang("en")済みのcollectionを渡すこと（誤言語リンク防止はfindArticleBySlug
+  // と同じ方式で、呼び出し元のフィルタリングに委ねる設計）。
+  // 防御設計：slugsが配列でない・空・undefinedでも例外を投げず空配列を返す。見つからないslug・
+  // 同一slugの重複は自動的に除外する（0件になればテンプレート側の{% if %}で非表示処理される）。
+  eleventyConfig.addFilter("findArticlesBySlugs", (collection, slugs) => {
+    if (!Array.isArray(slugs)) return [];
+    const seen = new Set();
+    return slugs
+      .map(slug => (collection || []).find(p => p.fileSlug === slug))
+      .filter(p => {
+        if (!p || seen.has(p.fileSlug)) return false;
+        seen.add(p.fileSlug);
+        return true;
+      });
+  });
+
   // 施設ページ「この場所でおすすめの過ごし方」用：venues.json側はURLパス（related_article /
   // related_article_en）しか持たないため、パス末尾のslugを抽出してfindArticleBySlugと同じ
   // ロジックで記事を解決する（関連記事リンクのアンカーテキストを実際の記事タイトルにするため）。

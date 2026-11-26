@@ -128,4 +128,5 @@ thumbnail: /assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp
 - 訪日外国人にとってのこのエリアの価値は[千駄ヶ谷・北参道のサードプレイスガイド：インバウンド利用編](/stories/inbound-experience/sendagaya-kitasando-cafe/)で詳しく解説している
 - ハンドドリップ・焙煎といった参加型体験が再訪価値にどう接続するかは[「また来たくなる」はどう設計されるか：参加型体験と再訪価値のサードプレイス評価](/stories/cafe-specialty-coffee/experience-revisit-value-gbc/)も参照されたい
 - 一人で静かに過ごす時間を目的にする場合は[北参道・千駄ヶ谷で静かに過ごせるカフェの選び方](/stories/cafe-specialty-coffee/quiet-cafe-kitasando-sendagaya/)、食事そのものをゆっくり楽しみたい場合は[北参道・千駄ヶ谷でゆっくりランチを楽しめるカフェの選び方](/stories/cafe-specialty-coffee/relaxing-lunch-cafe-kitasando-sendagaya/)も参考になる
+- コーヒーを体験として楽しみたい場合は[北参道・千駄ヶ谷でコーヒー体験を楽しむ場所の選び方](/stories/cafe-specialty-coffee/coffee-experience-kitasando-sendagaya/)で、対話・抽出工程・焙煎という3つの視点から選び方を解説している
 - 渋谷区の行政エリアを横断するこの街全体のガイドは[北参道・千駄ヶ谷エリアガイド](/stories/district/kitasando-sendagaya/)で紹介している

@@ -60,4 +60,4 @@ TPJが実証店舗として開業時から店舗と伴走し、季節や時間�
 
 ## まとめ
 
-参加型のカフェ体験がサードプレイスとして機能するかどうかは、体験の目新しさではなく、それが特別感・ギフト体験、再訪・継続価値という評価軸にどう接続しているかで決まる。TPJが実証店舗として継続的に検証してきたGreen Beans Coffeeの知見は、「また来たくなる」がどのように設計されうるかを具体的に示す事例だ。Third Place Japan（サードプレイスジャパン）は、こうした体験設計の価値を7軸評価という共通言語で継続的に評価・認証している。空間設計そのものの評価軸については[実証店舗の空間設計知見から読む、サードプレイスをつくる7軸の条件](/stories/about/space-design-insights-gbc/)、GBCの評価詳細は[Green Beans Coffeeの評価レポート](/stories/cafe-specialty-coffee/green-beans-coffee-review/)で解説している。
+参加型のカフェ体験がサードプレイスとして機能するかどうかは、体験の目新しさではなく、それが特別感・ギフト体験、再訪・継続価値という評価軸にどう接続しているかで決まる。TPJが実証店舗として継続的に検証してきたGreen Beans Coffeeの知見は、「また来たくなる」がどのように設計されうるかを具体的に示す事例だ。Third Place Japan（サードプレイスジャパン）は、こうした体験設計の価値を7軸評価という共通言語で継続的に評価・認証している。空間設計そのものの評価軸については[実証店舗の空間設計知見から読む、サードプレイスをつくる7軸の条件](/stories/about/space-design-insights-gbc/)、GBCの評価詳細は[Green Beans Coffeeの評価レポート](/stories/cafe-specialty-coffee/green-beans-coffee-review/)で解説している。北参道・千駄ヶ谷でコーヒー体験そのものを楽しむ場所を探している場合は、実用的な選定基準をまとめた[北参道・千駄ヶ谷でコーヒー体験を楽しむ場所の選び方](/stories/cafe-specialty-coffee/coffee-experience-kitasando-sendagaya/)も参考になる。

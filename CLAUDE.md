@@ -1420,6 +1420,39 @@ Phase 1効果検証（`project-docs/PHASE1-EFFECT-VERIFICATION-PLAN.md`）の
 （2026-08-31確定）」の6項目を満たすこと）・既存記事の軽微な修正・
 `last_verified_date`等の既存施設データ更新。
 
+**🔄 2026-11-26付・運用方針変更：固定ペース制限から品質管理方式へ移行 🔄**
+
+上記「週2〜3件程度」という2026-08-17制定の**固定的な件数制限は廃止**する。
+Phase 1効果検証（優先度A・8施設）が意図していた「サイト全体のクロール頻度
+変化による観測ノイズの回避」という目的自体は理解できるものの、件数という
+機械的な上限だけで品質を担保する設計は、量産を防ぐ本質的な手段ではないと
+判断し、以下の品質管理方式に置き換える（商業エリアガイド強化プロジェクト
+第1弾・専門記事6本の同日一括公開〈本ファイル「実装ログ」2026-11-26参照〉
+を機に、ユーザー承認のもと変更）。
+
+**新ルール（2026-11-26〜）**：
+- 固定的な週当たりの記事投稿数制限は設けない
+- 既存記事との重複監査（タイトル・slug・本文・検索意図）を必須とする
+- 検索意図・独自性・地域特性・専門性を記事ごとに確認する
+- 地域名のみを置換した量産型の記事は作成しない（既存の「TPJ ピラー記事
+  制作ルール」原則5と同じ精神を、ピラー記事以外の目的別記事にも適用する）
+- SEO・AEO（必須キーワード・FAQ完全一致・内部リンク）・構造化データ
+  （JSON-LDパースエラー0件）をビルドごとに検証する
+- 上記品質基準を満たした記事は、**同日に複数本公開してよい**
+- `date`（公開日）は実際の公開日と必ず一致させる。将来日付を設定して
+  公開済みとして扱うことは禁止する（本ファイル「複数記事を同日にまとめて
+  公開する場合はdateを数日に分散する」ルールとは独立した注意点：分散は
+  任意の運用判断だが、実際の公開日との一致は必須）
+- 公開後はGoogle Search Console・GA4で実際の効果（表示回数・クリック率・
+  個別記事のクリックイベント等）を確認し、次の制作判断に反映する
+
+**旧ルールとの関係**：2026-08-17制定・2026-08-31継続確定の「週2〜3件」
+ルールは、本日付の方針変更により**廃止**する（削除ではなく、本ファイル内に
+変更履歴として残す）。次回観測（2026-09-30予定）時点での見直しは実施
+されないまま今回の方針変更に至った経緯を記録しておく。`PHASE1-EFFECT-VERIFICATION-PLAN.md`
+側の記述更新は本変更のスコープ外のため、同ドキュメントを参照する際は
+本ファイルの方針変更が優先することを申し添える。
+
 「記事を書きたい」という意図が伝わったら、質問の**前に必ず**以下を問いかけること：
 
 > 作業を始める前に、以下のコマンドで最新の状態に更新してください：
@@ -2688,6 +2721,138 @@ eleventyConfig.addFilter("findArticleBySlug", (collection, slug) =>
 
 **今回の変更対象外（維持）**：「テンプレート構成」節の8箇所ハードコード分岐（description・FAQ回答・本文冒頭・比較節・まとめ等）は、本セクションとは独立した別の仕組みであり、**今回の変更対象ではない**。新規エリア追加時は、引き続きこの8箇所への`elif`追記が必要（将来的な完全データ駆動化は別途検討課題として残る）。
 
+## purpose_cardsの1カード複数記事対応・GA4計測標準仕様（2026-11-26追加）
+
+商業エリアガイド強化プロジェクト第1弾（専門記事6本）を機に、`purpose_cards`を「1カード＝1記事」から「1カード＝複数記事」に対応させ、あわせて目的別カードのGA4クリック計測を新設した。全61商業エリアへの共通仕様として、以下を標準とする。
+
+### データ構造（後方互換）
+
+```json
+{
+  "key": "anniversary",
+  "heading": "記念日・特別な日を過ごす",
+  "keywords": [...],
+  "description": "...",
+  "article_slug": "anniversary-cafe-lounge-ginza",
+  "article_slugs": ["anniversary-cafe-lounge-ginza", "anniversary-restaurant-ginza"]
+}
+```
+
+- **`key`（新設・全28カードに設定済み）**：見出し文言や表示順が変わっても変化しない、GA4計測専用の安定識別子。`venues.json`の`purpose_highlights[].key`と同じ命名規則（kebab-case・英語の短い名詞句）を踏襲し、同じ利用目的には横断して同一の値を使う（例：`anniversary`は表参道・青山・銀座で共通、`coffee-experience`はGBC venueページの既存keyと一致）。**同一エリア内でのkey重複は禁止**（ビルド後にNode.jsスクリプト等で機械確認すること）
+- **`article_slugs`（新設・任意配列）**：1カードに複数の専門記事を紐づけたい場合に設定する。設定されていれば`article_slug`（既存・単数）より優先される。**既存カードは`article_slugs`を設定する必要はなく、`article_slug`のみで従来通り動作する**（完全後方互換）
+- **優先順位**：`article_slugs`が存在し1件以上あればそちらを使用、それ以外は`[article_slug]`の1件配列にフォールバックする
+
+### `findArticlesBySlugs`フィルター（`.eleventy.js`）
+
+```js
+eleventyConfig.addFilter("findArticlesBySlugs", (collection, slugs) => {
+  if (!Array.isArray(slugs)) return [];
+  const seen = new Set();
+  return slugs
+    .map(slug => (collection || []).find(p => p.fileSlug === slug))
+    .filter(p => {
+      if (!p || seen.has(p.fileSlug)) return false;
+      seen.add(p.fileSlug);
+      return true;
+    });
+});
+```
+
+既存の`articlesBySlugs`は日付降順に再ソートするため、カード内の意図した表示順（`article_slugs`配列の登録順）を保持できず、この用途には使えない。`findArticlesBySlugs`は**配列の登録順を維持したまま**解決し、見つからないslug・同一slugの重複を自動的に除外する防御設計になっている。呼び出し側は必ず`rejectLang("en")`済みのcollectionを渡すこと（誤言語リンク防止は既存の`findArticleBySlug`と同じ方式で、呼び出し元のフィルタリングに委ねる）。不正な配列要素・想定外の型（`Array.isArray`で弾く）でもビルドエラーは発生せず、空配列を返すだけに留まる。
+
+### テンプレート側（`district/index.njk`）
+
+```njk
+{% set cardArticleSlugs = card.article_slugs if card.article_slugs and card.article_slugs.length else [card.article_slug] %}
+{% set matchedPosts = collections.articles | rejectLang("en") | findArticlesBySlugs(cardArticleSlugs) %}
+```
+
+`matchedPosts`をループしてリンクを縦並び（`flex flex-col gap-2`）で表示する。既存の単一記事カードは1件配列になるため、表示は従来と完全に同一（ラグジュアリーデザイン・枠線・番号バッジ・キーワード区切り・PC2列/スマホ1列のグリッドは一切変更なし）。
+
+### GA4計測（`link_location: district_purpose_cards`）
+
+既存の`click_internal_link`実装（`venue-purpose-highlights.njk`・`venue.njk`の`district_link`）と同じ「コンテナに静的属性＋リンクに動的属性＋1つの委譲リスナー」方式を踏襲した。
+
+```njk
+<div ... data-ga-purpose-cards data-district-slug="{{ item.slug }}" data-page-language="ja">
+  {% for mp in matchedPosts %}
+  <a href="{{ mp.url }}" data-ga-event="click_internal_link"
+     data-purpose-key="{{ card.key }}" data-article-slug="{{ mp.fileSlug }}"
+     data-article-category="{{ mp.data.category_slug }}"
+     data-destination-type="article" data-link-lang="ja">...</a>
+  {% endfor %}
+</div>
+```
+
+**GA4イベントパラメータ（8項目・`link_location: district_purpose_cards`固定）**：
+
+| パラメータ名 | 取得元 | 備考 |
+|---|---|---|
+| `district_slug` | コンテナの`data-district-slug` | 新規パラメータ。`venue_slug`の命名パターンを踏襲 |
+| `purpose_key` | リンクの`data-purpose-key` | 新規パラメータ。カードの`key`をそのまま使用 |
+| `article_slug` | リンクの`data-article-slug` | 新規パラメータ。`mp.fileSlug` |
+| `article_category` | リンクの`data-article-category` | 新規パラメータ。`mp.data.category_slug` |
+| `link_location` | 固定値`"district_purpose_cards"` | 既存の`article_body`・`purpose_highlights`・`district_link`と並ぶ値 |
+| `destination_type` | 固定値`"article"` | 既存命名を踏襲 |
+| `page_language` | コンテナの`data-page-language` | 既存命名を踏襲（現状district guideはJA限定のため常に`"ja"`） |
+| `link_lang` | リンクの`data-link-lang` | 既存命名を踏襲（現状常に`"ja"`） |
+
+`district_slug`・`purpose_key`・`article_slug`・`article_category`の4つは新規パラメータ名のため、**GA4管理画面でカスタムディメンション（イベントスコープ）への登録が必要**。
+
+**二重発火・既存計測への非干渉**：コンテナマーカー`data-ga-purpose-cards`は、施設ページ側の`data-ga-article-body`・`data-ga-purpose-highlights`・`data-ga-district-link`とは別名であり、かつ商業エリアガイド（`district/index.njk`、レイアウトは`area.njk`）にはこれら施設ページ側のトラッキングスクリプト・マークアップが一切読み込まれていないため、物理的に干渉しえない（`area.njk`・`venue-card.njk`を確認し、該当マーカー・スクリプトが存在しないことを確認済み）。クリック検出は既存と同じ`e.target.closest('a[data-ga-event]')`方式のため、矢印アイコン（`<i data-lucide="arrow-right">`）をクリックした場合も内包する`<a>`が正しく検出される。
+
+### 銀座「記念日・特別な日を過ごす」カード（最初の複数記事モデル）
+
+```json
+{
+  "key": "anniversary",
+  "heading": "記念日・特別な日を過ごす",
+  "description": "江戸時代から続く老舗文化が根づく銀座には、誕生日や結婚記念日にふさわしい特別な時間を過ごせるカフェ・レストラン・ラウンジが点在する。空間の特別感・サービスの丁寧さ・予約確認の3条件を基準にすると、業態を問わず、日常とは一線を画す時間にふさわしい場所を選びやすくなる。",
+  "article_slug": "anniversary-cafe-lounge-ginza",
+  "article_slugs": ["anniversary-cafe-lounge-ginza", "anniversary-restaurant-ginza"]
+}
+```
+
+既存の「カフェ・ラウンジ」限定の説明文を「カフェ・レストラン・ラウンジ」という中立表現に改訂した。`keywords`（空間の特別感／サービスの丁寧さ／予約確認）はもともと業態非依存のため変更していない。
+
+### purpose_cardsとpurpose_article_slugsの整合性ルール
+
+`purpose_cards`内の有効な記事slug集合（`article_slugs`があればその全件、なければ`article_slug`）は、必ず同じ対象districtの`purpose_article_slugs`配列にも含まれていること。両セクションに同じ記事が表示されること自体は仕様であり、重複として扱わない（`purpose_article_slugs`はサムネイル付き「目的別に探す」グリッド、`purpose_cards`はラグジュアリーカードという別UIのため、同じ記事を指していて当然という設計）。新規エリア・新規記事を追加する際は、この2配列の集合が一致しているかをビルド後に機械検証すること。
+
+### レストラン・バー等、新しい専門カテゴリの記事を追加する場合の方針
+
+これまでの目的別記事（26本）は`cafe-specialty-coffee`に偏っていたが、2026-11-26の6本追加により`restaurant-dining`（サイト初の選び方記事3本）・`bar-whiskey`（2本目）にも展開した。新しい業種カテゴリで目的別記事を追加する際は、以下を確認する。
+- 対象districtの`related_categories`に当該カテゴリslugが含まれているか（含まれていなければ追加する。例：青山に`restaurant-dining`を追加した実例）
+- 対象カテゴリの基盤記事（ピラー記事）が同districtに存在するかを確認する。存在しない場合でも目的別記事は作成してよいが、関連記事としてリンクできる既存記事の層が薄くなる点に留意し、他districtの同カテゴリ記事・同districtの他カテゴリ記事への相互リンクで補強する
+- 既存の同業種・同利用目的の記事（別エリア）と検索意図・地域特性が重複しないよう差別化する
+
+### 61商業エリア・15カテゴリへの展開ルール（既存ルールの再確認）
+
+上記の仕組みはすべてデータ駆動のため、新規エリア追加時は`districts.json`に`purpose_cards`（`key`・`article_slugs`含む）と`purpose_article_slugs`を追加するだけでよく、`district/index.njk`・`.eleventy.js`の追加変更は不要（「61商業エリアへの拡張時の運用」の既存ルールと同じ）。GA4計測も同一テンプレートのため自動的に全エリアへ適用される。
+
+### 2026-11-26公開：専門記事6本の履歴
+
+| # | タイトル | slug | カテゴリ | district | 新設/既存カードへの統合 |
+|---|---|---|---|---|---|
+| 1 | 北参道・千駄ヶ谷でコーヒー体験を楽しむ場所の選び方｜焙煎・対話・一杯の選び方 | `coffee-experience-kitasando-sendagaya` | cafe-specialty-coffee | kitasando-sendagaya | 新設（12カード目） |
+| 2 | 銀座で記念日・誕生日を祝うレストランの選び方｜料理・空間・予約の条件 | `anniversary-restaurant-ginza` | restaurant-dining | ginza | 既存「記念日・特別な日を過ごす」カードに統合（複数記事化） |
+| 3 | 表参道でペット同伴できるカフェの選び方｜受け入れ条件の確認ポイント | `pet-friendly-cafe-omotesando` | cafe-specialty-coffee | omotesando | 新設（9カード目） |
+| 4 | 銀座で大人のデートを楽しむバーの選び方｜静けさと会話のバランス | `date-bar-ginza` | bar-whiskey | ginza | 新設（3カード目） |
+| 5 | 青山でゆっくりランチを楽しめるレストランの選び方｜滞在時間と席間隔の条件 | `relaxing-lunch-restaurant-aoyama` | restaurant-dining | aoyama | 新設（3カード目） |
+| 6 | 青山で記念日・誕生日を過ごすレストランの選び方｜アートの街らしい特別感の条件 | `anniversary-restaurant-aoyama` | restaurant-dining | aoyama | 新設（4カード目） |
+
+公開後のカード構成：表参道9カード/9記事、北参道・千駄ヶ谷12カード/12記事、青山4カード/4記事、銀座3カード/4記事（合計28カード/29記事）。`date`は全6記事とも2026-11-26に統一（実際の公開日と一致させるため、当初の分散案から変更）。
+
+当初の候補④「銀座でアフタヌーンティーを楽しむホテルラウンジの選び方」は、既存ピラー記事`hotel-lounge-ginza.md`との重複リスクが高いと判断し見送り、「銀座で大人のデートを楽しむバーの選び方」に差し替えた（`hotel-lounge-ginza.md`は無改修）。
+
+### 今後の対応候補（未着手・本プロジェクトのスコープ外として記録）
+
+- GA4 DebugView等による実機クリック確認（本実装時はテンプレート・コードレベルの静的検証のみで、ブラウザでの実クリック確認は未実施）
+- GA4カスタムディメンション（`district_slug`・`purpose_key`・`article_slug`・`article_category`）の管理画面への登録状況の確認
+- `venue-purpose-highlights.njk`の`data-purpose-key`属性が実際のgtag呼び出しに渡されていない実装漏れ（2026-11-24系の既存実装、2026-11-26時点で発見・報告のみ・修正は対象外）
+- 青山のレストラン基盤記事（ピラー記事）が存在しない点。今回の専門記事2本（⑤⑥）を先行して作成し、基盤記事は今後の制作候補として記録
+- FAQ Q1「〇〇はどこにありますか？」の可視HTML側`{% else %}`分岐欠如（2026-11-25監査で発見・未修正のまま記録済み。第5商業エリア「丸の内」公開前に対応が必要）
+
 ## 商業エリアの情報設計標準化・利用目的主体の原則（2026-11-25追加）
 
 Third Place Japanはカフェ専門メディアではなく、**15カテゴリを対象とするサードプレイスの情報メディア**である。2026-11-25、北参道・千駄ヶ谷エリアガイドの目的別カード見出しが「〇〇カフェ」という特定業種に偏った表現になっていたことを契機に、公開済み4商業エリア・23カードを監査し、見出し命名ルールと商業エリアページ共通テンプレートの文言を、利用目的主体の情報設計に統一した。全61商業エリアに適用する標準仕様として記録する。
@@ -2986,6 +3151,36 @@ TPJについて：TPJ編集長 / TPJ編集部 / TPJ公式ガイドライン / �
 ---
 
 # 実装ログ
+
+## 2026-11-26
+
+### 商業エリアガイド強化プロジェクト第1弾：専門記事6本の新規作成＋purpose_cards複数記事対応＋GA4計測新設＋記事投稿ペース運用ルール変更
+
+**対象ファイル**
+- 新規記事6本：`src/stories/concept/coffee-experience-kitasando-sendagaya.md`・`anniversary-restaurant-ginza.md`・`pet-friendly-cafe-omotesando.md`・`date-bar-ginza.md`・`relaxing-lunch-restaurant-aoyama.md`・`anniversary-restaurant-aoyama.md`
+- `src/_data/districts.json`（既存23カードへの`key`付与・新規5カード追加・銀座「記念日」カードの複数記事化・`purpose_article_slugs`更新・青山`related_categories`への`restaurant-dining`追加）
+- `.eleventy.js`（`findArticlesBySlugs`フィルター新設）
+- `src/stories/district/index.njk`（複数記事対応ループ・GA4計測属性・委譲リスナー追加、FAQ Q3回答への新規カードテーマ反映）
+- 既存記事9本への逆リンク追加：`cafe-specialty-coffee-kitasando-sendagaya.md`・`experience-revisit-value-gbc.md`・`restaurant-dining-ginza.md`・`anniversary-cafe-lounge-ginza.md`・`cafe-specialty-coffee-omotesando.md`・`pet-friendly-cafe-kitasando-sendagaya.md`・`bar-whiskey-ginza.md`・`business-meeting-cafe-aoyama.md`・`art-gallery-cafe-aoyama.md`
+- 新規画像6点（Unsplash取得・200KB以下）
+
+**背景**：TPJのカフェ中心だった専門記事展開を、レストラン・バーへ業種横断で拡大する第1弾として、STEP1（重複監査・調査）→STEP2（構成確定・技術設計）→STEP3（執筆・実装）→STEP4（最終修正・公開）の4段階承認フローで実施した。詳細な設計判断・技術仕様は本ファイル「purpose_cardsの1カード複数記事対応・GA4計測標準仕様（2026-11-26追加）」セクションに集約して記録済み。
+
+**候補④の差し替え**：当初候補の「銀座でアフタヌーンティーを楽しむホテルラウンジの選び方」は、STEP1調査で既存ピラー記事`hotel-lounge-ginza.md`がアフタヌーンティーを既に主要テーマとして扱っており（立地・受け入れ条件・時間帯別利用・FAQいずれにも言及あり）、自社記事同士のカニバリゼーションリスクが高いと判断し、ユーザー判断で「銀座で大人のデートを楽しむバーの選び方」に差し替えた。`hotel-lounge-ginza.md`は無改修。
+
+**画像選定で2件の問題を発見・除外**：Unsplash検索の過程で、コーヒー候補にAeroPress社のブランドロゴが写り込んだ画像、および欧州の街並み（看板・建築様式から判断）が写り込んだテラス写真を発見し、いずれも候補から除外して撮り直した（最終的に6枚とも新規に選定）。
+
+**meta description文字数の是正**：初稿では6記事中4記事がdescription中に「サードプレイス」「third place」のいずれも含まない、または110〜120字の範囲を外れている状態だったことをビルド後の機械監査で発見し、全件修正した。
+
+**公開日の統一**：STEP3時点では複数記事を同日公開することによる「最新記事」欄への集中を避ける目的で`date`を2026-11-26〜12-01の6日間に分散していたが、STEP4でユーザーから「実際の公開日は2026-11-26の一括公開であり、未来日付を設定して公開済み記事として扱うべきではない」との指摘を受け、全6記事の`date`を実際の公開日である2026-11-26に統一した。
+
+**タイトル修正**：②の記事タイトルを「銀座で記念日に祝杯をあげるレストランの選び方」から「銀座で記念日・誕生日を祝うレストランの選び方」に変更。slug・公開URLは不変。frontmatterのtitle変更によりH1・OGP・Article JSON-LD・BreadcrumbList・目的別カードのアンカーテキスト（`matchedPost.data.title`を参照する完全データ駆動のため自動反映）はすべて自動的に新タイトルに統一された。本文中・他記事からの手動リンクのアンカーテキスト（5ファイル）はsedで一括置換し、不整合がないことを確認した。
+
+**記事投稿ペースの運用ルール変更**：2026-08-17制定・2026-08-31継続確定の「週2〜3件程度」という固定ペース制限を、2026-11-26付で品質管理方式（重複監査・検索意図確認・SEO/AEO検証を必須とし、基準を満たせば同日複数公開を許容）に変更した。旧ルールは削除せず、本ファイル内に変更履歴として残している。詳細は「記事執筆開始時の確認事項（必須）」セクション参照。
+
+**検証方法**：`npm run build`後、サイト全体（735ファイル）でJSON-LD 3,180ブロック・パースエラー0件、内部リンク57,955件・リンク切れ0件、title/description重複0件を確認。6記事全件で可視FAQ5問とFAQPage JSON-LDの完全一致、meta description 110〜120字・サードプレイス/third placeキーワード含有を確認。商業エリア4件の目的別カード構成（表参道9/9・北参道千駄ヶ谷12/12・青山4/4・銀座3/4、合計28カード/29記事）が設計通りであること、`purpose_cards`の有効記事slug集合と`purpose_article_slugs`集合が全4エリアで完全一致することを機械検証した。GA4計測については、`area.njk`・`venue-card.njk`に既存トラッキングスクリプトが一切読み込まれていないことを確認し、構造的な二重発火リスクがないことを静的検証したが、**実際のブラウザでのクリック動作・GA4 DebugView確認は本環境に自動ブラウザ操作ツールが無いため未実施**（今後の対応候補として記録）。
+
+**今後の課題**：GA4 DebugView等による実機確認、GA4カスタムディメンション4件の管理画面登録状況確認、`venue-purpose-highlights.njk`の`data-purpose-key`送信漏れ（発見済み・今回は対象外）、青山のレストラン基盤記事（ピラー記事）の制作、FAQ Q1フォールバック問題（第5商業エリア公開前に対応要）。いずれも詳細は「purpose_cardsの1カード複数記事対応・GA4計測標準仕様」セクション末尾に記録済み。
 
 ## 2026-11-25
 

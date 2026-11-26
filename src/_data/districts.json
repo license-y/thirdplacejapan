@@ -23,59 +23,75 @@
       "date-cafe-omotesando",
       "anniversary-cafe-omotesando",
       "reservation-cafe-omotesando",
-      "girls-gathering-cafe-omotesando"
+      "girls-gathering-cafe-omotesando",
+      "pet-friendly-cafe-omotesando"
     ],
     "venue_slugs": ["koffee-mameya-omotesando"],
-    "purpose_summary": "一人時間・商談・ランチ・デート・記念日・女子会など",
+    "purpose_summary": "一人時間・商談・ランチ・デート・記念日・女子会・ペット同伴など",
     "purpose_intro": "表参道でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、8つの代表的な目的ごとの判断基準を紹介する。",
     "purpose_cards": [
       {
+        "key": "pc-work",
         "heading": "PC作業に集中する",
         "keywords": ["Wi-Fi", "電源", "座席の広さ", "利用時間のルール"],
         "description": "外出先で仕事をしたいときは、Wi-Fiや電源の有無だけでなく、座席の広さ、周囲の音、利用時間のルールを確認することが大切だ。短時間のメール確認と、集中して資料を作成する作業では必要な環境も異なるため、作業内容に合った場所を選びたい。",
         "article_slug": "pc-work-cafe-omotesando"
       },
       {
+        "key": "business-meeting",
         "heading": "仕事・商談に利用する",
         "keywords": ["アクセスのよさ", "会話のしやすさ", "座席の独立性"],
         "description": "商談や打ち合わせでは、アクセスのよさに加え、会話のしやすさや座席の独立性が重要になる。相手との距離感、周囲の音、予約の可否も判断材料になり、機密性が求められる商談では個室や専用スペースの有無も確認しておきたい。",
         "article_slug": "business-meeting-cafe-omotesando"
       },
       {
+        "key": "solo-time",
         "heading": "静かな一人時間を楽しむ",
         "keywords": ["静けさ", "居心地", "混雑状況", "座席の配置"],
         "description": "一人時間を楽しみたいときは、静けさや居心地を重視した場所選びが向いている。窓際でコーヒーを楽しむ、読書をする、考え事をするなど過ごし方はさまざまで、混雑状況や座席の配置を確認すると、自分のペースで過ごせる場所を見つけやすい。",
         "article_slug": "solo-time-cafe-omotesando"
       },
       {
+        "key": "relaxing-lunch",
         "heading": "ゆっくりランチを楽しむ",
         "keywords": ["食事中の雰囲気", "食後の居心地", "滞在ルール"],
         "description": "ランチを楽しむなら、料理だけでなく食事中の雰囲気や食後の居心地にも目を向けたい。友人との会話を楽しみたい日と、一人で落ち着いて食事をしたい日では選びたい店も変わるため、座席・混雑時間・滞在ルールを事前に確認しておくとよい。",
         "article_slug": "relaxing-lunch-cafe-omotesando"
       },
       {
+        "key": "date",
         "heading": "デート・大切な人と過ごす",
         "keywords": ["会話のしやすさ", "座席の距離感", "照明"],
         "description": "デートで利用するなら、二人が自然に会話できる環境が大切になる。座席の距離感、照明、店内の雰囲気は過ごす時間の印象を左右するため、華やかな空間を楽しみたいのか、静かな場所で会話を楽しみたいのか、目的に合わせて選びたい。",
         "article_slug": "date-cafe-omotesando"
       },
       {
+        "key": "anniversary",
         "heading": "記念日・特別な日を過ごす",
         "keywords": ["特別な体験価値", "料理・サービスの質", "予約のしやすさ"],
         "description": "誕生日や記念日など特別な時間を過ごす場所には、日常とは異なる体験価値が求められる。料理やサービスの質に加え、空間の雰囲気や予約のしやすさも重要な判断材料になり、記念日向けサービスの内容は店舗ごとに異なるため事前の確認が欠かせない。",
         "article_slug": "anniversary-cafe-omotesando"
       },
       {
+        "key": "reservation",
         "heading": "事前予約で計画的に利用する",
         "keywords": ["席のみ予約", "コース予約", "当日の対応可否"],
         "description": "確実に席を確保したい買い物やデート、記念日の予定には、予約という選択肢が役立つ。席のみ予約とコース予約の違いや、当日の対応可否を事前に把握しておくと、計画どおりに過ごしやすい。",
         "article_slug": "reservation-cafe-omotesando"
       },
       {
+        "key": "friends-gathering",
         "heading": "女子会・友人との集まりを楽しむ",
         "keywords": ["グループで会話しやすい座席", "食事とスイーツ", "空間の特別感"],
         "description": "友人同士で買い物やお出かけを楽しんだあとは、グループで会話しやすい座席と、食事やスイーツを組み合わせて楽しめる店が向いている。空間の特別感も、女子会ならではの時間を演出する要素になる。",
         "article_slug": "girls-gathering-cafe-omotesando"
+      },
+      {
+        "key": "pet-friendly",
+        "heading": "ペットと一緒に過ごす",
+        "keywords": ["店内・テラス利用の条件", "同伴可能なペットの種類", "周囲への配慮"],
+        "description": "ペットと一緒に過ごしたい場合は、店内利用かテラス利用かという条件の違い、同伴可能なペットの種類やサイズ、周囲への配慮が判断材料になる。ハイブランドの路面店が並ぶ表参道では、テラス席の有無が店選びの鍵になりやすい。",
+        "article_slug": "pet-friendly-cafe-omotesando"
       }
     ],
     "thumbnail": "/assets/images/articles/omotesando-specialty-coffee-cafe-tokyo.webp",
@@ -113,77 +129,96 @@
       "friends-gathering-cafe-kitasando-sendagaya",
       "reservation-cafe-kitasando-sendagaya",
       "gluten-free-lunch-kitasando-sendagaya",
-      "vegan-lunch-kitasando-sendagaya"
+      "vegan-lunch-kitasando-sendagaya",
+      "coffee-experience-kitasando-sendagaya"
     ],
     "venue_slugs": ["green-beans-coffee-shibuya"],
-    "purpose_summary": "静かな時間・ランチ・ビジネス利用・記念日・食事条件など",
-    "purpose_intro": "北参道・千駄ヶ谷でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。観光動線から外れたこの街は日常に根ざした過ごし方ができる分、目的が違えば選ぶべき店の条件も変わる。以下、11の代表的な目的ごとの判断基準を紹介する。",
+    "purpose_summary": "静かな時間・ランチ・ビジネス利用・記念日・食事条件・コーヒー体験など",
+    "purpose_intro": "北参道・千駄ヶ谷でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。観光動線から外れたこの街は日常に根ざした過ごし方ができる分、目的が違えば選ぶべき店の条件も変わる。以下、12の代表的な目的ごとの判断基準を紹介する。",
     "purpose_cards": [
       {
+        "key": "solo-time",
         "heading": "静かな一人時間を楽しむ",
         "keywords": ["座席の配置", "物音の少なさ", "長居のしやすさ"],
         "description": "一人時間を重視するなら、座席の配置・物音の少なさ・長居のしやすさが判断基準になる。奥まった一人掛けの席や抑えたBGM、急かされない雰囲気があるかを確認すると選びやすい。",
         "article_slug": "quiet-cafe-kitasando-sendagaya"
       },
       {
+        "key": "relaxing-lunch",
         "heading": "ゆっくりランチを楽しむ",
         "keywords": ["混雑しにくい立地", "座席の余裕", "食後の過ごしやすさ"],
         "description": "ランチを楽しむなら、混雑しにくい立地・座席の余裕・食後の過ごしやすさを基準にしたい。路地裏の個人店やテーブル間隔の広い店は、料理も食後の時間もゆっくり楽しみやすい。",
         "article_slug": "relaxing-lunch-cafe-kitasando-sendagaya"
       },
       {
+        "key": "business-meeting",
         "heading": "仕事・商談に利用する",
         "keywords": ["Wi-Fi・電源", "席の独立性", "会話のしやすさ", "周囲への配慮"],
         "description": "仕事や商談で利用するなら、Wi-Fi・電源の有無に加え、席の独立性や会話のしやすさ、周囲への配慮が判断材料になる。将棋の長考文化が根づくこの街には、長時間の滞在を許容する空気がある。",
         "article_slug": "business-use-sendagaya-kitasando"
       },
       {
+        "key": "inbound",
         "heading": "旅行・観光の合間に過ごす",
         "keywords": ["明治神宮・原宿からのアクセス", "英語対応", "休憩地点としての価値"],
         "description": "旅行で利用するなら、明治神宮・原宿からのアクセス、英語対応の有無、観光の合間に休憩しやすいかが基準になる。観光動線から一本外れた静かな立地が、休憩地点としての価値を高めている。",
         "article_slug": "sendagaya-kitasando-cafe"
       },
       {
+        "key": "anniversary",
         "heading": "記念日・特別な日を過ごす",
         "keywords": ["静けさ", "会話のしやすさ", "空間の気取らなさ", "事前確認"],
         "description": "北参道・千駄ヶ谷で記念日を過ごすなら、静けさ・会話のしやすさ・空間の気取らなさ・事前確認を基準にしたい。観光動線から外れたこの街の落ち着きが、誕生日やお祝いにもふさわしい時間をつくる。",
         "article_slug": "anniversary-cafe-kitasando-sendagaya"
       },
       {
+        "key": "pc-work",
         "heading": "PC作業に集中する",
         "keywords": ["Wi-Fi・電源", "座席の快適性", "周囲への配慮"],
         "description": "外出先でノートPCを開いて作業したいときは、Wi-Fi・電源の有無に加え、座席の快適性や周囲への配慮が判断材料になる。",
         "article_slug": "pc-work-cafe-kitasando-sendagaya"
       },
       {
+        "key": "pet-friendly",
         "heading": "ペットと一緒に過ごす",
         "keywords": ["店内利用の可否", "周囲への配慮", "事前確認"],
         "description": "ペットと一緒に過ごしたい場合は、店内利用の可否や周囲への配慮、事前確認が欠かせない。対応は店舗ごとに異なるため、訪問前の確認が前提になる。",
         "article_slug": "pet-friendly-cafe-kitasando-sendagaya"
       },
       {
+        "key": "friends-gathering",
         "heading": "女子会・友人との集まりを楽しむ",
         "keywords": ["落ち着いた空間", "ゆっくり会話", "気取らない魅力"],
         "description": "観光動線から外れたこの街では、落ち着いた空間でゆっくり会話できることが、友人との集まりの価値になる。表参道のような非日常の華やかさとは異なる魅力がある。",
         "article_slug": "friends-gathering-cafe-kitasando-sendagaya"
       },
       {
+        "key": "reservation",
         "heading": "事前予約で計画的に利用する",
         "keywords": ["座席の確保", "目的来店", "計画的な利用"],
         "description": "観光のついでではなく目的を持ってこのエリアを訪れる場合、確実に座席を確保できる予約という選択肢が役立つ。ランチや打ち合わせ、記念日などの計画的な利用に向いている。",
         "article_slug": "reservation-cafe-kitasando-sendagaya"
       },
       {
+        "key": "gluten-free",
         "heading": "グルテンフリーランチを楽しむ",
         "keywords": ["使用食材の確認", "小麦不使用とアレルギー対応の違い", "健康効果の安易な期待を避ける"],
         "description": "小麦を避けたいときは、使用食材の確認と、小麦不使用とアレルギー対応の違いを理解しておくことが大切だ。健康効果を安易に期待せず、確認済みの情報をもとに選びたい。",
         "article_slug": "gluten-free-lunch-kitasando-sendagaya"
       },
       {
+        "key": "vegan",
         "heading": "ヴィーガンランチを楽しむ",
         "keywords": ["植物性食材", "だし・調味料など見落としやすい点", "グルテンフリーとの違い"],
         "description": "植物性の食事を探す場合は、だしや調味料など日本の食文化特有の見落としやすい点を踏まえて店を選びたい。グルテンフリーとは異なる基準であることも押さえておきたい。",
         "article_slug": "vegan-lunch-kitasando-sendagaya"
+      },
+      {
+        "key": "coffee-experience",
+        "heading": "コーヒー体験を楽しむ",
+        "keywords": ["焙煎・抽出工程の見学", "スタッフとの対話", "豆の選び方"],
+        "description": "コーヒーを体験として楽しみたい場合は、焙煎・抽出といった工程に触れられるか、スタッフと対話しながら豆を選べるかが判断材料になる。観光動線から外れたこの街には、一杯を単なる飲み物ではなく体験として提供する店が点在する。",
+        "article_slug": "coffee-experience-kitasando-sendagaya"
       }
     ],
     "thumbnail": "/assets/images/articles/quiet-street-dagayasando-kitasando-tokyo.webp",
@@ -209,27 +244,45 @@
     ],
     "purpose_article_slugs": [
       "business-meeting-cafe-aoyama",
-      "art-gallery-cafe-aoyama"
+      "art-gallery-cafe-aoyama",
+      "relaxing-lunch-restaurant-aoyama",
+      "anniversary-restaurant-aoyama"
     ],
     "venue_slugs": [],
-    "purpose_summary": "商談・ミーティング・アート巡り",
-    "purpose_intro": "青山でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、2つの代表的な目的ごとの判断基準を紹介する。",
+    "purpose_summary": "商談・ミーティング・アート巡り・ゆっくりランチ・記念日など",
+    "purpose_intro": "青山でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、4つの代表的な目的ごとの判断基準を紹介する。",
     "purpose_cards": [
       {
+        "key": "business-meeting",
         "heading": "仕事・商談に利用する",
         "keywords": ["静寂性", "席の独立性", "通信環境"],
         "description": "青山一丁目駅周辺のオフィス街寄りの立地では、取引先との打ち合わせや資料を広げてのミーティングに向くカフェが見つかりやすい。静寂性・席の独立性・通信環境の3条件を基準にすると、会話の内容を気にせず落ち着いて話せる場所を選びやすくなる。",
         "article_slug": "business-meeting-cafe-aoyama"
       },
       {
+        "key": "art-gallery",
         "heading": "アート巡りの合間に過ごす",
         "keywords": ["立地のアクセス性", "鑑賞後の余韻に合う静けさ"],
         "description": "外苑前のギャラリー街には、現代アートの展示を見たあとに立ち寄れるカフェが点在する。ギャラリー巡りの合間に立ち寄れる立地のアクセス性と、鑑賞後の余韻を邪魔しない静かな空間という2条件を基準にすると、作品を見た後の時間まで含めて楽しめる場所に出会いやすい。",
         "article_slug": "art-gallery-cafe-aoyama"
+      },
+      {
+        "key": "relaxing-lunch",
+        "heading": "ゆっくりランチを楽しむ",
+        "keywords": ["滞在時間のルール", "席間隔", "ギャラリー巡りとの動線"],
+        "description": "ゆっくりランチを楽しみたいときは、滞在時間のルール、席間隔、ギャラリー巡りとの動線が判断材料になる。ファッションブランドの旗艦店とアートギャラリーが共存するこの街には、食事に余白を持たせやすい店が点在する。",
+        "article_slug": "relaxing-lunch-restaurant-aoyama"
+      },
+      {
+        "key": "anniversary",
+        "heading": "記念日・特別な日を過ごす",
+        "keywords": ["空間デザインの個性", "席の落ち着き", "予約のしやすさ"],
+        "description": "記念日を過ごすなら、空間デザインの個性、席の落ち着き、予約のしやすさが判断材料になる。アートギャラリーとファッションブランドが共存するこの街には、老舗の格式とは異なる、デザイン性の高い特別感を持つ店が点在する。",
+        "article_slug": "anniversary-restaurant-aoyama"
       }
     ],
     "thumbnail": "/assets/images/articles/aoyama-spa-wellness-tokyo.webp",
-    "related_categories": ["cafe-specialty-coffee", "spa-sauna-wellness"],
+    "related_categories": ["cafe-specialty-coffee", "spa-sauna-wellness", "restaurant-dining"],
     "neighboring_areas": [
       { "name": "表参道", "url": "/stories/area/tokyo/shibuya-ku/omotesando/", "area_slug": "omotesando" },
       { "name": "六本木", "url": "/stories/area/tokyo/minato-ku/roppongi/", "area_slug": "roppongi" }
@@ -255,23 +308,35 @@
     ],
     "purpose_article_slugs": [
       "anniversary-cafe-lounge-ginza",
-      "business-lounge-ginza"
+      "business-lounge-ginza",
+      "anniversary-restaurant-ginza",
+      "date-bar-ginza"
     ],
     "venue_slugs": ["morioka-shoten-ginza"],
-    "purpose_summary": "記念日・特別な日・仕事・商談",
-    "purpose_intro": "銀座でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、2つの代表的な目的ごとの判断基準を紹介する。",
+    "purpose_summary": "記念日・特別な日・仕事・商談・大人のデートなど",
+    "purpose_intro": "銀座でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、3つの代表的な目的ごとの判断基準を紹介する。",
     "purpose_cards": [
       {
+        "key": "anniversary",
         "heading": "記念日・特別な日を過ごす",
         "keywords": ["空間の特別感", "サービスの丁寧さ", "予約確認"],
-        "description": "江戸時代から続く老舗文化が根づく銀座には、誕生日や結婚記念日にふさわしい特別な時間を過ごせるカフェ・ラウンジが点在する。空間の特別感・サービスの丁寧さ・予約確認の3条件を基準にすると、日常とは一線を画す時間にふさわしい場所を選びやすくなる。",
-        "article_slug": "anniversary-cafe-lounge-ginza"
+        "description": "江戸時代から続く老舗文化が根づく銀座には、誕生日や結婚記念日にふさわしい特別な時間を過ごせるカフェ・レストラン・ラウンジが点在する。空間の特別感・サービスの丁寧さ・予約確認の3条件を基準にすると、業態を問わず、日常とは一線を画す時間にふさわしい場所を選びやすくなる。",
+        "article_slug": "anniversary-cafe-lounge-ginza",
+        "article_slugs": ["anniversary-cafe-lounge-ginza", "anniversary-restaurant-ginza"]
       },
       {
+        "key": "business-meeting",
         "heading": "仕事・商談に利用する",
         "keywords": ["静けさ", "座席間隔", "プライバシー"],
         "description": "街の喧騒から物理的に離れたホテル上層階・ロビー階には、込み入った商談にも向く落ち着いたラウンジが点在する。静けさ・座席間隔・プライバシーの3条件を基準にすると、会話の内容を気にせず話せる中立な場所を見つけやすくなる。",
         "article_slug": "business-lounge-ginza"
+      },
+      {
+        "key": "date",
+        "heading": "デート・大切な人と過ごす",
+        "keywords": ["カウンターかテーブルか", "会話のしやすさ", "落ち着ける時間帯"],
+        "description": "大人のデートを楽しむなら、カウンターかテーブルか、会話のしやすさ、落ち着ける時間帯が判断材料になる。一人で静かに向き合う文化が根づく銀座のバーでも、二人の時間に適した条件を押さえれば、落ち着いた夜を過ごしやすくなる。",
+        "article_slug": "date-bar-ginza"
       }
     ],
     "thumbnail": "/assets/images/articles/ginza-cafe-third-place-tokyo.webp",

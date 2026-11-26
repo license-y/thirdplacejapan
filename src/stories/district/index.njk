@@ -77,7 +77,7 @@ eleventyComputed:
       "name": {{ (item.name + "にはどんな目的別の過ごし方がありますか？") | dump | safe }},
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": {% if item.slug == 'omotesando' %}"一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'kitasando-sendagaya' %}"静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'aoyama' %}"静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'ginza' %}"記念日に過ごしたいカフェ・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% else %}"利用目的に応じたサードプレイスの選び方をThird Place Japanが個別に解説しています。"{% endif %}
+        "text": {% if item.slug == 'omotesando' %}"一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝い、ペットとの同伴利用など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'kitasando-sendagaya' %}"静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方、コーヒー体験を楽しむ過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'aoyama' %}"静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方、ゆっくりランチや記念日を過ごすレストランの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% elif item.slug == 'ginza' %}"記念日に過ごしたいカフェ・レストラン・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方、大人のデートに向くバーの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。"{% else %}"利用目的に応じたサードプレイスの選び方をThird Place Japanが個別に解説しています。"{% endif %}
       }
     },
     {
@@ -154,9 +154,10 @@ eleventyComputed:
     <h2>{{ item.name }}で目的別にサードプレイスを選ぶ</h2>
     <p>{{ item.purpose_intro or (item.name + "でサードプレイスを選ぶ際に重視したい条件は、利用目的によって異なる。以下、" + item.purpose_cards.length + "の代表的な目的ごとの判断基準を紹介する。") }}</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 not-prose my-6 items-stretch">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 not-prose my-6 items-stretch" data-ga-purpose-cards data-district-slug="{{ item.slug }}" data-page-language="ja">
       {% for card in item.purpose_cards %}
-      {% set matchedPost = collections.articles | rejectLang("en") | findArticleBySlug(card.article_slug) %}
+      {% set cardArticleSlugs = card.article_slugs if card.article_slugs and card.article_slugs.length else [card.article_slug] %}
+      {% set matchedPosts = collections.articles | rejectLang("en") | findArticlesBySlugs(cardArticleSlugs) %}
       <div class="flex flex-col h-full bg-white border border-gold/40 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md hover:border-gold transition-all">
         <div class="flex items-start gap-3 mb-3">
           <span class="font-serif text-xl font-light text-gold/80 leading-none shrink-0">{{ "0" if loop.index < 10 else "" }}{{ loop.index }}</span>
@@ -166,15 +167,45 @@ eleventyComputed:
           {% for kw in card.keywords %}{{ kw }}{% if not loop.last %}<span class="text-gold/40 mx-1.5">｜</span>{% endif %}{% endfor %}
         </p>
         <p class="text-sm text-text leading-relaxed flex-1">{{ card.description }}</p>
-        {% if matchedPost %}
-        <a href="{{ matchedPost.url }}" class="inline-flex items-center gap-1.5 text-sm text-gold hover:gap-2.5 transition-all mt-4 pt-3 border-t border-border">
-          {{ matchedPost.data.title }}
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0"></i>
-        </a>
+        {% if matchedPosts.length %}
+        <div class="flex flex-col gap-2 mt-4 pt-3 border-t border-border">
+          {% for mp in matchedPosts %}
+          <a href="{{ mp.url }}" class="inline-flex items-center gap-1.5 text-sm text-gold hover:gap-2.5 transition-all"
+             data-ga-event="click_internal_link" data-purpose-key="{{ card.key }}" data-article-slug="{{ mp.fileSlug }}"
+             data-article-category="{{ mp.data.category_slug }}" data-destination-type="article" data-link-lang="ja">
+            {{ mp.data.title }}
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 shrink-0"></i>
+          </a>
+          {% endfor %}
+        </div>
         {% endif %}
       </div>
       {% endfor %}
     </div>
+    <script>
+    (function() {
+      document.querySelectorAll('[data-ga-purpose-cards]').forEach(function(container) {
+        if (container.dataset.gaBound === "1") return;
+        container.dataset.gaBound = "1";
+        container.addEventListener('click', function(e) {
+          var el = e.target.closest('a[data-ga-event]');
+          if (!el || !container.contains(el)) return;
+          if (typeof gtag === "function") {
+            gtag('event', el.getAttribute('data-ga-event'), {
+              district_slug: container.getAttribute('data-district-slug'),
+              purpose_key: el.getAttribute('data-purpose-key'),
+              article_slug: el.getAttribute('data-article-slug'),
+              article_category: el.getAttribute('data-article-category'),
+              link_location: 'district_purpose_cards',
+              destination_type: el.getAttribute('data-destination-type'),
+              page_language: container.getAttribute('data-page-language'),
+              link_lang: el.getAttribute('data-link-lang')
+            });
+          }
+        });
+      });
+    })();
+    </script>
     {% endif -%}
 
     <h2>TPJの15カテゴリから探す</h2>
@@ -282,13 +313,13 @@ eleventyComputed:
     {{ q2AnswerText }}</p>
     <p><strong>Q. {{ item.name }}にはどんな目的別の過ごし方がありますか？</strong><br>
     {% if item.slug == 'omotesando' %}
-    一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝いなど、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
+    一人でゆっくり過ごす時間、商談やランチミーティング、PC作業、デート、記念日のお祝い、ペットとの同伴利用など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
     {% elif item.slug == 'kitasando-sendagaya' %}
-    静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
+    静かに一人で過ごす時間、ゆっくりとしたランチ、ビジネス利用、インバウンド向けの過ごし方、記念日の過ごし方、コーヒー体験を楽しむ過ごし方など、目的に応じたカフェの選び方をThird Place Japanが個別に解説しています。
     {% elif item.slug == 'aoyama' %}
-    静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
+    静かに商談・ミーティングができるカフェの選び方、アートとカフェを組み合わせて楽しむ過ごし方、ゆっくりランチや記念日を過ごすレストランの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
     {% elif item.slug == 'ginza' %}
-    記念日に過ごしたいカフェ・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
+    記念日に過ごしたいカフェ・レストラン・ラウンジの選び方、落ち着いて商談できるホテルラウンジの選び方、大人のデートに向くバーの選び方など、目的に応じた選び方をThird Place Japanが個別に解説しています。
     {% else %}
     利用目的に応じたサードプレイスの選び方をThird Place Japanが個別に解説しています。
     {% endif %}

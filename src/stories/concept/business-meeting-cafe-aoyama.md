@@ -66,4 +66,4 @@ Third Place Japan（サードプレイスジャパン）は、居心地・静け
 
 ## まとめ
 
-青山で商談・ミーティングに向くカフェを選ぶ軸は、静寂性・席の独立性・通信環境という3条件に集約される。青山一丁目駅周辺のオフィス街寄りの立地は、外苑前駅周辺の文化的な通りとは異なる落ち着きを持ち、平日午前やランチタイム後の時間帯が比較的静かな傾向がある。Third Place Japanは、こうした空間を7軸評価で継続的に見つめ、サードプレイスとしての価値を記録している。青山という街全体のウェルネス文化については[青山でスパとサードプレイスを重ねる](/stories/spa-sauna-wellness/aoyama-spa-third-place/)で詳しく紹介している。青山エリア全体のガイドは[青山エリアガイド](/stories/district/aoyama/)、表参道で商談利用を検討している場合は[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)も参考になる。
+青山で商談・ミーティングに向くカフェを選ぶ軸は、静寂性・席の独立性・通信環境という3条件に集約される。青山一丁目駅周辺のオフィス街寄りの立地は、外苑前駅周辺の文化的な通りとは異なる落ち着きを持ち、平日午前やランチタイム後の時間帯が比較的静かな傾向がある。Third Place Japanは、こうした空間を7軸評価で継続的に見つめ、サードプレイスとしての価値を記録している。青山という街全体のウェルネス文化については[青山でスパとサードプレイスを重ねる](/stories/spa-sauna-wellness/aoyama-spa-third-place/)で詳しく紹介している。青山エリア全体のガイドは[青山エリアガイド](/stories/district/aoyama/)、表参道で商談利用を検討している場合は[表参道で静かに打ち合わせできるカフェの選び方](/stories/cafe-specialty-coffee/business-meeting-cafe-omotesando/)も参考になる。商談の後にゆっくり食事を楽しみたい場合は[青山でゆっくりランチを楽しめるレストランの選び方](/stories/restaurant-dining/relaxing-lunch-restaurant-aoyama/)も参照されたい。
